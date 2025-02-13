@@ -98,12 +98,20 @@ def head_html_generate(title, css_filepath):
     '''
     return head_html
 
-header = f'''
-    <header class="container-xl" style="display: flex; justify-content: space-between;">
-        <a href="/">Ozonogroup</a>
-        <ul>
-            <li><a href="/contaminazioni.html">Contraminazioni</a></li>
-        </ul>
+html_header = f'''
+    <header class="container-xl" style="padding-top: 24px; display: flex; justify-content: space-between;">
+        <a style="text-decoration: none; color: #303030;" href="/">Ozonogroup</a>
+        <nav>
+            <a style="text-decoration: none; color: #303030;" href="/contaminazioni.html">Contraminazioni</a>
+        </nav>
+    </header>
+'''
+
+html_footer = f'''
+    <header class="container-xl" style="padding-bottom: 24px; padding-top: 24px; display: flex; justify-content: space-between;">
+        <span style="text-decoration: none; color: #303030;">Copyright Ozonogroup 2025</span>
+        <span style="text-decoration: none; color: #303030;">Tutti i diritti riservati</span>
+        </nav>
     </header>
 '''
 
@@ -321,7 +329,7 @@ def homepage():
         <html lang="en">
         {head_html}
         <body>
-            {header}
+            {html_header}
             <main>
                 {section_00}
                 {section_01}
@@ -782,43 +790,6 @@ def a_contaminazione(vertex_contaminazione):
             json_article[key] = lines
             json_write(json_article_filepath, json_article)
 
-    #########################################################################
-    # treatments old
-    #########################################################################
-    key = 'traditional_treatments_list'
-    if key not in json_article: json_article[key] = []
-    # json_article[key] = []
-    if json_article[key] == []:
-        treatments_names = [treatment['name'] for treatment in vertex_contaminazione['treatments']]
-        treatments_names_prompt = ', '.join(treatments_names)
-        prompt = f'''
-            write a numbered list of the 10 most common traditional sanitization systems used in the food processing industry for {contaminazione_nome_scientifico}.
-            choose only from the following systems: {treatments_names_prompt}.
-            reply only with the list.
-            reply in italian, using only italian words.
-        '''
-        reply = llm_reply(prompt)
-        lines = []
-        for line in reply.split('\n'):
-            line = line.strip().lower()
-            if line == '': continue
-            if not line[0].isdigit(): continue
-            if '. ' not in line: continue
-            line = '. '.join(line.split('. ')[1:]) 
-            if line[-1] == '.': line = line[:-1]
-            line = line.replace('*', '')
-            line = line.strip()
-            if line == '': continue
-            if line not in treatments_names: continue
-            if line == 'ozono': continue
-            lines.append(line)
-        for line in lines:
-            print(line)
-        if lines != []:
-            json_article[key] = lines
-            json_write(json_article_filepath, json_article)
-
-
     #####################################################
     # ;html
     #####################################################
@@ -954,11 +925,51 @@ def a_contaminazione(vertex_contaminazione):
         </section>
     '''
 
-    key = 'traditional_treatments_list'
+    #########################################################################
+    # treatments 
+    #########################################################################
+    key = 'treatments'
+    if key not in json_article: json_article[key] = []
+    # json_article[key] = []
+    if json_article[key] == []:
+        treatments_names = [treatment['name'] for treatment in vertex_contaminazione['treatments']]
+        treatments_names_prompt = ', '.join(treatments_names)
+        prompt = f'''
+            write a numbered list of the 10 most common traditional sanitization systems used in the food processing industry for {contaminazione_nome_scientifico}.
+            choose only from the following systems: {treatments_names_prompt}.
+            reply only with the list.
+            reply in italian, using only italian words.
+        '''
+        reply = llm_reply(prompt)
+        lines = []
+        for line in reply.split('\n'):
+            line = line.strip().lower()
+            if line == '': continue
+            if not line[0].isdigit(): continue
+            if '. ' not in line: continue
+            line = '. '.join(line.split('. ')[1:]) 
+            if line[-1] == '.': line = line[:-1]
+            line = line.replace('*', '')
+            line = line.strip()
+            if line == '': continue
+            if line not in treatments_names: continue
+            if line == 'ozono': continue
+            lines.append({
+                'treatment_name': line,
+            })
+        for line in lines:
+            print(line)
+        if lines != []:
+            json_article[key] = lines
+            json_write(json_article_filepath, json_article)
+
+
+    # traditional treatments
     html_cards = ''
-    for treatment in json_article[key]:
+    for treatment in json_article['treatments']:
+        treatment_name = treatment['treatment_name']
+        treatment_slug = treatment_name.lower().strip().replace(' ', '-')
         # ;img
-        treatment_slug = treatment.lower().strip().replace(' ', '-')
         image_in_filepath = f'{vault}/ozonogroup/website/immagini/trattamenti/{treatment_slug}.png'
         image_out_filepath = f'public/immagini/trattamenti/{treatment_slug}.jpg'
         image_web_filepath = f'/immagini/trattamenti/{treatment_slug}.jpg'
@@ -967,17 +978,30 @@ def a_contaminazione(vertex_contaminazione):
                 image = Image.open(image_in_filepath)
                 image = img_resize(image, w=768, h=768)
                 image.save(image_out_filepath)
+        # ;json
+        key = 'treatment_desc'
+        if key not in treatment: treatment[key] = ''
+        # treatment[key] = ''
+        if treatment[key] == '':
+            prompt = f'''
+                write a short 3-sentence paragraph about the following sanitization system for {contaminazione_nome_scientifico}: {treatment_name}.
+                reply in italian.
+            '''
+            print(prompt)
+            reply = llm_reply(prompt)
+            treatment[key] = reply
+            json_write(json_article_filepath, json_article)
+        # ;html
         html_card = f'''
             <div style="border: 1px solid #f0f0f0;">
                 <img style="height: 320px; object-fit: cover;" src="{image_web_filepath}">
                 <div style="padding: 16px 32px;">
-                    <h3 style="font-size: 20px;">{treatment.upper()}</h3>
+                    <h3 style="font-size: 20px;">{treatment_name.upper()}</h3>
+                    <p>{treatment['treatment_desc']}</p>
                 </div>
             </div>
         '''
         html_cards += html_card
-
-
     html_traditional_treatments = f'''
         <section class="container-xl mt-48">
             <h2>Trattamenti Tradizionali</h2>
@@ -987,6 +1011,29 @@ def a_contaminazione(vertex_contaminazione):
         </section>
     '''
 
+    # ozone treatment
+    # ---------------------------------------------------------
+    # ;json
+    key = 'ozone_desc'
+    if key not in json_article: json_article[key] = ''
+    # json_article[key] = ''
+    if json_article[key] == '':
+        prompt = f'''
+            write a short 4-sentence paragraph about the use of ozone for {contaminazione_nome_scientifico}.
+            include why it works for {contaminazione_nome_scientifico}, how to use it, and benefits compared to other sanitization system.
+            only include ozone info targeted to {contaminazione_nome_scientifico}, not general ozone info.
+            reply in italian.
+        '''
+        print(prompt)
+        reply = llm_reply(prompt)
+        json_article[key] = reply
+        json_write(json_article_filepath, json_article)
+    html_ozone = f'''
+        <section class="container-xl mt-48">
+            <h2>Trattamento Ozono</h2>
+            {text_format_1N1_html(json_article["ozone_desc"])}
+        </section>
+    '''
 
     head_html = head_html_generate('contaminazioni', '/style.css')
     html_layout = f'''
@@ -999,12 +1046,15 @@ def a_contaminazione(vertex_contaminazione):
         <html lang="en">
         {head_html}
         <body>
+            {html_header}
             {html_overview}
             {html_layout}
             {html_section_where}
             {html_section_where_ambients}
             {html_section_foods}
             {html_traditional_treatments}
+            {html_ozone}
+            {html_footer}
         </body>
         </html>
     '''
