@@ -236,3 +236,21 @@ table td {
     margin-top: 2.4rem;
     margin-bottom: 2.4rem;
 }
+
+
+@media screen and (min-width: 768px) {
+    .mob-flex {
+        display: flex;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+}
