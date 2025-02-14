@@ -1066,4 +1066,4 @@ if 1:
     for vertex_contaminazione in vertices_contaminazioni:
         a_contaminazione(vertex_contaminazione)
 
-homepage()
+# homepage()

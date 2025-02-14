@@ -196,7 +196,7 @@ beneficial organisms:
 	- milk selection is not based on the identification of beneficial
 	  organisms
 
-detection methods for bacteria in milk
+detection methods for bacteria in milk:
 	- total bacteria count (TBC) is best indicator of quality
 	- low tbc is good quality
 	- many methods to know tbc in few hours
@@ -235,3 +235,142 @@ detection methods for bacteria in milk
 		- b. cereus and sulfite-reducing clostridia (SRC)
 			- bacillus cereus has six related species difficult to
 			  differentiate, even by molecular methods
+			- SRC is difficult too
+			- current methods take 3 days, arn not suitable
+
+control of bacteria in milk:
+	- prevention is the best cure
+	- hygiene
+		- essential to maintain lot TBC
+		- there are guidelines
+		- prevention of cross-contamination from cow udder during
+		  milking
+		- effetctive use of cleaning practices for milking machines
+	- preventative maintenance:
+		- milking equip, including bulk milk storage tank,
+		- adequate cleaning
+		- reduce mastitis
+	- animal health:
+		- free from hunger and thirst
+		- free from discomfort
+		- free from pain, injury, disease, 
+		- free to express normal behabior
+		- free from fear and distress
+		- these freedoms increse the quality of milk, and reduce
+		  pathogen contamination
+
+removal or inhibition of bacterial spores:
+	- removal of spores from cheese milk
+		- achieved with bactofugation or microfiltration
+		- bactofugation is a centrifugal process
+			- (~9000g)
+			- reduce number of anaerobic spore-forming bacteria
+			- 55-60 degrees C in series (downstream) of milk
+			  separation and standardization
+			- 80%-90% removal of total bacteria
+			- 98%-99.5% removal of clostridial spores in the
+			  centrifugate
+			- this constitute 0.15-o.3% of the milk fed
+			- discharged periodically 
+			- or diluted with bactofuged milk to 2-3% of the feed
+			  volume and then setilized
+			- eg. 120 degree C fo 60 s or 140 C for 3-4 s
+			- then recombined with the bactofuged milk stream
+		- the bactocatch process
+			- prior separation of milk into cream and skim milk
+			  streams
+			- skim milk is microfiltrated using 0.8-1.4 um poer
+			  size membranes at 37-50C
+			- redult in a bacteria-spore rich concentrate
+			  (retentate)
+			- with 5% to the flow (or 0.5% if a second MF is done)
+			- and a bacteria-spore reduced stream (permeate)
+			- the retentate may be added to the cream stream prior
+			  to UHT treatment of the latter at 120C
+			- result in inactivation of bacteria and clostridial
+			  spores
+			- followed by mixing with the permeate stream, HTST
+			  pasteurization, and cheese manufacture.
+			- a reduciton of 4-5 log ccles of spores is possible
+			  using this system
+
+inibition of spore germination and/or bacterial growth
+	- cheese starter cutlure with high acid-producing activity 
+	- avoid inadequate pressing of the curd which may result in weak areas
+	  in the curd
+	- or unexpelled whey pockets which could establish conditions for the
+	  formatio nof gas holes
+	- use of compounds (nitrate, lysozyme, nisin), not uneversally
+	  permitted to inhibit spore germination and bacterial growth
+	- nitrate
+		- added to delay germination of spores in cheese
+		- until the salt addet to the outer region of cheese has
+		  equilibrated with the cheese
+		- requires presence of xanthine oxidoreductase (EC 1.2.3.2)
+		- which reduce nitrate to nitrite
+		- inibitory action by NaCl
+		- used with initial chees pH suitable against butyric acid
+		  fermentation
+		- optinma growth of Cl. tyrobutyricum at pH 5.8
+		- with slow equilibration of salt from cheese surface inward
+		- Ducth-type and Swiss-type cheeses
+		- add nitrate to a mixture of curds and whay
+		- quantity of nitrate depends of number of spores present, pH,
+		  and slt-in-moisutre level 
+		- L-type or O-type starter bacteria reduce risk of butyric
+		  acid fermentation compared to DL type
+			- because of production of acetate
+			- L-type: cirase positive Leuconostoc meseteroides
+			  subsp. cremoris
+			- O-type: Cit- L. lactis subsp. lactis and cremoris
+			- DL type: Cit+ Leuconostoc mesenteroides subsp.
+			  cremoris and Cit+ L. lactis subsp. lactis
+		- conversely, high coliform (> 10^5 cfu/g) increse risk of
+		  butyric acid fermentation
+			- due to degradation of nitrate to nitrite early in
+			  cheese ripening
+			- same effect in some strains of mesophilic
+			  lactobacilli
+	- lysozyme (muraminidase)
+		- lysozyme hydrolyses peptidoglycan
+			- component of bacterial cell wall
+			- prompte cell lysis
+		- some spores are resistant to lysosyme, others are inhigited
+		- added and retained at 90%-99% prevent butyric acid ferm.
+			- without inhigiting acidification by lactic acid
+			  bacteria
+			- and the propionic acid fermtentaion
+		- limited use where spore are low (< 500 spores/L)
+			- as a small number of Clostridia can survive
+			- and highr doses impact negatively the desired lactic
+			  and propionic acid fermentations
+		- used in combination with bactofugation and is alternative to
+		  nitrate
+		- where nitrate is permitted, lysozyme may be used in
+		  combination to reduce dose of nitrate
+	- nisin
+		- antibacterial peptide containing 32 amino acid residues
+		- bread-spectrum bacteriocin
+		- effective against Gram-positive organisms
+			- including Clostridium spp.
+		- prevent spoliage of processed chessese produced from blends
+		  of natural chesses and other ingredients (heated to 80C)
+		- this heat treatment does not inactivate spores
+		- and when processded chesses are stored at upt ot abieitnt
+		  temperature and with suitable Ph and aw
+			- germination of pores and growth of vegetative cells
+			  can occur
+			- leading to utyric acid fem and bas blowing
+		- long chain polyphostates have also been shown to inibit the
+		  growth of Cl. tyrobutyricum in processed cheese
+		- nisin in natural chees in more problematic
+			- is lost in whey and inibitory to lactic acid
+			  bacteria
+		- maybe adjunct bacteriocin-producing Lactovacillus cultures
+		  to prevent late blowing in brine-salte cheeses
+		- necessary that these cultures do not inhibit starter
+		  cultures
+			- but be still high enough to produce levels of
+			  bacteriocin that inhibit the spores germinaiton
+		- also, bacteriocin-producing cultures should not have a
+		  deleterious effect on chees flavor during riening
