@@ -9,7 +9,7 @@ from oliark_io import json_read, json_write
 from oliark_llm import llm_reply
 
 vault_tmp = '/home/ubuntu/vault-tmp'
-collection_name = 'listeria'
+# collection_name = 'listeria'
 
 vertices_filepath = f'vertices.json'
 vertices = json_read(vertices_filepath)
@@ -17,7 +17,29 @@ vertices = json_read(vertices_filepath)
 model = f'{vault_tmp}/llms/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf'
 model_validator_filepath = f'{vault_tmp}/llms/Llama-3-Partonus-Lynx-8B-Intstruct-Q4_K_M.gguf'
 
+# new vertices
+with open(f'database/contaminations.txt') as f: 
+    contaminations_list = [line for line in f.read().split('\n') if line.strip() != '']
 
+for contamination_line in contaminations_list:
+    contamination_name = contamination_line
+    contamination_slug = contamination_line.strip().lower().replace(' ', '-')
+    found = False
+    for vertex in vertices:
+        if vertex['contamination_slug'] == contamination_slug:
+            found = True
+            break
+    if not found: 
+        vertices.append({
+            'entity_type': 'contaminazione',
+            'contamination_slug': contamination_slug,
+            'contamination_name_scientific': contamination_name,
+        })
+        j = json.dumps(vertices, indent=4)
+        with open(vertices_filepath, 'w') as f:
+            print(j, file=f)
+
+quit()
 for vertex in vertices:
     # taxonomy
     key = 'taxonomy'

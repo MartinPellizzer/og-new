@@ -102,7 +102,7 @@ html_header = f'''
     <header class="container-xl" style="padding-top: 24px; display: flex; justify-content: space-between;">
         <a style="text-decoration: none; color: #303030;" href="/">Ozonogroup</a>
         <nav>
-            <a style="text-decoration: none; color: #303030;" href="/contaminazioni.html">Contraminazioni</a>
+            <a style="text-decoration: none; color: #303030;" href="/contaminazioni.html">Contaminazioni</a>
         </nav>
     </header>
 '''
@@ -485,7 +485,6 @@ shutil.copy2('style.css', f'public/style.css')
 
 # a_contamination('listeria-monocytogenes')
 
-# ;jump
 def a_contaminazioni():
     json_article_filepath = f'database/pagine/contaminazioni.json'
     json_article = json_read(json_article_filepath, create=True)
@@ -550,7 +549,6 @@ def a_contaminazioni():
 def a_contaminazione(vertex_contaminazione):
     contaminazione_slug = vertex_contaminazione['contamination_slug']
     contaminazione_nome_scientifico = vertex_contaminazione['contamination_name_scientific']
-
     json_foods_filepath = f'database/pagine/contaminazioni/{contaminazione_slug}-foods.json'
     if not os.path.exists(json_foods_filepath):
     # if True:
@@ -598,14 +596,11 @@ def a_contaminazione(vertex_contaminazione):
                         'food_category': reply_food_category,
                         'foods_names': [reply_food_name],
                     })
-
         j = json.dumps(foods_groups, indent=4)
         with open(f'database/pagine/contaminazioni/{contaminazione_slug}-foods.json', 'w') as f:
             print(j, file=f)
-
         for food in foods_groups:
             print(food)
-
     json_article_filepath = f'database/pagine/contaminazioni/{contaminazione_slug}.json'
     json_article = json_read(json_article_filepath, create=True)
     json_write(json_article_filepath, json_article)
@@ -646,7 +641,6 @@ def a_contaminazione(vertex_contaminazione):
             {'exe': 1, 'slug': 'breastfeeding', 'keyword': 'breastfeeding', 'level': 3, 'regen': False},
             {'exe': 1, 'slug': 'kids', 'keyword': 'kids', 'level': 3, 'regen': False},
     ]
-
     sections = [
         {
             'exe': 1, 
@@ -718,11 +712,28 @@ def a_contaminazione(vertex_contaminazione):
             ''',
         },
     ]
-
     #########################################################################
     # what
     #########################################################################
-
+    key = 'what'
+    if key not in json_article: json_article[key] = ''
+    json_article[key] = ''
+    if json_article[key] == '':
+        prompt = f'''
+            Write a short 4-sentence paragraph about {contaminazione_nome_scientifico}.
+            Include:
+            - What is {contaminazione_nome_scientifico} (give a definition).
+            - Classification of {contaminazione_nome_scientifico} (provide full taxonomy).
+            - Cellular structure of {contaminazione_nome_scientifico}.
+            - Metabolic processes of {contaminazione_nome_scientifico}.
+            Start the reply with the following words: {contaminazione_nome_scientifico} .
+            Reply in italian.
+        '''
+        print(prompt)
+        reply = llm_reply(prompt)
+        json_article[key] = reply
+        json_write(json_article_filepath, json_article)
+    
 
     #########################################################################
     # where
@@ -744,7 +755,6 @@ def a_contaminazione(vertex_contaminazione):
         reply = llm_reply(prompt)
         json_article[key] = reply
         json_write(json_article_filepath, json_article)
-
     key = 'where_ambients_intro'
     if key not in json_article: json_article[key] = []
     # json_article[key] = []
@@ -762,7 +772,6 @@ def a_contaminazione(vertex_contaminazione):
         reply = llm_reply(prompt)
         json_article[key] = reply
         json_write(json_article_filepath, json_article)
-
     key = 'where_ambients_list'
     if key not in json_article: json_article[key] = []
     # json_article[key] = []
@@ -794,6 +803,13 @@ def a_contaminazione(vertex_contaminazione):
     # ;html
     #####################################################
     html_article = ''
+    html_what = f'''
+        <section class="container-md mt-48">
+            <h2>What is {contaminazione_nome_scientifico}?</h2>
+            {text_format_1N1_html(json_article['what'])}
+        </section>
+        
+    '''
     # overview
     html_overview = f'''
         <section class="container-xl mt-48">
@@ -842,7 +858,6 @@ def a_contaminazione(vertex_contaminazione):
             </div>
         </section>
     '''
-
     with open(json_foods_filepath) as f:
         foods_categories = json.load(f)
     html_table = ''
@@ -860,7 +875,6 @@ def a_contaminazione(vertex_contaminazione):
         html_table += f'''<td>{foods_names_str.title()}</td>\n'''
         html_table += f'</tr>\n'
     html_table += f'</table>\n'
-
     images_filepaths = []
     for food in foods_categories:
         for food_name in food['foods_names'][:6]:
@@ -875,14 +889,12 @@ def a_contaminazione(vertex_contaminazione):
         html_images += f'''
             <img src="{image_filepath}" class="food-grid-img">
         '''
-    
     html_section_where = f'''
         <section class="container-xl mt-48">
             <h2>Dove si trova?</h2>
             {text_format_1N1_html(json_article['where'])}
         </section>
     '''
-
     html_ambients_list = f''
     html_ambients_list += f'<ul>'
     for ambient in json_article['where_ambients_list']:
@@ -890,7 +902,6 @@ def a_contaminazione(vertex_contaminazione):
             <li>{ambient}</li>
         '''
     html_ambients_list += f'<ul>'
-
     html_section_where_ambients = f'''
         <section class="container-xl mt-48">
             <h3>Ambienti ad alto rischio</h3>
@@ -962,8 +973,6 @@ def a_contaminazione(vertex_contaminazione):
         if lines != []:
             json_article[key] = lines
             json_write(json_article_filepath, json_article)
-
-
     # traditional treatments
     html_cards = ''
     for treatment in json_article['treatments']:
@@ -1034,7 +1043,6 @@ def a_contaminazione(vertex_contaminazione):
             {text_format_1N1_html(json_article["ozone_desc"])}
         </section>
     '''
-
     head_html = head_html_generate('contaminazioni', '/style.css')
     html_layout = f'''
         <section class="container-md">
@@ -1047,6 +1055,7 @@ def a_contaminazione(vertex_contaminazione):
         {head_html}
         <body>
             {html_header}
+            {html_what}
             {html_overview}
             {html_layout}
             {html_section_where}
@@ -1061,9 +1070,221 @@ def a_contaminazione(vertex_contaminazione):
     html_filepath = f'public/contaminazioni/{contaminazione_slug}.html'
     with open(html_filepath, 'w') as f: f.write(html)
 
+def a_contamination_new(vertex_contamination):
+    contamination_slug = vertex_contamination['contamination_slug']
+    contamination_name_scientific = vertex_contamination['contamination_name_scientific']
+    json_article_filepath = f'database/pagine/contaminazioni/{contamination_slug}.json'
+    html_article_filepath = f'public/contaminazioni/{contamination_slug}.html'
+    json_article = json_read(json_article_filepath, create=True)
+    json_write(json_article_filepath, json_article)
+
+    # ;json
+    key = 'what'
+    if key not in json_article: json_article[key] = ''
+    # json_article[key] = ''
+    if json_article[key] == '':
+        prompt = f'''
+            Write a short 4-sentence paragraph about {contamination_name_scientific}.
+            Include:
+            - What is {contamination_name_scientific} (give a definition).
+            - Classification of {contamination_name_scientific} (provide full taxonomy).
+            - Cellular structure of {contamination_name_scientific}.
+            - Metabolic processes of {contamination_name_scientific}.
+            Start the reply with the following words: {contamination_name_scientific} .
+            Reply in italian.
+        '''
+        print(prompt)
+        reply = llm_reply(prompt)
+        json_article[key] = reply
+        json_write(json_article_filepath, json_article)
+    
+    # ;html
+    html_article = ''
+    html_article += f'''
+        <h1>{contamination_name_scientific}</h1>
+        <p>{json_article["what"]}</p>
+    '''
+    head_html = head_html_generate('contaminazioni', '/style.css')
+    html = f'''
+        <!DOCTYPE html>
+        <html lang="en">
+        {head_html}
+        <body>
+            {html_header}
+            <main class="container-md">
+                {html_article}
+            </main>
+            {html_footer}
+        </body>
+        </html>
+    '''
+    with open(html_article_filepath, 'w') as f: f.write(html)
+
+def p_contaminations_new():
+    json_article_filepath = f'database/pagine/contaminazioni.json'
+    json_article = json_read(json_article_filepath, create=True)
+    for vertex in vertices_contaminazioni:
+        if vertex['entity_type'] != 'contaminazione': continue
+        # contamination_category = vertex['contamination_category']
+        contamination_slug = vertex['contamination_slug']
+        contamination_name_scientific = vertex['contamination_name_scientific']
+        # contamination_nome_comune = vertex['contamination_name_common']
+        # init
+        if 'contaminations' not in json_article: json_article['contaminations'] = []
+        found = False
+        for contamination in json_article['contaminations']:
+            if contamination['contamination_slug'] == contamination_slug:
+                found = True
+                break
+        if not found:
+            json_article['contaminations'].append({
+                'contamination_slug': contamination_slug,
+                'contamination_name_scientific': contamination_name_scientific,
+            })
+            json_write(json_article_filepath, json_article)
+        # update
+        for json_contamination in json_article['contaminations']:
+            contamination_name_scientific = json_contamination['contamination_name_scientific']
+            key = 'contamination_desc'
+            if key not in json_contamination: json_contamination[key] = []
+            # json_contamination[key] = []
+            if json_contamination[key] == []:
+                prompt = f'''
+                    Scrivi un paragrafo di 4 frasi sulla seguente contaminazione: {contamination_name_scientific}.
+                '''
+                reply = llm_reply(prompt)
+                json_contamination[key] = reply
+                json_write(json_article_filepath, json_article)
+    # ;html
+    html_article = ''
+    for i, contamination in enumerate(json_article['contaminations']):
+        contamination_slug = contamination['contamination_slug']
+        contamination_name_scientific = contamination['contamination_name_scientific']
+        contamination_desc = contamination['contamination_desc']
+        html_article += f'''<h2>{i+1}. {contamination_name_scientific.capitalize()}</h2>\n'''
+        # html_article += f'{text_format_1N1_html(contamination_desc)}\n'
+        html_article += f'<p>{contamination_desc}</p>\n'
+        html_article += f'<p><a href="/contaminazioni/{contamination_slug}.html">{contamination_name_scientific}</a></p>\n'
+    head_html = head_html_generate('contaminazioni', '/style.css')
+    html = f'''
+        <!DOCTYPE html>
+        <html lang="en">
+        {head_html}
+        <body>
+            {html_article}
+        </body>
+        </html>
+    '''
+    html_filepath = f'public/contaminazioni.html'
+    with open(html_filepath, 'w') as f: f.write(html)
+
+
+def page_home_new():
+    json_article_filepath = f'database/pagine/index.json'
+    json_article = json_read(json_article_filepath, create=True)
+    # ;json
+    pathogens = [
+        {'eng': 'bacteria', 'ita': 'batteri',},
+        {'eng': 'virus', 'ita': 'virus',},
+        {'eng': 'molds', 'ita': 'muffe',},
+    ]
+    # don't run this code, you will regret it
+    if 0:
+        for pathogen in pathogens:
+            key = pathogen['eng']
+            if key not in json_article: json_article[key] = ''
+            # json_article[key] = ''
+            if json_article[key] == '':
+                prompt = f'''
+                    Scrivi 1 frase sull'utilizzo dell'ozono per eliminare i {pathogen['ita']}.
+                    Includi 3 esempi di {pathogen['ita']} principali dell'industria alimentare.
+                    Non scrivere liste.
+                    Rispondi con una frase solo.
+                    Rispondi col minor numero di parole possibli.
+                    Comincia la risposta con le seguenti parole: {pathogen['ita']} come .
+                '''
+                reply = llm_reply(prompt)
+                json_article[key] = reply
+                json_write(json_article_filepath, json_article)
+        prompt = f'''
+            list the most common and problematic bacteria, virus, and molds in the food industry.
+        '''
+        reply = llm_reply(prompt)
+    # ;html
+    section_hero = f'''
+        <section class="home_hero_section">
+            <div class="container-xl flex flex-col justify-center h-80vh">
+                <h1 class="text-center">Disinfezione Veloce ed Ecologica per Aziende Alimentari</h1>
+                <p>Sanifica i tuoi ambienti e prodotti da batteri, virus, muffe e altri contaminanti in modo efficace e veloce grazie all'ozono, senza lasciare residui chimici tossici per te stesso e l'ambiente.</p>
+                <div>
+                    <a>Prova Gratis Per 30 Giorni</a>
+                </div>
+            </div>
+        </section>
+    '''
+    section_contaminations = f'''
+        <section>
+            <div class="container-xl">
+                <div style="text-align: center;">
+                    <h2>Patogeni</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum quasi, neque dolor,
+                        animi repellendus officia tempora reiciendis voluptate temporibus quis nostrum tenetur
+                        aspernatur a sed rem aut ipsa eum tempore!</p>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px;">
+                    <div style="background-color: #f0f0f0;">
+                        <img style="height: 320px; object-fit: cover;"
+                            src="/immagini/contaminazioni/batteri.jpg" alt="">
+                        <div style="padding: 12px 24px;">
+                            <h3>Batteri</h3>
+                            <p>{json_article['bacteria']}</p>
+                        </div>
+                    </div>
+                    <div style="background-color: #f0f0f0;">
+                        <img style="height: 320px; object-fit: cover;"
+                            src="/immagini/contaminazioni/virus.jpg" alt="">
+                        <div style="padding: 12px 24px;">
+                            <h3>Virus</h3>
+                            <p>{json_article['virus']}</p>
+                        </div>
+                    </div>
+                    <div style="background-color: #f0f0f0;">
+                        <img style="height: 320px; object-fit: cover;"
+                            src="/immagini/contaminazioni/muffe.jpg" alt="">
+                        <div style="padding: 12px 24px;">
+                            <h3>Muffe</h3>
+                            <p>{json_article['molds']}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    '''
+    title = 'Sanificazione Ozono per Industria Alimentare | Ozonogroup'
+    head_html = head_html_generate(title, 'style.css')
+    html = f'''
+        <!DOCTYPE html>
+        <html lang="en">
+        {head_html}
+        <body>
+            {html_header}
+            <main>
+                {section_hero}
+                {section_contaminations}
+            </main>
+            <footer>
+            </footer>
+        </body>
+        </html>
+    '''
+
+    file_write(f'public/index.html', html)
+
+
 if 1:
-    a_contaminazioni()
     for vertex_contaminazione in vertices_contaminazioni:
-        a_contaminazione(vertex_contaminazione)
+        a_contamination_new(vertex_contaminazione)
+    p_contaminations_new()
 
 # homepage()
+page_home_new()

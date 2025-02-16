@@ -922,5 +922,15 @@
                 "confidence_score": 1
             }
         ]
+    },
+    {
+        "entity_type": "contaminazione",
+        "contamination_slug": "escherichia-coli",
+        "contamination_name_scientific": "escherichia coli"
+    },
+    {
+        "entity_type": "contaminazione",
+        "contamination_slug": "salmonella-enterica",
+        "contamination_name_scientific": "salmonella enterica"
     }
 ]
