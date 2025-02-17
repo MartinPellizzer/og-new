@@ -7,6 +7,8 @@ from PIL import Image, ImageFont, ImageDraw, ImageColor, ImageOps
 
 from oliark_io import json_read, json_write
 
+website_folderpath = 'public'
+
 vault = '/home/ubuntu/vault'
 
 checkpoint_filepath = f'{vault}/stable-diffusion/checkpoints/xl/juggernautXL_juggXIByRundiffusion.safetensors'
@@ -80,6 +82,84 @@ def gen_home_pathogen(eng, ita):
 gen_home_pathogen(eng='bacteria', ita='batteri')
 gen_home_pathogen(eng='virus', ita='virus')
 gen_home_pathogen(eng='molds', ita='muffe')
+
+def gen_home_benefit_chemical(ita_slug):
+    slug = ita_slug.strip().lower().replace(' ', '-')
+    category = 'contaminazioni'
+    out_filepath = f'{website_folderpath}/immagini/{slug}.jpg'
+    if os.path.exists(out_filepath): return
+    prompt = f'''
+        midshot of chemical bottle with colorless liquid,
+        toxic logo on label,
+        science style, 
+        silver color background,
+        depth of field, bokeh,
+        high resolution,
+        cinematic,
+    '''
+    print(prompt)
+    image = pipe(prompt=prompt, width=1024, height=1024, num_inference_steps=30, guidance_scale=7.0).images[0]
+    image.save(out_filepath)
+
+gen_home_benefit_chemical(ita_slug='ozono-senza-sostanze-chimiche')
+
+def gen_home_benefit_pathogen(ita_slug):
+    slug = ita_slug.strip().lower().replace(' ', '-')
+    category = 'contaminazioni'
+    out_filepath = f'{website_folderpath}/immagini/{slug}.jpg'
+    if os.path.exists(out_filepath): return
+    prompt = f'''
+        midshot of pathogen,
+        under microscope, 
+        science style, 
+        dark background,
+        depth of field, bokeh,
+        high resolution,
+        cinematic,
+    '''
+    print(prompt)
+    image = pipe(prompt=prompt, width=1024, height=1024, num_inference_steps=30, guidance_scale=7.0).images[0]
+    image.save(out_filepath)
+
+gen_home_benefit_pathogen(ita_slug='ozono-altamente-efficace')
+
+def gen_home_benefit_eco(ita_slug):
+    slug = ita_slug.strip().lower().replace(' ', '-')
+    category = 'contaminazioni'
+    out_filepath = f'{website_folderpath}/immagini/{slug}.jpg'
+    if os.path.exists(out_filepath): return
+    prompt = f'''
+        midshot of water flow,
+        science style, 
+        dark background,
+        depth of field, bokeh,
+        high resolution,
+        cinematic,
+    '''
+    print(prompt)
+    image = pipe(prompt=prompt, width=1024, height=1024, num_inference_steps=30, guidance_scale=7.0).images[0]
+    image.save(out_filepath)
+
+gen_home_benefit_eco(ita_slug='ozono-ecologico')
+
+def gen_home_benefit_certified(ita_slug):
+    slug = ita_slug.strip().lower().replace(' ', '-')
+    category = 'contaminazioni'
+    out_filepath = f'{website_folderpath}/immagini/{slug}.jpg'
+    if os.path.exists(out_filepath): return
+    prompt = f'''
+        midshot of a pile of docs,
+        science style, 
+        silver color background,
+        depth of field, bokeh,
+        high resolution,
+        cinematic,
+    '''
+    print(prompt)
+    image = pipe(prompt=prompt, width=1024, height=1024, num_inference_steps=30, guidance_scale=7.0).images[0]
+    image.save(out_filepath)
+
+gen_home_benefit_certified(ita_slug='ozono-sicuro')
 
 quit()
 
