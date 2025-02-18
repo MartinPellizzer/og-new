@@ -83,6 +83,67 @@ gen_home_pathogen(eng='bacteria', ita='batteri')
 gen_home_pathogen(eng='virus', ita='virus')
 gen_home_pathogen(eng='molds', ita='muffe')
 
+###############################################################
+# ;benefits
+###############################################################
+def gen_home_sectors_dairy(ita_slug):
+    slug = ita_slug.strip().lower().replace(' ', '-')
+    out_filepath = f'{website_folderpath}/immagini/{slug}.jpg'
+    # if os.path.exists(out_filepath): return
+    prompt = f'''
+        close-up of cheese,
+        on a stainless steel table,
+        black background,
+        science style, 
+        depth of field, bokeh,
+        high resolution,
+        cinematic,
+    '''
+    print(prompt)
+    image = pipe(prompt=prompt, width=1024, height=1024, num_inference_steps=30, guidance_scale=7.0).images[0]
+    image.save(out_filepath)
+
+def gen_home_sectors_meat(ita_slug):
+    slug = ita_slug.strip().lower().replace(' ', '-')
+    out_filepath = f'{website_folderpath}/immagini/{slug}.jpg'
+    # if os.path.exists(out_filepath): return
+    prompt = f'''
+        close-up of meat,
+        on a stainless steel table,
+        black background,
+        science style, 
+        depth of field, bokeh,
+        high resolution,
+        cinematic,
+    '''
+    print(prompt)
+    image = pipe(prompt=prompt, width=1024, height=1024, num_inference_steps=30, guidance_scale=7.0).images[0]
+    image.save(out_filepath)
+
+def gen_home_sectors_vegetable(ita_slug):
+    slug = ita_slug.strip().lower().replace(' ', '-')
+    out_filepath = f'{website_folderpath}/immagini/{slug}.jpg'
+    # if os.path.exists(out_filepath): return
+    prompt = f'''
+        close-up of cabbage,
+        on a stainless steel table,
+        black background,
+        science style, 
+        depth of field, bokeh,
+        high resolution,
+        cinematic,
+    '''
+    print(prompt)
+    image = pipe(prompt=prompt, width=1024, height=1024, num_inference_steps=30, guidance_scale=7.0).images[0]
+    image.save(out_filepath)
+
+gen_home_sectors_dairy(ita_slug='ozono-caseifici')
+gen_home_sectors_meat(ita_slug='ozono-carne')
+gen_home_sectors_vegetable(ita_slug='ozono-verdura')
+
+###############################################################
+# ;benefits
+###############################################################
 def gen_home_benefit_chemical(ita_slug):
     slug = ita_slug.strip().lower().replace(' ', '-')
     category = 'contaminazioni'
