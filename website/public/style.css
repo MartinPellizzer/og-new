@@ -54,7 +54,8 @@ img {
 }
 
 ul {
-    margin-left: 3.2rem
+    margin-left: 3.2rem;
+    margin-bottom: 1.6rem;
 }
 
 li {
@@ -210,7 +211,6 @@ li {
 table {
     border-collapse: collapse;
     border: 1px solid #303030;
-    width: 100%;
 }
 
 table th {
