@@ -1,0 +1,21 @@
+Level 0: You just added the client to the DB, but didn't contact him.
+
+-----------------------------------------
+
+1. Open the "email_templates" folder
+2. Open the correnct "industry" folder
+3. Open the "email_1_day_0"
+4. Send the "email_1" text to client
+5. Update the client level to 1 (press +)
+
+-----------------------------------------
+
+Buongiorno ,
+
+sono Elena di Ozonogroup.
+
+Vi contatto perché vorrei fissare un breve appuntamento telefonico con uno dei vostri responsabili per la gestione della stagionatura dei salumi.
+
+Recentemente abbiamo sviluppato un sistema di sanificazione ecologico in grado di eliminare muffe nere e acari dei salumi senza lasciare residui chimici, risparmiando notevolmente sui tempi di spazzolatura e aumentando la shelf-life del prodotto.
+
+Siete disponibili per un appuntamento telefonico la prossima settimana? 

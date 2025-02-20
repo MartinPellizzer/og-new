@@ -32,6 +32,7 @@ h1 {
 h2 {
     font-size: 4.8rem;
     line-height: 5.6rem;
+    margin-top: 4.8rem;
     margin-bottom: 1.6rem;
 }
 
@@ -53,8 +54,7 @@ img {
 }
 
 ul {
-    margin-left: 3.2rem;
-    margin-bottom: 1.6rem;
+    margin-left: 3.2rem
 }
 
 li {
@@ -132,7 +132,7 @@ li {
 }
 
 .home_hero_section {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/immagini/ozono.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/immagini-statiche/sanificazione-ozono-industria.png');
     background-size: cover;
     background-position: center;
 }
@@ -210,6 +210,7 @@ li {
 table {
     border-collapse: collapse;
     border: 1px solid #303030;
+    width: 100%;
 }
 
 table th {
