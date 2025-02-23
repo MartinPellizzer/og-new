@@ -46,8 +46,6 @@ p {
     width: 20%; 
     background-color: #f4f4f4; 
     padding: 20px; 
-    height: 100vh; 
-    overflow-y: scroll;
 }
 
 .left-column ul {
@@ -71,8 +69,7 @@ p {
     width: 20%; 
     background-color: #f4f4f4; 
     padding: 20px; 
-    height: 100vh; 
-    overflow-y: scroll;
+    position: sticky;
 }
 
 .right-column h3 {
@@ -99,6 +96,4 @@ p {
 .central-column {
     width: 60%; 
     padding: 20px 32px;
-    height: 100vh; 
-    overflow-y: scroll;
 }

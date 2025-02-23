@@ -1239,6 +1239,12 @@ def a_contamination_new(vertex_contamination):
                         </ul>
                     </div>
                 </div>
+                <div style="background-color: #007bff; padding: 16px 0;">
+                    <div style="text-align: center;" class="container-xl">
+                        <span style="color: #ffffff;">Get our monthly newsletter with the latest news on ozone sanitization</span>
+                        <a style="background-color: #ffffff; color: #007bff; padding: 4px 16px; border-radius: 9999px; margin-left: 8px; text-decoration: none;" href="#">Subscribe</a>
+                    </div>
+                </div>
             </div>
         </body>
         </html>
