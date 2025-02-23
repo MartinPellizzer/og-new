@@ -481,7 +481,6 @@ def a_contamination(contamination_slug):
     print(html_filepath)
     print('here')
 
-shutil.copy2('style.css', f'public/style.css')
 
 # a_contamination('listeria-monocytogenes')
 
@@ -1079,19 +1078,109 @@ def a_contamination_new(vertex_contamination):
     json_write(json_article_filepath, json_article)
 
     # ;json
-    key = 'what'
+    key = 'intro'
     if key not in json_article: json_article[key] = ''
     # json_article[key] = ''
     if json_article[key] == '':
         prompt = f'''
-            Write a short 4-sentence paragraph about {contamination_name_scientific}.
-            Include:
-            - What is {contamination_name_scientific} (give a definition).
-            - Classification of {contamination_name_scientific} (provide full taxonomy).
-            - Cellular structure of {contamination_name_scientific}.
-            - Metabolic processes of {contamination_name_scientific}.
-            Start the reply with the following words: {contamination_name_scientific} .
-            Reply in italian.
+            Scrivi un paragrafo di 4 frasi riguardo: {contamination_name_scientific}.
+            Nella frase 1, scrivi una definizione di {contamination_name_scientific}.
+            Nella frase 2, scrivi l'importanza di {contamination_name_scientific} per la salute umana e animale.
+            Nella frase 3, scrivi le caratteristiche di {contamination_name_scientific}.
+            Nella frase 4, scrivi gli habitat e distribuzione di {contamination_name_scientific}.
+            Inizia la risposta con: {contamination_name_scientific}.
+            Rispondi in 80 parole.
+            Rispondi in italiano.
+        '''
+        print(prompt)
+        reply = llm_reply(prompt)
+        json_article[key] = reply
+        json_write(json_article_filepath, json_article)
+    key = 'health'
+    if key not in json_article: json_article[key] = ''
+    # json_article[key] = ''
+    if json_article[key] == '':
+        prompt = f'''
+            Scrivi un paragrafo di 4 frasi riguardo: {contamination_name_scientific}.
+            Nella frase 1, scrivi i sintomi di {contamination_name_scientific}.
+            Nella frase 2, scrivi le diagnosi di {contamination_name_scientific}.
+            Nella frase 3, scrivi i metodi diagnostici per {contamination_name_scientific}.
+            Nella frase 4, scrivi le complicazioni di {contamination_name_scientific}.
+            Inizia la risposta con le seguenti parole: I sintomi di {contamination_name_scientific} sono.
+            Rispondi in 80 parole.
+            Rispondi in italiano.
+        '''
+        print(prompt)
+        reply = llm_reply(prompt)
+        json_article[key] = reply
+        json_write(json_article_filepath, json_article)
+    key = 'health_treat_and_prevent'
+    if key not in json_article: json_article[key] = ''
+    # json_article[key] = ''
+    if json_article[key] == '':
+        prompt = f'''
+            Scrivi un paragrafo di 4 frasi riguardo i trattamenti e la prevenzione di: {contamination_name_scientific}.
+            Nella frase 1, scrivi i trattamenti di {contamination_name_scientific}.
+            Nella frase 2, scrivi le prevenzioni di {contamination_name_scientific}.
+            Nella frase 3, scrivi le misure di controllo per {contamination_name_scientific}.
+            Nella frase 4, scrivi riguardo l'educazione e la consapevolezza di {contamination_name_scientific}.
+            Inizia la risposta con le seguenti parole: I trattamenti di {contamination_name_scientific} sono.
+            Rispondi in 80 parole.
+            Rispondi in italiano.
+        '''
+        print(prompt)
+        reply = llm_reply(prompt)
+        json_article[key] = reply
+        json_write(json_article_filepath, json_article)
+    key = 'food'
+    if key not in json_article: json_article[key] = ''
+    # json_article[key] = ''
+    if json_article[key] == '':
+        prompt = f'''
+            Scrivi un paragrafo di 4 frasi riguardo gli alimenti ad alto rischio di: {contamination_name_scientific}.
+            Nella frase 1, scrivi di {contamination_name_scientific} negli alimenti.
+            Nella frase 2, scrivi gli alimenti a rischio di {contamination_name_scientific}.
+            Nella frase 3, scrivi i metodi per prevenire {contamination_name_scientific} negli alimenti.
+            Nella frase 4, scrivi riguardo l'importanza della HACCP per {contamination_name_scientific}.
+            Inizia la risposta con le seguenti parole: Gli alimenti a rischio di {contamination_name_scientific} sono .
+            Rispondi in 80 parole.
+            Rispondi in italiano.
+        '''
+        print(prompt)
+        reply = llm_reply(prompt)
+        json_article[key] = reply
+        json_write(json_article_filepath, json_article)
+    key = 'pregnancy'
+    if key not in json_article: json_article[key] = ''
+    # json_article[key] = ''
+    if json_article[key] == '':
+        prompt = f'''
+            Scrivi un paragrafo di 4 frasi riguardo il rischio su gravidanza causato da: {contamination_name_scientific}.
+            Nella frase 1, scrivi dei rischi per la gravidanza associati a {contamination_name_scientific}.
+            Nella frase 2, scrivi le complicazioni per la gravidanza associate a {contamination_name_scientific}.
+            Nella frase 3, scrivi riguardo la prevenzione di {contamination_name_scientific} durante la gravidanza.
+            Nella frase 4, scrivi riguardo l'educazione su {contamination_name_scientific} per donne in gravidanza.
+            Inizia la risposta con le seguenti parole: {contamination_name_scientific} .
+            Rispondi in 80 parole.
+            Rispondi in italiano.
+        '''
+        print(prompt)
+        reply = llm_reply(prompt)
+        json_article[key] = reply
+        json_write(json_article_filepath, json_article)
+    key = 'environment'
+    if key not in json_article: json_article[key] = ''
+    # json_article[key] = ''
+    if json_article[key] == '':
+        prompt = f'''
+            Scrivi un paragrafo di 4 frasi riguardo {contamination_name_scientific} e ambiente.
+            Nella frase 1, scrivi habitat e distribuzione di {contamination_name_scientific} nell'ambiente.
+            Nella frase 2, scrivi rischi per l'abiente associatei a {contamination_name_scientific}.
+            Nella frase 3, scrivi riguardo la prevenzione di {contamination_name_scientific} nell'ambiente.
+            Nella frase 4, scrivi sul''importanza della gestione del rischio ambietale da {contamination_name_scientific}.
+            Inizia la risposta con le seguenti parole: {contamination_name_scientific} .
+            Rispondi in 80 parole.
+            Rispondi in italiano.
         '''
         print(prompt)
         reply = llm_reply(prompt)
@@ -1101,20 +1190,56 @@ def a_contamination_new(vertex_contamination):
     # ;html
     html_article = ''
     html_article += f'''
-        <h1>{contamination_name_scientific}</h1>
-        <p>{json_article["what"]}</p>
+        <h1>{contamination_name_scientific.title()}</h1>
+        <h2>Introduzione</h2>
+        {text_format_1N1_html(json_article["intro"])}
+        <h2>Sintomi e diagnosi di {contamination_name_scientific.capitalize()}</h2>
+        {text_format_1N1_html(json_article["health"])}
+        <h2>Trattamento e prevenzione di {contamination_name_scientific.capitalize()}</h2>
+        {text_format_1N1_html(json_article["health_treat_and_prevent"])}
+        <h2>{contamination_name_scientific.capitalize()} e alimenti</h2>
+        {text_format_1N1_html(json_article["food"])}
+        <h2>{contamination_name_scientific.capitalize()} e gravidanza</h2>
+        {text_format_1N1_html(json_article["pregnancy"])}
+        <h2>{contamination_name_scientific.capitalize()} e ambiente</h2>
+        {text_format_1N1_html(json_article["environment"])}
     '''
-    head_html = head_html_generate('contaminazioni', '/style.css')
+    head_html = head_html_generate('contaminazioni', '/style-article.css')
     html = f'''
         <!DOCTYPE html>
         <html lang="en">
         {head_html}
         <body>
-            {html_header}
-            <main class="container-md">
-                {html_article}
-            </main>
-            {html_footer}
+            <div>
+                <div style="background-color: #007bff; padding: 16px 0;">
+                    <div style="text-align: center;" class="container-xl">
+                        <span style="color: #ffffff;">Get our monthly newsletter with the latest news on ozone sanitization</span>
+                        <a style="background-color: #ffffff; color: #007bff; padding: 4px 16px; border-radius: 9999px; margin-left: 8px; text-decoration: none;" href="#">Subscribe</a>
+                    </div>
+                </div>
+                <div style="display: flex; flex: 1; width: 100%">
+                    <div class="left-column">
+                        <ul>
+                            <li><a href="#">Article 1</a></li>
+                            <li><a href="#">Article 2</a></li>
+                            <li><a href="#">Article 3</a></li>
+                        </ul>
+                    </div>
+                    <div class="central-column">
+                        <article>
+                            {html_article}
+                        </article>
+                    </div>
+                    <div class="right-column">
+                        <h3>Tavola dei Contenuti</h3>
+                        <ul>
+                            <li><a href="#">Section 1</a></li>
+                            <li><a href="#">Section 2</a></li>
+                            <li><a href="#">Section 3</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </body>
         </html>
     '''
@@ -1288,3 +1413,6 @@ if 1:
 
 # homepage()
 page_home_new()
+
+shutil.copy2('style.css', f'public/style.css')
+shutil.copy2('style-article.css', f'public/style-article.css')

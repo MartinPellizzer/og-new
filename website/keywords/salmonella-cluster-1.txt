@@ -1,0 +1,38 @@
+**Titolo principale** (<h1> tag)
+Salmonella: Fatti, Sintomi, Prevenzione e Cura
+
+**Sezione 1: Cos'è la Salmonella** (<h2> tag)
+- Sottosezione 1.1: Definizione e classificazione
+- Sottosezione 1.2: Origine e storia della Salmonella
+- Sottosezione 1.3: Tipi di Salmonella e loro caratteristiche
+- Sottosezione 1.4: Fattori di virulenza e meccanismi di trasmissione
+
+**Sezione 2: Sintomi e Consequenze** (<h2> tag)
+- Sottosezione 2.1: Sintomi comuni della Salmonella
+- Sottosezione 2.2: Consequenze gravi della Salmonella (ad esempio: anemia, insufficienza renale, ecc.)
+- Sottosezione 2.3: Sintomi specifici per gruppi di popolazione (ad esempio: bambini, anziani, donne incinte)
+- Sottosezione 2.4: Rischio di morte e gravi conseguenze
+
+**Sezione 3: Prevenzione** (<h2> tag)
+- Sottosezione 3.1: Cottura e conservazione alimenti
+- Sottosezione 3.2: Igiene alimentare e igiene personale
+- Sottosezione 3.3: Vaccinazioni e trattamenti preventivi
+- Sottosezione 3.4: Strategie di controllo e monitoraggio
+
+**Sezione 4: Cura e Trattamento** (<h2> tag)
+- Sottosezione 4.1: Terapia con antibiotici e farmaci
+- Sottosezione 4.2: Cure naturali e rimedi casalinghi
+- Sottosezione 4.3: Gestione dei sintomi e del dolore
+- Sottosezione 4.4: Recupero e riabilitazione
+
+**Sezione 5: Alimenti a Rischio e Sintomi Specifici** (<h2> tag)
+- Sottosezione 5.1: Alimenti a rischio di contaminazione (ad esempio: carne cruda, uova, frutta e verdura)
+- Sottosezione 5.2: Sintomi specifici per cibi e condizioni di preparazione (ad esempio: carne cotta, uova bollite, ecc.)
+- Sottosezione 5.3: Sintomi e conseguenze in diverse popolazioni (ad esempio: bambini, anziani, donne incinte)
+- Sottosezione 5.4: Rischio di morte e gravi conseguenze
+
+**Sezione 6: Conclusioni e Raccomandazioni** (<h2> tag)
+- Sottosezione 6.1: Riepilogo dei punti chiave
+- Sottosezione 6.2: Raccomandazioni per la prevenzione e la cura
+- Sottosezione 6.3: Importanza della consapevolezza e della formazione
+
