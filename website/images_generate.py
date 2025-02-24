@@ -89,7 +89,7 @@ gen_home_pathogen(eng='molds', ita='muffe')
 def gen_home_sectors_dairy(ita_slug):
     slug = ita_slug.strip().lower().replace(' ', '-')
     out_filepath = f'{website_folderpath}/immagini/{slug}.jpg'
-    # if os.path.exists(out_filepath): return
+    if os.path.exists(out_filepath): return
     prompt = f'''
         close-up of cheese,
         on a stainless steel table,
@@ -106,7 +106,7 @@ def gen_home_sectors_dairy(ita_slug):
 def gen_home_sectors_meat(ita_slug):
     slug = ita_slug.strip().lower().replace(' ', '-')
     out_filepath = f'{website_folderpath}/immagini/{slug}.jpg'
-    # if os.path.exists(out_filepath): return
+    if os.path.exists(out_filepath): return
     prompt = f'''
         close-up of meat,
         on a stainless steel table,
@@ -123,7 +123,7 @@ def gen_home_sectors_meat(ita_slug):
 def gen_home_sectors_vegetable(ita_slug):
     slug = ita_slug.strip().lower().replace(' ', '-')
     out_filepath = f'{website_folderpath}/immagini/{slug}.jpg'
-    # if os.path.exists(out_filepath): return
+    if os.path.exists(out_filepath): return
     prompt = f'''
         close-up of cabbage,
         on a stainless steel table,
@@ -221,6 +221,80 @@ def gen_home_benefit_certified(ita_slug):
     image.save(out_filepath)
 
 gen_home_benefit_certified(ita_slug='ozono-sicuro')
+
+################################################
+# ;treatments
+################################################
+def gen_offer_eco(ita_slug, gen_num=1):
+    slug = ita_slug.strip().lower().replace(' ', '-')
+    out_filepath = f'{website_folderpath}/immagini/{slug}.jpg'
+    # if os.path.exists(out_filepath): return
+    prompt = f'''
+        an ozone reactor,
+        science style, 
+        black background,
+        depth of field, bokeh,
+        high resolution,
+        cinematic,
+    '''
+    print(prompt)
+    if gen_num == 1:
+        image = pipe(prompt=prompt, width=1024, height=1024, num_inference_steps=30, guidance_scale=7.0).images[0]
+        image.save(out_filepath)
+    elif gen_num > 1:
+        for i in range(gen_num):
+            image = pipe(prompt=prompt, width=1024, height=1024, num_inference_steps=30, guidance_scale=7.0).images[0]
+            image.save(f'{website_folderpath}/immagini/{slug}-{i}.jpg')
+
+def gen_offer_clean(ita_slug):
+    slug = ita_slug.strip().lower().replace(' ', '-')
+    out_filepath = f'{website_folderpath}/immagini/{slug}.jpg'
+    if os.path.exists(out_filepath): return
+    prompt = f'''
+        oxygen,
+        science style, 
+        depth of field, bokeh,
+        high resolution,
+        cinematic,
+    '''
+    print(prompt)
+    image = pipe(prompt=prompt, width=1024, height=1024, num_inference_steps=30, guidance_scale=7.0).images[0]
+    image.save(out_filepath)
+
+def gen_offer_automation(ita_slug):
+    slug = ita_slug.strip().lower().replace(' ', '-')
+    out_filepath = f'{website_folderpath}/immagini/{slug}.jpg'
+    if os.path.exists(out_filepath): return
+    prompt = f'''
+        midshot of a black circuit board,
+        science style, 
+        depth of field, bokeh,
+        high resolution,
+        cinematic,
+    '''
+    print(prompt)
+    image = pipe(prompt=prompt, width=1024, height=1024, num_inference_steps=30, guidance_scale=7.0).images[0]
+    image.save(out_filepath)
+
+def gen_offer_adjustable(ita_slug):
+    slug = ita_slug.strip().lower().replace(' ', '-')
+    out_filepath = f'{website_folderpath}/immagini/{slug}.jpg'
+    if os.path.exists(out_filepath): return
+    prompt = f'''
+        midshot of knobs on black industrial equipment,
+        science style, 
+        depth of field, bokeh,
+        high resolution,
+        cinematic,
+    '''
+    print(prompt)
+    image = pipe(prompt=prompt, width=1024, height=1024, num_inference_steps=30, guidance_scale=7.0).images[0]
+    image.save(out_filepath)
+
+gen_offer_eco(ita_slug='ozono-ecosostenibile', gen_num=10)
+gen_offer_automation(ita_slug='ozono-automatizzato')
+gen_offer_adjustable(ita_slug='ozono-regolabile')
+gen_offer_clean(ita_slug='ozono-pulito')
 
 quit()
 
