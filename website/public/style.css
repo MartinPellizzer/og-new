@@ -19,7 +19,7 @@ html {
 }
 
 body {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-family: helvetica-regular, sans-serif;
 }
 
@@ -42,8 +42,8 @@ h3 {
 }
 
 p {
-    font-size: 1.8rem;
-    line-height: 2.7rem;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
     margin-bottom: 1.6rem;
     color: #303030;
 }
@@ -57,9 +57,10 @@ ul {
 }
 
 li {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: #303030;
-    line-height: 3.2rem;
+    line-height: 2.4rem;
+    margin-bottom: 0.8rem;
 }
 
 .container-xl {
@@ -130,11 +131,6 @@ li {
     gap: 4.8rem;
 }
 
-.home_hero_section {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/immagini-statiche/sanificazione-ozono-industria.png');
-    background-size: cover;
-    background-position: center;
-}
 
 .h-100vh {
     height: 100vh;
@@ -146,6 +142,12 @@ li {
 
 .h-80vh {
     height: 80vh;
+}
+
+.home_hero_section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/immagini-statiche/sanificazione-ozono-industria.png');
+    background-size: cover;
+    background-position: center;
 }
 
 .home_hero_section h1 {
@@ -174,6 +176,11 @@ li {
     padding-left: 1.6rem;
     padding-right: 1.6rem;
     text-transform: uppercase;
+}
+
+.text-16 {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
 }
 
 .pt-48 {
@@ -253,4 +260,3 @@ table td {
     }
 
 }
-
