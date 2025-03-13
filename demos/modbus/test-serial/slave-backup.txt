@@ -1,0 +1,131 @@
+#include <SoftwareSerial.h>
+
+SoftwareSerial modbus(2, 3);
+
+uint8_t buff_sender[9] = {0};
+
+uint8_t buff_receiver[8] = {0};
+uint8_t i = 0;
+uint8_t new_data = 0;
+uint32_t timer_receiver = 0;
+
+void setup()
+{
+  Serial.begin(9600);
+  modbus.begin(9600);
+  Serial.println("serial init");
+}
+
+byte num = 0;
+void loop()
+{
+  if (modbus.available() > 0)
+  {
+    uint8_t c = modbus.read();
+    buff_receiver[i] = c;
+    i++;
+    new_data = 1;
+    timer_receiver = millis();
+  }
+
+  if (new_data)
+  {
+    if (millis() - timer_receiver > 40)
+    {
+      i = 0;
+      new_data = 0;
+      
+      for(int k = 0; k < sizeof(buff_receiver); k++)
+      {
+        modbus.write(buff_receiver[k]);
+        Serial.print("0x");
+        Serial.print(buff_receiver[k], HEX);
+        Serial.print(" ");
+      }
+      Serial.println();
+
+    }
+  }
+}
+
+
+
+
+
+// buffer response format
+// buffer[0] = device id (same as query)
+// buffer[1] = comand - 1: read coil status (digital out) (same as query)
+//                    - 2: read input status (digital in)
+//                    - 3: read input registers (analog in)
+//                    - 4: read holding registers (analog out)
+//                    - ?: force single coil
+//                    - ?: preset single register
+// buffer[2] = number of following bytes with val
+// buffer[3:4 or 3] = value can either be 16bit or 1 bit
+// buffer[n] = CRC (2 bytes)
+
+
+// examples
+// response pressure val from device 2 at address 30019
+// uint8_t response_pressure_get[] = {22, 4, 2, 0, 35, x, x}
+// response pressure state from device 21 at address 10006
+// digital read --------------------------------------------------
+// uint8_t query_pressure_digital_in[] = {21, 2, 1, 1, x, x}
+
+
+// uint8_t device_id = 22;
+
+// uint16_t input_registers[2] = {0};
+
+
+  // input_registers[0] = 100;
+  // input_registers[1] = 200;
+
+
+      // modbus.write(num);
+
+      // buff_sender[0] = buff_receiver[0] + 1;
+      // buff_sender[1] = buff_receiver[1] + 1;
+      // buff_sender[2] = buff_receiver[2] + 1;
+      // buff_sender[3] = buff_receiver[3] + 1;
+      // buff_sender[4] = buff_receiver[4] + 1;
+      // buff_sender[5] = buff_receiver[5] + 1;
+      // buff_sender[6] = buff_receiver[6] + 1;
+      // buff_sender[7] = buff_receiver[7] + 1;
+      // buff_sender[8] = buff_receiver[8] + 1;
+      
+      // Serial.print("QUERY DEVICE ID: ");
+      // Serial.print(buff_receiver[0]);
+      // Serial.print(" -> ");
+      // Serial.print("MY DEVICE ID: ");
+      // Serial.print(device_id);
+      // Serial.print(", ");
+      // if (buff_receiver[0] == device_id) Serial.print("YES");
+      // else Serial.print("NO");
+      // Serial.println();
+      // Serial.print("QUERY COMMAND: ");
+      // Serial.print(buff_receiver[1]);
+      // Serial.print(" -> ");
+      // if (buff_receiver[1] == 1) Serial.print("DIGITAL OUT [1-10000]");
+      // else if (buff_receiver[1] == 2) Serial.print("DIGITAL IN [10001-20000]");
+      // else if (buff_receiver[1] == 3) Serial.print("ANALOG IN [30001-40000]");
+      // else if (buff_receiver[1] == 4) Serial.print("ANALOG OUT [40001-50000]");
+      // Serial.println();
+      // Serial.print("QUERY REGISTER INDEX: ");
+      // Serial.print(buff_receiver[2]);
+      // Serial.print(" -> ");
+      // if (buff_receiver[2] == 0) Serial.print(input_registers[0]);
+      // else if (buff_receiver[2] == 1) Serial.print(input_registers[1]);
+      // Serial.println();
+
+      // for(int k = 0; k < sizeof(buff_receiver); k++)
+      // {
+      //   modbus.write(buff_sender[i]);
+      //   Serial.print("0x");
+      //   Serial.print(buff_receiver[k], HEX);
+      //   Serial.print(" ");
+      // }
+      // Serial.println();
+      // Serial.println();
+
+

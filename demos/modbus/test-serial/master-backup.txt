@@ -1,0 +1,116 @@
+HardwareSerial modbus(1);
+
+// buffer send format (8 bytes total)
+// buffer[0] = device id
+// buffer[1] = comand - 1: read coil status (digital out)
+//                    - 2: read input status (digital in)
+//                    - 3: read holding registers (analog out)
+//                    - 4: read input registers (analog in)
+//                    - ?: force single coil
+//                    - ?: preset single register
+// buffer[2:3] = start register address (2 bytes)
+// buffer[4:5] = number of consecutive data bytes (2 bytes)
+// buffer[6:7] = CRC (2 bytes)
+
+// ===============================================================
+// examples
+// ===============================================================
+// analog read ---------------------------------------------------
+// get pressure value from device 22 at address 30019
+uint8_t query_pressure_analog_in[8] = {0x16, 0x04, 0x00, 0x12, 0x00, 0x01, 0x00, 0x00};
+// get pressure state from device 21 at address 10006
+// digital read --------------------------------------------------
+uint8_t query_pressure_digital_in[8] = {21, 2, 0, 5, 0, 1, 0x00, 0x00};
+
+uint8_t buff_sender[8] = {0};
+uint32_t timer_sender = 0;
+
+uint8_t buff_receiver[8] = {0};
+uint8_t i = 0;
+uint8_t new_data = 0;
+uint32_t timer_receiver = 0;
+
+
+uint8_t modbus_new_data = 0;
+
+void setup() 
+{
+  Serial.begin(9600);
+  modbus.begin(9600, SERIAL_8N1, 17, 4);
+
+  Serial.println();
+  Serial.println();
+  Serial.println();
+  
+    size_t length = sizeof(query_pressure_analog_in) / sizeof(query_pressure_analog_in[0]);
+    uint16_t crc = modbus_crc16(query_pressure_analog_in, length);
+    
+    // Print the CRC in hexadecimal format
+    Serial.print("CRC: 0x");
+    Serial.println(crc, HEX);  // Print CRC as hex
+
+    // Split the 16-bit value into two 8-bit values
+    uint8_t highByte = (crc >> 8) & 0xFF;  // Extract high byte
+    uint8_t lowByte = crc & 0xFF;          // Extract low byte
+      
+    // Print both 8-bit values
+    Serial.print("High byte: 0x");
+    Serial.println(highByte, HEX);
+
+    Serial.print("Low byte: 0x");
+    Serial.println(lowByte, HEX);
+
+    query_pressure_analog_in[6] = lowByte;
+    query_pressure_analog_in[7] = highByte;
+
+    for (int i = 0; i < sizeof(query_pressure_analog_in); i++) {
+      Serial.print("0x");
+      Serial.print(query_pressure_analog_in[i], HEX);
+      Serial.print(" ");
+    }
+  Serial.println();
+  Serial.println();
+
+  
+
+}
+
+byte num_send = 0;
+byte num_receive = 0;
+void loop() 
+{
+  if (millis() - timer_sender > 1000)
+  {
+    timer_sender = millis();
+    for(int k = 0; k < sizeof(query_pressure_analog_in); k++)
+    {
+      modbus.write(query_pressure_analog_in[k]);
+    }
+  }
+
+  if (modbus.available() > 0)
+  {
+    uint8_t c = modbus.read();
+    buff_receiver[i] = c;
+    i++;
+    new_data = 1;
+    timer_receiver = millis();
+  }
+
+  if (new_data)
+  {
+    if (millis() - timer_receiver > 40)
+    {
+      i = 0;
+      new_data = 0;
+      
+      for(int k = 0; k < sizeof(buff_receiver); k++)
+      {
+        Serial.print("0x");
+        Serial.print(buff_receiver[k], HEX);
+        Serial.print(" ");
+      }
+      Serial.println();
+    }
+  }
+}
