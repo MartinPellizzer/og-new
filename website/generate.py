@@ -62,8 +62,6 @@ def llm_validate(question, context, answer):
     return reply
 
 if 0:
-
-
     documents, metadatas = retrieve_docs(query)
     outputs = []
     documents = documents[:100]

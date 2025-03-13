@@ -37,14 +37,15 @@ def get_old_businesses(output_file):
 # STRINGS
 ######################################################################################
 def sanitize(text):
-	chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890,.-()\'&@ '
-	encoded_string = text.encode('ascii', 'ignore')
-	decoded_string = encoded_string.decode()
-	text = ''
-	for c in decoded_string:
-		if c in chars:
-			text += c
-	return text
+    chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890,.-()\'&@ '
+    try: encoded_string = text.encode('ascii', 'ignore')
+    except: return ''
+    decoded_string = encoded_string.decode()
+    text = ''
+    for c in decoded_string:
+        if c in chars:
+            text += c
+    return text
 
 
 ######################################################################################
