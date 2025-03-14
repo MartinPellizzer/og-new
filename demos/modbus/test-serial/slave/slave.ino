@@ -71,7 +71,7 @@ void loop()
         modbus_process_query();
         modbus_write(modbus.sender_buff, SLAVE_SENDER_BUFF_SIZE);
         Serial.print("MODBUS SEND:    ");
-        modbus_print(modbus.sender_buff, SLAVE_SENDER_BUFF_SIZE);
+        modbus_print_hex(modbus.sender_buff, SLAVE_SENDER_BUFF_SIZE);
         Serial.println();
       }
       else
@@ -86,6 +86,6 @@ void loop()
       modbus_write(error_buff, SLAVE_RECEIVER_BUFF_SIZE);
     }
     Serial.print("MODBUS RECEIVE: ");
-    modbus_print(modbus.receiver_buff, SLAVE_RECEIVER_BUFF_SIZE);
+    modbus_print_hex(modbus.receiver_buff, SLAVE_RECEIVER_BUFF_SIZE);
   }
 }

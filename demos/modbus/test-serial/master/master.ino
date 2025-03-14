@@ -16,11 +16,6 @@ typedef struct modbus_t {
 } modbus_t;
 modbus_t modbus = {};
 
-// get pressure value from device 22 at address 30019
-// device id: 22
-// command:    4 (input register)
-// address:   19
-// length:     1
 uint8_t query_pressure_analog_in[MASTER_SENDER_BUFF_SIZE] = {0x16, 0x04, 0x00, 0x12, 0x00, 0x01, 0x00, 0x00};
 
 void setup() 

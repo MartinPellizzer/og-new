@@ -34,27 +34,6 @@ void modbus_read()
   }
 }
 
-void modbus_print_hex(uint8_t *buf, int len) 
-{
-  for(int i = 0; i < len; i++)
-  {
-    Serial.print("0x");
-    Serial.print(buf[i], HEX);
-    Serial.print(" ");
-  }
-  Serial.println();
-}
-
-void modbus_print_dec(uint8_t *buf, int len) 
-{
-  for(int i = 0; i < len; i++)
-  {
-    Serial.print(buf[i]);
-    Serial.print(" ");
-  }
-  Serial.println();
-}
-
 //////////////////////////////////////////////////
 // CRC
 //////////////////////////////////////////////////
@@ -76,7 +55,8 @@ uint16_t modbus_crc16_calculate(uint8_t *buf, int len)
       {
         crc >>= 1;
         crc ^= 0xA001;
-      } else 
+      } 
+      else 
       {
         crc >>= 1;
       }
@@ -93,7 +73,9 @@ void modbus_crc16_update(uint8_t *buf, int len, uint16_t crc)
     buf[len+1] = highByte;
 }
 
-
+//////////////////////////////////////////////////
+// CHECKS
+//////////////////////////////////////////////////
 uint8_t modbus_crc16_check(uint8_t *buf, int len)
 {
   uint8_t crc_valid = 0;
@@ -123,6 +105,33 @@ uint8_t modbus_match_id()
   return id_valid;
 }
 
+//////////////////////////////////////////////////
+// DEBUG
+//////////////////////////////////////////////////
+void modbus_print_hex(uint8_t *buf, int len) 
+{
+  for(int i = 0; i < len; i++)
+  {
+    Serial.print("0x");
+    Serial.print(buf[i], HEX);
+    Serial.print(" ");
+  }
+  Serial.println();
+}
+
+void modbus_print_dec(uint8_t *buf, int len) 
+{
+  for(int i = 0; i < len; i++)
+  {
+    Serial.print(buf[i]);
+    Serial.print(" ");
+  }
+  Serial.println();
+}
+
+//////////////////////////////////////////////////
+// UTILS
+//////////////////////////////////////////////////
 void uint16_to_uint8x2(uint8_t *buf, int len, uint16_t val)
 {
   if (len == 2)
