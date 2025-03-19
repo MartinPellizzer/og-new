@@ -9,12 +9,6 @@ uint32_t timer_no_signal = 0;
 
 #define RE_DE_PIN 16
 
-// 0-10V PWM
-const int ledPin = 5;
-const int freq = 5000;
-const int ledChannel = 0;
-const int resolution = 8;
-
 void setup() 
 {
   // SERAIL DEBUG
@@ -24,22 +18,11 @@ void setup()
   Receiver.begin(9600, SERIAL_8N1, 17, 14);
   pinMode(RE_DE_PIN, OUTPUT);
   digitalWrite(RE_DE_PIN, LOW);
-
-  // 0-10V
-  ledcSetup(ledChannel, freq, resolution);
-  ledcAttachPin(ledPin, ledChannel);
-  ledcWrite(ledChannel, 0);
 }
 
 void loop() 
 {
-  // if sensor doesn't communicate for 5 seconds, output 0v
-  if (millis() - timer_no_signal > 5000)
-  {
-    timer_no_signal = millis();
-    ledcWrite(ledChannel, 0);
-  }
-
+  Serial.println("test");
   // read rs485, convert in 0-10v, output 0-10v
   if (new_data)
   {
@@ -58,13 +41,6 @@ void loop()
       }
       
       clear_buffer(buff, BUFF_LEN);
-
-      uint8_t pwm_val = map(ppb, 0, 10000, 0, 255);
-      ledcWrite(ledChannel, pwm_val);
-
-      Serial.print(ppb);
-      Serial.print(" - ");
-      Serial.println(pwm_val);
     }
   }   
 
