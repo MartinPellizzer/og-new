@@ -90,6 +90,8 @@ uint8_t i = 0;
 uint8_t sensor_new_data = 0;
 uint32_t timer = 0;
 uint32_t timer_no_signal = 0;
+uint32_t sensor_connected_millis = 0;
+int sensor_connected_seconds = 0;
 typedef struct sensor_t {
   int16_t ppb_old = -2;
   int16_t ppb_cur = -1;
@@ -135,9 +137,6 @@ unsigned char checksum(unsigned char *i, unsigned char ln) {
   return (tempq);
 }
 
-// SENSOR
-uint32_t sensor_connected_millis = 0;
-int sensor_connected_seconds = 0;
 
 void clear_buffer(uint8_t buff[], uint8_t len) 
 {
@@ -184,6 +183,7 @@ void sensor_update()
   if (Sensor1.available() > 0) 
   {
     uint8_t c = Sensor1.read();
+    Serial.println(c);
     buff[i] = c;
     i++;
     sensor_new_data = 1;
