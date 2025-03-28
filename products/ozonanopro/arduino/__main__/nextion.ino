@@ -3,6 +3,7 @@ uint8_t pressure_switch_id[] = {0x31, 0x32};
 uint8_t valve_bypass_1_id[] = {0x32};
 uint8_t valve_bypass_2_id[] = {0x31, 0x33};
 uint8_t pump_booster_id[] = {0x35};
+uint8_t pump_nano_id[] = {0x36};
 
 void nextion_update() 
 {
@@ -90,6 +91,21 @@ void nextion_update_page_home_pump_booster_off()
   for (uint8_t i = 0; i < sizeof(_buffer_value) / sizeof(uint8_t); i++) { Serial2.write(_buffer_value[i]); }
 }
 
+void nextion_update_page_home_pump_nano_on() 
+{
+  uint8_t _buffer_color[] = { 0x74, pump_nano_id[0], 0x2E, 0x70, 0x63, 0x6F, 0x3D, 0x35, 0x33, 0x38, 0x35, 0xff, 0xff, 0xff };
+  for (uint8_t i = 0; i < sizeof(_buffer_color) / sizeof(uint8_t); i++) { Serial2.write(_buffer_color[i]); }
+  uint8_t _buffer_value[] = { 0x74, pump_nano_id[0], 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4F, 0x4E, 0x22, 0xff, 0xff, 0xff };
+  for (uint8_t i = 0; i < sizeof(_buffer_value) / sizeof(uint8_t); i++) { Serial2.write(_buffer_value[i]); }
+}
+void nextion_update_page_home_pump_nano_off() 
+{
+  uint8_t _buffer_color[] = { 0x74, pump_nano_id[0], 0x2E, 0x70, 0x63, 0x6F, 0x3D, 0x35, 0x35, 0x35, 0x38, 0x38, 0xff, 0xff, 0xff };
+  for (uint8_t i = 0; i < sizeof(_buffer_color) / sizeof(uint8_t); i++) { Serial2.write(_buffer_color[i]); }
+  uint8_t _buffer_value[] = { 0x74, pump_nano_id[0], 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4F, 0x46, 0x46, 0x22, 0xff, 0xff, 0xff };
+  for (uint8_t i = 0; i < sizeof(_buffer_value) / sizeof(uint8_t); i++) { Serial2.write(_buffer_value[i]); }
+}
+
 void nextion_update_page_home(uint8_t force_refresh) 
 {
   if (force_refresh) 
@@ -168,7 +184,14 @@ void nextion_update_page_home(uint8_t force_refresh)
   if (force_refresh || pump_booster.nextion_refresh == 1) 
   {
     pump_booster.nextion_refresh = 0;
-    if (pump_booster.state_cur == 0) { nextion_update_page_home_pump_booster_on(); }
+    if (pump_booster.state_cur == 1) { nextion_update_page_home_pump_booster_on(); }
     else { nextion_update_page_home_pump_booster_off(); }
+  }
+
+  if (force_refresh || pump_nano.nextion_refresh == 1) 
+  {
+    pump_nano.nextion_refresh = 0;
+    if (pump_nano.state_cur == 0) { nextion_update_page_home_pump_nano_on(); }
+    else { nextion_update_page_home_pump_nano_off(); }
   }
 }

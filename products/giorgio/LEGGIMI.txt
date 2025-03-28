@@ -1,0 +1,27 @@
+SCHEDA FRECCE X GIORGIO (BOZZA)
+
+In allegato trovi 3 file:
+	- schema elettrico
+	- layout scheda
+	- render 3d
+	
+Questi file mostrano una bozza della scheda per il controllo delle frecce 
+di grandezza 25x45mm.
+
+--------------------------------
+
+Per proseguire con lo sviluppo della scheda finale, abbiamo bisogno 
+di alcune informazioni.
+
+INFO 1: Nello schema che ci hai mandato i relé sono segnati come 
+"normalmente chiusi" (NC). Va bene lo stesso se mettiamo relé 
+"normalmente aperti" (NO) visto che il fornitore che usiamo 
+per fare le schede non ha i relé NC da montare sulle schede?
+		
+INFO 2: La bozza della scheda attualmente ha 2 relé a 12V. 
+Nello schema che ci hai mandato è segnato che il campo di 
+esercizio è 8-20V. Questo vuol dire che alla scheda può
+arrivare qualsiasi voltaggio possibile tra gli 8-20V 
+e che deve essere la scheda a convertirlo nel voltaggio giusto 
+per il relé? Se si, sarà necessario aggiungere altri componenti 
+è la scheda diventerà più grande di 25x45mm.

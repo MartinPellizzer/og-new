@@ -73,6 +73,13 @@ typedef struct pump_booster_t {
 } pump_booster_t;
 pump_booster_t pump_booster = {};
 
+typedef struct pump_nano_t {  
+  int8_t state_old = -1;
+  int8_t state_cur = 0;
+  int8_t nextion_refresh = 0;
+} pump_nano_t;
+pump_nano_t pump_nano = {};
+
 #define PUMP_VALVE_GPIO 5
 #define PUMP_BOOSTER_GPIO 18
 #define PUMP_NANO_GPIO 19
@@ -84,19 +91,32 @@ pump_booster_t pump_booster = {};
 uint16_t cycle_state = 0;
 uint32_t cycle_millis = 0;
 
+void pump_booster_state_update(uint8_t val)
+{
+  pump_booster.state_cur = val;
+  if (pump_booster.state_old != pump_booster.state_cur) 
+  {
+    
+    pump_booster.state_old = pump_booster.state_cur;
+    if (pump_booster.state_cur == 1) 
+    {
+      digitalWrite(PUMP_BOOSTER_GPIO, HIGH);
+    }
+    else
+    {
+      digitalWrite(PUMP_BOOSTER_GPIO, LOW);
+    }
+    pump_booster.nextion_refresh = 1;
+  }
+}
+
 void cycle_starting()
 {
   if (cycle_state == 0)
   {
     digitalWrite(PUMP_VALVE_GPIO, HIGH);
+    pump_booster_state_update(1);
     
-    digitalWrite(PUMP_BOOSTER_GPIO, HIGH);
-    pump_booster.state_cur = 0;
-    if (pump_booster.state_old != pump_booster.state_cur) 
-    {
-      pump_booster.state_old = pump_booster.state_cur;
-      pump_booster.nextion_refresh = 1;
-    }
 
     if (millis() - cycle_millis > 1000)
     {
@@ -107,6 +127,13 @@ void cycle_starting()
   else if (cycle_state == 1)
   {
     digitalWrite(PUMP_NANO_GPIO, HIGH);
+    pump_nano.state_cur = 0;
+    if (pump_nano.state_old != pump_nano.state_cur) 
+    {
+      pump_nano.state_old = pump_nano.state_cur;
+      pump_nano.nextion_refresh = 1;
+    }
+
     if (millis() - cycle_millis > 19000)
     {
       cycle_millis = millis();
@@ -117,14 +144,14 @@ void cycle_starting()
   {
     digitalWrite(PUMP_VALVE_GPIO, LOW);
     
-    digitalWrite(PUMP_BOOSTER_GPIO, LOW);
-    pump_booster.state_cur = 1;
-    if (pump_booster.state_old != pump_booster.state_cur) 
-    {
-      pump_booster.state_old = pump_booster.state_cur;
-      pump_booster.nextion_refresh = 1;
-    }
+    pump_booster_state_update(0);
     digitalWrite(PUMP_NANO_GPIO, LOW);
+    pump_nano.state_cur = 1;
+    if (pump_nano.state_old != pump_nano.state_cur) 
+    {
+      pump_nano.state_old = pump_nano.state_cur;
+      pump_nano.nextion_refresh = 1;
+    }
   }
 
 }
