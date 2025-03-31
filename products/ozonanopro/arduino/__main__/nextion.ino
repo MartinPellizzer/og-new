@@ -1,9 +1,11 @@
-uint8_t flow_switch_id = 0x31;
+uint8_t flow_switch_id[] = {0x31};
 uint8_t pressure_switch_id[] = {0x31, 0x32};
 uint8_t valve_bypass_1_id[] = {0x32};
 uint8_t valve_bypass_2_id[] = {0x31, 0x33};
 uint8_t pump_booster_id[] = {0x35};
 uint8_t pump_nano_id[] = {0x36};
+uint8_t oxygen_concentrator_id[] = {0x37};
+uint8_t ozone_generator_id[] = {0x38};
 
 void nextion_update() 
 {
@@ -16,34 +18,40 @@ void nextion_update()
   if (nextion.page_cur == 1)  nextion_update_page_home(force_refresh);
 }
 
-void nextion_update_page_home_flow_switch_on() 
+void nextion_update_page_home_flow_switch() 
 {
-  uint8_t _buffer_color[] = { 0x74, flow_switch_id, 0x2E, 0x70, 0x63, 0x6F, 0x3D, 0x35, 0x33, 0x38, 0x35, 0xff, 0xff, 0xff };
-  for (uint8_t i = 0; i < sizeof(_buffer_color) / sizeof(uint8_t); i++) { Serial2.write(_buffer_color[i]); }
-  uint8_t _buffer_value[] = { 0x74, flow_switch_id, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4F, 0x4E, 0x22, 0xff, 0xff, 0xff };
-  for (uint8_t i = 0; i < sizeof(_buffer_value) / sizeof(uint8_t); i++) { Serial2.write(_buffer_value[i]); }
-}
-void nextion_update_page_home_flow_switch_off() 
-{
-  uint8_t _buffer_color[] = { 0x74, flow_switch_id, 0x2E, 0x70, 0x63, 0x6F, 0x3D, 0x35, 0x35, 0x35, 0x38, 0x38, 0xff, 0xff, 0xff };
-  for (uint8_t i = 0; i < sizeof(_buffer_color) / sizeof(uint8_t); i++) { Serial2.write(_buffer_color[i]); }
-  uint8_t _buffer_value[] = { 0x74, flow_switch_id, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4F, 0x46, 0x46, 0x22, 0xff, 0xff, 0xff };
-  for (uint8_t i = 0; i < sizeof(_buffer_value) / sizeof(uint8_t); i++) { Serial2.write(_buffer_value[i]); }
+  if (pressure_switch.state_cur == 1) 
+  { 
+    uint8_t _buffer_color[] = { 0x74, flow_switch_id[0], 0x2E, 0x70, 0x63, 0x6F, 0x3D, 0x35, 0x33, 0x38, 0x35, 0xff, 0xff, 0xff };
+    for (uint8_t i = 0; i < sizeof(_buffer_color) / sizeof(uint8_t); i++) { Serial2.write(_buffer_color[i]); }
+    uint8_t _buffer_value[] = { 0x74, flow_switch_id[0], 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4F, 0x4E, 0x22, 0xff, 0xff, 0xff };
+    for (uint8_t i = 0; i < sizeof(_buffer_value) / sizeof(uint8_t); i++) { Serial2.write(_buffer_value[i]); }
+  }
+  else 
+  {
+    uint8_t _buffer_color[] = { 0x74, flow_switch_id[0], 0x2E, 0x70, 0x63, 0x6F, 0x3D, 0x35, 0x35, 0x35, 0x38, 0x38, 0xff, 0xff, 0xff };
+    for (uint8_t i = 0; i < sizeof(_buffer_color) / sizeof(uint8_t); i++) { Serial2.write(_buffer_color[i]); }
+    uint8_t _buffer_value[] = { 0x74, flow_switch_id[0], 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4F, 0x46, 0x46, 0x22, 0xff, 0xff, 0xff };
+    for (uint8_t i = 0; i < sizeof(_buffer_value) / sizeof(uint8_t); i++) { Serial2.write(_buffer_value[i]); }
+  }
 }
 
-void nextion_update_page_home_pressure_switch_on() 
+void nextion_update_page_home_pressure_switch() 
 {
-  uint8_t _buffer_color[] = { 0x74, pressure_switch_id[0], pressure_switch_id[1], 0x2E, 0x70, 0x63, 0x6F, 0x3D, 0x35, 0x33, 0x38, 0x35, 0xff, 0xff, 0xff };
-  for (uint8_t i = 0; i < sizeof(_buffer_color) / sizeof(uint8_t); i++) { Serial2.write(_buffer_color[i]); }
-  uint8_t _buffer_value[] = { 0x74, pressure_switch_id[0], pressure_switch_id[1], 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4F, 0x4E, 0x22, 0xff, 0xff, 0xff };
-  for (uint8_t i = 0; i < sizeof(_buffer_value) / sizeof(uint8_t); i++) { Serial2.write(_buffer_value[i]); }
-}
-void nextion_update_page_home_pressure_switch_off() 
-{
-  uint8_t _buffer_color[] = { 0x74, pressure_switch_id[0], 0x2E, 0x70, 0x63, 0x6F, 0x3D, 0x35, 0x35, 0x35, 0x38, 0x38, 0xff, 0xff, 0xff };
-  for (uint8_t i = 0; i < sizeof(_buffer_color) / sizeof(uint8_t); i++) { Serial2.write(_buffer_color[i]); }
-  uint8_t _buffer_value[] = { 0x74, pressure_switch_id[0], 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4F, 0x46, 0x46, 0x22, 0xff, 0xff, 0xff };
-  for (uint8_t i = 0; i < sizeof(_buffer_value) / sizeof(uint8_t); i++) { Serial2.write(_buffer_value[i]); }
+  if (pressure_switch.state_cur == 1) 
+  { 
+    uint8_t _buffer_color[] = { 0x74, pressure_switch_id[0], pressure_switch_id[1], 0x2E, 0x70, 0x63, 0x6F, 0x3D, 0x35, 0x33, 0x38, 0x35, 0xff, 0xff, 0xff };
+    for (uint8_t i = 0; i < sizeof(_buffer_color) / sizeof(uint8_t); i++) { Serial2.write(_buffer_color[i]); }
+    uint8_t _buffer_value[] = { 0x74, pressure_switch_id[0], pressure_switch_id[1], 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4F, 0x4E, 0x22, 0xff, 0xff, 0xff };
+    for (uint8_t i = 0; i < sizeof(_buffer_value) / sizeof(uint8_t); i++) { Serial2.write(_buffer_value[i]); }
+  }
+  else 
+  {
+    uint8_t _buffer_color[] = { 0x74, pressure_switch_id[0], pressure_switch_id[1], 0x2E, 0x70, 0x63, 0x6F, 0x3D, 0x35, 0x35, 0x35, 0x38, 0x38, 0xff, 0xff, 0xff };
+    for (uint8_t i = 0; i < sizeof(_buffer_color) / sizeof(uint8_t); i++) { Serial2.write(_buffer_color[i]); }
+    uint8_t _buffer_value[] = { 0x74, pressure_switch_id[0], pressure_switch_id[1], 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4F, 0x46, 0x46, 0x22, 0xff, 0xff, 0xff };
+    for (uint8_t i = 0; i < sizeof(_buffer_value) / sizeof(uint8_t); i++) { Serial2.write(_buffer_value[i]); }
+  }
 }
 
 void nextion_update_page_home_valve_bypass_1_on() 
@@ -106,6 +114,36 @@ void nextion_update_page_home_pump_nano_off()
   for (uint8_t i = 0; i < sizeof(_buffer_value) / sizeof(uint8_t); i++) { Serial2.write(_buffer_value[i]); }
 }
 
+void nextion_update_page_home_oxygen_concentrator_on() 
+{
+  uint8_t _buffer_color[] = { 0x74, oxygen_concentrator_id[0], 0x2E, 0x70, 0x63, 0x6F, 0x3D, 0x35, 0x33, 0x38, 0x35, 0xff, 0xff, 0xff };
+  for (uint8_t i = 0; i < sizeof(_buffer_color) / sizeof(uint8_t); i++) { Serial2.write(_buffer_color[i]); }
+  uint8_t _buffer_value[] = { 0x74, oxygen_concentrator_id[0], 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4F, 0x4E, 0x22, 0xff, 0xff, 0xff };
+  for (uint8_t i = 0; i < sizeof(_buffer_value) / sizeof(uint8_t); i++) { Serial2.write(_buffer_value[i]); }
+}
+void nextion_update_page_home_oxygen_concentrator_off() 
+{
+  uint8_t _buffer_color[] = { 0x74, oxygen_concentrator_id[0], 0x2E, 0x70, 0x63, 0x6F, 0x3D, 0x35, 0x35, 0x35, 0x38, 0x38, 0xff, 0xff, 0xff };
+  for (uint8_t i = 0; i < sizeof(_buffer_color) / sizeof(uint8_t); i++) { Serial2.write(_buffer_color[i]); }
+  uint8_t _buffer_value[] = { 0x74, oxygen_concentrator_id[0], 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4F, 0x46, 0x46, 0x22, 0xff, 0xff, 0xff };
+  for (uint8_t i = 0; i < sizeof(_buffer_value) / sizeof(uint8_t); i++) { Serial2.write(_buffer_value[i]); }
+}
+
+void nextion_update_page_home_ozone_generator_on() 
+{
+  uint8_t _buffer_color[] = { 0x74, ozone_generator_id[0], 0x2E, 0x70, 0x63, 0x6F, 0x3D, 0x35, 0x33, 0x38, 0x35, 0xff, 0xff, 0xff };
+  for (uint8_t i = 0; i < sizeof(_buffer_color) / sizeof(uint8_t); i++) { Serial2.write(_buffer_color[i]); }
+  uint8_t _buffer_value[] = { 0x74, ozone_generator_id[0], 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4F, 0x4E, 0x22, 0xff, 0xff, 0xff };
+  for (uint8_t i = 0; i < sizeof(_buffer_value) / sizeof(uint8_t); i++) { Serial2.write(_buffer_value[i]); }
+}
+void nextion_update_page_home_ozone_generator_off() 
+{
+  uint8_t _buffer_color[] = { 0x74, ozone_generator_id[0], 0x2E, 0x70, 0x63, 0x6F, 0x3D, 0x35, 0x35, 0x35, 0x38, 0x38, 0xff, 0xff, 0xff };
+  for (uint8_t i = 0; i < sizeof(_buffer_color) / sizeof(uint8_t); i++) { Serial2.write(_buffer_color[i]); }
+  uint8_t _buffer_value[] = { 0x74, ozone_generator_id[0], 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4F, 0x46, 0x46, 0x22, 0xff, 0xff, 0xff };
+  for (uint8_t i = 0; i < sizeof(_buffer_value) / sizeof(uint8_t); i++) { Serial2.write(_buffer_value[i]); }
+}
+
 void nextion_update_page_home(uint8_t force_refresh) 
 {
   if (force_refresh) 
@@ -156,15 +194,13 @@ void nextion_update_page_home(uint8_t force_refresh)
   if (force_refresh || flow_switch.nextion_refresh == 1) 
   {
     flow_switch.nextion_refresh = 0;
-    if (flow_switch.state_cur == 0) { nextion_update_page_home_flow_switch_on(); }
-    else { nextion_update_page_home_flow_switch_off(); }
+    nextion_update_page_home_flow_switch();
   }
 
   if (force_refresh || pressure_switch.nextion_refresh == 1) 
   {
     pressure_switch.nextion_refresh = 0;
-    if (pressure_switch.state_cur == 0) { nextion_update_page_home_pressure_switch_on(); }
-    else { nextion_update_page_home_pressure_switch_off(); }
+    nextion_update_page_home_pressure_switch();
   }
 
   if (force_refresh || valve_bypass_1.nextion_refresh == 1) 
@@ -193,5 +229,19 @@ void nextion_update_page_home(uint8_t force_refresh)
     pump_nano.nextion_refresh = 0;
     if (pump_nano.state_cur == 0) { nextion_update_page_home_pump_nano_on(); }
     else { nextion_update_page_home_pump_nano_off(); }
+  }
+
+  if (force_refresh || oxygen_concentrator.nextion_refresh == 1) 
+  {
+    oxygen_concentrator.nextion_refresh = 0;
+    if (oxygen_concentrator.state_cur == 1) { nextion_update_page_home_oxygen_concentrator_on(); }
+    else { nextion_update_page_home_oxygen_concentrator_off(); }
+  }
+  
+  if (force_refresh || ozone_generator.nextion_refresh == 1) 
+  {
+    ozone_generator.nextion_refresh = 0;
+    if (ozone_generator.state_cur == 1) { nextion_update_page_home_ozone_generator_on(); }
+    else { nextion_update_page_home_ozone_generator_off(); }
   }
 }
