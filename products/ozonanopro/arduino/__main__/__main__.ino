@@ -179,36 +179,6 @@ void pressure_switch_state_update()
   }
 }
 
-/*
-void pressure_switch_state_update()
-{
-  pressure_switch.state_cur = !digitalRead(PRESSURE_SWITCH_GPIO);
-  if (pressure_switch.state_old != pressure_switch.state_cur) 
-  {
-    pressure_switch.state_old = pressure_switch.state_cur;
-    pressure_switch.nextion_refresh = 1;
-    if (pressure_switch.state_cur == 1)
-    {
-      valve_input_state_update(0);
-      valve_bypass_1_state_update(0);
-      valve_bypass_2_state_update(1);
-      oxygen_concentrator_state_update(0);
-      ozone_generator_state_update(0);
-      solenoid_state_update(0);
-      cycle.state_cur = 0;
-    }
-    else
-    {
-      valve_input_state_update(1);
-      valve_bypass_1_state_update(1);
-      valve_bypass_2_state_update(0);
-      cycle.state_cur = 100;
-    }
-    cycle_millis = millis();
-  }
-}
-*/
-
 void flow_switch_state_update()
 {
   flow_switch.state_cur = !digitalRead(FLOW_SWITCH_GPIO);
@@ -293,7 +263,8 @@ void cycle_update()
       oxygen_concentrator_state_update(0);
       ozone_generator_state_update(0);
       solenoid_state_update(0);
-      cycle.state_cur = 0;
+      cycle.state_cur = 200;
+      // cycle.state_cur = 300;
     }
     else if (pressure_switch.state_cur == 0)
     {
@@ -361,6 +332,24 @@ void cycle_update()
     oxygen_concentrator_state_update(1);
     ozone_generator_state_update(1);
     solenoid_state_update(1);
+  }
+  else if (cycle.state_cur == 200)
+  {
+    pump_booster_state_update(1);
+    if (millis() - cycle_millis > 1000)
+    {
+      cycle_millis = millis();
+      cycle.state_cur = 201;
+    }
+  }
+  else if (cycle.state_cur == 201)
+  {
+    pump_nano_state_update(1);
+    if (millis() - cycle_millis > 19000)
+    {
+      cycle_millis = millis();
+      cycle.state_cur = 202;
+    }
   }
   else
   {
