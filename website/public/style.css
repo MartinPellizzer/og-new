@@ -145,6 +145,7 @@ li {
 
 .home_hero_section {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/immagini-statiche/sanificazione-ozono-industria.png');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/immagini-statiche/sanificazione-ozono.png');
     background-size: cover;
     background-position: center;
 }
@@ -174,6 +175,16 @@ li {
     padding-bottom: 1.6rem;
     padding-left: 1.6rem;
     padding-right: 1.6rem;
+    text-transform: uppercase;
+}
+
+.home_hero_section a {
+    display: inline-block;
+    color: #1d4ed8;
+    background-color: #ffffff;
+    padding: 1.6rem 2.4rem;
+    border-radius: 9999px;
+    text-decoration: none;
     text-transform: uppercase;
 }
 
