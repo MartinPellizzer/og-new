@@ -1,0 +1,18 @@
+dental
+https://link.springer.com/article/10.1007/s00784-015-1667-1
+Effect of gaseous ozone on Enterococcus faecalis biofilm–an in vitro study
+paid
+
+dental
+https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1365-2591.2008.01460.x
+Effectiveness of ozone against endodontopathogenic microorganisms in a root canal biofilm model
+paid
+
+CATEGORY: 		dairy
+PDPUBLISHING_PATH: 	13 January 2022
+WEB_LINK: 		https://www.mdpi.com/2076-2607/10/1/162
+TITLE: 			The Use of Ozone as an Eco-Friendly Strategy against Microbial Biofilm in Dairy Manufacturing Plants: A Review
+PDF_PATH: 		microorganisms-10-00162
+ACCESS: 		free
+
+
