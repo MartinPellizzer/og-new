@@ -1,3 +1,20 @@
+notes general: 
+- ozone more stable pH < 7, over 7 decomposes
+- ozone more stable and soluble at lower temperature, more reactive at higher
+  temp
+- ozone has more bactericidal effect at RH 90-95%, no effect < 50% 
+- ozone decreses the more organic matter there is
+- aqueous ozone seems more effective than gaseous on food microorganisms
+- longer exposure times and higher concentrations needed for gas than water
+- gas longer half-life and better diffusion
+
+notes legislation:
+- check pdf
+
+notes limitations:
+- check pdf
+
+
 abs ---
 
 problem ---
@@ -12,6 +29,19 @@ what:
 	pseudomonas fluorescens
 	pseudomonas fragi
 	settatia liquefaciens
+	staphylococcus aureus
+	campylobacter jejuni
+	proteobacteria
+	firmicutes
+	actinobacteria
+	methylobaterium spp
+	sterptococus spp
+	entercoccus spp
+	lactococcus spp
+	acinetobacter spp
+	cronobacter spp
+	klebsiella spp
+	bacillus cereus
 
 where:
 	processing equipment
@@ -22,4 +52,66 @@ where:
 	membranes
 	walls
 	plate heat exchangers
+	filtration membrane of milk/fluids
+	cooling chamber
+	floor of pasteurization room
+	floor of cooling chamber
+	plastic crates
+	platform of cooling chamber
+	surfaces of worker's gloves
+	brine
+	wooden shelves ripening process
+	gerles
 	
+materials:
+	stainless steel
+	plastic
+
+products:
+	Gorgonzola cheese
+
+results table:
+	check pdf
+
+pseudomonas:
+	
+=======================================================
+listeria biofilms:
+=======================================================
+needs high ozone levels and long exposure times
+
+korany et al. [101]
+	material: polystyrene
+	vessel: water
+	1.0 ppm for 1 min: 0.9 log reduction
+	2.0 ppm for 1 min: 3.4 log reduction
+	4.0 ppm for 1 min: 4.14 log reduction
+	lowr reduction with multi-strain biofilms and with organic matter
+
+robbins et al. [102]
+	complete elimination of strain cells after 4 ppm of ozone
+
+nicolas et al. [103]
+	gas, 45 ppm, 1h, stainless steel, redux 3.41 cfu/cm2, (L.
+monocytogenes)
+	same but biofilm more resistant
+
+harada et al. [104]
+	gas, 45 ppm, 5min, polypropylene dry, L., < 1.7 log
+	gas, 45 ppm, 5min, stainless steel dry, L., redux 3.4 log
+
+recent experiment [26]
+	gas, 50 ppm, 6h, decrease biofilm mass 59%
+	only slight redux of live cells in biofilm
+
+de candida et al. [27]
+	cold gas, low concentration, glass, polypropylene, stain-less steel,
+expanded polystyrene, continuous flow 1.07 mg m-3, after 24/48h cold
+incubation, inactivation of 11 strains, 
+	best res, inoculum levels 9 cfu coupon-1, 48h, 3.21 mg m-3, stainless
+steel and expanded polystyrene
+
+baumann et al [105]
+	0.25 ppm, 0.5 ppm, 1.0 ppm, + ultrasound in 250 ml of potassium
+phospathe buffer, 30/60s, combined treatment more effective than individual
+treatments, redux 7.31 cfu/ml after 60s at 0.5 ppm.
