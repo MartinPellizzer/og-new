@@ -15,4 +15,11 @@ TITLE: 			The Use of Ozone as an Eco-Friendly Strategy against Microbial Biofilm
 PDF_PATH: 		microorganisms-10-00162
 ACCESS: 		free
 
+CATEGORY: 		-
+PDPUBLISHING_PATH: 	12 October 2018
+WEB_LINK: 		https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2018.02296/full
+TITLE: 			Efficacy of Ozonated Water, Chlorine, Chlorine Dioxide, Quaternary Ammonium Compounds and Peroxyacetic Acid Against Listeria monocytogenes Biofilm on Polystyrene Surfaces
+PDF_PATH: 		fmicb-09-02296
+ACCESS: 		free
+
 
