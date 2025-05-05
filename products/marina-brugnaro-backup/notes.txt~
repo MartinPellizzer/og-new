@@ -1,0 +1,61 @@
+==================================================
+DEFINIZIONE PROGETTO x MARINA BRUGNARO
+==================================================
+
+OBBIETTIVO: Eliminare contaminazioni microbiche negli abbattitori (parte
+interna)
+
+PRODOTTO DA SVILUPPARE: Centralina di controllo
+
+SVILUPPATORE: Martin Pellizzer
+
+==================================================
+SPECIFICHE GENERALI PRODOTTO
+==================================================
+
+HARDWARE:
+	- Display TFT Nextion 7.0" (Intelligent Series) con cover
+	- Scheda di controllo (da progettare)
+	- Sensori di ozono (2x)
+	- Generatore ozono
+	- Case 28x25x10cm max in inox
+	- Cavi per alimentazione e trasmissione dati
+
+SOFTWARE:
+	- Display (HMI)
+	- Scheda controllo 
+	- Sensori
+
+==================================================
+FUNZIONI GENERALI PRODOTTO
+==================================================
+
+DISPLAY:
+	- Visualizzazione stato funzionamento componenti (diagramma)
+	- Visualizzazione valori sensori (tempo reale)
+	- Visualizzazione valore medio sensori (TR)
+	- Visualizzazione valore medio sensori ultime 24 ore
+	- Impostazione on/off
+	- Impostazione calendario (cicli lavoro)
+	- Impostazione orario (x batteria scarica)
+
+SCHEDA CONTROLLO:
+	- Lettura sensori 
+	- Accensione/spegnimento generatore ozono
+	- Gestione calendario
+	- Gestione cicli lavoro
+	- Salvataggio lettura media sensori in SD 
+	- Salvataggio lettura media sensori ultime 24 ore in EEPROM
+	- Gestione comandi display
+
+SENSORI:
+	- Lettura ozono
+	- Invio letture alla scheda controllo con RS485 (lunga distanza)
+
+==================================================
+STIME
+==================================================
+
+BUDGET: 200 euro
+TEMPO: 30gg
+
