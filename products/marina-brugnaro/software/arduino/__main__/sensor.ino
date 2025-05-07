@@ -1,4 +1,4 @@
- unsigned char checksum(unsigned char *i, unsigned char ln) 
+ unsigned char sensor_checksum(unsigned char *i, unsigned char ln) 
  {
   unsigned char j, tempq = 0;
   i += 1;
@@ -28,30 +28,30 @@ void sensor_input()
     }
   }
 
-  if (sensor_new_data) 
+  if (sensor.new_data) 
   {
-    if (millis() - timer > 40) 
+    if (millis() - sensor.timer > 40) 
     {
-      timer_no_signal = millis();
-      i = 0;
-      sensor_new_data = 0;
+      sensor.timer = millis();
+      sensor.buff_index = 0;
+      sensor.new_data = 0;
       sensor.ppb_curr = 0;
-      if (checksum(buff, 9) == buff[8]) 
+      if (sensor_checksum(sensor.buff, 9) == sensor.buff[8]) 
       {
-        sensor.ppb_curr = buff[4] * 256 + buff[5];
+        sensor.ppb_curr = sensor.buff[4] * 256 + sensor.buff[5];
         sensor.connected_millis = millis();
         sensor.connected_seconds = 0;
         sensor.connected_curr = 1;
       }
-      clear_buffer(buff, BUFF_LEN);
+      clear_buffer(sensor.buff, BUFF_LEN);
     }
   }
   if (Sensor1.available() > 0) 
   {
     uint8_t c = Sensor1.read();
-    buff[i] = c;
-    i++;
-    sensor_new_data = 1;
-    timer = millis();
+    sensor.buff[sensor.buff_index] = c;
+    sensor.buff_index++;
+    sensor.new_data = 1;
+    sensor.timer = millis();
   }
 }

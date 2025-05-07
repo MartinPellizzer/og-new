@@ -126,18 +126,18 @@ sd_card_t sd_card = {};
 #define SENSOR1_RE_DE_PIN 16
 HardwareSerial Sensor1(1);
 #define BUFF_LEN 9
-uint8_t buff[BUFF_LEN] = { 0 };
-uint8_t i = 0;
-uint8_t sensor_new_data = 0;
-uint32_t timer = 0;
-uint32_t timer_no_signal = 0;
-typedef struct sensor_t {
+typedef struct sensor_t 
+{
+  uint8_t buff[BUFF_LEN] = { 0 };
   int16_t ppb_prev;
   int16_t ppb_curr;
   int8_t connected_prev;
   int8_t connected_curr;
   uint32_t connected_millis = 0;
   uint16_t connected_seconds = 0;
+  uint8_t new_data = 0;
+  uint8_t buff_index = 0;
+  uint32_t timer = 0;
 } sensor_t;
 sensor_t sensor = {};
 
@@ -261,15 +261,10 @@ void loop()
   sensor_input();
 
   // update
-
   sd_manager_2();
-
-  /* ;rtc */
   rtc_manager();
 
   cycle_update();
-
-
   yesterday_update();
 
   nextion_manage();
