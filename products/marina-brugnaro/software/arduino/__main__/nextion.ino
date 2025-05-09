@@ -584,17 +584,38 @@ void nextion_update_page_home(uint8_t force_refresh)
       Serial2.write(_buffer[i]);
     }
   }
+
   // sensor
-  if (force_refresh) 
+  if (force_refresh || sensor.ppb_prev != sensor.ppb_curr) 
   {
-    uint8_t _buffer[] = { 0x74, 0x32, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x2E, 0x30, 0x30, 0x30, 0x22, 0xff, 0xff, 0xff };
-    _buffer[8] = (sensor.ppb_curr % 10000 / 1000) + 0x30;
-    _buffer[10] = (sensor.ppb_curr % 1000 / 100) + 0x30;
-    _buffer[11] = (sensor.ppb_curr % 100 / 10) + 0x30;
-    _buffer[12] = (sensor.ppb_curr % 10 / 1) + 0x30;
-    for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+    sensor.ppb_prev = sensor.ppb_curr;
+    if (sensor.ppb_curr == -1) 
     {
-      Serial2.write(_buffer[i]);
+      uint8_t _buffer[] = { 0x74, 0x32, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x2E, 0x30, 0x30, 0x30, 0x22, 0xff, 0xff, 0xff };
+      _buffer[8] = (sensor.ppb_curr % 10000 / 1000) + 0x30;
+      _buffer[10] = (sensor.ppb_curr % 1000 / 100) + 0x30;
+      _buffer[11] = (sensor.ppb_curr % 100 / 10) + 0x30;
+      _buffer[12] = (sensor.ppb_curr % 10 / 1) + 0x30;
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+    else
+    {
+      uint8_t _buffer[] = { 0x74, 0x32, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x2E, 0x30, 0x30, 0x30, 0x22, 0xff, 0xff, 0xff };
+      _buffer[8] = (sensor.ppb_curr % 10000 / 1000) + 0x30;
+      _buffer[10] = (sensor.ppb_curr % 1000 / 100) + 0x30;
+      _buffer[11] = (sensor.ppb_curr % 100 / 10) + 0x30;
+      _buffer[12] = (sensor.ppb_curr % 10 / 1) + 0x30;
+      _buffer[8] = 6 + 0x30;
+      _buffer[10] = 6 + 0x30;
+      _buffer[11] = 6 + 0x30;
+      _buffer[12] = 6 + 0x30;
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
+        Serial2.write(_buffer[i]);
+      }
     }
   }
 
@@ -638,192 +659,9 @@ void nextion_update_page_home(uint8_t force_refresh)
   }
 
   // calendar
-  if (force_refresh || nextion_calendar_state_old != nextion_calendar_state_cur) {
+  if (force_refresh || nextion_calendar_state_old != nextion_calendar_state_cur) 
+  {
     nextion_calendar_state_old = nextion_calendar_state_cur;
-    if (nextion_calendar_state_cur == 1) {
-      {
-        uint8_t _buffer[] = { 0x70, 0x35, 0x33, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x36, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x35, 0x34, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x36, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x35, 0x35, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x35, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x35, 0x36, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x36, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x35, 0x37, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x36, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x35, 0x38, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x36, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x35, 0x39, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x36, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x36, 0x30, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x36, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x36, 0x31, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x36, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x36, 0x32, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x35, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x36, 0x33, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x35, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x36, 0x34, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x35, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x36, 0x35, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x35, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x36, 0x36, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x35, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x36, 0x37, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x35, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-    }
-    if (nextion_calendar_state_cur == 0) {
-      {
-        uint8_t _buffer[] = { 0x70, 0x35, 0x33, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x32, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x35, 0x34, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x32, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x35, 0x35, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x31, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x35, 0x36, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x32, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x35, 0x37, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x32, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x35, 0x38, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x32, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x35, 0x39, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x32, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x36, 0x30, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x32, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x36, 0x31, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x32, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x36, 0x32, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x31, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x36, 0x33, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x31, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x36, 0x34, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x31, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x36, 0x35, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x31, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x36, 0x36, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x31, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x36, 0x37, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x31, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-    }
   }
   // sensor
   if (force_refresh || sensor.connected_prev != sensor.connected_curr) 
@@ -831,273 +669,6 @@ void nextion_update_page_home(uint8_t force_refresh)
     sensor.connected_prev = sensor.connected_curr;
     if (sensor.connected_curr == 0) 
     {
-      {
-        uint8_t _buffer[] = { 0x70, 0x30, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x33, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x31, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x33, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x32, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x34, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x33, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x34, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x34, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x34, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      // rect
-      {
-        uint8_t _buffer[] = { 0x70, 0x35, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x33, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x36, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x34, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x37, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x34, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x38, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x34, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x39, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x33, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x31, 0x30, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x33, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x31, 0x31, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x33, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x31, 0x32, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x33, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x31, 0x33, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x33, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x31, 0x34, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x33, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x31, 0x35, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x33, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x31, 0x36, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x34, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x31, 0x37, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x34, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x31, 0x38, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x34, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x31, 0x39, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x34, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x32, 0x30, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x34, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x32, 0x31, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x34, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-    } else {
-      {
-        uint8_t _buffer[] = { 0x70, 0x30, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x31, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x31, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x31, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x32, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x32, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x33, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x32, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x34, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x32, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      // rect
-      {
-        uint8_t _buffer[] = { 0x70, 0x35, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x31, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x36, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x32, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x37, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x32, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x38, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x32, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x39, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x31, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x31, 0x30, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x31, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x31, 0x31, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x31, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x31, 0x32, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x31, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x31, 0x33, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x31, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x31, 0x34, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x31, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x31, 0x35, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x31, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x31, 0x36, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x32, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x31, 0x37, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x32, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x31, 0x38, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x32, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x31, 0x39, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x32, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x32, 0x30, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x32, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      {
-        uint8_t _buffer[] = { 0x70, 0x32, 0x31, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x32, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) {
-          Serial2.write(_buffer[i]);
-        }
-      }
     }
   }
   if (force_refresh || sensor.ppb_prev != sensor.ppb_curr) 
