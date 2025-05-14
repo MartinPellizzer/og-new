@@ -8,6 +8,11 @@
     src: url('/assets/fonts/helvetica/Helvetica-Bold.ttf');
 }
 
+@font-face {
+    font-family: lora-regular;
+    src: url('/assets/fonts/lora/static/Lora-Regular.ttf');
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -20,7 +25,7 @@ html {
 
 body {
     font-size: 1.6rem;
-    font-family: helvetica-regular, sans-serif;
+    font-family: lora-regular, sans-serif;
 }
 
 h1 {
