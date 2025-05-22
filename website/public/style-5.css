@@ -1,0 +1,118 @@
+@font-face {
+    font-family: helvetica-regular;
+    src: url('/assets/fonts/helvetica/Helvetica.ttf');
+}
+
+@font-face {
+    font-family: helvetica-bold;
+    src: url('/assets/fonts/helvetica/Helvetica-Bold.ttf');
+}
+
+@font-face {
+    font-family: "inter-regular";
+    src: url('/assets/fonts/Inter/static/Inter_18pt-Regular.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    /* font-family: helvetica-regular, sans-serif; */
+    font-family: inter-regular, sans-serif;
+}
+
+.container-xl {
+    max-width: 1600px;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+h1 {
+    color: #111111;
+    font-size: 32px;
+    line-height: 36px;
+}
+
+h2 {
+    color: #111111;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+h3 {
+    color: #111111;
+    font-size: 20px;
+    line-height: 27px;
+}
+
+h4 {
+    color: #111111;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+p {
+    color: #333333;
+    color: #3E546A;
+    line-height: 20px;
+}
+
+img {
+    width: 100%;
+}
+
+/* header a {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    color: #111111;
+    text-decoration-line: none;
+    border-top: 1px solid #cdcdcd;
+    border-bottom-color: #0470BE;
+    border-bottom-width: 3px;
+    padding: 8px 16px;
+} */
+
+header {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    /* background-color: #0470BE; */
+}
+
+header a {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-weight: normal;
+    font-size: 14px;
+    color: #f8f8f8;
+    color: #111111;
+    text-decoration-line: none;
+    letter-spacing: 1px;
+    letter-spacing: 0px;
+}
+
+
+.home-hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/immagini-statiche/sanificazione-ozono-industria.png');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/immagini-statiche/sanificazione-ozono.png');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/immagini/home/ozono.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.home-hero-section a {
+    color: white;
+    text-decoration-line: none;
+}
