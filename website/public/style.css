@@ -181,9 +181,15 @@ li {
 .home_hero_section a {
     display: inline-block;
     color: #1d4ed8;
+    color: #ffffff;
+    color: #101010;
+    background-color: #000000;
     background-color: #ffffff;
     padding: 1.6rem 2.4rem;
     border-radius: 9999px;
+    border-radius: 0;
+    border: 1px solid #000000;
+    border: 1px solid #ffffff;
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -269,4 +275,11 @@ table td {
         grid-template-columns: 1fr;
     }
 
+}
+
+/* top bar */
+
+.top-bar {
+    background-color: #040e1e;
+    background-color: #0F141B;
 }
