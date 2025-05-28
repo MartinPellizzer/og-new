@@ -10,6 +10,9 @@ LiquidCrystal_I2C lcd(0x27,20,4);
 int32_t cycle_millis = 0;
 int32_t cycle_state = -1;
 
+int32_t cycle_seconds = 0;
+int32_t second_millis = 0;
+int32_t seconds = 0;
 
 int32_t lcd_millis = 0;
 int32_t lcd_seconds = 0;
@@ -25,29 +28,30 @@ void setup()
   digitalWrite(COMPRESSOR_GPIO, LOW);
   pinMode(OZONE_GENERATOR_GPIO, OUTPUT);
   digitalWrite(OZONE_GENERATOR_GPIO, LOW);
-  pinMode(LIGHT_GPIO, OUTPUT);
+  pinMode(LIGHT_GPIO, OUTPUT); 
+
   digitalWrite(LIGHT_GPIO, LOW);
 
   lcd.init();
   lcd.backlight();
 
-  lcd.setCursor(3,0);
-  lcd.print("Hello, world!");
-  lcd.setCursor(2,1);
-  lcd.print("Ywrobot Arduino!");
-  lcd.setCursor(0,2);
-  lcd.print("Arduino LCM IIC 2004");
-  lcd.setCursor(2,3);
-  lcd.print("Power By Ec-yuan!");
+  lcd.setCursor(0, 0);
+  lcd.print("                ");
+  lcd.setCursor(0, 0);
+  lcd.print("PREMERE PULSANTE");
+  lcd.setCursor(0, 1);
+  lcd.print("                ");
+  lcd.setCursor(0, 1);
+  lcd.print("PER SANIFICARE");
 }
 
-int8_t button_state_old = 0;
+int8_t button_state_old = -1;
 int8_t button_state_tmp = 0;
 int8_t button_state_cur = 0;
 int32_t button_millis = 0;
 uint8_t button_state_updated = 0;
 
-int8_t switch_state_old = 0;
+int8_t switch_state_old = -1;
 int8_t switch_state_tmp = 0;
 int8_t switch_state_cur = 0;
 int32_t switch_millis = 0;
@@ -56,9 +60,21 @@ uint8_t switch_state_updated = 0;
 int8_t light_state_cur = 0;
 int32_t light_millis = 0;
 
+int32_t cycle_humidity_seconds_timer = 60;
+int32_t cycle_ozone_on_seconds_timer = 15;
+int32_t cycle_ozone_off_seconds_timer = 15;
+int32_t cycle_wait_seconds_timer = 3600;
+
 void loop()
 {
   Serial.println(cycle_state);
+  
+  if (millis() - second_millis > 1000)
+  {
+    second_millis = millis();
+    seconds += 1;
+  }
+
 
   // if (millis() - light_millis > 3000)
   // {
@@ -84,6 +100,7 @@ void loop()
   
   // switch read
   switch_state_tmp = digitalRead(SWITCH_GPIO);
+  // switch_state_tmp = 1;
   // Serial.print("SWITCH: ");
   // Serial.println(switch_state_tmp);
   if (switch_state_old != switch_state_tmp)
@@ -110,6 +127,13 @@ void loop()
           cycle_state = 0;
           cycle_millis = millis();
           digitalWrite(LIGHT_GPIO, HIGH);
+          
+          lcd.setCursor(0, 0);
+          lcd.print("                ");
+          lcd.setCursor(0, 0);
+          lcd.print("CICLO: AVVIO");
+          lcd.setCursor(0, 1);
+          lcd.print("                ");
         }
         else
         {
@@ -118,6 +142,15 @@ void loop()
           digitalWrite(COMPRESSOR_GPIO, LOW);
           digitalWrite(OZONE_GENERATOR_GPIO, LOW);
           digitalWrite(LIGHT_GPIO, LOW);
+          
+          lcd.setCursor(0, 0);
+          lcd.print("                ");
+          lcd.setCursor(0, 0);
+          lcd.print("PREMERE PULSANTE");
+          lcd.setCursor(0, 1);
+          lcd.print("                ");
+          lcd.setCursor(0, 1);
+          lcd.print("PER SANIFICARE");
         }
       }
     }
@@ -128,6 +161,15 @@ void loop()
       digitalWrite(COMPRESSOR_GPIO, LOW);
       digitalWrite(OZONE_GENERATOR_GPIO, LOW);
       digitalWrite(LIGHT_GPIO, LOW);
+      
+      lcd.setCursor(0, 0);
+      lcd.print("                ");
+      lcd.setCursor(0, 0);
+      lcd.print("PREMERE PULSANTE");
+      lcd.setCursor(0, 1);
+      lcd.print("                ");
+      lcd.setCursor(0, 1);
+      lcd.print("PER SANIFICARE");
     }
   }
 
@@ -135,7 +177,8 @@ void loop()
   {
     if (millis() - cycle_millis > 1000)
     {
-      cycle_millis = millis();
+      second_millis = millis();
+      seconds = 0;
       cycle_state = 1;
       digitalWrite(COMPRESSOR_GPIO, HIGH);
     }
@@ -143,9 +186,10 @@ void loop()
 
   if (cycle_state == 1)
   {
-    if (millis() - cycle_millis > 6000)
+    if (seconds > cycle_humidity_seconds_timer)
     {
-      cycle_millis = millis();
+      second_millis = millis();
+      seconds = 0;
       cycle_state = 2;
       digitalWrite(COMPRESSOR_GPIO, LOW);
       digitalWrite(OZONE_GENERATOR_GPIO, HIGH);
@@ -154,9 +198,10 @@ void loop()
   
   if (cycle_state == 2)
   {
-    if (millis() - cycle_millis > 15000)
+    if (seconds > cycle_ozone_on_seconds_timer)
     {
-      cycle_millis = millis();
+      second_millis = millis();
+      seconds = 0;
       cycle_state = 3;
       digitalWrite(OZONE_GENERATOR_GPIO, LOW);
     }
@@ -164,9 +209,10 @@ void loop()
   
   if (cycle_state == 3)
   {
-    if (millis() - cycle_millis > 15000)
+    if (seconds > cycle_ozone_off_seconds_timer)
     {
-      cycle_millis = millis();
+      second_millis = millis();
+      seconds = 0;
       cycle_state = 4;
       digitalWrite(OZONE_GENERATOR_GPIO, HIGH);
     }
@@ -174,9 +220,10 @@ void loop()
   
   if (cycle_state == 4)
   {
-    if (millis() - cycle_millis > 15000)
+    if (seconds > cycle_ozone_on_seconds_timer)
     {
-      cycle_millis = millis();
+      second_millis = millis();
+      seconds = 0;
       cycle_state = 5;
       digitalWrite(OZONE_GENERATOR_GPIO, LOW);
     }
@@ -184,9 +231,10 @@ void loop()
   
   if (cycle_state == 5)
   {
-    if (millis() - cycle_millis > 15000)
+    if (seconds > cycle_ozone_off_seconds_timer)
     {
-      cycle_millis = millis();
+      second_millis = millis();
+      seconds = 0;
       cycle_state = 6;
       digitalWrite(OZONE_GENERATOR_GPIO, HIGH);
     }
@@ -194,9 +242,10 @@ void loop()
   
   if (cycle_state == 6)
   {
-    if (millis() - cycle_millis > 15000)
+    if (seconds > cycle_ozone_on_seconds_timer)
     {
-      cycle_millis = millis();
+      second_millis = millis();
+      seconds = 0;
       cycle_state = 7;
       digitalWrite(OZONE_GENERATOR_GPIO, LOW);
     }
@@ -204,17 +253,34 @@ void loop()
   
   if (cycle_state == 7)
   {
-    if (millis() - cycle_millis > 6000)
+    if (seconds > cycle_ozone_off_seconds_timer)
     {
-      cycle_millis = millis();
+      second_millis = millis();
+      seconds = 0;
+      cycle_state = 8;
+    }
+  }
+  
+  if (cycle_state == 8)
+  {
+    if (seconds > cycle_wait_seconds_timer)
+    {
+      second_millis = millis();
+      seconds = 0;
       cycle_state = -1;
       digitalWrite(COMPRESSOR_GPIO, LOW);
       digitalWrite(OZONE_GENERATOR_GPIO, LOW);
       digitalWrite(LIGHT_GPIO, LOW);
+      lcd.setCursor(0, 0);
+      lcd.print("                ");
+      lcd.setCursor(0, 0);
+      lcd.print("PREMERE PULSANTE");
+      lcd.setCursor(0, 1);
+      lcd.print("                ");
+      lcd.setCursor(0, 1);
+      lcd.print("PER SANIFICARE");
     }
   }
-
-
 
   // draw lcd
   if (cycle_state == 1)
@@ -222,9 +288,142 @@ void loop()
     if (millis() - lcd_millis > 1000)
     {
       lcd_millis = millis();
-      lcd.setCursor(0,0);
-      lcd.print(lcd_seconds);
-      lcd_seconds += 1;
+      lcd.setCursor(0, 0);
+      lcd.print("                ");
+      lcd.setCursor(0, 0);
+      lcd.print("CICLO: UMIDITA");
+      lcd.setCursor(0, 1);
+      lcd.print("                ");
+      lcd.setCursor(0, 1);
+      lcd.print("TEMPO: ");
+      int seconds_countdown = cycle_humidity_seconds_timer - seconds;
+      lcd.print(seconds_countdown);
+    }
+  }
+
+  if (cycle_state == 2)
+  {
+    if (millis() - lcd_millis > 1000)
+    {
+      lcd_millis = millis();
+      lcd.setCursor(0, 0);
+      lcd.print("                ");
+      lcd.setCursor(0, 0);
+      lcd.print("CICLO: OZONO ON");
+      lcd.setCursor(0, 1);
+      lcd.print("                ");
+      lcd.setCursor(0, 1);
+      lcd.print("TEMPO: ");
+      int seconds_countdown = cycle_ozone_on_seconds_timer - seconds;
+      lcd.print(seconds_countdown);
+    }
+  }
+
+  if (cycle_state == 3)
+  {
+    if (millis() - lcd_millis > 1000)
+    {
+      lcd_millis = millis();
+      lcd.setCursor(0, 0);
+      lcd.print("                ");
+      lcd.setCursor(0, 0);
+      lcd.print("CICLO: OZONO OFF");
+      lcd.setCursor(0, 1);
+      lcd.print("                ");
+      lcd.setCursor(0, 1);
+      lcd.print("TEMPO: ");
+      int seconds_countdown = cycle_ozone_off_seconds_timer - seconds;
+      lcd.print(seconds_countdown);
+    }
+  }
+
+  if (cycle_state == 4)
+  {
+    if (millis() - lcd_millis > 1000)
+    {
+      lcd_millis = millis();
+      lcd.setCursor(0, 0);
+      lcd.print("                ");
+      lcd.setCursor(0, 0);
+      lcd.print("CICLO: OZONO ON");
+      lcd.setCursor(0, 1);
+      lcd.print("                ");
+      lcd.setCursor(0, 1);
+      lcd.print("TEMPO: ");
+      int seconds_countdown = cycle_ozone_on_seconds_timer - seconds;
+      lcd.print(seconds_countdown);
+    }
+  }
+
+  if (cycle_state == 5)
+  {
+    if (millis() - lcd_millis > 1000)
+    {
+      lcd_millis = millis();
+      lcd.setCursor(0, 0);
+      lcd.print("                ");
+      lcd.setCursor(0, 0);
+      lcd.print("CICLO: OZONO OFF");
+      lcd.setCursor(0, 1);
+      lcd.print("                ");
+      lcd.setCursor(0, 1);
+      lcd.print("TEMPO: ");
+      int seconds_countdown = cycle_ozone_off_seconds_timer - seconds;
+      lcd.print(seconds_countdown);
+    }
+  }
+
+  if (cycle_state == 6)
+  {
+    if (millis() - lcd_millis > 1000)
+    {
+      lcd_millis = millis();
+      lcd.setCursor(0, 0);
+      lcd.print("                ");
+      lcd.setCursor(0, 0);
+      lcd.print("CICLO: OZONO ON");
+      lcd.setCursor(0, 1);
+      lcd.print("                ");
+      lcd.setCursor(0, 1);
+      lcd.print("TEMPO: ");
+      int seconds_countdown = cycle_ozone_on_seconds_timer - seconds;
+      lcd.print(seconds_countdown);
+    }
+  }
+
+  if (cycle_state == 7)
+  {
+    if (millis() - lcd_millis > 1000)
+    {
+      lcd_millis = millis();
+      lcd.setCursor(0, 0);
+      lcd.print("                ");
+      lcd.setCursor(0, 0);
+      lcd.print("CICLO: OZONO OFF");
+      lcd.setCursor(0, 1);
+      lcd.print("                ");
+      lcd.setCursor(0, 1);
+      lcd.print("TEMPO: ");
+      int seconds_countdown = cycle_ozone_off_seconds_timer - seconds;
+      lcd.print(seconds_countdown);
+    }
+  }
+  
+  if (cycle_state == 8)
+  {
+    if (millis() - lcd_millis > 1000)
+    {
+      lcd_millis = millis();
+      lcd.setCursor(0, 0);
+      lcd.print("                ");
+      lcd.setCursor(0, 0);
+      lcd.print("CICLO: ASPETTA");
+      lcd.setCursor(0, 1);
+      lcd.print("                ");
+      lcd.setCursor(0, 1);
+      lcd.print("TEMPO: ");
+      int seconds_countdown = cycle_wait_seconds_timer - seconds;
+      lcd.print(seconds_countdown);
     }
   }
 
