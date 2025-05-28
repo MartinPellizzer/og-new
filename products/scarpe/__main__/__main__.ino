@@ -309,7 +309,7 @@ void loop()
       lcd.setCursor(0, 0);
       lcd.print("                ");
       lcd.setCursor(0, 0);
-      lcd.print("CICLO: OZONO ON");
+      lcd.print("CICLO: OZONO ON1");
       lcd.setCursor(0, 1);
       lcd.print("                ");
       lcd.setCursor(0, 1);
@@ -345,7 +345,7 @@ void loop()
       lcd.setCursor(0, 0);
       lcd.print("                ");
       lcd.setCursor(0, 0);
-      lcd.print("CICLO: OZONO ON");
+      lcd.print("CICLO: OZONO ON2");
       lcd.setCursor(0, 1);
       lcd.print("                ");
       lcd.setCursor(0, 1);
@@ -381,7 +381,7 @@ void loop()
       lcd.setCursor(0, 0);
       lcd.print("                ");
       lcd.setCursor(0, 0);
-      lcd.print("CICLO: OZONO ON");
+      lcd.print("CICLO: OZONO ON3");
       lcd.setCursor(0, 1);
       lcd.print("                ");
       lcd.setCursor(0, 1);
