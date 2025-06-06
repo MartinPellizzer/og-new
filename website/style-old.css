@@ -8,11 +8,6 @@
     src: url('/assets/fonts/helvetica/Helvetica-Bold.ttf');
 }
 
-@font-face {
-    font-family: lora-regular;
-    src: url('/assets/fonts/lora/static/Lora-Regular.ttf');
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -24,8 +19,8 @@ html {
 }
 
 body {
-    font-size: 1.6rem;
-    font-family: lora-regular, sans-serif;
+    font-size: 1.8rem;
+    font-family: helvetica-regular, sans-serif;
 }
 
 h1 {
@@ -47,8 +42,8 @@ h3 {
 }
 
 p {
-    font-size: 1.6rem;
-    line-height: 2.4rem;
+    font-size: 1.8rem;
+    line-height: 2.7rem;
     margin-bottom: 1.6rem;
     color: #303030;
 }
@@ -62,10 +57,9 @@ ul {
 }
 
 li {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     color: #303030;
-    line-height: 2.4rem;
-    margin-bottom: 0.8rem;
+    line-height: 3.2rem;
 }
 
 .container-xl {
@@ -136,6 +130,12 @@ li {
     gap: 4.8rem;
 }
 
+.home_hero_section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/immagini-statiche/sanificazione-ozono.png');
+    background-size: cover;
+    background-position: center;
+}
+
 .h-100vh {
     height: 100vh;
 }
@@ -146,13 +146,6 @@ li {
 
 .h-80vh {
     height: 80vh;
-}
-
-.home_hero_section {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/immagini-statiche/sanificazione-ozono-industria.png');
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/immagini-statiche/sanificazione-ozono.png');
-    background-size: cover;
-    background-position: center;
 }
 
 .home_hero_section h1 {
@@ -183,21 +176,6 @@ li {
     text-transform: uppercase;
 }
 
-.home_hero_section a {
-    display: inline-block;
-    color: #1d4ed8;
-    background-color: #ffffff;
-    padding: 1.6rem 2.4rem;
-    border-radius: 9999px;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
-.text-16 {
-    font-size: 1.6rem;
-    line-height: 2.4rem;
-}
-
 .pt-48 {
     padding-top: 4.8rem;
 }
@@ -226,21 +204,6 @@ li {
 .grid-3 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-}
-
-.grid-4 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
-.grid-5 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-}
-
-.grid-6 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 table {
@@ -290,3 +253,4 @@ table td {
     }
 
 }
+
