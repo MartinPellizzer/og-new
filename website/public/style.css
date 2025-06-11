@@ -836,6 +836,10 @@ p {}
 /* ******************************* */
 /* article */
 /* ******************************* */
+.article h2 {
+    margin-top: 6.4rem;
+}
+
 .article-container {
     display: flex;
     gap: 96px;
