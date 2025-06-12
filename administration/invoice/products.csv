@@ -1,4 +1,5 @@
 PRODUCT CODE,PRODUCT FAMILY,PRODUCT DESC,PRICE
+AURORA,Generator,Sistema di sanificazione ozono per l’industria alimentare,11000
 MINIO31220EU1,Generator,Mini 1,788
 MINIO32220EU1,Generator,Mini 2,915
 MINIO34220EU1,Generator,Mini 4,954
@@ -44,5 +45,5 @@ Sensore mobile,Accessory,Sensore di rilevazione per collegamento via cavo,310
 CL125.2,Accessory,Misuratore CL DIGITALE PORT. O/19.99PPM,672
 SP651,Accessory,Sonda CL2/PT1000 X CL125.2,579
 SP514,Accessory,Sonda TEMP. INOX PT100 Cavo 5 metri ,212
-0001,Service,Trasporto,120
-0002,Service,Installazione,480
+1,Service,Trasporto,120
+2,Service,Installazione,480

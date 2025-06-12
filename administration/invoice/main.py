@@ -10,7 +10,7 @@ import locale
 from pdf2image import convert_from_path
 from PIL import ImageTk, Image
 
-
+font = f'arial'
 
 
 locale.setlocale( locale.LC_ALL, '' )
@@ -39,12 +39,12 @@ class PDF(FPDF):
     def header(self):
         invoice_number = invoice_client_entries[0].get()
         self.image('logo.jpg', 10, 8, 50)
-        self.set_font('helvetica', 'B', text_size)
+        self.set_font(font, 'B', text_size)
 
         self.cell(130, 10)
         self.cell(0, 10, f'Offerta #{invoice_number}', ln=1)
 
-        self.set_font('helvetica', '', text_size)
+        self.set_font(font, '', text_size)
         self.cell(130, 10)
         day = datetime.now().day
         if day < 10: day = '0' + str(day)
@@ -66,7 +66,7 @@ class PDF(FPDF):
     
     def footer(self):
         self.set_y(-15)
-        self.set_font('helvetica', 'I', 10)
+        self.set_font(font, 'I', 10)
         self.cell(0, 10, f'Page {self.page_no()}/{{nb}}', align='C')
 
 
@@ -92,7 +92,7 @@ def generate_pdf():
     cell_width = 90
     cell_width_divider = 10
 
-    pdf.set_font('helvetica', '', text_size)
+    pdf.set_font(font, '', text_size)
     pdf.set_fill_color(255, 255, 255)
 
     pdf.cell(cell_width, cell_height, 'Fornitore:', border='B', fill=True)
@@ -122,14 +122,14 @@ def generate_pdf():
     pdf.ln(10)
 
     cell_height = 8
-    pdf.set_font('helvetica', 'B', text_size)
+    pdf.set_font(font, 'B', text_size)
     pdf.set_fill_color(229, 229, 229)
 
     cell_width_numdoc = 25
     cell_width_data = 25
 
     cell_height = 8
-    pdf.set_font('helvetica', 'B', text_size)
+    pdf.set_font(font, 'B', text_size)
     pdf.set_fill_color(229, 229, 229)
 
     cell_width_codice = 35
@@ -150,7 +150,7 @@ def generate_pdf():
     pdf.cell(cell_width_totale, cell_height, 'Subtotale', border=1, fill=True)
     pdf.ln()
 
-    pdf.set_font('helvetica', '', text_size)
+    pdf.set_font(font, '', text_size)
     pdf.set_fill_color(255, 255, 255)
 
     price_total_num = 0
@@ -190,18 +190,18 @@ def generate_pdf():
     margin_left = 135
 
     pdf.cell(margin_left, cell_height, '')
-    pdf.set_font('helvetica', 'B', text_size)
+    pdf.set_font(font, 'B', text_size)
     pdf.cell(25, cell_height, 'Totale Prezzo: ', align='R')
-    pdf.set_font('helvetica', '', text_size)
+    pdf.set_font(font, '', text_size)
     pdf.cell(25, cell_height, subtotal_str)
     pdf.ln(cell_height)
 
     discount_total_str = locale.currency(discount_total_num, grouping=True)
 
     pdf.cell(margin_left, cell_height, '')
-    pdf.set_font('helvetica', 'B', text_size)
+    pdf.set_font(font, 'B', text_size)
     pdf.cell(25, cell_height, 'Totale Sconto: ', align='R')
-    pdf.set_font('helvetica', '', text_size)
+    pdf.set_font(font, '', text_size)
     pdf.cell(25, cell_height, discount_total_str)
     pdf.ln(cell_height)
 
@@ -210,35 +210,35 @@ def generate_pdf():
     iva_str = locale.currency(iva_num, grouping=True) + f' ({iva_perc}%)'
 
     pdf.cell(margin_left, cell_height, '')
-    pdf.set_font('helvetica', 'B', text_size)
+    pdf.set_font(font, 'B', text_size)
     pdf.cell(25, cell_height, 'IVA: ', align='R')
-    pdf.set_font('helvetica', '', text_size)
+    pdf.set_font(font, '', text_size)
     pdf.cell(25, cell_height, iva_str)
     pdf.ln(cell_height)
 
     totale_str = locale.currency(iva_num + price_total_num - discount_total_num, grouping=True)
 
     pdf.cell(margin_left, cell_height, '')
-    pdf.set_font('helvetica', 'B', text_size)
+    pdf.set_font(font, 'B', text_size)
     pdf.cell(25, cell_height, 'Totale: ', align='R')
-    pdf.set_font('helvetica', '', text_size)
+    pdf.set_font(font, '', text_size)
     pdf.cell(25, cell_height, totale_str)
     pdf.ln(cell_height)
     pdf.ln(10)
 
     cell_height = 6
 
-    pdf.set_font('helvetica', 'B', text_size)
+    pdf.set_font(font, 'B', text_size)
     pdf.cell(130, cell_height, 'Condizioni di fornitura')
     pdf.cell(100, cell_height, 'Timbro e firma per accettazione', ln=1)
-    pdf.set_font('helvetica', '', text_size)
+    pdf.set_font(font, '', text_size)
     pdf.cell(100, cell_height, 'Merce: da pronta a 40gg lavorativi', ln=1)
     pdf.cell(100, cell_height, 'Garanzia: 12 mesi', ln=1)
     pdf.cell(100, cell_height, "Pagamento: 50% all'ordine, 50% alla consegna", ln=1)
 
     pdf.ln(20)
 
-    pdf.set_font('helvetica', '', 10)
+    pdf.set_font(font, '', 10)
     cell_height = 5
     privacy = 'Privacy L. 675 del 31.12.96 : Si informa che i dati a voi relativi e riportati nel presente documento vengono trattati in base alle esigenze contrattuali ed i conseguenti adempimenti degli obblighi fiscali e contabili. Con tale avviso ci riteniamo esonerati da eventuali responsabilità.'
 
