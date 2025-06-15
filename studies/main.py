@@ -12,42 +12,10 @@ from oliark_io import json_read, json_write
 from oliark_llm import llm_reply
 
 import torch
-from diffusers import DiffusionPipeline
-from diffusers import StableDiffusionXLPipeline
-from diffusers import DPMSolverMultistepScheduler
-
-'''
-import torch
 from diffusers import DiffusionPipeline, StableDiffusionXLPipeline
 from diffusers import DPMSolverMultistepScheduler
-'''
 
-checkpoint_filepath = f'/home/ubuntu/vault/stable-diffusion/checkpoints/xl/juggernautXL_ragnarokBy.safetensors'
-pipe = None
-quality = 30
-if pipe == None:
-    pipe = StableDiffusionXLPipeline.from_single_file(
-        checkpoint_filepath, 
-        torch_dtype=torch.float16, 
-        use_safetensors=True, 
-        variant="fp16"
-    ).to('cuda')
-    pipe.scheduler = DPMSolverMultistepScheduler.from_config(pipe.scheduler.config)
-    if 0:
-        prompt = f'''
-            {entity_name_singular} made with dry herbs,
-            on a wooden table,
-            rustic, vintage, boho,
-            warm tones,
-        '''
-        negative_prompt = ''
-        image = pipe(prompt=prompt, negative_prompt=negative_prompt, width=1024, height=1024, num_inference_steps=30, guidance_scale=7.0).images[0]
-        image = img_resize(image, w=768, h=768)
-        image.save(img_filepath, format='JPEG', subsampling=0, quality=quality)
-
-'''
 checkpoint_filepath = '/home/ubuntu/vault/stable-diffusion/checkpoints/juggernautXL_juggXIByRundiffusion.safetensors'
-checkpoint_filepath = '/home/ubuntu/vault/stable-diffusion/checkpoints/xl/juggernautXL_ragnarockBy.safetensors'
 pipe = StableDiffusionXLPipeline.from_single_file(
     checkpoint_filepath, 
     torch_dtype=torch.float16, 
@@ -55,7 +23,6 @@ pipe = StableDiffusionXLPipeline.from_single_file(
     variant="fp16"
 ).to('cuda')
 pipe.scheduler = DPMSolverMultistepScheduler.from_config(pipe.scheduler.config)
-'''
 
 proj = 'ozonogroup'
 query = f'ozone'.strip().lower()
