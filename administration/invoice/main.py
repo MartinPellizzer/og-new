@@ -116,7 +116,7 @@ def generate_pdf():
     pdf.cell(cell_width_divider, cell_height, '', fill=True)
     pdf.cell(cell_width, cell_height, business_address_2, fill=True, ln=1)
     
-    pdf.cell(cell_width, cell_height, 'P.IVA/C.F.: 86334519757', fill=True)
+    pdf.cell(cell_width, cell_height, 'P.IVA/C.F.: 05054000269', fill=True)
     pdf.cell(cell_width_divider, cell_height, '', fill=True)
     pdf.cell(cell_width, cell_height, f'P.IVA/C.F.: {business_iva}', fill=True, ln=1)
     pdf.ln(10)
@@ -169,7 +169,8 @@ def generate_pdf():
         # price_str = '€ ' + str(price_num)
         discount_str = str(discount_num) + "%"
         if discount_num == 100:
-            subtotal_str = 'gratis'
+            subtotal_str = 'incluso'
+            subtotal_str = locale.currency(subtotal_num, grouping=True)
         else:
             subtotal_str = locale.currency(subtotal_num, grouping=True)
 
@@ -203,6 +204,16 @@ def generate_pdf():
     pdf.cell(25, cell_height, 'Totale Sconto: ', align='R')
     pdf.set_font(font, '', text_size)
     pdf.cell(25, cell_height, discount_total_str)
+    pdf.ln(cell_height)
+
+    total_price_discounted_num = price_total_num - discount_total_num
+    total_price_discounted_str = locale.currency(total_price_discounted_num, grouping=True)
+
+    pdf.cell(margin_left, cell_height, '')
+    pdf.set_font(font, 'B', text_size)
+    pdf.cell(25, cell_height, 'Totale Prezzo Scontato: ', align='R')
+    pdf.set_font(font, '', text_size)
+    pdf.cell(25, cell_height, total_price_discounted_str)
     pdf.ln(cell_height)
 
     iva_perc = 22

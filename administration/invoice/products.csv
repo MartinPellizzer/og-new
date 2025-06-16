@@ -1,5 +1,5 @@
 PRODUCT CODE,PRODUCT FAMILY,PRODUCT DESC,PRICE
-AURORA,Generator,Sistema di sanificazione ozono per l’industria alimentare,11000
+AURORA,Generator,Aurora,11000
 MINIO31220EU1,Generator,Mini 1,788
 MINIO32220EU1,Generator,Mini 2,915
 MINIO34220EU1,Generator,Mini 4,954
@@ -41,9 +41,11 @@ DE15SAB220,Generator,Delta O3 Eco 15g,13243
 DE20SAB220,Generator,Delta O3 Eco 20g,13812
 ZETAO3A1,Accessory,ZETA O3 ,948
 ZETAO3V2,Accessory,ZETA O3V2,690
-Sensore mobile,Accessory,Sensore di rilevazione per collegamento via cavo,310
+Sensore fisso,Accessory,Sensore collegato via cavo,310
 CL125.2,Accessory,Misuratore CL DIGITALE PORT. O/19.99PPM,672
 SP651,Accessory,Sonda CL2/PT1000 X CL125.2,579
 SP514,Accessory,Sonda TEMP. INOX PT100 Cavo 5 metri ,212
-1,Service,Trasporto,120
-2,Service,Installazione,480
+Trasporto,Service,Servizio di trasporto,120
+Installazione,Service,Servizio di installazione,480
+Formazione,Service,Servizio di formazione (1 ora),180
+Manutenzione,Service,Un intervento di manutenzione,330
