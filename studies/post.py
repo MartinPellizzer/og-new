@@ -198,12 +198,14 @@ def tk_approve():
         data = json.load(f)
     content = article_section_text_widget.get('1.0', END).strip()
     title = article_section_title_text_widget.get('1.0', END).strip()
+    category = article_section_category_entry.get()
     obj = {
         'pmid': study_cur['pmid'],
         'journal_title': study_cur['journal_title'],
         'abstract': study_cur['abstract'],
         'content': content,
         'title': title,
+        'category': category,
     }
     data['studies'].append(obj)
     j = json.dumps(data, indent=4)
@@ -277,8 +279,11 @@ article_section_text_widget.pack()
 
 article_section_title_button = Button(ozone_frame, text='write article section title', command=tk_article_section_title_gen)
 article_section_title_button.pack()
-article_section_title_text_widget = Text(ozone_frame, width=width, height=10)
+article_section_title_text_widget = Text(ozone_frame, width=width, height=5)
 article_section_title_text_widget.pack()
+
+article_section_category_entry = Entry(ozone_frame, width=width)
+article_section_category_entry.pack()
 
 approve_button = Button(ozone_frame, text='approve', command=tk_approve)
 approve_button.pack()
