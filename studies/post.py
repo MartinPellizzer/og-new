@@ -75,6 +75,7 @@ def tk_get_studies():
         with open(f'articles/{article}/data.json', 'w') as f:
             print(j, file=f)
     results = collection.query(query_texts=[keyword], n_results=100)
+    print(results)
     documents = results['documents'][0]
     metadatas = results['metadatas'][0]
     for i in range(len(documents)):
@@ -96,6 +97,8 @@ def tk_get_studies():
     tk_ozone_gen()
     tk_article_section_gen()
     tk_article_section_title_gen()
+    tk_problem_gen()
+    tk_where_gen()
 
 def tk_translation_gen():
     abstract = abstract_text_widget.get('1.0', END)
@@ -183,8 +186,49 @@ def tk_article_section_title_gen():
     reply = llm_reply(prompt, model_path=model_filepath).strip()
     if '</think>' in reply:
         reply = reply.split('</think>')[1].strip()
-    article_section_title_text_widget.delete(1.0, END)
-    article_section_title_text_widget.insert(END, reply)
+    title_entry.delete(0, END)
+    title_entry.insert(0, reply)
+
+def tk_problem_gen():
+    content = article_section_text_widget.get('1.0', END)
+    prompt = f'''
+        Write the problem that the below STUDY is trying to solve using ozone.
+        STUDY:
+        {content}
+        GUIDELINES:
+        Reply in italian.
+        Write as few words as possible.
+        Write the problem in 1 word (max 2).
+        {content}
+        /no_think
+    '''
+    print(prompt)
+    reply = llm_reply(prompt, model_path=model_filepath).strip()
+    if '</think>' in reply:
+        reply = reply.split('</think>')[1].strip()
+    problem_entry.delete(0, END)
+    problem_entry.insert(0, reply)
+
+def tk_where_gen():
+    content = article_section_text_widget.get('1.0', END)
+    prompt = f'''
+        Write me the location of where is problem that the below STUDY is trying to solve using ozone?
+        STUDY:
+        {content}
+        GUIDELINES:
+        Example of location can be a surfaca, a food, an animal, etc.
+        Reply in italian.
+        Reply as few words as possible.
+        Reply the problem in 1 word (max 2).
+        {content}
+        /no_think
+    '''
+    print(prompt)
+    reply = llm_reply(prompt, model_path=model_filepath).strip()
+    if '</think>' in reply:
+        reply = reply.split('</think>')[1].strip()
+    where_entry.delete(0, END)
+    where_entry.insert(0, reply)
 
 def tk_approve():
     article = article_entry.get()
@@ -197,8 +241,10 @@ def tk_approve():
     with open(filepath, 'r', encoding='utf-8') as f:
         data = json.load(f)
     content = article_section_text_widget.get('1.0', END).strip()
-    title = article_section_title_text_widget.get('1.0', END).strip()
-    category = article_section_category_entry.get()
+    title = title_entry.get()
+    category = category_entry.get()
+    problem = problem_entry.get()
+    where = where_entry.get()
     obj = {
         'pmid': study_cur['pmid'],
         'journal_title': study_cur['journal_title'],
@@ -206,6 +252,8 @@ def tk_approve():
         'content': content,
         'title': title,
         'category': category,
+        'problem': problem,
+        'where': where,
     }
     data['studies'].append(obj)
     j = json.dumps(data, indent=4)
@@ -231,29 +279,33 @@ article_label.pack()
 article_entry = Entry(study_frame)
 article_entry.pack()
 article_entry.delete(0, END)
-article_entry.insert(0, 'lattiero-caseario')
+article_entry.insert(0, 'ittico')
 ###
 keyword_label = Label(study_frame, text='keyword')
 keyword_label.pack()
 keyword_entry = Entry(study_frame)
 keyword_entry.pack()
 keyword_entry.delete(0, END)
-keyword_entry.insert(0, 'dairy')
+keyword_entry.insert(0, 'fish')
 ###
 keyword_button = Button(study_frame, text='get studies by keyword', command=tk_get_studies)
 keyword_button.pack()
 abstract_text_widget = Text(study_frame, width=width)
 abstract_text_widget.pack()
 ###
+'''
 translation_button = Button(study_frame, text='get translation', command=tk_translation_gen)
 translation_button.pack()
 translation_text_widget = Text(study_frame, width=width)
 translation_text_widget.pack()
+'''
 ###
+'''
 summary_button = Button(study_frame, text='get summary', command=tk_summary_gen)
 summary_button.pack()
 summary_text_widget = Text(study_frame, width=width, height=18)
 summary_text_widget.pack()
+'''
 
 '''
 pmid_label = Label(study_frame, text='pmid')
@@ -267,23 +319,44 @@ pmid_button.pack()
 ozone_frame = Frame(root)
 ozone_frame.pack(side=LEFT)
 
+'''
 ozone_button = Button(ozone_frame, text='get ozone', command=tk_ozone_gen)
 ozone_button.pack()
-ozone_text_widget = Text(ozone_frame, width=width)
+'''
+ozone_text_widget = Text(study_frame, width=width)
 ozone_text_widget.pack()
 
-article_section_button = Button(ozone_frame, text='write article section', command=tk_article_section_gen)
-article_section_button.pack()
-article_section_text_widget = Text(ozone_frame, width=width)
-article_section_text_widget.pack()
-
-article_section_title_button = Button(ozone_frame, text='write article section title', command=tk_article_section_title_gen)
+'''
+article_section_title_button = Button(ozone_frame, text='write title', command=tk_article_section_title_gen)
 article_section_title_button.pack()
 article_section_title_text_widget = Text(ozone_frame, width=width, height=5)
 article_section_title_text_widget.pack()
+'''
 
-article_section_category_entry = Entry(ozone_frame, width=width)
-article_section_category_entry.pack()
+category_label = Label(ozone_frame, text='category')
+category_label.pack()
+category_entry = Entry(ozone_frame, width=width)
+category_entry.pack()
+
+problem_label = Label(ozone_frame, text='problem')
+problem_label.pack()
+problem_entry = Entry(ozone_frame, width=width)
+problem_entry.pack()
+
+where_label = Label(ozone_frame, text='where')
+where_label.pack()
+where_entry = Entry(ozone_frame, width=width)
+where_entry.pack()
+
+title_label = Label(ozone_frame, text='title')
+title_label.pack()
+title_entry = Entry(ozone_frame, width=width)
+title_entry.pack()
+
+article_section_text_widget = Text(ozone_frame, width=width)
+article_section_text_widget.pack()
+article_section_button = Button(ozone_frame, text='write article section', command=tk_article_section_gen)
+article_section_button.pack()
 
 approve_button = Button(ozone_frame, text='approve', command=tk_approve)
 approve_button.pack()
