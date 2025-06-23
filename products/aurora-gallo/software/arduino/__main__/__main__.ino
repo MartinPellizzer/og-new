@@ -16,6 +16,10 @@ int32_t calendar_times[7][CALENDAR_TIMERS_NUM][2] = {
   {{-1, -1}, {-1, -1}, {-1, -1}, {-1, -1}, {-1, -1}, {-1, -1}, {-1, -1}, {-1, -1}, {-1, -1}}
 };
 
+int8_t calendar_onoff_old = -2;
+int8_t calendar_onoff_tmp = 0;
+int8_t calendar_onoff_cur = 0;
+
 int8_t cycle_i = -2;
 int8_t day_of_week_old = -2;
 int8_t day_of_week_cur = 0;
@@ -79,6 +83,12 @@ typedef struct power_t {
 } power_t;
 power_t power = {};
 
+int8_t power_type_old = -2;
+int8_t power_type_tmp = 0;
+int8_t power_type_cur = 0;
+
+#define POWER_TYPE_PIN 15
+
 ///////////////////////////////////////////////////////////////////////
 // ;sensor
 ///////////////////////////////////////////////////////////////////////
@@ -133,14 +143,22 @@ void cycle_update()
     if (millis() - cycle_millis_cur > 1000) 
     {
       cycle_millis_cur = millis();
-      int32_t rtc_seconds_tot = (rtc.hour_cur * 3600) + (rtc.minute_cur * 60) + (rtc.second_cur);
+
       bool found = false;
-      for (int j = 0; j < CALENDAR_TIMERS_NUM; j++)
+      if (calendar_onoff_cur == 1)
       {
-        if (rtc_seconds_tot > calendar_times[rtc.day_week_cur][j][0] && rtc_seconds_tot < calendar_times[rtc.day_week_cur][j][1])
+        int32_t rtc_seconds_tot = (rtc.hour_cur * 3600) + (rtc.minute_cur * 60) + (rtc.second_cur);
+        for (int j = 0; j < CALENDAR_TIMERS_NUM; j++)
         {
-          found = true;
+          if (rtc_seconds_tot > calendar_times[rtc.day_week_cur][j][0] && rtc_seconds_tot < calendar_times[rtc.day_week_cur][j][1])
+          {
+            found = true;
+          }
         }
+      }
+      else
+      {
+        found = true;
       }
 
       if (found == true)
@@ -217,6 +235,8 @@ void setup()
   pinMode(SENSOR1_RE_DE_PIN, OUTPUT);
   digitalWrite(SENSOR1_RE_DE_PIN, LOW);
 
+  pinMode(POWER_TYPE_PIN, INPUT_PULLUP);
+
   pinMode(relay_pin, OUTPUT);
   
   EEPROM.begin(EEPROM_SIZE);
@@ -280,6 +300,9 @@ void setup()
 
 void loop() 
 {
+  // ;debug
+  Serial.println(digitalRead(POWER_TYPE_PIN));
+
   // ;rtc
   rtc_manager();
 

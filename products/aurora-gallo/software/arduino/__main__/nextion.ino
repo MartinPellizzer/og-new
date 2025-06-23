@@ -71,6 +71,14 @@ uint8_t cmd_p_clock_time_second_down[BUFFER_SIZE] = { 101, 14, 9, 1, 255, 255, 2
 
 // settings
 uint8_t cmd_p_set_back[BUFFER_SIZE] = { 101, 15, 1, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+uint8_t cmd_p_set_goto_calendar_onoff[BUFFER_SIZE] = { 101, 15, 3, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+uint8_t cmd_p_set_goto_power_type[BUFFER_SIZE] = { 101, 15, 4, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+// calendar onoff
+uint8_t cmd_p_set_calendar_onoff_back[BUFFER_SIZE] = { 101, 16, 1, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+uint8_t cmd_p_set_calendar_onoff_save[BUFFER_SIZE] = { 101, 16, 5, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+uint8_t cmd_p_set_calendar_onoff_up[BUFFER_SIZE] = { 101, 16, 2, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+uint8_t cmd_p_set_calendar_onoff_down[BUFFER_SIZE] = { 101, 16, 4, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
 bool nextion_array_compare(uint8_t *a, uint8_t *b) 
 {
@@ -136,10 +144,17 @@ void nextion_eval_page_home()
     if (nextion_array_compare(cmd_p_home_goto_clock_warn, nextion.inputs_buff)) nextion.page_cur = 30;
     if (nextion_array_compare(cmd_p_home_goto_settings, nextion.inputs_buff)) nextion.page_cur = 40;
   }
-  if (nextion_array_compare(cmd_p_home_on, nextion.inputs_buff))
+  if (power_type_cur == 1)
   {
-    if (is_on_cur == 1) is_on_cur = 0;
-    else if (is_on_cur == 0) is_on_cur = 1;
+    if (nextion_array_compare(cmd_p_home_on, nextion.inputs_buff))
+    {
+      if (is_on_cur == 1) is_on_cur = 0;
+      else if (is_on_cur == 0) is_on_cur = 1;
+    }
+  }
+  else
+  {
+    // TODO: code for external input for cycle on/off
   }
 }
 
@@ -629,12 +644,57 @@ void nextion_eval_serial()
     if (nextion_array_compare(cmd_p_set_back, nextion.inputs_buff)) 
     {
       nextion.page_cur = 1;
-      Serial.println("HERE");
+    }
+    else if (nextion_array_compare(cmd_p_set_goto_calendar_onoff, nextion.inputs_buff)) 
+    {
+      nextion.page_cur = 50;
+    }
+    else if (nextion_array_compare(cmd_p_set_goto_power_type, nextion.inputs_buff)) 
+    {
+      nextion.page_cur = 60;
+    }
+  }
+  else if (nextion.page_cur == 50) 
+  {
+    if (nextion_array_compare(cmd_p_set_calendar_onoff_back, nextion.inputs_buff)) 
+    {
+      nextion.page_cur = 40;
+    }
+    else if (nextion_array_compare(cmd_p_set_calendar_onoff_save, nextion.inputs_buff)) 
+    {
+      nextion.page_cur = 40;
+      calendar_onoff_cur = calendar_onoff_tmp;
+    }
+    else if (nextion_array_compare(cmd_p_set_calendar_onoff_up, nextion.inputs_buff)) 
+    {
+      calendar_onoff_tmp = 1;
+    }
+    else if (nextion_array_compare(cmd_p_set_calendar_onoff_down, nextion.inputs_buff)) 
+    {
+      calendar_onoff_tmp = 0;
+    }
+  }
+  else if (nextion.page_cur == 60) 
+  {
+    if (nextion_array_compare(cmd_p_set_calendar_onoff_back, nextion.inputs_buff)) 
+    {
+      nextion.page_cur = 40;
+    }
+    else if (nextion_array_compare(cmd_p_set_calendar_onoff_save, nextion.inputs_buff)) 
+    {
+      nextion.page_cur = 40;
+      power_type_cur = power_type_tmp;
+    }
+    else if (nextion_array_compare(cmd_p_set_calendar_onoff_up, nextion.inputs_buff)) 
+    {
+      power_type_tmp = 1;
+    }
+    else if (nextion_array_compare(cmd_p_set_calendar_onoff_down, nextion.inputs_buff)) 
+    {
+      power_type_tmp = 0;
     }
   }
 }
-
-
 
 void nextion_update() 
 {
@@ -658,7 +718,9 @@ void nextion_update()
   else if (nextion.page_cur == 32) nextion_update_page_clock_date(force_refresh);
   else if (nextion.page_cur == 33) nextion_update_page_clock_time(force_refresh);
   else if (nextion.page_cur == 40) nextion_update_page_settings(force_refresh);
-  //else if (nextion.page_cur == 50) nextion_update_page_onoff(force_refresh);
+  else if (nextion.page_cur == 50) nextion_update_page_calendar_onoff(force_refresh);
+  else if (nextion.page_cur == 60) nextion_update_page_power_type(force_refresh);
+  // else if (nextion.page_cur == 50) nextion_update_page_onoff(force_refresh);
 }
 
 ////////////////////////////////////////////////////////
@@ -679,20 +741,33 @@ void nextion_update_page_home(uint8_t force_refresh)
   if (force_refresh || is_on_old != is_on_cur) 
   {
     is_on_old = is_on_cur;
-    if (is_on_cur == 1)
+    if (power_type_cur == 0)
     {
-      uint8_t _buffer[] = { 0x70, 0x30, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x31, 0x38, 0xff, 0xff, 0xff };
-      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
       {
-        Serial2.write(_buffer[i]);
+        uint8_t _buffer[] = { 0x70, 0x30, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x32, 0x31, 0xff, 0xff, 0xff };
+        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+        {
+          Serial2.write(_buffer[i]);
+        }
       }
     }
     else
     {
-      uint8_t _buffer[] = { 0x70, 0x30, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x31, 0x37, 0xff, 0xff, 0xff };
-      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      if (is_on_cur == 1)
       {
-        Serial2.write(_buffer[i]);
+        uint8_t _buffer[] = { 0x70, 0x30, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x31, 0x38, 0xff, 0xff, 0xff };
+        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+        {
+          Serial2.write(_buffer[i]);
+        }
+      }
+      else
+      {
+        uint8_t _buffer[] = { 0x70, 0x30, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x31, 0x37, 0xff, 0xff, 0xff };
+        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+        {
+          Serial2.write(_buffer[i]);
+        }
       }
     }
   }
@@ -1390,4 +1465,134 @@ void nextion_update_page_settings(uint8_t force_refresh)
   }
 }
 
+void nextion_update_page_calendar_onoff(uint8_t force_refresh) 
+{
+  if (force_refresh) 
+  {
+    {
+      uint8_t _buffer[] = { 0x70, 0x61, 0x67, 0x65, 0x20, 0x70, 0x5F, 0x73, 0x65, 0x74, 0x5F, 0x64, 0x61, 0x74, 0x61, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+    {
+      uint8_t _buffer[] = { 0x74, 0x31, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x55, 0x53, 0x41, 0x20, 0x43, 0x41, 0x4C, 0x45, 0x4E, 0x44, 0x41, 0x52, 0x49, 0x4F, 0x22, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+    calendar_onoff_tmp = calendar_onoff_cur;
+    if (calendar_onoff_tmp == 1)
+    {
+      {
+        uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4F, 0x4E, 0x22, 0xff, 0xff, 0xff };
+        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+        {
+          Serial2.write(_buffer[i]);
+        }
+      }
+    }
+    else
+    {
+      {
+        uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4F, 0x46, 0x46, 0x22, 0xff, 0xff, 0xff };
+        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+        {
+          Serial2.write(_buffer[i]);
+        }
+      }
+    }
+  }
+  if (force_refresh || calendar_onoff_old != calendar_onoff_tmp)
+  {
+    calendar_onoff_old = calendar_onoff_tmp;
+    if (calendar_onoff_tmp == 1)
+    {
+      {
+        uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4F, 0x4E, 0x22, 0xff, 0xff, 0xff };
+        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+        {
+          Serial2.write(_buffer[i]);
+        }
+      }
+    }
+    else
+    {
+      {
+        uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4F, 0x46, 0x46, 0x22, 0xff, 0xff, 0xff };
+        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+        {
+          Serial2.write(_buffer[i]);
+        }
+      }
+    }
+  }
+}
 
+void nextion_update_page_power_type(uint8_t force_refresh) 
+{
+  if (force_refresh) 
+  {
+    {
+      uint8_t _buffer[] = { 0x70, 0x61, 0x67, 0x65, 0x20, 0x70, 0x5F, 0x73, 0x65, 0x74, 0x5F, 0x64, 0x61, 0x74, 0x61, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+    {
+      uint8_t _buffer[] = { 0x74, 0x31, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4D, 0x45, 0x54, 0x4F, 0x44, 0x4F, 0x20, 0x41, 0x43, 0x43, 0x45, 0x4E, 0x53, 0x49, 0x4F, 0x4E, 0x45, 0x22, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+    power_type_tmp = power_type_cur;
+    if (power_type_tmp == 1)
+    {
+      {
+        uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x49, 0x4E, 0x54, 0x45, 0x52, 0x4E, 0x4F, 0x22, 0xff, 0xff, 0xff };
+        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+        {
+          Serial2.write(_buffer[i]);
+        }
+      }
+    }
+    else
+    {
+      {
+        uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x45, 0x53, 0x54, 0x45, 0x52, 0x4E, 0x4F, 0x22, 0xff, 0xff, 0xff };
+        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+        {
+          Serial2.write(_buffer[i]);
+        }
+      }
+    }
+  }
+  if (force_refresh || power_type_old != power_type_tmp)
+  {
+    power_type_old = power_type_tmp;
+    if (power_type_tmp == 1)
+    {
+      {
+        uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x49, 0x4E, 0x54, 0x45, 0x52, 0x4E, 0x4F, 0x22, 0xff, 0xff, 0xff };
+        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+        {
+          Serial2.write(_buffer[i]);
+        }
+      }
+    }
+    else
+    {
+      {
+        uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x45, 0x53, 0x54, 0x45, 0x52, 0x4E, 0x4F, 0x22, 0xff, 0xff, 0xff };
+        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+        {
+          Serial2.write(_buffer[i]);
+        }
+      }
+    }
+  }
+}
