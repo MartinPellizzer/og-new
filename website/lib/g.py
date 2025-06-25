@@ -3,3 +3,5 @@ color_picton_blue = '#32AEDF'
 color_dusty_gray = '#AD99A6'
 color_fun_blue = '#1466AB'
 color_white = '#ffffff'
+
+typography_size_lg = '24px'

@@ -1,54 +1,11 @@
+import os
 
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="style.css">
-        </head>
-        <body>
-            
-        <header class="header-light">
-            <div class="container-xl header-light-container">
-                <div class="header-light-menu">
-                    <a class="header-light-menu-logo" href="/">Ozonogroup</a>
-                    <nav class="header-light-menu-nav">
-                        <a href="/">Home</a>
-                        <a href="/prodotti.html">Prodotti</a>
-                        <a href="/servizi.html">Servizi</a>
-                        <a href="/settori.html">Settori</a>
-                        <a href="/chi-siamo.html">Chi Siamo</a>
-                        <a href="/contatti.html">Contatti</a>
-                    </nav>
-                </div>
-                <div>
-                    <a class="header-light-button" href="/contatti.html">Prenota consulenza</a>
-                </div>
-            </div>
-        </header>
-    
-            
-        <header class="header-dark">
-            <div class="container-xl header-dark-container">
-                <div class="header-dark-menu">
-                    <a class="header-dark-menu-logo" href="/">Ozonogroup</a>
-                    <nav class="header-dark-menu-nav">
-                        <a href="/">Home</a>
-                        <a href="/prodotti.html">Prodotti</a>
-                        <a href="/servizi.html">Servizi</a>
-                        <a href="/settori.html">Settori</a>
-                        <a href="/chi-siamo.html">Chi Siamo</a>
-                        <a href="/contatti.html">Contatti</a>
-                    </nav>
-                </div>
-                <div>
-                    <a class="header-dark-button" href="/contatti.html">Prenota consulenza</a>
-                </div>
-            </div>
-        </header>
-    
-            <main>
-                
+from lib import g
+from lib import components
+
+def gen():
+    with open('styles/tmp/pag-home.css', 'w') as f: f.write('')
+    html_hero = f'''
         <section class="home-hero-section">
             <div class="container-xl" style="height: 100%;">
                 <div class="home-header">
@@ -77,7 +34,7 @@
                         <div style="flex: 2;"></div>
                         <div style="flex: 1;">
                             <p style="color: #ffffff; font-size: 16px; line-height: 24px; margin-bottom: 24px;">Progettiamo
-                                sistemi di sanificazione con ozono per ambienti di produzione alimentari più
+                                sistemi di sanificazione con ozono per ambienti di produzione alimentari piÃ¹
                                 sicuri e igienici (senza l'uso di sostanze chimiche).</p>
                             <div style="display: flex; gap: 24px;">
                                 <a style="color: #111111; background-color: #ffffff; padding: 8px 16px; border-radius: 9999px; border: 1px solid #ffffff;"
@@ -90,10 +47,28 @@
                 </div>
             </div>
         </section>
-    
+    '''
+
+    html_index = f'''
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="style.css">
+        </head>
+        <body>
+            {components.html_header_light()}
+            {components.html_header_dark()}
+            <main>
+                {html_hero}
             </main>
             <footer>
             </footer>
         </body>
         </html>
-    
+    '''
+
+    html_index_filepath = 'public/index.html'
+    with open(html_index_filepath, 'w') as f: f.write(html_index)
+

@@ -1,84 +1,16 @@
-import ds
+import os
 
-#############################################
-# ;color_brand
-#############################################
-html_colors = f''
+if 1:
+    from lib import pag_home
+    pag_home.gen()
 
-# ;color_blue
-html_colors += f'<section style="margin-bottom: 96px;">'
-html_colors += f'</section>'
+    
+with open('styles/core.css') as f: css_core = f.read()
 
-html_hero = f'''
-    <section class="home-hero-section">
-        <div class="container-xl" style="height: 100%;">
-            <div class="home-header">
-                <div class="home-header-menu">
-                    <a class="home-header-logo" href="#">Ozonogroup</a>
-                    <nav class="home-header-menu-nav">
-                        <a href="#">Home</a>
-                        <a href="/prodotti.html">Prodotti</a>
-                        <a href="#">Contatti</a>
-                    </nav>
-                </div>
-                <div>
-                    <a class="home-header-button" href="#">Prenota consulenza gratuita</a>
-                </div>
-            </div>
-            <div class="home-hero-container">
-                <div class="home-hero-title-container">
-                    <div style="flex: 2;">
-                        <h1 class="home-hero-title">Sanificazione
-                            ozono per l'industria alimentare
-                        </h1>
-                    </div>
-                    <div style="flex: 1;"></div>
-                </div>
-                <div class="home-hero-content-container">
-                    <div style="flex: 2;"></div>
-                    <div style="flex: 1;">
-                        <p style="color: #ffffff; font-size: 16px; line-height: 24px; margin-bottom: 24px;">Progettiamo
-                            sistemi di sanificazione con ozono per ambienti di produzione alimentari più
-                            sicuri e igienici (senza l'uso di sostanze chimiche).</p>
-                        <div style="display: flex; gap: 24px;">
-                            <a style="color: #111111; background-color: #ffffff; padding: 8px 16px; border-radius: 9999px; border: 1px solid #ffffff;"
-                                href="#">Prenota consulenza</a>
-                            <a style="color: #ffffff; padding: 8px 16px; border-radius: 9999px; border: 1px solid #ffffff;"
-                                href="#">Come funziona</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-'''
-
-components = []
-
-ds_c_heading = '<h1 class="ds-c-heading">Heading 1</h1>'
-components.append(ds_c_heading)
-
-html_components = ''.join(components)
-
-html_index = f'''
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <header>
-        </header>
-        <main>
-            {html_hero}
-        </main>
-        <footer>
-        </footer>
-    </body>
-    </html>
-'''
-
-html_index_filepath = 'public/index.html'
-with open(html_index_filepath, 'w') as f: f.write(html_index)
+css = ''
+css += css_core
+for filename in os.listdir('styles/tmp'):
+    filepath = f'styles/tmp/{filename}'
+    with open(filepath) as f: content = f.read()
+    css += content
+with open('public/style.css', 'w') as f: f.write(css)
