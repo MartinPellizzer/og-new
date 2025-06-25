@@ -1,5 +1,17 @@
+import os
+
+import torch
+from diffusers import DiffusionPipeline
+from diffusers import StableDiffusionXLPipeline
+from diffusers import DPMSolverMultistepScheduler
+
 from lib import io
 from lib import utils
+
+from oliark import img_resize
+
+checkpoint_filepath = f'/home/ubuntu/vault/stable-diffusion/checkpoints/xl/juggernautXL_ragnarokBy.safetensors'
+pipe = None
 
 def html_header_get():
     html = f'''
@@ -116,6 +128,37 @@ def html_sidebar_get():
     '''
     return html
 
+def ai_img_gen(article_slug, regen=False, dispel=False):
+    global pipe
+    img_filepath = f'/home/ubuntu/vault/ozonogroup/website/ozonogroup/immagini/settori/{article_slug}.jpg'
+    if regen:
+        try: os.remove(img_filepath)
+        except: pass
+    if dispel:
+        try: os.remove(img_filepath)
+        except: pass
+        return
+    if not os.path.exists(img_filepath):
+        quality = 30
+        if pipe == None:
+            pipe = StableDiffusionXLPipeline.from_single_file(
+                checkpoint_filepath, 
+                torch_dtype=torch.float16, 
+                use_safetensors=True, 
+                variant="fp16"
+            ).to('cuda')
+            pipe.scheduler = DPMSolverMultistepScheduler.from_config(pipe.scheduler.config)
+        prompt = f'''
+            vegetables, field, 
+            depth of field,
+            bokeh,
+            high detail,
+        '''
+        negative_prompt = ''
+        image = pipe(prompt=prompt, negative_prompt=negative_prompt, width=1024, height=1024, num_inference_steps=30, guidance_scale=7.0).images[0]
+        image = img_resize(image, w=768, h=768)
+        image.save(img_filepath, format='JPEG', subsampling=0, quality=quality)
+
 def gen(article_slug):
     json_article_filepath = f'articles/{article_slug}/data.json'
     html_article_filepath = f'articles/{article_slug}/{article_slug}.html'
@@ -124,15 +167,28 @@ def gen(article_slug):
     json_article = io.json_read(json_article_filepath)
     html_article = ''
     # html_article += f'<h1>{article_slug}</h1>\n'
-    html_article += f'<h1 class="article-title">{len(json_article["studies"])} studi sulla sanificazione a ozono nel settore {article_slug}</h1>'
-    html_article += f'''
-        <img src="/immagini/ozono-carne.jpg" alt="ozono settori carni">
-    '''
     ###
-    for study_i, study in enumerate(json_article['studies']):
+    key = 'problem'
+    studies = json_article['studies']
+    group_list = []
+    for study_id, study in enumerate(studies):
+        found = False
+        for group in group_list:
+            if study[key].strip().lower() == group[key].strip().lower():
+                group['studies'].append(study)
+                found = True
+                break
+        if not found:
+            group_list.append({key: study[key], 'studies': [study]})
+    html_article += f'<h1 class="article-title">{len(group_list)} applicazioni della sanificazione a ozono nel settore {article_slug}</h1>'
+    html_article += f'''
+        <img src="/immagini/settori/{article_slug}.jpg" alt="ozono settore {article_slug}">
+    '''
+    for group_i, group in enumerate(group_list):
+        study = group['studies'][0]
         study_title = study['title']
         study_content = study['content']
-        html_article += f'<h2>{study_i+1}. {study_title}</h2>\n'
+        html_article += f'<h2>{group_i+1}. {study_title}</h2>\n'
         html_article += f'{utils.text_format_1N1_html(study_content)}\n'
         # html_article += f'{study_content}\n'
     # <meta property="og:image" content="/immagini/home/sanificazione-ozono.png">
@@ -153,7 +209,7 @@ def gen(article_slug):
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta name="author" content="Ozonogroup">
             <link rel="stylesheet" href="/style.css">
-            <title>Settore Carni</title>
+            <title>Settore Ittico</title>
             <link rel="icon" href="/immagini/ozonogroup-favicon.ico">
         </head>
         <body>
@@ -172,5 +228,6 @@ def gen(article_slug):
     '''
     with open(html_article_filepath, 'w') as f: f.write(html)
     with open(html_out_article_filepath, 'w') as f: f.write(html)
+    ai_img_gen(article_slug, regen=False, dispel=False)
 
-gen(article_slug='carni')
+gen(article_slug='ortofrutticolo')

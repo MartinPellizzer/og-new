@@ -115,7 +115,7 @@ def project_load(key='problem'):
     global edges
     nodes = []
     edges = []
-    filepath = f'articles/ittico/data.json'
+    filepath = f'articles/ortofrutticolo/data.json'
     with open(filepath, 'r', encoding='utf-8') as f:
         data = json.load(f)
     studies = data['studies']
