@@ -1,114 +1,16 @@
 
-            .header-light {
-                background-color: #ffffff;
-                padding-top: 16px;
-                padding-bottom: 16px;
-            }
-        
-            .container-xl {
-                max-width: 1280px;
-                margin-left: auto;
-                margin-right: auto;
-                padding-left: 16px;
-                padding-right: 16px;
-            }
-        
-            .header-light-container {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-        
-            .header-light-menu {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                gap: 32px;
-            }
-        
-            .header-light-menu-logo {
-                font-size: 24px;
-                color: #08162C;
-                text-decoration-line: none;
-            }
-        
-            .header-light-menu-nav {
-                display: flex;
-                align-items: center;
-                gap: 16px;
-            }
-        
-            .header-light-menu-nav a {
-                color: #08162C;
-                text-decoration-line: none;
-            }
-        
-            .header-light-button {
-                color: #ffffff;
-                background-color: #08162C;
-                border: 1px solid #08162C;
-                border-radius: 9999px;
-                padding: 8px 16px;
-                text-decoration-line: none;
-            }
-        
-            .header-light {
-                background-color: #ffffff;
-                padding-top: 16px;
-                padding-bottom: 16px;
-            }
-        
-            .container-xl {
-                max-width: 1280px;
-                margin-left: auto;
-                margin-right: auto;
-                padding-left: 16px;
-                padding-right: 16px;
-            }
-        
-            .header-light-container {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-        
-            .header-light-menu {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                gap: 32px;
-            }
-        
-            .header-light-menu-logo {
-                font-size: 24px;
-                color: #08162C;
-                text-decoration-line: none;
-            }
-        
-            .header-light-menu-nav {
-                display: flex;
-                align-items: center;
-                gap: 16px;
-            }
-        
-            .header-light-menu-nav a {
-                color: #08162C;
-                text-decoration-line: none;
-            }
-        
-            .header-light-button {
-                color: #ffffff;
-                background-color: #08162C;
-                border: 1px solid #08162C;
-                border-radius: 9999px;
-                padding: 8px 16px;
-                text-decoration-line: none;
-            }
-        
             .header-dark {
                 background-color: #08162C;
                 padding-top: 16px;
                 padding-bottom: 16px;
+            }
+        
+            .container-xl {
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
             }
         
             .header-dark-container {
@@ -141,12 +43,77 @@
                 text-decoration-line: none;
             }
         
-            .header-dark-button {
+            .home-hero-section {
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/immagini/home/sanificazione-ozono.png');
+                background-size: cover;
+                background-position: center;
+                margin-bottom: 96px;
+                border-bottom-left-radius: 16px;
+                border-bottom-right-radius: 16px;
+            }
+        
+            .home-hero-container {
+                padding-top: 128px;
+                display: flex;
+                padding-bottom: 128px;
+                flex-direction: column;
+                justify-content: center;
+                height: 80%;
+            }
+        
+            .home-hero-title-container {
+                display: flex;
+                margin-bottom: 64px;
+                gap: 64px;
+            }
+        
+            .home-hero-title-text {
+                font-size: 64px;
+                color: white;
+                line-height: 1;
+                font-weight: normal;
+            }
+        
+            .home-hero-content-container {
+                display: flex;
+            }
+        
+            .home-hero-content-container a {
+                text-decoration-line: none;
+                display: inline-block;
+            }
+        
+            .home-hero-content-button {
                 color: #08162C;
                 background-color: #ffffff;
                 border: 1px solid #ffffff;
                 border-radius: 9999px;
                 padding: 8px 16px;
                 text-decoration-line: none;
+            }
+        
+            .separator-section {
+                margin-top: 96px;
+                margin-bottom: 96px;
+            }
+        
+            .separator-layout {
+                display: flex;
+                align-items: center;
+            }
+        
+            .separator-text {
+                font-size: 16px;
+                font-weight: normal;
+                line-height: 24px;
+                color: #B0BEC5;
+                padding: 6px 12px;
+                border-radius: 9999px;
+                border: 1px solid #B0BEC5;
+            }
+        
+            .separator-line {
+                border-bottom: 1px solid #B0BEC5;
+                width: 90%;
             }
         

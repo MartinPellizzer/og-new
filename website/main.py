@@ -1,12 +1,15 @@
 import os
 
+from lib import g
+
+try: os.remove(g.styles_components_filepath)
+except: pass
+
 if 1:
     from lib import pag_home
     pag_home.gen()
 
-    
 with open('styles/core.css') as f: css_core = f.read()
-
 css = ''
 css += css_core
 for filename in os.listdir('styles/tmp'):
