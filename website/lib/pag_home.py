@@ -17,7 +17,9 @@ def gen():
             {sections.header_dark()}
             <main>
                 {sections.home_hero()}
+                {sections.home_proof()}
                 {sections.separator('Benefici')}
+                {sections.home_benefits()}
                 {sections.separator('Servizi')}
                 {sections.separator('Settori')}
                 {sections.separator('Azienda')}

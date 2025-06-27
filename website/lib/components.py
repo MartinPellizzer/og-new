@@ -4,6 +4,30 @@ from lib import g
 
 css_filepath = g.styles_components_filepath
 
+def paragraph_default(paragraph_text):
+    if not os.path.exists(css_filepath):
+        with open(css_filepath, 'w') as f: 
+            f.write('')
+    ###
+    with open(css_filepath) as f: css = f.read()
+    class_name = '.paragraph_default'
+    if f'{class_name} ' not in css:
+        css += f'''
+            {class_name} {{
+                color: {g.color_black_pearl};
+                font-size: {g.typography_size_md};
+                line-height: {g.typography_line_height_md};
+            }}
+        '''
+    with open(css_filepath, 'w') as f: f.write(css)
+    paragraph_text = paragraph_text.replace('è', '&#232;')
+    paragraph_text = paragraph_text.replace('à', '&#224;')
+    ###
+    html = f'''
+        <p class="paragraph_default">{paragraph_text}</p>
+    '''
+    return html
+
 def link_fill():
     if not os.path.exists(css_filepath):
         with open(css_filepath, 'w') as f: f.write('')

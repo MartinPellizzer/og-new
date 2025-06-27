@@ -92,6 +92,17 @@
                 text-decoration-line: none;
             }
         
+            .home-proof-section {
+                display: flex;
+                gap: 24px;
+                align-items: center;
+            }
+        
+            .home-proof-section img {
+                flex: 1;
+                opacity: 66%;
+            }
+        
             .separator-section {
                 margin-top: 96px;
                 margin-bottom: 96px;
@@ -115,5 +126,47 @@
             .separator-line {
                 border-bottom: 1px solid #B0BEC5;
                 width: 90%;
+            }
+        
+            .home-benefits-intro-container {
+                display: flex;
+                align-items: center;
+                gap: 48px;
+                margin-bottom: 32px;
+            }
+        
+            .home-benefits-intro-title {
+                color: #08162C;
+                font-size: 32px;
+                line-height: 40px;
+                font-weight: normal;
+            }
+        
+            .home-benefits-cards-container {
+                display: flex;
+                gap: 24px;
+            }
+        
+            .home-benefits-card-container {
+                background-color: #F8F9FB;
+                border-radius: 16px;
+                padding: 16px;
+            }
+        
+            .home-benefits-card-title {
+                margin-bottom: 16px;
+                color: #08162C;
+                font-size: 24px;
+                line-height: 1.2;
+                font-weight: normal;
+            }
+        
+            .home-benefits-card-link {
+                color: #08162C;
+                text-decoration-line: none;
+            }
+        
+            .home-benefits-card-icon {
+                height: 24px;
             }
         
