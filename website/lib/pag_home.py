@@ -21,6 +21,7 @@ def gen():
                 {sections.separator('Benefici')}
                 {sections.home_benefits()}
                 {sections.separator('Servizi')}
+                {sections.home_services()}
                 {sections.separator('Settori')}
                 {sections.separator('Azienda')}
                 {sections.separator('Contatti')}

@@ -16,6 +16,14 @@
                 text-decoration-line: none;
             }
         
+            .h2_default {
+                color: #08162C;
+                font-size: 32px;
+                line-height: 40px;
+                font-weight: normal;
+                margin-bottom: 16px;
+            }
+        
             .paragraph_default {
                 color: #08162C;
                 font-size: 16px;

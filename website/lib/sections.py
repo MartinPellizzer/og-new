@@ -388,6 +388,12 @@ def separator(text):
     return html
 
 def home_benefits():
+    html_h2_default = components.h2_default(
+        text = f'''
+            Vantaggi del sistema ad ozono per gli operatori alimentari
+        ''',
+        align = 'left',
+    )
     html_paragraph = components.paragraph_default(
         paragraph_text = f'''
             Il sistema progettato da Ozonogroup offre numerosi vantaggi in termini di sicurezza, efficacia e sostenibilità, migliorando ogni fase del processo produttivo.
@@ -396,9 +402,7 @@ def home_benefits():
     html_header = f'''
         <div class="home-benefits-intro-container">
             <div style="flex: 3;">
-                <p class="home-benefits-intro-title">
-                    Vantaggi del sistema ad ozono per gli operatori alimentari
-                </p>
+                {html_h2_default}
             </div>
             <div style="flex: 2;">
                 {html_paragraph}
@@ -495,7 +499,6 @@ def home_benefits():
             </div>
         </div>
     '''
-
     html = f'''
         <section class="container-xl">
             {html_header}
@@ -512,6 +515,7 @@ def home_benefits():
             </div>
         </section>
     '''
+    ###
     with open('styles/tmp/pag-home.css') as f: css = f.read()
     class_name = '.container-xl'
     if class_name not in css:
@@ -587,5 +591,179 @@ def home_benefits():
                 height: 24px;
             }}
         '''
+    with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
+    return html
+
+def home_services():
+    html_h2_default = components.h2_default(
+        text = f'''
+            Tecnologia personalizzata per ogni esigenza dell'industria alimentare
+        ''',
+        align = 'center',
+    )
+    html_paragraph = components.paragraph_default(
+        paragraph_text = f'''
+            I nostri sistemi di sanificazione all'ozono sono progettati su misura per adattarsi a ogni fase del processo produttivo. Che tu operi nella trasformazione, nel confezionamento o nella logistica, Ozonogroup ha una soluzione efficace, sicura e automatizzata. 
+        '''
+    )
+    html_header = f'''
+         <div class="home-services-intro-container">
+            {html_h2_default}
+            <p class="home-services-intro-content">
+                {html_paragraph}
+            </p>
+        </div>
+    '''
+    html_card_1 = components.card_default(
+        icon = f'''
+            <svg style="margin-bottom: 16px;" xmlns="http://www.w3.org/2000/svg" height="24px"
+                viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                <path
+                    d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+            </svg>
+        ''',
+        title = f'''
+            <h3 style="margin-bottom: 16px; font-size: 24px; line-height: 32px; font-weight: normal; color: #0F1F2E;">
+                1. Analisi e Valutazione
+            </h3>
+        ''',
+        paragraph = f'''
+            <p style="margin-bottom: 16px;">
+                Analizziamo il tuo ambiente produttivo, i rischi biologici specifici e le necessita operative per proporre una soluzione su misura basata sull'ozono.
+            </p>
+        ''',
+    )
+    html_card_2 = components.card_default(
+        icon = f'''
+            <svg style="margin-bottom: 16px;" xmlns="http://www.w3.org/2000/svg" height="24px"
+                viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                <path
+                    d="m352-522 86-87-56-57-44 44-56-56 43-44-45-45-87 87 159 158Zm328 329 87-87-45-45-44 43-56-56 43-44-57-56-86 86 158 159Zm24-567 57 57-57-57ZM290-120H120v-170l175-175L80-680l200-200 216 216 151-152q12-12 27-18t31-6q16 0 31 6t27 18l53 54q12 12 18 27t6 31q0 16-6 30.5T816-647L665-495l215 215L680-80 465-295 290-120Zm-90-80h56l392-391-57-57-391 392v56Zm420-419-29-29 57 57-28-28Z" />
+            </svg>
+        ''',
+        title = f'''
+            <h3 style="margin-bottom: 16px; font-size: 24px; line-height: 32px; font-weight: normal; color: #0F1F2E;">
+                2. Progettazione e Realizzazione
+            </h3>
+        ''',
+        paragraph = f'''
+            <p style="margin-bottom: 16px;">
+                Sviluppiamo una soluzione su misura, combinando le migliori tecnologie a ozono con un design personalizzato per otimizzare igiene, efficienza e sostenibilita.
+            </p>
+        ''',
+    )
+    html_card_3 = components.card_default(
+        icon = f'''
+            <svg style="margin-bottom: 16px;" xmlns="http://www.w3.org/2000/svg" height="24px"
+                viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                <path
+                    d="M686-132 444-376q-20 8-40.5 12t-43.5 4q-100 0-170-70t-70-170q0-36 10-68.5t28-61.5l146 146 72-72-146-146q29-18 61.5-28t68.5-10q100 0 170 70t70 170q0 23-4 43.5T584-516l244 242q12 12 12 29t-12 29l-84 84q-12 12-29 12t-29-12Zm29-85 27-27-256-256q18-20 26-46.5t8-53.5q0-60-38.5-104.5T386-758l74 74q12 12 12 28t-12 28L332-500q-12 12-28 12t-28-12l-74-74q9 57 53.5 95.5T360-440q26 0 52-8t47-25l256 256ZM472-488Z" />
+            </svg>
+        ''',
+        title = f'''
+            <h3 style="margin-bottom: 16px; font-size: 24px; line-height: 32px; font-weight: normal; color: #0F1F2E;">
+                3. Installazione e Formazione
+            </h3>
+        ''',
+        paragraph = f'''
+            <p style="margin-bottom: 16px;">
+                Il nostro team tecnico si occupa dell'installazione e forma il tuo personale sull'utilizzo sicuro e ottimale del sistema.
+            </p>
+        ''',
+    )
+    html_card_4 = components.card_default(
+        icon = f'''
+            <svg style="margin-bottom: 16px;" xmlns="http://www.w3.org/2000/svg" height="24px"
+                viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                <path
+                    d="M240-400h320v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z" />
+            </svg>
+        ''',
+        title = f'''
+            <h3 style="margin-bottom: 16px; font-size: 24px; line-height: 32px; font-weight: normal; color: #0F1F2E;">
+                4. Assistenza e Manutenzione
+            </h3>
+        ''',
+        paragraph = f'''
+            <p style="margin-bottom: 16px;">
+                Forniamo supporto tecnico continuo e piano di manutenzione preventiva per assicurare performance costanti e conformita normativa nel tempo.
+            </p>
+        ''',
+    )
+    html_cards = f'''
+        <div class="home-services-cards-container">
+            <div style="flex: 1;">
+                <div style="display: flex; flex-direction: column; gap: 24px;">
+                    {html_card_1}
+                    {html_card_2}
+                </div>
+            </div>
+            <div style="flex: 1;">
+                <div class="home-services-card-offset">
+                    {html_card_3}
+                    {html_card_4}
+                </div>
+            </div>
+        </div>
+    '''
+    html = f'''
+        <section class="container-xl">
+            {html_header}
+            {html_cards}
+        </section>
+    '''
+    ###
+    with open('styles/tmp/pag-home.css') as f: css = f.read()
+    class_name = '.container-xl'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }}
+        '''
+    class_name = '.home-services-intro-container'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                max-width: 768px;
+                margin-right: auto;
+                margin-left: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }}
+        '''
+    class_name = '.home-services-cards-container'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                display: flex;
+                gap: 24px;
+                margin-bottom: 32px;
+            }}
+        '''
+    class_name = '.home-services-card-offset'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+                margin-top: 48px;
+            }}
+        '''
+    class_name = '.home-services-buttons-container'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                display: flex;
+                gap: 24px;
+            }}
+        '''
+
     with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
     return html
