@@ -23,6 +23,7 @@ def gen():
                 {sections.separator('Servizi')}
                 {sections.home_services()}
                 {sections.separator('Settori')}
+                {sections.home_sectors()}
                 {sections.separator('Azienda')}
                 {sections.separator('Contatti')}
             </main>

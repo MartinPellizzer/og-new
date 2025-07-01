@@ -45,6 +45,35 @@
                 color: #08162C;
                 font-size: 16px;
                 line-height: 24px;
+                margin-bottom: 1.6rem;
+            }
+        
+            .suptitle_default {
+                color: #53BED6;
+                font-size: 16px;
+                line-height: 16px;
+                font-weight: normal;
+                margin-bottom: 16px;
+            }
+        
+            .h3_default {
+                color: #08162C;
+                font-size: 24px;
+                line-height: 32px;
+                font-weight: normal;
+                margin-bottom: 16px;
+            }
+        
+            .card_default_1 {
+                background-color: #F8F9FB; 
+                padding: 32px; 
+                border-radius: 16px;
+            }
+        
+            .card_default {
+                background-color: #F8F9FB; 
+                padding: 32px; 
+                border-radius: 16px;
             }
         
             .header-dark {
@@ -225,6 +254,7 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                margin-bottom: 32px;
             }
         
             .home-services-cards-container {
@@ -243,5 +273,11 @@
             .home-services-buttons-container {
                 display: flex;
                 gap: 24px;
+            }
+        
+            .home-industries-cards-container { 
+                display: flex;
+                gap: 24px;
+                margin-bottom: 24px;
             }
         
