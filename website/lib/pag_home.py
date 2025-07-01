@@ -29,8 +29,7 @@ def gen():
                 {sections.separator('Contatti')}
                 {sections.home_contact()}
             </main>
-            <footer>
-            </footer>
+            {sections.footer_default()}
         </body>
         </html>
     '''

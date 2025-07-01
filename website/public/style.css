@@ -377,3 +377,21 @@
                 gap: 8px;
             }
         
+            .home-footer-container {
+                background-color: #08162C;
+                padding-top: 96px;
+                padding-bottom: 96px;
+            }
+        
+            .home-footer-intro-container {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 64px;
+            }
+        
+            .home-footer-copyright-container {
+                display: flex;
+                justify-content: space-between;
+                aling-items: center;
+            }
+        

@@ -7,6 +7,7 @@ def aschii(paragraph):
     paragraph = paragraph.replace('é', '&#233;')
     paragraph = paragraph.replace('à', '&#224;')
     paragraph = paragraph.replace('°', '&#176;')
+    paragraph = paragraph.replace('©', '&#169;')
     return paragraph
 
 def css_create_if_not_exists():
@@ -117,7 +118,6 @@ def h3_default(text, align='left'):
     text = aschii(text)
     css_align = ''
     if align == 'center': css_align = 'text-align: center; '
-
     style_inline = f'style="{css_align}"'
     if style_inline == 'style=""': style_inline = ''
     html = f'''
@@ -125,7 +125,7 @@ def h3_default(text, align='left'):
     '''
     return html
 
-def paragraph_reverse(text):
+def paragraph_reverse(text, margin_bottom='1.6rem'):
     css_create_if_not_exists()
     ###
     with open(css_filepath) as f: css = f.read()
@@ -136,14 +136,18 @@ def paragraph_reverse(text):
                 color: {g.color_white};
                 font-size: {g.typography_size_md};
                 line-height: {g.typography_line_height_md};
-                margin-bottom: 1.6rem;
+                margin-bottom: {margin_bottom};
             }}
         '''
     with open(css_filepath, 'w') as f: f.write(css)
     ###
     text = aschii(text)
+    css_margin_bottom = ''
+    if margin_bottom != '1.6rem': css_margin_bottom = f'margin-bottom: {margin_bottom}; '
+    style_inline = f'style="{css_margin_bottom}"'
+    if style_inline == 'style=""': style_inline = ''
     html = f'''
-        <p class="paragraph_reverse">{text}</p>
+        <p class="paragraph_reverse" {style_inline}>{text}</p>
     '''
     return html
 
