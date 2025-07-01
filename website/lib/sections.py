@@ -1037,3 +1037,139 @@ def home_about():
         '''
     with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
     return html
+
+def home_contact():
+    html_h2_reverse = components.h2_reverse(
+        text = f'''
+            Pronto a rivoluzionare la sicurezza del tuo impianto alimentare?
+        ''',
+    )
+    html_paragraph_reverse = components.paragraph_reverse(
+        text = f'''
+            Che tu stia cercando un sistema completo di sanificazione all'ozono, un audit tecnico, o semplicemente vuoi capire come integrare l'ozono nei tuoi processi, Ozonogroup è il partner giusto per te.
+        '''
+    )
+    html_button_fill_reverse = components.button_fill_reverse('Conoscici meglio', '/contatti.html')
+    html_button_ghost_reverse = components.button_ghost_reverse('Come funziona', '/contatti.html')
+    html_email = components.contact_reverse(
+        icon = f'''
+            <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#ffffff">
+                <path
+                    d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z" />
+            </svg>
+        ''',
+        cta = f'''
+            Mandaci una email
+        ''',
+        contact = f'''
+            elena@ozonogroup.it
+        ''',
+    )
+    html_phone = components.contact_reverse(
+        icon = f'''
+            <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#ffffff">
+                <path
+                    d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z" />
+            </svg>
+        ''',
+        cta = f'''
+            Chiamaci
+        ''',
+        contact = f'''
+            +39 0423 952833
+        ''',
+    )
+    html = f'''
+        <section class="container-xl" style="margin-bottom: 96px;">
+            <div
+                style="border-radius: 16px; border-bottom-left-radius: 16px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/immagini/home/sanificazione-ozono.png');
+            background-size: cover; background-position: center; padding-top: 96px; padding-bottom: 96px; padding-left: 48px; padding-right: 48px;">
+                <div class="home-contact-intro-container">
+                    <div style="flex: 1;">
+                        {html_h2_reverse}
+                    </div>
+                    <div style="flex: 1;">
+                        <div class="home-contact-intro-content">
+                            <div style="flex: 1;">
+                                {html_email}
+                            </div>
+                            <div style="flex: 1;">
+                                {html_phone}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr style="color: rgba(255, 255, 255, 0.33); margin-bottom: 32px;">
+                <div class="home-contact-cta-container">
+                    <div style="flex: 1;">
+                        <div class="home-contact-cta-buttons">
+                            {html_button_fill_reverse}
+                            {html_button_ghost_reverse}
+                        </div>
+                    </div>
+                    <div style="flex: 1;">
+                        {html_paragraph_reverse}
+                    </div>
+                </div>
+            </div>
+        </section>
+    '''
+    ###
+    with open('styles/tmp/pag-home.css') as f: css = f.read()
+    class_name = '.container-xl'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }}
+        '''
+    class_name = '.home-contact-intro-container'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                display: flex;
+                gap: 96px;
+                margin-bottom: 32px;
+                align-items: center;
+            }}
+        '''
+    class_name = '.home-contact-intro-title'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                font-size: 48px;
+                line-height: 56px;
+                color: #ffffff;
+            }}
+        '''
+    class_name = '.home-contact-intro-content'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                display: flex;
+                gap: 24px;
+            }}
+        '''
+    class_name = '.home-contact-cta-container'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                display: flex;
+                gap: 96px;
+            }}
+        '''
+    class_name = '.home-contact-cta-buttons'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                display: flex;
+                gap: 8px;
+            }}
+        '''
+    with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
+    return html

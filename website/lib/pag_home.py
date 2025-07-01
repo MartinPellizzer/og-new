@@ -27,6 +27,7 @@ def gen():
                 {sections.separator('Azienda')}
                 {sections.home_about()}
                 {sections.separator('Contatti')}
+                {sections.home_contact()}
             </main>
             <footer>
             </footer>

@@ -216,3 +216,31 @@
                 gap: 32px;
             }
         
+            .home-contact-intro-container {
+                display: flex;
+                gap: 96px;
+                margin-bottom: 32px;
+                align-items: center;
+            }
+        
+            .home-contact-intro-title {
+                font-size: 48px;
+                line-height: 56px;
+                color: #ffffff;
+            }
+        
+            .home-contact-intro-content {
+                display: flex;
+                gap: 24px;
+            }
+        
+            .home-contact-cta-container {
+                display: flex;
+                gap: 96px;
+            }
+        
+            .home-contact-cta-buttons {
+                display: flex;
+                gap: 8px;
+            }
+        

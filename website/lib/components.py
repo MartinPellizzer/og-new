@@ -17,9 +17,7 @@ def css_create_if_not_exists():
 css_filepath = g.styles_components_filepath
 
 def suptitle_default(text, align='left'):
-    if not os.path.exists(css_filepath):
-        with open(css_filepath, 'w') as f: 
-            f.write('')
+    css_create_if_not_exists()
     ###
     with open(css_filepath) as f: css = f.read()
     class_name = '.suptitle_default'
@@ -46,9 +44,7 @@ def suptitle_default(text, align='left'):
     return html
 
 def h2_default(text, align='left'):
-    if not os.path.exists(css_filepath):
-        with open(css_filepath, 'w') as f: 
-            f.write('')
+    css_create_if_not_exists()
     ###
     with open(css_filepath) as f: css = f.read()
     class_name = '.h2_default'
@@ -74,11 +70,35 @@ def h2_default(text, align='left'):
     '''
     return html
 
+def h2_reverse(text, align='left'):
+    css_create_if_not_exists()
+    ###
+    with open(css_filepath) as f: css = f.read()
+    class_name = '.h2_reverse'
+    if f'{class_name} ' not in css:
+        css += f'''
+            {class_name} {{
+                color: {g.color_white};
+                font-size: {g.typography_size_xl};
+                line-height: {g.typography_line_height_xl};
+                font-weight: normal;
+                margin-bottom: 16px;
+            }}
+        '''
+    with open(css_filepath, 'w') as f: f.write(css)
+    ###
+    text = aschii(text)
+    css_align = ''
+    if align == 'center': css_align = 'text-align: center; '
+    style_inline = f'style="{css_align}"'
+    if style_inline == 'style=""': style_inline = ''
+    html = f'''
+        <h2 class="h2_reverse" {style_inline}>{text}</h2>
+    '''
+    return html
+
 def h3_default(text, align='left'):
-    # margin-bottom: 16px; font-size: 24px; line-height: 32px; font-weight: normal; color: #0F1F2E;
-    if not os.path.exists(css_filepath):
-        with open(css_filepath, 'w') as f: 
-            f.write('')
+    css_create_if_not_exists()
     ###
     with open(css_filepath) as f: css = f.read()
     class_name = '.h3_default'
@@ -105,10 +125,30 @@ def h3_default(text, align='left'):
     '''
     return html
 
+def paragraph_reverse(text):
+    css_create_if_not_exists()
+    ###
+    with open(css_filepath) as f: css = f.read()
+    class_name = '.paragraph_reverse'
+    if f'{class_name} ' not in css:
+        css += f'''
+            {class_name} {{
+                color: {g.color_white};
+                font-size: {g.typography_size_md};
+                line-height: {g.typography_line_height_md};
+                margin-bottom: 1.6rem;
+            }}
+        '''
+    with open(css_filepath, 'w') as f: f.write(css)
+    ###
+    text = aschii(text)
+    html = f'''
+        <p class="paragraph_reverse">{text}</p>
+    '''
+    return html
+
 def paragraph_default(text):
-    if not os.path.exists(css_filepath):
-        with open(css_filepath, 'w') as f: 
-            f.write('')
+    css_create_if_not_exists()
     ###
     with open(css_filepath) as f: css = f.read()
     class_name = '.paragraph_default'
@@ -130,8 +170,8 @@ def paragraph_default(text):
     return html
 
 def link_fill():
-    if not os.path.exists(css_filepath):
-        with open(css_filepath, 'w') as f: f.write('')
+    css_create_if_not_exists()
+    ###
     with open(css_filepath) as f: css = f.read()
     class_name = '.link_fill'
     if f'{class_name} ' not in css:
@@ -155,8 +195,8 @@ def link_fill():
     return html
 
 def link_fill_reverse():
-    if not os.path.exists(css_filepath):
-        with open(css_filepath, 'w') as f: f.write('')
+    css_create_if_not_exists()
+    ###
     with open(css_filepath) as f: css = f.read()
     class_name = '.link_fill_reverse'
     if f'{class_name} ' not in css:
@@ -180,8 +220,8 @@ def link_fill_reverse():
     return html
 
 def link_ghost_reverse():
-    if not os.path.exists(css_filepath):
-        with open(css_filepath, 'w') as f: f.write('')
+    css_create_if_not_exists()
+    ###
     with open(css_filepath) as f: css = f.read()
     class_name = '.link_ghost_reverse'
     if f'{class_name} ' not in css:
@@ -199,6 +239,85 @@ def link_ghost_reverse():
     html = f'''
         <div>
             <a class="link_ghost_reverse" href="#">Come funziona</a>
+        </div>
+    '''
+    return html
+
+def button_fill_reverse(text, link):
+    css_create_if_not_exists()
+    ###
+    with open(css_filepath) as f: css = f.read()
+    class_name = '.button_fill_reverse'
+    if f'{class_name} ' not in css:
+        css += f'''
+            {class_name} {{
+                background-color: {g.color_white};
+                border: 1px solid {g.color_white};
+                border-radius: 9999px;
+                padding: 8px 16px;
+                display: flex;
+                justify-content: center; 
+                gap: 8px; 
+            }}
+        '''
+    class_name = '.button_fill_reverse a'
+    if f'{class_name} ' not in css:
+        css += f'''
+            {class_name} {{
+                color: {g.color_black_pearl};
+                text-decoration-line: none;
+            }}
+        '''
+    with open(css_filepath, 'w') as f: f.write(css)
+    ###
+    html = f'''
+        <div class="button_fill_reverse">
+            <a href="{link}">{text}</a>
+            <svg style="height: 24px; color: #0f1f2e;" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+            </svg>
+        </div>
+    '''
+    return html
+    
+def button_ghost_reverse(text, link):
+    css_create_if_not_exists()
+    ###
+    with open(css_filepath) as f: css = f.read()
+    class_name = '.button_ghost_reverse'
+    if f'{class_name} ' not in css:
+        css += f'''
+            {class_name} {{
+                border: 1px solid {g.color_white};
+                border-radius: 9999px; 
+                padding: 8px 16px; 
+                display: flex;
+                justify-content: center; 
+                gap: 8px; 
+            }}
+        '''
+    class_name = '.button_ghost_reverse a'
+    if f'{class_name} ' not in css:
+        css += f'''
+            {class_name} {{
+                color: {g.color_white};
+                text-decoration-line: none;
+            }}
+        '''
+    with open(css_filepath, 'w') as f: f.write(css)
+    ###
+    html = f'''
+        <div class="button_ghost_reverse">
+            <a href="{link}">{text}</a>
+            <svg style="height: 24px; color: #0f1f2e;" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+            </svg>
         </div>
     '''
     return html
@@ -264,3 +383,45 @@ def card_default_1(suptitle, title, paragraph, icon, link):
         </div>
     '''
     return html
+
+
+def contact_reverse(icon, cta, contact):
+    css_create_if_not_exists()
+    ###
+    with open(css_filepath) as f: css = f.read()
+    class_name = '.contact_reverse'
+    if f'{class_name} ' not in css:
+        css += f'''
+            {class_name} {{
+                display: flex; 
+                gap: 8px;
+            }}
+        '''
+    class_name = '.contact_reverse p'
+    if f'{class_name} ' not in css:
+        css += f'''
+            {class_name} {{
+                color: {g.color_white};
+                font-size: {g.typography_size_md}; 
+                line-height: {g.typography_line_height_md}; 
+                margin-bottom: 16px; 
+            }}
+        '''
+    with open(css_filepath, 'w') as f: f.write(css)
+    ###
+    cta = aschii(cta)
+    html = f'''
+        <div class="contact_reverse">
+            {icon}
+            <p>
+                {cta}<br>{contact}
+            </p>
+        </div>
+    '''
+    return html
+
+
+
+
+
+                                

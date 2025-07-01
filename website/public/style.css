@@ -76,6 +76,62 @@
                 border-radius: 16px;
             }
         
+            .h2_reverse {
+                color: #ffffff;
+                font-size: 32px;
+                line-height: 40px;
+                font-weight: normal;
+                margin-bottom: 16px;
+            }
+        
+            .paragraph_reverse {
+                color: #ffffff;
+                font-size: 16px;
+                line-height: 24px;
+                margin-bottom: 1.6rem;
+            }
+        
+            .button_fill_reverse {
+                background-color: #ffffff;
+                border: 1px solid #ffffff;
+                border-radius: 9999px;
+                padding: 8px 16px;
+                display: flex;
+                justify-content: center; 
+                gap: 8px; 
+            }
+        
+            .button_fill_reverse a {
+                color: #08162C;
+                text-decoration-line: none;
+            }
+        
+            .button_ghost_reverse {
+                border: 1px solid #ffffff;
+                border-radius: 9999px; 
+                padding: 8px 16px; 
+                display: flex;
+                justify-content: center; 
+                gap: 8px; 
+            }
+        
+            .button_ghost_reverse a {
+                color: #ffffff;
+                text-decoration-line: none;
+            }
+        
+            .contact_reverse {
+                display: flex; 
+                gap: 8px;
+            }
+        
+            .contact_reverse p {
+                color: #ffffff;
+                font-size: 16px; 
+                line-height: 24px; 
+                margin-bottom: 16px; 
+            }
+        
             .header-dark {
                 background-color: #08162C;
                 padding-top: 16px;
@@ -291,5 +347,33 @@
                 display: flex;
                 align-items: center;
                 gap: 32px;
+            }
+        
+            .home-contact-intro-container {
+                display: flex;
+                gap: 96px;
+                margin-bottom: 32px;
+                align-items: center;
+            }
+        
+            .home-contact-intro-title {
+                font-size: 48px;
+                line-height: 56px;
+                color: #ffffff;
+            }
+        
+            .home-contact-intro-content {
+                display: flex;
+                gap: 24px;
+            }
+        
+            .home-contact-cta-container {
+                display: flex;
+                gap: 96px;
+            }
+        
+            .home-contact-cta-buttons {
+                display: flex;
+                gap: 8px;
             }
         
