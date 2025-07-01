@@ -4,6 +4,7 @@ from lib import g
 
 def aschii(paragraph):
     paragraph = paragraph.replace('è', '&#232;')
+    paragraph = paragraph.replace('é', '&#233;')
     paragraph = paragraph.replace('à', '&#224;')
     paragraph = paragraph.replace('°', '&#176;')
     return paragraph
@@ -66,7 +67,6 @@ def h2_default(text, align='left'):
     text = aschii(text)
     css_align = ''
     if align == 'center': css_align = 'text-align: center; '
-
     style_inline = f'style="{css_align}"'
     if style_inline == 'style=""': style_inline = ''
     html = f'''

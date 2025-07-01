@@ -25,6 +25,7 @@ def gen():
                 {sections.separator('Settori')}
                 {sections.home_sectors()}
                 {sections.separator('Azienda')}
+                {sections.home_about()}
                 {sections.separator('Contatti')}
             </main>
             <footer>

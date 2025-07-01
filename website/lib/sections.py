@@ -749,7 +749,6 @@ def home_services():
 
     with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
     return html
-
     
 def home_sectors():
     html_h2_default = components.h2_default(
@@ -960,5 +959,81 @@ def home_sectors():
             }}
         '''
 
+    with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
+    return html
+
+def home_about():
+    html_h2_default = components.h2_default(
+        text = f'''
+            Perché scegliere Ozonogroup?
+        ''',
+    )
+    html_paragraph = components.paragraph_default(
+        text = f'''
+            Ozonogroup progetta sistemi di sanificazione all'ozono su misura per l'industria alimentare, garantendo igiene, sicurezza e conformità normativa. Con esperienza pluriennale e un reparto R&D interno, offriamo soluzioni affidabili, supporto tecnico continuo e formazione. Riduci l'uso di chimici e migliora la qualità produttiva con una tecnologia sicura e sostenibile.
+        '''
+    )
+    html_header = f'''
+        <div>
+            {html_h2_default}
+            {html_paragraph}
+        </div>
+    '''
+    html = f'''
+        <section class="container-xl">
+            <div style="display: flex; flex-direction: column; gap: 32px;">
+                <div class="home-about-intro-container">
+                    <div style="flex: 1;">
+                        <img style="height: 400px; object-fit: cover; border-radius: 16px;"
+                            src="/immagini/home/batteri.webp" alt="">
+                    </div>
+                    <div style="flex: 1;">
+                        {html_header}
+                    </div>
+                </div>
+                <div class="home-about-images-container">
+                    <div style="flex: 1;">
+                        <img style="height: 400px; object-fit: cover; border-radius: 16px;"
+                            src="/immagini/home/odori.webp" alt="">
+                    </div>
+                    <div style="flex: 2;">
+                        <img style="height: 400px; object-fit: cover; border-radius: 16px;"
+                            src="/immagini/home/muffe.webp" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+    '''
+    ###
+    with open('styles/tmp/pag-home.css') as f: css = f.read()
+    class_name = '.container-xl'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }}
+        '''
+    class_name = '.home-about-intro-container'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{ 
+                display: flex;
+                align-items: center;
+                gap: 32px;
+            }}
+        '''
+    class_name = '.home-about-images-container'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{ 
+                display: flex;
+                align-items: center;
+                gap: 32px;
+            }}
+        '''
     with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
     return html
