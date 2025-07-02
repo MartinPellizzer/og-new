@@ -21,3 +21,4 @@ typography_size_xxxl = '64px'
 border_radius_xl = '16px'
 
 styles_components_filepath = f'styles/tmp/components.css'
+styles_blocks_filepath = f'styles/tmp/blocks.css'

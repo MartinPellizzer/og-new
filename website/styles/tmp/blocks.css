@@ -1,0 +1,23 @@
+.contact_reverse {
+    display: flex;
+    gap: 8px;
+}
+
+.contact_reverse p {
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 16px;
+}
+            .card_default_1 {
+                background-color: #F8F9FB; 
+                padding: 32px; 
+                border-radius: 16px;
+            }
+        
+            .card_default {
+                background-color: #F8F9FB; 
+                padding: 32px; 
+                border-radius: 16px;
+            }
+        
