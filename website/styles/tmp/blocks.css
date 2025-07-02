@@ -1,23 +1,41 @@
-.contact_reverse {
-    display: flex;
-    gap: 8px;
-}
 
-.contact_reverse p {
-    color: #ffffff;
-    font-size: 16px;
-    line-height: 24px;
-    margin-bottom: 16px;
-}
+            .heading_default_1 {
+                display: flex;
+                align-items: center;
+                gap: 48px;
+                margin-bottom: 32px;
+            }
+        
             .card_default_1 {
                 background-color: #F8F9FB; 
                 padding: 32px; 
                 border-radius: 16px;
             }
         
+            .heading_default_2 {
+                max-width: 768px;
+                margin-right: auto;
+                margin-left: auto;
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 32px;
+            }
+        
             .card_default {
                 background-color: #F8F9FB; 
                 padding: 32px; 
                 border-radius: 16px;
+            }
+        
+            .contact_reverse {
+                display: flex; 
+                gap: 8px;
+            }
+        
+            .contact_reverse p {
+                color: #ffffff;
+                font-size: 16px; 
+                line-height: 24px; 
+                margin-bottom: 16px; 
             }
         

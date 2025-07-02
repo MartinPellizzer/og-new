@@ -15,27 +15,45 @@
     img {
         width: 100%;
     }
-.contact_reverse {
-    display: flex;
-    gap: 8px;
-}
 
-.contact_reverse p {
-    color: #ffffff;
-    font-size: 16px;
-    line-height: 24px;
-    margin-bottom: 16px;
-}
+            .heading_default_1 {
+                display: flex;
+                align-items: center;
+                gap: 48px;
+                margin-bottom: 32px;
+            }
+        
             .card_default_1 {
                 background-color: #F8F9FB; 
                 padding: 32px; 
                 border-radius: 16px;
             }
         
+            .heading_default_2 {
+                max-width: 768px;
+                margin-right: auto;
+                margin-left: auto;
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 32px;
+            }
+        
             .card_default {
                 background-color: #F8F9FB; 
                 padding: 32px; 
                 border-radius: 16px;
+            }
+        
+            .contact_reverse {
+                display: flex; 
+                gap: 8px;
+            }
+        
+            .contact_reverse p {
+                color: #ffffff;
+                font-size: 16px; 
+                line-height: 24px; 
+                margin-bottom: 16px; 
             }
         
             .link_fill_reverse {
@@ -45,6 +63,13 @@
                 border-radius: 9999px;
                 padding: 8px 16px;
                 text-decoration-line: none;
+            }
+        
+            .h1_reverse {
+                color: #ffffff;
+                font-size: 64px;
+                line-height: 1;
+                font-weight: normal;
             }
         
             .link_ghost_reverse {
@@ -84,6 +109,10 @@
                 line-height: 32px;
                 font-weight: normal;
                 margin-bottom: 16px;
+            }
+        
+            .icon_default {
+                height: 24px;
             }
         
             .link_default {
@@ -203,13 +232,6 @@
                 gap: 64px;
             }
         
-            .home-hero-title-text {
-                font-size: 64px;
-                color: white;
-                line-height: 1;
-                font-weight: normal;
-            }
-        
             .home-hero-content-container {
                 display: flex;
             }
@@ -271,39 +293,9 @@
                 margin-bottom: 32px;
             }
         
-            .home-benefits-intro-title {
-                color: #08162C;
-                font-size: 32px;
-                line-height: 40px;
-                font-weight: normal;
-            }
-        
             .home-benefits-cards-container {
                 display: flex;
                 gap: 24px;
-            }
-        
-            .home-benefits-card-container {
-                background-color: #F8F9FB;
-                border-radius: 16px;
-                padding: 16px;
-            }
-        
-            .home-benefits-card-title {
-                margin-bottom: 16px;
-                color: #08162C;
-                font-size: 24px;
-                line-height: 1.2;
-                font-weight: normal;
-            }
-        
-            .home-benefits-card-link {
-                color: #08162C;
-                text-decoration-line: none;
-            }
-        
-            .home-benefits-card-icon {
-                height: 24px;
             }
         
             .home-services-intro-container {
@@ -327,11 +319,6 @@
                 flex-direction: column;
                 gap: 24px;
                 margin-top: 48px;
-            }
-        
-            .home-services-buttons-container {
-                display: flex;
-                gap: 24px;
             }
         
             .home-industries-cards-container { 

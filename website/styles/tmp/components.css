@@ -8,6 +8,13 @@
                 text-decoration-line: none;
             }
         
+            .h1_reverse {
+                color: #ffffff;
+                font-size: 64px;
+                line-height: 1;
+                font-weight: normal;
+            }
+        
             .link_ghost_reverse {
                 color: #ffffff; 
                 border: 1px solid #ffffff;
@@ -45,6 +52,10 @@
                 line-height: 32px;
                 font-weight: normal;
                 margin-bottom: 16px;
+            }
+        
+            .icon_default {
+                height: 24px;
             }
         
             .link_default {

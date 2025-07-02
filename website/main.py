@@ -4,6 +4,8 @@ from lib import g
 
 try: os.remove(g.styles_components_filepath)
 except: pass
+try: os.remove(g.styles_blocks_filepath)
+except: pass
 
 if 1:
     from lib import pag_home

@@ -32,6 +32,35 @@ def suptitle_default(text, align='left'):
     '''
     return html
 
+####################################################
+# ;headings
+####################################################
+def h1_reverse(text, align='left'):
+    utils.css_create_if_not_exists(css_filepath)
+    ###
+    with open(css_filepath) as f: css = f.read()
+    class_name = '.h1_reverse'
+    if f'{class_name} ' not in css:
+        css += f'''
+            {class_name} {{
+                color: {g.color_white};
+                font-size: {g.typography_size_xxxl};
+                line-height: {g.typography_line_height_xxxl};
+                font-weight: normal;
+            }}
+        '''
+    with open(css_filepath, 'w') as f: f.write(css)
+    ###
+    text = utils.aschii(text)
+    css_align = ''
+    if align == 'center': css_align = 'text-align: center; '
+    style_inline = f'style="{css_align}"'
+    if style_inline == 'style=""': style_inline = ''
+    html = f'''
+        <h1 class="h1_reverse" {style_inline}>{text}</h1>
+    '''
+    return html
+
 def h2_default(text, align='left'):
     utils.css_create_if_not_exists(css_filepath)
     ###
@@ -113,6 +142,35 @@ def h3_default(text, align='left'):
     '''
     return html
 
+####################################################
+# ;paragraph
+####################################################
+def paragraph_default(text, align='left'):
+    utils.css_create_if_not_exists(css_filepath)
+    ###
+    with open(css_filepath) as f: css = f.read()
+    class_name = '.paragraph_default'
+    if f'{class_name} ' not in css:
+        css += f'''
+            {class_name} {{
+                color: {g.color_black_pearl};
+                font-size: {g.typography_size_md};
+                line-height: {g.typography_line_height_md};
+                margin-bottom: 1.6rem;
+            }}
+        '''
+    with open(css_filepath, 'w') as f: f.write(css)
+    ###
+    text = utils.aschii(text)
+    css_align = ''
+    if align == 'center': css_align = 'text-align: center; '
+    style_inline = f'style="{css_align}"'
+    if style_inline == 'style=""': style_inline = ''
+    html = f'''
+        <p class="paragraph_default" {style_inline}>{text}</p>
+    '''
+    return html
+
 def paragraph_reverse(text, margin_bottom='1.6rem'):
     utils.css_create_if_not_exists(css_filepath)
     ###
@@ -136,28 +194,6 @@ def paragraph_reverse(text, margin_bottom='1.6rem'):
     if style_inline == 'style=""': style_inline = ''
     html = f'''
         <p class="paragraph_reverse" {style_inline}>{text}</p>
-    '''
-    return html
-
-def paragraph_default(text):
-    utils.css_create_if_not_exists(css_filepath)
-    ###
-    with open(css_filepath) as f: css = f.read()
-    class_name = '.paragraph_default'
-    if f'{class_name} ' not in css:
-        css += f'''
-            {class_name} {{
-                color: {g.color_black_pearl};
-                font-size: {g.typography_size_md};
-                line-height: {g.typography_line_height_md};
-                margin-bottom: 1.6rem;
-            }}
-        '''
-    with open(css_filepath, 'w') as f: f.write(css)
-    ###
-    text = utils.aschii(text)
-    html = f'''
-        <p class="paragraph_default">{text}</p>
     '''
     return html
 
@@ -259,6 +295,9 @@ def link_ghost_reverse():
     '''
     return html
 
+####################################################
+# ;buttons
+####################################################
 def button_fill_reverse(text, link):
     utils.css_create_if_not_exists(css_filepath)
     ###
@@ -340,8 +379,28 @@ def button_ghost_reverse(text, link):
 
 
 
-
-
+####################################################
+# ;icons
+####################################################
+def icon_default(svg):
+    utils.css_create_if_not_exists(css_filepath)
+    ###
+    with open(css_filepath) as f: css = f.read()
+    class_name = '.icon_default'
+    if f'{class_name} ' not in css:
+        css += f'''
+            {class_name} {{
+                height: 24px;
+            }}
+        '''
+    with open(css_filepath, 'w') as f: f.write(css)
+    ###
+    html = f'''
+        <div class="icon_default">
+            {svg}
+        </div>
+    '''
+    return html
 
 
                                 

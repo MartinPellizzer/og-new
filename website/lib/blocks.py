@@ -6,9 +6,66 @@ from lib import components
 css_filepath = g.styles_blocks_filepath
 
 ####################################################
+# ;headers
+####################################################
+def heading_default_1(title, paragraph):
+    utils.css_create_if_not_exists(css_filepath)
+    ###
+    with open(css_filepath) as f: css = f.read()
+    class_name = '.heading_default_1'
+    if f'{class_name} ' not in css:
+        css += f'''
+            {class_name} {{
+                display: flex;
+                align-items: center;
+                gap: 48px;
+                margin-bottom: 32px;
+            }}
+        '''
+    with open(css_filepath, 'w') as f: f.write(css)
+    ###
+    html = f'''
+        <div class="heading_default_1">
+            <div style="flex: 3;">
+                {title}
+            </div>
+            <div style="flex: 2;">
+                {paragraph}
+            </div>
+        </div>
+    '''
+    return html
+
+def heading_default_2(title, paragraph):
+    utils.css_create_if_not_exists(css_filepath)
+    ###
+    with open(css_filepath) as f: css = f.read()
+    class_name = '.heading_default_2'
+    if f'{class_name} ' not in css:
+        css += f'''
+            {class_name} {{
+                max-width: 768px;
+                margin-right: auto;
+                margin-left: auto;
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 32px;
+            }}
+        '''
+    with open(css_filepath, 'w') as f: f.write(css)
+    ###
+    html = f'''
+        <div class="heading_default_2">
+            {title}
+            {paragraph}
+        </div>
+    '''
+    return html
+
+####################################################
 # ;cards
 ####################################################
-def card_default_1(suptitle_text, title_text, paragraph_text, icon, link_text, link_href):
+def card_default_1(suptitle, title, paragraph, icon, link):
     utils.css_create_if_not_exists(css_filepath)
     ###
     with open(css_filepath) as f: css = f.read()
@@ -23,10 +80,6 @@ def card_default_1(suptitle_text, title_text, paragraph_text, icon, link_text, l
         '''
     with open(css_filepath, 'w') as f: f.write(css)
     ###
-    suptitle = components.suptitle_default(text=suptitle_text)
-    title = components.h3_default(text=title_text)
-    paragraph = components.paragraph_default(text=paragraph_text)
-    link = components.link_default(link_text=link_text, link_href=link_href)
     html = f'''
         <div class="card_default_1">
             {suptitle}
@@ -48,7 +101,7 @@ def card_default_1(suptitle_text, title_text, paragraph_text, icon, link_text, l
     '''
     return html
 
-def card_default_2(icon, title_text, paragraph_text):
+def card_default_2(icon, title, paragraph):
     utils.css_create_if_not_exists(css_filepath)
     ###
     with open(css_filepath) as f: css = f.read()
@@ -62,20 +115,20 @@ def card_default_2(icon, title_text, paragraph_text):
             }}
         '''
     with open(css_filepath, 'w') as f: f.write(css)
-    ###    
-    title = components.h3_default(text=title_text)
-    paragraph = components.paragraph_default(text=paragraph_text)
+    ###
     html = f'''
         <div class="card_default">
             {icon}
+            <div style="margin-bottom: 1.6rem;"></div>
             {title}
             {paragraph}
         </div>
     '''
     return html
 
-
-
+####################################################
+# ;contacts
+####################################################
 def contact_reverse(icon, cta, contact):
     utils.css_create_if_not_exists(css_filepath)
     ###

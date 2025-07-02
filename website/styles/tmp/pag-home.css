@@ -67,13 +67,6 @@
                 gap: 64px;
             }
         
-            .home-hero-title-text {
-                font-size: 64px;
-                color: white;
-                line-height: 1;
-                font-weight: normal;
-            }
-        
             .home-hero-content-container {
                 display: flex;
             }
@@ -135,39 +128,9 @@
                 margin-bottom: 32px;
             }
         
-            .home-benefits-intro-title {
-                color: #08162C;
-                font-size: 32px;
-                line-height: 40px;
-                font-weight: normal;
-            }
-        
             .home-benefits-cards-container {
                 display: flex;
                 gap: 24px;
-            }
-        
-            .home-benefits-card-container {
-                background-color: #F8F9FB;
-                border-radius: 16px;
-                padding: 16px;
-            }
-        
-            .home-benefits-card-title {
-                margin-bottom: 16px;
-                color: #08162C;
-                font-size: 24px;
-                line-height: 1.2;
-                font-weight: normal;
-            }
-        
-            .home-benefits-card-link {
-                color: #08162C;
-                text-decoration-line: none;
-            }
-        
-            .home-benefits-card-icon {
-                height: 24px;
             }
         
             .home-services-intro-container {
@@ -191,11 +154,6 @@
                 flex-direction: column;
                 gap: 24px;
                 margin-top: 48px;
-            }
-        
-            .home-services-buttons-container {
-                display: flex;
-                gap: 24px;
             }
         
             .home-industries-cards-container { 
