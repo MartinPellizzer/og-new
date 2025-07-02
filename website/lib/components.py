@@ -1,10 +1,11 @@
-import os
-
 from lib import g
 from lib import utils
 
 css_filepath = g.styles_components_filepath
 
+####################################################
+# ;suptitles
+####################################################
 def suptitle_default(text, align='left'):
     utils.css_create_if_not_exists(css_filepath)
     ###
@@ -377,8 +378,6 @@ def button_ghost_reverse(text, link):
     '''
     return html
 
-
-
 ####################################################
 # ;icons
 ####################################################
@@ -401,6 +400,3 @@ def icon_default(svg):
         </div>
     '''
     return html
-
-
-                                

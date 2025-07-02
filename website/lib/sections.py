@@ -270,6 +270,8 @@ def footer_default():
     with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
     return html
 
+##########################################################
+
 def home_hero():
     title = components.h1_reverse(
         text = f'''Sanificazione ozono per l'industria alimentare''',
