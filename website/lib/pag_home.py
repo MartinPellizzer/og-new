@@ -5,6 +5,7 @@ from lib import sections
 
 def gen():
     with open('styles/tmp/pag-home.css', 'w') as f: f.write('')
+    with open('styles/tmp-mobile/pag-home-mobile.css', 'w') as f: f.write('')
     html_index = f'''
         <!DOCTYPE html>
         <html lang="en">

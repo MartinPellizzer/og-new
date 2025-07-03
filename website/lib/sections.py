@@ -1,4 +1,5 @@
 from lib import g
+
 from lib import blocks
 from lib import components
 
@@ -17,20 +18,14 @@ def header_light():
                         <a href="/contatti.html">Contatti</a>
                     </nav>
                 </div>
-                {components.link_fill()}
+                <div class="home-hero-header-button">
+                    {components.link_fill()}
+                </div>
             </div>
         </header>
     '''
     with open('styles/tmp/pag-home.css') as f: css = f.read()
-    class_name = '.header-light'
-    if class_name not in css:
-        css += f'''
-            {class_name} {{
-                background-color: {g.color_white};
-                padding-top: 16px;
-                padding-bottom: 16px;
-            }}
-        '''
+    with open('styles/tmp/pag-home-mobile.css') as f: css_mobile = f.read()
     class_name = '.container-xl'
     if class_name not in css:
         css += f'''
@@ -42,6 +37,15 @@ def header_light():
                 padding-right: 16px;
             }}
         '''
+    class_name = '.header-light'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                background-color: {g.color_white};
+                padding-top: 16px;
+                padding-bottom: 16px;
+            }}
+        '''
     class_name = '.header-light-container'
     if class_name not in css:
         css += f'''
@@ -49,6 +53,16 @@ def header_light():
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+            }}
+        '''
+    class_name = '.header-light-container'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    flex-direction: column;
+                    text-align: center;
+                }}
             }}
         '''
     class_name = '.header-light-menu'
@@ -59,6 +73,16 @@ def header_light():
                 justify-content: space-between;
                 align-items: center;
                 gap: 32px;
+            }}
+        '''
+    class_name = '.header-light-menu'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    flex-direction: column;
+                    text-align: center;
+                }}
             }}
         '''
     class_name = '.header-light-menu-logo'
@@ -87,7 +111,17 @@ def header_light():
                 text-decoration-line: none;
             }}
         '''
+    class_name = '.home-hero-header-button'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    display: none;
+                }}
+            }}
+        '''
     with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
+    with open('styles/tmp/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
     return html
 
 def header_dark():
@@ -105,20 +139,14 @@ def header_dark():
                         <a href="/contatti.html">Contatti</a>
                     </nav>
                 </div>
-                {components.link_fill_reverse()}
+                <div class="home-hero-header-button">
+                    {components.link_fill_reverse()}
+                </div>
             </div>
         </header>
     '''
     with open('styles/tmp/pag-home.css') as f: css = f.read()
-    class_name = '.header-dark'
-    if class_name not in css:
-        css += f'''
-            {class_name} {{
-                background-color: {g.color_black_pearl};
-                padding-top: 16px;
-                padding-bottom: 16px;
-            }}
-        '''
+    with open('styles/tmp-mobile/pag-home-mobile.css') as f: css_mobile = f.read()
     class_name = '.container-xl'
     if class_name not in css:
         css += f'''
@@ -130,6 +158,15 @@ def header_dark():
                 padding-right: 16px;
             }}
         '''
+    class_name = '.header-dark'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                background-color: {g.color_black_pearl};
+                padding-top: 16px;
+                padding-bottom: 16px;
+            }}
+        '''
     class_name = '.header-dark-container'
     if class_name not in css:
         css += f'''
@@ -137,6 +174,17 @@ def header_dark():
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                gap: 1.6rem;
+            }}
+        '''
+    class_name = '.header-dark-container'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    flex-direction: column;
+                    text-align: center;
+                }}
             }}
         '''
     class_name = '.header-dark-menu'
@@ -146,7 +194,17 @@ def header_dark():
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                gap: 32px;
+                gap: 1.6rem;
+            }}
+        '''
+    class_name = '.header-dark-menu'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    flex-direction: column;
+                    text-align: center;
+                }}
             }}
         '''
     class_name = '.header-dark-menu-logo'
@@ -175,7 +233,17 @@ def header_dark():
                 text-decoration-line: none;
             }}
         '''
+    class_name = '.home-hero-header-button'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    display: none;
+                }}
+            }}
+        '''
     with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
     return html
 
 def footer_default():
@@ -264,7 +332,7 @@ def footer_default():
             {class_name} {{
                 display: flex;
                 justify-content: space-between;
-                aling-items: center;
+                align-items: center;
             }}
         '''
     with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
@@ -275,6 +343,7 @@ def footer_default():
 def home_hero():
     title = components.h1_reverse(
         text = f'''Sanificazione ozono per l'industria alimentare''',
+        align_mobile = 'center',
     )
     html = f'''
         <section class="home-hero-section">
@@ -292,7 +361,7 @@ def home_hero():
                             <p style="color: #ffffff; font-size: 16px; line-height: 24px; margin-bottom: 24px;">Progettiamo
                                 sistemi di sanificazione con ozono per ambienti di produzione alimentari pi&#249;
                                 sicuri e igienici (senza l'uso di sostanze chimiche).</p>
-                            <div style="display: flex; gap: 24px;">
+                            <div class="home-hero-buttons-container">
                                 {components.link_fill_reverse()}
                                 {components.link_ghost_reverse()}
                             </div>
@@ -303,6 +372,7 @@ def home_hero():
         </section>
     '''
     with open('styles/tmp/pag-home.css') as f: css = f.read()
+    with open('styles/tmp-mobile/pag-home-mobile.css') as f: css_mobile = f.read()
     class_name = '.container-xl'
     if class_name not in css:
         css += f'''
@@ -338,6 +408,17 @@ def home_hero():
                 height: 80%;
             }}
         '''
+    class_name = '.home-hero-container'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    padding-top: 96px;
+                    padding-bottom: 96px;
+                    height: auto;
+                }}
+            }}
+        '''
     class_name = '.home-hero-title-container'
     if class_name not in css:
         css += f'''
@@ -347,6 +428,17 @@ def home_hero():
                 gap: 64px;
             }}
         '''
+    class_name = '.home-hero-title-container'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    flex-direction: column;
+                    margin-bottom: 0px;
+                    gap: 16px;
+                }}
+            }}
+        '''
     class_name = '.home-hero-content-container'
     if class_name not in css:
         css += f'''
@@ -354,27 +446,35 @@ def home_hero():
                 display: flex;
             }}
         '''
-    class_name = '.home-hero-content-container a'
-    if class_name not in css:
-        css += f'''
-            {class_name} {{
-                text-decoration-line: none;
-                display: inline-block;
+    class_name = '.home-hero-content-container'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    flex-direction: column;
+                    text-align: center;
+                }}
             }}
         '''
-    class_name = '.home-hero-content-button'
+    class_name = '.home-hero-buttons-container'
     if class_name not in css:
         css += f'''
             {class_name} {{
-                color: {g.color_black_pearl};
-                background-color: {g.color_white};
-                border: 1px solid {g.color_white};
-                border-radius: 9999px;
-                padding: 8px 16px;
-                text-decoration-line: none;
+                display: flex;
+                gap: 24px;
+            }}
+        '''
+    class_name = '.home-hero-buttons-container'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    flex-direction: column;
+                }}
             }}
         '''
     with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
     return html
 
 def home_proof():
@@ -1117,3 +1217,4 @@ def home_contact():
         '''
     with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
     return html
+

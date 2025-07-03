@@ -22,4 +22,5 @@ typography_line_height_xxxl = '1'
 border_radius_xl = '16px'
 
 styles_components_filepath = f'styles/tmp/components.css'
+styles_components_mobile_filepath = f'styles/tmp-mobile/components-mobile.css'
 styles_blocks_filepath = f'styles/tmp/blocks.css'

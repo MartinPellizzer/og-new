@@ -2,10 +2,12 @@ import os
 
 from lib import g
 
-try: os.remove(g.styles_components_filepath)
-except: pass
-try: os.remove(g.styles_blocks_filepath)
-except: pass
+css_tmp_folderpath = 'styles/tmp'
+for css_filename in os.listdir(css_tmp_folderpath):
+    css_filepth = f'{css_tmp_folderpath}/{css_filename}'
+css_tmp_folderpath = 'styles/tmp-mobile'
+for css_filename in os.listdir(css_tmp_folderpath):
+    css_filepth = f'{css_tmp_folderpath}/{css_filename}'
 
 if 1:
     from lib import pag_home
@@ -35,6 +37,10 @@ css = ''
 css += css_core
 for filename in os.listdir('styles/tmp'):
     filepath = f'styles/tmp/{filename}'
+    with open(filepath) as f: content = f.read()
+    css += content
+for filename in os.listdir('styles/tmp-mobile'):
+    filepath = f'styles/tmp-mobile/{filename}'
     with open(filepath) as f: content = f.read()
     css += content
 with open('public/style.css', 'w') as f: f.write(css)

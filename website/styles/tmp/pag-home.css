@@ -1,10 +1,4 @@
 
-            .header-dark {
-                background-color: #08162C;
-                padding-top: 16px;
-                padding-bottom: 16px;
-            }
-        
             .container-xl {
                 max-width: 1280px;
                 margin-left: auto;
@@ -13,17 +7,24 @@
                 padding-right: 16px;
             }
         
+            .header-dark {
+                background-color: #08162C;
+                padding-top: 16px;
+                padding-bottom: 16px;
+            }
+        
             .header-dark-container {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                gap: 1.6rem;
             }
         
             .header-dark-menu {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                gap: 32px;
+                gap: 1.6rem;
             }
         
             .header-dark-menu-logo {
@@ -71,18 +72,9 @@
                 display: flex;
             }
         
-            .home-hero-content-container a {
-                text-decoration-line: none;
-                display: inline-block;
-            }
-        
-            .home-hero-content-button {
-                color: #08162C;
-                background-color: #ffffff;
-                border: 1px solid #ffffff;
-                border-radius: 9999px;
-                padding: 8px 16px;
-                text-decoration-line: none;
+            .home-hero-buttons-container {
+                display: flex;
+                gap: 24px;
             }
         
             .home-proof-section {
@@ -217,6 +209,6 @@
             .home-footer-copyright-container {
                 display: flex;
                 justify-content: space-between;
-                aling-items: center;
+                align-items: center;
             }
         

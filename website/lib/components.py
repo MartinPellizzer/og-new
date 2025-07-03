@@ -2,6 +2,7 @@ from lib import g
 from lib import utils
 
 css_filepath = g.styles_components_filepath
+css_mobile_filepath = g.styles_components_mobile_filepath
 
 ####################################################
 # ;suptitles
@@ -36,10 +37,12 @@ def suptitle_default(text, align='left'):
 ####################################################
 # ;headings
 ####################################################
-def h1_reverse(text, align='left'):
+def h1_reverse(text, align='left', align_mobile='left'):
     utils.css_create_if_not_exists(css_filepath)
+    utils.css_create_if_not_exists(css_mobile_filepath)
     ###
     with open(css_filepath) as f: css = f.read()
+    with open(css_mobile_filepath) as f: css_mobile = f.read()
     class_name = '.h1_reverse'
     if f'{class_name} ' not in css:
         css += f'''
@@ -50,15 +53,31 @@ def h1_reverse(text, align='left'):
                 font-weight: normal;
             }}
         '''
+    if align_mobile == 'center':
+        class_name = '.align_center_mobile'
+        if f'{class_name} ' not in css_mobile:
+            css_mobile += f'''
+                {class_name} {{
+                    text-align: center;
+                }}
+            '''
     with open(css_filepath, 'w') as f: f.write(css)
+    with open(css_mobile_filepath, 'w') as f: f.write(css_mobile)
     ###
     text = utils.aschii(text)
+    ###
     css_align = ''
     if align == 'center': css_align = 'text-align: center; '
     style_inline = f'style="{css_align}"'
     if style_inline == 'style=""': style_inline = ''
+    ###
+    css_align_mobile = ''
+    class_inline_mobile = ''
+    if align_mobile == 'center': css_align_mobile = 'align_center_mobile '
+    class_inline_mobile += f'{css_align_mobile}'
+    if class_inline_mobile == '': class_inline_mobile = ''
     html = f'''
-        <h1 class="h1_reverse" {style_inline}>{text}</h1>
+        <h1 class="h1_reverse {class_inline_mobile}" {style_inline}>{text}</h1>
     '''
     return html
 
@@ -400,3 +419,4 @@ def icon_default(svg):
         </div>
     '''
     return html
+
