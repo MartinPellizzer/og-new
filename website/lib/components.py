@@ -134,10 +134,12 @@ def h2_default(text, align='', align_mobile=''):
     '''
     return html
 
-def h2_reverse(text, align='left'):
+def h2_reverse(text, align='', align_mobile=''):
     utils.css_create_if_not_exists(css_filepath)
+    utils.css_create_if_not_exists(css_mobile_filepath)
     ###
     with open(css_filepath) as f: css = f.read()
+    with open(css_mobile_filepath) as f: css_mobile = f.read()
     class_name = '.h2_reverse'
     if f'{class_name} ' not in css:
         css += f'''
@@ -150,14 +152,18 @@ def h2_reverse(text, align='left'):
             }}
         '''
     with open(css_filepath, 'w') as f: f.write(css)
+    with open(css_mobile_filepath, 'w') as f: f.write(css_mobile)
     ###
     text = utils.aschii(text)
-    css_align = ''
-    if align == 'center': css_align = 'text-align: center; '
-    style_inline = f'style="{css_align}"'
-    if style_inline == 'style=""': style_inline = ''
+    ###
+    class_inline = ''
+    if align != '': class_inline += f'align_{align} '
+    ###
+    class_inline_mobile = ''
+    if align_mobile != '': class_inline_mobile += f'align_{align_mobile}_mobile '
+    ###
     html = f'''
-        <h2 class="h2_reverse" {style_inline}>{text}</h2>
+        <h2 class="h2_reverse {class_inline} {class_inline_mobile}">{text}</h2>
     '''
     return html
 
@@ -241,10 +247,12 @@ def paragraph_default(text, align='', align_mobile=''):
     '''
     return html
 
-def paragraph_reverse(text, margin_bottom='1.6rem'):
+def paragraph_reverse(text, margin_bottom='1.6rem', align='', align_mobile=''):
     utils.css_create_if_not_exists(css_filepath)
+    utils.css_create_if_not_exists(css_mobile_filepath)
     ###
     with open(css_filepath) as f: css = f.read()
+    with open(css_mobile_filepath) as f: css_mobile = f.read()
     class_name = '.paragraph_reverse'
     if f'{class_name} ' not in css:
         css += f'''
@@ -255,15 +263,43 @@ def paragraph_reverse(text, margin_bottom='1.6rem'):
                 margin-bottom: {margin_bottom};
             }}
         '''
+    if align != '':
+        class_name = f'.align_{align}'
+        if f'{class_name} ' not in css:
+            css += f'''
+                {class_name} {{
+                    text-align: {align};
+                }}
+            '''
+    if align_mobile != '':
+        class_name = f'.align_{align_mobile}_mobile'
+        if f'{class_name} ' not in css_mobile:
+            css_mobile += f'''
+                @media screen and (max-width: 768px) {{
+                    {class_name} {{
+                        text-align: {align_mobile};
+                    }}
+                }}
+            '''
     with open(css_filepath, 'w') as f: f.write(css)
+    with open(css_mobile_filepath, 'w') as f: f.write(css_mobile)
     ###
     text = utils.aschii(text)
     css_margin_bottom = ''
     if margin_bottom != '1.6rem': css_margin_bottom = f'margin-bottom: {margin_bottom}; '
     style_inline = f'style="{css_margin_bottom}"'
     if style_inline == 'style=""': style_inline = ''
+    ###
+    text = utils.aschii(text)
+    ###
+    class_inline = ''
+    if align != '': class_inline += f'align_{align} '
+    ###
+    class_inline_mobile = ''
+    if align_mobile != '': class_inline_mobile += f'align_{align_mobile}_mobile '
+    ###
     html = f'''
-        <p class="paragraph_reverse" {style_inline}>{text}</p>
+        <p class="paragraph_reverse {class_inline} {class_inline_mobile}" {style_inline}>{text}</p>
     '''
     return html
 

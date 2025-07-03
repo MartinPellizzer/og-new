@@ -1124,6 +1124,7 @@ def home_about():
     '''
     ###
     with open('styles/tmp/pag-home.css') as f: css = f.read()
+    with open('styles/tmp-mobile/pag-home-mobile.css') as f: css_mobile = f.read()
     class_name = '.container-xl'
     if class_name not in css:
         css += f'''
@@ -1144,6 +1145,15 @@ def home_about():
                 gap: 32px;
             }}
         '''
+    class_name = '.home-about-intro-container'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    flex-direction: column;
+                }}
+            }}
+        '''
     class_name = '.home-about-images-container'
     if class_name not in css:
         css += f'''
@@ -1153,7 +1163,17 @@ def home_about():
                 gap: 32px;
             }}
         '''
+    class_name = '.home-about-images-container'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    flex-direction: column;
+                }}
+            }}
+        '''
     with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
     return html
 
 def home_contact():
@@ -1161,6 +1181,8 @@ def home_contact():
         text = f'''
             Pronto a rivoluzionare la sicurezza del tuo impianto alimentare?
         ''',
+        align = f'''left''',
+        align_mobile = f'''center''',
     )
     html_paragraph_reverse = components.paragraph_reverse(
         text = f'''
@@ -1235,6 +1257,7 @@ def home_contact():
     '''
     ###
     with open('styles/tmp/pag-home.css') as f: css = f.read()
+    with open('styles/tmp-mobile/pag-home-mobile.css') as f: css_mobile = f.read()
     class_name = '.container-xl'
     if class_name not in css:
         css += f'''
@@ -1256,6 +1279,16 @@ def home_contact():
                 align-items: center;
             }}
         '''
+    class_name = '.home-contact-intro-container'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    flex-direction: column;
+                    gap: 0;
+                }}
+            }}
+        '''
     class_name = '.home-contact-intro-title'
     if class_name not in css:
         css += f'''
@@ -1273,12 +1306,32 @@ def home_contact():
                 gap: 24px;
             }}
         '''
+    class_name = '.home-contact-intro-content'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    flex-direction: column;
+                    gap: 0;
+                }}
+            }}
+        '''
     class_name = '.home-contact-cta-container'
     if class_name not in css:
         css += f'''
             {class_name} {{
                 display: flex;
                 gap: 96px;
+            }}
+        '''
+    class_name = '.home-contact-cta-container'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    flex-direction: column;
+                    gap: 1.6rem;
+                }}
             }}
         '''
     class_name = '.home-contact-cta-buttons'
@@ -1289,6 +1342,16 @@ def home_contact():
                 gap: 8px;
             }}
         '''
+    class_name = '.home-contact-cta-buttons'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    flex-direction: column;
+                }}
+            }}
+        '''
     with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
     return html
 
