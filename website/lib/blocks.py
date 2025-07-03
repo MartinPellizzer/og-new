@@ -4,14 +4,17 @@ from lib import utils
 from lib import components
 
 css_filepath = g.styles_blocks_filepath
+css_mobile_filepath = g.styles_blocks_mobile_filepath
 
 ####################################################
 # ;headers
 ####################################################
 def heading_default_1(title, paragraph):
     utils.css_create_if_not_exists(css_filepath)
+    utils.css_create_if_not_exists(css_mobile_filepath)
     ###
     with open(css_filepath) as f: css = f.read()
+    with open(css_mobile_filepath) as f: css_mobile = f.read()
     class_name = '.heading_default_1'
     if f'{class_name} ' not in css:
         css += f'''
@@ -22,7 +25,18 @@ def heading_default_1(title, paragraph):
                 margin-bottom: 32px;
             }}
         '''
+    class_name = '.heading_default_1'
+    if f'{class_name} ' not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    flex-direction: column;
+                    gap: 0;
+                }}
+            }}
+        '''
     with open(css_filepath, 'w') as f: f.write(css)
+    with open(css_mobile_filepath, 'w') as f: f.write(css_mobile)
     ###
     html = f'''
         <div class="heading_default_1">

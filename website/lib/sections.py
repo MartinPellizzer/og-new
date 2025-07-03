@@ -491,6 +491,7 @@ def home_proof():
         </section>
     '''
     with open('styles/tmp/pag-home.css') as f: css = f.read()
+    with open('styles/tmp-mobile/pag-home-mobile.css') as f: css_mobile = f.read()
     class_name = '.container-xl'
     if class_name not in css:
         css += f'''
@@ -511,6 +512,16 @@ def home_proof():
                 align-items: center;
             }}
         '''
+    class_name = '.home-proof-section'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    flex-direction: column;
+                    gap: 16px;
+                }}
+            }}
+        '''
     class_name = '.home-proof-section img'
     if class_name not in css:
         css += f'''
@@ -519,7 +530,18 @@ def home_proof():
                 opacity: 66%;
             }}
         '''
+    class_name = '.home-proof-section img'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    width: 240px;
+                    opacity: 50%;
+                }}
+            }}
+        '''
     with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
     return html
 
 def separator(text):
@@ -668,6 +690,7 @@ def home_benefits():
     '''
     ###
     with open('styles/tmp/pag-home.css') as f: css = f.read()
+    with open('styles/tmp-mobile/pag-home-mobile.css') as f: css_mobile = f.read()
     class_name = '.container-xl'
     if class_name not in css:
         css += f'''
@@ -697,7 +720,26 @@ def home_benefits():
                 gap: 24px;
             }}
         '''
+    class_name = '.home-benefits-cards-container'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    flex-direction: column;
+                }}
+            }}
+        '''
+    class_name = '.home-benefits-cards-container'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    flex-direction: column;
+                }}
+            }}
+        '''
     with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
     return html
 
 def home_services():
@@ -705,10 +747,12 @@ def home_services():
         title = components.h2_default(
             text = f'''Tecnologia personalizzata per ogni esigenza dell'industria alimentare''',
             align = f'''center''',
+            align_mobile = f'''left''',
         ),
         paragraph = components.paragraph_default(
             text = f'''I nostri sistemi di sanificazione all'ozono sono progettati su misura per adattarsi a ogni fase del processo produttivo. Che tu operi nella trasformazione, nel confezionamento o nella logistica, Ozonogroup ha una soluzione efficace, sicura e automatizzata.''',
             align = f'''center''',
+            align_mobile = f'''left''',
         ),
     )
     html_card_1 = blocks.card_default_2(
@@ -795,6 +839,7 @@ def home_services():
     '''
     ###
     with open('styles/tmp/pag-home.css') as f: css = f.read()
+    with open('styles/tmp-mobile/pag-home-mobile.css') as f: css_mobile = f.read()
     class_name = '.container-xl'
     if class_name not in css:
         css += f'''
@@ -828,6 +873,15 @@ def home_services():
                 margin-bottom: 32px;
             }}
         '''
+    class_name = '.home-services-cards-container'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    flex-direction: column;
+                }}
+            }}
+        '''
     class_name = '.home-services-card-offset'
     if class_name not in css:
         css += f'''
@@ -838,7 +892,17 @@ def home_services():
                 margin-top: 48px;
             }}
         '''
+    class_name = '.home-services-card-offset'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    margin-top: 0;
+                }}
+            }}
+        '''
     with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
     return html
     
 def home_sectors():
@@ -990,6 +1054,7 @@ def home_sectors():
     '''
     ###
     with open('styles/tmp/pag-home.css') as f: css = f.read()
+    with open('styles/tmp-mobile/pag-home-mobile.css') as f: css_mobile = f.read()
     class_name = '.container-xl'
     if class_name not in css:
         css += f'''
@@ -1010,8 +1075,17 @@ def home_sectors():
                 margin-bottom: 24px;
             }}
         '''
-
+    class_name = '.home-industries-cards-container'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    flex-direction: column;
+                }}
+            }}
+        '''
     with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
     return html
 
 def home_about():

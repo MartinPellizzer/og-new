@@ -48,3 +48,41 @@
                 }
             }
         
+            @media screen and (max-width: 768px) {
+                .home-proof-section {
+                    flex-direction: column;
+                    gap: 16px;
+                }
+            }
+        
+            @media screen and (max-width: 768px) {
+                .home-proof-section img {
+                    width: 240px;
+                    opacity: 50%;
+                }
+            }
+        
+            @media screen and (max-width: 768px) {
+                .home-benefits-cards-container {
+                    flex-direction: column;
+                }
+            }
+        
+            @media screen and (max-width: 768px) {
+                .home-services-cards-container {
+                    flex-direction: column;
+                }
+            }
+        
+            @media screen and (max-width: 768px) {
+                .home-services-card-offset {
+                    margin-top: 0;
+                }
+            }
+        
+            @media screen and (max-width: 768px) {
+                .home-industries-cards-container {
+                    flex-direction: column;
+                }
+            }
+        

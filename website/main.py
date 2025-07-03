@@ -5,9 +5,11 @@ from lib import g
 css_tmp_folderpath = 'styles/tmp'
 for css_filename in os.listdir(css_tmp_folderpath):
     css_filepth = f'{css_tmp_folderpath}/{css_filename}'
+    os.remove(css_filepth)
 css_tmp_folderpath = 'styles/tmp-mobile'
 for css_filename in os.listdir(css_tmp_folderpath):
     css_filepth = f'{css_tmp_folderpath}/{css_filename}'
+    os.remove(css_filepth)
 
 if 1:
     from lib import pag_home

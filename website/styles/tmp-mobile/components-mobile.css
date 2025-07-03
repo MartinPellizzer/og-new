@@ -1,5 +1,13 @@
 
-                .align_center_mobile {
-                    text-align: center;
+                @media screen and (max-width: 768px) {
+                    .align_center_mobile {
+                        text-align: center;
+                    }
+                }
+            
+                @media screen and (max-width: 768px) {
+                    .align_left_mobile {
+                        text-align: left;
+                    }
                 }
             

@@ -57,8 +57,10 @@ def h1_reverse(text, align='left', align_mobile='left'):
         class_name = '.align_center_mobile'
         if f'{class_name} ' not in css_mobile:
             css_mobile += f'''
-                {class_name} {{
-                    text-align: center;
+                @media screen and (max-width: 768px) {{
+                    {class_name} {{
+                        text-align: center;
+                    }}
                 }}
             '''
     with open(css_filepath, 'w') as f: f.write(css)
@@ -81,10 +83,12 @@ def h1_reverse(text, align='left', align_mobile='left'):
     '''
     return html
 
-def h2_default(text, align='left'):
+def h2_default(text, align='', align_mobile=''):
     utils.css_create_if_not_exists(css_filepath)
+    utils.css_create_if_not_exists(css_mobile_filepath)
     ###
     with open(css_filepath) as f: css = f.read()
+    with open(css_mobile_filepath) as f: css_mobile = f.read()
     class_name = '.h2_default'
     if f'{class_name} ' not in css:
         css += f'''
@@ -96,15 +100,37 @@ def h2_default(text, align='left'):
                 margin-bottom: 16px;
             }}
         '''
+    if align != '':
+        class_name = f'.align_{align}'
+        if f'{class_name} ' not in css:
+            css += f'''
+                {class_name} {{
+                    text-align: {align};
+                }}
+            '''
+    if align_mobile != '':
+        class_name = f'.align_{align_mobile}_mobile'
+        if f'{class_name} ' not in css_mobile:
+            css_mobile += f'''
+                @media screen and (max-width: 768px) {{
+                    {class_name} {{
+                        text-align: {align_mobile};
+                    }}
+                }}
+            '''
     with open(css_filepath, 'w') as f: f.write(css)
+    with open(css_mobile_filepath, 'w') as f: f.write(css_mobile)
     ###
     text = utils.aschii(text)
-    css_align = ''
-    if align == 'center': css_align = 'text-align: center; '
-    style_inline = f'style="{css_align}"'
-    if style_inline == 'style=""': style_inline = ''
+    ###
+    class_inline = ''
+    if align != '': class_inline += f'align_{align} '
+    ###
+    class_inline_mobile = ''
+    if align_mobile != '': class_inline_mobile += f'align_{align_mobile}_mobile '
+    ###
     html = f'''
-        <h2 class="h2_default" {style_inline}>{text}</h2>
+        <h2 class="h2_default {class_inline} {class_inline_mobile}">{text}</h2>
     '''
     return html
 
@@ -165,10 +191,12 @@ def h3_default(text, align='left'):
 ####################################################
 # ;paragraph
 ####################################################
-def paragraph_default(text, align='left'):
+def paragraph_default(text, align='', align_mobile=''):
     utils.css_create_if_not_exists(css_filepath)
+    utils.css_create_if_not_exists(css_mobile_filepath)
     ###
     with open(css_filepath) as f: css = f.read()
+    with open(css_mobile_filepath) as f: css_mobile = f.read()
     class_name = '.paragraph_default'
     if f'{class_name} ' not in css:
         css += f'''
@@ -179,15 +207,37 @@ def paragraph_default(text, align='left'):
                 margin-bottom: 1.6rem;
             }}
         '''
+    if align != '':
+        class_name = f'.align_{align}'
+        if f'{class_name} ' not in css:
+            css += f'''
+                {class_name} {{
+                    text-align: {align};
+                }}
+            '''
+    if align_mobile != '':
+        class_name = f'.align_{align_mobile}_mobile'
+        if f'{class_name} ' not in css_mobile:
+            css_mobile += f'''
+                @media screen and (max-width: 768px) {{
+                    {class_name} {{
+                        text-align: {align_mobile};
+                    }}
+                }}
+            '''
     with open(css_filepath, 'w') as f: f.write(css)
+    with open(css_mobile_filepath, 'w') as f: f.write(css_mobile)
     ###
     text = utils.aschii(text)
-    css_align = ''
-    if align == 'center': css_align = 'text-align: center; '
-    style_inline = f'style="{css_align}"'
-    if style_inline == 'style=""': style_inline = ''
+    ###
+    class_inline = ''
+    if align != '': class_inline += f'align_{align} '
+    ###
+    class_inline_mobile = ''
+    if align_mobile != '': class_inline_mobile += f'align_{align_mobile}_mobile '
+    ###
     html = f'''
-        <p class="paragraph_default" {style_inline}>{text}</p>
+        <p class="paragraph_default {class_inline} {class_inline_mobile}">{text}</p>
     '''
     return html
 

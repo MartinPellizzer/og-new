@@ -1,0 +1,8 @@
+
+            @media screen and (max-width: 768px) {
+                .heading_default_1 {
+                    flex-direction: column;
+                    gap: 0;
+                }
+            }
+        

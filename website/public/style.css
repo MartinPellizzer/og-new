@@ -88,6 +88,10 @@
                 margin-bottom: 16px;
             }
         
+                .align_left {
+                    text-align: left;
+                }
+            
             .paragraph_default {
                 color: #08162C;
                 font-size: 16px;
@@ -120,6 +124,10 @@
                 text-decoration-line: none;
             }
         
+                .align_center {
+                    text-align: center;
+                }
+            
             .h2_reverse {
                 color: #ffffff;
                 font-size: 32px;
@@ -161,15 +169,6 @@
         
             .button_ghost_reverse a {
                 color: #ffffff;
-                text-decoration-line: none;
-            }
-        
-            .link_fill {
-                color: #ffffff;
-                background-color: #08162C;
-                border: 1px solid #08162C;
-                border-radius: 9999px;
-                padding: 8px 16px;
                 text-decoration-line: none;
             }
         
@@ -386,8 +385,23 @@
                 align-items: center;
             }
         
-                .align_center_mobile {
-                    text-align: center;
+            @media screen and (max-width: 768px) {
+                .heading_default_1 {
+                    flex-direction: column;
+                    gap: 0;
+                }
+            }
+        
+                @media screen and (max-width: 768px) {
+                    .align_center_mobile {
+                        text-align: center;
+                    }
+                }
+            
+                @media screen and (max-width: 768px) {
+                    .align_left_mobile {
+                        text-align: left;
+                    }
                 }
             
             @media screen and (max-width: 768px) {
@@ -435,6 +449,44 @@
         
             @media screen and (max-width: 768px) {
                 .home-hero-buttons-container {
+                    flex-direction: column;
+                }
+            }
+        
+            @media screen and (max-width: 768px) {
+                .home-proof-section {
+                    flex-direction: column;
+                    gap: 16px;
+                }
+            }
+        
+            @media screen and (max-width: 768px) {
+                .home-proof-section img {
+                    width: 240px;
+                    opacity: 50%;
+                }
+            }
+        
+            @media screen and (max-width: 768px) {
+                .home-benefits-cards-container {
+                    flex-direction: column;
+                }
+            }
+        
+            @media screen and (max-width: 768px) {
+                .home-services-cards-container {
+                    flex-direction: column;
+                }
+            }
+        
+            @media screen and (max-width: 768px) {
+                .home-services-card-offset {
+                    margin-top: 0;
+                }
+            }
+        
+            @media screen and (max-width: 768px) {
+                .home-industries-cards-container {
                     flex-direction: column;
                 }
             }
