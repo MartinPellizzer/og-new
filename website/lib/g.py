@@ -25,3 +25,24 @@ styles_components_filepath = f'styles/tmp/components.css'
 styles_components_mobile_filepath = f'styles/tmp-mobile/components-mobile.css'
 styles_blocks_filepath = f'styles/tmp/blocks.css'
 styles_blocks_mobile_filepath = f'styles/tmp-mobile/blocks-mobile.css'
+
+nav_link_list = [
+    {
+        'link_name': 'home', 'link_href': '/',
+    },
+    {
+        'link_name': 'prototti', 'link_href': '/prodotti.html',
+    },
+    {
+        'link_name': 'servizi', 'link_href': '/servizi.html',
+    },
+    {
+        'link_name': 'settori', 'link_href': '/settori.html',
+    },
+    {
+        'link_name': 'chi siamo', 'link_href': '/chi-siamo.html',
+    },
+    {
+        'link_name': 'contatti', 'link_href': '/contatti.html',
+    },
+]

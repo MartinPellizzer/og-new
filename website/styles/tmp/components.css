@@ -115,3 +115,17 @@
                 text-decoration-line: none;
             }
         
+            .link_reverse {
+                color: #ffffff;
+                text-decoration-line: none;
+            }
+        
+            .link_fill {
+                color: #ffffff;
+                background-color: #08162C;
+                border: 1px solid #08162C;
+                border-radius: 9999px;
+                padding: 8px 16px;
+                text-decoration-line: none;
+            }
+        

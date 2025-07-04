@@ -4,18 +4,16 @@ from lib import blocks
 from lib import components
 
 def header_light():
+    html_nav_link_list = ''
+    for nav_link in g.nav_link_list:
+        html_nav_link_list += f'<a href="{nav_link["link_href"]}">{nav_link["link_name"].title()}</a>\n'
     html = f'''
         <header class="header-light">
             <div class="container-xl header-light-container">
                 <div class="header-light-menu">
                     <a class="header-light-menu-logo" href="/">Ozonogroup</a>
                     <nav class="header-light-menu-nav">
-                        <a href="/">Home</a>
-                        <a href="/prodotti.html">Prodotti</a>
-                        <a href="/servizi.html">Servizi</a>
-                        <a href="/settori.html">Settori</a>
-                        <a href="/chi-siamo.html">Chi Siamo</a>
-                        <a href="/contatti.html">Contatti</a>
+                        {html_nav_link_list}
                     </nav>
                 </div>
                 <div class="home-hero-header-button">
@@ -25,7 +23,7 @@ def header_light():
         </header>
     '''
     with open('styles/tmp/pag-home.css') as f: css = f.read()
-    with open('styles/tmp/pag-home-mobile.css') as f: css_mobile = f.read()
+    with open('styles/tmp-mobile/pag-home-mobile.css') as f: css_mobile = f.read()
     class_name = '.container-xl'
     if class_name not in css:
         css += f'''
@@ -121,22 +119,20 @@ def header_light():
             }}
         '''
     with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
-    with open('styles/tmp/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
+    with open('styles/tmp-mobile/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
     return html
 
 def header_dark():
+    html_nav_link_list = ''
+    for nav_link in g.nav_link_list:
+        html_nav_link_list += f'<a href="{nav_link["link_href"]}">{nav_link["link_name"].title()}</a>\n'
     html = f'''
         <header class="header-dark">
             <div class="container-xl header-dark-container">
                 <div class="header-dark-menu">
                     <a class="header-dark-menu-logo" href="/">Ozonogroup</a>
                     <nav class="header-dark-menu-nav">
-                        <a href="/">Home</a>
-                        <a href="/prodotti.html">Prodotti</a>
-                        <a href="/servizi.html">Servizi</a>
-                        <a href="/settori.html">Settori</a>
-                        <a href="/chi-siamo.html">Chi Siamo</a>
-                        <a href="/contatti.html">Contatti</a>
+                        {html_nav_link_list}
                     </nav>
                 </div>
                 <div class="home-hero-header-button">
@@ -247,46 +243,60 @@ def header_dark():
     return html
 
 def footer_default():
-    html_paragraph_reverse = components.paragraph_reverse(
-        text = f'''
-            Copyright © Ozonogroup | Tutti i diritti riservati
-        ''',
+    html_contatti_heading = components.h2_reverse(
+        text = f'''Contatti''',
+    )
+    html_address_paragraph = components.paragraph_reverse(
+        text = f'''Via dell'Artigianato, 23, 31011 Asolo TV''',
+        margin_bottom = '0.8rem',
+    )
+    html_phone_paragraph = components.paragraph_reverse(
+        text = f'''+39 0423 952833''',
         margin_bottom = '0',
     )
+    html_email_paragraph = components.paragraph_reverse(
+        text = f'''elena@ozonogroup.it''',
+        margin_bottom = '0',
+    )
+    html_links_heading = components.h2_reverse(
+        text = f'''Risorse''',
+    )
+    html_paragraph_reverse = components.paragraph_reverse(
+        text = f'''Copyright © Ozonogroup | Tutti i diritti riservati''',
+        margin_bottom = '0',
+    )
+    html_nav_link_list = ''
+    for nav_link in g.nav_link_list:
+        html_link = components.link_reverse(
+            nav_link["link_name"].title(), 
+            nav_link["link_href"],
+        )
+        html_nav_link_list += html_link
     html = f'''
         <footer class="home-footer-container">
             <div class="container-xl">
                 <div class="home-footer-intro-container">
                     <div>
-                        <p style="color: #ffffff; margin-bottom: 16px; font-size: 32px;">Contatti</p>
-                        <p style="color: #ffffff; margin-bottom: 8px;">Via dell'Artigianato, 23, 31011 Asolo TV</p>
+                        {html_contatti_heading}
+                        {html_address_paragraph}
                         <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 8px;">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px"
-                                fill="#ffffff">
-                                <path
-                                    d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#ffffff">
+                                <path d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z" />
                             </svg>
-                            <p style="color: #ffffff;">+39 0423 952833</p>
+                            {html_phone_paragraph}
                         </div>
                         <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 8px;">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px"
-                                fill="#ffffff">
-                                <path
-                                    d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#ffffff">
+                                <path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z" />
                             </svg>
-                            <p style="color: #ffffff;">
-                                elena@ozonogroup.it
-                            </p>
+                            {html_email_paragraph}
                         </div>
                     </div>
                     <div>
-                        <p style="color: #ffffff; margin-bottom: 16px; font-size: 32px;">Links</p>
-                        <a style="display: block; color: #ffffff; text-decoration-line: none; margin-bottom: 8px;"
-                            href="#">Prodotti</a>
-                        <a style="display: block; color: #ffffff; text-decoration-line: none; margin-bottom: 8px"
-                            href="#">Contatti</a>
-                        <a style="display: block; color: #ffffff; text-decoration-line: none; margin-bottom: 8px"
-                            href="#">Blog</a>
+                        {html_links_heading}
+                        <div class="home-footer-nav">
+                            {html_nav_link_list}
+                        </div>
                     </div>
                 </div>
                 <div class="home-footer-copyright-container">
@@ -297,6 +307,7 @@ def footer_default():
         </footer>
     '''
     with open('styles/tmp/pag-home.css') as f: css = f.read()
+    with open('styles/tmp-mobile/pag-home-mobile.css') as f: css_mobile = f.read()
     class_name = '.container-xl'
     if class_name not in css:
         css += f'''
@@ -326,6 +337,15 @@ def footer_default():
                 margin-bottom: 64px;
             }}
         '''
+    class_name = '.home-footer-nav'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                display: flex;
+                flex-direction: column;
+                gap: 0.8rem;
+            }}
+        '''
     class_name = '.home-footer-copyright-container'
     if class_name not in css:
         css += f'''
@@ -335,7 +355,28 @@ def footer_default():
                 align-items: center;
             }}
         '''
+    class_name = '.home-footer-intro-container'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    flex-direction: column;
+                    gap: 32px;
+                }}
+            }}
+        '''
+    class_name = '.home-footer-copyright-container'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    flex-direction: column;
+                    gap: 16px;
+                }}
+            }}
+        '''
     with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
     return html
 
 ##########################################################
@@ -1355,3 +1396,258 @@ def home_contact():
     with open('styles/tmp-mobile/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
     return html
 
+##########################################################
+
+def prodotti_hero():
+    html_heading = components.h1_reverse(
+        text = f'''Prodotti''',
+        align_mobile = 'center',
+    )
+    html_paragraph = components.paragraph_reverse(
+        text = f'''I generatori ad ozono di Ozonogroup offrono una soluzione ecologica ed efficace per la sanificazione e il trattamento dell'aria e dell'acqua. Grazie alle loro proprietà ossidanti, garantiscono un'igiene profonda eliminando batteri, virus e odori senza l'utilizzo di agenti chimici.''',
+        align_mobile = 'center',
+        margin_bottom = '0',
+    )
+    html = f'''
+        <section class="prodotti-hero-section">
+            <div class="container-xl">
+                {html_heading}
+                {html_paragraph}
+            </div>
+        </section>
+    '''
+    with open('styles/tmp/pag-prodotti.css') as f: css = f.read()
+    with open('styles/tmp-mobile/pag-prodotti-mobile.css') as f: css_mobile = f.read()
+    class_name = '.container-xl'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }}
+        '''
+    class_name = '.prodotti-hero-section'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                background: {g.color_black_pearl};
+                margin-bottom: 96px;
+                padding-top: 6.4rem;
+                padding-bottom: 6.4rem;
+                border-bottom-left-radius: {g.border_radius_xl};
+                border-bottom-right-radius: {g.border_radius_xl};
+            }}
+        '''
+    with open('styles/tmp/pag-prodotti.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-prodotti-mobile.css', 'w') as f: f.write(css_mobile)
+    return html
+
+def prodotti_piccole():
+    html_card_1 = blocks.card_itp_default(
+        image = f'''
+            <img 
+                style="width: 240px; height: 200px; object-fit: cover;"
+                src="/immagini/prodotti/ozonogroup-ozonizzatore-mini-transparent.png" 
+                alt="ozonizzatore mini di ozonogroup">
+        ''', 
+        title = components.h3_default(
+            text = f'''Mini''',
+        ), 
+        paragraph = components.paragraph_default(
+            text = f'''Generatore compatto e disponibile in diversi modelli, progettato per purificare l'aria in ambienti di dimensioni contenute.''',
+        ),
+    )
+    html_card_2 = blocks.card_itp_default(
+        image = f'''
+            <img 
+                style="width: 240px; height: 200px; object-fit: cover;"
+                src="/immagini/prodotti/ozonogroup-ozonizzatore-nymphea-transparent.png" 
+                alt="ozonizzatore nymphea di ozonogroup">
+        ''', 
+        title = components.h3_default(
+            text = f'''Nymphea''',
+        ), 
+        paragraph = components.paragraph_default(
+            text = f'''Generatore pratico e funzionale, progettato specificamente per il trattamento dell'acqua in contesti domestici e di piccola scala.''',
+        ),
+    )
+    html = f'''
+        <section class="container-xl">
+            <div class="prodotti-cards-layout">
+                {html_card_1}
+                {html_card_2}
+            </div>
+        </section>
+    '''
+    ###
+    with open('styles/tmp/pag-prodotti.css') as f: css = f.read()
+    with open('styles/tmp-mobile/pag-prodotti-mobile.css') as f: css_mobile = f.read()
+    class_name = '.container-xl'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }}
+        '''
+    class_name = '.prodotti-cards-layout'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 48px;
+            }}
+        '''
+    with open('styles/tmp/pag-prodotti.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-prodotti-mobile.css', 'w') as f: f.write(css_mobile)
+    return html
+
+def prodotti_medie():
+    html_card_1 = blocks.card_itp_default(
+        image = f'''
+            <img 
+                style="width: 240px; height: 200px; object-fit: cover;"
+                src="/immagini/prodotti/ozonogorup-ozonizzatore-bigpower-transparent.png" 
+                alt="ozonizzatore bigpower di ozonogroup">
+        ''', 
+        title = components.h3_default(
+            text = f'''Bigpower''',
+        ), 
+        paragraph = components.paragraph_default(
+            text = f'''Generatore di media potenza è disponibile in più configurazioni e garantisce un'efficace sanificazione dell'aria.''',
+        ),
+    )
+    html_card_2 = blocks.card_itp_default(
+        image = f'''
+            <img 
+                style="width: 240px; height: 200px; object-fit: cover;"
+                src="/immagini/prodotti/ozonogroup-ozonizzatore-lympha-transparent.png" 
+                alt="ozonizzatore lympha di ozonogroup">
+        ''', 
+        title = components.h3_default(
+            text = f'''Lympha''',
+        ), 
+        paragraph = components.paragraph_default(
+            text = f'''Generatore di media potenza progettato per il trattamento dell'acqua in sistemi di media grandezza.''',
+        ),
+    )
+    html = f'''
+        <section class="container-xl">
+            <div class="prodotti-cards-layout">
+                {html_card_1}
+                {html_card_2}
+            </div>
+        </section>
+    '''
+    ###
+    with open('styles/tmp/pag-prodotti.css') as f: css = f.read()
+    with open('styles/tmp-mobile/pag-prodotti-mobile.css') as f: css_mobile = f.read()
+    class_name = '.container-xl'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }}
+        '''
+    class_name = '.prodotti-cards-layout'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 48px;
+            }}
+        '''
+    with open('styles/tmp/pag-prodotti.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-prodotti-mobile.css', 'w') as f: f.write(css_mobile)
+    return html
+
+def prodotti_grandi():
+    html_card_1 = blocks.card_itp_default(
+        image = f'''
+            <img 
+                style="width: 240px; height: 200px; object-fit: cover;"
+                src="/immagini/prodotti/ozonogroup-ozonizzatore-greenozone-transparent.png" 
+                alt="ozonizzatore greenozone di ozonogroup">
+        ''', 
+        title = components.h3_default(
+            text = f'''Greenozone''',
+        ), 
+        paragraph = components.paragraph_default(
+            text = f'''Generatore ad alta capacità progettato per trattare grandi volumi d'aria in ambienti industriali.''',
+        ),
+    )
+    html_card_2 = blocks.card_itp_default(
+        image = f'''
+            <img 
+                style="width: 240px; height: 200px; object-fit: cover;"
+                src="/immagini/prodotti/ozonogroup-ozonizzatore-hydor-transparent.png" 
+                alt="ozonizzatore hydor di ozonogroup">
+        ''', 
+        title = components.h3_default(
+            text = f'''Hydor''',
+        ), 
+        paragraph = components.paragraph_default(
+            text = f'''Generatore potente e altamente affidabile, specifico per il trattamento dell'acqua in impianti di grandi dimensioni.''',
+        ),
+    )
+    html_card_3 = blocks.card_itp_default(
+        image = f'''
+            <img 
+                style="width: 240px; height: 200px; object-fit: cover;"
+                src="/immagini/prodotti/ozonogorup-ozonizzatore-delta-transparent.png" 
+                alt="ozonizzatore delta di ozonogroup">
+        ''', 
+        title = components.h3_default(
+            text = f'''Delta''',
+        ), 
+        paragraph = components.paragraph_default(
+            text = f'''Generatore di ultima generazione, dotato di schermo touch per un controllo avanzato dei parametri.''',
+        ),
+    )
+    html = f'''
+        <section class="container-xl">
+            <div class="prodotti-cards-layout">
+                {html_card_1}
+                {html_card_2}
+                {html_card_3}
+            </div>
+        </section>
+    '''
+    ###
+    with open('styles/tmp/pag-prodotti.css') as f: css = f.read()
+    with open('styles/tmp-mobile/pag-prodotti-mobile.css') as f: css_mobile = f.read()
+    class_name = '.container-xl'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }}
+        '''
+    class_name = '.prodotti-cards-layout'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 48px;
+            }}
+        '''
+    with open('styles/tmp/pag-prodotti.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-prodotti-mobile.css', 'w') as f: f.write(css_mobile)
+    return html

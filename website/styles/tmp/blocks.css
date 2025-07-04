@@ -39,3 +39,9 @@
                 margin-bottom: 16px; 
             }
         
+            .card_itp_default {
+                background-color: #F8F9FB; 
+                padding: 3.2rem; 
+                border-radius: 1.6rem;
+            }
+        

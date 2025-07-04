@@ -125,3 +125,31 @@
                 }
             }
         
+            @media screen and (max-width: 768px) {
+                .home-footer-intro-container {
+                    flex-direction: column;
+                    gap: 32px;
+                }
+            }
+        
+            @media screen and (max-width: 768px) {
+                .home-footer-copyright-container {
+                    flex-direction: column;
+                    gap: 16px;
+                }
+            }
+        
+            @media screen and (max-width: 768px) {
+                .header-light-container {
+                    flex-direction: column;
+                    text-align: center;
+                }
+            }
+        
+            @media screen and (max-width: 768px) {
+                .header-light-menu {
+                    flex-direction: column;
+                    text-align: center;
+                }
+            }
+        

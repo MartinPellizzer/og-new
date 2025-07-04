@@ -206,9 +206,51 @@
                 margin-bottom: 64px;
             }
         
+            .home-footer-nav {
+                display: flex;
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+        
             .home-footer-copyright-container {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+            }
+        
+            .header-light {
+                background-color: #ffffff;
+                padding-top: 16px;
+                padding-bottom: 16px;
+            }
+        
+            .header-light-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        
+            .header-light-menu {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 32px;
+            }
+        
+            .header-light-menu-logo {
+                font-size: 24px;
+                color: #08162C;
+                text-decoration-line: none;
+            }
+        
+            .header-light-menu-nav {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+            }
+        
+            .header-light-menu-nav a {
+                color: #08162C;
+                text-decoration-line: none;
             }
         

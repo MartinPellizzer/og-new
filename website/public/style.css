@@ -56,6 +56,12 @@
                 margin-bottom: 16px; 
             }
         
+            .card_itp_default {
+                background-color: #F8F9FB; 
+                padding: 3.2rem; 
+                border-radius: 1.6rem;
+            }
+        
             .link_fill_reverse {
                 color: #08162C;
                 background-color: #ffffff;
@@ -169,6 +175,20 @@
         
             .button_ghost_reverse a {
                 color: #ffffff;
+                text-decoration-line: none;
+            }
+        
+            .link_reverse {
+                color: #ffffff;
+                text-decoration-line: none;
+            }
+        
+            .link_fill {
+                color: #ffffff;
+                background-color: #08162C;
+                border: 1px solid #08162C;
+                border-radius: 9999px;
+                padding: 8px 16px;
                 text-decoration-line: none;
             }
         
@@ -379,10 +399,75 @@
                 margin-bottom: 64px;
             }
         
+            .home-footer-nav {
+                display: flex;
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+        
             .home-footer-copyright-container {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+            }
+        
+            .header-light {
+                background-color: #ffffff;
+                padding-top: 16px;
+                padding-bottom: 16px;
+            }
+        
+            .header-light-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        
+            .header-light-menu {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 32px;
+            }
+        
+            .header-light-menu-logo {
+                font-size: 24px;
+                color: #08162C;
+                text-decoration-line: none;
+            }
+        
+            .header-light-menu-nav {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+            }
+        
+            .header-light-menu-nav a {
+                color: #08162C;
+                text-decoration-line: none;
+            }
+        
+            .container-xl {
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+        
+            .prodotti-hero-section {
+                background: #08162C;
+                margin-bottom: 96px;
+                padding-top: 6.4rem;
+                padding-bottom: 6.4rem;
+                border-bottom-left-radius: 16px;
+                border-bottom-right-radius: 16px;
+            }
+        
+            .prodotti-cards-layout {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 48px;
             }
         
             @media screen and (max-width: 768px) {
@@ -527,6 +612,34 @@
             @media screen and (max-width: 768px) {
                 .home-contact-cta-buttons {
                     flex-direction: column;
+                }
+            }
+        
+            @media screen and (max-width: 768px) {
+                .home-footer-intro-container {
+                    flex-direction: column;
+                    gap: 32px;
+                }
+            }
+        
+            @media screen and (max-width: 768px) {
+                .home-footer-copyright-container {
+                    flex-direction: column;
+                    gap: 16px;
+                }
+            }
+        
+            @media screen and (max-width: 768px) {
+                .header-light-container {
+                    flex-direction: column;
+                    text-align: center;
+                }
+            }
+        
+            @media screen and (max-width: 768px) {
+                .header-light-menu {
+                    flex-direction: column;
+                    text-align: center;
                 }
             }
         

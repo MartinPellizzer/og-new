@@ -151,6 +151,24 @@ def h2_reverse(text, align='', align_mobile=''):
                 margin-bottom: 16px;
             }}
         '''
+    if align != '':
+        class_name = f'.align_{align}'
+        if f'{class_name} ' not in css:
+            css += f'''
+                {class_name} {{
+                    text-align: {align};
+                }}
+            '''
+    if align_mobile != '':
+        class_name = f'.align_{align_mobile}_mobile'
+        if f'{class_name} ' not in css_mobile:
+            css_mobile += f'''
+                @media screen and (max-width: 768px) {{
+                    {class_name} {{
+                        text-align: {align_mobile};
+                    }}
+                }}
+            '''
     with open(css_filepath, 'w') as f: f.write(css)
     with open(css_mobile_filepath, 'w') as f: f.write(css_mobile)
     ###
@@ -167,10 +185,12 @@ def h2_reverse(text, align='', align_mobile=''):
     '''
     return html
 
-def h3_default(text, align='left'):
+def h3_default(text, align='', align_mobile=''):
     utils.css_create_if_not_exists(css_filepath)
+    utils.css_create_if_not_exists(css_mobile_filepath)
     ###
     with open(css_filepath) as f: css = f.read()
+    with open(css_mobile_filepath) as f: css_mobile = f.read()
     class_name = '.h3_default'
     if f'{class_name} ' not in css:
         css += f'''
@@ -183,14 +203,51 @@ def h3_default(text, align='left'):
             }}
         '''
     with open(css_filepath, 'w') as f: f.write(css)
+    with open(css_mobile_filepath, 'w') as f: f.write(css_mobile)
     ###
     text = utils.aschii(text)
-    css_align = ''
-    if align == 'center': css_align = 'text-align: center; '
-    style_inline = f'style="{css_align}"'
-    if style_inline == 'style=""': style_inline = ''
+    ###
+    class_inline = ''
+    if align != '': class_inline += f'align_{align} '
+    ###
+    class_inline_mobile = ''
+    if align_mobile != '': class_inline_mobile += f'align_{align_mobile}_mobile '
+    ###
     html = f'''
-        <h3 class="h3_default" {style_inline}>{text}</h3>
+        <h3 class="h3_default {class_inline} {class_inline_mobile}">{text}</h3>
+    '''
+    return html
+    
+def h3_reverse(text, align='', align_mobile=''):
+    utils.css_create_if_not_exists(css_filepath)
+    utils.css_create_if_not_exists(css_mobile_filepath)
+    ###
+    with open(css_filepath) as f: css = f.read()
+    with open(css_mobile_filepath) as f: css_mobile = f.read()
+    class_name = '.h3_reverse'
+    if f'{class_name} ' not in css:
+        css += f'''
+            {class_name} {{
+                color: {g.color_white};
+                font-size: {g.typography_size_lg};
+                line-height: {g.typography_line_height_lg};
+                font-weight: normal;
+                margin-bottom: 16px;
+            }}
+        '''
+    with open(css_filepath, 'w') as f: f.write(css)
+    with open(css_mobile_filepath, 'w') as f: f.write(css_mobile)
+    ###
+    text = utils.aschii(text)
+    ###
+    class_inline = ''
+    if align != '': class_inline += f'align_{align} '
+    ###
+    class_inline_mobile = ''
+    if align_mobile != '': class_inline_mobile += f'align_{align_mobile}_mobile '
+    ###
+    html = f'''
+        <h3 class="h3_reverse {class_inline} {class_inline_mobile}">{text}</h3>
     '''
     return html
 
@@ -322,6 +379,27 @@ def link_default(link_text, link_href):
     ###
     html = f'''
         <a class="link_default" href="{link_href}">
+            {link_text}
+        </a>
+    '''
+    return html
+
+def link_reverse(link_text, link_href):
+    utils.css_create_if_not_exists(css_filepath)
+    ###
+    with open(css_filepath) as f: css = f.read()
+    class_name = '.link_reverse'
+    if f'{class_name} ' not in css:
+        css += f'''
+            {class_name} {{
+                color: {g.color_white};
+                text-decoration-line: none;
+            }}
+        '''
+    with open(css_filepath, 'w') as f: f.write(css)
+    ###
+    html = f'''
+        <a class="link_reverse" href="{link_href}">
             {link_text}
         </a>
     '''

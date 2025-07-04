@@ -14,6 +14,9 @@ for css_filename in os.listdir(css_tmp_folderpath):
 if 1:
     from lib import pag_home
     pag_home.gen()
+if 1:
+    from lib import pag_prodotti
+    pag_prodotti.gen()
 
 css_core = f'''
     * {{
