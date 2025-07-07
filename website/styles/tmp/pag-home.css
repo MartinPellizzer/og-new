@@ -254,3 +254,13 @@
                 text-decoration-line: none;
             }
         
+            .contact-hero-container { 
+                margin-top: 6.4rem; 
+                margin-bottom: 6.4rem;
+            }
+        
+            .contact-hero-content-container { 
+                display: flex;
+                gap: 96px;
+            }
+        

@@ -129,3 +129,15 @@
                 text-decoration-line: none;
             }
         
+            .h1_default {
+                color: #08162C;
+                font-size: 64px;
+                line-height: 1;
+                font-weight: normal;
+                margin-bottom: 16px;
+            }
+        
+                .margin_bottom_0 {
+                    margin-bottom: 0;
+                }
+            

@@ -17,6 +17,12 @@ if 1:
 if 1:
     from lib import pag_prodotti
     pag_prodotti.gen()
+if 1:
+    from lib import pag_settori
+    pag_settori.gen()
+if 1:
+    from lib import pag_contatti
+    pag_contatti.gen()
 
 css_core = f'''
     * {{

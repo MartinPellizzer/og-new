@@ -37,6 +37,57 @@ def suptitle_default(text, align='left'):
 ####################################################
 # ;headings
 ####################################################
+def h1_default(text, align='left', align_mobile='left'):
+    utils.css_create_if_not_exists(css_filepath)
+    utils.css_create_if_not_exists(css_mobile_filepath)
+    ###
+    with open(css_filepath) as f: css = f.read()
+    with open(css_mobile_filepath) as f: css_mobile = f.read()
+    class_name = '.h1_default'
+    if f'{class_name} ' not in css:
+        css += f'''
+            {class_name} {{
+                color: {g.color_black_pearl};
+                font-size: {g.typography_size_xxxl};
+                line-height: {g.typography_line_height_xxxl};
+                font-weight: normal;
+                margin-bottom: 16px;
+            }}
+        '''
+    if align != '':
+        class_name = f'.align_{align}'
+        if f'{class_name} ' not in css:
+            css += f'''
+                {class_name} {{
+                    text-align: {align};
+                }}
+            '''
+    if align_mobile != '':
+        class_name = f'.align_{align_mobile}_mobile'
+        if f'{class_name} ' not in css_mobile:
+            css_mobile += f'''
+                @media screen and (max-width: 768px) {{
+                    {class_name} {{
+                        text-align: {align_mobile};
+                    }}
+                }}
+            '''
+    with open(css_filepath, 'w') as f: f.write(css)
+    with open(css_mobile_filepath, 'w') as f: f.write(css_mobile)
+    ###
+    text = utils.aschii(text)
+    ###
+    class_inline = ''
+    if align != '': class_inline += f'align_{align} '
+    ###
+    class_inline_mobile = ''
+    if align_mobile != '': class_inline_mobile += f'align_{align_mobile}_mobile '
+    ###
+    html = f'''
+        <h2 class="h1_default {class_inline} {class_inline_mobile}">{text}</h2>
+    '''
+    return html
+
 def h1_reverse(text, align='left', align_mobile='left'):
     utils.css_create_if_not_exists(css_filepath)
     utils.css_create_if_not_exists(css_mobile_filepath)
@@ -254,7 +305,7 @@ def h3_reverse(text, align='', align_mobile=''):
 ####################################################
 # ;paragraph
 ####################################################
-def paragraph_default(text, align='', align_mobile=''):
+def paragraph_default(text, align='', align_mobile='', margin_bottom=''):
     utils.css_create_if_not_exists(css_filepath)
     utils.css_create_if_not_exists(css_mobile_filepath)
     ###
@@ -288,6 +339,14 @@ def paragraph_default(text, align='', align_mobile=''):
                     }}
                 }}
             '''
+    if margin_bottom != '':
+        class_name = f'.margin_bottom_{margin_bottom}'
+        if f'{class_name} ' not in css:
+            css += f'''
+                {class_name} {{
+                    margin-bottom: {margin_bottom};
+                }}
+            '''
     with open(css_filepath, 'w') as f: f.write(css)
     with open(css_mobile_filepath, 'w') as f: f.write(css_mobile)
     ###
@@ -298,6 +357,9 @@ def paragraph_default(text, align='', align_mobile=''):
     ###
     class_inline_mobile = ''
     if align_mobile != '': class_inline_mobile += f'align_{align_mobile}_mobile '
+    ###
+    class_inline = ''
+    if margin_bottom != '': class_inline_mobile += f'margin_bottom_{margin_bottom} '
     ###
     html = f'''
         <p class="paragraph_default {class_inline} {class_inline_mobile}">{text}</p>

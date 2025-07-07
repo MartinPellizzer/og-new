@@ -5,7 +5,7 @@ from lib import components
 
 def header_light():
     html_nav_link_list = ''
-    for nav_link in g.nav_link_list:
+    for nav_link in g.header_nav_link_list:
         html_nav_link_list += f'<a href="{nav_link["link_href"]}">{nav_link["link_name"].title()}</a>\n'
     html = f'''
         <header class="header-light">
@@ -124,7 +124,7 @@ def header_light():
 
 def header_dark():
     html_nav_link_list = ''
-    for nav_link in g.nav_link_list:
+    for nav_link in g.header_nav_link_list:
         html_nav_link_list += f'<a href="{nav_link["link_href"]}">{nav_link["link_name"].title()}</a>\n'
     html = f'''
         <header class="header-dark">
@@ -266,7 +266,7 @@ def footer_default():
         margin_bottom = '0',
     )
     html_nav_link_list = ''
-    for nav_link in g.nav_link_list:
+    for nav_link in g.footer_nav_link_list:
         html_link = components.link_reverse(
             nav_link["link_name"].title(), 
             nav_link["link_href"],
@@ -1651,3 +1651,284 @@ def prodotti_grandi():
     with open('styles/tmp/pag-prodotti.css', 'w') as f: f.write(css)
     with open('styles/tmp-mobile/pag-prodotti-mobile.css', 'w') as f: f.write(css_mobile)
     return html
+
+##########################################################
+
+def settori_grid():
+    html_heading = blocks.heading_default_2(
+        title = components.h1_default(
+            text = f'''Settori di applicazione della sanificazione ozono''',
+            align = f'center',
+        ),
+        paragraph = components.paragraph_default(
+            text = f'''La sanificazione ad ozono viene applicata nel settore lattiero-caseario, carni, ittico, ortofrutticolo, ittico e altri, per eliminare microrganismi patogeni, produrre alimenti sicuri e salvaguardare la salute dei consumatori. Qui sotto trovi una lista dettagliata dei settori dove l'ozono viene impiegato.''',
+            align = f'center',
+        ),
+    )
+    html_card_1 = blocks.card_default_1(
+        title = components.h3_default(
+            text = f'Lattiero-Caseario',
+        ),
+        paragraph = components.paragraph_default(
+            text = f'''La sanificazione ad ozono nel lattiero-caseario elimina microrganismi da ambienti, attrezzature e aria, prolungando la shelf life senza residui chimici.''',
+        ),
+        icon = components.icon_default(
+            svg = f'''
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                    <path d="M482-40 294-400q-71 3-122.5-41T120-560q0-51 29.5-92t74.5-58q18-91 89.5-150.5T480-920q95 0 166.5 59.5T736-710q45 17 74.5 58t29.5 92q0 75-53 119t-119 41L482-40ZM280-480q15 0 29.5-5t26.5-17l22-22 26 16q21 14 45.5 21t50.5 7q26 0 50.5-7t45.5-21l26-16 22 22q12 12 26.5 17t29.5 5q33 0 56.5-23.5T760-560q0-30-19-52.5T692-640l-30-4-2-32q-5-69-57-116.5T480-840q-71 0-123 47.5T300-676l-2 32-30 6q-30 6-49 27t-19 51q0 33 23.5 56.5T280-480Zm202 266 108-210q-24 12-52 18t-58 6q-27 0-54.5-6T372-424l110 210Zm-2-446Z" />
+                </svg>
+            ''',
+        ),
+        link = components.link_default(
+            link_text = f'''Scopri Applicazioni''',
+            link_href = f'''/settori/lattiero-caseario.html''',
+        ),
+    )
+    html_card_2 = blocks.card_default_1(
+        title = components.h3_default(
+            text = f'Carni',
+        ),
+        paragraph = components.paragraph_default(
+            text = f'''La sanificazione ad ozono elimina batteri, muffe e odori da ambienti, superfici e celle frigorifere, migliorando sicurezza igienica e conservabilità della carne.''',
+        ),
+        icon = components.icon_default(
+            svg = f'''
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                    <path d="M250-40v-160h-30q-42 0-71-29t-29-71q0-42 29-71t71-29h30v-40H120v-200h130v-40h-30q-42 0-71-29t-29-71q0-42 29-71t71-29h30v-40h60v40h30q42 0 71 29t29 71q0 42-29 71t-71 29h-30v40h130v200H310v40h30q42 0 71 29t29 71q0 42-29 71t-71 29h-30v160h-60Zm400 0v-160h-30q-42 0-71-29t-29-71q0-42 29-71t71-29h30v-40H520v-200h130v-40h-30q-42 0-71-29t-29-71q0-42 29-71t71-29h30v-40h60v40h30q42 0 71 29t29 71q0 42-29 71t-71 29h-30v40h130v200H710v40h30q42 0 71 29t29 71q0 42-29 71t-71 29h-30v160h-60ZM220-760h120q8 0 14-6t6-14q0-8-6-14t-14-6H220q-8 0-14 6t-6 14q0 8 6 14t14 6Zm400 0h120q8 0 14-6t6-14q0-8-6-14t-14-6H620q-8 0-14 6t-6 14q0 8 6 14t14 6ZM200-520h160v-40H200v40Zm400 0h160v-40H600v40ZM220-280h120q8 0 14-6t6-14q0-8-6-14t-14-6H220q-8 0-14 6t-6 14q0 8 6 14t14 6Zm400 0h120q8 0 14-6t6-14q0-8-6-14t-14-6H620q-8 0-14 6t-6 14q0 8 6 14t14 6ZM200-760v-40 40Zm400 0v-40 40ZM200-520v-40 40Zm400 0v-40 40ZM200-280v-40 40Zm400 0v-40 40Z" />
+                </svg>
+            ''',
+        ),
+        link = components.link_default(
+            link_text = f'''Scopri Applicazioni''',
+            link_href = f'''/settori/carni.html''',
+        ),
+    )
+    html_card_3 = blocks.card_default_1(
+        title = components.h3_default(
+            text = f'Ittico',
+        ),
+        paragraph = components.paragraph_default(
+            text = f'''Nel settore ittico, l'ozono sanifica pesce, ambienti e acque, riduce batteri, prolunga la conservazione e migliora l'igiene senza residui chimici.''',
+        ),
+        icon = components.icon_default(
+            svg = f'''
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                    <path d="M440-120q-100 0-170-70t-70-170v-240l200 200-56 57-64-64v47q0 66 47 113t113 47q66 0 113-47t47-113v-127q-36-14-58-44.5T520-600q0-38 22-68.5t58-44.5v-167h80v167q36 14 58 44.5t22 68.5q0 38-22 69t-58 44v127q0 100-70 170t-170 70Zm200-440q17 0 28.5-11.5T680-600q0-17-11.5-28.5T640-640q-17 0-28.5 11.5T600-600q0 17 11.5 28.5T640-560Zm0-40Z" />
+                </svg>
+            ''',
+        ),
+        link = components.link_default(
+            link_text = f'''Scopri Applicazioni''',
+            link_href = f'''/settori/ittico.html''',
+        ),
+    )
+    html_card_4 = blocks.card_default_1(
+        title = components.h3_default(
+            text = f'Ortofrutticolo',
+        ),
+        paragraph = components.paragraph_default(
+            text = f'''La sanificazione ad ozono nel settore ortofrutticolo igienizza aria, superfici e prodotti, riduce batteri, muffe e odori, prolungando freschezza e sicurezza.''',
+        ),
+        icon = components.icon_default(
+            svg = f'''
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                    <path d="M480-120q-117 0-198.5-81.5T200-400q0-94 55.5-168.5T401-669q-20-5-39-14.5T328-708q-33-33-42.5-78.5T281-879q47-5 92.5 4.5T452-832q23 23 33.5 52t13.5 61q13-31 31.5-58.5T572-828q11-11 28-11t28 11q11 11 11 28t-11 28q-22 22-39 48.5T564-667q88 28 142 101.5T760-400q0 117-81.5 198.5T480-120Zm0-80q83 0 141.5-58.5T680-400q0-83-58.5-141.5T480-600q-83 0-141.5 58.5T280-400q0 83 58.5 141.5T480-200Zm0-200Z" />
+                </svg>
+            ''',
+        ),
+        link = components.link_default(
+            link_text = f'''Scopri Applicazioni''',
+            link_href = f'''/settori/ortofrutticolo.html''',
+        ),
+    )
+    html_card_5 = blocks.card_default_1(
+        title = components.h3_default(
+            text = f'Vinicolo',
+        ),
+        paragraph = components.paragraph_default(
+            text = f'''La sanificazione ad ozono nel settore vinicolo elimina batteri, muffe e lieviti da attrezzature, bottiglie, uve e ambienti, garantendo qualità e sicurezza.''',
+        ),
+        icon = components.icon_default(
+            svg = f'''
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                    <path d="M320-120v-80h120v-164q-86-14-143-80t-57-156v-240h480v240q0 90-57 156t-143 80v164h120v80H320Zm160-320q56 0 98-34t56-86H326q14 52 56 86t98 34ZM320-640h320v-120H320v120Zm160 200Z" />
+                </svg>
+            ''',
+        ),
+    )
+    html = f'''
+        <section class="container-xl" style="margin-top: 6.4rem; margin-bottom: 6.4rem;">
+            {html_heading}
+            <div class="home-industries-cards-container">
+                <div style="flex: 1;">
+                    {html_card_1}
+                </div>
+                <div style="flex: 1;">
+                    {html_card_2}
+                </div>
+                <div style="flex: 1;">
+                    {html_card_3}
+                </div>
+            </div>
+            <div class="home-industries-cards-container">
+                <div style="flex: 1;">
+                    {html_card_4}
+                </div>
+                <div style="flex: 1;">
+                    {html_card_5}
+                </div>
+                <div style="flex: 1;">
+                </div>
+            </div>
+        </section>
+    '''
+    ###
+    with open('styles/tmp/pag-home.css') as f: css = f.read()
+    with open('styles/tmp-mobile/pag-home-mobile.css') as f: css_mobile = f.read()
+    class_name = '.container-xl'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }}
+        '''
+    class_name = '.home-industries-cards-container'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{ 
+                display: flex;
+                gap: 24px;
+                margin-bottom: 24px;
+            }}
+        '''
+    class_name = '.home-industries-cards-container'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    flex-direction: column;
+                }}
+            }}
+        '''
+    with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
+    return html
+
+##########################################################
+
+def contatti_section_1():
+    html_heading = blocks.heading_default_1(
+        title = components.h1_default(
+            text = f'''Consulta il nostro team di esperti''',
+            align = f'center',
+            align_mobile = f'left',
+        ),
+        paragraph = components.paragraph_default(
+            text = f'''Se vuoi prenotare una consulenza gratuita o hai bisogno di un'informazione veloce, usa uno dei contatti qui sotto.''',
+            align = f'center',
+            align_mobile = f'left',
+            margin_bottom = '0',
+        ),
+    )
+    html_contact_card_default_1 = blocks.contact_card_default(
+        icon = f'''
+            <svg style="color: #0f1f2e;" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+                <path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z" />
+            </svg>
+        ''',
+        cta = f'''
+            Mandaci una email
+        ''',
+        contact = f'''
+            elena@ozonogroup.it
+        ''',
+    )
+    html_contact_card_default_2 = blocks.contact_card_default(
+        icon = f'''
+            <svg style="color: #0f1f2e;" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+                <path d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z" />
+            </svg>
+        ''',
+        cta = f'''
+            Chiamaci
+        ''',
+        contact = f'''
+            +39 0423 952833
+        ''',
+    )
+    html = f'''
+        <section class="contact-hero-container">
+            <div class="container-xl">
+                {html_heading}
+                <div class="contact-hero-content-container">
+                    <div style="flex: 1;">
+                        <img style="height: 400px; object-fit: cover; border-radius: 16px;"
+                            src="/immagini/home/batteri.webp" alt="">
+                    </div>
+                    <div style="flex: 1; display: flex; flex-direction: column; gap: 16px;">
+                        {html_contact_card_default_1}
+                        {html_contact_card_default_2}
+                    </div>
+                </div>
+            </div>
+        </section>
+    '''
+    ###
+    with open('styles/tmp/pag-home.css') as f: css = f.read()
+    with open('styles/tmp-mobile/pag-home-mobile.css') as f: css_mobile = f.read()
+    class_name = '.container-xl'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }}
+        '''
+    class_name = '.contact-hero-container'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{ 
+                margin-top: 6.4rem; 
+                margin-bottom: 6.4rem;
+            }}
+        '''
+    class_name = '.contact-hero-container'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                margin-top: 4.8rem; 
+                margin-bottom: 4.8rem;
+                }}
+            }}
+        '''
+    class_name = '.contact-hero-content-container'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{ 
+                display: flex;
+                gap: 96px;
+            }}
+        '''
+    class_name = '.contact-hero-content-container'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    flex-direction: column;
+                    gap: 16px;
+                }}
+            }}
+        '''
+    with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
+    return html
+
+

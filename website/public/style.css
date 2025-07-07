@@ -62,6 +62,26 @@
                 border-radius: 1.6rem;
             }
         
+            .contact_card_default {
+                background-color: #F8F9FB;
+                padding: 1.6rem;
+                display: flex; 
+                justify-content: space-between; 
+                align-items: center;
+                gap: 8px;
+            }
+        
+            .contact_card_default_content {
+                display: flex; 
+                gap: 8px;
+            }
+        
+            .contact_card_default_content p {
+                color: #08162C;
+                font-size: 16px; 
+                line-height: 24px; 
+            }
+        
             .link_fill_reverse {
                 color: #08162C;
                 background-color: #ffffff;
@@ -192,6 +212,18 @@
                 text-decoration-line: none;
             }
         
+            .h1_default {
+                color: #08162C;
+                font-size: 64px;
+                line-height: 1;
+                font-weight: normal;
+                margin-bottom: 16px;
+            }
+        
+                .margin_bottom_0 {
+                    margin-bottom: 0;
+                }
+            
             .container-xl {
                 max-width: 1280px;
                 margin-left: auto;
@@ -447,6 +479,16 @@
                 text-decoration-line: none;
             }
         
+            .contact-hero-container { 
+                margin-top: 6.4rem; 
+                margin-bottom: 6.4rem;
+            }
+        
+            .contact-hero-content-container { 
+                display: flex;
+                gap: 96px;
+            }
+        
             .container-xl {
                 max-width: 1280px;
                 margin-left: auto;
@@ -640,6 +682,20 @@
                 .header-light-menu {
                     flex-direction: column;
                     text-align: center;
+                }
+            }
+        
+            @media screen and (max-width: 768px) {
+                .contact-hero-container {
+                margin-top: 4.8rem; 
+                margin-bottom: 4.8rem;
+                }
+            }
+        
+            @media screen and (max-width: 768px) {
+                .contact-hero-content-container {
+                    flex-direction: column;
+                    gap: 16px;
                 }
             }
         
