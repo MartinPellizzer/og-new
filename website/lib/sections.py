@@ -1931,4 +1931,107 @@ def contatti_section_1():
     with open('styles/tmp-mobile/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
     return html
 
+##########################################################
+
+def chi_siamo_hero():
+    html_heading = blocks.heading_default_2(
+        title = components.h1_default(
+            text = f'''Ozonogroup: Innovatori della Sicurezza Alimentare con la Tecnologia all'Ozono''',
+            align = f'center',
+            align_mobile = f'left',
+        ),
+        paragraph = components.paragraph_default(
+            text = f'''Utilizziamo la potenza naturale dell'ozono per garantire standard igienico-sanitari elevati e soluzioni sostenibili nella filiera alimentare.''',
+            align = f'center',
+            align_mobile = f'left',
+            margin_bottom = '0',
+        ),
+    )
+    html = f'''
+        <section class="chi-siamo-hero-container">
+            <div class="container-xl">
+                {html_heading}
+            </div>
+        </section>
+    '''
+    ###
+    with open('styles/tmp/pag-home.css') as f: css = f.read()
+    with open('styles/tmp-mobile/pag-home-mobile.css') as f: css_mobile = f.read()
+    class_name = '.container-xl'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }}
+        '''
+    class_name = '.chi-siamo-hero-container'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{ 
+                margin-top: 6.4rem; 
+                margin-bottom: 6.4rem;
+            }}
+        '''
+    class_name = '.chi-siamo-hero-container'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                margin-top: 4.8rem; 
+                margin-bottom: 4.8rem;
+                }}
+            }}
+        '''
+    with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
+    return html
+
+def chi_siamo_azienda():
+    html_storia_paragraph_1 = components.paragraph_default(
+        text = f'''Ozonogroup progetta e produce generatori di ozono su misura per l'industria alimentare, con l'obiettivo di garantire sanificazione senza sostanze chimiche, controllo della contaminazione microbica e piena conformità alle normative di sicurezza alimentare.''',
+    )
+    html_storia_paragraph_2 = components.paragraph_default(
+        text = f'''Fondata nel 2007 e con sede ad Asolo, in Veneto, l'azienda serve il mercato B2B italiano offrendo soluzioni integrate, basate su tecnologia a scarica corona, studiate ad hoc per le esigenze igienico-sanitarie di ogni realtà produttiva.''',
+    )
+    html_storia_paragraph_3 = components.paragraph_default(
+        text = f'''Attraverso un approccio orientato all'innovazione sostenibile e alla consulenza specializzata, supportiamo le imprese alimentari nel migliorare la qualità dei processi, ridurre l'uso di sostanze chimiche e aumentare gli standard di sicurezza nella lavorazione, nel confezionamento e nella conservazione degli alimenti.''',
+    )
+    html = f'''
+        <section class="container-xl">
+            <div style="display: flex; gap: 64px;">
+                <div style="flex: 2;">
+                    <h2 class="home-benefits-intro-title">
+                        Chi Siamo - La nostra azienda
+                    </h2>
+                </div>
+                <div style="flex: 2;">
+                    {html_storia_paragraph_1}
+                    {html_storia_paragraph_2}
+                    {html_storia_paragraph_3}
+                </div>
+            </div>
+        </section>
+    '''
+    ###
+    with open('styles/tmp/pag-home.css') as f: css = f.read()
+    with open('styles/tmp-mobile/pag-home-mobile.css') as f: css_mobile = f.read()
+    class_name = '.container-xl'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }}
+        '''
+    with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
+    return html
+
 

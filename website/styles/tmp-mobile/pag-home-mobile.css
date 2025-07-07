@@ -154,6 +154,13 @@
             }
         
             @media screen and (max-width: 768px) {
+                .chi-siamo-hero-container {
+                margin-top: 4.8rem; 
+                margin-bottom: 4.8rem;
+                }
+            }
+        
+            @media screen and (max-width: 768px) {
                 .contact-hero-container {
                 margin-top: 4.8rem; 
                 margin-bottom: 4.8rem;

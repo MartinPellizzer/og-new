@@ -254,6 +254,11 @@
                 text-decoration-line: none;
             }
         
+            .chi-siamo-hero-container { 
+                margin-top: 6.4rem; 
+                margin-bottom: 6.4rem;
+            }
+        
             .contact-hero-container { 
                 margin-top: 6.4rem; 
                 margin-bottom: 6.4rem;

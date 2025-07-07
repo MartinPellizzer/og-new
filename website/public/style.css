@@ -479,6 +479,11 @@
                 text-decoration-line: none;
             }
         
+            .chi-siamo-hero-container { 
+                margin-top: 6.4rem; 
+                margin-bottom: 6.4rem;
+            }
+        
             .contact-hero-container { 
                 margin-top: 6.4rem; 
                 margin-bottom: 6.4rem;
@@ -682,6 +687,13 @@
                 .header-light-menu {
                     flex-direction: column;
                     text-align: center;
+                }
+            }
+        
+            @media screen and (max-width: 768px) {
+                .chi-siamo-hero-container {
+                margin-top: 4.8rem; 
+                margin-bottom: 4.8rem;
                 }
             }
         
