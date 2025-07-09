@@ -1991,6 +1991,9 @@ def chi_siamo_hero():
     return html
 
 def chi_siamo_azienda():
+    html_heading = components.h2_default(
+        text = f'''Chi Siamo - La nostra azienda''',
+    )
     html_storia_paragraph_1 = components.paragraph_default(
         text = f'''Ozonogroup progetta e produce generatori di ozono su misura per l'industria alimentare, con l'obiettivo di garantire sanificazione senza sostanze chimiche, controllo della contaminazione microbica e piena conformità alle normative di sicurezza alimentare.''',
     )
@@ -2004,9 +2007,7 @@ def chi_siamo_azienda():
         <section class="container-xl">
             <div style="display: flex; gap: 64px;">
                 <div style="flex: 2;">
-                    <h2 class="home-benefits-intro-title">
-                        Chi Siamo - La nostra azienda
-                    </h2>
+                    {html_heading}
                 </div>
                 <div style="flex: 2;">
                     {html_storia_paragraph_1}
@@ -2034,4 +2035,437 @@ def chi_siamo_azienda():
     with open('styles/tmp-mobile/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
     return html
 
+def chi_siamo_storia():
+    html_heading = components.h2_default(
+        text = f'''La Nostra Storia - Da pionieri locali a innovatori della sanificazione alimentare italiana''',
+    )
+    html_storia_paragraph_2 = components.paragraph_default(
+        text = f'''Ozonogroup nasce nel 2007 dall'iniziativa di un gruppo di imprese con una visione chiara: promuovere l'utilizzo dell'ozono come alternativa ecologica ai sanificanti chimici nell'industria alimentare. Fin dall'inizio, l'obiettivo era risolvere problematiche specifiche che le tecnologie tradizionali non riuscivano a gestire, come la rimozione di muffe e acari nelle celle di stagionatura dei salumi, senza lasciare residui chimici sugli alimenti o negli ambienti di lavorazione.''',
+    )
+    html_storia_paragraph_3 = components.paragraph_default(
+        text = f'''Il nostro primo prodotto (un generatore di ozono compatto per piccole attività alimentari) ha dimostrato risultati eccellenti in contesti critici per l'igiene e la sicurezza alimentare. Da lì,
+                    Ozonogroup ha progressivamente ampliato il proprio raggio d'azione, fino a servire aziende di ogni
+                    dimensione e settore della filiera alimentare, progettando e realizzando sistemi di sanificazione
+                    personalizzati, basati su tecnologie consolidate e soluzioni brevettate di ultima generazione.''',
+    )
+    html_storia_paragraph_4 = components.paragraph_default(
+        text = f'''Nel 2019, un'importante operazione di rebranding ha segnato un
+                    nuovo inizio: con l'arrivo del CEO
+                    Mauro
+                    Dottori, l'azienda ha intrapreso un percorso di trasformazione profonda, evolvendo da semplice
+                    fornitore
+                    di macchinari a partner strategico per la sanificazione industriale, offrendo consulenza,
+                    integrazione e
+                    sistemi su misura per ogni esigenza produttiva.''',
+    )
+    html_storia_paragraph_5 = components.paragraph_default(
+        text = f'''Oggi, Ozonogroup collabora attivamente
+                    con università e centri di
+                    ricerca italiani per sviluppare
+                    nuove
+                    tecnologie legate all'ozono, rafforzando il proprio impegno verso l'innovazione sostenibile, la
+                    sicurezza alimentare e il rigore scientifico. Guardando al futuro, il nostro obiettivo è espandere
+                    la
+                    presenza internazionale e portare la qualità dei nostri sistemi modulari anche oltre i confini
+                    nazionali.''',
+    )
+    html = f'''
+        <section class="container-xl">
+            <div style="display: flex; gap: 64px;">
+                <div style="flex: 2;">
+                    {html_heading}
+                </div>
+                <div style="flex: 2;">
+                    {html_storia_paragraph_2}
+                    {html_storia_paragraph_3}
+                    {html_storia_paragraph_4}
+                    {html_storia_paragraph_5}
+                </div>
+            </div>
+        </section>
+    '''
+    ###
+    with open('styles/tmp/pag-home.css') as f: css = f.read()
+    with open('styles/tmp-mobile/pag-home-mobile.css') as f: css_mobile = f.read()
+    class_name = '.container-xl'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }}
+        '''
+    with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
+    return html
 
+def chi_siamo_missione():
+    html_heading = components.h2_default(
+        text = f'''La Nostra Missione: Sanificare con ozono per una maggiore sicurezza e sostenibilità nell'industria agroalimentare''',
+    )
+    html_paragraph_2 = components.paragraph_default(
+        text = f'''In Ozonogroup, la nostra missione è rendere la produzione
+                    alimentare più sicura, più pulita e più sostenibile attraverso sistemi avanzati di sanificazione a
+                    base di ozono, in grado di eliminare agenti patogeni nocivi senza l'utilizzo di sostanze chimiche
+                    tossiche. Esistiamo per aiutare i produttori e trasformatori alimentari a rispettare i più alti
+                    standard di igiene, tutelando allo stesso tempo la salute pubblica e l'ambiente.''',
+    )
+    html_paragraph_3 = components.paragraph_default(
+        text = f'''Siamo impegnati nella sostenibilità grazie a tecnologie che
+                    riducono drasticamente il consumo
+                    d'acqua, eliminano i residui chimici e minimizzano l'uso di energia. I nostri sistemi a ozono
+                    offrono un controllo microbico efficace, raggiungendo superfici difficili da sanificare e
+                    disinfettando aria, acqua e ambienti, senza alterare la qualità degli alimenti o richiedere
+                    modifiche strutturali agli impianti.''',
+    )
+    html_paragraph_4 = components.paragraph_default(
+        text = f'''Ozonogroup si distingue per la capacità di fornire soluzioni
+                    pratiche, pronte all'uso, pienamente conformi ai principali standard normativi internazionali come
+                    HACCP e ISO 22000.''',
+    )
+    html_paragraph_5 = components.paragraph_default(
+        text = f'''La nostra visione a lungo termine è
+                    guidare la transizione verso una sanificazione senza agenti
+                    chimici in tutta l'industria alimentare globale, eliminando i disinfettanti convenzionali e
+                    diventando il punto di riferimento per un'igiene sicura ed ecologica entro il 2030.''',
+    )
+    html_paragraph_6 = components.paragraph_default(
+        text = f'''In ogni fase del nostro lavoro, ci guidano i nostri valori fondamentali: innovazione, conformità
+                    normativa e responsabilità ambientale. Questi principi orientano la nostra ricerca, ispirano le
+                    nostre soluzioni e rafforzano le collaborazioni con produttori alimentari lungimiranti in tutto il
+                    mondo.''',
+    )
+    html = f'''
+        <section class="container-xl">
+            <div style="display: flex; gap: 64px;">
+                <div style="flex: 2;">
+                    {html_heading}
+                </div>
+                <div style="flex: 2;">
+                    {html_paragraph_2}
+                    {html_paragraph_3}
+                    {html_paragraph_4}
+                    {html_paragraph_5}
+                    {html_paragraph_6}
+                </div>
+            </div>
+        </section>
+    '''
+    ###
+    with open('styles/tmp/pag-home.css') as f: css = f.read()
+    with open('styles/tmp-mobile/pag-home-mobile.css') as f: css_mobile = f.read()
+    class_name = '.container-xl'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }}
+        '''
+    with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
+    return html
+
+def chi_siamo_tecnologia():
+    html_heading = components.h2_default(
+        text = f'''La Nostra Tecnologia: Sistemi di sanificazione con ozono automatizzati, efficienti e sicuri''',
+    )
+    html_paragraph_1 = components.paragraph_default(
+        text = f'''La tecnologia di Ozonogroup si basa su generatori di ozono a scarica corona ad alte prestazioni,
+                    integrati con concentratori di ossigeno, per garantire un'efficacia massima nella sanificazione. I
+                    nostri sistemi sono progettati specificamente per l'industria alimentare e permettono l'applicazione
+                    dell'ozono sia in fase gassosa che acquosa, adattandosi a diversi ambienti produttivi come celle
+                    frigorifere, superfici di contatto e nastri trasportatori. Alcuni dei nostri impianti sono dotati
+                    della nostra Custom Control Unit (CCU), un'unità di controllo intelligente che automatizza il
+                    dosaggio dell'ozono e ne regola il flusso in tempo reale, attraverso sensori integrati e
+                    un'interfaccia touch intuitiva. Questo permette un monitoraggio continuo e preciso, migliorando la
+                    sicurezza operativa e riducendo al minimo l'intervento manuale.''',
+    )
+    html_paragraph_2 = components.paragraph_default(
+        text = f'''A differenza dei disinfettanti tradizionali come il cloro o
+                    l'acido peracetico, l'ozono non lascia residui e non richiede risciacquo, contribuendo a un
+                    risparmio significativo di acqua e tempo. Inoltre, garantisce una maggiore rapidità d'azione e
+                    un'efficacia superiore anche a basse concentrazioni rispetto a sistemi a raggi UV, raggiungendo aree
+                    difficili e garantendo una sanificazione completa. La sicurezza è una priorità fondamentale nei
+                    nostri impianti: ogni sistema è dotato di sensori ambientali per la rilevazione dell'ozono e
+                    dispositivi di spegnimento automatico che proteggono sia gli operatori che i prodotti alimentari.''',
+    )
+    html_paragraph_3 = components.paragraph_default(
+        text = f'''Grazie a una progettazione modulare, i nostri sistemi sono
+                    facilmente integrabili
+                    con linee CIP, camere frigorifere e macchinari esistenti, rendendo l'adozione semplice e veloce
+                    senza modifiche strutturali invasive. I nostri impianti richiedono pochissima manutenzione, limitata
+                    a una sola revisione annuale per la pulizia degli elettrodi e la sostituzione dei filtri,
+                    contribuendo così a ridurre i costi operativi.''',
+    )
+    html_paragraph_4 = components.paragraph_default(
+        text = f'''Ozonogroup ha inoltre sviluppato un algoritmo proprietario per il controllo modulato del flusso di
+                    ozono, che ottimizza l'efficienza della sanificazione riducendo il consumo energetico, con un
+                    impatto positivo anche dal punto di vista ambientale. I nostri sistemi sono in grado di eliminare
+                    fino al 99,999% (5-log) di agenti patogeni alimentari come Listeria, Salmonella ed Escherichia coli,
+                    in tempi significativamente inferiori rispetto ai sanificanti chimici tradizionali. Con una
+                    combinazione unica di automazione, sicurezza, sostenibilità e prestazioni microbiologiche
+                    comprovate, la tecnologia Ozonogroup rappresenta lo standard più avanzato nella sanificazione
+                    industriale a base di ozono.''',
+    )
+    html = f'''
+        <section class="container-xl">
+            <div style="display: flex; gap: 64px;">
+                <div style="flex: 2;">
+                    {html_heading}
+                </div>
+                <div style="flex: 2;">
+                    {html_paragraph_1}
+                    {html_paragraph_2}
+                    {html_paragraph_3}
+                    {html_paragraph_4}
+                </div>
+            </div>
+        </section>
+    '''
+    ###
+    with open('styles/tmp/pag-home.css') as f: css = f.read()
+    with open('styles/tmp-mobile/pag-home-mobile.css') as f: css_mobile = f.read()
+    class_name = '.container-xl'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }}
+        '''
+    with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
+    return html
+
+def chi_siamo_industrie():
+    html_heading = components.h2_default(
+        text = f'''I Nostri Settori: Soluzioni per l'industria di lavorazione alimentare, imbottigliamento e conservazione''',
+    )
+    html_paragraph_1 = components.paragraph_default(
+        text = f'''Ozonogroup sviluppa sistemi avanzati di sanificazione a ozono pensati per le esigenze specifiche del
+                    settore
+                    alimentare e delle bevande. Le nostre tecnologie garantiscono elevati standard igienici in ambienti
+                    produttivi
+                    complessi, aiutando le aziende a rispettare le normative sanitarie, ridurre i costi operativi e
+                    migliorare la
+                    sicurezza alimentare, senza fare uso di agenti chimici aggressivi.''',
+    )
+    html_paragraph_2 = components.paragraph_default(
+        text = f'''Collaboriamo con birrifici e impianti di imbottigliamento per
+                    integrare i nostri sistemi a ozono direttamente nelle
+                    linee di produzione e nei cicli CIP (Clean-In-Place). Questo consente una sanificazione efficace di
+                    serbatoi,
+                    tubazioni e attrezzature senza l'utilizzo di calore o sostanze chimiche, con una riduzione dell'uso
+                    di acqua per la
+                    disinfezione fino all'80%.''',
+    )
+    html_paragraph_3 = components.paragraph_default(
+        text = f'''Nel settore della lavorazione del pesce, i nostri sistemi
+                    risolvono problemi critici come la presenza di listeria
+                    e l'accumulo di biofilm sui nastri trasportatori. L'ozono sanifica in tempo reale, senza lasciare
+                    residui,
+                    garantendo un ambiente più sicuro per gli alimenti e per i lavoratori.''',
+    )
+    html_paragraph_4 = components.paragraph_default(
+        text = f'''Nella lavorazione di carne e pollame, affrontiamo efficacemente la
+                    contaminazione da E. coli e Salmonella. I nostri
+                    sistemi di sanificazione e trattamento delle superfici raggiungono anche le aree più difficili,
+                    come condotti
+                    dell'aria e componenti in acciaio inox. I clienti riportano una riduzione della carica microbica
+                    fino al 95%,
+                    semplificando l'implementazione dei protocolli HACCP e migliorando l'efficienza produttiva.''',
+    )
+    html_paragraph_5 = components.paragraph_default(
+        text = f'''Nel settore lattiero-caseario, integriamo le nostre soluzioni a
+                    ozono nei cicli CIP per la sanificazione di impianti
+                    di pastorizzazione, serbatoi e ambienti di stagionatura del formaggio. L'ozono sostituisce
+                    efficacemente i lavaggi
+                    chimici, riduce i residui e garantisce una sanificazione uniforme, lotto dopo lotto.''',
+    )
+    html_paragraph_6 = components.paragraph_default(
+        text = f'''Per quanto riguarda celle frigorifere e centri di distribuzione
+                    ortofrutticoli, l'ozono si rivela essenziale per
+                    contrastare muffe, etilene e contaminazioni incrociate. I nostri impianti di trattamento dell'aria
+                    funzionano in
+                    modo continuo senza interrompere le operazioni di stoccaggio, prolungando la shelf life di ortaggi e
+                    verdure a
+                    foglia, mantenendone freschezza e qualità.''',
+    )
+    html_paragraph_7 = components.paragraph_default(
+        text = f'''Che si
+                    tratti di sanificare linee produttive, purificare l'aria o prolungare la conservazione dei prodotti,
+                    Ozonogroup
+                    fornisce soluzioni su misura, affidabili e sostenibili per ogni settore dell'industria alimentare.''',
+    )
+    html = f'''
+        <section class="container-xl">
+            <div style="display: flex; gap: 64px;">
+                <div style="flex: 2;">
+                    {html_heading}
+                </div>
+                <div style="flex: 2;">
+                    {html_paragraph_1}
+                    {html_paragraph_2}
+                    {html_paragraph_3}
+                    {html_paragraph_4}
+                    {html_paragraph_5}
+                    {html_paragraph_6}
+                    {html_paragraph_7}
+                </div>
+            </div>
+        </section>
+    '''
+    ###
+    with open('styles/tmp/pag-home.css') as f: css = f.read()
+    with open('styles/tmp-mobile/pag-home-mobile.css') as f: css_mobile = f.read()
+    class_name = '.container-xl'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }}
+        '''
+    with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
+    return html
+
+def chi_siamo_sostenibilita():
+    html_heading = components.h2_default(
+        text = f'''Il Nostro Impegno Per L'Eco-Sostenibilità: Sanificazione ecologica e sostenibile, senza prodotti chimici
+                e sprechi''',
+    )
+    html_paragraph_1 = components.paragraph_default(
+        text = f'''In Ozonogroup, la sostenibilità non è un'aggiunta, ma un principio fondamentale integrato in ogni
+                    sistema di sanificazione a ozono che progettiamo. Il nostro impegno verso l'ambiente ci rende
+                    pionieri nel campo dell'igiene alimentare ecologica, supportando le aziende del settore food nella
+                    transizione verso processi più sicuri, puliti e responsabili.''',
+    )
+    html_paragraph_2 = components.paragraph_default(
+        text = f'''I nostri sistemi permettono di ridurre il consumo di acqua di almeno il 40% rispetto ai metodi
+                    tradizionali a base di cloro o acqua calda, contribuendo a una gestione più efficiente delle risorse
+                    senza compromettere l'efficacia della sanificazione. Utilizziamo aria ambiente per generare ozono in
+                    tempo reale, eliminando così la necessità di trasporto, stoccaggio e smaltimento di agenti chimici.
+                    A differenza di sostanze come l'acido peracetico o il cloro, l'ozono non lascia residui tossici,
+                    rendendo i nostri sistemi più sicuri per gli operatori, per gli alimenti e per l'ambiente.''',
+    )
+    html_paragraph_3 = components.paragraph_default(
+        text = f'''Grazie alla nostra tecnologia, le aziende alimentari possono ridurre fino all'80% i rifiuti legati
+                    all'uso di contenitori chimici in plastica. Inoltre, eliminando la sanificazione termica, si riduce
+                    il consumo energetico complessivo, aiutando i nostri clienti a raggiungere obiettivi concreti di
+                    riduzione delle emissioni di CO2. Un altro beneficio fondamentale è la totale assenza di scarichi
+                    chimici, che previene l'inquinamento di falde acquifere e habitat naturali spesso messi a rischio
+                    dagli impianti industriali tradizionali.''',
+    )
+    html_paragraph_4 = components.paragraph_default(
+        text = f'''Guardando al futuro, stiamo sviluppando sistemi di nuova generazione dotati di funzioni avanzate per
+                    monitorare in tempo reale il risparmio di carbonio, offrendo strumenti concreti per la
+                    rendicontazione ESG e il miglioramento continuo delle performance ambientali. In questo modo,
+                    Ozonogroup non solo risponde alle sfide di oggi, ma anticipa le esigenze sostenibili di domani.''',
+    )
+    html = f'''
+        <section class="container-xl">
+            <div style="display: flex; gap: 64px;">
+                <div style="flex: 2;">
+                    {html_heading}
+                </div>
+                <div style="flex: 2;">
+                    {html_paragraph_1}
+                    {html_paragraph_2}
+                    {html_paragraph_3}
+                    {html_paragraph_4}
+                </div>
+            </div>
+        </section>
+    '''
+    ###
+    with open('styles/tmp/pag-home.css') as f: css = f.read()
+    with open('styles/tmp-mobile/pag-home-mobile.css') as f: css_mobile = f.read()
+    class_name = '.container-xl'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }}
+        '''
+    with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
+    return html
+
+##########################################################
+
+def settori_articoli():
+    html_heading = components.h1_default(
+        text = f'''Sanificazione ozono nel settore lattiero-caseario''',
+    )
+    html_paragraph_1 = components.paragraph_default(
+        text = f'''Sanitation is a non-negotiable pillar of success in dairy operations. With milk and dairy products offering rich media for microbial growth, controlling pathogens and spoilage organisms is essential from raw milk intake to final packaging. Traditional sanitizers like chlorine and peracetic acid have long been used, but these agents often leave residues, require thorough rinsing, and can degrade surfaces over time.''',
+    )
+    html_paragraph_2 = components.paragraph_default(
+        text = f'''Ozone sanitization, a residue-free and highly effective method, is gaining traction across the dairy sector. Unlike general disinfectants, ozone targets common dairy pathogens and biofilms without leaving chemical traces or altering product taste. This article outlines where and how ozone is integrated into dairy operations, the regulatory landscape, safety protocols, ROI implications, and future trends in smart dairy sanitation.''',
+    )
+    html = f'''
+        <section class="container-xl article-container">
+            <div style="display: flex; gap: 6.4rem;">
+                <div style="flex: 2;">
+                    {html_heading}
+                    {html_paragraph_1}
+                    {html_paragraph_2}
+                </div>
+                <div style="flex: 1;">
+                </div>
+            </div>
+        </section>
+    '''
+    ###
+    with open('styles/tmp/pag-settori-articoli.css') as f: css = f.read()
+    with open('styles/tmp-mobile/pag-settori-articoli-mobile.css') as f: css_mobile = f.read()
+    class_name = '.container-xl'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }}
+        '''
+    class_name = '.article-container'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{ 
+                margin-top: 6.4rem; 
+                margin-bottom: 6.4rem;
+            }}
+        '''
+    class_name = '.article-container'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    margin-top: 4.8rem; 
+                    margin-bottom: 4.8rem;
+                }}
+            }}
+        '''
+    with open('styles/tmp/pag-settori-articoli.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-settori-articoli-mobile.css', 'w') as f: f.write(css_mobile)
+    return html

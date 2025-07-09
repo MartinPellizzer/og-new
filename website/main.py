@@ -21,6 +21,9 @@ if 1:
     from lib import pag_settori
     pag_settori.gen()
 if 1:
+    from lib import pag_settori_articoli
+    pag_settori_articoli.gen()
+if 1:
     from lib import pag_chi_siamo
     pag_chi_siamo.gen()
 if 1:

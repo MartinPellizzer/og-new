@@ -20,6 +20,18 @@ def gen():
                 {sections.chi_siamo_hero()}
                 {sections.separator('Azienda')}
                 {sections.chi_siamo_azienda()}
+                {sections.separator('Storia')}
+                {sections.chi_siamo_storia()}
+                {sections.separator('Missione')}
+                {sections.chi_siamo_missione()}
+                {sections.separator('Tecnologia')}
+                {sections.chi_siamo_tecnologia()}
+                {sections.separator('Industrie')}
+                {sections.chi_siamo_industrie()}
+                {sections.separator('Sonstenibile')}
+                {sections.chi_siamo_sostenibilita()}
+                {sections.separator('Contatti')}
+                {sections.home_contact()}
             </main>
             {sections.footer_default()}
         </body>
