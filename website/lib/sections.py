@@ -2469,3 +2469,344 @@ def settori_articoli():
     with open('styles/tmp/pag-settori-articoli.css', 'w') as f: f.write(css)
     with open('styles/tmp-mobile/pag-settori-articoli-mobile.css', 'w') as f: f.write(css_mobile)
     return html
+
+def articoli():
+    with open('database/article.txt', encoding='utf-8') as f: content = f.read()
+    lines = [line.strip() for line in content.split('\n') if line.strip() != '']
+    html_article = ''
+    for line in lines:
+        if line.startswith('# '):
+            line = line.replace('# ', '')
+            html_article += components.h1_default(
+                text = line,
+            )
+        elif line.startswith('## '):
+            line = line.replace('## ', '')
+            html_article += components.h2_default(
+                text = line,
+            )
+        elif line.startswith('### '):
+            line = line.replace('### ', '')
+            html_article += components.h3_default(
+                text = line,
+            )
+        else:
+            html_article += components.paragraph_default(
+                text = line,
+            )
+
+    html = f'''
+        <section class="container-xl article-container">
+            <div style="display: flex; gap: 6.4rem;">
+                <div style="flex: 2;">
+                    {html_article}
+                </div>
+                <div style="flex: 1;">
+                </div>
+            </div>
+        </section>
+    '''
+    ###
+    with open('styles/tmp/pag-articoli.css') as f: css = f.read()
+    with open('styles/tmp-mobile/pag-articoli-mobile.css') as f: css_mobile = f.read()
+    class_name = '.container-xl'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }}
+        '''
+    class_name = '.article-container'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{ 
+                margin-top: 6.4rem; 
+                margin-bottom: 6.4rem;
+            }}
+        '''
+    class_name = '.article-container'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    margin-top: 4.8rem; 
+                    margin-bottom: 4.8rem;
+                }}
+            }}
+        '''
+    class_name = '.article-container h2'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{ 
+                margin-top: 4.8rem;
+            }}
+        '''
+    class_name = '.article-container h3'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{ 
+                margin-top: 2.4rem;
+            }}
+        '''
+    with open('styles/tmp/pag-articoli.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-articoli-mobile.css', 'w') as f: f.write(css_mobile)
+    return html
+
+def settore():
+    '''scrivi un paragrafo di circa 40 parole per ogni una delle seguenti applicazioni dell'ozono nell'industria lattiero-casearia:
+
+- Sanificazione dei serbatoi di stoccaggio del latte
+- Disinfezione delle attrezzature e delle tubazioni per la lavorazione del latte
+- Sistemi di pulizia in posto (CIP)
+- Sanificazione delle superfici delle macchine di confezionamento e riempimento
+- Trattamento del latte crudo per ridurre il carico microbico
+- Sanificazione di pavimenti e pareti degli stabilimenti caseari
+- Trattamento dell’aria nelle aree di lavorazione e stoccaggio
+- Trattamento delle acque reflue per ridurre il carico organico e patogeni
+- Sanificazione di contenitori riutilizzabili e veicoli di trasporto del latte
+
+struttura:
+- scrivi un breve paragrafo spiegando cosa e questa applicazione, come si fa, e perche serve.
+- use short words, professional tone, active form sentences.
+- rispondi in italiano.
+    '''
+    html_h1 = components.h1_default(
+        text = 'Sanificazione Ozono Nel Settore Lattiero-Caseario'
+    )
+    html_applicazioni_h2 = components.h2_default(
+        text = 'Applicazioni Principali'
+    )
+    image = f'''<img src="/immagini/settori/lattiero-caseario/latte.jpg" alt="">'''
+    heading = components.h3_default(
+        text = f'''Sanificazione dei serbatoi di stoccaggio del latte''',
+    )
+    lines = [
+        'Svuotare completamente il serbatoio dal latte residuo.',
+        'Risciacquare il serbatoio con acqua calda per rimuovere residui grossolani.',
+        'Generare ozono in concentrazione adeguata e farlo circolare all’interno del serbatoio per almeno 15-20 minuti.',
+        'Scaricare l’ozono residuo e risciacquare con acqua sterile.',
+        'Asciugare il serbatoio prima di riempirlo.',
+    ]
+    html_list = components.list_ordered_default(lines)
+    html_paragraph = components.paragraph_default(
+        text = f''' L’ozono viene usato per sanificare i serbatoi dove si conserva il latte. Si introduce gas ozono all’interno dei serbatoi vuoti dopo lo svuotamento. Questo trattamento elimina batteri e muffe. Serve a prevenire la contaminazione e garantire la qualità del latte.'''
+    )
+    content = ''
+    # content += html_list
+    content += html_paragraph
+    html_card_1 = blocks.card_ihc_default(
+        image = image,
+        heading = heading,
+        content = content,
+    )
+    ###
+    image = f'''<img src="/immagini/settori/lattiero-caseario/latte-2.jpg" alt="">'''
+    heading = components.h3_default(
+        text = f'''Disinfezione delle attrezzature e delle tubazioni per la lavorazione del latte''',
+    )
+    lines = [
+        'Scollegare le attrezzature dalla linea di produzione.',
+        'Eseguire un pre-risciacquo con acqua calda per eliminare residui di latte.',
+        'Far circolare acqua ozonizzata attraverso tubazioni e macchinari per almeno 10-15 minuti.',
+        'Risciacquare con acqua sterile per rimuovere residui di ozono.',
+        'Asciugare e riconnettere le attrezzature.',
+    ]
+    html_list = components.list_ordered_default(lines)
+    html_paragraph = components.paragraph_default(
+        text = f'''  L’ozono sanifica le attrezzature e le tubazioni a contatto col latte. Si immette ozono in forma gassosa o disciolto in acqua. Rimuove biofilm, batteri e residui. Questo evita infezioni crociate e mantiene alto il livello igienico della linea.'''
+    )
+    content = ''
+    # content += html_list
+    content += html_paragraph
+    html_card_2 = blocks.card_ihc_default(
+        image = image,
+        heading = heading,
+        content = content,
+    )
+    ###
+    image = f'''<img src="/immagini/settori/lattiero-caseario/latte-2.jpg" alt="">'''
+    heading = components.h3_default(
+        text = f'''Sistemi di pulizia in posto (CIP)''',
+    )
+    html_paragraph = components.paragraph_default(
+        text = f''' Nei sistemi CIP, l’ozono sostituisce o integra detergenti chimici. Si usa acqua ozonizzata per pulire l’interno di impianti chiusi, tubazioni e valvole. Riduce l’uso di prodotti chimici, è sicuro per l’ambiente e migliora l’efficienza dei cicli di lavaggio.'''.strip()
+    )
+    content = ''
+    content += html_paragraph
+    html_card_3 = blocks.card_ihc_default(
+        image = image,
+        heading = heading,
+        content = content,
+    )
+    ###
+    image = f'''<img src="/immagini/settori/lattiero-caseario/latte-2.jpg" alt="">'''
+    heading = components.h3_default(
+        text = f'''Sanificazione delle superfici delle macchine di confezionamento e riempimento''',
+    )
+    html_paragraph = components.paragraph_default(
+        text = f''' L’ozono sanifica le parti esterne delle macchine che confezionano e riempiono i prodotti lattiero-caseari. Si impiega gas ozono o acqua ozonizzata sulle superfici. Elimina germi senza lasciare residui. Garantisce la sicurezza del prodotto confezionato.'''.strip()
+    )
+    content = ''
+    content += html_paragraph
+    html_card_4 = blocks.card_ihc_default(
+        image = image,
+        heading = heading,
+        content = content,
+    )
+    ###
+    image = f'''<img src="/immagini/settori/lattiero-caseario/latte-2.jpg" alt="">'''
+    heading = components.h3_default(
+        text = f'''Trattamento del latte crudo per ridurre il carico microbico''',
+    )
+    html_paragraph = components.paragraph_default(
+        text = f''' L’ozono si può impiegare per trattare il latte crudo prima della lavorazione. Viene diffuso in forma gassosa sotto controllo. Abbatte la carica microbica senza alterare le proprietà del latte. Migliora la sicurezza e prolunga la conservazione.'''.strip()
+    )
+    content = ''
+    content += html_paragraph
+    html_card_5 = blocks.card_ihc_default(
+        image = image,
+        heading = heading,
+        content = content,
+    )
+    ###
+    image = f'''<img src="/immagini/settori/lattiero-caseario/latte-2.jpg" alt="">'''
+    heading = components.h3_default(
+        text = f'''Sanificazione di pavimenti e pareti degli stabilimenti caseari''',
+    )
+    html_paragraph = components.paragraph_default(
+        text = f''' L’ozono in acqua si usa per lavare pavimenti e pareti. Rimuove sporco organico e uccide germi e muffe. Non lascia residui e non richiede risciacquo. Mantiene l’ambiente igienico e conforme alle norme sanitarie.'''.strip()
+    )
+    content = ''
+    content += html_paragraph
+    html_card_6 = blocks.card_ihc_default(
+        image = image,
+        heading = heading,
+        content = content,
+    )
+    ###
+    image = f'''<img src="/immagini/settori/lattiero-caseario/latte-2.jpg" alt="">'''
+    heading = components.h3_default(
+        text = f'''Trattamento dell’aria nelle aree di lavorazione e stoccaggio''',
+    )
+    html_paragraph = components.paragraph_default(
+        text = f''' L’ozono purifica l’aria nei locali di produzione e stoccaggio. Viene diffuso in modo controllato tramite generatori. Abbatte odori, muffe e batteri sospesi. Riduce il rischio di contaminazione crociata e migliora l’igiene ambientale.'''.strip()
+    )
+    content = ''
+    content += html_paragraph
+    html_card_7 = blocks.card_ihc_default(
+        image = image,
+        heading = heading,
+        content = content,
+    )
+    ###
+    image = f'''<img src="/immagini/settori/lattiero-caseario/latte-2.jpg" alt="">'''
+    heading = components.h3_default(
+        text = f'''Trattamento delle acque reflue per ridurre il carico organico e patogeni''',
+    )
+    html_paragraph = components.paragraph_default(
+        text = f''' L’ozono ossida la materia organica e distrugge i patogeni presenti nelle acque reflue. Si inietta nel flusso d’acqua tramite diffusori. Riduce COD, BOD e cariche batteriche. Aiuta a rispettare i limiti ambientali e facilita il riuso dell’acqua.'''.strip()
+    )
+    content = ''
+    content += html_paragraph
+    html_card_8 = blocks.card_ihc_default(
+        image = image,
+        heading = heading,
+        content = content,
+    )
+    ###
+    image = f'''<img src="/immagini/settori/lattiero-caseario/latte-2.jpg" alt="">'''
+    heading = components.h3_default(
+        text = f'''Sanificazione di contenitori riutilizzabili e veicoli di trasporto del latte''',
+    )
+    html_paragraph = components.paragraph_default(
+        text = f''' L’ozono disinfetta contenitori e camion cisterna dopo l’uso. Si applica in forma di gas o acqua ozonizzata sulle superfici interne. Rimuove germi e residui senza agenti chimici. Previene la contaminazione del latte durante il trasporto.'''.strip()
+    )
+    content = ''
+    content += html_paragraph
+    html_card_9 = blocks.card_ihc_default(
+        image = image,
+        heading = heading,
+        content = content,
+    )
+    ###
+    html = f'''
+        <section style="margin-top: 4.8rem;">
+            <div class="container-xl">
+                {html_h1}
+            </div>
+        </section>
+        <section class="container-xl settore-applicazione-container">
+            {html_applicazioni_h2}
+            <div class="settore-applicazione-grid">
+                {html_card_1}
+                {html_card_2}
+                {html_card_3}
+                {html_card_4}
+                {html_card_5}
+                {html_card_6}
+                {html_card_7}
+                {html_card_8}
+                {html_card_9}
+            </div>
+        </section>
+    '''
+    ###
+    with open('styles/tmp/pag-settori-articoli.css') as f: css = f.read()
+    with open('styles/tmp-mobile/pag-settori-articoli-mobile.css') as f: css_mobile = f.read()
+    class_name = '.container-xl'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }}
+        '''
+    class_name = '.settore-applicazione-grid'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.6rem;
+            }}
+        '''
+    class_name = '.settore-applicazione-grid'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                grid-template-columns: repeat(1, 1fr);
+                }}
+            }}
+        '''
+    class_name = '.settore-applicazione-container'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{ 
+                margin-top: 6.4rem; 
+                margin-bottom: 6.4rem;
+            }}
+        '''
+    class_name = '.settore-applicazione-container'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    margin-top: 4.8rem; 
+                    margin-bottom: 4.8rem;
+                }}
+            }}
+        '''
+    with open('styles/tmp/pag-settori-articoli.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-settori-articoli-mobile.css', 'w') as f: f.write(css_mobile)
+    return html
+
+
+

@@ -6,6 +6,8 @@ from lib import sections
 def gen():
     with open('styles/tmp/pag-settori-articoli.css', 'w') as f: f.write('')
     with open('styles/tmp-mobile/pag-settori-articoli-mobile.css', 'w') as f: f.write('')
+    with open('styles/tmp/pag-articoli.css', 'w') as f: f.write('')
+    with open('styles/tmp-mobile/pag-articoli-mobile.css', 'w') as f: f.write('')
     html_index = f'''
         <!DOCTYPE html>
         <html lang="en">
@@ -17,7 +19,7 @@ def gen():
         <body>
             {sections.header_light()}
             <main>
-                {sections.settori_articoli()}
+                {sections.settore()}
             </main>
             {sections.footer_default()}
         </body>

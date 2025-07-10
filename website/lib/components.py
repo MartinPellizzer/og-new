@@ -423,6 +423,43 @@ def paragraph_reverse(text, margin_bottom='1.6rem', align='', align_mobile=''):
     return html
 
 ####################################################
+# ;lists
+####################################################
+def list_ordered_default(lines):
+    utils.css_create_if_not_exists(css_filepath)
+    utils.css_create_if_not_exists(css_mobile_filepath)
+    ###
+    with open(css_filepath) as f: css = f.read()
+    with open(css_mobile_filepath) as f: css_mobile = f.read()
+    class_name = '.list_ordered_default'
+    if f'{class_name} ' not in css:
+        css += f'''
+            {class_name} {{
+                color: {g.color_black_pearl};
+                font-size: {g.typography_size_md};
+                line-height: {g.typography_line_height_md};
+                margin-bottom: 1.6rem;
+                margin-left: 1.6rem;
+                display: flex;
+                flex-direction: column;
+                gap: 0.4rem;
+            }}
+        '''
+    with open(css_filepath, 'w') as f: f.write(css)
+    with open(css_mobile_filepath, 'w') as f: f.write(css_mobile)
+    ###
+    html_lines = ''
+    for line in lines:
+        line = utils.aschii(line)
+        html_lines += f'''<li>{line}</li>'''
+    html = f'''
+        <ol class="list_ordered_default">
+            {html_lines}
+        </ol>
+    '''
+    return html
+
+####################################################
 # ;links
 ####################################################
 def link_default(link_text, link_href):

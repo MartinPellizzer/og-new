@@ -170,6 +170,53 @@ def card_itp_default(image, title, paragraph):
     '''
     return html
 
+def card_ihc_default(image, heading, content):
+    utils.css_create_if_not_exists(css_filepath)
+    ###
+    with open(css_filepath) as f: css = f.read()
+    class_name = '.card_ihc_default'
+    if f'{class_name} ' not in css:
+        css += f'''
+            {class_name} {{
+                background-color: {g.color_gray_extralight}; 
+                border-radius: 1.6rem;
+            }}
+        '''
+    class_name = '.card_ihc_default img'
+    if f'{class_name} ' not in css:
+        css += f'''
+            {class_name} {{
+                border-top-left-radius: 1.6rem;
+                border-top-right-radius: 1.6rem;
+                border-radius: 1.6rem;
+                height: 16rem;
+                object-fit: cover;
+            }}
+        '''
+    class_name = '.card_hc_default'
+    if f'{class_name} ' not in css:
+        css += f'''
+            {class_name} {{ 
+                padding-left: 2.4rem; 
+                padding-right: 2.4rem; 
+                padding-left: 1.6rem; 
+                padding-right: 1.6rem; 
+            }}
+        '''
+    with open(css_filepath, 'w') as f: f.write(css)
+    ###
+    html = f'''
+        <div class="card_ihc_default">
+            {image}
+            <div style="margin-bottom: 1.6rem;"></div>
+            <div class="card_hc_default">
+                {heading}
+                {content}
+            </div>
+        </div>
+    '''
+    return html
+
 ####################################################
 # ;contacts
 ####################################################

@@ -62,6 +62,26 @@
                 border-radius: 1.6rem;
             }
         
+            .card_ihc_default {
+                background-color: #F8F9FB; 
+                border-radius: 1.6rem;
+            }
+        
+            .card_ihc_default img {
+                border-top-left-radius: 1.6rem;
+                border-top-right-radius: 1.6rem;
+                border-radius: 1.6rem;
+                height: 16rem;
+                object-fit: cover;
+            }
+        
+            .card_hc_default { 
+                padding-left: 2.4rem; 
+                padding-right: 2.4rem; 
+                padding-left: 1.6rem; 
+                padding-right: 1.6rem; 
+            }
+        
             .contact_card_default {
                 background-color: #F8F9FB;
                 padding: 1.6rem;
@@ -218,6 +238,17 @@
                 line-height: 1;
                 font-weight: normal;
                 margin-bottom: 16px;
+            }
+        
+            .list_ordered_default {
+                color: #08162C;
+                font-size: 16px;
+                line-height: 24px;
+                margin-bottom: 1.6rem;
+                margin-left: 1.6rem;
+                display: flex;
+                flex-direction: column;
+                gap: 0.4rem;
             }
         
                 .margin_bottom_0 {
@@ -525,7 +556,13 @@
                 padding-right: 16px;
             }
         
-            .article-container { 
+            .settore-applicazione-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.6rem;
+            }
+        
+            .settore-applicazione-container { 
                 margin-top: 6.4rem; 
                 margin-bottom: 6.4rem;
             }
@@ -725,7 +762,13 @@
             }
         
             @media screen and (max-width: 768px) {
-                .article-container {
+                .settore-applicazione-grid {
+                grid-template-columns: repeat(1, 1fr);
+                }
+            }
+        
+            @media screen and (max-width: 768px) {
+                .settore-applicazione-container {
                     margin-top: 4.8rem; 
                     margin-bottom: 4.8rem;
                 }
