@@ -2559,24 +2559,21 @@ def articoli():
 def settore():
     '''scrivi un paragrafo di circa 40 parole per ogni una delle seguenti applicazioni dell'ozono nell'industria lattiero-casearia:
 
-- Sanificazione dei serbatoi di stoccaggio del latte
-- Disinfezione delle attrezzature e delle tubazioni per la lavorazione del latte
-- Sistemi di pulizia in posto (CIP)
-- Sanificazione delle superfici delle macchine di confezionamento e riempimento
-- Trattamento del latte crudo per ridurre il carico microbico
-- Sanificazione di pavimenti e pareti degli stabilimenti caseari
-- Trattamento dell’aria nelle aree di lavorazione e stoccaggio
-- Trattamento delle acque reflue per ridurre il carico organico e patogeni
-- Sanificazione di contenitori riutilizzabili e veicoli di trasporto del latte
+        - Sanificazione dei serbatoi di stoccaggio del latte
+        - Disinfezione delle attrezzature e delle tubazioni per la lavorazione del latte
+        - Sistemi di pulizia in posto (CIP)
+        - Sanificazione delle superfici delle macchine di confezionamento e riempimento
+        - Trattamento del latte crudo per ridurre il carico microbico
+        - Sanificazione di pavimenti e pareti degli stabilimenti caseari
+        - Trattamento dell’aria nelle aree di lavorazione e stoccaggio
+        - Trattamento delle acque reflue per ridurre il carico organico e patogeni
+        - Sanificazione di contenitori riutilizzabili e veicoli di trasporto del latte
 
-struttura:
-- scrivi un breve paragrafo spiegando cosa e questa applicazione, come si fa, e perche serve.
-- use short words, professional tone, active form sentences.
-- rispondi in italiano.
+        struttura:
+        - scrivi un breve paragrafo spiegando cosa e questa applicazione, come si fa, e perche serve.
+        - use short words, professional tone, active form sentences.
+        - rispondi in italiano.
     '''
-    html_h1 = components.h1_default(
-        text = 'Sanificazione Ozono Nel Settore Lattiero-Caseario'
-    )
     html_applicazioni_h2 = components.h2_default(
         text = 'Applicazioni Principali'
     )
@@ -2734,11 +2731,6 @@ struttura:
     )
     ###
     html = f'''
-        <section style="margin-top: 4.8rem;">
-            <div class="container-xl">
-                {html_h1}
-            </div>
-        </section>
         <section class="container-xl settore-applicazione-container">
             {html_applicazioni_h2}
             <div class="settore-applicazione-grid">
@@ -2808,5 +2800,221 @@ struttura:
     with open('styles/tmp-mobile/pag-settori-articoli-mobile.css', 'w') as f: f.write(css_mobile)
     return html
 
+##########################################################
 
+def hero_1_reverse():
+    html_h1 = components.h1_reverse(
+        text = 'Sanificazione Ozono Nel Settore Lattiero-Caseario',
+        align = 'center',
+        align_mobile = 'center',
+    )
+    html_paragraph = components.paragraph_reverse(
+        text = f'''Nell’industria lattiero-casearia, la sanificazione a ozono viene impiegata per igienizzare serbatoi, impianti di lavorazione, ambienti produttivi e confezionamento. È utile anche per il trattamento dell’acqua di lavaggio, garantendo pulizia profonda e riducendo l’uso di detergenti chimici tradizionali.''',
+        align = 'center',
+        align_mobile = 'center',
+        margin_bottom = '0',
+    )
+    ###
+    html = f'''
+        <section class="container-xl">
+            <div class="hero-1-reverse-container">
+                <div class="container-md hero-1-reverse-content-container">
+                    {html_h1}
+                    {html_paragraph}
+                </div>
+            </div>
+        </section>
+    '''
+    ###
+    with open('styles/tmp/pag-settori-articoli.css') as f: css = f.read()
+    with open('styles/tmp-mobile/pag-settori-articoli-mobile.css') as f: css_mobile = f.read()
+    class_name = '.container-xl'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }}
+        '''
+    class_name = '.container-md'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                max-width: {g.container_sm};
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }}
+        '''
+    class_name = '.hero-1-reverse-container'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                background-color: {g.color_black_pearl};
+                border-radius: {g.border_radius_lg};
+                margin-top: 16px;
+                padding-top: 16px;
+                padding-bottom: 16px;
+            }}
+        '''
+    class_name = '.hero-1-reverse-container'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                }}
+            }}
+        '''
+    class_name = '.hero-1-reverse-content-container'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                display: flex;
+                flex-direction: column;
+                gap: 1.6rem;
+                padding-top: 6.4rem;
+                padding-bottom: 6.4rem;
+            }}
+        '''
+    class_name = '.hero-1-reverse-content-container'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                padding-top: 4.8rem;
+                padding-bottom: 4.8rem;
+            }}
+        '''
+    with open('styles/tmp/pag-settori-articoli.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-settori-articoli-mobile.css', 'w') as f: f.write(css_mobile)
+    return html
+
+def card_image_1():
+    html_heading = components.h1_default(
+        text = 'Bacillus spp.',
+    )
+    html_paragraph = components.paragraph_default(
+        text = f'''L’ozono gassoso (50 ppm) in pochi minuti già riduce significativamente il carico (2-4 log10), e dopo 6 h può inattivare completamente le cellule libere''',
+        margin_bottom = '0',
+    )
+    html_card = blocks.card_3_default(
+        heading=html_heading, 
+        content=html_paragraph,
+    )
+    html_image = components.image_sm_default(
+        src='/immagini/settori/lattiero-caseario/latte.jpg',
+        alt='',
+    ) 
+    ###
+    html = f'''
+        <section class="container-xl">
+            <div class="card-image-1-container">
+                <div style="flex: 1; display: flex;">
+                    {html_card}
+                </div>
+                <div style="flex: 1;">
+                    {html_image}
+                </div>
+            </div>
+        </section>
+    '''
+    ###
+    with open('styles/tmp/pag-settori-articoli.css') as f: css = f.read()
+    with open('styles/tmp-mobile/pag-settori-articoli-mobile.css') as f: css_mobile = f.read()
+    class_name = '.container-xl'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }}
+        '''
+    class_name = '.card-image-1-container'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                display: flex;
+                gap: 1.6rem;
+            }}
+        '''
+    class_name = 'card-image-1-container'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                }}
+            }}
+        '''
+    with open('styles/tmp/pag-settori-articoli.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-settori-articoli-mobile.css', 'w') as f: f.write(css_mobile)
+    return html
+
+def card_image_2():
+    html_heading = components.h1_default(
+        text = 'Bacillus spp.',
+    )
+    html_paragraph = components.paragraph_default(
+        text = f'''L’ozono gassoso (50 ppm) in pochi minuti già riduce significativamente il carico (2-4 log10), e dopo 6 h può inattivare completamente le cellule libere''',
+        margin_bottom = '0',
+    )
+    html_card = blocks.card_3_default(
+        heading=html_heading, 
+        content=html_paragraph,
+    )
+    html_image = components.image_sm_default(
+        src='/immagini/settori/lattiero-caseario/latte.jpg',
+        alt='',
+    ) 
+    ###
+    html = f'''
+        <section class="container-xl">
+            <div class="card-image-1-container">
+                <div style="flex: 1;">
+                    {html_image}
+                </div>
+                <div style="flex: 1; display: flex;">
+                    {html_card}
+                </div>
+            </div>
+        </section>
+    '''
+    ###
+    with open('styles/tmp/pag-settori-articoli.css') as f: css = f.read()
+    with open('styles/tmp-mobile/pag-settori-articoli-mobile.css') as f: css_mobile = f.read()
+    class_name = '.container-xl'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }}
+        '''
+    class_name = '.card-image-1-container'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                display: flex;
+                gap: 1.6rem;
+            }}
+        '''
+    class_name = 'card-image-1-container'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                }}
+            }}
+        '''
+    with open('styles/tmp/pag-settori-articoli.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-settori-articoli-mobile.css', 'w') as f: f.write(css_mobile)
+    return html
 

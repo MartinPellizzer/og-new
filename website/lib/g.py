@@ -1,3 +1,8 @@
+container_xl = '128rem'
+container_lg = '99.2rem'
+container_md = '76.8rem'
+container_sm = '48.0rem'
+
 color_black_pearl = '#08162C'
 color_picton_blue = '#32AEDF'
 color_dusty_gray = '#AD99A6'
@@ -20,6 +25,8 @@ typography_size_xxxl = '64px'
 typography_line_height_xxxl = '1'
 
 border_radius_xl = '16px'
+border_radius_lg = '12px'
+border_radius_md = '8px'
 
 styles_components_filepath = f'styles/tmp/components.css'
 styles_components_mobile_filepath = f'styles/tmp-mobile/components-mobile.css'

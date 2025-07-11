@@ -217,6 +217,30 @@ def card_ihc_default(image, heading, content):
     '''
     return html
 
+def card_3_default(heading, content):
+    utils.css_create_if_not_exists(css_filepath)
+    ###
+    with open(css_filepath) as f: css = f.read()
+    class_name = '.card_3_default'
+    if f'{class_name} ' not in css:
+        css += f'''
+            {class_name} {{
+                background-color: {g.color_gray_extralight}; 
+                border-radius: 1.6rem;
+                padding: 1.6rem;
+            }}
+        '''
+    with open(css_filepath, 'w') as f: f.write(css)
+    ###
+    html = f'''
+        <div class="card_3_default">
+            {heading}
+            {content}
+        </div>
+    '''
+    return html
+
+
 ####################################################
 # ;contacts
 ####################################################

@@ -152,3 +152,9 @@
                     margin-bottom: 0;
                 }
             
+            .image_sm_default {
+                height: 24rem;
+                border-radius: 16px;
+                object-fit: cover;
+            }
+        

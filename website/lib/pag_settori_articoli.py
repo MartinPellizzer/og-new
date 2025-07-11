@@ -8,6 +8,7 @@ def gen():
     with open('styles/tmp-mobile/pag-settori-articoli-mobile.css', 'w') as f: f.write('')
     with open('styles/tmp/pag-articoli.css', 'w') as f: f.write('')
     with open('styles/tmp-mobile/pag-articoli-mobile.css', 'w') as f: f.write('')
+    ###
     html_index = f'''
         <!DOCTYPE html>
         <html lang="en">
@@ -19,7 +20,13 @@ def gen():
         <body>
             {sections.header_light()}
             <main>
+                {sections.hero_1_reverse()}
+                {sections.separator('Applicazioni')}
                 {sections.settore()}
+                {sections.separator('Contaminazioni')}
+                {sections.card_image_1()}
+                {sections.card_image_2()}
+                {sections.card_image_1()}
             </main>
             {sections.footer_default()}
         </body>

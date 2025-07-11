@@ -65,6 +65,12 @@
                 padding-right: 1.6rem; 
             }
         
+            .card_3_default {
+                background-color: #F8F9FB; 
+                border-radius: 1.6rem;
+                padding: 1.6rem;
+            }
+        
             .contact_card_default {
                 background-color: #F8F9FB;
                 padding: 1.6rem;

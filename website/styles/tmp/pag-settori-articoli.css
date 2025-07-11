@@ -7,6 +7,30 @@
                 padding-right: 16px;
             }
         
+            .container-md {
+                max-width: 48.0rem;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+        
+            .hero-1-reverse-container {
+                background-color: #08162C;
+                border-radius: 12px;
+                margin-top: 16px;
+                padding-top: 16px;
+                padding-bottom: 16px;
+            }
+        
+            .hero-1-reverse-content-container {
+                display: flex;
+                flex-direction: column;
+                gap: 1.6rem;
+                padding-top: 6.4rem;
+                padding-bottom: 6.4rem;
+            }
+        
             .settore-applicazione-grid {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
@@ -16,5 +40,10 @@
             .settore-applicazione-container { 
                 margin-top: 6.4rem; 
                 margin-bottom: 6.4rem;
+            }
+        
+            .card-image-1-container {
+                display: flex;
+                gap: 1.6rem;
             }
         
