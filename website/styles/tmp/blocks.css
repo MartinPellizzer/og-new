@@ -45,32 +45,6 @@
                 border-radius: 1.6rem;
             }
         
-            .card_ihc_default {
-                background-color: #F8F9FB; 
-                border-radius: 1.6rem;
-            }
-        
-            .card_ihc_default img {
-                border-top-left-radius: 1.6rem;
-                border-top-right-radius: 1.6rem;
-                border-radius: 1.6rem;
-                height: 16rem;
-                object-fit: cover;
-            }
-        
-            .card_hc_default { 
-                padding-left: 2.4rem; 
-                padding-right: 2.4rem; 
-                padding-left: 1.6rem; 
-                padding-right: 1.6rem; 
-            }
-        
-            .card_3_default {
-                background-color: #F8F9FB; 
-                border-radius: 1.6rem;
-                padding: 1.6rem;
-            }
-        
             .contact_card_default {
                 background-color: #F8F9FB;
                 padding: 1.6rem;

@@ -1,0 +1,70 @@
+--------------------------------
+--------------------------------
+--------------------------------
+
+give me a list of common Pathogens and Contaminants in the dairy industry that ozone sanitization can eliminate. reply only with a list of pathogens/contaminants and a one-liner description on what it is and why it's important to eliminate it.
+
+--------------------------------
+
+write a section for an article about ozone sanitization in the dairy industry. the section is about stating that ozone eliminates the problems mentioned in the above reply. use the koray semantic topical authority framework and rules to write the section. start the reply with the following words: Ozone sanitization eliminates pathogens in the dairy industry such as .
+
+--------------------------------
+
+traduci l'ultima risposta in italiano
+
+--------------------------------
+--------------------------------
+--------------------------------
+
+give me a list of the Critical Control Points Where in the dairy industry where ozone sanitization is used. reply only with a list of Critical Control Points and a one-liner description on what it is and why it's important.
+
+--------------------------------
+
+traduci l'ultima risposta in italiano
+
+--------------------------------
+
+write a section for an article about ozone sanitization in the dairy industry. the section is about stating that ozone is used in the above critical control points. use the koray semantic topical authority framework and rules to write the section. start the reply with the following words: Ozone sanitization is used for critical control points in the dairy industry such as .
+
+--------------------------------
+
+traduci l'ultima risposta in italiano
+
+--------------------------------
+--------------------------------
+--------------------------------
+
+give me a list of Material Compatibility in the dairy industry Facilities for ozone sanitization. reply only with a list of Material Compatibility and a one-liner description on what it is and why it's important.
+
+--------------------------------
+
+traduci l'ultima risposta in italiano
+
+--------------------------------
+
+ok dammi la tabella, in formato markdown
+
+--------------------------------
+
+write a section for an article about ozone sanitization in the dairy industry. the section is about stating that ozone has the above mentioned meterials compatibility in the table of the last reply. use the koray semantic topical authority framework and rules to write the section. start the reply with the following words: Ozone is compatible with materials used in the dairy industry such as .
+
+--------------------------------
+
+traduci l'ultima risposta in italiano
+
+--------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

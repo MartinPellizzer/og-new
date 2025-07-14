@@ -21,6 +21,7 @@ typography_line_height_lg = '32px'
 typography_size_xl = '32px'
 typography_line_height_xl = '40px'
 typography_size_xxl = '48px'
+typography_line_height_xxl = '52px'
 typography_size_xxxl = '64px'
 typography_line_height_xxxl = '1'
 

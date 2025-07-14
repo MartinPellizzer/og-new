@@ -20,13 +20,7 @@ def gen():
         <body>
             {sections.header_light()}
             <main>
-                {sections.hero_1_reverse()}
-                {sections.separator('Applicazioni')}
-                {sections.settore()}
-                {sections.separator('Contaminazioni')}
-                {sections.card_image_1()}
-                {sections.card_image_2()}
-                {sections.card_image_1()}
+                {sections.articoli()}
             </main>
             {sections.footer_default()}
         </body>

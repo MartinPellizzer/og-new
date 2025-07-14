@@ -1,5 +1,5 @@
 from lib import g
-
+from lib import utils
 from lib import blocks
 from lib import components
 
@@ -2471,9 +2471,15 @@ def settori_articoli():
     return html
 
 def articoli():
+    import markdown
     with open('database/article.txt', encoding='utf-8') as f: content = f.read()
     lines = [line.strip() for line in content.split('\n') if line.strip() != '']
     html_article = ''
+    html_article = markdown.markdown(content, extensions=['markdown.extensions.tables'])
+    html_article = utils.aschii(html_article)
+
+    '''
+    ul = False
     for line in lines:
         if line.startswith('# '):
             line = line.replace('# ', '')
@@ -2490,16 +2496,24 @@ def articoli():
             html_article += components.h3_default(
                 text = line,
             )
+        elif line.startswith('- '):
+            line = line.replace('- ', '')
+            if not ul: 
+                html_article += f'<ul>'
+            html_article += f'<li>{line}</li>'
         else:
             html_article += components.paragraph_default(
                 text = line,
             )
+    '''
 
     html = f'''
         <section class="container-xl article-container">
             <div style="display: flex; gap: 6.4rem;">
                 <div style="flex: 2;">
-                    {html_article}
+                    <div class="article">
+                        {html_article}
+                    </div>
                 </div>
                 <div style="flex: 1;">
                 </div>
@@ -2538,18 +2552,63 @@ def articoli():
                 }}
             }}
         '''
-    class_name = '.article-container h2'
+    class_name = '.article h1'
     if class_name not in css:
         css += f'''
             {class_name} {{ 
+                color: {g.color_black_pearl};
+                font-size: {g.typography_size_xxxl};
+                line-height: {g.typography_line_height_xxxl};
+                font-weight: normal;
+                margin-bottom: 16px;
+            }}
+        '''
+    class_name = '.article h2'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{ 
+                color: {g.color_black_pearl};
+                font-size: {g.typography_size_xl};
+                line-height: {g.typography_line_height_xl};
+                font-weight: normal;
+                margin-bottom: 16px;
                 margin-top: 4.8rem;
             }}
         '''
-    class_name = '.article-container h3'
+    class_name = '.article h3'
     if class_name not in css:
         css += f'''
             {class_name} {{ 
+                color: {g.color_black_pearl};
+                font-size: {g.typography_size_lg};
+                line-height: {g.typography_line_height_lg};
+                font-weight: normal;
+                margin-bottom: 16px;
                 margin-top: 2.4rem;
+            }}
+        '''
+    class_name = '.article p'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{ 
+                color: {g.color_black_pearl};
+                font-size: {g.typography_size_md};
+                line-height: {g.typography_line_height_md};
+                margin-bottom: 1.6rem;
+            }}
+        '''
+    class_name = '.article ul'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{ 
+                margin-left: 1.6rem;
+            }}
+        '''
+    class_name = '.article li'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{ 
+                margin-bottom: 0.8rem;
             }}
         '''
     with open('styles/tmp/pag-articoli.css', 'w') as f: f.write(css)
