@@ -42,13 +42,13 @@ header_nav_link_list = [
         'link_name': 'prodotti', 'link_href': '/prodotti.html',
     },
     {
+        'link_name': 'servizi', 'link_href': '/servizi.html',
+    },
+    {
         'link_name': 'settori', 'link_href': '/settori.html',
     },
 ]
 
-    # {
-    #     'link_name': 'servizi', 'link_href': '/servizi.html',
-    # },
 
 footer_nav_link_list = [
     {

@@ -90,6 +90,7 @@ def card_default_1(title, paragraph, icon, link='', suptitle=''):
                 background-color: {g.color_gray_extralight}; 
                 padding: 32px; 
                 border-radius: 16px;
+                box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
             }}
         '''
     with open(css_filepath, 'w') as f: f.write(css)

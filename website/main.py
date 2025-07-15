@@ -18,6 +18,9 @@ if 1:
     from lib import pag_prodotti
     pag_prodotti.gen()
 if 1:
+    from lib import pag_servizi
+    pag_servizi.gen()
+if 1:
     from lib import pag_settori
     pag_settori.gen()
 if 1:

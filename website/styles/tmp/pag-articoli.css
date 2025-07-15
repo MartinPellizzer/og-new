@@ -53,3 +53,18 @@
                 margin-bottom: 0.8rem;
             }
         
+            .article table { 
+                border-collapse: collapse; 
+                border:1px solid #08162C;
+            }
+        
+            .article table td { 
+                border: 1px solid #08162C;
+                padding: 0.8rem;
+            }
+        
+            .article table th { 
+                border: 1px solid #08162C;
+                padding: 0.8rem;
+            }
+        

@@ -27,6 +27,7 @@
                 background-color: #F8F9FB; 
                 padding: 32px; 
                 border-radius: 16px;
+                box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
             }
         
             .heading_default_2 {
@@ -276,6 +277,21 @@
         
             .article li { 
                 margin-bottom: 0.8rem;
+            }
+        
+            .article table { 
+                border-collapse: collapse; 
+                border:1px solid #08162C;
+            }
+        
+            .article table td { 
+                border: 1px solid #08162C;
+                padding: 0.8rem;
+            }
+        
+            .article table th { 
+                border: 1px solid #08162C;
+                padding: 0.8rem;
             }
         
             .container-xl {
@@ -533,6 +549,12 @@
                 text-decoration-line: none;
             }
         
+            .grid-3 { 
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.6rem;
+            }
+        
             .chi-siamo-hero-container { 
                 margin-top: 6.4rem; 
                 margin-bottom: 6.4rem;
@@ -748,6 +770,12 @@
                 .header-light-menu {
                     flex-direction: column;
                     text-align: center;
+                }
+            }
+        
+            @media screen and (max-width: 768px) {
+                .grid-3 {
+                grid-template-columns: repeat(1, 1fr);
                 }
             }
         

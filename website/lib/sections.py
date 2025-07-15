@@ -1698,11 +1698,11 @@ def settori_grid():
                 </svg>
             ''',
         ),
-        link = components.link_default(
-            link_text = f'''Scopri Applicazioni''',
-            link_href = f'''/settori/carni.html''',
-        ),
     )
+        # link = components.link_default(
+        #     link_text = f'''Scopri Applicazioni''',
+        #     link_href = f'''/settori/carni.html''',
+        # ),
     html_card_3 = blocks.card_default_1(
         title = components.h3_default(
             text = f'Ittico',
@@ -1717,11 +1717,11 @@ def settori_grid():
                 </svg>
             ''',
         ),
-        link = components.link_default(
-            link_text = f'''Scopri Applicazioni''',
-            link_href = f'''/settori/ittico.html''',
-        ),
     )
+        # link = components.link_default(
+        #     link_text = f'''Scopri Applicazioni''',
+        #     link_href = f'''/settori/ittico.html''',
+        # ),
     html_card_4 = blocks.card_default_1(
         title = components.h3_default(
             text = f'Ortofrutticolo',
@@ -1736,11 +1736,11 @@ def settori_grid():
                 </svg>
             ''',
         ),
-        link = components.link_default(
-            link_text = f'''Scopri Applicazioni''',
-            link_href = f'''/settori/ortofrutticolo.html''',
-        ),
     )
+        # link = components.link_default(
+        #     link_text = f'''Scopri Applicazioni''',
+        #     link_href = f'''/settori/ortofrutticolo.html''',
+        # ),
     html_card_5 = blocks.card_default_1(
         title = components.h3_default(
             text = f'Vinicolo',
@@ -2611,6 +2611,30 @@ def articoli():
                 margin-bottom: 0.8rem;
             }}
         '''
+    class_name = '.article table'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{ 
+                border-collapse: collapse; 
+                border:1px solid {g.color_black_pearl};
+            }}
+        '''
+    class_name = '.article table td'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{ 
+                border: 1px solid {g.color_black_pearl};
+                padding: 0.8rem;
+            }}
+        '''
+    class_name = '.article table th'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{ 
+                border: 1px solid {g.color_black_pearl};
+                padding: 0.8rem;
+            }}
+        '''
     with open('styles/tmp/pag-articoli.css', 'w') as f: f.write(css)
     with open('styles/tmp-mobile/pag-articoli-mobile.css', 'w') as f: f.write(css_mobile)
     return html
@@ -3077,3 +3101,53 @@ def card_image_2():
     with open('styles/tmp-mobile/pag-settori-articoli-mobile.css', 'w') as f: f.write(css_mobile)
     return html
 
+
+
+##########################################################
+# ;grids
+##########################################################
+
+def grid_1_default(html_heading, html_cards):
+    html = f'''
+        <section class="container-xl" style="margin-top: 6.4rem; margin-bottom: 6.4rem;">
+            {html_heading}
+            <div class="grid-3">
+                {html_cards}
+            </div>
+        </section>
+    '''
+    ###
+    with open('styles/tmp/pag-home.css') as f: css = f.read()
+    with open('styles/tmp-mobile/pag-home-mobile.css') as f: css_mobile = f.read()
+    class_name = '.container-xl'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }}
+        '''
+    class_name = '.grid-3'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{ 
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.6rem;
+            }}
+        '''
+    class_name = '.grid-3'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                grid-template-columns: repeat(1, 1fr);
+                }}
+            }}
+        '''
+    with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
+    return html
