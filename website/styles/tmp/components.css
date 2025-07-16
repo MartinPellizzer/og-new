@@ -25,14 +25,14 @@
         
             .h2_default {
                 color: #08162C;
-                font-size: 32px;
-                line-height: 40px;
+                font-size: 48px;
+                line-height: 52px;
                 font-weight: normal;
                 margin-bottom: 16px;
             }
         
-                .align_left {
-                    text-align: left;
+                .align_center {
+                    text-align: center;
                 }
             
             .paragraph_default {
@@ -42,6 +42,20 @@
                 margin-bottom: 1.6rem;
             }
         
+                .align_right {
+                    text-align: right;
+                }
+            
+            .image_sm_default {
+                height: 24rem;
+                border-radius: 16px;
+                object-fit: cover;
+            }
+        
+                .align_left {
+                    text-align: left;
+                }
+            
             .suptitle_default {
                 color: #53BED6;
                 font-size: 16px;
@@ -67,10 +81,6 @@
                 text-decoration-line: none;
             }
         
-                .align_center {
-                    text-align: center;
-                }
-            
             .h2_reverse {
                 color: #ffffff;
                 font-size: 32px;

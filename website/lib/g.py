@@ -2,6 +2,8 @@ container_xl = '128rem'
 container_lg = '99.2rem'
 container_md = '76.8rem'
 container_sm = '48.0rem'
+container_xs = '36.4rem'
+container_xxs = '25.6rem'
 
 color_black_pearl = '#08162C'
 color_picton_blue = '#32AEDF'

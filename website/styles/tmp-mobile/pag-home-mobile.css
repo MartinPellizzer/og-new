@@ -63,6 +63,12 @@
             }
         
             @media screen and (max-width: 768px) {
+                .grid-2 {
+                grid-template-columns: repeat(1, 1fr);
+                }
+            }
+        
+            @media screen and (max-width: 768px) {
                 .home-benefits-cards-container {
                     flex-direction: column;
                 }

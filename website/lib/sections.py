@@ -3151,3 +3151,96 @@ def grid_1_default(html_heading, html_cards):
     with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
     with open('styles/tmp-mobile/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
     return html
+
+def two_cols():
+    html_heading = components.h2_default(
+        text = f'''A cosa serve la sanificazione con ozono?''',
+        align = 'center',
+    )
+    html_col_1_paragraph = components.paragraph_default(
+        text = f'''L'ozono elimina le contaminazioni biologiche nell'industria alimentare, neutralizzando batteri, virus, muffe, parassiti e odori.''',
+        align = 'right',
+    )
+    html_col_1_image = components.image_sm_default(
+        src = f'/immagini/home/batteri.webp', 
+        alt = f'',
+    )
+    html_col_2_paragraph = components.paragraph_default(
+        text = f'''L'ozono elimina le contaminazioni chimiche nell'industria alimentare, riducendo micotossine, pesticidi, fitofarmaci e residui di detergenti.'''
+    )
+    html_col_2_image = components.image_sm_default(
+        src = f'/immagini/home/odori.webp', 
+        alt = f'',
+    )
+    html_cols = f'''
+        <div>
+            <div style="max-width: {g.container_xxs}; margin-left: auto;">
+                {html_col_1_paragraph}
+            </div>
+            {html_col_1_image}
+        </div>
+        <div>
+            <div style="max-width: {g.container_xxs};">
+                {html_col_2_paragraph}
+            </div>
+            {html_col_2_image}
+        </div>
+    '''
+    html = f'''
+        <section>
+            <div class="container-xs" style="margin-bottom: 1.6rem;">
+                {html_heading}
+            </div>
+            <div class="container-xl">
+                <div class="grid-2">
+                    {html_cols}
+                </div>
+            </div>
+        </section>
+    '''
+    ###
+    with open('styles/tmp/pag-home.css') as f: css = f.read()
+    with open('styles/tmp-mobile/pag-home-mobile.css') as f: css_mobile = f.read()
+    class_name = '.container-xl'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }}
+        '''
+    class_name = '.container-xs'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                max-width: {g.container_xs};
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }}
+        '''
+    class_name = '.grid-2'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{ 
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.6rem;
+            }}
+        '''
+    class_name = '.grid-2'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                grid-template-columns: repeat(1, 1fr);
+                }}
+            }}
+        '''
+    with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
+    return html
