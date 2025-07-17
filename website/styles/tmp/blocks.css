@@ -1,8 +1,10 @@
 
-            .heading_default_1 {
+            .heading_default_2 {
+                max-width: 36.4rem;
+                margin-right: auto;
+                margin-left: auto;
                 display: flex;
-                align-items: center;
-                gap: 48px;
+                flex-direction: column;
                 margin-bottom: 32px;
             }
         
@@ -11,14 +13,15 @@
                 padding: 32px; 
                 border-radius: 16px;
                 box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+                display: flex; 
+                flex-direction: column; 
+                justify-content: space-between;
             }
         
-            .heading_default_2 {
-                max-width: 768px;
-                margin-right: auto;
-                margin-left: auto;
+            .heading_default_1 {
                 display: flex;
-                flex-direction: column;
+                align-items: center;
+                gap: 48px;
                 margin-bottom: 32px;
             }
         

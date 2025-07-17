@@ -63,7 +63,7 @@
             }
         
             @media screen and (max-width: 768px) {
-                .grid-2 {
+                .grid-3 {
                 grid-template-columns: repeat(1, 1fr);
                 }
             }
@@ -156,12 +156,6 @@
                 .header-light-menu {
                     flex-direction: column;
                     text-align: center;
-                }
-            }
-        
-            @media screen and (max-width: 768px) {
-                .grid-3 {
-                grid-template-columns: repeat(1, 1fr);
                 }
             }
         

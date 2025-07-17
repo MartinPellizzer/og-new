@@ -3101,19 +3101,24 @@ def card_image_2():
     with open('styles/tmp-mobile/pag-settori-articoli-mobile.css', 'w') as f: f.write(css_mobile)
     return html
 
-
-
 ##########################################################
 # ;grids
 ##########################################################
 
-def grid_1_default(html_heading, html_cards):
+def grid_1_default(html_heading, html_cards, html_buttons=''):
+    if html_buttons.strip() != '': 
+        html_buttons = f'''
+            <div style="display: flex; justify-content: center; margin-top: 3.2rem;">
+                {html_buttons}
+            <div>
+        '''
     html = f'''
         <section class="container-xl" style="margin-top: 6.4rem; margin-bottom: 6.4rem;">
             {html_heading}
             <div class="grid-3">
                 {html_cards}
             </div>
+            {html_buttons}
         </section>
     '''
     ###
@@ -3145,6 +3150,99 @@ def grid_1_default(html_heading, html_cards):
             @media screen and (max-width: 768px) {{
                 {class_name} {{
                 grid-template-columns: repeat(1, 1fr);
+                }}
+            }}
+        '''
+    with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
+    return html
+
+# 2 rows, alternated content + image
+def layout_02():
+    html_heading = components.h2_default(
+        text= f'''A cosa serve la sanificazione con ozono?''', 
+    )
+    html_row_1_card_1 = blocks.card_3_default(
+        heading = components.h3_default(
+            text= f'''Contaminazioni biologiche''', 
+        ),
+        content = components.paragraph_default(
+            text= f'''L'ozono elimina le contaminazioni biologiche nell'industria alimentare, neutralizzando batteri, virus, muffe, parassiti e odori.''', 
+        ),
+    )
+    html_row_1_card_2 = components.image_sm_default(
+        src = f'/immagini/home/batteri.webp', 
+        alt = f'',
+    )
+    html_row_2_card_1 = blocks.card_3_default(
+        heading = components.h3_default(
+            text= f'''Contaminazioni chimiche''', 
+        ),
+        content = components.paragraph_default(
+            text= f'''L'ozono elimina le contaminazioni chimiche nell'industria alimentare, riducendo micotossine, pesticidi, fitofarmaci e residui di detergenti.''', 
+        ),
+    )
+    html_row_2_card_2 = components.image_sm_default(
+        src = f'/immagini/home/odori.webp', 
+        alt = f'',
+    )
+    html_row_1 = f'''
+        <div style="flex: 1;">
+            {html_row_1_card_1}
+        </div>
+        <div style="flex: 1;">
+            {html_row_1_card_2}
+        </div>
+    '''
+    html_row_2 = f'''
+        <div style="flex: 1;">
+            {html_row_2_card_2}
+        </div>
+        <div style="flex: 1;">
+            {html_row_2_card_1}
+        </div>
+    '''
+    html = f'''
+        <section class="container-xl" style="margin-top: 6.4rem; margin-bottom: 6.4rem;">
+            {html_heading}
+            <div style="display: flex; flex-direction: column; gap: 1.6rem;">
+                <div class="layout_02_row">
+                    {html_row_1}
+                </div>
+                <div class="layout_02_row">
+                    {html_row_2}
+                </div>
+            </div>
+        </section>
+    '''
+    ###
+    with open('styles/tmp/pag-home.css') as f: css = f.read()
+    with open('styles/tmp-mobile/pag-home-mobile.css') as f: css_mobile = f.read()
+    class_name = '.container-xl'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }}
+        '''
+    class_name = '.layout_02_row'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{ 
+                display: flex;
+                gap: 1.6rem;
+            }}
+        '''
+    class_name = '.layout_02_row'
+    if class_name not in css_mobile:
+        css_mobile += f'''
+            @media screen and (max-width: 768px) {{
+                {class_name} {{
+                    flex-direction: column;
                 }}
             }}
         '''
@@ -3244,3 +3342,5 @@ def two_cols():
     with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
     with open('styles/tmp-mobile/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
     return html
+
+

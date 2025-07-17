@@ -113,17 +113,9 @@
                 width: 90%;
             }
         
-            .container-xs {
-                max-width: 36.4rem;
-                margin-left: auto;
-                margin-right: auto;
-                padding-left: 16px;
-                padding-right: 16px;
-            }
-        
-            .grid-2 { 
+            .grid-3 { 
                 display: grid;
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(3, 1fr);
                 gap: 1.6rem;
             }
         
@@ -266,12 +258,6 @@
             .header-light-menu-nav a {
                 color: #08162C;
                 text-decoration-line: none;
-            }
-        
-            .grid-3 { 
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 1.6rem;
             }
         
             .chi-siamo-hero-container { 

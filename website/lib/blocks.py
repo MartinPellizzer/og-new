@@ -58,7 +58,7 @@ def heading_default_2(title, paragraph):
     if f'{class_name} ' not in css:
         css += f'''
             {class_name} {{
-                max-width: 768px;
+                max-width: {g.container_xs};
                 margin-right: auto;
                 margin-left: auto;
                 display: flex;
@@ -91,6 +91,9 @@ def card_default_1(title, paragraph, icon, link='', suptitle=''):
                 padding: 32px; 
                 border-radius: 16px;
                 box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+                display: flex; 
+                flex-direction: column; 
+                justify-content: space-between;
             }}
         '''
     with open(css_filepath, 'w') as f: f.write(css)
@@ -107,10 +110,12 @@ def card_default_1(title, paragraph, icon, link='', suptitle=''):
         '''
     html = f'''
         <div class="card_default_1">
+            <div>
             {suptitle}
             {title}
             {paragraph}
             <div style="margin-bottom: 64px;"></div>
+            </div>
             <div style="display: flex; justify-content: space-between; align-items: center;">
                 {icon}
                 <div style="display: flex; gap: 8px;">
@@ -229,6 +234,7 @@ def card_3_default(heading, content):
                 background-color: {g.color_gray_extralight}; 
                 border-radius: 1.6rem;
                 padding: 1.6rem;
+                height: 100%;
             }}
         '''
     with open(css_filepath, 'w') as f: f.write(css)
@@ -240,7 +246,6 @@ def card_3_default(heading, content):
         </div>
     '''
     return html
-
 
 ####################################################
 # ;contacts
