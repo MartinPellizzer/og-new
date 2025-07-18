@@ -8,7 +8,7 @@ from lib import components
 def gen():
     html_heading = blocks.heading_default_2(
         title = components.h2_default(
-            text = f'''A cosa serve la sanificazione con ozono?''',
+            text = f'''A cosa serve l'ozono?''',
             align = f'center',
         ),
         paragraph = components.paragraph_default(
@@ -144,7 +144,7 @@ def gen():
                 {sections.separator('Utilizzi')}
                 {sections.grid_1_default(html_heading, html_cards, html_button)}
                 {sections.separator('Benefici')}
-                {sections.home_benefits()}
+                {sections.layout_03()}
                 {sections.separator('Servizi')}
                 {sections.home_services()}
                 {sections.separator('Settori')}

@@ -3250,6 +3250,93 @@ def layout_02():
     with open('styles/tmp-mobile/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
     return html
 
+# 2 rows, alternated content + image
+def layout_03():
+    
+    html_heading = blocks.heading_default_2(
+        components.h2_default(
+            text = 'Perché usare l\'ozono?',
+            align = 'center',
+        ),
+        paragraph = components.paragraph_default(
+            text = 'L’ozono garantisce una potente attività antimicrobica, penetra superfici complesse, non lascia residui chimici, è compatibile con alimenti biologici e prolunga la shelf-life degli alimenti.',
+            align = 'center',
+        ),
+    )
+    length_1 = 10
+    length_2 = 9
+    html_card_1_heading = components.h3_default(
+        text = f'Igiene in Secondi', 
+    )
+    html_card_1_content = components.paragraph_default(
+        text = f'L’ozono, circa 3.000 volte più rapido ed efficace del cloro nel distruggere batteri, virus, muffe e funghi.<br><br>Riduce drasticamente i tempi di sanificazione, permette cicli produttivi più rapidi, minimizza il downtime degli impianti e garantisce igiene efficace in ambienti ad alta rotazione.', 
+    )
+    html_card_1 = blocks.card_3_default(
+        heading = html_card_1_heading, 
+        content = html_card_1_content,
+    )
+    html_card_2_heading = components.h3_default(
+        text = f'Zero Residui Chimici', 
+    )
+    html_card_2_content = components.paragraph_default(
+        text = f'L’ozono si decompone rapidamente in ossigeno, senza lasciare residui chimici su superfici o alimenti.<br><br>Garantisce sicurezza alimentare, preserva gusto e freschezza, ed elimina il risciacquo finale, con conseguente risparmio di tempo, acqua e costi produttivi.', 
+    )
+    html_card_2 = blocks.card_3_default(
+        heading = html_card_2_heading, 
+        content = html_card_2_content,
+    )
+    html_row_1 = f'''
+        <div style="display: flex; gap: 1.6rem;">
+            <div style="flex: {length_1};">
+                {html_card_1}
+            </div>
+            <div style="flex: {length_2};">
+                {components.image_xs_default(
+                    src = f'/immagini/home/veloce.webp', 
+                    alt = '',
+                )}
+            </div>
+        </div>
+    '''
+    html_row_2 = f'''
+        <div style="display: flex; gap: 1.6rem;">
+            <div style="flex: {length_2};">
+                {components.image_xs_default(
+                    src = f'/immagini/home/ecologico.webp', 
+                    alt = '',
+                )}
+            </div>
+            <div style="flex: {length_1};">
+                {html_card_2}
+            </div>
+        </div>
+    '''
+    html = f'''
+        <section class="container-xl" style="margin-top: 6.4rem; margin-bottom: 6.4rem;">
+            {html_heading}
+            {html_row_1}
+            <div style="margin-bottom: 1.6rem;"></div>
+            {html_row_2}
+        </section>
+    '''
+    ###
+    with open('styles/tmp/pag-home.css') as f: css = f.read()
+    with open('styles/tmp-mobile/pag-home-mobile.css') as f: css_mobile = f.read()
+    class_name = '.container-xl'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }}
+        '''
+    with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
+    return html
+
 def two_cols():
     html_heading = components.h2_default(
         text = f'''A cosa serve la sanificazione con ozono?''',

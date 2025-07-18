@@ -235,6 +235,9 @@ def card_3_default(heading, content):
                 border-radius: 1.6rem;
                 padding: 1.6rem;
                 height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
             }}
         '''
     with open(css_filepath, 'w') as f: f.write(css)

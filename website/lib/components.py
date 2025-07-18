@@ -806,3 +806,27 @@ def image_sm_default(src, alt):
         <img class="image_sm_default" src="{src}" alt="{alt}">
     '''
     return html
+
+def image_xs_default(src, alt):
+    utils.css_create_if_not_exists(css_filepath)
+    ###
+    with open(css_filepath) as f: css = f.read()
+    class_name = '.image_sm_default'
+    if f'{class_name} ' not in css:
+        css += f'''
+            {class_name} {{
+                height: 20rem;
+                border-radius: {g.border_radius_xl};
+                object-fit: cover;
+                display: block;
+            }}
+        '''
+    with open(css_filepath, 'w') as f: f.write(css)
+    ###
+    html = f'''
+        <img class="image_sm_default" src="{src}" alt="{alt}">
+    '''
+    return html
+
+
+

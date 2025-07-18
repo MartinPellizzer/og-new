@@ -62,10 +62,13 @@
                 text-decoration-line: none;
             }
         
-                .align_left {
-                    text-align: left;
-                }
-            
+            .image_sm_default {
+                height: 20rem;
+                border-radius: 16px;
+                object-fit: cover;
+                display: block;
+            }
+        
             .link_default {
                 color: #08162C;
                 text-decoration-line: none;
@@ -79,6 +82,10 @@
                 margin-bottom: 16px;
             }
         
+                .align_left {
+                    text-align: left;
+                }
+            
             .paragraph_reverse {
                 color: #ffffff;
                 font-size: 16px;
