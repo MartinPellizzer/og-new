@@ -76,6 +76,66 @@ def heading_default_2(title, paragraph):
     '''
     return html
 
+def heading_default_3(title, paragraph, button):
+    utils.css_create_if_not_exists(css_filepath)
+    ###
+    with open(css_filepath) as f: css = f.read()
+    class_name = '.heading_default_3'
+    if f'{class_name} ' not in css:
+        css += f'''
+            {class_name} {{
+                max-width: {g.container_xs};
+                margin-right: auto;
+                margin-left: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 32px;
+            }}
+        '''
+    with open(css_filepath, 'w') as f: f.write(css)
+    ###
+    html = f'''
+        <div class="heading_default_3">
+            {title}
+            <div style="margin-bottom: 0.8rem"></div>
+            {paragraph}
+            <div style="display: flex;">
+                {button}
+            </div>
+        </div>
+    '''
+    return html
+
+def heading_2col_1(title, button):
+    utils.css_create_if_not_exists(css_filepath)
+    ###
+    with open(css_filepath) as f: css = f.read()
+    class_name = '.heading_2col_1'
+    if f'{class_name} ' not in css:
+        css += f'''
+            {class_name} {{
+                max-width: {g.container_xs};
+                margin-right: auto;
+                margin-left: auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 32px;
+            }}
+        '''
+    with open(css_filepath, 'w') as f: f.write(css)
+    ###
+    html = f'''
+        <div class="heading_2col_1">
+            {title}
+            <div style="display: flex;">
+                {button}
+            </div>
+        </div>
+    '''
+    return html
+
 ####################################################
 # ;cards
 ####################################################
@@ -345,3 +405,54 @@ def contact_reverse(icon, cta, contact):
     '''
     return html
 
+def contact_col():
+    utils.css_create_if_not_exists(css_filepath)
+    ###
+    with open(css_filepath) as f: css = f.read()
+    class_name = '.contact_col'
+    if f'{class_name} ' not in css:
+        css += f'''
+            {class_name} {{
+                display: flex; 
+                flex-direction: column; 
+                gap: 16px;
+            }}
+        '''
+    with open(css_filepath, 'w') as f: f.write(css)
+    ###
+    html_contact_card_default_1 = contact_card_default(
+        icon = f'''
+            <svg style="color: #0f1f2e;" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+                <path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z" />
+            </svg>
+        ''',
+        cta = f'''
+            Mandaci una email
+        ''',
+        contact = f'''
+            elena@ozonogroup.it
+        ''',
+    )
+    html_contact_card_default_2 = contact_card_default(
+        icon = f'''
+            <svg style="color: #0f1f2e;" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+                <path d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z" />
+            </svg>
+        ''',
+        cta = f'''
+            Chiamaci
+        ''',
+        contact = f'''
+            +39 0423 952833
+        ''',
+    )
+    ###
+    html = f'''
+        <div class="contact_col">
+            {html_contact_card_default_1}
+            {html_contact_card_default_2}
+        </div>
+    '''
+    return html
+
+    

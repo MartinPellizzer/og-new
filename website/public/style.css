@@ -69,11 +69,20 @@
                 border-radius: 1.6rem;
             }
         
-            .heading_default_1 {
+            .heading_default_3 {
+                max-width: 36.4rem;
+                margin-right: auto;
+                margin-left: auto;
                 display: flex;
+                flex-direction: column;
                 align-items: center;
-                gap: 48px;
                 margin-bottom: 32px;
+            }
+        
+            .contact_col {
+                display: flex; 
+                flex-direction: column; 
+                gap: 16px;
             }
         
             .contact_card_default {
@@ -94,6 +103,13 @@
                 color: #08162C;
                 font-size: 16px; 
                 line-height: 24px; 
+            }
+        
+            .heading_default_1 {
+                display: flex;
+                align-items: center;
+                gap: 48px;
+                margin-bottom: 32px;
             }
         
             .h2_default {
@@ -239,6 +255,17 @@
                 line-height: 1;
                 font-weight: normal;
                 margin-bottom: 16px;
+            }
+        
+            .list_unordered_default {
+                color: #08162C;
+                font-size: 16px;
+                line-height: 24px;
+                margin-bottom: 1.6rem;
+                margin-left: 1.6rem;
+                display: flex;
+                flex-direction: column;
+                gap: 0.4rem;
             }
         
                 .margin_bottom_0 {
@@ -563,6 +590,15 @@
                 text-decoration-line: none;
             }
         
+            .spacer_1 {
+                margin-bottom: 6.4rem;
+            }
+        
+            .layout-2col-5x4 {
+                display: flex;
+                gap: 4.8rem;
+            }
+        
             .chi-siamo-hero-container { 
                 margin-top: 6.4rem; 
                 margin-bottom: 6.4rem;
@@ -778,6 +814,12 @@
                 .header-light-menu {
                     flex-direction: column;
                     text-align: center;
+                }
+            }
+        
+            @media screen and (max-width: 768px) {
+                .layout-2col-5x4 {
+                    flex-direction: column;
                 }
             }
         
