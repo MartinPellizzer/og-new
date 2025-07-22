@@ -9,8 +9,8 @@
         
             .header-dark {
                 background-color: #08162C;
-                padding-top: 16px;
-                padding-bottom: 16px;
+                padding-top: 2.4rem;
+                padding-bottom: 2.4rem;
             }
         
             .header-dark-container {
@@ -214,8 +214,8 @@
         
             .header-light {
                 background-color: #ffffff;
-                padding-top: 16px;
-                padding-bottom: 16px;
+                padding-top: 2.4rem;
+                padding-bottom: 2.4rem;
             }
         
             .header-light-container {

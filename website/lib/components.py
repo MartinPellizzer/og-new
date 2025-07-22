@@ -756,6 +756,45 @@ def button_fill_reverse(text, link):
     '''
     return html
     
+def button_ghost_default(text, link):
+    utils.css_create_if_not_exists(css_filepath)
+    ###
+    with open(css_filepath) as f: css = f.read()
+    class_name = '.button_ghost_default'
+    if f'{class_name} ' not in css:
+        css += f'''
+            {class_name} {{
+                border: 1px solid {g.color_black_pearl};
+                border-radius: 9999px; 
+                padding: 8px 16px; 
+                display: flex;
+                justify-content: center; 
+                gap: 8px; 
+            }}
+        '''
+    class_name = '.button_ghost_default a'
+    if f'{class_name} ' not in css:
+        css += f'''
+            {class_name} {{
+                color: {g.color_black_pearl};
+                text-decoration-line: none;
+            }}
+        '''
+    with open(css_filepath, 'w') as f: f.write(css)
+    ###
+    html = f'''
+        <div class="button_ghost_default">
+            <a href="{link}">{text}</a>
+            <svg style="height: 24px; color: #0f1f2e;" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+            </svg>
+        </div>
+    '''
+    return html
+
 def button_ghost_reverse(text, link):
     utils.css_create_if_not_exists(css_filepath)
     ###

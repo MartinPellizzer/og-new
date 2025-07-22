@@ -105,6 +105,16 @@
                 line-height: 24px; 
             }
         
+            .heading_2col_1 {
+                max-width: 128rem;
+                margin-right: auto;
+                margin-left: auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 32px;
+            }
+        
             .heading_default_1 {
                 display: flex;
                 align-items: center;
@@ -268,6 +278,20 @@
                 gap: 0.4rem;
             }
         
+            .button_ghost_default {
+                border: 1px solid #08162C;
+                border-radius: 9999px; 
+                padding: 8px 16px; 
+                display: flex;
+                justify-content: center; 
+                gap: 8px; 
+            }
+        
+            .button_ghost_default a {
+                color: #08162C;
+                text-decoration-line: none;
+            }
+        
                 .margin_bottom_0 {
                     margin-bottom: 0;
                 }
@@ -351,8 +375,8 @@
         
             .header-dark {
                 background-color: #08162C;
-                padding-top: 16px;
-                padding-bottom: 16px;
+                padding-top: 2.4rem;
+                padding-bottom: 2.4rem;
             }
         
             .header-dark-container {
@@ -556,8 +580,8 @@
         
             .header-light {
                 background-color: #ffffff;
-                padding-top: 16px;
-                padding-bottom: 16px;
+                padding-top: 2.4rem;
+                padding-bottom: 2.4rem;
             }
         
             .header-light-container {

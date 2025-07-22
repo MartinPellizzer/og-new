@@ -40,8 +40,8 @@ def header_light():
         css += f'''
             {class_name} {{
                 background-color: {g.color_white};
-                padding-top: 16px;
-                padding-bottom: 16px;
+                padding-top: 2.4rem;
+                padding-bottom: 2.4rem;
             }}
         '''
     class_name = '.header-light-container'
@@ -159,8 +159,8 @@ def header_dark():
         css += f'''
             {class_name} {{
                 background-color: {g.color_black_pearl};
-                padding-top: 16px;
-                padding-bottom: 16px;
+                padding-top: 2.4rem;
+                padding-bottom: 2.4rem;
             }}
         '''
     class_name = '.header-dark-container'
@@ -3431,43 +3431,12 @@ def two_cols():
 ##########################################################
 # ;layouts
 ##########################################################
-def layout_2col_5x4():
-    html_introduzione_header = components.h2_default(
-        text = 'Introduzione',
-    )
-    html_introduzione_paragraph = components.paragraph_default(
-        text = 'La consulenza è il punto di partenza fondamentale per una corretta integrazione dell’ozono nei processi aziendali. Ogni impianto, per essere efficace, deve nascere da un’analisi accurata delle reali esigenze produttive, sanitarie e strutturali dell’azienda. In questa fase, vengono valutati numerosi fattori: obiettivi di trattamento, caratteristiche degli ambienti, prodotti coinvolti, frequenza operativa, limiti normativi. L’esperienza maturata nel settore alimentare e industriale consente al nostro team tecnico di guidare il cliente verso soluzioni sicure, efficienti e su misura.',
-    )
-    html_dettagli_header = components.h2_default(
-        text = 'In cosa consiste?',
-    )
-    html_dettagli_paragraph = components.paragraph_default(
-        text = 'Questo servizio consiste in:',
-    )
-    html_dettagli_list = components.list_unordered_default(
-        [
-            'Analisi degli obiettivi specifici (es. sanificazione, deodorazione, abbattimento microbico, risparmio operativo)',
-            'Valutazione della reale applicabilità dell’ozono nel tuo contesto',
-            'Discussione preliminare sui rischi e benefici',
-            'Pianificazione del sopralluogo tecnico',
-            'Primi consigli pratici per ottimizzare spazi e trattamenti',
-        ]
-    )
-    html_immagine = components.image_sm_default(
-        src = '/immagini/home/sanificazione-ozono.png',
-        alt = ''
-    )
-    html_contatti = blocks.contact_col()
+def layout_2col_5x4(html_content, html_contatti):
     html = f'''
         <section class="container-xl">
             <div class="layout-2col-5x4">
                 <div style="flex: 5;">
-                    {html_introduzione_header}
-                    {html_introduzione_paragraph}
-                    {html_dettagli_header}
-                    {html_dettagli_paragraph}
-                    {html_dettagli_list}
-                    {html_immagine}
+                    {html_content}
                 </div>
                 <div style="flex: 4;">
                     {html_contatti}
@@ -3513,26 +3482,11 @@ def layout_2col_5x4():
 ##########################################################
 # ;hero
 ##########################################################
-def hero_2_reverse():
-    html_heading = blocks.heading_default_3(
-        title = components.h1_reverse(
-            text = f'''Consulenza''',
-            align = f'''center''',
-
-        ),
-        paragraph = components.paragraph_reverse(
-            text = f'''Lorem ipsum dolor sit amet consectetur. Sed morbi justo aliquet elit hac cursus viverra. Porta malesuada consectetur blandit leo venenatis.''',
-            align = f'''center''',
-        ),
-        button = components.button_fill_reverse(
-            text = f'''Get in touch''',
-            link = f'''/contatti.html''',
-        ),
-    )
+def hero_2_reverse(html_heading, image_url):
     html = f'''
         <section class="container-xl">
             <div style="border-radius: 16px; border-bottom-left-radius: 16px;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/immagini/home/sanificazione-ozono.png');
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({image_url});
             background-size: cover; background-position: center; padding-top: 96px; padding-bottom: 96px; padding-left: 48px; padding-right: 48px;">
                 {html_heading}
             </div>

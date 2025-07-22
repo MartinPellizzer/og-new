@@ -115,7 +115,7 @@ def heading_2col_1(title, button):
     if f'{class_name} ' not in css:
         css += f'''
             {class_name} {{
-                max-width: {g.container_xs};
+                max-width: {g.container_xl};
                 margin-right: auto;
                 margin-left: auto;
                 display: flex;
