@@ -76,18 +76,16 @@ DateTime now_old;
 ///////////////////////////////////////////////////////////////////////
 // ;power
 ///////////////////////////////////////////////////////////////////////
+#define POWER_TYPE_PIN 15
 typedef struct power_t {
   int8_t power_old = -1;
   int8_t power_tmp = 50;
   int8_t power_cur = 50;
+  int8_t power_type_old = -2;
+  int8_t power_type_tmp = 0;
+  int8_t power_type_cur = 0;
 } power_t;
 power_t power = {};
-
-int8_t power_type_old = -2;
-int8_t power_type_tmp = 0;
-int8_t power_type_cur = 0;
-
-#define POWER_TYPE_PIN 15
 
 ///////////////////////////////////////////////////////////////////////
 // ;sensor
@@ -171,7 +169,7 @@ void cycle_update()
           digitalWrite(relay_pin, 1);
           cycle_working_millis_cur = millis();
           cycle_working_seconds = int(cycle_seconds_base * (float(power.power_cur) / float(100)));
-          Serial.println(cycle_working_seconds);
+          // Serial.println(cycle_working_seconds);
         }
       }
       else 
@@ -301,7 +299,7 @@ void setup()
 void loop() 
 {
   // ;debug
-  Serial.println(digitalRead(POWER_TYPE_PIN));
+  // Serial.println(digitalRead(POWER_TYPE_PIN));
 
   // ;rtc
   rtc_manager();

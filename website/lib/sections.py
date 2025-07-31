@@ -3487,7 +3487,9 @@ def hero_2_reverse(html_heading, image_url):
         <section class="container-xl">
             <div style="border-radius: 16px; border-bottom-left-radius: 16px;
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({image_url});
-            background-size: cover; background-position: center; padding-top: 96px; padding-bottom: 96px; padding-left: 48px; padding-right: 48px;">
+            background-size: cover; 
+            background-position: center; 
+            padding-top: 96px; padding-bottom: 96px; padding-left: 48px; padding-right: 48px;">
                 {html_heading}
             </div>
         </section>

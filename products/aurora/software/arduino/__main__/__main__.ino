@@ -183,7 +183,7 @@ void sensor_update()
   if (Sensor1.available() > 0) 
   {
     uint8_t c = Sensor1.read();
-    Serial.println(c);
+    // Serial.println(c);
     buff[i] = c;
     i++;
     sensor_new_data = 1;

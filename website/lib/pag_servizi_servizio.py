@@ -22,7 +22,7 @@ def consulenza():
             link = f'''/contatti.html''',
         ),
     )
-    image_url = f'/immagini/home/sanificazione-ozono.png'
+    image_url = f'/immagini/home/consulenza.webp'
     ### content
     html_content = ''
     html_content += components.h2_default(
@@ -46,10 +46,10 @@ def consulenza():
             'Primi consigli pratici per ottimizzare spazi e trattamenti',
         ]
     )
-    html_content += components.image_sm_default(
-        src = '/immagini/home/sanificazione-ozono.png',
-        alt = ''
-    )
+    # html_content += components.image_sm_default(
+    #     src = '/immagini/home/sanificazione-ozono.png',
+    #     alt = ''
+    # )
     ### contatti
     html_contatti = blocks.contact_col()
     ### altri servizi
@@ -173,7 +173,7 @@ def sopralluogo():
             link = f'''/contatti.html''',
         ),
     )
-    image_url = f'/immagini/home/sanificazione-ozono.png'
+    image_url = f'/immagini/home/sopralluogo.webp'
     ### content
     html_content = ''
     html_content += components.h2_default(
@@ -197,10 +197,10 @@ def sopralluogo():
             'Raccolta di dati necessari al dimensionamento e alla progettazione dell’impianto',
         ]
     )
-    html_content += components.image_sm_default(
-        src = '/immagini/home/sanificazione-ozono.png',
-        alt = ''
-    )
+    # html_content += components.image_sm_default(
+    #     src = '/immagini/home/sanificazione-ozono.png',
+    #     alt = ''
+    # )
     ### contatti
     html_contatti = blocks.contact_col()
     ### altri servizi
@@ -324,7 +324,7 @@ def dimensionamento():
             link = f'''/contatti.html''',
         ),
     )
-    image_url = f'/immagini/home/sanificazione-ozono.png'
+    image_url = f'/immagini/home/dimensionamento.webp'
     ### content
     html_content = ''
     html_content += components.h2_default(
@@ -348,10 +348,10 @@ def dimensionamento():
             'Verifica dell’idoneità all’uso in presenza di personale (conforme alle normative)',
         ]
     )
-    html_content += components.image_sm_default(
-        src = '/immagini/home/sanificazione-ozono.png',
-        alt = ''
-    )
+    # html_content += components.image_sm_default(
+    #     src = '/immagini/home/sanificazione-ozono.png',
+    #     alt = ''
+    # )
     ### contatti
     html_contatti = blocks.contact_col()
     ### altri servizi
@@ -475,7 +475,7 @@ def progettazione():
             link = f'''/contatti.html''',
         ),
     )
-    image_url = f'/immagini/home/sanificazione-ozono.png'
+    image_url = f'/immagini/home/progettazione.webp'
     ### content
     html_content = ''
     html_content += components.h2_default(
@@ -501,10 +501,10 @@ def progettazione():
             'Redazione progetto tecnico preliminare e proposta economica personalizzata',
         ]
     )
-    html_content += components.image_sm_default(
-        src = '/immagini/home/sanificazione-ozono.png',
-        alt = ''
-    )
+    # html_content += components.image_sm_default(
+    #     src = '/immagini/home/sanificazione-ozono.png',
+    #     alt = ''
+    # )
     ### contatti
     html_contatti = blocks.contact_col()
     ### altri servizi
@@ -628,7 +628,7 @@ def trasporto():
             link = f'''/contatti.html''',
         ),
     )
-    image_url = f'/immagini/home/sanificazione-ozono.png'
+    image_url = f'/immagini/home/trasporto.webp'
     ### content
     html_content = ''
     html_content += components.h2_default(
@@ -652,10 +652,10 @@ def trasporto():
             'Monitoraggio costante delle fasi di spedizione',
         ]
     )
-    html_content += components.image_sm_default(
-        src = '/immagini/home/sanificazione-ozono.png',
-        alt = ''
-    )
+    # html_content += components.image_sm_default(
+    #     src = '/immagini/home/sanificazione-ozono.png',
+    #     alt = ''
+    # )
     ### contatti
     html_contatti = blocks.contact_col()
     ### altri servizi
@@ -779,7 +779,7 @@ def installazione():
             link = f'''/contatti.html''',
         ),
     )
-    image_url = f'/immagini/home/sanificazione-ozono.png'
+    image_url = f'/immagini/home/installazione.webp'
     ### content
     html_content = ''
     html_content += components.h2_default(
@@ -804,10 +804,10 @@ def installazione():
             'Tutto viene svolto da personale certificato e con DPI obbligatori',
         ]
     )
-    html_content += components.image_sm_default(
-        src = '/immagini/home/sanificazione-ozono.png',
-        alt = ''
-    )
+    # html_content += components.image_sm_default(
+    #     src = '/immagini/home/sanificazione-ozono.png',
+    #     alt = ''
+    # )
     ### contatti
     html_contatti = blocks.contact_col()
     ### altri servizi
@@ -931,7 +931,7 @@ def formazione():
             link = f'''/contatti.html''',
         ),
     )
-    image_url = f'/immagini/home/sanificazione-ozono.png'
+    image_url = f'/immagini/home/formazione.webp'
     ### content
     html_content = ''
     html_content += components.h2_default(
@@ -957,10 +957,10 @@ def formazione():
             'Consegna di schede sintetiche operative (cartacee o digitali)',
         ]
     )
-    html_content += components.image_sm_default(
-        src = '/immagini/home/sanificazione-ozono.png',
-        alt = ''
-    )
+    # html_content += components.image_sm_default(
+    #     src = '/immagini/home/sanificazione-ozono.png',
+    #     alt = ''
+    # )
     ### contatti
     html_contatti = blocks.contact_col()
     ### altri servizi
@@ -1084,7 +1084,7 @@ def assistenza():
             link = f'''/contatti.html''',
         ),
     )
-    image_url = f'/immagini/home/sanificazione-ozono.png'
+    image_url = f'/immagini/home/assistenza.webp'
     ### content
     html_content = ''
     html_content += components.h2_default(
@@ -1108,10 +1108,10 @@ def assistenza():
             'Taratura e aggiornamento di sensori e software',
         ]
     )
-    html_content += components.image_sm_default(
-        src = '/immagini/home/sanificazione-ozono.png',
-        alt = ''
-    )
+    # html_content += components.image_sm_default(
+    #     src = '/immagini/home/sanificazione-ozono.png',
+    #     alt = ''
+    # )
     ### contatti
     html_contatti = blocks.contact_col()
     ### altri servizi
@@ -1235,7 +1235,7 @@ def manutenzione():
             link = f'''/contatti.html''',
         ),
     )
-    image_url = f'/immagini/home/sanificazione-ozono.png'
+    image_url = f'/immagini/home/manutenzione.webp'
     ### content
     html_content = ''
     html_content += components.h2_default(
@@ -1261,10 +1261,10 @@ def manutenzione():
             'Interventi su contratto annuale o su chiamata, anche in orari non produttivi',
         ]
     )
-    html_content += components.image_sm_default(
-        src = '/immagini/home/sanificazione-ozono.png',
-        alt = ''
-    )
+    # html_content += components.image_sm_default(
+    #     src = '/immagini/home/sanificazione-ozono.png',
+    #     alt = ''
+    # )
     ### contatti
     html_contatti = blocks.contact_col()
     ### altri servizi

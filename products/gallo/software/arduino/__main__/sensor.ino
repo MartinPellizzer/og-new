@@ -25,6 +25,13 @@ void sensor_update()
   {
     if (millis() - timer > 40) 
     {
+      for (int i = 0; i < BUFF_LEN; i++)
+      {
+        Serial.print(buff[i]);
+        Serial.print(", ");
+      }
+      Serial.println();
+
       timer_no_signal = millis();
       i = 0;
       sensor_new_data = 0;
@@ -43,7 +50,7 @@ void sensor_update()
   if (Sensor1.available() > 0) 
   {
     uint8_t c = Sensor1.read();
-    Serial.println(c);
+    //Serial.println(c);
     buff[i] = c;
     i++;
     sensor_new_data = 1;

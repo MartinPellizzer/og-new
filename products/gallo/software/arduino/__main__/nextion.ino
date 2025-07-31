@@ -144,7 +144,7 @@ void nextion_eval_page_home()
     if (nextion_array_compare(cmd_p_home_goto_clock_warn, nextion.inputs_buff)) nextion.page_cur = 30;
     if (nextion_array_compare(cmd_p_home_goto_settings, nextion.inputs_buff)) nextion.page_cur = 40;
   }
-  if (power_type_cur == 1)
+  if (power.power_type_cur == 1)
   {
     if (nextion_array_compare(cmd_p_home_on, nextion.inputs_buff))
     {
@@ -683,15 +683,15 @@ void nextion_eval_serial()
     else if (nextion_array_compare(cmd_p_set_calendar_onoff_save, nextion.inputs_buff)) 
     {
       nextion.page_cur = 40;
-      power_type_cur = power_type_tmp;
+      power.power_type_cur = power.power_type_tmp;
     }
     else if (nextion_array_compare(cmd_p_set_calendar_onoff_up, nextion.inputs_buff)) 
     {
-      power_type_tmp = 1;
+      power.power_type_tmp = 1;
     }
     else if (nextion_array_compare(cmd_p_set_calendar_onoff_down, nextion.inputs_buff)) 
     {
-      power_type_tmp = 0;
+      power.power_type_tmp = 0;
     }
   }
 }
@@ -741,7 +741,7 @@ void nextion_update_page_home(uint8_t force_refresh)
   if (force_refresh || is_on_old != is_on_cur) 
   {
     is_on_old = is_on_cur;
-    if (power_type_cur == 0)
+    if (power.power_type_cur == 0)
     {
       {
         uint8_t _buffer[] = { 0x70, 0x30, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x32, 0x31, 0xff, 0xff, 0xff };
@@ -1549,8 +1549,8 @@ void nextion_update_page_power_type(uint8_t force_refresh)
         Serial2.write(_buffer[i]);
       }
     }
-    power_type_tmp = power_type_cur;
-    if (power_type_tmp == 1)
+    power.power_type_tmp = power.power_type_cur;
+    if (power.power_type_tmp == 1)
     {
       {
         uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x49, 0x4E, 0x54, 0x45, 0x52, 0x4E, 0x4F, 0x22, 0xff, 0xff, 0xff };
@@ -1571,10 +1571,10 @@ void nextion_update_page_power_type(uint8_t force_refresh)
       }
     }
   }
-  if (force_refresh || power_type_old != power_type_tmp)
+  if (force_refresh || power.power_type_old != power.power_type_tmp)
   {
-    power_type_old = power_type_tmp;
-    if (power_type_tmp == 1)
+    power.power_type_old = power.power_type_tmp;
+    if (power.power_type_tmp == 1)
     {
       {
         uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x49, 0x4E, 0x54, 0x45, 0x52, 0x4E, 0x4F, 0x22, 0xff, 0xff, 0xff };
