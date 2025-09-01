@@ -1,0 +1,32 @@
+# Tools and Equipment List – Aurora Ozone Sanitization System
+
+## 1. Introduction
+- Purpose of document
+- Scope (tools needed for assembly, maintenance, testing)
+
+## 2. Hand Tools
+- Screwdrivers, pliers, wrenches
+- Torque wrenches and settings
+
+## 3. Power Tools
+- Drills, soldering stations, hot-air rework tools
+
+## 4. Measurement and Test Equipment
+- Multimeters, oscilloscopes, current clamps
+- Ozone concentration meters, environmental sensors
+
+## 5. Safety Equipment
+- Gloves, goggles, masks
+- Ventilation requirements
+
+## 6. Calibration Equipment
+- Sensor calibration kits
+- Reference gas cylinders
+
+## 7. Miscellaneous Equipment
+- Workbenches, anti-static mats, fixtures
+
+## 8. Notes and Handling Instructions
+- Tool maintenance
+- Safety warnings
+

@@ -1,0 +1,46 @@
+# System Overview
+
+## Purpose
+
+### Product Description
+
+[product_name] is an automated ozone sanitization system engineered for safe and effective disinfection of enclosed environments, including but not limited to:
+
+Typical Environments:
+
+[environment_list]
+
+Specialized Applications:
+
+[application_list]
+
+### Core Functionality
+
+[product_name] utilizes a precisely controlled ozone generator module to produce ozone gas (O₃) at calibrated output levels tailored to the volume and sanitization requirements of the target environment. 
+
+The system ensures:
+
+- Accurate ozone output control through closed-loop feedback from onboard ozone concentration sensors
+- Automated sanitization cycles programmable via [interface_type]
+- Safety mechanisms including lockouts, alarms, and ventilation delays to prevent unsafe ozone exposure
+
+### Design Intent
+
+[product_name] is purpose-built to:
+
+- Deliver consistent sanitization performance with ozone outputs ranging from [ozone_output_min] to [ozone_output_max] mg/hour, ensuring pathogen neutralization without exceeding safe exposure limits
+- Operate fully autonomously or under user supervision, adapting cycle times and output based on sensor data and user inputs
+- >>> Provide robust safety controls to comply with [list applicable standards or regulations, e.g., "OSHA, UL, IEC 61010"]
+- >>> Enable easy integration into existing environments via [mention connectivity options, e.g., "Wi-Fi/Bluetooth modules, cloud platform compatibility"]
+
+### Key Operational Highlights
+
+- Input Power: Designed to operate reliably from a [input_voltage_value][input_voltage_unit] [input_voltage_type] source delivering up to [input_power_max_value][input_power_max_unit]
+- Environmental Conditions: Optimized for indoor environments within temperature range [operating_temperature_min]-[operating_temperature_max] [operating_temperature_unit] and humidity levels [operating_humidity_min]-[operating_humidity_max][operating_humidity_unit]
+- Cycle Management: Supports user-programmable sanitization cycles from [operating_time_min] to [operating_time_max] [operating_time_unit] with automatic ventilation and cooldown phases
+- User Interface: [interface_type]
+- >>> Safety Features: Includes [list safety features unique to Aurora, e.g., "high-voltage isolation, ozone concentration auto-shutdown, residual ozone decay timer, audible/visual alerts"]
+
+### Summary
+
+Aurora is engineered to provide a safe, reliable, and easy-to-use ozone sanitization solution tailored specifically for [application_main]. Through its integrated sensor feedback and safety-first design, Aurora ensures effective pathogen neutralization while maintaining strict compliance with ozone exposure limits.

@@ -1,0 +1,43 @@
+# Hardware Test Procedures – Aurora Ozone Sanitization System
+
+## 1. Introduction
+- Purpose of document
+- Scope and applicability
+- Safety precautions
+
+## 2. Pre-Test Setup
+- Required equipment and tools
+- Test environment requirements
+- Initial inspection checklist
+
+## 3. Electrical Tests
+- Power-on sequence
+- Continuity checks
+- Short-circuit testing
+- Signal verification
+
+## 4. Sensor Tests
+- Calibration verification
+- Functional tests under controlled conditions
+
+## 5. Actuator Tests
+- Relay and motor operation
+- Fan speed and airflow verification
+- Ozone generator output check
+
+## 6. Functional System Tests
+- Full system power-on
+- Ozone output monitoring
+- Control software integration test
+
+## 7. Safety and Compliance Tests
+- Emergency stop functionality
+- Overcurrent and overvoltage protection
+- Leakage detection
+
+## 8. Test Reporting
+- Test record templates
+- Pass/fail criteria
+
+## 9. Revision History
+

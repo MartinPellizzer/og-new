@@ -1,0 +1,36 @@
+# Performance Benchmarks – Aurora Ozone Sanitization System
+
+## 1. Introduction
+- Purpose of document
+- Scope and test conditions
+
+## 2. Test Environment
+- Room dimensions, airflow, temperature, and humidity
+- Safety precautions
+
+## 3. Performance Metrics
+- Ozone concentration output
+- Coverage area and uniformity
+- Power consumption
+- Noise levels
+
+## 4. Test Procedures
+- Standardized ozone generation tests
+- Sensor placement and measurement protocol
+- Duration and repetition of tests
+
+## 5. Benchmark Results
+- Tabular and graphical representation
+- Comparison to target specifications
+- Notes on deviations
+
+## 6. Environmental Impact
+- Ozone dispersion
+- Residual concentration over time
+
+## 7. Analysis and Conclusions
+- Key observations
+- Recommendations for improvements
+
+## 8. Revision History
+

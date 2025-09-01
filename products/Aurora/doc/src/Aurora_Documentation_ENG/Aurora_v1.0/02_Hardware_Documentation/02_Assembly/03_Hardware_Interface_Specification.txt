@@ -1,0 +1,37 @@
+# Hardware Interface Specification – Aurora Ozone Sanitization System
+
+## 1. Introduction
+- Purpose of document
+- Scope of interfaces
+- Audience
+
+## 2. Electrical Interfaces
+- Power input and output specifications
+- Connector pin assignments
+- Voltage, current, and timing requirements
+
+## 3. Sensor Interfaces
+- Types of sensors used
+- Communication protocol per sensor
+- Signal levels and thresholds
+
+## 4. Actuator Interfaces
+- Types of actuators (fans, valves, relays)
+- Control signals, timings, and limits
+
+## 5. Communication Interfaces
+- Internal: I2C, UART, SPI
+- External: Ethernet, Modbus, or wireless
+- Protocol definitions and packet formats
+
+## 6. Mechanical Interfaces
+- Mounting points and dimensions
+- Enclosure openings and cable routing
+
+## 7. Safety and Isolation Requirements
+- Grounding
+- EMI/EMC considerations
+- Electrical isolation
+
+## 8. Revision History
+

@@ -1,5 +1,8 @@
 from fpdf import FPDF
 
+from lib import g
+from lib import layout
+from lib import t
 
 # TABLE OF CONTENTS:
 # ......................................
@@ -20,6 +23,13 @@ container_w = a4_w_mm - int(a4_x_pd * 2)
 h1_index = 0
 h2_index = 0
 h3_index = 0
+
+def text_format(text):
+    text_formatted = text
+    text_formatted = text_formatted.replace('—', '')
+    text_formatted = text_formatted.replace('₃', '3')
+    text_formatted = text_formatted.replace('’', "'")
+    return text_formatted
 
 def doc_title(pdf, text, border=0):
     pdf.add_page()
@@ -52,7 +62,8 @@ def h2(pdf, text, border=0):
     global h3_index
     h2_index += 1
     h3_index = 0
-    pdf.add_page()
+    pdf.ln()
+    # pdf.add_page()
     gap = a4_w_mm - container_w
     font_size = 14
     line_height = font_size // 3
@@ -80,6 +91,7 @@ def paragraph(pdf, text, border=0):
     pdf.set_font("Arial", size=font_size)
     pdf.x = gap // 2
     pdf.multi_cell(container_w, line_height, txt=text.strip(), ln=True, border=border, align='L')
+    pdf.ln()
 
 def list_unordered(pdf, lst, border=0):
     gap = a4_w_mm - container_w
@@ -89,6 +101,15 @@ def list_unordered(pdf, lst, border=0):
     for item in lst:
         pdf.x = gap // 2
         pdf.multi_cell(container_w, line_height, txt=f'''* {item.strip()}''', ln=True, border=border, align='L')
+
+def list_unordered_item(pdf, text, border=0):
+    gap = a4_w_mm - container_w
+    font_size = 11
+    line_height = 5
+    pdf.set_font("Arial", size=font_size)
+    pdf.x = gap // 2
+    pdf.multi_cell(container_w, line_height, txt=text.strip(), ln=True, border=border, align='L')
+    pdf.ln()
 
 def doc_master():
     pdf = FPDF()
@@ -138,6 +159,58 @@ def doc_master():
     pdf.cell(cell_approved_by_w, 10, txt=f'''{revision_history[0]['Approved By']}''', border=1)
     pdf.ln()
 
+    with open('Master_Document_Template.txt') as f: template = f.read()
+    template = t.template_gen(template)
+    template = text_format(template)
+    template_blocks = template.split('\n\n')
+    for template_block in template_blocks:
+        template_block = template_block.strip()
+        if template_block == '': continue
+        if template_block.startswith('### '):
+            template_block = template_block.replace('### ', '').strip()
+            h3(
+                pdf, 
+                text = f'''
+                    {template_block}
+                '''
+            )
+        elif template_block.startswith('## '):
+            template_block = template_block.replace('## ', '').strip()
+            h2(
+                pdf, 
+                text = f'''
+                    {template_block}
+                '''
+            )
+        elif template_block.startswith('# '):
+            template_block = template_block.replace('# ', '').strip()
+            h1(
+                pdf, 
+                text = f'''
+                    {template_block}
+                '''
+            )
+        elif template_block.startswith('- '):
+            template_block = template_block.replace('- ', '* ').strip()
+            print('##################################################')
+            print('##################################################')
+            print(template_block)
+            print('##################################################')
+            print('##################################################')
+            list_unordered_item(
+                pdf, 
+                text = f'''
+                    {template_block}
+                ''', 
+            )
+        else:
+            paragraph(
+                pdf, 
+                text = template_block,
+            )
+
+    pdf.output('Master_Document.pdf')
+    quit()
     ################################################################################
     # 1. SYSTEM OVERVIEW.....................................................[OVR]
     ################################################################################
