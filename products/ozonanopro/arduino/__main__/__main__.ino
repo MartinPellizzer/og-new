@@ -1,3 +1,16 @@
+#define VALVE_INPUT_GPIO 25
+#define PUMP_BOOSTER_GPIO 26
+#define PUMP_NANO_GPIO 13
+#define SOLENOID_GPIO 15
+#define OXYGEN_CONCENTRATOR_GPIO 5
+#define OZONE_GENERATOR_GPIO 18
+#define VALVE_BYPASS_1_GPIO 19
+#define VALVE_BYPASS_2_GPIO 23
+
+#define PRESSURE_SWITCH_GPIO 33
+#define FLOW_SWITCH_GPIO 32
+
+
 ///////////////////////////////////////////////////////////////////////
 // ;oxygen sensor
 ///////////////////////////////////////////////////////////////////////
@@ -107,18 +120,6 @@ typedef struct solenoid_t {
   int8_t nextion_refresh = 0;
 } solenoid_t;
 solenoid_t solenoid = {};
-
-#define VALVE_INPUT_GPIO 5
-#define PUMP_BOOSTER_GPIO 18
-#define PUMP_NANO_GPIO 19
-#define FLOW_SWITCH_GPIO 25
-#define PRESSURE_SWITCH_GPIO 26
-#define VALVE_BYPASS_1_GPIO 2
-#define VALVE_BYPASS_2_GPIO 13
-
-#define OXYGEN_CONCENTRATOR_GPIO 32
-#define OZONE_GENERATOR_GPIO 33
-#define SOLENOID_GPIO 23
 
 typedef struct cycle_t {  
   uint16_t state_old = -1;

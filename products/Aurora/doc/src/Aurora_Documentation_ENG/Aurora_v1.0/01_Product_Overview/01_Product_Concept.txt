@@ -4,18 +4,17 @@
 
 ### 1.1 **Product Snapshot**
 
-Aurora is an advanced **industrial ozone sanitization system** that integrates state-of-the-art hardware with intelligent automation software. Designed for industries where cleanliness and compliance are mission-critical, Aurora delivers **chemical-free, automated, and verifiable sanitization** that is safer, faster, and more cost-effective than traditional methods. By combining **precision ozone generation** with **real-time monitoring and control**, Aurora ensures consistent disinfection while minimizing human error and operational disruption.
+Aurora is an **industrial ozone sanitization system**. It integrates state-of-the-art hardware with intelligent automation software. Aurora is designed for industries where cleanliness and compliance are mission-critical. It delivers **chemical-free, automated, and verifiable sanitization** that is safer, faster, and more cost-effective than traditional methods. It combines **precision ozone generation** with **real-time monitoring and control**. Aurora ensures consistent disinfection while minimizing human error and operational disruption.
 
 ### 1.2 **Short Elevator Pitch**
 
 *"Aurora redefines industrial sanitization by delivering a fully automated, eco-friendly ozone system that eliminates pathogens, reduces downtime, and ensures global regulatory compliance."*
 
-### 1.3 **Core Functionality**
+### 1.3 **Core Features**
 
-- **Ozone-Based Sanitization:** Aurora generates and distributes ozone to eliminate bacteria, viruses, mold, and other contaminants without leaving harmful residues.
-- **Automation Engine:** Pre-programmed sanitization cycles, adaptive ozone output, and local scheduling reduce reliance on manual intervention.
-- **Safety & Compliance Systems:** Continuous ozone concentration monitoring and automatic shutdown protocols ensure operator safety and regulatory adherence.
-- **Smart Monitoring:** Real-time dashboards and alerts give operators full visibility and control.
+1. **Modular Adaptive Ozone System:** Aurora produces any amount of ozone between 0-100 g/h. The ozone generation is continuous (24/7).
+2. **Self-Diagnostical Safety System:** Aurora auto-diagnose itself in realtime and includes automatic shutdown protocols. This function is for safety and mainteinance.
+3. **Monitoring System:**  Aurora provides real-time dashboards and alerts give operators full visibility and control. Data are stored for analysis and compliance.
 
 ### 1.4 **Target Industry Sectors**
 
@@ -47,8 +46,8 @@ Aurora differentiates itself by merging the **power of ozone sanitization** with
 
 Industrial facilities across food processing, pharmaceuticals, healthcare, and logistics face growing pressure to maintain **sterile, contamination-free environments**. However, existing sanitization approaches present several operational challenges:  
 
-#### 2.1.1 **Labor-intensive cleaning methods**  
-  Routine sanitization often requires large teams working with chemical sprays or manual scrubbing. This increases operating expenses, creates repetitive work risks, and ties up skilled staff on low-value tasks.  
+#### 2.1.1 **Labor-intensive sanitization methods**  
+  Routine sanitization often requires large teams working with chemical products. This increases operating expenses, creates repetitive work risks, and ties up skilled staff on low-value tasks.  
 
 #### 2.1.2 **High downtime and operational disruption**  
   Many sanitization processes require production lines or storage areas to shut down completely, leading to significant productivity losses. Downtime can cost large facilities **tens of thousands of dollars per hour**, making sanitization a hidden but critical financial burden.  
@@ -98,11 +97,11 @@ These limitations have created a clear market need for a **safer, more efficient
 
 ### 3.1 Overview of Aurora System
 
-**Aurora** is a state-of-the-art, fully integrated solution designed to provide safe, efficient, and automated industrial sanitization. By combining **ozone generation, distribution, and monitoring** in a single platform, Aurora ensures consistent and reliable pathogen elimination across diverse industrial environments. Its **compact, modular design** allows for flexible deployment in facilities of all sizes, while simplifying maintenance and scalability.
+**Aurora** is a fully integrated solution designed to provide safe, efficient, and automated industrial sanitization. By combining **ozone generation, distribution, and monitoring** in a single platform, Aurora ensures consistent and reliable pathogen elimination across diverse industrial environments. Its **compact, modular design** allows for flexible deployment in facilities of all sizes, while simplifying maintenance and scalability.
 
 ### 3.2 Hardware + Software Integration
 
-Aurora’s strength lies in the seamless integration of advanced **hardware** and **software** components:
+Aurora’s strength lies in the seamless integration of **hardware** and **software** components:
 
 **Hardware:**
 
@@ -140,18 +139,17 @@ Safety and regulatory compliance are built into the core of Aurora:
 
   * Sanitizing conveyor belts, cutting equipment, storage areas
   * Ensuring compliance with HACCP and FDA standards
+
 ### **Pharmaceutical Manufacturing**
 
   * Cleanroom sterilization
   * Protecting against cross-contamination
-### **Hospitals and Cleanrooms**
 
-  * Disinfection of operating theaters and ICU units
-  * Reducing HAIs (Healthcare-Associated Infections)
 ### **Logistics and Warehouses**
 
   * Cold storage sanitization
   * Packaging area disinfection
+
 ### **Water Treatment Facilities**
 
   * Ozone for water sterilization
@@ -165,15 +163,18 @@ Safety and regulatory compliance are built into the core of Aurora:
 
   * Meet or exceed global ozone safety regulations (OSHA, EPA, WHO limits)
   * Built-in operator safety systems
+
 ### **Cost Efficiency**
 
   * Lower operational labor costs
   * Reduce downtime through automation
   * Energy-efficient ozone generation
+
 ### **Scalability**
 
   * Configurable for small, medium, and large facilities
   * Multi-unit networking for large industrial operations
+
 ### **Sustainability**
 
   * Zero chemical waste
@@ -188,18 +189,21 @@ Safety and regulatory compliance are built into the core of Aurora:
 
   * Custom-built ozone generator for efficiency and durability
   * Modular components for quick serviceability
+
 ### **Intelligent Software Control**
 
-  * AI/ML-based optimization of sanitization cycles
+  * Optimization of sanitization cycles
   * Predictive maintenance alerts
+
 ### **Real-Time Monitoring**
 
-  * Cloud-based dashboards
-  * Mobile alerts for operators and facility managers
-### **Modular Upgrade Paths**
+  * Local dashboard
+  * Remote alerts for operators and facility managers
+
+### **Modular Paths**
 
   * Add-on sensor packages (humidity, VOCs, temperature)
-  * Software upgrades for industry-specific compliance
+  * Software configurations for industry-specific compliance
 
 ---
 
@@ -209,15 +213,17 @@ Safety and regulatory compliance are built into the core of Aurora:
 
   * Single-unit prototype
   * Basic sanitization + safety features
+
 ### **Pilot Deployments**
 
   * Trials in food processing and pharma industries
   * Data collection for efficacy validation
   * Customer feedback loop
+
 ### **Full-Scale Commercialization**
 
   * Mass production readiness
   * Certification and compliance audits passed
   * Expanded industry targeting
-  * Ongoing R\&D for next-gen features
+  * Ongoing R&D for next-gen features
 

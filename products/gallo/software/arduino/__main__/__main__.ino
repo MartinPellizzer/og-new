@@ -4,6 +4,15 @@ RTC_DS3231 rtc_lib;
 #include <EEPROM.h>
 #define EEPROM_SIZE 1024
 
+#define RO_1 25
+#define RO_2 26
+#define RO_3 13
+#define RO_4 15
+#define RO_5 5
+#define RO_6 18
+#define RO_7 19
+#define RO_8 23
+
 #define CALENDAR_TIMERS_NUM 9
 
 int32_t calendar_times[7][CALENDAR_TIMERS_NUM][2] = {
@@ -37,9 +46,6 @@ int32_t hour_to_cur = 0;
 int32_t minute_to_old = -2;
 int32_t minute_to_tmp = 0;
 int32_t minute_to_cur = 0;
-
-
-
 
 ///////////////////////////////////////////////////////////////////////
 // ;rtc
@@ -115,8 +121,6 @@ int8_t cycle_on_old = -1;
 int8_t cycle_on_cur = 0;
 int8_t cycle_working_state_cur = 0;
 uint32_t cycle_working_seconds = 0;
-// #define relay_pin 5
-#define relay_pin 12
 
 ///////////////////////////////////////////////////////////////////////
 // ;nextion
@@ -166,7 +170,7 @@ void cycle_update()
         {
           cycle_on_old = cycle_on_cur;
           cycle_working_state_cur = 1;
-          digitalWrite(relay_pin, 1);
+          digitalWrite(RO_1, 1);
           cycle_working_millis_cur = millis();
           cycle_working_seconds = int(cycle_seconds_base * (float(power.power_cur) / float(100)));
           // Serial.println(cycle_working_seconds);
@@ -179,7 +183,7 @@ void cycle_update()
         {
           cycle_on_old = cycle_on_cur;
           cycle_working_state_cur = 0;
-          digitalWrite(relay_pin, 0);
+          digitalWrite(RO_1, 0);
           cycle_working_millis_cur = millis();
         }
       }
@@ -192,7 +196,7 @@ void cycle_update()
           {
             cycle_working_millis_cur = millis();
             cycle_working_state_cur = 0;
-            digitalWrite(relay_pin, 0);
+            digitalWrite(RO_1, 0);
           }
         }
         else
@@ -201,7 +205,7 @@ void cycle_update()
           {
             cycle_working_millis_cur = millis();
             cycle_working_state_cur = 1;
-            digitalWrite(relay_pin, 1);
+            digitalWrite(RO_1, 1);
             cycle_working_seconds = int(cycle_seconds_base * (float(power.power_cur) / float(100)));
           }
         }
@@ -210,7 +214,7 @@ void cycle_update()
       {
         cycle_on_cur = 0;
         cycle_working_state_cur = 0;
-        digitalWrite(relay_pin, 0);
+        digitalWrite(RO_1, 0);
       }
     }
   }
@@ -219,9 +223,80 @@ void cycle_update()
     cycle_on_cur = 0;
     cycle_on_old = cycle_on_cur;
     cycle_working_state_cur = 0;
-    digitalWrite(relay_pin, 0);
+    digitalWrite(RO_1, 0);
     cycle_working_millis_cur = millis();
   }
+}
+
+void clear_buffer(uint8_t buff[], uint8_t len) 
+{
+  for (int i = 0; i < len; i++) buff[i] = 0;
+}
+
+void sensor_update() 
+{
+  // check if sensor is connected, otherwise update state/val
+  if (sensor.is_connected == 1) 
+  {
+    if (millis() - sensor_connected_millis > 1000) 
+    {
+      sensor_connected_millis = millis();
+      sensor_connected_seconds += 1;
+      if (sensor_connected_seconds > 5)
+      {
+        sensor.is_connected = 0;
+        sensor.ppb_old = -2;
+        sensor.ppb_cur = -1;
+      }
+    }
+  }
+
+  if (sensor_new_data) 
+  {
+    if (millis() - timer > 40) 
+    {
+      for (int i = 0; i < BUFF_LEN; i++)
+      {
+        Serial.print(buff[i]);
+        Serial.print(", ");
+      }
+      Serial.println();
+
+      timer_no_signal = millis();
+      i = 0;
+      sensor_new_data = 0;
+      sensor.ppb_cur = 0;
+      if (checksum(buff, 9) == buff[8]) 
+      {
+        sensor.ppb_cur = buff[4] * 256 + buff[5];
+        sensor_connected_millis = millis();
+        sensor_connected_seconds = 0;
+        sensor.is_connected = 1;
+        Serial.println(sensor.ppb_cur);
+      }
+      clear_buffer(buff, BUFF_LEN);
+    }
+  }
+  if (Sensor1.available() > 0) 
+  {
+    uint8_t c = Sensor1.read();
+    //Serial.println(c);
+    buff[i] = c;
+    i++;
+    sensor_new_data = 1;
+    timer = millis();
+  }
+}
+
+unsigned char checksum(unsigned char *i, unsigned char ln) {
+  unsigned char j, tempq = 0;
+  i += 1;
+  for (j = 0; j < (ln - 2); j++) {
+    tempq += *i;
+    i++;
+  }
+  tempq = (~tempq) + 1;
+  return (tempq);
 }
 
 void setup() 
@@ -235,7 +310,22 @@ void setup()
 
   pinMode(POWER_TYPE_PIN, INPUT_PULLUP);
 
-  pinMode(relay_pin, OUTPUT);
+  pinMode(RO_1, OUTPUT);
+  pinMode(RO_2, OUTPUT);
+  pinMode(RO_3, OUTPUT);
+  pinMode(RO_4, OUTPUT);
+  pinMode(RO_5, OUTPUT);
+  pinMode(RO_6, OUTPUT);
+  pinMode(RO_7, OUTPUT);
+  pinMode(RO_8, OUTPUT);
+  digitalWrite(RO_1, 0);
+  digitalWrite(RO_2, 0);
+  digitalWrite(RO_3, 0);
+  digitalWrite(RO_4, 0);
+  digitalWrite(RO_5, 0);
+  digitalWrite(RO_6, 0);
+  digitalWrite(RO_7, 0);
+  digitalWrite(RO_8, 0);
   
   EEPROM.begin(EEPROM_SIZE);
   
