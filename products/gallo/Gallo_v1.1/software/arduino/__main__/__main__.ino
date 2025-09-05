@@ -15,6 +15,8 @@ RTC_DS3231 rtc_lib;
 #define RO_7 19
 #define RO_8 23
 
+#define IN_1 33
+
 #define CALENDAR_TIMERS_NUM 9
 
 int32_t calendar_times[7][CALENDAR_TIMERS_NUM][2] = {
@@ -101,7 +103,9 @@ enum Cycle {
   OXY_02,
   O3_02,
   OXY_03,
-  O3_03
+  O3_03,
+  OFF_O3,
+  OFF_OXY
 };
 
 enum Cycle cycle_state;
@@ -402,6 +406,9 @@ void loop()
 {
   // ;debug
   // Serial.println(digitalRead(POWER_TYPE_PIN));
+
+  // TODO: check
+  Serial.println(analogRead(IN_1));
 
   // ;rtc
   cycle_manager();

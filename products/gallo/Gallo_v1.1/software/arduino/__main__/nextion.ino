@@ -145,8 +145,17 @@ void nextion_eval_page_home()
   {
     if (nextion_array_compare(cmd_p_home_on, nextion.inputs_buff))
     {
-      if (is_on_cur == 1) is_on_cur = 0;
-      else if (is_on_cur == 0) is_on_cur = 1;
+      if (is_on_cur == 1) 
+      {
+        is_on_cur = 0;
+        cycle_state = OFF_O3;
+        cycle_millis_cur = millis();
+      }
+      else if (is_on_cur == 0) 
+      {
+        is_on_cur = 1;
+        cycle_state = OXY_01;
+      }
     }
   }
   else

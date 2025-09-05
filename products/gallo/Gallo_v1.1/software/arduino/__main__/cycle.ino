@@ -63,13 +63,22 @@ void cycle_manager()
   }
   else
   {
-    digitalWrite(RO_1, 0);
-    digitalWrite(RO_2, 0);
-    digitalWrite(RO_3, 0);
-    digitalWrite(RO_4, 0);
-    digitalWrite(RO_5, 0);
-    digitalWrite(RO_6, 0);
-    cycle_state = OXY_01;
-    cycle_millis_cur = millis();
+    if (cycle_state == OFF_O3)
+    {
+      digitalWrite(RO_2, 0);
+      digitalWrite(RO_4, 0);
+      digitalWrite(RO_6, 0);
+    }
+    else if (cycle_state == OFF_OXY)
+    {
+      digitalWrite(RO_1, 0);
+      digitalWrite(RO_3, 0);
+      digitalWrite(RO_5, 0);
+    }
+    if (millis() - cycle_millis_cur > 5000) 
+    {
+      cycle_millis_cur = millis();
+      if (cycle_state == OFF_O3) {cycle_state = OFF_OXY;}
+    }
   }
 }
