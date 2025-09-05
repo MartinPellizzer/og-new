@@ -164,60 +164,62 @@ def table(pdf, line):
     last_tag = 'table'
 
 def pdf_aurora_hardware_design():
-    pdf = FPDF()
+    filepaths_relative = [
+        'Aurora_Documentation_ENG/Aurora_v1.0/01_Product_Overview/01_Product_Concept',
+        'Aurora_Documentation_ENG/Aurora_v1.0/10_Future_Planning/04_Feature_Prioritization_vNext',
+    ]
     ###
-    filepath = 'Aurora_Documentation/Aurora_v1.0/02_Hardware_Documentation/01_Design/01_Hardware_Design_Specification.txt'
-    input_filepath = 'doc/src/Aurora_Documentation_ENG/Aurora_v1.0/01_Product_Overview/01_Product_Concept.txt'
-    output_filepath = 'doc/dst/Aurora_Documentation_ENG/Aurora_v1.0/01_Product_Overview/01_Product_Concept.pdf'
-    with open(input_filepath) as f: content = f.read()
-    for line in content.split('\n'):
-        # print(line)
-        # line = line.strip()
-        line = polish.text_format(line)
-        if line.strip() == '':
-            empty_line(pdf)
-            continue
-        line = line.replace('*', '')
-        if line.startswith('---'):
-            continue
-        elif line.startswith('# '):
-            line = line.replace('# ', '')
-            doc_title(pdf, line)
-        elif line.startswith('# '):
-            line = line.replace('# ', '')
-            h1(pdf, line)
-        elif line.startswith('## '):
-            line = line.replace('## ', '')
-            h2(pdf, line)
-        elif line.startswith('### '):
-            line = line.replace('### ', '')
-            h3(pdf, line)
-        elif line.startswith('#### '):
-            line = line.replace('#### ', '')
-            h4(pdf, line)
-        elif line.startswith('- '):
-            line = line.replace('- ', '')
-            ul(pdf, line, border=0)
-        elif line[0].isdigit():
-            ol(pdf, line, border=0)
-        elif line.startswith('    '):
-            line = line.replace('    ', '')
-            if line.startswith('- '):
+    for filepath_relative in filepaths_relative:
+        pdf = FPDF()
+        input_filepath = f'doc/src/{filepath_relative}.md'
+        output_filepath = f'doc/dst/{filepath_relative}.pdf'
+        with open(input_filepath, encoding='utf-8', errors='ignore') as f: content = f.read()
+        for line in content.split('\n'):
+            # print(line)
+            # line = line.strip()
+            line = polish.text_format(line)
+            if line.strip() == '':
+                empty_line(pdf)
+                continue
+            line = line.replace('*', '')
+            if line.startswith('---'):
+                continue
+            elif line.startswith('# '):
+                line = line.replace('# ', '')
+                doc_title(pdf, line)
+            elif line.startswith('# '):
+                line = line.replace('# ', '')
+                h1(pdf, line)
+            elif line.startswith('## '):
+                line = line.replace('## ', '')
+                h2(pdf, line)
+            elif line.startswith('### '):
+                line = line.replace('### ', '')
+                h3(pdf, line)
+            elif line.startswith('#### '):
+                line = line.replace('#### ', '')
+                h4(pdf, line)
+            elif line.startswith('- '):
                 line = line.replace('- ', '')
-                ul(pdf, line, border=0, px=8)
+                ul(pdf, line, border=0)
             elif line[0].isdigit():
                 ol(pdf, line, border=0)
-        elif line.startswith('|'):
-            table(pdf, line)
-        else:
-            paragraph(pdf, line)
-
-    pdf.ln()
-
-    pdf.output(output_filepath)
+            elif line.startswith('    '):
+                line = line.replace('    ', '')
+                if line.startswith('- '):
+                    line = line.replace('- ', '')
+                    ul(pdf, line, border=0, px=8)
+                elif line[0].isdigit():
+                    ol(pdf, line, border=0)
+            elif line.startswith('|'):
+                table(pdf, line)
+            else:
+                paragraph(pdf, line)
+        pdf.ln()
+        pdf.output(output_filepath)
 
 def doc_master():
     pdf_aurora_hardware_design()
 
-
 doc_master()
+
