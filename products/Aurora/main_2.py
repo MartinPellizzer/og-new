@@ -1,4 +1,5 @@
 from fpdf import FPDF
+from fpdf.outline import TableOfContents
 
 from lib import g
 from lib import layout
@@ -17,18 +18,17 @@ h3_index = 0
 last_tag = ''
 
 gap = a4_w_mm - container_w
+to_toc = None
 
-def doc_title(pdf, text, border=0):
+def toc(pdf):
     global last_tag
-    text = polish.text_format(text)
+    global to_toc
     pdf.add_page()
-    font_size = 24
-    line_height = font_size // 3
-    pdf.set_font("Arial", size=font_size)
-    pdf.x = gap // 2
-    pdf.multi_cell(container_w, line_height, txt=f'''{text.strip().upper()}''', ln=True, border=border, align='L')
-    pdf.ln()
-    last_tag = 'doc_title'
+    to_toc = pdf.add_link()
+    # pdf.set_link()
+    toc = TableOfContents()
+    pdf.insert_toc_placeholder(toc.render_toc, allow_extra_pages=True)
+    last_tag = 'toc'
 
 def h1(pdf, text, border=0):
     global last_tag
@@ -38,6 +38,7 @@ def h1(pdf, text, border=0):
     line_height = font_size // 3
     pdf.set_font("Arial", size=font_size)
     if last_tag == 'ul' or last_tag == 'ol': pdf.ln(3)
+    pdf.start_section(name=f"{text.strip().upper()}", level=0)
     pdf.x = gap // 2
     pdf.multi_cell(container_w, line_height, txt=f'''{text.strip().upper()}''', ln=True, border=border, align='L')
     pdf.ln()
@@ -46,13 +47,14 @@ def h1(pdf, text, border=0):
 def h2(pdf, text, border=0):
     global last_tag
     text = polish.text_format(text)
-    pdf.add_page()
+    if last_tag != 'toc': pdf.add_page()
+    pdf.start_section(name=f"{text.strip().upper()}", level=1)
     font_size = 16
     line_height = font_size // 3
     pdf.set_font("Arial", size=font_size)
     if last_tag == 'ul' or last_tag == 'ol': pdf.ln(3)
     pdf.x = gap // 2
-    pdf.multi_cell(container_w, line_height, txt=f'''{text.strip().upper()}''', ln=True, border=border, align='L')
+    pdf.multi_cell(container_w, line_height, txt=f'''{text.strip().upper()}''', ln=True, border=border, align='L', link=to_toc)
     pdf.ln()
     last_tag = 'h2'
 
@@ -62,7 +64,9 @@ def h3(pdf, text, border=0):
     font_size = 14
     line_height = font_size // 3
     pdf.set_font("Arial", size=font_size)
-    if last_tag == 'ul' or last_tag == 'ol': pdf.ln(3)
+    pdf.ln(3)
+    pdf.start_section(name=f"{text.strip()}", level=2)
+    # if last_tag == 'ul' or last_tag == 'ol': pdf.ln(3)
     pdf.x = gap // 2
     pdf.multi_cell(container_w, line_height, txt=f'''{text.strip().upper()}''', ln=True, border=border, align='L')
     pdf.ln()
@@ -71,12 +75,15 @@ def h3(pdf, text, border=0):
 def h4(pdf, text, border=0):
     global last_tag
     text = polish.text_format(text)
-    font_size = 12
+    font_size = 11
     line_height = font_size // 3
-    pdf.set_font("Arial", size=font_size)
-    if last_tag == 'ul' or last_tag == 'ol': pdf.ln(3)
+    pdf.set_font("Arial", size=font_size, style="B")
+    # pdf.set_font("Arial", size=font_size)
+    # pdf.start_section(name=f"{text.strip()}", level=3)
+    pdf.ln(2)
+    # if last_tag == 'ul' or last_tag == 'ol': pdf.ln(3)
     pdf.x = gap // 2
-    pdf.multi_cell(container_w, line_height, txt=f'''{text.strip().capitalize()}''', ln=True, border=border, align='L')
+    pdf.multi_cell(container_w, line_height, txt=f'''{text.strip()}''', ln=True, border=border, align='L')
     pdf.ln()
     last_tag = 'h4'
 
@@ -143,7 +150,8 @@ def empty_line(pdf):
     if last_tag == 'ol':
         pdf.set_font("Arial", size=11)
         pdf.ln(2)
-    last_tag = 'empty_line'
+    if last_tag != 'toc':
+        last_tag = 'empty_line'
 
 def table(pdf, line):
     global last_tag
@@ -184,12 +192,15 @@ def pdf_aurora_hardware_design():
             line = line.replace('*', '')
             if line.startswith('---'):
                 continue
-            elif line.startswith('# '):
-                line = line.replace('# ', '')
-                doc_title(pdf, line)
+            elif line.startswith('[page]'):
+                pdf.add_page()
+                continue
             elif line.startswith('# '):
                 line = line.replace('# ', '')
                 h1(pdf, line)
+            elif line.startswith('[toc]'):
+                line = line.replace('[toc]', '')
+                toc(pdf)
             elif line.startswith('## '):
                 line = line.replace('## ', '')
                 h2(pdf, line)
@@ -201,6 +212,9 @@ def pdf_aurora_hardware_design():
                 h4(pdf, line)
             elif line.startswith('- '):
                 line = line.replace('- ', '')
+                ul(pdf, line, border=0)
+            elif line.startswith('* '):
+                line = line.replace('* ', '')
                 ul(pdf, line, border=0)
             elif line[0].isdigit():
                 ol(pdf, line, border=0)
