@@ -73,6 +73,14 @@ uint8_t cmd_p_set_goto_calendar_onoff[BUFFER_SIZE] = { 101, 15, 4, 1, 255, 255, 
 uint8_t cmd_p_set_goto_calendar[BUFFER_SIZE] = { 101, 15, 5, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 uint8_t cmd_p_set_goto_clock[BUFFER_SIZE] = { 101, 15, 6, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 uint8_t cmd_p_set_goto_power_type[BUFFER_SIZE] = { 101, 15, 7, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+uint8_t cmd_p_set_goto_ozone_sensor_alarm[BUFFER_SIZE] = { 101, 15, 8, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+
+// settings list
+uint8_t cmd_p_set_list_back[BUFFER_SIZE] = { 101, 17, 1, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+uint8_t cmd_p_set_list_save[BUFFER_SIZE] = { 101, 17, 2, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+uint8_t cmd_p_set_list_item1_right[BUFFER_SIZE] = { 101, 7, 1, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+uint8_t cmd_p_set_list_item1_left[BUFFER_SIZE] = { 101, 5, 1, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
 // calendar onoff
 uint8_t cmd_p_set_calendar_onoff_back[BUFFER_SIZE] = { 101, 16, 1, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -671,7 +679,33 @@ void nextion_eval_serial()
     {
       nextion.page_cur = 60;
     }
+    else if (nextion_array_compare(cmd_p_set_goto_ozone_sensor_alarm, nextion.inputs_buff)) 
+    {
+      nextion.page_cur = 70;
+    }
   }
+  
+  else if (nextion.page_cur == 70) 
+  {
+    if (nextion_array_compare(cmd_p_set_list_back, nextion.inputs_buff)) 
+    {
+      nextion.page_cur = 40;
+    }
+    else if (nextion_array_compare(cmd_p_set_list_save, nextion.inputs_buff)) 
+    {
+      nextion.page_cur = 40;
+      o3_sensor_alarm.ppb_alarm_cur = o3_sensor_alarm.ppb_alarm_tmp;
+    }
+    // else if (nextion_array_compare(cmd_p_set_calendar_onoff_up, nextion.inputs_buff)) 
+    // {
+    //   calendar_onoff_tmp = 1;
+    // }
+    // else if (nextion_array_compare(cmd_p_set_calendar_onoff_down, nextion.inputs_buff)) 
+    // {
+    //   calendar_onoff_tmp = 0;
+    // }
+  }
+
   else if (nextion.page_cur == 50) 
   {
     if (nextion_array_compare(cmd_p_set_calendar_onoff_back, nextion.inputs_buff)) 
@@ -738,6 +772,7 @@ void nextion_update()
   else if (nextion.page_cur == 40) nextion_update_page_settings(force_refresh);
   else if (nextion.page_cur == 50) nextion_update_page_calendar_onoff(force_refresh);
   else if (nextion.page_cur == 60) nextion_update_page_power_type(force_refresh);
+  else if (nextion.page_cur == 70) nextion_update_page_ozone_sensor_alarm(force_refresh);
   // else if (nextion.page_cur == 50) nextion_update_page_onoff(force_refresh);
 }
 
@@ -789,7 +824,6 @@ void nextion_update_page_home(uint8_t force_refresh)
       }
     }
   }
-
   // calendar on off
   if (force_refresh || calendar_onoff_old != calendar_onoff_cur) 
   {
@@ -815,7 +849,6 @@ void nextion_update_page_home(uint8_t force_refresh)
       }
     }
   }
-  
   // avvio esterno?
   if (force_refresh || power.power_type_tmp != power.power_type_cur) 
   {
@@ -841,49 +874,64 @@ void nextion_update_page_home(uint8_t force_refresh)
       }
     }
   }
-
-  // sensor
-  if (force_refresh || sensor.ppb_old != sensor.ppb_cur) 
+  // ozone sensor external
+  // if (force_refresh || sensor.ppb_old != sensor.ppb_cur) 
+  // {
+  //   sensor.ppb_old = sensor.ppb_cur;
+  //   if (sensor.ppb_cur == -1) 
+  //   {
+  //     {
+  //       uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x2D, 0x2D, 0x2E, 0x2D, 0x2D, 0x2D, 0x22, 0xff, 0xff, 0xff };
+  //       for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+  //       {
+  //         Serial2.write(_buffer[i]);
+  //       }
+  //     }
+  //     // color
+  //     {
+  //       uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x70, 0x63, 0x6F, 0x3D, 0x35, 0x35, 0x35, 0x38, 0x38, 0xff, 0xff, 0xff };
+  //       for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+  //       {
+  //         Serial2.write(_buffer[i]);
+  //       }
+  //     }
+  //   } 
+  //   else 
+  //   {
+  //     {
+  //       uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x30, 0x2E, 0x30, 0x30, 0x30, 0x22, 0xff, 0xff, 0xff };
+  //       _buffer[9] = (sensor.ppb_cur % 10000 / 1000) + 0x30;
+  //       _buffer[11] = (sensor.ppb_cur % 1000 / 100) + 0x30;
+  //       _buffer[12] = (sensor.ppb_cur % 100 / 10) + 0x30;
+  //       _buffer[13] = (0) + 0x30;
+  //       for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+  //       {
+  //         Serial2.write(_buffer[i]);
+  //       }
+  //     }
+  //     // color
+  //     {
+  //       uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x70, 0x63, 0x6F, 0x3D, 0x36, 0x35, 0x35, 0x33, 0x35, 0xff, 0xff, 0xff };
+  //       for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+  //       {
+  //         Serial2.write(_buffer[i]);
+  //       }
+  //     }
+  //   }
+  // }
+  // ozone sensor internal alarm
+  if (force_refresh || o3_sensor_alarm.ppb_old != o3_sensor_alarm.ppb_cur) 
   {
-    sensor.ppb_old = sensor.ppb_cur;
-    if (sensor.ppb_cur == -1) 
+    o3_sensor_alarm.ppb_old = o3_sensor_alarm.ppb_cur; 
     {
+      uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x30, 0x2E, 0x30, 0x30, 0x30, 0x22, 0xff, 0xff, 0xff };
+      _buffer[9] = (o3_sensor_alarm.ppb_cur % 10000 / 1000) + 0x30;
+      _buffer[11] = (o3_sensor_alarm.ppb_cur % 1000 / 100) + 0x30;
+      _buffer[12] = (o3_sensor_alarm.ppb_cur % 100 / 10) + 0x30;
+      _buffer[13] = (0) + 0x30;
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
       {
-        uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x2D, 0x2D, 0x2E, 0x2D, 0x2D, 0x2D, 0x22, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
-        {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      // color
-      {
-        uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x70, 0x63, 0x6F, 0x3D, 0x35, 0x35, 0x35, 0x38, 0x38, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
-        {
-          Serial2.write(_buffer[i]);
-        }
-      }
-    } 
-    else 
-    {
-      {
-        uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x30, 0x2E, 0x30, 0x30, 0x30, 0x22, 0xff, 0xff, 0xff };
-        _buffer[9] = (sensor.ppb_cur % 10000 / 1000) + 0x30;
-        _buffer[11] = (sensor.ppb_cur % 1000 / 100) + 0x30;
-        _buffer[12] = (sensor.ppb_cur % 100 / 10) + 0x30;
-        _buffer[13] = (0) + 0x30;
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
-        {
-          Serial2.write(_buffer[i]);
-        }
-      }
-      // color
-      {
-        uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x70, 0x63, 0x6F, 0x3D, 0x36, 0x35, 0x35, 0x33, 0x35, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
-        {
-          Serial2.write(_buffer[i]);
-        }
+        Serial2.write(_buffer[i]);
       }
     }
   }
@@ -1666,6 +1714,63 @@ void nextion_update_page_power_type(uint8_t force_refresh)
     }
   }
 }
+
+void nextion_update_page_ozone_sensor_alarm(uint8_t force_refresh) 
+{
+  if (force_refresh) 
+  {
+    {
+      uint8_t _buffer[] = { 0x70, 0x61, 0x67, 0x65, 0x20, 0x70, 0x5F, 0x73, 0x65, 0x74, 0x5F, 0x6C, 0x69, 0x73, 0x74, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+    {
+      o3_sensor_alarm.ppb_alarm_tmp = o3_sensor_alarm.ppb_alarm_cur;
+      uint8_t _buffer[] = { 0X74, 0X31, 0X2E, 0X74, 0X78, 0X74, 0X3D, 0X22, 0X53, 0X45, 0X4E, 0X53, 0X4F, 0X52, 0X45, 0X20, 0X4F, 0X5A, 0X4F, 0X4E, 0X4F, 0X20, 0X41, 0X4C, 0X4C, 0X41, 0X52, 0X4D, 0X45, 0X20, 0X50, 0X50, 0X4D, 0X3A, 0X20, 0X30, 0X30, 0X2E, 0X31, 0X30, 0X30, 0X22, 0Xff, 0Xff, 0Xff };
+      // _buffer[9] = (o3_sensor_alarm.ppb_alarm_tmp % 10000 / 1000) + 0x30;
+      // _buffer[11] = (o3_sensor_alarm.ppb_alarm_tmp % 1000 / 100) + 0x30;
+      // _buffer[12] = (o3_sensor_alarm.ppb_alarm_tmp % 100 / 10) + 0x30;
+      // _buffer[13] = (0) + 0x30;
+      _buffer[36] = (o3_sensor_alarm.ppb_alarm_tmp % 10000 / 1000) + 0x30;
+      _buffer[38] = (o3_sensor_alarm.ppb_alarm_tmp % 1000 / 100) + 0x30;
+      _buffer[39] = (o3_sensor_alarm.ppb_alarm_tmp % 100 / 10) + 0x30;
+      _buffer[40] = (o3_sensor_alarm.ppb_alarm_tmp % 10 / 1) + 0x30;
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+  }
+  // if (force_refresh || power.power_type_old != power.power_type_tmp)
+  // {
+  //   power.power_type_old = power.power_type_tmp;
+  //   if (power.power_type_tmp == 1)
+  //   {
+  //     {
+  //       uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x49, 0x4E, 0x54, 0x45, 0x52, 0x4E, 0x4F, 0x22, 0xff, 0xff, 0xff };
+  //       for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+  //       {
+  //         Serial2.write(_buffer[i]);
+  //       }
+  //     }
+  //   }
+  //   else
+  //   {
+  //     {
+  //       uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x45, 0x53, 0x54, 0x45, 0x52, 0x4E, 0x4F, 0x22, 0xff, 0xff, 0xff };
+  //       for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+  //       {
+  //         Serial2.write(_buffer[i]);
+  //       }
+  //     }
+  //   }
+  // }
+}
+
+
+
 
 void nextion_manager()
 {

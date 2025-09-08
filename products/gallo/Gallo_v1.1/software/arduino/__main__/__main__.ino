@@ -15,7 +15,8 @@ RTC_DS3231 rtc_lib;
 #define RO_7 19
 #define RO_8 23
 
-#define IN_1 33
+#define RI_1 33
+#define S1_010V 35
 
 #define CALENDAR_TIMERS_NUM 9
 
@@ -109,6 +110,23 @@ enum Cycle {
 };
 
 enum Cycle cycle_state;
+
+
+///////////////////////////////////////////////////////////////////////
+// ;O3 sensor internal alarm
+///////////////////////////////////////////////////////////////////////
+typedef struct o3_sensor_alarm_t {
+  int16_t ppb_old = -2;
+  int16_t ppb_cur = -1;
+  uint32_t readings_sum = 0;
+  uint32_t readings_counter = 0;
+  uint32_t millis1_cur = 0;
+  uint32_t millis2_cur = 0;
+  int16_t ppb_alarm_old = -2;
+  int16_t ppb_alarm_tmp = -2;
+  int16_t ppb_alarm_cur = 300;
+} o3_sensor_alarm_t;
+o3_sensor_alarm_t o3_sensor_alarm = {};
 
 ///////////////////////////////////////////////////////////////////////
 // ;sensor
@@ -407,8 +425,25 @@ void loop()
   // ;debug
   // Serial.println(digitalRead(POWER_TYPE_PIN));
 
-  // TODO: check
-  Serial.println(analogRead(IN_1));
+  if (millis() - o3_sensor_alarm.millis1_cur > 100) 
+  {
+    o3_sensor_alarm.millis1_cur = millis();
+    o3_sensor_alarm.readings_sum += analogRead(S1_010V);
+    o3_sensor_alarm.readings_counter += 1;
+  }
+  if (millis() - o3_sensor_alarm.millis2_cur > 1000) 
+  {
+    o3_sensor_alarm.millis2_cur = millis();
+    uint32_t result = o3_sensor_alarm.readings_sum / o3_sensor_alarm.readings_counter;
+    // TODO: check
+    uint16_t ppb = map(result, 0, 255, 0, 10000);
+    o3_sensor_alarm.ppb_cur = ppb;
+    Serial.print("PPB: ");
+    Serial.println(ppb);
+    o3_sensor_alarm.readings_sum = 0;
+    o3_sensor_alarm.readings_counter = 0;
+  }
+
 
   // ;rtc
   cycle_manager();
