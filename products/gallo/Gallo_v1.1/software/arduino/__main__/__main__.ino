@@ -98,6 +98,12 @@ typedef struct power_t {
 } power_t;
 power_t power = {};
 
+typedef struct cycle_t {
+  int8_t state_old = -2;
+  int8_t state_cur = -1;
+} cycle_t;
+cycle_t cycle = {};
+
 enum Cycle {
   OXY_01,
   O3_01,
@@ -124,7 +130,11 @@ typedef struct o3_sensor_alarm_t {
   uint32_t millis2_cur = 0;
   int16_t ppb_alarm_old = -2;
   int16_t ppb_alarm_tmp = -2;
-  int16_t ppb_alarm_cur = 300;
+  int16_t ppb_alarm_cur = 100;
+  int16_t alarm_timer_minutes_old = -2;
+  int16_t alarm_timer_minutes_tmp = -2;
+  int16_t alarm_timer_minutes_cur = 2;
+  
 } o3_sensor_alarm_t;
 o3_sensor_alarm_t o3_sensor_alarm = {};
 
@@ -171,168 +181,6 @@ typedef struct nextion_t {
 } nextion_t;
 nextion_t nextion = {};
 
-void cycle_update() 
-{
-  int32_t cycle_seconds_base = 1000 * 60 * 30;
-  if (is_on_cur)
-  {
-    if (millis() - cycle_millis_cur > 1000) 
-    {
-      cycle_millis_cur = millis();
-
-      bool found = false;
-      if (calendar_onoff_cur == 1)
-      {
-        int32_t rtc_seconds_tot = (rtc.hour_cur * 3600) + (rtc.minute_cur * 60) + (rtc.second_cur);
-        for (int j = 0; j < CALENDAR_TIMERS_NUM; j++)
-        {
-          if (rtc_seconds_tot > calendar_times[rtc.day_week_cur][j][0] && rtc_seconds_tot < calendar_times[rtc.day_week_cur][j][1])
-          {
-            found = true;
-          }
-        }
-      }
-      else
-      {
-        found = true;
-      }
-
-      if (found == true)
-      {
-        cycle_on_cur = 1;
-        if (cycle_on_old != cycle_on_cur)
-        {
-          cycle_on_old = cycle_on_cur;
-          cycle_working_state_cur = 1;
-          digitalWrite(RO_1, 1);
-          cycle_working_millis_cur = millis();
-          cycle_working_seconds = int(cycle_seconds_base * (float(power.power_cur) / float(100)));
-          // Serial.println(cycle_working_seconds);
-        }
-      }
-      else 
-      {
-        cycle_on_cur = 0;
-        if (cycle_on_old != cycle_on_cur)
-        {
-          cycle_on_old = cycle_on_cur;
-          cycle_working_state_cur = 0;
-          digitalWrite(RO_1, 0);
-          cycle_working_millis_cur = millis();
-        }
-      }
-
-      if (cycle_on_cur == 1)
-      {
-        if (cycle_working_state_cur == 1)
-        {
-          if (millis() - cycle_working_millis_cur > cycle_working_seconds) 
-          {
-            cycle_working_millis_cur = millis();
-            cycle_working_state_cur = 0;
-            digitalWrite(RO_1, 0);
-          }
-        }
-        else
-        {
-          if (millis() - cycle_working_millis_cur > cycle_seconds_base) 
-          {
-            cycle_working_millis_cur = millis();
-            cycle_working_state_cur = 1;
-            digitalWrite(RO_1, 1);
-            cycle_working_seconds = int(cycle_seconds_base * (float(power.power_cur) / float(100)));
-          }
-        }
-      }
-      else
-      {
-        cycle_on_cur = 0;
-        cycle_working_state_cur = 0;
-        digitalWrite(RO_1, 0);
-      }
-    }
-  }
-  else
-  {
-    cycle_on_cur = 0;
-    cycle_on_old = cycle_on_cur;
-    cycle_working_state_cur = 0;
-    digitalWrite(RO_1, 0);
-    cycle_working_millis_cur = millis();
-  }
-}
-
-void clear_buffer(uint8_t buff[], uint8_t len) 
-{
-  for (int i = 0; i < len; i++) buff[i] = 0;
-}
-
-void sensor_update() 
-{
-  // check if sensor is connected, otherwise update state/val
-  if (sensor.is_connected == 1) 
-  {
-    if (millis() - sensor_connected_millis > 1000) 
-    {
-      sensor_connected_millis = millis();
-      sensor_connected_seconds += 1;
-      if (sensor_connected_seconds > 5)
-      {
-        sensor.is_connected = 0;
-        sensor.ppb_old = -2;
-        sensor.ppb_cur = -1;
-      }
-    }
-  }
-
-  if (sensor_new_data) 
-  {
-    if (millis() - timer > 40) 
-    {
-      for (int i = 0; i < BUFF_LEN; i++)
-      {
-        Serial.print(buff[i]);
-        Serial.print(", ");
-      }
-      Serial.println();
-
-      timer_no_signal = millis();
-      i = 0;
-      sensor_new_data = 0;
-      sensor.ppb_cur = 0;
-      if (checksum(buff, 9) == buff[8]) 
-      {
-        sensor.ppb_cur = buff[4] * 256 + buff[5];
-        sensor_connected_millis = millis();
-        sensor_connected_seconds = 0;
-        sensor.is_connected = 1;
-        Serial.println(sensor.ppb_cur);
-      }
-      clear_buffer(buff, BUFF_LEN);
-    }
-  }
-  if (Sensor1.available() > 0) 
-  {
-    uint8_t c = Sensor1.read();
-    //Serial.println(c);
-    buff[i] = c;
-    i++;
-    sensor_new_data = 1;
-    timer = millis();
-  }
-}
-
-unsigned char checksum(unsigned char *i, unsigned char ln) {
-  unsigned char j, tempq = 0;
-  i += 1;
-  for (j = 0; j < (ln - 2); j++) {
-    tempq += *i;
-    i++;
-  }
-  tempq = (~tempq) + 1;
-  return (tempq);
-}
-
 void setup() 
 {
   Serial.begin(9600);
@@ -374,6 +222,10 @@ void setup()
   {
     power.power_cur = eeprom_power;
   }
+
+  eeprom_init();
+
+  // while (1) delay(10);
 
   for (int i = 0; i < 7; i++)
   {
@@ -438,12 +290,11 @@ void loop()
     // TODO: check
     uint16_t ppb = map(result, 0, 255, 0, 10000);
     o3_sensor_alarm.ppb_cur = ppb;
-    Serial.print("PPB: ");
-    Serial.println(ppb);
+    // Serial.print("PPB: ");
+    // Serial.println(ppb);
     o3_sensor_alarm.readings_sum = 0;
     o3_sensor_alarm.readings_counter = 0;
   }
-
 
   // ;rtc
   cycle_manager();
