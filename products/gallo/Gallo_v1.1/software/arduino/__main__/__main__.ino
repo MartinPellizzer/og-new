@@ -16,6 +16,7 @@ RTC_DS3231 rtc_lib;
 #define RO_8 23
 
 #define RI_1 33
+#define RI_2 32
 #define S1_010V 35
 
 #define CALENDAR_TIMERS_NUM 9
@@ -92,9 +93,6 @@ typedef struct power_t {
   int8_t power_old = -1;
   int8_t power_tmp = 50;
   int8_t power_cur = 50;
-  int8_t power_type_old = -2;
-  int8_t power_type_tmp = 0;
-  int8_t power_type_cur = 1;
 } power_t;
 power_t power = {};
 
@@ -134,6 +132,11 @@ typedef struct o3_sensor_alarm_t {
   int16_t alarm_timer_minutes_old = -2;
   int16_t alarm_timer_minutes_tmp = -2;
   int16_t alarm_timer_minutes_cur = 2;
+  int8_t is_over_max_old = -2;
+  int8_t is_over_max_cur = 0;
+  int8_t is_alarm_old = -2;
+  int8_t is_alarm_cur = 0;
+  int32_t alarm_millis_cur = 0;
   
 } o3_sensor_alarm_t;
 o3_sensor_alarm_t o3_sensor_alarm = {};
@@ -181,6 +184,27 @@ typedef struct nextion_t {
 } nextion_t;
 nextion_t nextion = {};
 
+///////////////////////////////////////////////////////////////////////
+// ;external input (signal to abilitate cycle)
+///////////////////////////////////////////////////////////////////////
+typedef struct external_input_t {  
+  uint8_t state_old = -2;
+  uint8_t state_cur = -1;
+  uint8_t is_abilitated_old = -2;
+  uint8_t is_abilitated_tmp = -1;
+  uint8_t is_abilitated_cur = 0;
+} external_input_t;
+external_input_t external_input = {};
+
+///////////////////////////////////////////////////////////////////////
+// ;sensor temperature
+///////////////////////////////////////////////////////////////////////
+typedef struct sensor_temperature_t {  
+  uint8_t state_old = -2;
+  uint8_t state_cur = -1;
+} sensor_temperature_t;
+sensor_temperature_t sensor_temperature = {};
+
 void setup() 
 {
   Serial.begin(9600);
@@ -190,7 +214,8 @@ void setup()
   pinMode(SENSOR1_RE_DE_PIN, OUTPUT);
   digitalWrite(SENSOR1_RE_DE_PIN, LOW);
 
-  pinMode(POWER_TYPE_PIN, INPUT_PULLUP);
+  pinMode(RI_1, INPUT_PULLUP);
+  pinMode(RI_2, INPUT_PULLUP);
 
   pinMode(RO_1, OUTPUT);
   pinMode(RO_2, OUTPUT);
@@ -272,29 +297,36 @@ void setup()
   Serial.println("setup");
 }
 
+uint32_t debug_millis_cur = 0;
+
 void loop() 
 {
   // ;debug
-  // Serial.println(digitalRead(POWER_TYPE_PIN));
+  if (millis() - debug_millis_cur > 1000) 
+  {
+    debug_millis_cur = millis();
+    // external_input.state_cur = digitalRead(RI_1);
+    // Serial.print("external_input.state_cur: ");
+    // Serial.println(external_input.state_cur);
+    // Serial.print("external_input.is_abilitated_cur: ");
+    // Serial.println(external_input.is_abilitated_cur);
+    // sensor_temperature.state_cur = digitalRead(RI_2);
+    // Serial.print("sensor_temperature.state_cur: ");
+    // Serial.println(sensor_temperature.state_cur);
+    Serial.print("o3_sensor_alarm.is_over_max_cur: ");
+    Serial.println(o3_sensor_alarm.is_over_max_cur);
+    Serial.print("o3_sensor_alarm.alarm_millis_cur: ");
+    Serial.println(millis() - o3_sensor_alarm.alarm_millis_cur);
+    Serial.print("o3_sensor_alarm.is_alarm_cur: ");
+    Serial.println(o3_sensor_alarm.is_alarm_cur);
+    Serial.print("o3_sensor_alarm.ppb_cur: ");
+    Serial.println(o3_sensor_alarm.ppb_cur);
+    Serial.print("o3_sensor_alarm.ppb_alarm_cur: ");
+    Serial.println(o3_sensor_alarm.ppb_alarm_cur);
+    Serial.println();
+  }
 
-  if (millis() - o3_sensor_alarm.millis1_cur > 100) 
-  {
-    o3_sensor_alarm.millis1_cur = millis();
-    o3_sensor_alarm.readings_sum += analogRead(S1_010V);
-    o3_sensor_alarm.readings_counter += 1;
-  }
-  if (millis() - o3_sensor_alarm.millis2_cur > 1000) 
-  {
-    o3_sensor_alarm.millis2_cur = millis();
-    uint32_t result = o3_sensor_alarm.readings_sum / o3_sensor_alarm.readings_counter;
-    // TODO: check
-    uint16_t ppb = map(result, 0, 255, 0, 10000);
-    o3_sensor_alarm.ppb_cur = ppb;
-    // Serial.print("PPB: ");
-    // Serial.println(ppb);
-    o3_sensor_alarm.readings_sum = 0;
-    o3_sensor_alarm.readings_counter = 0;
-  }
+  sensor_ozone_alarm_manager();
 
   // ;rtc
   cycle_manager();
@@ -310,4 +342,6 @@ void loop()
 
   // ;nextion
   nextion_manager();
+
+
 }

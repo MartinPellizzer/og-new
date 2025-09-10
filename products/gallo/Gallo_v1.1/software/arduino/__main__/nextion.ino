@@ -89,6 +89,9 @@ uint8_t cmd_p_set_calendar_onoff_save[BUFFER_SIZE] = { 101, 16, 5, 1, 255, 255, 
 uint8_t cmd_p_set_calendar_onoff_up[BUFFER_SIZE] = { 101, 16, 2, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 uint8_t cmd_p_set_calendar_onoff_down[BUFFER_SIZE] = { 101, 16, 4, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
+// alarm
+uint8_t cmd_p_alarm_ok[BUFFER_SIZE] = { 101, 18, 1, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
 bool nextion_array_compare(uint8_t *a, uint8_t *b) 
 {
   for (uint8_t i = 0; i < BUFFER_SIZE; i++) 
@@ -150,27 +153,24 @@ void nextion_eval_page_home()
   {
     if (nextion_array_compare(cmd_p_home_goto_settings, nextion.inputs_buff)) nextion.page_cur = 40;
   }
-  if (power.power_type_cur == 1)
+  // if (external_input.is_abilitated_cur == 1)
   {
     if (nextion_array_compare(cmd_p_home_on, nextion.inputs_buff))
     {
       if (is_on_cur == 1) 
       {
         is_on_cur = 0;
-        cycle_state = OFF_O3;
-        cycle_millis_cur = millis();
       }
       else if (is_on_cur == 0) 
       {
         is_on_cur = 1;
-        cycle_state = OXY_01;
       }
     }
   }
-  else
-  {
-    // TODO: code for external input for cycle on/off
-  }
+  // else
+  // {
+  //   // TODO: code for external input for cycle on/off
+  // }
 }
 
 void nextion_eval_serial() 
@@ -769,17 +769,25 @@ void nextion_eval_serial()
     else if (nextion_array_compare(cmd_p_set_calendar_onoff_save, nextion.inputs_buff)) 
     {
       nextion.page_cur = 40;
-      power.power_type_cur = power.power_type_tmp;
+      external_input.is_abilitated_cur = external_input.is_abilitated_tmp;
     }
     else if (nextion_array_compare(cmd_p_set_calendar_onoff_up, nextion.inputs_buff)) 
     {
-      power.power_type_tmp = 1;
+      external_input.is_abilitated_tmp = 1;
     }
     else if (nextion_array_compare(cmd_p_set_calendar_onoff_down, nextion.inputs_buff)) 
     {
-      power.power_type_tmp = 0;
+      external_input.is_abilitated_tmp = 0;
     }
   }
+  else if (nextion.page_cur == 80) 
+  {
+    if (nextion_array_compare(cmd_p_alarm_ok, nextion.inputs_buff)) 
+    {
+      nextion.page_cur = 1;
+    }
+  }
+  
 }
 
 void nextion_update() 
@@ -807,6 +815,7 @@ void nextion_update()
   else if (nextion.page_cur == 50) nextion_update_page_calendar_onoff(force_refresh);
   else if (nextion.page_cur == 60) nextion_update_page_power_type(force_refresh);
   else if (nextion.page_cur == 70) nextion_update_page_ozone_sensor_alarm(force_refresh);
+  else if (nextion.page_cur == 80) nextion_update_page_alarm(force_refresh);
   // else if (nextion.page_cur == 50) nextion_update_page_onoff(force_refresh);
 }
 
@@ -828,17 +837,17 @@ void nextion_update_page_home(uint8_t force_refresh)
   if (force_refresh || is_on_old != is_on_cur) 
   {
     is_on_old = is_on_cur;
-    if (power.power_type_cur == 0)
-    {
-      {
-        uint8_t _buffer[] = { 0x70, 0x30, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x32, 0x31, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
-        {
-          Serial2.write(_buffer[i]);
-        }
-      }
-    }
-    else
+    // if (external_input.is_abilitated_cur == 0)
+    // {
+    //   {
+    //     uint8_t _buffer[] = { 0x70, 0x30, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x32, 0x31, 0xff, 0xff, 0xff };
+    //     for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+    //     {
+    //       Serial2.write(_buffer[i]);
+    //     }
+    //   }
+    // }
+    // else
     {
       if (is_on_cur == 1)
       {
@@ -884,10 +893,10 @@ void nextion_update_page_home(uint8_t force_refresh)
     }
   }
   // avvio esterno?
-  if (force_refresh || power.power_type_tmp != power.power_type_cur) 
+  if (force_refresh || external_input.is_abilitated_tmp != external_input.is_abilitated_cur) 
   {
-    power.power_type_tmp = power.power_type_cur;
-    if (power.power_type_cur == 1)
+    external_input.is_abilitated_tmp = external_input.is_abilitated_cur;
+    if (external_input.is_abilitated_cur == 1)
     {
       {
         uint8_t _buffer[] = { 0x74, 0x34, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x49, 0x4E, 0x54, 0x45, 0x52, 0x2E, 0x22, 0xff, 0xff, 0xff };
@@ -1701,8 +1710,8 @@ void nextion_update_page_power_type(uint8_t force_refresh)
         Serial2.write(_buffer[i]);
       }
     }
-    power.power_type_tmp = power.power_type_cur;
-    if (power.power_type_tmp == 1)
+    external_input.is_abilitated_tmp = external_input.is_abilitated_cur;
+    if (external_input.is_abilitated_tmp == 1)
     {
       {
         uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x49, 0x4E, 0x54, 0x45, 0x52, 0x4E, 0x4F, 0x22, 0xff, 0xff, 0xff };
@@ -1723,10 +1732,10 @@ void nextion_update_page_power_type(uint8_t force_refresh)
       }
     }
   }
-  if (force_refresh || power.power_type_old != power.power_type_tmp)
+  if (force_refresh || external_input.is_abilitated_old != external_input.is_abilitated_tmp)
   {
-    power.power_type_old = power.power_type_tmp;
-    if (power.power_type_tmp == 1)
+    external_input.is_abilitated_old = external_input.is_abilitated_tmp;
+    if (external_input.is_abilitated_tmp == 1)
     {
       {
         uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x49, 0x4E, 0x54, 0x45, 0x52, 0x4E, 0x4F, 0x22, 0xff, 0xff, 0xff };
@@ -1814,6 +1823,19 @@ void nextion_update_page_ozone_sensor_alarm(uint8_t force_refresh)
 }
 
 
+void nextion_update_page_alarm(uint8_t force_refresh) 
+{
+  if (force_refresh) 
+  {
+    {
+      uint8_t _buffer[] = { 0x70, 0x61, 0x67, 0x65, 0x20, 0x70, 0x5F, 0x61, 0x6C, 0x61, 0x72, 0x6D, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+  }
+}
 
 
 void nextion_manager()
