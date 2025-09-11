@@ -92,7 +92,7 @@ void cycle_stop()
 void cycle_manager()
 {
   // sensor ozone alarm
-  if (o3_sensor_alarm.ppb_cur < 300)
+  if (o3_sensor_alarm.is_alarm_cur == 0)
   {
     // sensor temperature (state 0)
     if (sensor_temperature.state_cur == 0)

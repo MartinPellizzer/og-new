@@ -115,7 +115,6 @@ enum Cycle {
 
 enum Cycle cycle_state;
 
-
 ///////////////////////////////////////////////////////////////////////
 // ;O3 sensor internal alarm
 ///////////////////////////////////////////////////////////////////////
@@ -297,35 +296,15 @@ void setup()
   Serial.println("setup");
 }
 
-uint32_t debug_millis_cur = 0;
-
 void loop() 
 {
-  // ;debug
-  if (millis() - debug_millis_cur > 1000) 
-  {
-    debug_millis_cur = millis();
-    // external_input.state_cur = digitalRead(RI_1);
-    // Serial.print("external_input.state_cur: ");
-    // Serial.println(external_input.state_cur);
-    // Serial.print("external_input.is_abilitated_cur: ");
-    // Serial.println(external_input.is_abilitated_cur);
-    // sensor_temperature.state_cur = digitalRead(RI_2);
-    // Serial.print("sensor_temperature.state_cur: ");
-    // Serial.println(sensor_temperature.state_cur);
-    Serial.print("o3_sensor_alarm.is_over_max_cur: ");
-    Serial.println(o3_sensor_alarm.is_over_max_cur);
-    Serial.print("o3_sensor_alarm.alarm_millis_cur: ");
-    Serial.println(millis() - o3_sensor_alarm.alarm_millis_cur);
-    Serial.print("o3_sensor_alarm.is_alarm_cur: ");
-    Serial.println(o3_sensor_alarm.is_alarm_cur);
-    Serial.print("o3_sensor_alarm.ppb_cur: ");
-    Serial.println(o3_sensor_alarm.ppb_cur);
-    Serial.print("o3_sensor_alarm.ppb_alarm_cur: ");
-    Serial.println(o3_sensor_alarm.ppb_alarm_cur);
-    Serial.println();
-  }
+  
+  external_input.state_cur = digitalRead(RI_1);
+  sensor_temperature.state_cur = digitalRead(RI_2);
 
+  debug_manager();
+
+  sensor_ozone_manager();
   sensor_ozone_alarm_manager();
 
   // ;rtc
@@ -334,14 +313,6 @@ void loop()
   // ;rtc
   rtc_manager();
 
-  // ;sensor
-  sensor_update();
-
-  // ;cycle
-  // cycle_update();
-
   // ;nextion
   nextion_manager();
-
-
 }

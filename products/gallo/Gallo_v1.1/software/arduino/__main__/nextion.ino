@@ -699,7 +699,6 @@ void nextion_eval_serial()
       o3_sensor_alarm.alarm_timer_minutes_cur = o3_sensor_alarm.alarm_timer_minutes_tmp;
       eeprom_write_uint16(ALARM_PPB, o3_sensor_alarm.ppb_alarm_cur);
       eeprom_write_uint16(ALARM_TIMER_MINUTES, o3_sensor_alarm.alarm_timer_minutes_cur);
-      EEPROM.commit();
     }
     else if (nextion_array_compare(cmd_p_set_list_item1_right, nextion.inputs_buff)) 
     {
@@ -750,6 +749,7 @@ void nextion_eval_serial()
     {
       nextion.page_cur = 40;
       calendar_onoff_cur = calendar_onoff_tmp;
+      eeprom_write_uint16(CALENDAR_ENABLED, calendar_onoff_cur);
     }
     else if (nextion_array_compare(cmd_p_set_calendar_onoff_up, nextion.inputs_buff)) 
     {
@@ -770,6 +770,7 @@ void nextion_eval_serial()
     {
       nextion.page_cur = 40;
       external_input.is_abilitated_cur = external_input.is_abilitated_tmp;
+      eeprom_write_uint16(EXTERNAL_INPUT, external_input.is_abilitated_cur);
     }
     else if (nextion_array_compare(cmd_p_set_calendar_onoff_up, nextion.inputs_buff)) 
     {
@@ -785,6 +786,8 @@ void nextion_eval_serial()
     if (nextion_array_compare(cmd_p_alarm_ok, nextion.inputs_buff)) 
     {
       nextion.page_cur = 1;
+      o3_sensor_alarm.is_alarm_cur = 0;
+      o3_sensor_alarm.alarm_millis_cur = millis();
     }
   }
   

@@ -1,8 +1,10 @@
 //////////////////////////////////////////////////////////////////////
 // EEPROM address space
 //////////////////////////////////////////////////////////////////////
-#define ALARM_PPB            20
-#define ALARM_TIMER_MINUTES  22
+#define ALARM_PPB             20
+#define ALARM_TIMER_MINUTES   22
+#define EXTERNAL_INPUT        24
+#define CALENDAR_ENABLED      26
 
 uint8_t get_eeprom_address_calendar(int day_i, int time_i, int offset)
 {
@@ -16,6 +18,7 @@ void eeprom_write_uint16(uint16_t start_addr, uint16_t value)
     uint8_t high = (uint8_t)((value >> 8) & 0xFF);
     EEPROM.write(start_addr,     low);   // store low byte
     EEPROM.write(start_addr + 1, high);  // store high byte
+    EEPROM.commit();
 }
 
 uint16_t eeprom_read_uint16(uint16_t start_addr) 
@@ -37,7 +40,19 @@ void eeprom_init()
   {
     o3_sensor_alarm.alarm_timer_minutes_cur = eeprom_alarm_timer_minutes_cur;
   }
+  uint16_t eeprom_external_input_cur = eeprom_read_uint16(EXTERNAL_INPUT);
+  if (eeprom_external_input_cur != 65535)
+  {
+    external_input.is_abilitated_cur = eeprom_external_input_cur;
+  }
+  uint16_t eeprom_calendar_enabled = eeprom_read_uint16(CALENDAR_ENABLED);
+  if (eeprom_calendar_enabled != 65535)
+  {
+    calendar_onoff_cur = eeprom_calendar_enabled;
+  }
 
-  Serial.println(o3_sensor_alarm.ppb_alarm_cur);
-  Serial.println(o3_sensor_alarm.alarm_timer_minutes_cur);
+  // Serial.println(o3_sensor_alarm.ppb_alarm_cur);
+  // Serial.println(o3_sensor_alarm.alarm_timer_minutes_cur);
+  // Serial.println(external_input.is_abilitated_cur);
+  // Serial.println(calendar_onoff_cur);
 }
