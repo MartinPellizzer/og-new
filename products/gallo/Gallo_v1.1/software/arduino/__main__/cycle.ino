@@ -51,11 +51,24 @@ void cycle_start()
   if (millis() - cycle_millis_cur > 5000) 
   {
     cycle_millis_cur = millis();
-    if (cycle_state == OXY_01) {cycle_state = O3_01;}
-    else if (cycle_state == O3_01) {cycle_state = OXY_02;}
-    else if (cycle_state == OXY_02) {cycle_state = O3_02;}
-    else if (cycle_state == O3_02) {cycle_state = OXY_03;}
-    else if (cycle_state == OXY_03) {cycle_state = O3_03;}
+    if (power.power_cur == 1)
+    {
+      if (cycle_state == OXY_01) {cycle_state = O3_01;}
+    }
+    else if (power.power_cur == 2)
+    {
+      if (cycle_state == OXY_01) {cycle_state = O3_01;}
+      else if (cycle_state == O3_01) {cycle_state = OXY_02;}
+      else if (cycle_state == OXY_02) {cycle_state = O3_02;}
+    }
+    else
+    {
+      if (cycle_state == OXY_01) {cycle_state = O3_01;}
+      else if (cycle_state == O3_01) {cycle_state = OXY_02;}
+      else if (cycle_state == OXY_02) {cycle_state = O3_02;}
+      else if (cycle_state == O3_02) {cycle_state = OXY_03;}
+      else if (cycle_state == OXY_03) {cycle_state = O3_03;}
+    }
   }
 }
 
