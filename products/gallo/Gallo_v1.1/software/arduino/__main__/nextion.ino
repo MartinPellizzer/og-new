@@ -786,8 +786,17 @@ void nextion_eval_serial()
     if (nextion_array_compare(cmd_p_alarm_ok, nextion.inputs_buff)) 
     {
       nextion.page_cur = 1;
-      o3_sensor_alarm.is_alarm_cur = 0;
+      // o3_sensor_alarm.is_alarm_cur = 0;
       o3_sensor_alarm.alarm_millis_cur = millis();
+    }
+  }
+  else if (nextion.page_cur == 90) 
+  {
+    if (nextion_array_compare(cmd_p_alarm_ok, nextion.inputs_buff)) 
+    {
+      nextion.page_cur = 1;
+      // o3_sensor_alarm.is_alarm_cur = 0;
+      // o3_sensor_alarm.alarm_millis_cur = millis();
     }
   }
   
@@ -818,7 +827,8 @@ void nextion_update()
   else if (nextion.page_cur == 50) nextion_update_page_calendar_onoff(force_refresh);
   else if (nextion.page_cur == 60) nextion_update_page_power_type(force_refresh);
   else if (nextion.page_cur == 70) nextion_update_page_ozone_sensor_alarm(force_refresh);
-  else if (nextion.page_cur == 80) nextion_update_page_alarm(force_refresh);
+  else if (nextion.page_cur == 80) nextion_update_page_ozone_alarm(force_refresh);
+  else if (nextion.page_cur == 90) nextion_update_page_temperature_alarm(force_refresh);
   // else if (nextion.page_cur == 50) nextion_update_page_onoff(force_refresh);
 }
 
@@ -1826,12 +1836,40 @@ void nextion_update_page_ozone_sensor_alarm(uint8_t force_refresh)
 }
 
 
-void nextion_update_page_alarm(uint8_t force_refresh) 
+void nextion_update_page_ozone_alarm(uint8_t force_refresh) 
 {
   if (force_refresh) 
   {
     {
       uint8_t _buffer[] = { 0x70, 0x61, 0x67, 0x65, 0x20, 0x70, 0x5F, 0x61, 0x6C, 0x61, 0x72, 0x6D, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+    {
+      uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4F, 0x5A, 0x4F, 0x4E, 0x4F, 0x22, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+  }
+}
+
+void nextion_update_page_temperature_alarm(uint8_t force_refresh) 
+{
+  if (force_refresh) 
+  {
+    {
+      uint8_t _buffer[] = { 0x70, 0x61, 0x67, 0x65, 0x20, 0x70, 0x5F, 0x61, 0x6C, 0x61, 0x72, 0x6D, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+    {
+      uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x54, 0x45, 0x4D, 0x50, 0x45, 0x52, 0x41, 0x54, 0x55, 0x52, 0x41, 0x22, 0xff, 0xff, 0xff };
       for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
       {
         Serial2.write(_buffer[i]);

@@ -300,12 +300,13 @@ void loop()
 {
   
   external_input.state_cur = digitalRead(RI_1);
-  sensor_temperature.state_cur = digitalRead(RI_2);
+  
 
   debug_manager();
 
   sensor_ozone_manager();
   sensor_ozone_alarm_manager();
+  sensor_temperature_manager();
 
   // ;rtc
   cycle_manager();

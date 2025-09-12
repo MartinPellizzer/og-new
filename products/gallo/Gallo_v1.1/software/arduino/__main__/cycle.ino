@@ -91,35 +91,19 @@ void cycle_stop()
 
 void cycle_manager()
 {
-  // sensor ozone alarm
-  if (o3_sensor_alarm.is_alarm_cur == 0)
+  // external input abilitate (state 0)
+  if (external_input.is_abilitated_cur == 0)
   {
-    // sensor temperature (state 0)
-    if (sensor_temperature.state_cur == 0)
+    if (external_input.state_cur == 0)
     {
-      // external input abilitate (state 0)
-      if (external_input.is_abilitated_cur == 0)
+      if (is_on_cur)
       {
-        if (external_input.state_cur == 0)
+        if (calendar_onoff_cur)
         {
-          if (is_on_cur)
+          bool is_time_calendar = is_time_cur_in_calendar();
+          if (is_time_calendar)
           {
-            if (calendar_onoff_cur)
-            {
-              bool is_time_calendar = is_time_cur_in_calendar();
-              if (is_time_calendar)
-              {
-                cycle_start();
-              }
-              else
-              {
-                cycle_stop();
-              }
-            }
-            else
-            {
-              cycle_start();
-            }
+            cycle_start();
           }
           else
           {
@@ -128,44 +112,44 @@ void cycle_manager()
         }
         else
         {
-            cycle_stop();
+          cycle_start();
         }
       }
-      else 
+      else
       {
-        if (is_on_cur)
+        cycle_stop();
+      }
+    }
+    else
+    {
+        cycle_stop();
+    }
+  }
+  else 
+  {
+    if (is_on_cur)
+    {
+      if (calendar_onoff_cur)
+      {
+        bool is_time_calendar = is_time_cur_in_calendar();
+        if (is_time_calendar)
         {
-          if (calendar_onoff_cur)
-          {
-            bool is_time_calendar = is_time_cur_in_calendar();
-            if (is_time_calendar)
-            {
-              cycle_start();
-            }
-            else
-            {
-              cycle_stop();
-            }
-          }
-          else
-          {
-            cycle_start();
-          }
+          cycle_start();
         }
         else
         {
           cycle_stop();
         }
       }
+      else
+      {
+        cycle_start();
+      }
     }
     else
     {
       cycle_stop();
     }
-  }
-  else
-  {
-    cycle_stop();
   }
 }
 
