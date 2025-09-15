@@ -1,0 +1,61 @@
+================================================================================
+				GALLO OVERVIEW
+================================================================================
+		Written by: Martin Pellizzer (martin@ozonogroup.it)
+			  Last Updated: 2025-07-31
+================================================================================
+
+TABLE OF CONTENTS
+--------------------
+1. Introduction.........................[INT]
+2. Mods.................................[MOD]
+3. Credits..............................[CRD]
+4. Contact Info.........................[CNT]
+
+================================================================================
+1. INTRODUCTION .........................................................[INT]
+================================================================================
+This equipment uses the Aurora system as a base.
+
+================================================================================
+2. MODS .................................................................[MOD]
+================================================================================
+--- Mod 1. Start From Internal/External Input ---
+
+The equipment includes an option to choose if the start command is provided by 
+an operator (internal, via touchscreen), or an external input. The external 
+command is a relay.
+
+--- Mod 2. Include/Exclude Calendar ---
+
+The equipment includes an option to choose if the calendar is used to control
+the sanitization cycles (date/time) or not (continuous ozone production).
+
+--- Mod 3. Ozone Sensor Control ---
+
+The equipment includes a remote ozone sensor to read or control ozone 
+production. The read/control selection is chosen via touch screen.
+
+--- Mod 4. Ozone Sensor Alarm ---
+
+The equipment includes an integrated ozone sensor for alarm. The ozone alarm 
+value is set from the touch screen. The the alarm value is reached, ozone 
+production is alted.
+
+--- Mod 5. Alarm Screen ---
+
+The equipment includes an alarm screen (touch screen) that shows when the
+ozone alarm value is reached. The operator must unlock this screen manually
+by selecting the "re-enable" option in this screen.
+
+================================================================================
+3. CREDITS ..............................................................[CRD]
+================================================================================
+The MODS are requested by Mauro Dottori.
+
+================================================================================
+4. CONTACT INFO .........................................................[CNT]
+================================================================================
+You can reach me at: martin@ozonogroup.it
+This only if the email is still operational.
+
