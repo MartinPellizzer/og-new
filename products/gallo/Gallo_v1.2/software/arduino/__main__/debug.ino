@@ -34,12 +34,12 @@ void debug_manager()
 
     // Serial.println();
 
-    for (int i = 0; i < PASSWORD_DIGITS_NUM; i++)
-    {
-      Serial.print(password.digits_cur[i]);
-    }
-    Serial.println();
-    Serial.println(password.digit_counter);
-    Serial.println();
+    // for (int i = 0; i < PASSWORD_DIGITS_NUM; i++)
+    // {
+    //   Serial.print(password.digits_cur[i]);
+    // }
+    // Serial.println();
+    // Serial.println(password.digit_counter);
+    // Serial.println();
   }
 }

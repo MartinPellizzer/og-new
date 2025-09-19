@@ -128,7 +128,12 @@ enum Nextion_Pages {
   P_CAL_ADD_ERR_NEG,
   P_CAL_ADD_ERR_OVR,
   P_CLK,
-  // TODO: check page 31 for clock
+  P_CLK_DATE,
+  P_CLK_TIME,
+  P_EXT,
+  P_SENSOR_ALARM,
+  P_OZONE_ALARM,
+  P_TEMPERATURE_ALARM,
 };
 
 ///////////////////////////////////////////////////////////////////////
@@ -227,7 +232,7 @@ sensor_temperature_t sensor_temperature = {};
 typedef struct password_t {
   int8_t digits_old[PASSWORD_DIGITS_NUM] = {-2, -2, -2, -2, -2, -2, -2, -2};
   int8_t digits_cur[PASSWORD_DIGITS_NUM] = {-1, -1, -1, -1, -1, -1, -1, -1};
-  int8_t digits_password[PASSWORD_DIGITS_NUM] = {0, 2, 0, 1, 7, 0, -1, -1};
+  int8_t digits_password[PASSWORD_DIGITS_NUM] = {1, 2, 3, 4, -1, -1, -1, -1};
   int8_t password_errata_old = -1;
   int8_t password_errata_cur = 0;
   int8_t digit_counter = 0;

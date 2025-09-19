@@ -211,7 +211,7 @@ sensor_temperature_t sensor_temperature = {};
 typedef struct password_t {
   int8_t digits_old[PASSWORD_DIGITS_NUM] = {-2, -2, -2, -2, -2, -2, -2, -2};
   int8_t digits_cur[PASSWORD_DIGITS_NUM] = {-1, -1, -1, -1, -1, -1, -1, -1};
-  int8_t digits_password[PASSWORD_DIGITS_NUM] = {0, 2, 0, 1, 7, 0, -1, -1};
+  int8_t digits_password[PASSWORD_DIGITS_NUM] = {1, 2, 3, 4, -1, -1, -1, -1};
   int8_t password_errata_old = -1;
   int8_t password_errata_cur = 0;
   int8_t digit_counter = 0;
@@ -247,6 +247,8 @@ void setup()
   digitalWrite(RO_7, 0);
   digitalWrite(RO_8, 0);
   
+  delay(1000);
+
   EEPROM.begin(EEPROM_SIZE);
   
   // power
@@ -293,10 +295,28 @@ void setup()
     }
   }
 
-  if (!rtc_lib.begin()) 
+  bool rtc_init_success = false;
+  for (int i = 0; i < 10; i++)
   {
-    Serial.println("Couldn't find RTC");
-    Serial.flush();
+    if (!rtc_lib.begin()) 
+    {
+      Serial.print("RTC INIT ATTEMPT ");
+      Serial.print(i);
+      Serial.println(": FAILED");
+      Serial.flush();
+      delay(1000);
+    }
+    else
+    {
+      Serial.print("RTC INIT ATTEMPT ");
+      Serial.print(i);
+      Serial.println(": SUCCES");
+      rtc_init_success = true;
+      break;
+    }
+  }
+  if (!rtc_init_success)
+  {
     while (1) delay(10);
   }
   if (rtc_lib.lostPower()) 

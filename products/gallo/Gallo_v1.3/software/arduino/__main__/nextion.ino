@@ -332,15 +332,15 @@ void nextion_input_p_set()
   }
   else if (nextion_array_compare(cmd_p_set_goto_clock, nextion.inputs_buff))
   {
-    nextion.page_cur = 31;
+    nextion.page_cur = P_CLK;
   }
   else if (nextion_array_compare(cmd_p_set_goto_power_type, nextion.inputs_buff))
   {
-    nextion.page_cur = 60;
+    nextion.page_cur = P_EXT;
   }
   else if (nextion_array_compare(cmd_p_set_goto_ozone_sensor_alarm, nextion.inputs_buff))
   {
-    nextion.page_cur = 70;
+    nextion.page_cur = P_SENSOR_ALARM;
   }
 }
 
@@ -676,273 +676,269 @@ void nextion_input_p_clk()
   if (nextion_array_compare(cmd_p_clock_back, nextion.inputs_buff)) nextion.page_cur = P_SET;
   if (nextion_array_compare(cmd_p_clock_date, nextion.inputs_buff))
   {
-    nextion.page_cur = 32;
+    nextion.page_cur = P_CLK_DATE;
     rtc.year_tmp = rtc.year_cur;
     rtc.month_tmp = rtc.month_cur;
     rtc.day_tmp = rtc.day_cur;
   }
-  if (nextion_array_compare(cmd_p_clock_time, nextion.inputs_buff)) nextion.page_cur = 33;
+  if (nextion_array_compare(cmd_p_clock_time, nextion.inputs_buff)) nextion.page_cur = P_CLK_TIME;
+}
+
+void nextion_input_p_clk_date()
+{
+  if (nextion_array_compare(cmd_p_clock_date_back, nextion.inputs_buff)) nextion.page_cur = P_CLK;
+  if (nextion_array_compare(cmd_p_clock_date_save, nextion.inputs_buff)) 
+  {
+    rtc.year_cur = rtc.year_tmp;
+    rtc.month_cur = rtc.month_tmp;
+    rtc.day_cur = rtc.day_tmp;
+    rtc_lib.adjust(DateTime(rtc.year_cur, rtc.month_cur, rtc.day_cur, rtc.hour_cur, rtc.minute_cur, rtc.second_cur));
+    nextion.page_cur = P_CLK;
+  }
+  if (nextion_array_compare(cmd_p_clock_date_year_up, nextion.inputs_buff))
+  {
+    rtc.year_tmp += 1;
+  }
+  if (nextion_array_compare(cmd_p_clock_date_year_down, nextion.inputs_buff))
+  {
+    rtc.year_tmp -= 1;
+    if (rtc.year_tmp < 2020)
+    {
+      rtc.year_tmp = 2020;
+    }
+  }
+  if (nextion_array_compare(cmd_p_clock_date_month_up, nextion.inputs_buff))
+  {
+    rtc.month_tmp += 1;
+    if (rtc.month_tmp > 12)
+    {
+      rtc.month_tmp = 12;
+    }
+  }
+  if (nextion_array_compare(cmd_p_clock_date_month_down, nextion.inputs_buff))
+  {
+    rtc.month_tmp -= 1;
+    if (rtc.month_tmp < 1)
+    {
+      rtc.month_tmp = 1;
+    }
+  }
+  if (nextion_array_compare(cmd_p_clock_date_day_up, nextion.inputs_buff))
+  {
+    rtc.day_tmp += 1;
+    if (rtc.month_tmp == 1) {
+      if (rtc.day_tmp >= 31) { rtc.day_tmp = 31; }
+    }
+    if (rtc.month_tmp == 2) {
+      if (rtc.day_tmp >= 28) { rtc.day_tmp = 28; }
+    }
+    if (rtc.month_tmp == 3) {
+      if (rtc.day_tmp >= 31) { rtc.day_tmp = 31; }
+    }
+    if (rtc.month_tmp == 4) {
+      if (rtc.day_tmp >= 30) { rtc.day_tmp = 30; }
+    }
+    if (rtc.month_tmp == 5) {
+      if (rtc.day_tmp >= 31) { rtc.day_tmp = 31; }
+    }
+    if (rtc.month_tmp == 6) {
+      if (rtc.day_tmp >= 30) { rtc.day_tmp = 30; }
+    }
+    if (rtc.month_tmp == 7) {
+      if (rtc.day_tmp >= 31) { rtc.day_tmp = 31; }
+    }
+    if (rtc.month_tmp == 8) {
+      if (rtc.day_tmp >= 31) { rtc.day_tmp = 31; }
+    }
+    if (rtc.month_tmp == 9) {
+      if (rtc.day_tmp >= 30) { rtc.day_tmp = 30; }
+    }
+    if (rtc.month_tmp == 10) {
+      if (rtc.day_tmp >= 31) { rtc.day_tmp = 31; }
+    }
+    if (rtc.month_tmp == 11) {
+      if (rtc.day_tmp >= 30) { rtc.day_tmp = 30; }
+    }
+    if (rtc.month_tmp == 12) {
+      if (rtc.day_tmp >= 31) { rtc.day_tmp = 31; }
+    }
+  }
+  if (nextion_array_compare(cmd_p_clock_date_day_down, nextion.inputs_buff))
+  {
+    rtc.day_tmp -= 1;
+    if (rtc.day_tmp < 1)
+    {
+      rtc.day_tmp = 1;
+    }
+  }
+}
+
+void nextion_input_p_clk_time()
+{
+  if (nextion_array_compare(cmd_p_clock_time_back, nextion.inputs_buff)) nextion.page_cur = P_CLK;
+  if (nextion_array_compare(cmd_p_clock_time_save, nextion.inputs_buff)) 
+  {
+    rtc.hour_cur = rtc.hour_tmp;
+    rtc.minute_cur = rtc.minute_tmp;
+    rtc.second_cur = rtc.second_tmp;
+    rtc_lib.adjust(DateTime(rtc.year_cur, rtc.month_cur, rtc.day_cur, rtc.hour_cur, rtc.minute_cur, rtc.second_cur));
+    nextion.page_cur = P_CLK;
+  }
+  if (nextion_array_compare(cmd_p_clock_time_hour_up, nextion.inputs_buff))
+  {
+    rtc.hour_tmp += 1;
+    if (rtc.hour_tmp > 23)
+    {
+      rtc.hour_tmp = 23;
+    }
+  }
+  if (nextion_array_compare(cmd_p_clock_time_hour_down, nextion.inputs_buff))
+  {
+    rtc.hour_tmp -= 1;
+    if (rtc.hour_tmp > 1)
+    {
+      rtc.hour_tmp = 1;
+    }
+  }
+  if (nextion_array_compare(cmd_p_clock_time_minute_up, nextion.inputs_buff))
+  {
+    rtc.minute_tmp += 1;
+    if (rtc.minute_tmp > 59)
+    {
+      rtc.minute_tmp = 59;
+    }
+  }
+  if (nextion_array_compare(cmd_p_clock_time_minute_down, nextion.inputs_buff))
+  {
+    rtc.minute_tmp -= 1;
+    if (rtc.minute_tmp > 1)
+    {
+      rtc.minute_tmp = 1;
+    }
+  }
+  if (nextion_array_compare(cmd_p_clock_time_second_up, nextion.inputs_buff))
+  {
+    rtc.second_tmp += 1;
+    if (rtc.second_tmp > 59)
+    {
+      rtc.second_tmp = 59;
+    }
+  }
+  if (nextion_array_compare(cmd_p_clock_time_second_down, nextion.inputs_buff))
+  {
+    rtc.second_tmp -= 1;
+    if (rtc.second_tmp > 1)
+    {
+      rtc.second_tmp = 1;
+    }
+  }
+}
+
+void nextion_input_p_ext()
+{
+  if (nextion_array_compare(cmd_p_set_calendar_onoff_back, nextion.inputs_buff)) 
+  {
+    nextion.page_cur = P_SET;
+  }
+  else if (nextion_array_compare(cmd_p_set_calendar_onoff_save, nextion.inputs_buff)) 
+  {
+    nextion.page_cur = P_SET;
+    external_input.is_abilitated_cur = external_input.is_abilitated_tmp;
+    eeprom_write_uint16(EXTERNAL_INPUT, external_input.is_abilitated_cur);
+  }
+  else if (nextion_array_compare(cmd_p_set_calendar_onoff_up, nextion.inputs_buff)) 
+  {
+    external_input.is_abilitated_tmp = 1;
+  }
+  else if (nextion_array_compare(cmd_p_set_calendar_onoff_down, nextion.inputs_buff)) 
+  {
+    external_input.is_abilitated_tmp = 0;
+  }
+}
+
+void nextion_input_p_sensor_alarm()
+{
+  if (nextion_array_compare(cmd_p_set_list_back, nextion.inputs_buff)) 
+  {
+    nextion.page_cur = P_SET;
+  }
+  else if (nextion_array_compare(cmd_p_set_list_save, nextion.inputs_buff)) 
+  {
+    nextion.page_cur = P_SET;
+    o3_sensor_alarm.ppb_alarm_cur = o3_sensor_alarm.ppb_alarm_tmp;
+    o3_sensor_alarm.alarm_timer_minutes_cur = o3_sensor_alarm.alarm_timer_minutes_tmp;
+    eeprom_write_uint16(ALARM_PPB, o3_sensor_alarm.ppb_alarm_cur);
+    eeprom_write_uint16(ALARM_TIMER_MINUTES, o3_sensor_alarm.alarm_timer_minutes_cur);
+  }
+  else if (nextion_array_compare(cmd_p_set_list_item1_right, nextion.inputs_buff)) 
+  {
+    if (o3_sensor_alarm.ppb_alarm_tmp < 9900)
+    {
+      o3_sensor_alarm.ppb_alarm_tmp += 100;
+    }
+  }
+  else if (nextion_array_compare(cmd_p_set_list_item1_left, nextion.inputs_buff)) 
+  {
+    if (o3_sensor_alarm.ppb_alarm_tmp > 100)
+    {
+      o3_sensor_alarm.ppb_alarm_tmp -= 100;
+    }
+  }
+  else if (nextion_array_compare(cmd_p_set_list_item2_right, nextion.inputs_buff)) 
+  {
+    if (o3_sensor_alarm.alarm_timer_minutes_tmp < 10)
+    {
+      o3_sensor_alarm.alarm_timer_minutes_tmp += 1;
+    }
+  }
+  else if (nextion_array_compare(cmd_p_set_list_item2_left, nextion.inputs_buff)) 
+  {
+    if (o3_sensor_alarm.alarm_timer_minutes_tmp > 1)
+    {
+      o3_sensor_alarm.alarm_timer_minutes_tmp -= 1;
+    }
+  }
+}
+
+void nextion_input_p_ozone_alarm()
+{
+  if (nextion_array_compare(cmd_p_alarm_ok, nextion.inputs_buff)) 
+  {
+    nextion.page_cur = 1;
+    // o3_sensor_alarm.is_alarm_cur = 0;
+    o3_sensor_alarm.alarm_millis_cur = millis();
+  }
+}
+
+void nextion_input_p_temperature_alarm()
+{
+  if (nextion_array_compare(cmd_p_alarm_ok, nextion.inputs_buff)) 
+  {
+    nextion.page_cur = 1;
+    // o3_sensor_alarm.is_alarm_cur = 0;
+    // o3_sensor_alarm.alarm_millis_cur = millis();
+  }
 }
 
 void nextion_eval_serial() 
 {
-  /**/ if (nextion.page_cur == P_HOME)            nextion_input_p_home();
-  else if (nextion.page_cur == P_PASSWORD)        nextion_input_p_password();
-  else if (nextion.page_cur == P_SET)             nextion_input_p_set();
-  else if (nextion.page_cur == P_POWER)           nextion_input_p_power();
-  else if (nextion.page_cur == P_CAL_EN)          nextion_input_p_cal_en();
-  else if (nextion.page_cur == P_CAL_TIME)        nextion_input_p_cal_time();
-  else if (nextion.page_cur == P_CAL_ADD)         nextion_input_p_cal_add();
-  else if (nextion.page_cur == P_CAL_DEL)         nextion_input_p_cal_del();
-  else if (nextion.page_cur == P_CAL_ADD_ERR_NEG) nextion_input_p_cal_add_err_neg();
-  else if (nextion.page_cur == P_CAL_ADD_ERR_OVR) nextion_input_p_cal_add_err_ovr();
-  else if (nextion.page_cur == P_CLK)             nextion_input_p_clk();
-
-  else if (nextion.page_cur == 32) 
-  {
-    if (nextion_array_compare(cmd_p_clock_date_back, nextion.inputs_buff)) nextion.page_cur = P_CLK;
-    if (nextion_array_compare(cmd_p_clock_date_save, nextion.inputs_buff)) 
-    {
-      rtc.year_cur = rtc.year_tmp;
-      rtc.month_cur = rtc.month_tmp;
-      rtc.day_cur = rtc.day_tmp;
-      rtc_lib.adjust(DateTime(rtc.year_cur, rtc.month_cur, rtc.day_cur, rtc.hour_cur, rtc.minute_cur, rtc.second_cur));
-      nextion.page_cur = P_CLK;
-    }
-    if (nextion_array_compare(cmd_p_clock_date_year_up, nextion.inputs_buff))
-    {
-      rtc.year_tmp += 1;
-    }
-    if (nextion_array_compare(cmd_p_clock_date_year_down, nextion.inputs_buff))
-    {
-      rtc.year_tmp -= 1;
-      if (rtc.year_tmp < 2020)
-      {
-        rtc.year_tmp = 2020;
-      }
-    }
-    if (nextion_array_compare(cmd_p_clock_date_month_up, nextion.inputs_buff))
-    {
-      rtc.month_tmp += 1;
-      if (rtc.month_tmp > 12)
-      {
-        rtc.month_tmp = 12;
-      }
-    }
-    if (nextion_array_compare(cmd_p_clock_date_month_down, nextion.inputs_buff))
-    {
-      rtc.month_tmp -= 1;
-      if (rtc.month_tmp < 1)
-      {
-        rtc.month_tmp = 1;
-      }
-    }
-    if (nextion_array_compare(cmd_p_clock_date_day_up, nextion.inputs_buff))
-    {
-      rtc.day_tmp += 1;
-      if (rtc.month_tmp == 1) {
-        if (rtc.day_tmp >= 31) { rtc.day_tmp = 31; }
-      }
-      if (rtc.month_tmp == 2) {
-        if (rtc.day_tmp >= 28) { rtc.day_tmp = 28; }
-      }
-      if (rtc.month_tmp == 3) {
-        if (rtc.day_tmp >= 31) { rtc.day_tmp = 31; }
-      }
-      if (rtc.month_tmp == 4) {
-        if (rtc.day_tmp >= 30) { rtc.day_tmp = 30; }
-      }
-      if (rtc.month_tmp == 5) {
-        if (rtc.day_tmp >= 31) { rtc.day_tmp = 31; }
-      }
-      if (rtc.month_tmp == 6) {
-        if (rtc.day_tmp >= 30) { rtc.day_tmp = 30; }
-      }
-      if (rtc.month_tmp == 7) {
-        if (rtc.day_tmp >= 31) { rtc.day_tmp = 31; }
-      }
-      if (rtc.month_tmp == 8) {
-        if (rtc.day_tmp >= 31) { rtc.day_tmp = 31; }
-      }
-      if (rtc.month_tmp == 9) {
-        if (rtc.day_tmp >= 30) { rtc.day_tmp = 30; }
-      }
-      if (rtc.month_tmp == 10) {
-        if (rtc.day_tmp >= 31) { rtc.day_tmp = 31; }
-      }
-      if (rtc.month_tmp == 11) {
-        if (rtc.day_tmp >= 30) { rtc.day_tmp = 30; }
-      }
-      if (rtc.month_tmp == 12) {
-        if (rtc.day_tmp >= 31) { rtc.day_tmp = 31; }
-      }
-    }
-    if (nextion_array_compare(cmd_p_clock_date_day_down, nextion.inputs_buff))
-    {
-      rtc.day_tmp -= 1;
-      if (rtc.day_tmp < 1)
-      {
-        rtc.day_tmp = 1;
-      }
-    }
-  }
-  else if (nextion.page_cur == 33) 
-  {
-    if (nextion_array_compare(cmd_p_clock_time_back, nextion.inputs_buff)) nextion.page_cur = P_CLK;
-    if (nextion_array_compare(cmd_p_clock_time_save, nextion.inputs_buff)) 
-    {
-      rtc.hour_cur = rtc.hour_tmp;
-      rtc.minute_cur = rtc.minute_tmp;
-      rtc.second_cur = rtc.second_tmp;
-      rtc_lib.adjust(DateTime(rtc.year_cur, rtc.month_cur, rtc.day_cur, rtc.hour_cur, rtc.minute_cur, rtc.second_cur));
-      nextion.page_cur = P_CLK;
-    }
-    if (nextion_array_compare(cmd_p_clock_time_hour_up, nextion.inputs_buff))
-    {
-      rtc.hour_tmp += 1;
-      if (rtc.hour_tmp > 23)
-      {
-        rtc.hour_tmp = 23;
-      }
-    }
-    if (nextion_array_compare(cmd_p_clock_time_hour_down, nextion.inputs_buff))
-    {
-      rtc.hour_tmp -= 1;
-      if (rtc.hour_tmp > 1)
-      {
-        rtc.hour_tmp = 1;
-      }
-    }
-    if (nextion_array_compare(cmd_p_clock_time_minute_up, nextion.inputs_buff))
-    {
-      rtc.minute_tmp += 1;
-      if (rtc.minute_tmp > 59)
-      {
-        rtc.minute_tmp = 59;
-      }
-    }
-    if (nextion_array_compare(cmd_p_clock_time_minute_down, nextion.inputs_buff))
-    {
-      rtc.minute_tmp -= 1;
-      if (rtc.minute_tmp > 1)
-      {
-        rtc.minute_tmp = 1;
-      }
-    }
-    if (nextion_array_compare(cmd_p_clock_time_second_up, nextion.inputs_buff))
-    {
-      rtc.second_tmp += 1;
-      if (rtc.second_tmp > 59)
-      {
-        rtc.second_tmp = 59;
-      }
-    }
-    if (nextion_array_compare(cmd_p_clock_time_second_down, nextion.inputs_buff))
-    {
-      rtc.second_tmp -= 1;
-      if (rtc.second_tmp > 1)
-      {
-        rtc.second_tmp = 1;
-      }
-    }
-  }
-  else if (nextion.page_cur == 40) 
-  {
-    
-  }
-  
-  else if (nextion.page_cur == 70) 
-  {
-    if (nextion_array_compare(cmd_p_set_list_back, nextion.inputs_buff)) 
-    {
-      nextion.page_cur = 40;
-    }
-    else if (nextion_array_compare(cmd_p_set_list_save, nextion.inputs_buff)) 
-    {
-      nextion.page_cur = 40;
-      o3_sensor_alarm.ppb_alarm_cur = o3_sensor_alarm.ppb_alarm_tmp;
-      o3_sensor_alarm.alarm_timer_minutes_cur = o3_sensor_alarm.alarm_timer_minutes_tmp;
-      eeprom_write_uint16(ALARM_PPB, o3_sensor_alarm.ppb_alarm_cur);
-      eeprom_write_uint16(ALARM_TIMER_MINUTES, o3_sensor_alarm.alarm_timer_minutes_cur);
-    }
-    else if (nextion_array_compare(cmd_p_set_list_item1_right, nextion.inputs_buff)) 
-    {
-      if (o3_sensor_alarm.ppb_alarm_tmp < 9900)
-      {
-        o3_sensor_alarm.ppb_alarm_tmp += 100;
-      }
-    }
-    else if (nextion_array_compare(cmd_p_set_list_item1_left, nextion.inputs_buff)) 
-    {
-      if (o3_sensor_alarm.ppb_alarm_tmp > 100)
-      {
-        o3_sensor_alarm.ppb_alarm_tmp -= 100;
-      }
-    }
-    else if (nextion_array_compare(cmd_p_set_list_item2_right, nextion.inputs_buff)) 
-    {
-      if (o3_sensor_alarm.alarm_timer_minutes_tmp < 10)
-      {
-        o3_sensor_alarm.alarm_timer_minutes_tmp += 1;
-      }
-    }
-    else if (nextion_array_compare(cmd_p_set_list_item2_left, nextion.inputs_buff)) 
-    {
-      if (o3_sensor_alarm.alarm_timer_minutes_tmp > 1)
-      {
-        o3_sensor_alarm.alarm_timer_minutes_tmp -= 1;
-      }
-    }
-    
-    // else if (nextion_array_compare(cmd_p_set_calendar_onoff_up, nextion.inputs_buff)) 
-    // {
-    //   calendar_onoff_tmp = 1;
-    // }
-    // else if (nextion_array_compare(cmd_p_set_calendar_onoff_down, nextion.inputs_buff)) 
-    // {
-    //   calendar_onoff_tmp = 0;
-    // }
-  }
-
-  else if (nextion.page_cur == 60) 
-  {
-    if (nextion_array_compare(cmd_p_set_calendar_onoff_back, nextion.inputs_buff)) 
-    {
-      nextion.page_cur = 40;
-    }
-    else if (nextion_array_compare(cmd_p_set_calendar_onoff_save, nextion.inputs_buff)) 
-    {
-      nextion.page_cur = 40;
-      external_input.is_abilitated_cur = external_input.is_abilitated_tmp;
-      eeprom_write_uint16(EXTERNAL_INPUT, external_input.is_abilitated_cur);
-    }
-    else if (nextion_array_compare(cmd_p_set_calendar_onoff_up, nextion.inputs_buff)) 
-    {
-      external_input.is_abilitated_tmp = 1;
-    }
-    else if (nextion_array_compare(cmd_p_set_calendar_onoff_down, nextion.inputs_buff)) 
-    {
-      external_input.is_abilitated_tmp = 0;
-    }
-  }
-  else if (nextion.page_cur == 80) 
-  {
-    if (nextion_array_compare(cmd_p_alarm_ok, nextion.inputs_buff)) 
-    {
-      nextion.page_cur = 1;
-      // o3_sensor_alarm.is_alarm_cur = 0;
-      o3_sensor_alarm.alarm_millis_cur = millis();
-    }
-  }
-  else if (nextion.page_cur == 90) 
-  {
-    if (nextion_array_compare(cmd_p_alarm_ok, nextion.inputs_buff)) 
-    {
-      nextion.page_cur = 1;
-      // o3_sensor_alarm.is_alarm_cur = 0;
-      // o3_sensor_alarm.alarm_millis_cur = millis();
-    }
-  }
+  /**/ if (nextion.page_cur == P_HOME)              nextion_input_p_home();
+  else if (nextion.page_cur == P_PASSWORD)          nextion_input_p_password();
+  else if (nextion.page_cur == P_SET)               nextion_input_p_set();
+  else if (nextion.page_cur == P_POWER)             nextion_input_p_power();
+  else if (nextion.page_cur == P_CAL_EN)            nextion_input_p_cal_en();
+  else if (nextion.page_cur == P_CAL_TIME)          nextion_input_p_cal_time();
+  else if (nextion.page_cur == P_CAL_ADD)           nextion_input_p_cal_add();
+  else if (nextion.page_cur == P_CAL_DEL)           nextion_input_p_cal_del();
+  else if (nextion.page_cur == P_CAL_ADD_ERR_NEG)   nextion_input_p_cal_add_err_neg();
+  else if (nextion.page_cur == P_CAL_ADD_ERR_OVR)   nextion_input_p_cal_add_err_ovr();
+  else if (nextion.page_cur == P_CLK)               nextion_input_p_clk();
+  else if (nextion.page_cur == P_CLK_DATE)          nextion_input_p_clk_date();
+  else if (nextion.page_cur == P_CLK_TIME)          nextion_input_p_clk_time();
+  else if (nextion.page_cur == P_EXT)               nextion_input_p_ext();
+  else if (nextion.page_cur == P_SENSOR_ALARM)      nextion_input_p_sensor_alarm();
+  else if (nextion.page_cur == P_OZONE_ALARM)       nextion_input_p_ozone_alarm();
+  else if (nextion.page_cur == P_TEMPERATURE_ALARM) nextion_input_p_temperature_alarm();
 }
 
 void nextion_update() 
@@ -964,12 +960,12 @@ void nextion_update()
   else if (nextion.page_cur == P_CAL_ADD_ERR_NEG)   nextion_update_page_calendar_add_err(force_refresh);
   else if (nextion.page_cur == P_CAL_ADD_ERR_OVR)   nextion_update_page_calendar_add_err2(force_refresh);
   else if (nextion.page_cur == P_CLK)               nextion_update_page_clock(force_refresh);
-  else if (nextion.page_cur == 32) nextion_update_page_clock_date(force_refresh);
-  else if (nextion.page_cur == 33) nextion_update_page_clock_time(force_refresh);
-  else if (nextion.page_cur == 60) nextion_update_page_power_type(force_refresh);
-  else if (nextion.page_cur == 70) nextion_update_page_ozone_sensor_alarm(force_refresh);
-  else if (nextion.page_cur == 80) nextion_update_page_ozone_alarm(force_refresh);
-  else if (nextion.page_cur == 90) nextion_update_page_temperature_alarm(force_refresh);
+  else if (nextion.page_cur == P_CLK_DATE)          nextion_update_page_clock_date(force_refresh);
+  else if (nextion.page_cur == P_CLK_TIME)          nextion_update_page_clock_time(force_refresh);
+  else if (nextion.page_cur == P_EXT)               nextion_update_page_power_type(force_refresh);
+  else if (nextion.page_cur == P_SENSOR_ALARM)      nextion_update_page_ozone_sensor_alarm(force_refresh);
+  else if (nextion.page_cur == P_OZONE_ALARM)       nextion_update_page_ozone_alarm(force_refresh);
+  else if (nextion.page_cur == P_TEMPERATURE_ALARM) nextion_update_page_temperature_alarm(force_refresh);
 }
 
 ////////////////////////////////////////////////////////
