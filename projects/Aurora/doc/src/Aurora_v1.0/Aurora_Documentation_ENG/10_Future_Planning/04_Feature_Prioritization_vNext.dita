@@ -1,0 +1,61 @@
+clock_time = f'''
+        <?cml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+        <task id="clock-time">
+            <title>Come Impostare l'Orario dell'Orologio</title>
+            <taskbody>
+                <context>
+                    {data.DISPLAY_IMAGE_PAGE_HOME_STOP}
+                    {data.DISPLAY_IMAGE_PAGE_HOME_SET}
+                    {data.DISPLAY_IMAGE_PAGE_PASSWORD}
+                    {data.DISPLAY_IMAGE_PAGE_SET_CLK}
+                    {data.DISPLAY_IMAGE_PAGE_CLK_TIME}
+                    {data.DISPLAY_IMAGE_PAGE_CLK_TIME_ARROWS}
+                    {data.DISPLAY_IMAGE_PAGE_CLK_TIME_SAVE}
+                    {data.DISPLAY_IMAGE_PAGE_CLK_BACK}
+                    {data.DISPLAY_IMAGE_PAGE_SET_BACK}
+                    {data.DISPLAY_IMAGE_PAGE_HOME_TIME}
+                    {data.DISPLAY_IMAGE_PAGE_HOME_START}
+                </context>
+                <steps>
+                    <step>
+                        <cmd>{data.DISPLAY_PAGE_HOME_POWER_OFF}</cmd>
+                    </step>
+                    <step>
+                        <cmd>{data.DISPLAY_PAGE_HOME_SETTINGS}</cmd>
+                    </step>
+                    <step>
+                        <cmd>{data.DISPLAY_PAGE_PASSWORD}</cmd>
+                    </step>
+                    <step>
+                        <cmd>{data.DISPLAY_PAGE_SET_CLK}</cmd>
+                    </step>
+                    <step>
+                        <cmd>{data.DISPLAY_PAGE_SET_CLK_TIME}</cmd>
+                    </step>
+                    <step>
+                        <cmd>{data.DISPLAY_PAGE_SET_CLK_TIME_ARROW}</cmd>
+                    </step>
+                    <step>
+                        <cmd>{data.DISPLAY_PAGE_SET_CLK_TIME_SAVE}</cmd>
+                    </step>
+                    <step>
+                        <cmd>{data.DISPLAY_PAGE_SET_CLK_BACK}</cmd>
+                    </step>
+                    <step>
+                        <cmd>{data.DISPLAY_PAGE_SET_BACK}</cmd>
+                    </step>
+                    <step>
+                        <cmd>{data.DISPLAY_PAGE_HOME_TIME}</cmd>
+                    </step>
+                    <step>
+                        <cmd>{data.DISPLAY_PAGE_HOME_POWER_ON}</cmd>
+                    </step>
+                </steps>
+                <result>
+                    <p></p>
+                </result>
+            </taskbody>
+        </task>
+    '''.strip()
+    with open(f'{g.TASKS_FOLDERPATH}/clock-time.dita', 'w') as f: f.write(clock_time)
