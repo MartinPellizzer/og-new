@@ -1,0 +1,44 @@
+<?cml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+    <topic id="proposal-update-modular-architecture">
+        <title>Progettazione Sistema di Controllo Modulare</title>
+        <shortdesc>
+            Si propone la riprogettazione del sistema di controllo (hardware PCB e software) per il sistema "Aurora", con l'obiettivo di renderlo il più modulare possibile, attraverso un'architettura basata su un core centrale e plugin.
+        </shortdesc>
+
+        <body>
+            <section>
+                <title>Contesto</title>
+                <p>L'attuale sistema di controllo di Aurora è stato sviluppato con un'architettura monolitica, che presenta limiti di scalabilità e complessità nella manutenzione. La crescente necessità di adattabilità e personalizzazione richiede una nuova progettazione più flessibile e modulare.
+                </p>
+            </section>
+
+            <section>
+                <title>Aggiornamento Proposto</title>
+                <p>La proposta prevede la creazione di un'architettura modulare composta da un core centrale e da moduli plugin, sia hardware che software. Questa soluzione garantisce maggiore flessibilità, tempi di sviluppo più rapidi e possibilità di aggiornamento incrementale.
+                </p>
+                <ul>
+                    <li>Separazione chiara tra core e plugin.</li>
+                    <li>Riduzione della complessità hardware tramite PCB modulare.</li>
+                    <li>Maggiore riutilizzabilità del software tra progetti diversi.</li>
+                    <li>Facilità di manutenzione e aggiornamento.</li>
+                </ul>
+            </section>
+
+            <section>
+                <title>Valutazione dell'Impatto</title>
+                <p>L'implementazione richiede la riprogettazione della PCB principale, la definizione di interfacce standard per i plugin e l'aggiornamento del software di controllo. Saranno necessari anche test di compatibilità e la revisione della documentazione tecnica.
+                </p>
+            </section>
+
+            <section>
+                <title>Prossimi Passi</title>
+                <ol>
+                    <li>Definizione delle specifiche architetturali.</li>
+                    <li>Sviluppo e test di un prototipo con architettura modulare.</li>
+                    <li>Validazione delle prestazioni e della compatibilità dei plugin.</li>
+                    <li>Piano di implementazione per la produzione.</li>
+                </ol>
+            </section>
+        </body>
+    </topic>

@@ -1,0 +1,43 @@
+<?cml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+    <topic id="proposal-update-ozone-continuous-production">
+        <title>Produzione Continua di Ozono</title>
+        <shortdesc>
+            Si propone un aggiornamento al sistema Aurora, con l'aggiunta di un secondo generatore di ozono da alternare al primo, al fine di garantire una produzione continua e di ozono.
+        </shortdesc>
+
+        <body>
+            <section>
+                <title>Contesto</title>
+                <p>
+                    Attualmente, il sistema Aurora utilizza un singolo generatore di ozono per i processi di trattamento. Tuttavia, l'uso di un solo generatore comporta periodi di fermo durante la produzione di ozono perché necessita di cicli di raffreddamento, riducendo la disponibilità complessiva della produzione.
+                </p>
+            </section>
+
+            <section>
+                <title>Aggiornamento Proposto</title>
+                <p>
+                    L'aggiornamento prevede l'aggiunta di un secondo generatore di ozono, configurato per funzionare in alternanza con il primo. Questo garantisce continuità operativa, riduce i tempi di inattività e migliora l'efficienza complessiva del sistema.
+                </p>
+                <ul>
+                    <li>Assicura una produzione continua di ozono senza interruzioni.</li>
+                </ul>
+            </section>
+
+            <section>
+                <title>Valutazione dell'Impatto</title>
+                <p>
+                    L'implementazione richiede l'integrazione del secondo generatore nell'infrastruttura esistente, l'aggiornamento del software di controllo per la gestione automatica dell'alternanza e la revisione della documentazione tecnica e dei manuali di manutenzione. Inoltre, è necessario includere anche il corrispettivo ossigenatore.
+                </p>
+            </section>
+
+            <section>
+                <title>Prossimi Passi</title>
+                <ol>
+                    <li>Installazione di un prototipo con doppio generatore.</li>
+                    <li>Test di validazione per continuità e prestazioni operative.</li>
+                    <li>Piano di implementazione per la produzione.</li>
+                </ol>
+            </section>
+        </body>
+    </topic>

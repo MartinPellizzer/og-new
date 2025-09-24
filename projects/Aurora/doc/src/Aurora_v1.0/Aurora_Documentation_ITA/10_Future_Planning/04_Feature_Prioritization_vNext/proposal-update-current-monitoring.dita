@@ -1,0 +1,45 @@
+<?cml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+    <topic id="proposal-update-current-monitoring">
+        <title>Aggiunta Sensori Corrente/Voltaggio per Monitoraggio</title>
+        <shortdesc>
+            Si propone di integrare sensori di corrente e voltaggio per il monitoraggio delle linee di distribuzione elettrica, con l'obiettivo di migliorare l'affidabilità operativa e la diagnostica preventiva.
+        </shortdesc>
+
+        <body>
+            <section>
+                <title>Contesto</title>
+                <p>Attualmente il sistema Aurora non dispone di un monitoraggio diretto dei parametri elettrici sulle linee di distribuzione. Ciò comporta una minore capacità di rilevare tempestivamente anomalie come sovraccarichi, cadute di tensione, squilibri di fase o componenti con malfunzionamenti, che possono ridurre l'efficienza e aumentare il rischio di guasti imprevisti.
+                </p>
+            </section>
+
+            <section>
+                <title>Aggiornamento Proposto</title>
+                <p>L'aggiornamento proposto prevede l'installazione di sensori di corrente e voltaggio dedicati, integrati con il sistema di supervisione. Questi dispositivi permetteranno un monitoraggio in tempo reale delle linee di distribuzione, fornendo dati utili per la manutenzione predittiva e la prevenzione di interruzioni.
+                </p>
+                <ul>
+                    <li>Rilevamento componenti difettosi.</li>
+                    <li>Rilevamento in tempo reale di sovraccarichi e anomalie.</li>
+                    <li>Miglioramento della diagnostica preventiva.</li>
+                    <li>Integrazione dei dati elettrici nei report di sistema.</li>
+                    <li>Supporto a strategie di manutenzione predittiva.</li>
+                </ul>
+            </section>
+
+            <section>
+                <title>Valutazione dell'Impatto</title>
+                <p>
+                    L'implementazione richiede modifiche al cablaggio delle linee di distribuzione, allo sviluppo della scheda con i sensori di rilevamento e l'aggiornamento del software di supervisione per l'acquisizione e l'elaborazione dei nuovi parametri. Saranno necessari anche test di compatibilità e la revisione della documentazione tecnica.
+                </p>
+            </section>
+
+            <section>
+                <title>Prossimi Passi</title>
+                <ol>
+                    <li>Installazione pilota su un nodo di distribuzione.</li>
+                    <li>Test di validazione delle misurazioni e integrazione software.</li>
+                    <li>Piano di implementazione per la produzione.</li>
+                </ol>
+            </section>
+        </body>
+    </topic>

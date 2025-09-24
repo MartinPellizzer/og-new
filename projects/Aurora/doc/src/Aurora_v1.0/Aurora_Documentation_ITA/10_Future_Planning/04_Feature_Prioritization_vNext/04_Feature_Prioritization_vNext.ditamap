@@ -1,0 +1,9 @@
+<?cml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+
+<map id="feature_prioritization_vnext" title="Feature Prioritization vNext">
+    <topicref href="doc\src\Aurora_v1.0\Aurora_Documentation_ITA\10_Future_Planning\04_Feature_Prioritization_vNext\proposal-update-oxygen-sensor.dita" type="topic"/>
+    <topicref href="doc\src\Aurora_v1.0\Aurora_Documentation_ITA\10_Future_Planning\04_Feature_Prioritization_vNext\proposal-update-modular-architecture.dita" type="topic"/>
+    <topicref href="doc\src\Aurora_v1.0\Aurora_Documentation_ITA\10_Future_Planning\04_Feature_Prioritization_vNext\proposal-update-current-monitoring.dita" type="topic"/>
+    <topicref href="doc\src\Aurora_v1.0\Aurora_Documentation_ITA\10_Future_Planning\04_Feature_Prioritization_vNext\proposal-update-ozone-continuous-production.dita" type="topic"/>
+</map>
