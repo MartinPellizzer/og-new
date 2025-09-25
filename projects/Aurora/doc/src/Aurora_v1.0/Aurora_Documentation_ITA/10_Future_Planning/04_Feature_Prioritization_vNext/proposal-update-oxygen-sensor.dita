@@ -2,14 +2,15 @@
     <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
     <topic id="proposal-update-oxygen-sensor">
         <title>Aggiunta Sensori di Ossigeno</title>
+        <image href="doc/src/Aurora_v1.0/Aurora_Documentation_ITA/resources/images/proposal-update-oxygen-sensor.jpg" alt="" placement=""/>
         <shortdesc>
-            Questo documento propone l'introduzione di sensori di ossigeno per monitorare il corretto funzionamento dei concentratori di ossigeno all'interno del sistema Aurora, con l'obiettivo di monitorare l'efficienza produttiva.
+            Si propone l'introduzione di sensori di ossigeno per monitorare il corretto funzionamento dei concentratori di ossigeno all'interno del sistema Aurora, con l'obiettivo di monitorare l'efficienza produttiva.
         </shortdesc>
 
         <body>
             <section>
                 <title>Contesto</title>
-                <p>Attualmente, il sistema Aurora non dispone di un meccanismo di monitoraggio della concentrazione di ossigeno erogata dai concentratori. Per questo motivo, il sistema non è in grado di rilevare e monitorare se i concentratori di ossigeno stiano funzionando correttamente o se siano ancora performati.</p>
+                <p>Attualmente, il sistema non dispone di un meccanismo di monitoraggio della concentrazione di ossigeno erogata dai concentratori. Per questo motivo, il sistema non è in grado di rilevare e monitorare se i concentratori di ossigeno stiano funzionando correttamente o se siano ancora performati.</p>
             </section>
 
             <section>
@@ -25,7 +26,7 @@
 
             <section>
                 <title>Valutazione dell'Impatto</title>
-                <p>L'implementazione richiede una modifica minima all'hardware e un aggiornamento del software di controllo del sistema Aurora. Sarà necessario anche aggiornare i manuali operativi per includere le nuove funzionalità.
+                <p>L'implementazione richiede una modifica minima all'hardware e un aggiornamento del software di controllo del sistema. Sarà necessario anche aggiornare i manuali operativi per includere le nuove funzionalità.
                 </p>
             </section>
 
@@ -35,7 +36,7 @@
                     <li>Sviluppo hardware (PCB) e software.</li>
                     <li>Installazione prototipo su unità pilota.</li>
                     <li>Test di validazione in ambiente controllato.</li>
-                    <li>Integrazione su tutte le nuove unità che usano il sistema Aurora.</li>
+                    <li>Integrazione su tutte le nuove unità che usano il sistema.</li>
                 </ol>
             </section>
         </body>

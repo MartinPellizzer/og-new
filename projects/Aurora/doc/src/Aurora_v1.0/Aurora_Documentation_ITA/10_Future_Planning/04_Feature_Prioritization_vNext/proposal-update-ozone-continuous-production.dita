@@ -2,6 +2,7 @@
     <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
     <topic id="proposal-update-ozone-continuous-production">
         <title>Produzione Continua di Ozono</title>
+        <image href="doc/src/Aurora_v1.0/Aurora_Documentation_ITA/resources/images/proposal-update-ozone-continuous-production.jpg" alt="" placement=""/>
         <shortdesc>
             Si propone un aggiornamento al sistema Aurora, con l'aggiunta di un secondo generatore di ozono da alternare al primo, al fine di garantire una produzione continua e di ozono.
         </shortdesc>
@@ -10,7 +11,7 @@
             <section>
                 <title>Contesto</title>
                 <p>
-                    Attualmente, il sistema Aurora utilizza un singolo generatore di ozono per i processi di trattamento. Tuttavia, l'uso di un solo generatore comporta periodi di fermo durante la produzione di ozono perché necessita di cicli di raffreddamento, riducendo la disponibilità complessiva della produzione.
+                    Attualmente, il sistema utilizza un singolo generatore di ozono per i processi di trattamento. Tuttavia, l'uso di un solo generatore comporta periodi di fermo durante la produzione di ozono perché necessita di cicli di raffreddamento, riducendo la disponibilità complessiva della produzione.
                 </p>
             </section>
 

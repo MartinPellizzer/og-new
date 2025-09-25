@@ -2,6 +2,7 @@
     <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
     <topic id="proposal-update-current-monitoring">
         <title>Aggiunta Sensori Corrente/Voltaggio per Monitoraggio</title>
+        <image href="doc/src/Aurora_v1.0/Aurora_Documentation_ITA/resources/images/proposal-update-current-monitoring.jpg" alt="" placement=""/>
         <shortdesc>
             Si propone di integrare sensori di corrente e voltaggio per il monitoraggio delle linee di distribuzione elettrica, con l'obiettivo di migliorare l'affidabilità operativa e la diagnostica preventiva.
         </shortdesc>
@@ -9,7 +10,7 @@
         <body>
             <section>
                 <title>Contesto</title>
-                <p>Attualmente il sistema Aurora non dispone di un monitoraggio diretto dei parametri elettrici sulle linee di distribuzione. Ciò comporta una minore capacità di rilevare tempestivamente anomalie come sovraccarichi, cadute di tensione, squilibri di fase o componenti con malfunzionamenti, che possono ridurre l'efficienza e aumentare il rischio di guasti imprevisti.
+                <p>Attualmente il sistema non dispone di un monitoraggio diretto dei parametri elettrici sulle linee di distribuzione. Ciò comporta una minore capacità di rilevare tempestivamente anomalie come sovraccarichi, cadute di tensione, squilibri di fase o componenti con malfunzionamenti, che possono ridurre l'efficienza e aumentare il rischio di guasti imprevisti.
                 </p>
             </section>
 

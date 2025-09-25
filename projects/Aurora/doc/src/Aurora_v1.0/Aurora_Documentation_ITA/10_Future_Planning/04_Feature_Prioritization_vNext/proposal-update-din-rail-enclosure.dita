@@ -1,0 +1,48 @@
+<?cml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+    <topic id="proposal-update-din-rail-enclosure">
+        <title>PCB su misura per contenitori guida DIN</title>
+        <image href="doc/src/Aurora_v1.0/Aurora_Documentation_ITA/resources/images/proposal-update-din-rail-enclosure.jpg" alt="" placement=""/>
+        <shortdesc>
+            Si propone di progettare le PCB su misura per renderle compatibili con i contenitori per guide DIN, in modo da consentire un'installazione semplice e diretta all'interno dei quadri elettrici.
+        </shortdesc>
+
+        <body>
+            <section>
+                <title>Contesto</title>
+                <p>
+                    Attualmente il sistema Aurora utilizza soluzioni elettroniche integrate che non sono ottimizzate per un'installazione rapida nei quadri elettrici. Questo può comportare tempi di montaggio più lunghi e maggiore complessità nelle operazioni di cablaggio e manutenzione.
+                </p>
+            </section>
+
+            <section>
+                <title>Aggiornamento Proposto</title>
+                <p>
+                    L'aggiornamento consiste nella progettazione e realizzazione di PCB personalizzate inserite in case predisposti per guide DIN. Questa soluzione permette un'installazione modulare, ordinata e più sicura all'interno dei quadri elettrici.
+                </p>
+                <ul>
+                    <li>Facilita il montaggio grazie al supporto standardizzato DIN.</li>
+                    <li>Riduce il tempo di cablaggio e manutenzione.</li>
+                    <li>Garantisce maggiore robustezza meccanica e protezione dei componenti.</li>
+                    <li>Favorisce la scalabilità del sistema.</li>
+                </ul>
+            </section>
+
+            <section>
+                <title>Valutazione dell'Impatto</title>
+                <p>
+                    L'implementazione richiederà una revisione dei progetti PCB attuali, l'adattamento dei layout ai nuovi case DIN e un aggiornamento della documentazione tecnica. 
+                </p>
+            </section>
+
+            <section>
+                <title>Prossimi Passi</title>
+                <ol>
+                    <li>Ricerca contenitori per guide DIN.</li>
+                    <li>Progettazione e realizzazione dei primi prototipi.</li>
+                    <li>Test di installazione e validazione in ambiente reale.</li>
+                    <li>Piano di implementazione per la produzione.</li>
+                </ol>
+            </section>
+        </body>
+    </topic>

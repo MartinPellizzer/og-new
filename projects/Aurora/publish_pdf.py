@@ -136,6 +136,14 @@ def pdf_image_grid_3(pdf, href):
         last_tag = 'img'
         pdf.ln(gap_image)
 
+def pdf_image(pdf, href):
+    y_cur = pdf.y
+    gap = a4_w_mm - container_w
+    pdf.x = gap // 2
+    pdf.image(href, w=container_w)
+    pdf.ln()
+    last_tag = 'img'
+
 def topic_proposal_generate(pdf, element):
     pdf.add_page()
     for child in element:
@@ -145,6 +153,9 @@ def topic_proposal_generate(pdf, element):
             print(child.text)
         if child.tag == 'shortdesc':
             paragraph(pdf, child.text)
+        if child.tag == 'image':
+            href = child.attrib['href']
+            pdf_image(pdf, href)
         if child.tag == 'body':
             body = child
             for section in body:

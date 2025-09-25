@@ -1,0 +1,47 @@
+<?cml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+    <topic id="proposal-update-ozone-sensor-optical">
+        <title>Sensore Ottico per Monitoraggio Ozono</title>
+        <image href="doc/src/Aurora_v1.0/Aurora_Documentation_ITA/resources/images/proposal-update-ozone-sensor-optical.jpg" alt="" placement=""/>
+        <shortdesc>
+            Si propone di progettare un sensore ottico di ozono per monitorare con precisione la produzione dei generatori e valutare il loro livello di usura.
+        </shortdesc>
+
+        <body>
+            <section>
+                <title>Contesto</title>
+                <p>
+                    Attualmente, il sistema Aurora non dispone di un metodo integrato per misurare in tempo reale la produzione di ozono dei generatori. Questa mancanza rende complesso valutare sia la quantità effettiva prodotta (in grammi/ora e ppb), sia lo stato di efficienza del generatore nel tempo. 
+                </p>
+            </section>
+
+            <section>
+                <title>Aggiornamento Proposto</title>
+                <p>
+                    L'aggiornamento proposto prevede l'integrazione di un sensore di ozono con tecnologia ottica, capace di monitorare con alta precisione la produzione dei generatori. Il sistema fornirà dati sia quantitativi (grammi/ora, ppb) sia qualitativi sullo stato di usura dei generatori.
+                </p>
+                <ul>
+                    <li>Misurazione precisa della produzione di ozono in tempo reale.</li>
+                    <li>Valutazione del livello di usura dei generatori.</li>
+                    <li>Supporto alla pianificazione predittiva delle manutenzioni.</li>
+                    <li>Miglioramento della tracciabilità e dell'affidabilità del sistema.</li>
+                </ul>
+            </section>
+
+            <section>
+                <title>Valutazione dell'Impatto</title>
+                <p>
+                    L'implementazione richiede l'integrazione hardware del sensore in linea con i generatori esistenti e un aggiornamento software del sistema per elaborare e visualizzare i dati raccolti. Sarà inoltre necessario aggiornare i manuali operativi.
+                </p>
+            </section>
+
+            <section>
+                <title>Prossimi Passi</title>
+                <ol>
+                    <li>Installazione del sensore ottico su un generatore pilota.</li>
+                    <li>Test di validazione delle misure e analisi dei dati raccolti.</li>
+                    <li>Piano di implementazione per la produzione.</li>
+                </ol>
+            </section>
+        </body>
+    </topic>

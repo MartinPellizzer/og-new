@@ -4,14 +4,15 @@
 <map id="feature_prioritization_vnext" title="Feature Prioritization vNext">
         <topic id="proposal-update-oxygen-sensor">
             <title>Aggiunta Sensori di Ossigeno</title>
+            <image href="doc/src/Aurora_v1.0/Aurora_Documentation_ITA/resources/images/proposal-update-oxygen-sensor.jpg" alt="" placement=""/>
             <shortdesc>
-                Questo documento propone l'introduzione di sensori di ossigeno per monitorare il corretto funzionamento dei concentratori di ossigeno all'interno del sistema Aurora, con l'obiettivo di monitorare l'efficienza produttiva.
+                Si propone l'introduzione di sensori di ossigeno per monitorare il corretto funzionamento dei concentratori di ossigeno all'interno del sistema Aurora, con l'obiettivo di monitorare l'efficienza produttiva.
             </shortdesc>
     
             <body>
                 <section>
                     <title>Contesto</title>
-                    <p>Attualmente, il sistema Aurora non dispone di un meccanismo di monitoraggio della concentrazione di ossigeno erogata dai concentratori. Per questo motivo, il sistema non è in grado di rilevare e monitorare se i concentratori di ossigeno stiano funzionando correttamente o se siano ancora performati.</p>
+                    <p>Attualmente, il sistema non dispone di un meccanismo di monitoraggio della concentrazione di ossigeno erogata dai concentratori. Per questo motivo, il sistema non è in grado di rilevare e monitorare se i concentratori di ossigeno stiano funzionando correttamente o se siano ancora performati.</p>
                 </section>
     
                 <section>
@@ -27,7 +28,7 @@
     
                 <section>
                     <title>Valutazione dell'Impatto</title>
-                    <p>L'implementazione richiede una modifica minima all'hardware e un aggiornamento del software di controllo del sistema Aurora. Sarà necessario anche aggiornare i manuali operativi per includere le nuove funzionalità.
+                    <p>L'implementazione richiede una modifica minima all'hardware e un aggiornamento del software di controllo del sistema. Sarà necessario anche aggiornare i manuali operativi per includere le nuove funzionalità.
                     </p>
                 </section>
     
@@ -37,21 +38,22 @@
                         <li>Sviluppo hardware (PCB) e software.</li>
                         <li>Installazione prototipo su unità pilota.</li>
                         <li>Test di validazione in ambiente controllato.</li>
-                        <li>Integrazione su tutte le nuove unità che usano il sistema Aurora.</li>
+                        <li>Integrazione su tutte le nuove unità che usano il sistema.</li>
                     </ol>
                 </section>
             </body>
         </topic>
         <topic id="proposal-update-modular-architecture">
             <title>Progettazione Sistema di Controllo Modulare</title>
+            <image href="doc/src/Aurora_v1.0/Aurora_Documentation_ITA/resources/images/proposal-update-modular-architecture.jpg" alt="" placement=""/>
             <shortdesc>
-                Si propone la riprogettazione del sistema di controllo (hardware PCB e software) per il sistema "Aurora", con l'obiettivo di renderlo il più modulare possibile, attraverso un'architettura basata su un core centrale e plugin.
+                Si propone la riprogettazione del sistema di controllo (hardware PCB e software) per il sistema Aurora, con l'obiettivo di renderlo il più modulare possibile, attraverso un'architettura basata su un core centrale e plugin.
             </shortdesc>
     
             <body>
                 <section>
                     <title>Contesto</title>
-                    <p>L'attuale sistema di controllo di Aurora è stato sviluppato con un'architettura monolitica, che presenta limiti di scalabilità e complessità nella manutenzione. La crescente necessità di adattabilità e personalizzazione richiede una nuova progettazione più flessibile e modulare.
+                    <p>L'attuale sistema di controllo del sistema è stato sviluppato con un'architettura monolitica, che presenta limiti di scalabilità e complessità nella manutenzione. La crescente necessità di adattabilità e personalizzazione richiede una nuova progettazione più flessibile e modulare.
                     </p>
                 </section>
     
@@ -86,6 +88,7 @@
         </topic>
         <topic id="proposal-update-current-monitoring">
             <title>Aggiunta Sensori Corrente/Voltaggio per Monitoraggio</title>
+            <image href="doc/src/Aurora_v1.0/Aurora_Documentation_ITA/resources/images/proposal-update-current-monitoring.jpg" alt="" placement=""/>
             <shortdesc>
                 Si propone di integrare sensori di corrente e voltaggio per il monitoraggio delle linee di distribuzione elettrica, con l'obiettivo di migliorare l'affidabilità operativa e la diagnostica preventiva.
             </shortdesc>
@@ -93,7 +96,7 @@
             <body>
                 <section>
                     <title>Contesto</title>
-                    <p>Attualmente il sistema Aurora non dispone di un monitoraggio diretto dei parametri elettrici sulle linee di distribuzione. Ciò comporta una minore capacità di rilevare tempestivamente anomalie come sovraccarichi, cadute di tensione, squilibri di fase o componenti con malfunzionamenti, che possono ridurre l'efficienza e aumentare il rischio di guasti imprevisti.
+                    <p>Attualmente il sistema non dispone di un monitoraggio diretto dei parametri elettrici sulle linee di distribuzione. Ciò comporta una minore capacità di rilevare tempestivamente anomalie come sovraccarichi, cadute di tensione, squilibri di fase o componenti con malfunzionamenti, che possono ridurre l'efficienza e aumentare il rischio di guasti imprevisti.
                     </p>
                 </section>
     
@@ -129,6 +132,7 @@
         </topic>
         <topic id="proposal-update-ozone-continuous-production">
             <title>Produzione Continua di Ozono</title>
+            <image href="doc/src/Aurora_v1.0/Aurora_Documentation_ITA/resources/images/proposal-update-ozone-continuous-production.jpg" alt="" placement=""/>
             <shortdesc>
                 Si propone un aggiornamento al sistema Aurora, con l'aggiunta di un secondo generatore di ozono da alternare al primo, al fine di garantire una produzione continua e di ozono.
             </shortdesc>
@@ -137,7 +141,7 @@
                 <section>
                     <title>Contesto</title>
                     <p>
-                        Attualmente, il sistema Aurora utilizza un singolo generatore di ozono per i processi di trattamento. Tuttavia, l'uso di un solo generatore comporta periodi di fermo durante la produzione di ozono perché necessita di cicli di raffreddamento, riducendo la disponibilità complessiva della produzione.
+                        Attualmente, il sistema utilizza un singolo generatore di ozono per i processi di trattamento. Tuttavia, l'uso di un solo generatore comporta periodi di fermo durante la produzione di ozono perché necessita di cicli di raffreddamento, riducendo la disponibilità complessiva della produzione.
                     </p>
                 </section>
     
@@ -163,6 +167,142 @@
                     <ol>
                         <li>Installazione di un prototipo con doppio generatore.</li>
                         <li>Test di validazione per continuità e prestazioni operative.</li>
+                        <li>Piano di implementazione per la produzione.</li>
+                    </ol>
+                </section>
+            </body>
+        </topic>
+        <topic id="proposal-update-din-rail-enclosure">
+            <title>PCB su misura per contenitori guida DIN</title>
+            <image href="doc/src/Aurora_v1.0/Aurora_Documentation_ITA/resources/images/proposal-update-din-rail-enclosure.jpg" alt="" placement=""/>
+            <shortdesc>
+                Si propone di progettare le PCB su misura per renderle compatibili con i contenitori per guide DIN, in modo da consentire un'installazione semplice e diretta all'interno dei quadri elettrici.
+            </shortdesc>
+    
+            <body>
+                <section>
+                    <title>Contesto</title>
+                    <p>
+                        Attualmente il sistema Aurora utilizza soluzioni elettroniche integrate che non sono ottimizzate per un'installazione rapida nei quadri elettrici. Questo può comportare tempi di montaggio più lunghi e maggiore complessità nelle operazioni di cablaggio e manutenzione.
+                    </p>
+                </section>
+    
+                <section>
+                    <title>Aggiornamento Proposto</title>
+                    <p>
+                        L'aggiornamento consiste nella progettazione e realizzazione di PCB personalizzate inserite in case predisposti per guide DIN. Questa soluzione permette un'installazione modulare, ordinata e più sicura all'interno dei quadri elettrici.
+                    </p>
+                    <ul>
+                        <li>Facilita il montaggio grazie al supporto standardizzato DIN.</li>
+                        <li>Riduce il tempo di cablaggio e manutenzione.</li>
+                        <li>Garantisce maggiore robustezza meccanica e protezione dei componenti.</li>
+                        <li>Favorisce la scalabilità del sistema.</li>
+                    </ul>
+                </section>
+    
+                <section>
+                    <title>Valutazione dell'Impatto</title>
+                    <p>
+                        L'implementazione richiederà una revisione dei progetti PCB attuali, l'adattamento dei layout ai nuovi case DIN e un aggiornamento della documentazione tecnica. 
+                    </p>
+                </section>
+    
+                <section>
+                    <title>Prossimi Passi</title>
+                    <ol>
+                        <li>Ricerca contenitori per guide DIN.</li>
+                        <li>Progettazione e realizzazione dei primi prototipi.</li>
+                        <li>Test di installazione e validazione in ambiente reale.</li>
+                        <li>Piano di implementazione per la produzione.</li>
+                    </ol>
+                </section>
+            </body>
+        </topic>
+        <topic id="proposal-update-ozone-sensor-optical">
+            <title>Sensore Ottico per Monitoraggio Ozono</title>
+            <image href="doc/src/Aurora_v1.0/Aurora_Documentation_ITA/resources/images/proposal-update-ozone-sensor-optical.jpg" alt="" placement=""/>
+            <shortdesc>
+                Si propone di progettare un sensore ottico di ozono per monitorare con precisione la produzione dei generatori e valutare il loro livello di usura.
+            </shortdesc>
+    
+            <body>
+                <section>
+                    <title>Contesto</title>
+                    <p>
+                        Attualmente, il sistema Aurora non dispone di un metodo integrato per misurare in tempo reale la produzione di ozono dei generatori. Questa mancanza rende complesso valutare sia la quantità effettiva prodotta (in grammi/ora e ppb), sia lo stato di efficienza del generatore nel tempo. 
+                    </p>
+                </section>
+    
+                <section>
+                    <title>Aggiornamento Proposto</title>
+                    <p>
+                        L'aggiornamento proposto prevede l'integrazione di un sensore di ozono con tecnologia ottica, capace di monitorare con alta precisione la produzione dei generatori. Il sistema fornirà dati sia quantitativi (grammi/ora, ppb) sia qualitativi sullo stato di usura dei generatori.
+                    </p>
+                    <ul>
+                        <li>Misurazione precisa della produzione di ozono in tempo reale.</li>
+                        <li>Valutazione del livello di usura dei generatori.</li>
+                        <li>Supporto alla pianificazione predittiva delle manutenzioni.</li>
+                        <li>Miglioramento della tracciabilità e dell'affidabilità del sistema.</li>
+                    </ul>
+                </section>
+    
+                <section>
+                    <title>Valutazione dell'Impatto</title>
+                    <p>
+                        L'implementazione richiede l'integrazione hardware del sensore in linea con i generatori esistenti e un aggiornamento software del sistema per elaborare e visualizzare i dati raccolti. Sarà inoltre necessario aggiornare i manuali operativi.
+                    </p>
+                </section>
+    
+                <section>
+                    <title>Prossimi Passi</title>
+                    <ol>
+                        <li>Installazione del sensore ottico su un generatore pilota.</li>
+                        <li>Test di validazione delle misure e analisi dei dati raccolti.</li>
+                        <li>Piano di implementazione per la produzione.</li>
+                    </ol>
+                </section>
+            </body>
+        </topic>
+        <topic id="proposal-update-ozone-generator-adjustable">
+            <title>Generatore di Ozono Regolabile Elettronicamente</title>
+            <image href="doc/src/Aurora_v1.0/Aurora_Documentation_ITA/resources/images/proposal-update-ozone-generator-adjustable.jpg" alt="" placement=""/>
+            <shortdesc>
+                Si propone propone di utilizzare un generatore di ozono regolabile in modo elettronico dal sistema di controllo, al fine di produrre con precisione la quantità di ozono richiesta per l'applicazione specifica.
+            </shortdesc>
+    
+            <body>
+                <section>
+                    <title>Contesto</title>
+                    <p>
+                        Attualmente, la produzione di ozono nei sistemi industriali è regolata tramite impostazioni manuali, parametri fissi o combinazione di generatori. Questa modalità può comportare una produzione non ottimale, con possibili livelli di ozono non adeguati alle esigenze operative.
+                    </p>
+                </section>
+    
+                <section>
+                    <title>Aggiornamento Proposto</title>
+                    <p>
+                        L'aggiornamento prevede l'integrazione di un generatore di ozono completamente regolabile dal sistema di controllo elettronico. Questo consente di modulare in tempo reale la produzione di ozono, garantendo precisione e flessibilità operativa.
+                    </p>
+                    <ul>
+                        <li>Regolazione automatizzata della produzione di ozono in base al fabbisogno.</li>
+                        <li>Riduzione degli sprechi energetici e maggiore efficienza.</li>
+                        <li>Integrazione diretta con la logica di controllo esistente.</li>
+                        <li>Miglioramento della qualità complessiva del processo.</li>
+                    </ul>
+                </section>
+    
+                <section>
+                    <title>Valutazione dell'Impatto</title>
+                    <p>
+                        L'implementazione richiede un aggiornamento del firmware del sistema e una revisione della configurazione del software di controllo. Sarà inoltre necessario illustrare le nuove modalità di regolazione e monitoraggio.
+                    </p>
+                </section>
+    
+                <section>
+                    <title>Prossimi Passi</title>
+                    <ol>
+                        <li>Installazione di un prototipo su un'unità pilota.</li>
+                        <li>Test di validazione delle prestazioni e della precisione di regolazione.</li>
                         <li>Piano di implementazione per la produzione.</li>
                     </ol>
                 </section>

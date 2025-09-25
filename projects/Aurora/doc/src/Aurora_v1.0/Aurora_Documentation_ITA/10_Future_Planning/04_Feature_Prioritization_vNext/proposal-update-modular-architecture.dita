@@ -2,14 +2,15 @@
     <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
     <topic id="proposal-update-modular-architecture">
         <title>Progettazione Sistema di Controllo Modulare</title>
+        <image href="doc/src/Aurora_v1.0/Aurora_Documentation_ITA/resources/images/proposal-update-modular-architecture.jpg" alt="" placement=""/>
         <shortdesc>
-            Si propone la riprogettazione del sistema di controllo (hardware PCB e software) per il sistema "Aurora", con l'obiettivo di renderlo il più modulare possibile, attraverso un'architettura basata su un core centrale e plugin.
+            Si propone la riprogettazione del sistema di controllo (hardware PCB e software) per il sistema Aurora, con l'obiettivo di renderlo il più modulare possibile, attraverso un'architettura basata su un core centrale e plugin.
         </shortdesc>
 
         <body>
             <section>
                 <title>Contesto</title>
-                <p>L'attuale sistema di controllo di Aurora è stato sviluppato con un'architettura monolitica, che presenta limiti di scalabilità e complessità nella manutenzione. La crescente necessità di adattabilità e personalizzazione richiede una nuova progettazione più flessibile e modulare.
+                <p>L'attuale sistema di controllo del sistema è stato sviluppato con un'architettura monolitica, che presenta limiti di scalabilità e complessità nella manutenzione. La crescente necessità di adattabilità e personalizzazione richiede una nuova progettazione più flessibile e modulare.
                 </p>
             </section>
 
