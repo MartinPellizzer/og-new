@@ -24,6 +24,7 @@ void cycle_start()
     Serial.print("cycle.state_cur");
     Serial.println(cycle.state_cur);
   }
+
   if (cycle_state == OXY_01)
   {
     digitalWrite(RO_1, 1);
@@ -40,34 +41,24 @@ void cycle_start()
   {
     digitalWrite(RO_6, 1);
   }
-  if (cycle_state == OXY_03)
-  {
-    digitalWrite(RO_7, 1);
-  }
-  if (cycle_state == O3_03)
-  {
-    digitalWrite(RO_8, 1);
-  }
   if (millis() - cycle_millis_cur > 5000) 
   {
     cycle_millis_cur = millis();
-    if (power.power_cur == 1)
+    if (power.power_cur == 0)
     {
       if (cycle_state == OXY_01) {cycle_state = O3_01;}
+    }
+    else if (power.power_cur == 1)
+    {
+      if (cycle_state == OXY_01) {cycle_state = O3_01;}
+      else if (cycle_state == O3_01) {cycle_state = OXY_02;}
+      else if (cycle_state == OXY_02) {cycle_state = O3_02;}
     }
     else if (power.power_cur == 2)
     {
       if (cycle_state == OXY_01) {cycle_state = O3_01;}
       else if (cycle_state == O3_01) {cycle_state = OXY_02;}
       else if (cycle_state == OXY_02) {cycle_state = O3_02;}
-    }
-    else
-    {
-      if (cycle_state == OXY_01) {cycle_state = O3_01;}
-      else if (cycle_state == O3_01) {cycle_state = OXY_02;}
-      else if (cycle_state == OXY_02) {cycle_state = O3_02;}
-      else if (cycle_state == O3_02) {cycle_state = OXY_03;}
-      else if (cycle_state == OXY_03) {cycle_state = O3_03;}
     }
   }
 }
@@ -87,13 +78,11 @@ void cycle_stop()
   {
     digitalWrite(RO_2, 0);
     digitalWrite(RO_6, 0);
-    digitalWrite(RO_8, 0);
   }
   else if (cycle_state == OFF_OXY)
   {
     digitalWrite(RO_1, 0);
     digitalWrite(RO_3, 0);
-    digitalWrite(RO_7, 0);
   }
   if (millis() - cycle_millis_cur > 5000) 
   {

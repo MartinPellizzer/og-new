@@ -361,12 +361,12 @@ void nextion_input_p_power()
   if (nextion_array_compare(cmd_p_power_up, nextion.inputs_buff)) 
   {
     power.power_tmp += 1;
-    if (power.power_tmp > 3) power.power_tmp = 3;
+    if (power.power_tmp > 2) power.power_tmp = 2;
   }
   if (nextion_array_compare(cmd_p_power_down, nextion.inputs_buff)) 
   {
     power.power_tmp -= 1;
-    if (power.power_tmp < 1) power.power_tmp = 1;
+    if (power.power_tmp < 0) power.power_tmp = 0;
   }
 }
 
@@ -795,9 +795,9 @@ void nextion_input_p_clk_time()
   if (nextion_array_compare(cmd_p_clock_time_hour_down, nextion.inputs_buff))
   {
     rtc.hour_tmp -= 1;
-    if (rtc.hour_tmp > 1)
+    if (rtc.hour_tmp < 0)
     {
-      rtc.hour_tmp = 1;
+      rtc.hour_tmp = 0;
     }
   }
   if (nextion_array_compare(cmd_p_clock_time_minute_up, nextion.inputs_buff))
@@ -811,9 +811,9 @@ void nextion_input_p_clk_time()
   if (nextion_array_compare(cmd_p_clock_time_minute_down, nextion.inputs_buff))
   {
     rtc.minute_tmp -= 1;
-    if (rtc.minute_tmp > 1)
+    if (rtc.minute_tmp < 0)
     {
-      rtc.minute_tmp = 1;
+      rtc.minute_tmp = 0;
     }
   }
   if (nextion_array_compare(cmd_p_clock_time_second_up, nextion.inputs_buff))
@@ -827,9 +827,9 @@ void nextion_input_p_clk_time()
   if (nextion_array_compare(cmd_p_clock_time_second_down, nextion.inputs_buff))
   {
     rtc.second_tmp -= 1;
-    if (rtc.second_tmp > 1)
+    if (rtc.second_tmp < 0)
     {
-      rtc.second_tmp = 1;
+      rtc.second_tmp = 0;
     }
   }
 }
@@ -1142,14 +1142,42 @@ void nextion_update_page_home(uint8_t force_refresh)
     }
   }
   // power
-  if (force_refresh || power.power_old != power.power_cur) 
+  // if (force_refresh || power.power_old != power.power_cur) 
+  // {
+  //   power.power_old = power.power_cur;
+  //   {
+  //     uint8_t _buffer[] = { 0x74, 0x31, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x22, 0xff, 0xff, 0xff };
+  //     for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+  //     {
+  //       _buffer[8] = (power.power_cur) + 0x30;
+  //       Serial2.write(_buffer[i]);
+  //     }
+  //   }
+  // }
+  if (force_refresh || power.power_old != power.power_cur)
   {
     power.power_old = power.power_cur;
+    if (power.power_cur == 0)
     {
-      uint8_t _buffer[] = { 0x74, 0x31, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x22, 0xff, 0xff, 0xff };
+      uint8_t _buffer[] = { 0x74, 0x31, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x31, 0x30, 0x22, 0xff, 0xff, 0xff };
       for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
       {
-        _buffer[8] = (power.power_cur) + 0x30;
+        Serial2.write(_buffer[i]);
+      }
+    }
+    else if (power.power_cur == 1)
+    {
+      uint8_t _buffer[] = { 0x74, 0x31, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x32, 0x30, 0x22, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+    else if (power.power_cur == 2)
+    {
+      uint8_t _buffer[] = { 0x74, 0x31, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x31, 0x30, 0x78, 0x32, 0x22, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
         Serial2.write(_buffer[i]);
       }
     }
@@ -1193,23 +1221,27 @@ void nextion_update_page_power(uint8_t force_refresh)
   if (force_refresh || power.power_old != power.power_tmp)
   {
     power.power_old = power.power_tmp;
-    // if (power.power_tmp >= 100)
-    // {
-    //   uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x30, 0x30, 0x25, 0x22, 0xff, 0xff, 0xff };
-    //   for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
-    //   {
-    //     _buffer[8] = (power.power_tmp % 1000 / 100) + 0x30;
-    //     _buffer[9] = (power.power_tmp % 100 / 10) + 0x30;
-    //     _buffer[10] = (power.power_tmp % 10 / 1) + 0x30;
-    //     Serial2.write(_buffer[i]);
-    //   }
-    // }
-    // else
+    if (power.power_tmp == 0)
     {
-      uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x22, 0xff, 0xff, 0xff };
+      uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x31, 0x30, 0x22, 0xff, 0xff, 0xff };
       for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
       {
-        _buffer[8] = (power.power_tmp) + 0x30;
+        Serial2.write(_buffer[i]);
+      }
+    }
+    else if (power.power_tmp == 1)
+    {
+      uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x32, 0x30, 0x22, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+    else if (power.power_tmp == 2)
+    {
+      uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x31, 0x30, 0x78, 0x32, 0x22, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
         Serial2.write(_buffer[i]);
       }
     }

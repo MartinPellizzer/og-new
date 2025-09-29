@@ -19,6 +19,17 @@ RTC_DS3231 rtc_lib;
 #define RI_2 32
 #define S1_010V 35
 
+
+typedef struct core_t 
+{
+  uint8_t generators_num = 2;
+} core_t;
+core_t core = {};
+
+
+
+
+
 #define CALENDAR_TIMERS_NUM 9
 
 int32_t calendar_times[7][CALENDAR_TIMERS_NUM][2] = {
@@ -90,9 +101,9 @@ DateTime now_old;
 ///////////////////////////////////////////////////////////////////////
 #define POWER_TYPE_PIN 15
 typedef struct power_t {
-  int8_t power_old = -1;
-  int8_t power_tmp = 50;
-  int8_t power_cur = 50;
+  int8_t power_old = -2;
+  int8_t power_tmp = -1;
+  int8_t power_cur = 0; // 0:10, 1:20, 2:10-10
 } power_t;
 power_t power = {};
 
@@ -107,8 +118,6 @@ enum Cycle {
   O3_01,
   OXY_02,
   O3_02,
-  OXY_03,
-  O3_03,
   OFF_O3,
   OFF_OXY
 };
@@ -314,10 +323,28 @@ void setup()
     }
   }
 
-  if (!rtc_lib.begin()) 
+  bool rtc_init_success = false;
+  for (int i = 0; i < 10; i++)
   {
-    Serial.println("Couldn't find RTC");
-    Serial.flush();
+    if (!rtc_lib.begin()) 
+    {
+      Serial.print("RTC INIT ATTEMPT ");
+      Serial.print(i);
+      Serial.println(": FAILED");
+      Serial.flush();
+      delay(1000);
+    }
+    else
+    {
+      Serial.print("RTC INIT ATTEMPT ");
+      Serial.print(i);
+      Serial.println(": SUCCES");
+      rtc_init_success = true;
+      break;
+    }
+  }
+  if (!rtc_init_success)
+  {
     while (1) delay(10);
   }
   if (rtc_lib.lostPower()) 
@@ -351,4 +378,7 @@ void loop()
 
   // ;nextion
   nextion_manager();
+
+  // ;valves
+  valves_manager();
 }
