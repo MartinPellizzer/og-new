@@ -61,6 +61,10 @@ void loop()
       {
         Sender.write(buff[k]);
       }
+      for(int k = 0; k < 9; k++)
+      {
+        Serial.println(buff[k]);
+      }
       delay(10);
       digitalWrite(RE_DE_PIN, LOW);
       for(int k = 0; k < 9; k++)
