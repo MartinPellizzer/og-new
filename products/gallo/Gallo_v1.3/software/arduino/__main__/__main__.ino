@@ -1,4 +1,4 @@
-// TODO: Avvio esterno?
+// GALLO v1.3
 
 #include "RTClib.h"
 RTC_DS3231 rtc_lib;
@@ -284,7 +284,7 @@ void setup()
   int eeprom_power = EEPROM.read(address);
   if (eeprom_power == 255)
   {
-    power.power_cur = 50;
+    power.power_cur = 1;
   }
   else
   {

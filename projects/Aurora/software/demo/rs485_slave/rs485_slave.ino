@@ -23,7 +23,6 @@ void rs485_read()
       Serial.println(rs485.new_data_buffer[0]);
 
       // NEXTION PRINT
-      
       uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x22, 0xff, 0xff, 0xff };
       _buffer[8] = (rs485.new_data_buffer[0]) + 0x30;
       for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 

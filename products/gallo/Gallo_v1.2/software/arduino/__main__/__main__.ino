@@ -1,4 +1,4 @@
-// TODO: Avvio esterno?
+// v1.2
 
 #include "RTClib.h"
 RTC_DS3231 rtc_lib;
@@ -90,9 +90,9 @@ DateTime now_old;
 ///////////////////////////////////////////////////////////////////////
 #define POWER_TYPE_PIN 15
 typedef struct power_t {
-  int8_t power_old = -1;
-  int8_t power_tmp = 50;
-  int8_t power_cur = 50;
+  int8_t power_old = -2;
+  int8_t power_tmp = -1;
+  int8_t power_cur = 1;
 } power_t;
 power_t power = {};
 
@@ -201,6 +201,13 @@ external_input_t external_input = {};
 typedef struct sensor_temperature_t {  
   int8_t state_old = -2;
   int8_t state_cur = -1;
+  int32_t alarm_millis_cur = 0;
+  int8_t enable_old = -2;
+  int8_t enable_tmp = -1;
+  int8_t enable_cur = 1;
+  int8_t alarm_seconds_old = -2;
+  int8_t alarm_seconds_tmp = -1;
+  int8_t alarm_seconds_cur = 5;
 } sensor_temperature_t;
 sensor_temperature_t sensor_temperature = {};
 
@@ -256,7 +263,7 @@ void setup()
   int eeprom_power = EEPROM.read(address);
   if (eeprom_power == 255)
   {
-    power.power_cur = 50;
+    power.power_cur = 1;
   }
   else
   {

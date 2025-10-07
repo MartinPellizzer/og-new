@@ -1,10 +1,12 @@
 //////////////////////////////////////////////////////////////////////
 // EEPROM address space
 //////////////////////////////////////////////////////////////////////
-#define ALARM_PPB             20
-#define ALARM_TIMER_MINUTES   22
-#define EXTERNAL_INPUT        24
-#define CALENDAR_ENABLED      26
+#define ALARM_PPB                   20
+#define ALARM_TIMER_MINUTES         22
+#define EXTERNAL_INPUT              24
+#define CALENDAR_ENABLED            26
+#define SENSOR_TEMPERATURE_ENABLE   28
+#define SENSOR_TEMPERATURE_SECONDS  30
 
 uint8_t get_eeprom_address_calendar(int day_i, int time_i, int offset)
 {
@@ -40,6 +42,18 @@ void eeprom_init()
   {
     o3_sensor_alarm.alarm_timer_minutes_cur = eeprom_alarm_timer_minutes_cur;
   }
+  // sensor temperature
+  uint16_t eeprom_sensor_temperature_enable_cur = eeprom_read_uint16(SENSOR_TEMPERATURE_ENABLE);
+  if (eeprom_sensor_temperature_enable_cur != 65535)
+  {
+    sensor_temperature.enable_cur = eeprom_sensor_temperature_enable_cur;
+  }
+  uint16_t eeprom_sensor_temperature_alarm_seconds_cur = eeprom_read_uint16(SENSOR_TEMPERATURE_SECONDS);
+  if (eeprom_sensor_temperature_alarm_seconds_cur != 65535)
+  {
+    sensor_temperature.alarm_seconds_cur = eeprom_sensor_temperature_alarm_seconds_cur;
+  }
+  // external input
   uint16_t eeprom_external_input_cur = eeprom_read_uint16(EXTERNAL_INPUT);
   if (eeprom_external_input_cur != 65535)
   {
