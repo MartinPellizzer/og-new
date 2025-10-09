@@ -41,6 +41,9 @@ void setup()
 
 void loop()
 {
+  rs485.sender_buffer[0] = 0xFF;
+  rs485.sender_buffer[1] = 0xFF;
+  rs485.sender_buffer[2] = 0xFF;
   rs485_manager();
 }
 

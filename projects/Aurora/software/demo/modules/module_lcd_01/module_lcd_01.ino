@@ -1,3 +1,5 @@
+// MODULE: 01
+
 #include <LiquidCrystal_I2C.h>
 LiquidCrystal_I2C lcd(0x27,20,4);
 
@@ -39,12 +41,16 @@ void setup()
 
   // LCD PRINT
   lcd.setCursor(0, 0);
-  lcd.print("ID: ");
+  lcd.print("ID:");
   lcd.print(MODULE_ID);
+  lcd.print(" MOD:SENS");
 }
 
 void loop()
 {
+  rs485.sender_buffer[0] = 0xFF;
+  rs485.sender_buffer[1] = 0xFF;
+  rs485.sender_buffer[2] = 0xFF;
   rs485_manager();
 }
 

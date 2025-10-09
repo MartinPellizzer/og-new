@@ -1,3 +1,15 @@
+// rs485_read
+// rs485_read_timeout
+// rs485_write
+
+// rs485_receiver_buffer_debug
+// rs485_receiver_buffer_cear
+
+// rs485_sender_buffer_debug
+// rs485_sender_buffer_cear
+
+// rs485_manager
+
 void rs485_read()
 {
   if (rs485.new_data_state)
@@ -29,15 +41,12 @@ void rs485_write()
     }
     delay(10);
     digitalWrite(rs485.PIN_RE_DE, LOW);
-    rs485.state_transmission = 0;
-    rs485.state_transmission_timer_millis = millis();
 }
 
-
-void rs485_read_debug()
+void rs485_receiver_buffer_debug()
 {
   //DEBUG SERIAL
-  Serial.println("DATA RECEIVED");
+  Serial.print("RCV DATA: ");
   for (int i = 0; i < 9; i++)
   {
     Serial.print(rs485.receiver_buffer[i]);
@@ -47,10 +56,10 @@ void rs485_read_debug()
   Serial.println();
 }
 
-void rs485_write_debug()
+void rs485_sender_buffer_debug()
 {
   //DEBUG SERIAL
-  Serial.println("DATA RECEIVED");
+  Serial.print("SND DATA: ");
   for (int i = 0; i < 9; i++)
   {
     Serial.print(rs485.sender_buffer[i]);
@@ -69,15 +78,61 @@ void rs485_read_timeout()
     Serial.println("ERR: ACK TIMEOUT");
     Serial.println("***********************************");
     Serial.println();
-    // modules[modules_i].online_cur = 0;
+    Serial.println();
+    modules[modules_i].online_cur = 0;
   }
+}
+
+void rs485_receiver_buffer_cear()
+{
+  for (int i = 0; i < 9; i++)
+  {
+    rs485.receiver_buffer[i] = 0;
+  }
+}
+
+void rs485_sender_buffer_cear()
+{
+  for (int i = 0; i < 9; i++)
+  {
+    rs485.sender_buffer[i] = 0;
+  }
+}
+
+int rs485_sender_buffer_ack()
+{
+  if (rs485.receiver_buffer[0] == 0xFF && 
+      rs485.receiver_buffer[1] == 0xFF && 
+      rs485.receiver_buffer[2] == 0xFF)
+  {
+    Serial.println("***********************************");
+    Serial.println("OK: ACK VALID");
+    Serial.println("***********************************");
+    return 1;
+  }
+  return 0;
 }
 
 void rs485_manager()
 {
   if (rs485.state_transmission == 1)
   {
-    rs485_write();
+    if (millis() - timer_test > 1000)
+    {
+      timer_test = millis();
+      modules_i += 1;
+      modules_i %= modules_num;
+      counter += 1;
+      counter %= 10;
+      rs485.sender_buffer[0] = modules_i;
+      rs485.sender_buffer[1] = counter;
+      
+      rs485_write();
+      rs485_sender_buffer_debug();
+      rs485_sender_buffer_cear();
+      rs485.state_transmission = 0;
+      rs485.state_transmission_timer_millis = millis();
+    }
   }
 
   if (rs485.state_transmission == 0)
@@ -85,13 +140,18 @@ void rs485_manager()
     rs485_read();
     if (rs485.receiver_buffer_ready == 1)
     {
+      rs485_receiver_buffer_debug();
+      int ack = rs485_sender_buffer_ack();
+      if (ack == 1)
+      {
+        modules[modules_i].online_cur = 1;
+      }
+      rs485_receiver_buffer_cear();
       rs485.receiver_buffer_ready = 0;
       rs485.state_transmission = 1;
 
-      // TODO: CHECK ACK
-
-      // rs485_read_debug();
-      // modules[modules_i].online_cur = 1;
+      Serial.println();
+      Serial.println();
     }
     rs485_read_timeout();
   }
