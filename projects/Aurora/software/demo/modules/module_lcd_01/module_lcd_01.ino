@@ -23,6 +23,12 @@ typedef struct rs485_t {
 } rs485_t;
 rs485_t rs485 = {};
 
+
+typedef struct sensor_temperature_t {
+  int8_t temperature_cur = 0;
+} sensor_temperature_t;
+sensor_temperature_t sensor_temperature = {};
+
 uint32_t timer_test = 0;
 
 void setup() 
@@ -44,13 +50,22 @@ void setup()
   lcd.print("ID:");
   lcd.print(MODULE_ID);
   lcd.print(" MOD:SENS");
+
+  rs485.sender_buffer[0] = 0xFF;
+  rs485.sender_buffer[1] = 0xFF;
+  rs485.sender_buffer[2] = 0xFF;
+  rs485.sender_buffer[3] = 0;
 }
 
 void loop()
 {
-  rs485.sender_buffer[0] = 0xFF;
-  rs485.sender_buffer[1] = 0xFF;
-  rs485.sender_buffer[2] = 0xFF;
+  if (millis() - timer_test > 1000)
+  {
+    timer_test = millis();
+    sensor_temperature.temperature_cur = random(21, 24);
+    lcd_read_print();
+    rs485.sender_buffer[3] = sensor_temperature.temperature_cur;
+  }
   rs485_manager();
 }
 

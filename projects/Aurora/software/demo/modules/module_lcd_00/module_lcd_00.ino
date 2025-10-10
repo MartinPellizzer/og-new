@@ -2,6 +2,7 @@
 LiquidCrystal_I2C lcd(0x27,20,4);
 
 #define MODULE_ID 0
+#define RELAY_PIN 12
 
 HardwareSerial serial_rs485(1);
 typedef struct rs485_t {
@@ -30,6 +31,9 @@ void setup()
   pinMode(rs485.PIN_RE_DE, OUTPUT);
   digitalWrite(rs485.PIN_RE_DE, LOW);
 
+  pinMode(RELAY_PIN, OUTPUT);
+  digitalWrite(RELAY_PIN, LOW);
+
   lcd.init();
   lcd.backlight();
 
@@ -37,13 +41,14 @@ void setup()
   lcd.setCursor(0, 0);
   lcd.print("ID: ");
   lcd.print(MODULE_ID);
+  
+  rs485.sender_buffer[0] = 0xFF;
+  rs485.sender_buffer[1] = 0xFF;
+  rs485.sender_buffer[2] = 0xFF;
 }
 
 void loop()
 {
-  rs485.sender_buffer[0] = 0xFF;
-  rs485.sender_buffer[1] = 0xFF;
-  rs485.sender_buffer[2] = 0xFF;
   rs485_manager();
 }
 

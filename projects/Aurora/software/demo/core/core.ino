@@ -20,6 +20,8 @@ typedef struct module_t {
   int8_t online_old = -2;
   int8_t online_cur = 0;
   int8_t identify_attempts = 0;
+  int8_t value_old = -2;
+  int8_t value_cur = 0;
 } module_t;
 module_t module_rele = { .id = 0 };
 module_t module_sensor = { .id = 1 };
@@ -30,6 +32,8 @@ int8_t modules_i = 0;
 module_t modules[3] = { module_rele, module_sensor, module_sd};
 
 uint32_t timer_test = 0;
+
+int8_t relay_state = 0;
 
 
 void setup() 
@@ -55,9 +59,11 @@ void nextion_print()
       module_t module_cur = modules[i];
       if (module_cur.online_cur == 1)
       {
-        uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4D, 0x4F, 0x44, 0x20, 0x30, 0x31, 0x3A, 0x20, 0x4F, 0x4E, 0x22, 0xff, 0xff, 0xff};
+        uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4D, 0x4F, 0x44, 0x20, 0x30, 0x31, 0x3A, 0x20, 0x4F, 0x4E, 0x20, 0x2D, 0x2D, 0x22, 0xff, 0xff, 0xff};
         _buffer[1] = (module_cur.id) + 0x30;
         _buffer[13] = (module_cur.id) + 0x30;
+        _buffer[19] = (module_cur.value_cur % 100 / 10) + 0x30;
+        _buffer[20] = (module_cur.value_cur % 10 / 1) + 0x30;
         for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
         {
           Serial2.write(_buffer[i]);
@@ -79,29 +85,6 @@ void nextion_print()
 
 void loop()
 {
-  // // SET WRITE BUFFER
-  // if (millis() - timer_test > 1000)
-  // {
-  //   timer_test = millis();
-  //   counter += 1;
-  //   if (counter > 9) counter = 0;
-  //   // if (rs485.sender_buffer[0] == 0)
-  //   // {
-  //   //   // modules_i = 1;
-  //   //   rs485.sender_buffer[0] = 1;
-  //   //   rs485.sender_buffer[1] = module_01_test_digit;
-  //   //   module_01_test_digit += 1;
-  //   //   module_01_test_digit %= 2;
-  //   // }
-  //   // else
-  //   {
-  //     // modules_i = 0;
-  //     // rs485.sender_buffer[0] = 0;
-  //     rs485.sender_buffer[1] = counter;
-  //   }
-  //   // rs485_sender_buffer_debug();
-  // }
-
   rs485_manager();
   
   nextion_print();

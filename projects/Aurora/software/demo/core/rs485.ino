@@ -122,10 +122,24 @@ void rs485_manager()
       timer_test = millis();
       modules_i += 1;
       modules_i %= modules_num;
-      counter += 1;
-      counter %= 10;
       rs485.sender_buffer[0] = modules_i;
-      rs485.sender_buffer[1] = counter;
+      if (modules_i == 0)
+      {
+        relay_state = !relay_state;
+        rs485.sender_buffer[1] = relay_state;
+      }
+      if (modules_i == 1)
+      {
+        counter += 1;
+        counter %= 10;
+        rs485.sender_buffer[1] = counter;
+      }
+      if (modules_i == 2)
+      {
+        counter += 1;
+        counter %= 10;
+        rs485.sender_buffer[1] = counter;
+      }
       
       rs485_write();
       rs485_sender_buffer_debug();
@@ -145,6 +159,10 @@ void rs485_manager()
       if (ack == 1)
       {
         modules[modules_i].online_cur = 1;
+        if (modules[modules_i].id == 1)
+        {
+          modules[modules_i].value_cur = rs485.receiver_buffer[3];
+        }
       }
       rs485_receiver_buffer_cear();
       rs485.receiver_buffer_ready = 0;

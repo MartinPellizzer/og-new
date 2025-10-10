@@ -1,4 +1,5 @@
 
+
 void rs485_read()
 {
   if (rs485.new_data_state)
@@ -63,9 +64,6 @@ void rs485_write_debug()
 void lcd_read_print()
 {
   // LCD PRINT
-  lcd.setCursor(0, 0);
-  lcd.print("ID: ");
-  lcd.print(MODULE_ID);
   lcd.setCursor(0, 1);
   lcd.print(rs485.receiver_buffer[1]);
 }
@@ -73,25 +71,4 @@ void lcd_read_print()
 void rs485_command_execute()
 {
   digitalWrite(RELAY_PIN, rs485.receiver_buffer[1]);
-}
-
-void rs485_manager()
-{
-  rs485_read();
-  if (rs485.receiver_buffer_ready == 1)
-  {
-    rs485.receiver_buffer_ready = 0;
-
-    rs485_read_debug();
-
-    if (rs485.receiver_buffer[0] == MODULE_ID)
-    {
-      // EXECUTE COMMAND ASKED BY CORE
-      lcd_read_print();
-      rs485_command_execute();
-      
-      // SEND ACK TO CORE
-      rs485_write();
-    }
-  }
 }

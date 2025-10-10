@@ -74,6 +74,7 @@ void lcd_read_print()
 
 void rs485_command_execute()
 {
+  digitalWrite(RELAY_PIN, rs485.receiver_buffer[1]);
 }
 
 void rs485_manager()
