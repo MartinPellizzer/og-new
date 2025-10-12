@@ -134,6 +134,59 @@ def h1_reverse(text, align='left', align_mobile='left'):
     '''
     return html
 
+def article_h1_default(text, align='left', align_mobile='left'):
+    utils.css_create_if_not_exists(css_filepath)
+    utils.css_create_if_not_exists(css_mobile_filepath)
+    ###
+    with open(css_filepath) as f: css = f.read()
+    with open(css_mobile_filepath) as f: css_mobile = f.read()
+    class_name_main = '.article_h1_default'
+    if f'{class_name_main} ' not in css:
+        css += f'''
+            {class_name_main} {{
+                color: {g.color_black_pearl};
+                font-size: {g.typography_size_xxl};
+                line-height: {g.typography_line_height_xxl};
+                font-weight: normal;
+                margin-bottom: 16px;
+            }}
+        '''
+    if align != '':
+        class_name = f'.align_{align}'
+        if f'{class_name} ' not in css:
+            css += f'''
+                {class_name} {{
+                    text-align: {align};
+                }}
+            '''
+    if align_mobile != '':
+        class_name = f'.align_{align_mobile}_mobile'
+        if f'{class_name} ' not in css_mobile:
+            css_mobile += f'''
+                @media screen and (max-width: 768px) {{
+                    {class_name} {{
+                        text-align: {align_mobile};
+                    }}
+                }}
+            '''
+    with open(css_filepath, 'w') as f: f.write(css)
+    with open(css_mobile_filepath, 'w') as f: f.write(css_mobile)
+    ###
+    text = utils.aschii(text)
+    ###
+    class_inline = ''
+    if align != '': class_inline += f'align_{align} '
+    ###
+    class_inline_mobile = ''
+    if align_mobile != '': class_inline_mobile += f'align_{align_mobile}_mobile '
+    ###
+    html = f'''
+        <h1 class="{class_name_main.replace('.', '')} {class_inline} {class_inline_mobile}">{text}</h1>
+    '''
+    print(css)
+    quit()
+    return html
+
 def h2_default(text, align='', align_mobile=''):
     utils.css_create_if_not_exists(css_filepath)
     utils.css_create_if_not_exists(css_mobile_filepath)

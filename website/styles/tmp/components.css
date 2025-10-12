@@ -173,3 +173,11 @@
                     margin-bottom: 0;
                 }
             
+            .article_h1_default {
+                color: #08162C;
+                font-size: 48px;
+                line-height: 52px;
+                font-weight: normal;
+                margin-bottom: 16px;
+            }
+        

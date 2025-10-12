@@ -3538,5 +3538,35 @@ def spacer_1():
 
 
 
+##########################################################
+# ;title
+##########################################################
 
+def heading_1():
+    html_article_h1 = components.article_h1_default(
+        text = f'''Tutto quello che devi sapere sull'ozono''',
+        align = f'center',
+    )
+    html = f'''
+        <section class="container-xl">
+            {html_article_h1}
+        </section>
+    '''
+    ###
+    with open('styles/tmp/hub-ozono.css') as f: css = f.read()
+    with open('styles/tmp-mobile/hub-ozono-mobile.css') as f: css_mobile = f.read()
+    class_name = '.container-xl'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }}
+        '''
+    with open('styles/tmp/hub-ozono.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/hub-ozono-mobile.css', 'w') as f: f.write(css_mobile)
+    return html
 

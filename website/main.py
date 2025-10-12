@@ -35,6 +35,9 @@ if 1:
 if 1:
     from lib import pag_contatti
     pag_contatti.gen()
+if 1:
+    from hub import hub_ozone
+    hub_ozone.gen()
 
 css_core = f'''
     * {{
@@ -67,3 +70,4 @@ for filename in os.listdir('styles/tmp-mobile'):
     with open(filepath) as f: content = f.read()
     css += content
 with open('public/style.css', 'w') as f: f.write(css)
+

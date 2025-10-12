@@ -16,112 +16,6 @@
         width: 100%;
     }
 
-            .heading_default_2 {
-                max-width: 36.4rem;
-                margin-right: auto;
-                margin-left: auto;
-                display: flex;
-                flex-direction: column;
-                margin-bottom: 32px;
-            }
-        
-            .card_default_1 {
-                background-color: #F8F9FB; 
-                padding: 32px; 
-                border-radius: 16px;
-                box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
-                display: flex; 
-                flex-direction: column; 
-                justify-content: space-between;
-            }
-        
-            .card_3_default {
-                background-color: #F8F9FB; 
-                border-radius: 1.6rem;
-                padding: 1.6rem;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-            }
-        
-            .card_default {
-                background-color: #F8F9FB; 
-                padding: 32px; 
-                border-radius: 16px;
-            }
-        
-            .contact_reverse {
-                display: flex; 
-                gap: 8px;
-            }
-        
-            .contact_reverse p {
-                color: #ffffff;
-                font-size: 16px; 
-                line-height: 24px; 
-                margin-bottom: 16px; 
-            }
-        
-            .card_itp_default {
-                background-color: #F8F9FB; 
-                padding: 3.2rem; 
-                border-radius: 1.6rem;
-            }
-        
-            .heading_default_3 {
-                max-width: 36.4rem;
-                margin-right: auto;
-                margin-left: auto;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin-bottom: 32px;
-            }
-        
-            .contact_col {
-                display: flex; 
-                flex-direction: column; 
-                gap: 16px;
-            }
-        
-            .contact_card_default {
-                background-color: #F8F9FB;
-                padding: 1.6rem;
-                display: flex; 
-                justify-content: space-between; 
-                align-items: center;
-                gap: 8px;
-            }
-        
-            .contact_card_default_content {
-                display: flex; 
-                gap: 8px;
-            }
-        
-            .contact_card_default_content p {
-                color: #08162C;
-                font-size: 16px; 
-                line-height: 24px; 
-            }
-        
-            .heading_2col_1 {
-                max-width: 128rem;
-                margin-right: auto;
-                margin-left: auto;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 32px;
-            }
-        
-            .heading_default_1 {
-                display: flex;
-                align-items: center;
-                gap: 48px;
-                margin-bottom: 32px;
-            }
-        
             .h2_default {
                 color: #08162C;
                 font-size: 48px;
@@ -296,6 +190,14 @@
                     margin-bottom: 0;
                 }
             
+            .article_h1_default {
+                color: #08162C;
+                font-size: 48px;
+                line-height: 52px;
+                font-weight: normal;
+                margin-bottom: 16px;
+            }
+        
             .container-xl {
                 max-width: 1280px;
                 margin-left: auto;
@@ -661,6 +563,120 @@
                 gap: 48px;
             }
         
+            .container-xl {
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+        
+            .heading_default_2 {
+                max-width: 36.4rem;
+                margin-right: auto;
+                margin-left: auto;
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 32px;
+            }
+        
+            .card_default_1 {
+                background-color: #F8F9FB; 
+                padding: 32px; 
+                border-radius: 16px;
+                box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+                display: flex; 
+                flex-direction: column; 
+                justify-content: space-between;
+            }
+        
+            .card_3_default {
+                background-color: #F8F9FB; 
+                border-radius: 1.6rem;
+                padding: 1.6rem;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+        
+            .card_default {
+                background-color: #F8F9FB; 
+                padding: 32px; 
+                border-radius: 16px;
+            }
+        
+            .contact_reverse {
+                display: flex; 
+                gap: 8px;
+            }
+        
+            .contact_reverse p {
+                color: #ffffff;
+                font-size: 16px; 
+                line-height: 24px; 
+                margin-bottom: 16px; 
+            }
+        
+            .card_itp_default {
+                background-color: #F8F9FB; 
+                padding: 3.2rem; 
+                border-radius: 1.6rem;
+            }
+        
+            .heading_default_3 {
+                max-width: 36.4rem;
+                margin-right: auto;
+                margin-left: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 32px;
+            }
+        
+            .contact_col {
+                display: flex; 
+                flex-direction: column; 
+                gap: 16px;
+            }
+        
+            .contact_card_default {
+                background-color: #F8F9FB;
+                padding: 1.6rem;
+                display: flex; 
+                justify-content: space-between; 
+                align-items: center;
+                gap: 8px;
+            }
+        
+            .contact_card_default_content {
+                display: flex; 
+                gap: 8px;
+            }
+        
+            .contact_card_default_content p {
+                color: #08162C;
+                font-size: 16px; 
+                line-height: 24px; 
+            }
+        
+            .heading_2col_1 {
+                max-width: 128rem;
+                margin-right: auto;
+                margin-left: auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 32px;
+            }
+        
+            .heading_default_1 {
+                display: flex;
+                align-items: center;
+                gap: 48px;
+                margin-bottom: 32px;
+            }
+        
             @media screen and (max-width: 768px) {
                 .heading_default_1 {
                     flex-direction: column;
@@ -668,18 +684,6 @@
                 }
             }
         
-                @media screen and (max-width: 768px) {
-                    .align_center_mobile {
-                        text-align: center;
-                    }
-                }
-            
-                @media screen and (max-width: 768px) {
-                    .align_left_mobile {
-                        text-align: left;
-                    }
-                }
-            
             @media screen and (max-width: 768px) {
                 .article-container {
                     margin-top: 4.8rem; 
@@ -868,3 +872,15 @@
                 }
             }
         
+                @media screen and (max-width: 768px) {
+                    .align_center_mobile {
+                        text-align: center;
+                    }
+                }
+            
+                @media screen and (max-width: 768px) {
+                    .align_left_mobile {
+                        text-align: left;
+                    }
+                }
+            
