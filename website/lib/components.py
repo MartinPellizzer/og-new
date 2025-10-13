@@ -183,8 +183,6 @@ def article_h1_default(text, align='left', align_mobile='left'):
     html = f'''
         <h1 class="{class_name_main.replace('.', '')} {class_inline} {class_inline_mobile}">{text}</h1>
     '''
-    print(css)
-    quit()
     return html
 
 def h2_default(text, align='', align_mobile=''):

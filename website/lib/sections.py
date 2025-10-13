@@ -3568,5 +3568,6 @@ def heading_1():
         '''
     with open('styles/tmp/hub-ozono.css', 'w') as f: f.write(css)
     with open('styles/tmp-mobile/hub-ozono-mobile.css', 'w') as f: f.write(css_mobile)
+    
     return html
 
