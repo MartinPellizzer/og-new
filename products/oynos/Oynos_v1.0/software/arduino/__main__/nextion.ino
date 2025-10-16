@@ -72,6 +72,7 @@ uint8_t cmd_p_set_goto_calendar[BUFFER_SIZE] = { 101, 15, 4, 1, 255, 255, 255, 0
 uint8_t cmd_p_set_goto_clock[BUFFER_SIZE] = { 101, 15, 5, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 uint8_t cmd_p_set_goto_power_type[BUFFER_SIZE] = { 101, 15, 6, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 uint8_t cmd_p_set_goto_ozone_sensor_alarm[BUFFER_SIZE] = { 101, 15, 7, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+uint8_t cmd_p_set_goto_sensor_temperature[BUFFER_SIZE] = { 101, 15, 8, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
 // settings list
 uint8_t cmd_p_set_list_back[BUFFER_SIZE] = { 101, 17, 1, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -342,6 +343,10 @@ void nextion_input_p_set()
   {
     nextion.page_cur = P_SENSOR_ALARM;
   }
+    else if (nextion_array_compare(cmd_p_set_goto_sensor_temperature, nextion.inputs_buff)) 
+    {
+      nextion.page_cur = P_TEMPERATURE;
+    }
 }
 
 void nextion_input_p_power()
@@ -361,12 +366,12 @@ void nextion_input_p_power()
   if (nextion_array_compare(cmd_p_power_up, nextion.inputs_buff)) 
   {
     power.power_tmp += 1;
-    if (power.power_tmp > 3) power.power_tmp = 3;
+    if (power.power_tmp > 2) power.power_tmp = 2;
   }
   if (nextion_array_compare(cmd_p_power_down, nextion.inputs_buff)) 
   {
     power.power_tmp -= 1;
-    if (power.power_tmp < 1) power.power_tmp = 1;
+    if (power.power_tmp < 0) power.power_tmp = 0;
   }
 }
 
@@ -920,6 +925,60 @@ void nextion_input_p_temperature_alarm()
   }
 }
 
+void nextion_input_p_temperature()
+{
+  if (nextion_array_compare(cmd_p_set_list_back, nextion.inputs_buff)) 
+  {
+    nextion.page_cur = P_SET;
+  }
+  else if (nextion_array_compare(cmd_p_set_list_save, nextion.inputs_buff)) 
+  {
+    nextion.page_cur = P_SET;
+    sensor_temperature.enable_cur = sensor_temperature.enable_tmp;
+    sensor_temperature.alarm_seconds_cur = sensor_temperature.alarm_seconds_tmp;
+    eeprom_write_uint16(SENSOR_TEMPERATURE_ENABLE, sensor_temperature.enable_cur);
+    eeprom_write_uint16(SENSOR_TEMPERATURE_SECONDS, sensor_temperature.alarm_seconds_cur);
+  }
+  else if (nextion_array_compare(cmd_p_set_list_item1_right, nextion.inputs_buff)) 
+  {
+    if (sensor_temperature.enable_tmp == 0)
+    {
+      sensor_temperature.enable_tmp = 1;
+    }
+    else
+    {
+      sensor_temperature.enable_tmp = 0;
+    }
+  }
+  else if (nextion_array_compare(cmd_p_set_list_item1_left, nextion.inputs_buff)) 
+  {
+    if (sensor_temperature.enable_tmp == 0)
+    {
+      sensor_temperature.enable_tmp = 1;
+    }
+    else
+    {
+      sensor_temperature.enable_tmp = 0;
+    }
+  }
+  else if (nextion_array_compare(cmd_p_set_list_item2_right, nextion.inputs_buff)) 
+  {
+    sensor_temperature.alarm_seconds_tmp += 5;
+    if (sensor_temperature.alarm_seconds_tmp > 60)
+    {
+      sensor_temperature.alarm_seconds_tmp = 60;
+    }
+  }
+  else if (nextion_array_compare(cmd_p_set_list_item2_left, nextion.inputs_buff)) 
+  {
+    sensor_temperature.alarm_seconds_tmp -= 5;
+    if (sensor_temperature.alarm_seconds_tmp < 5)
+    {
+      sensor_temperature.alarm_seconds_tmp = 5;
+    }
+  }
+}
+
 void nextion_eval_serial() 
 {
   /**/ if (nextion.page_cur == P_HOME)              nextion_input_p_home();
@@ -939,6 +998,7 @@ void nextion_eval_serial()
   else if (nextion.page_cur == P_SENSOR_ALARM)      nextion_input_p_sensor_alarm();
   else if (nextion.page_cur == P_OZONE_ALARM)       nextion_input_p_ozone_alarm();
   else if (nextion.page_cur == P_TEMPERATURE_ALARM) nextion_input_p_temperature_alarm();
+  else if (nextion.page_cur == P_TEMPERATURE)       nextion_input_p_temperature();
 }
 
 void nextion_update() 
@@ -966,6 +1026,7 @@ void nextion_update()
   else if (nextion.page_cur == P_SENSOR_ALARM)      nextion_update_page_ozone_sensor_alarm(force_refresh);
   else if (nextion.page_cur == P_OZONE_ALARM)       nextion_update_page_ozone_alarm(force_refresh);
   else if (nextion.page_cur == P_TEMPERATURE_ALARM) nextion_update_page_temperature_alarm(force_refresh);
+  else if (nextion.page_cur == P_TEMPERATURE)       nextion_update_page_sensor_temperature(force_refresh);
 }
 
 ////////////////////////////////////////////////////////
@@ -1072,6 +1133,34 @@ void nextion_update_page_home(uint8_t force_refresh)
       }
     }
   }
+  
+  // ozone sensor external
+  if (force_refresh || sensor.ppb_old != sensor.ppb_cur) 
+  {
+    sensor.ppb_old = sensor.ppb_cur;
+    {
+      if (sensor.is_connected == 1)
+      {
+        uint8_t _buffer[] = { 0x74, 0x35, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x30, 0x2E, 0x30, 0x30, 0x30, 0x22, 0xff, 0xff, 0xff };
+        _buffer[9] = (sensor.ppb_cur % 10000 / 1000) + 0x30;
+        _buffer[11] = (sensor.ppb_cur % 1000 / 100) + 0x30;
+        _buffer[12] = (sensor.ppb_cur % 100 / 10) + 0x30;
+        _buffer[13] = (sensor.ppb_cur % 10 / 1) + 0x30;
+        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+        {
+          Serial2.write(_buffer[i]);
+        }
+      }
+      else 
+      {
+        uint8_t _buffer[] = { 0x74, 0x35, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x2D, 0x2D, 0x2E, 0x2D, 0x2D, 0x2D, 0x22, 0xff, 0xff, 0xff };
+        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+        {
+          Serial2.write(_buffer[i]);
+        }
+      }
+    }
+  }
 
   // clock
   if (force_refresh || rtc.second_old != rtc.second_cur) 
@@ -1142,14 +1231,42 @@ void nextion_update_page_home(uint8_t force_refresh)
     }
   }
   // power
-  if (force_refresh || power.power_old != power.power_cur) 
+  // if (force_refresh || power.power_old != power.power_cur) 
+  // {
+  //   power.power_old = power.power_cur;
+  //   {
+  //     uint8_t _buffer[] = { 0x74, 0x31, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x22, 0xff, 0xff, 0xff };
+  //     for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+  //     {
+  //       _buffer[8] = (power.power_cur) + 0x30;
+  //       Serial2.write(_buffer[i]);
+  //     }
+  //   }
+  // }
+  if (force_refresh || power.power_old != power.power_cur)
   {
     power.power_old = power.power_cur;
+    if (power.power_cur == 0)
     {
-      uint8_t _buffer[] = { 0x74, 0x31, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x22, 0xff, 0xff, 0xff };
+      uint8_t _buffer[] = { 0x74, 0x31, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x31, 0x30, 0x22, 0xff, 0xff, 0xff };
       for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
       {
-        _buffer[8] = (power.power_cur) + 0x30;
+        Serial2.write(_buffer[i]);
+      }
+    }
+    else if (power.power_cur == 1)
+    {
+      uint8_t _buffer[] = { 0x74, 0x31, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x32, 0x30, 0x22, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+    else if (power.power_cur == 2)
+    {
+      uint8_t _buffer[] = { 0x74, 0x31, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x31, 0x30, 0x78, 0x32, 0x22, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
         Serial2.write(_buffer[i]);
       }
     }
@@ -1193,23 +1310,27 @@ void nextion_update_page_power(uint8_t force_refresh)
   if (force_refresh || power.power_old != power.power_tmp)
   {
     power.power_old = power.power_tmp;
-    // if (power.power_tmp >= 100)
-    // {
-    //   uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x30, 0x30, 0x25, 0x22, 0xff, 0xff, 0xff };
-    //   for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
-    //   {
-    //     _buffer[8] = (power.power_tmp % 1000 / 100) + 0x30;
-    //     _buffer[9] = (power.power_tmp % 100 / 10) + 0x30;
-    //     _buffer[10] = (power.power_tmp % 10 / 1) + 0x30;
-    //     Serial2.write(_buffer[i]);
-    //   }
-    // }
-    // else
+    if (power.power_tmp == 0)
     {
-      uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x22, 0xff, 0xff, 0xff };
+      uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x31, 0x30, 0x22, 0xff, 0xff, 0xff };
       for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
       {
-        _buffer[8] = (power.power_tmp) + 0x30;
+        Serial2.write(_buffer[i]);
+      }
+    }
+    else if (power.power_tmp == 1)
+    {
+      uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x32, 0x30, 0x22, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+    else if (power.power_tmp == 2)
+    {
+      uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x31, 0x30, 0x78, 0x32, 0x22, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
         Serial2.write(_buffer[i]);
       }
     }
@@ -2157,7 +2278,76 @@ void nextion_update_page_password(uint8_t force_refresh)
     }
   }
 }
-
+void nextion_update_page_sensor_temperature(uint8_t force_refresh) 
+{
+  if (force_refresh) 
+  {
+    {
+      uint8_t _buffer[] = { 0x70, 0x61, 0x67, 0x65, 0x20, 0x70, 0x5F, 0x73, 0x65, 0x74, 0x5F, 0x6C, 0x69, 0x73, 0x74, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+    {
+      uint8_t _buffer[] = { 0x74, 0x31, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x41, 0x42, 0x49, 0x4C, 0x49, 0x54, 0x41, 0x20, 0x53, 0x45, 0x4E, 0x53, 0x4F, 0x52, 0x45, 0x20, 0x54, 0x45, 0x4D, 0x50, 0x45, 0x52, 0x41, 0x54, 0x55, 0x52, 0x41, 0x3A, 0x20, 0x4F, 0x4E, 0x22, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+    {
+      uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x54, 0x49, 0x4D, 0x45, 0x52, 0x20, 0x53, 0x45, 0x4E, 0x53, 0x4F, 0x52, 0x45, 0x20, 0x54, 0x45, 0x4D, 0x50, 0x45, 0x52, 0x41, 0x54, 0x55, 0x52, 0x41, 0x3A, 0x20, 0x36, 0x30, 0x20, 0x53, 0x45, 0x43, 0x4F, 0x4E, 0x44, 0x49, 0x22, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+    sensor_temperature.enable_tmp = sensor_temperature.enable_cur;
+    sensor_temperature.alarm_seconds_tmp = sensor_temperature.alarm_seconds_cur;
+  }
+  if (force_refresh || sensor_temperature.enable_old != sensor_temperature.enable_tmp)
+  {
+    sensor_temperature.enable_old = sensor_temperature.enable_tmp;
+    if (sensor_temperature.enable_tmp == 1)
+    {
+      uint8_t _buffer[] = { 0x74, 0x31, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x41, 0x42, 0x49, 0x4C, 0x49, 0x54, 0x41, 0x20, 0x53, 0x45, 0x4E, 0x53, 0x4F, 0x52, 0x45, 0x20, 0x54, 0x45, 0x4D, 0x50, 0x45, 0x52, 0x41, 0x54, 0x55, 0x52, 0x41, 0x3A, 0x20, 0x4F, 0x4E, 0x22, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+    else if (sensor_temperature.enable_tmp == 0)
+    {
+      uint8_t _buffer[] = { 0x74, 0x31, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x41, 0x42, 0x49, 0x4C, 0x49, 0x54, 0x41, 0x20, 0x53, 0x45, 0x4E, 0x53, 0x4F, 0x52, 0x45, 0x20, 0x54, 0x45, 0x4D, 0x50, 0x45, 0x52, 0x41, 0x54, 0x55, 0x52, 0x41, 0x3A, 0x20, 0x4F, 0x46, 0x46, 0x22, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+    else
+    {
+      uint8_t _buffer[] = { 0x74, 0x31, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x41, 0x42, 0x49, 0x4C, 0x49, 0x54, 0x41, 0x20, 0x53, 0x45, 0x4E, 0x53, 0x4F, 0x52, 0x45, 0x20, 0x54, 0x45, 0x4D, 0x50, 0x45, 0x52, 0x41, 0x54, 0x55, 0x52, 0x41, 0x3A, 0x20, 0x45, 0x52, 0x52, 0x22, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+  }
+  if (force_refresh || sensor_temperature.alarm_seconds_old != sensor_temperature.alarm_seconds_tmp)
+  {
+    sensor_temperature.alarm_seconds_old = sensor_temperature.alarm_seconds_tmp;
+    {
+      uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x54, 0x49, 0x4D, 0x45, 0x52, 0x20, 0x53, 0x45, 0x4E, 0x53, 0x4F, 0x52, 0x45, 0x20, 0x54, 0x45, 0x4D, 0x50, 0x45, 0x52, 0x41, 0x54, 0x55, 0x52, 0x41, 0x3A, 0x20, 0x36, 0x30, 0x20, 0x53, 0x45, 0x43, 0x4F, 0x4E, 0x44, 0x49, 0x22, 0xff, 0xff, 0xff };
+      _buffer[35] = (sensor_temperature.alarm_seconds_tmp % 100 / 10) + 0x30;
+      _buffer[36] = (sensor_temperature.alarm_seconds_tmp % 10 / 1) + 0x30;
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+  }
+}
 
 void nextion_manager()
 {

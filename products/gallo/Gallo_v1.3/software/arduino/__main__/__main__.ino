@@ -370,7 +370,7 @@ void loop()
   sensor_ozone_alarm_manager();
   sensor_temperature_manager();
 
-  // ;rtc
+  // ;cycle
   cycle_manager();
 
   // ;rtc

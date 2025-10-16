@@ -7,7 +7,7 @@ uint8_t new_data = 0;
 
 uint32_t timer = 0;
 
-#define PIN_010V = 5;
+#define PIN_010V 5
 const int freq = 5000;
 const int ledChannel = 0;
 const int resolution = 8;

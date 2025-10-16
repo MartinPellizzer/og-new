@@ -19,6 +19,18 @@ RTC_DS3231 rtc_lib;
 #define RI_2 32
 #define S1_010V 35
 
+
+typedef struct core_t 
+{
+  uint8_t generators_num = 2;
+} core_t;
+core_t core = {};
+
+
+
+
+
+
 #define CALENDAR_TIMERS_NUM 9
 
 int32_t calendar_times[7][CALENDAR_TIMERS_NUM][2] = {
@@ -107,8 +119,6 @@ enum Cycle {
   O3_01,
   OXY_02,
   O3_02,
-  OXY_03,
-  O3_03,
   OFF_O3,
   OFF_OXY
 };
@@ -134,6 +144,7 @@ enum Nextion_Pages {
   P_SENSOR_ALARM,
   P_OZONE_ALARM,
   P_TEMPERATURE_ALARM,
+  P_TEMPERATURE,
 };
 
 ///////////////////////////////////////////////////////////////////////
@@ -216,12 +227,20 @@ typedef struct external_input_t {
 } external_input_t;
 external_input_t external_input = {};
 
+
 ///////////////////////////////////////////////////////////////////////
 // ;sensor temperature
 ///////////////////////////////////////////////////////////////////////
 typedef struct sensor_temperature_t {  
   int8_t state_old = -2;
   int8_t state_cur = -1;
+  int32_t alarm_millis_cur = 0;
+  int8_t enable_old = -2;
+  int8_t enable_tmp = -1;
+  int8_t enable_cur = 1;
+  int8_t alarm_seconds_old = -2;
+  int8_t alarm_seconds_tmp = -1;
+  int8_t alarm_seconds_cur = 5;
 } sensor_temperature_t;
 sensor_temperature_t sensor_temperature = {};
 
@@ -275,7 +294,7 @@ void setup()
   int eeprom_power = EEPROM.read(address);
   if (eeprom_power == 255)
   {
-    power.power_cur = 50;
+    power.power_cur = 1;
   }
   else
   {
@@ -361,7 +380,7 @@ void loop()
   sensor_ozone_alarm_manager();
   sensor_temperature_manager();
 
-  // ;rtc
+  // ;cycle
   cycle_manager();
 
   // ;rtc
@@ -369,4 +388,7 @@ void loop()
 
   // ;nextion
   nextion_manager();
+
+  // ;valves
+  valves_manager();
 }
