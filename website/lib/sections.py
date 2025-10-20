@@ -255,7 +255,7 @@ def footer_default():
         margin_bottom = '0',
     )
     html_email_paragraph = components.paragraph_reverse(
-        text = f'''elena@ozonogroup.it''',
+        text = f'''info@ozonogroup.it''',
         margin_bottom = '0',
     )
     html_links_heading = components.h2_reverse(
@@ -1243,7 +1243,7 @@ def home_contact():
             Mandaci una email
         ''',
         contact = f'''
-            elena@ozonogroup.it
+            info@ozonogroup.it
         ''',
     )
     html_phone = blocks.contact_reverse(
@@ -1844,7 +1844,7 @@ def contatti_section_1():
             Mandaci una email
         ''',
         contact = f'''
-            elena@ozonogroup.it
+            info@ozonogroup.it
         ''',
     )
     html_contact_card_default_2 = blocks.contact_card_default(
