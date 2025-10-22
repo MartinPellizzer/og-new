@@ -42,12 +42,25 @@ unsigned char FucCheckSum(unsigned char *i, unsigned char ln)
   tempq = (~tempq) + 1; return (tempq);
 }
 
+int ppb = 10000;
+int sensor_transmission_fail = 0;
+int sensor_transmission_fail_counter = 0;
+
 void loop() 
 {
   if (millis() - timer_test > 1000)
   {
     timer_test = millis();
     Serial.println("one second passed...");
+    Serial.println(ppb);
+    sensor_transmission_fail_counter += 1;
+    if (sensor_transmission_fail_counter > 5)
+    {
+      sensor_transmission_fail_counter = 5;
+      ppb = 10000;
+      uint8_t pwm_val = map(ppb, 0, 10000, 0, 255);
+      analogWrite(PIN_010V, pwm_val);
+    }
   }
 
   if (new_data)
@@ -57,7 +70,8 @@ void loop()
       i = 0;
       new_data = 0;
 
-      int ppb = 0;      
+      ppb = 0;
+      sensor_transmission_fail_counter = 0;
 
       // get ppb from sensor
       if (FucCheckSum(buff, 9) == buff[8]) 
@@ -89,10 +103,13 @@ void loop()
       // ledcWrite(ledChannel, pwm_val);
       // ledcWrite(ledChannel, 128);
       analogWrite(PIN_010V, pwm_val);
+
+      Serial.println("valid new value sent");
+
       
-      Serial.print(ppb);
-      Serial.print(" - ");
-      Serial.println(pwm_val);
+      // Serial.print(ppb);
+      // Serial.print(" - ");
+      // Serial.println(pwm_val);
     }
   }
 

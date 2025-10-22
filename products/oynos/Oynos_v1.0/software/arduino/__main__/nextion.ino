@@ -800,9 +800,9 @@ void nextion_input_p_clk_time()
   if (nextion_array_compare(cmd_p_clock_time_hour_down, nextion.inputs_buff))
   {
     rtc.hour_tmp -= 1;
-    if (rtc.hour_tmp > 1)
+    if (rtc.hour_tmp < 0)
     {
-      rtc.hour_tmp = 1;
+      rtc.hour_tmp = 0;
     }
   }
   if (nextion_array_compare(cmd_p_clock_time_minute_up, nextion.inputs_buff))
@@ -816,9 +816,9 @@ void nextion_input_p_clk_time()
   if (nextion_array_compare(cmd_p_clock_time_minute_down, nextion.inputs_buff))
   {
     rtc.minute_tmp -= 1;
-    if (rtc.minute_tmp > 1)
+    if (rtc.minute_tmp < 0)
     {
-      rtc.minute_tmp = 1;
+      rtc.minute_tmp = 0;
     }
   }
   if (nextion_array_compare(cmd_p_clock_time_second_up, nextion.inputs_buff))
@@ -832,9 +832,9 @@ void nextion_input_p_clk_time()
   if (nextion_array_compare(cmd_p_clock_time_second_down, nextion.inputs_buff))
   {
     rtc.second_tmp -= 1;
-    if (rtc.second_tmp > 1)
+    if (rtc.second_tmp < 0)
     {
-      rtc.second_tmp = 1;
+      rtc.second_tmp = 0;
     }
   }
 }

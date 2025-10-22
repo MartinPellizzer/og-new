@@ -64,7 +64,7 @@ void sensor_ozone_alarm_check()
     // trigger alarm / turn off system
     // o3_sensor_alarm.is_alarm_cur = 1;
     is_on_cur = 0;
-    nextion.page_cur = 80;
+    nextion.page_cur = P_OZONE_ALARM;
   }
 
   // if alarm triggered -> go to alarm screen
@@ -73,7 +73,7 @@ void sensor_ozone_alarm_check()
   //   o3_sensor_alarm.is_alarm_old = o3_sensor_alarm.is_alarm_cur;
   //   if (o3_sensor_alarm.is_alarm_cur == 1)
   //   {
-  //     nextion.page_cur = 80;
+  //     nextion.page_cur = P_OZONE_ALARM;
   //   }
   // }
 }

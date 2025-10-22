@@ -42,7 +42,9 @@ void debug_manager()
     // Serial.println(password.digit_counter);
     // Serial.println();
     
-    Serial.println(nextion.page_cur);
+    // Serial.println(nextion.page_cur);
+
+    // Serial.println(o3_sensor_alarm.ppb_cur);
 
     
 
