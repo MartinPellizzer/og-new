@@ -7,6 +7,8 @@
 #define CALENDAR_ENABLED      26
 #define SENSOR_TEMPERATURE_ENABLE   28
 #define SENSOR_TEMPERATURE_SECONDS  30
+#define SENSOR_OZONE_ALARM_ENABLE   32
+
 
 uint8_t get_eeprom_address_calendar(int day_i, int time_i, int offset)
 {
@@ -32,6 +34,12 @@ uint16_t eeprom_read_uint16(uint16_t start_addr)
 
 void eeprom_init() 
 {
+  // sensor ozone alarm
+  uint16_t eeprom_sensor_ozone_alarm_enable_cur = eeprom_read_uint16(SENSOR_OZONE_ALARM_ENABLE);
+  if (eeprom_sensor_ozone_alarm_enable_cur != 65535)
+  {
+    o3_sensor_alarm.enable_cur = eeprom_sensor_ozone_alarm_enable_cur;
+  }
   uint16_t eeprom_ppb_alarm_cur = eeprom_read_uint16(ALARM_PPB);
   if (eeprom_ppb_alarm_cur != 65535)
   {
@@ -42,11 +50,13 @@ void eeprom_init()
   {
     o3_sensor_alarm.alarm_timer_minutes_cur = eeprom_alarm_timer_minutes_cur;
   }
+  // external input
   uint16_t eeprom_external_input_cur = eeprom_read_uint16(EXTERNAL_INPUT);
   if (eeprom_external_input_cur != 65535)
   {
     external_input.is_abilitated_cur = eeprom_external_input_cur;
   }
+  // calendar
   uint16_t eeprom_calendar_enabled = eeprom_read_uint16(CALENDAR_ENABLED);
   if (eeprom_calendar_enabled != 65535)
   {

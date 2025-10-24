@@ -1,4 +1,4 @@
-#include "rs485.h"
+#include <rs485.h>
 
 HardwareSerial serial_rs485(1);
 
@@ -28,24 +28,6 @@ int8_t relay_state = 0;
 uint32_t counter = 0;
 int module_01_test_digit = 0;
 uint32_t nextion_print_millis = 0;
-
-
-
-
-void rs485_read_timeout(rs485_t *rs485, Stream &serial, module_t modules[], int8_t modules_i)
-{
-  if (millis() - rs485->state_transmission_timer_millis > 1000)
-  {
-    rs485->state_transmission = 1;
-    serial.println("***********************************");
-    serial.println("ERR: ACK TIMEOUT");
-    serial.println("***********************************");
-    serial.println();
-    serial.println();
-    modules[modules_i].online_cur = 0;
-  }
-}
-
 
 
 void rs485_manager()
@@ -78,7 +60,7 @@ void rs485_manager()
       
       rs485_write(&rs485, serial_rs485);
       rs485_sender_buffer_debug(&rs485);
-      rs485_sender_buffer_cear(&rs485);
+      rs485_sender_buffer_clear(&rs485);
       rs485.state_transmission = 0;
       rs485.state_transmission_timer_millis = millis();
     }
@@ -90,7 +72,7 @@ void rs485_manager()
     if (rs485.receiver_buffer_ready == 1)
     {
       rs485_receiver_buffer_debug(&rs485);
-      int ack = rs485_sender_buffer_ack(&rs485);
+      int ack = rs485_receiver_buffer_ack(&rs485);
       if (ack == 1)
       {
         Serial.println("***********************************");
@@ -102,14 +84,24 @@ void rs485_manager()
           modules[modules_i].value_cur = rs485.receiver_buffer[3];
         }
       }
-      rs485_receiver_buffer_cear(&rs485);
+      rs485_receiver_buffer_clear(&rs485);
       rs485.receiver_buffer_ready = 0;
       rs485.state_transmission = 1;
 
       Serial.println();
       Serial.println();
     }
-    rs485_read_timeout(&rs485, Serial, modules, modules_i);
+    rs485_read_timeout(&rs485);
+    if (rs485.read_timeout_cur == 1)
+    {
+      rs485.read_timeout_cur = 0;
+      modules[modules_i].online_cur = 0;
+      Serial.println("***********************************");
+      Serial.println("ERR: ACK TIMEOUT");
+      Serial.println("***********************************");
+      Serial.println();
+      Serial.println();
+    }
   }
 }
 

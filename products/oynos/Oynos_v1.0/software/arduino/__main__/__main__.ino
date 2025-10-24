@@ -151,10 +151,11 @@ enum Nextion_Pages {
 // ;O3 sensor internal alarm
 ///////////////////////////////////////////////////////////////////////
 typedef struct o3_sensor_alarm_t {
+  int8_t enable_old = -2;
+  int8_t enable_tmp = -1;
+  int8_t enable_cur = 1;
   int16_t ppb_old = -2;
   int16_t ppb_cur = -1;
-  uint32_t readings_sum = 0;
-  uint32_t readings_counter = 0;
   uint32_t millis1_cur = 0;
   uint32_t millis2_cur = 0;
   int16_t ppb_alarm_old = -2;
