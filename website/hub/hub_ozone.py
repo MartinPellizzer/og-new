@@ -319,3 +319,73 @@ def gen():
     html_filepath = f'public/{article_slug}.html'
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html_index)
 
+
+
+
+
+    article_slug = f'ozono/sanificazione/applicazioni/caseificio'
+    article_folderpath = '/'.join(article_slug.split('/')[:-1])
+    try: os.makedirs(article_folderpath)
+    except: pass
+    html_article = ''
+
+    with open(f'database/hubs/{article_slug}.txt', encoding='utf-8', errors='ignore') as f: 
+        markdown_text = f.read()
+    lines = []
+    for line in markdown_text.split('\n'):
+        line = line.strip()
+        line = line.replace('**', '')
+        line = line.replace('—', '-')
+        line = line.replace('–', '-')
+        if line.startswith('---'): continue 
+        if line.startswith('### '): 
+            line = line.replace('### ', '')
+            line = line.capitalize()
+            line = f'### {line}'
+        if line.startswith('## '): 
+            line = line.replace('## ', '')
+            line = line.capitalize()
+            line = f'## {line}'
+        if line.startswith('# '): 
+            line = line.replace('# ', '')
+            line = line.capitalize()
+            line = f'# {line}'
+        lines.append(line)
+    markdown_text = '\n'.join(lines)
+    html_article += markdown.markdown(markdown_text)
+
+    html_article = html_article.replace('<p><img', '<p class="container-lg"><img class="article-img"')
+    html_article = html_article.replace('<h1', '<h1 class="container-lg article-h1"')
+    html_article = html_article.replace('<h2', '<h2 class="container-md article-h2"')
+    html_article = html_article.replace('<h3', '<h2 class="container-md article-h3"')
+    html_article = html_article.replace('<ul', '<ul class="container-md article-ul"')
+    html_article = html_article.replace('<li', '<li class="article-li"')
+    html_article = html_article.replace('<p>', '<p class="container-md article-p"">')
+    
+    html_article = html_article.replace('/h1>', '/h1>\n<p class="container-md article-date">6 October 2025</p>\n<p class="container-sd article-author">Staff Tecnico Ozonogroup</p>')
+
+
+    html_index = f'''
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="/style.css">
+        </head>
+        <body>
+            {sections.header_light()}
+            <main>
+                {html_article}
+            </main>
+            {sections.spacer_1()}
+            {sections.footer_default()}
+        </body>
+        </html>
+    '''
+    try: os.makedirs(f'public/{article_folderpath}')
+    except: pass
+    html_filepath = f'public/{article_slug}.html'
+    print(html_filepath)
+    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html_index)
+
