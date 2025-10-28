@@ -3,12 +3,14 @@ import os
 import markdown
 
 from lib import g
+from lib import components
+from lib import blocks
 from lib import sections
 
-def gen():
-    # reset tmp css
-    css = ''
-    css_mobile = ''
+def ozono_article_gen(article_url_slug):
+    with open('styles/tmp/hub-ozone.css') as f: css = f.read()
+    with open('styles/tmp-mobile/hub-ozone-mobile.css') as f: css_mobile = f.read()
+
     class_name = '.container-xl'
     if class_name not in css:
         css += f'''
@@ -73,6 +75,18 @@ def gen():
                 color: #202124;
                 font-size: {g.typography_size_xl};
                 line-height: {g.typography_line_height_xl};
+                font-weight: normal;
+                margin-bottom: 16px;
+                margin-top: 48px;
+            }}
+        '''
+    class_name = '.article-h3'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                color: #202124;
+                font-size: {g.typography_size_lg};
+                line-height: {g.typography_line_height_lg};
                 font-weight: normal;
                 margin-bottom: 16px;
                 margin-top: 48px;
@@ -146,190 +160,15 @@ def gen():
                 text-align: center;
             }}
         '''
-    with open('styles/tmp/hub-ozono.css', 'w') as f: f.write(css)
-    with open('styles/tmp-mobile/hub-ozono-mobile.css', 'w') as f: f.write(css_mobile)
-
-    html_article = ''
-
-    with open(f'database/hubs/ozono.txt', encoding='utf-8', errors='ignore') as f: 
-        markdown_text = f.read()
-    lines = []
-    for line in markdown_text.split('\n'):
-        line = line.strip()
-        line = line.replace('**', '')
-        line = line.replace('—', '-')
-        line = line.replace('–', '-')
-        if line.startswith('## '): 
-            line = line.replace('## ', '')
-            line = line.capitalize()
-            line = f'## {line}'
-        if line.startswith('# '): 
-            line = line.replace('# ', '')
-            line = line.capitalize()
-            line = f'# {line}'
-        lines.append(line)
-    markdown_text = '\n'.join(lines)
-    html_article += markdown.markdown(markdown_text)
-
-    html_article = html_article.replace('<p><img', '<p class="container-lg"><img class="article-img"')
-    html_article = html_article.replace('<h1', '<h1 class="container-lg article-h1"')
-    html_article = html_article.replace('<h2', '<h2 class="container-md article-h2"')
-    html_article = html_article.replace('<ul', '<ul class="container-md article-ul"')
-    html_article = html_article.replace('<li', '<li class="article-li"')
-    html_article = html_article.replace('<p>', '<p class="container-md article-p"">')
+    with open('styles/tmp/hub-ozone.css', 'w') as f: f.write(css)
+    with open('styles/tmp-mobile/hub-ozone-mobile.css', 'w') as f: f.write(css_mobile)
     
-    html_article = html_article.replace('/h1>', '/h1>\n<p class="container-md article-date">6 October 2025</p>\n<p class="container-sd article-author">Staff Tecnico Ozonogroup</p>')
-
-
-    html_index = f'''
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="/style.css">
-        </head>
-        <body>
-            {sections.header_light()}
-            <main>
-                {html_article}
-            </main>
-            {sections.footer_default()}
-        </body>
-        </html>
-    '''
-    html_index_filepath = 'public/ozono.html'
-    with open(html_index_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html_index)
-
-    ### subtopics
-    article_slug = f'ozono/sanificazione'
-    article_folderpath = '/'.join(article_slug.split('/')[:-1])
+    article_folderpath = '/'.join(article_url_slug.split('/')[:-1])
     try: os.makedirs(article_folderpath)
     except: pass
     html_article = ''
 
-    with open(f'database/hubs/{article_slug}.txt', encoding='utf-8', errors='ignore') as f: 
-        markdown_text = f.read()
-    lines = []
-    for line in markdown_text.split('\n'):
-        line = line.strip()
-        line = line.replace('**', '')
-        line = line.replace('—', '-')
-        line = line.replace('–', '-')
-        if line.startswith('## '): 
-            line = line.replace('## ', '')
-            line = line.capitalize()
-            line = f'## {line}'
-        if line.startswith('# '): 
-            line = line.replace('# ', '')
-            line = line.capitalize()
-            line = f'# {line}'
-        lines.append(line)
-    markdown_text = '\n'.join(lines)
-    html_article += markdown.markdown(markdown_text)
-
-    html_article = html_article.replace('<p><img', '<p class="container-lg"><img class="article-img"')
-    html_article = html_article.replace('<h1', '<h1 class="container-lg article-h1"')
-    html_article = html_article.replace('<h2', '<h2 class="container-md article-h2"')
-    html_article = html_article.replace('<ul', '<ul class="container-md article-ul"')
-    html_article = html_article.replace('<li', '<li class="article-li"')
-    html_article = html_article.replace('<p>', '<p class="container-md article-p"">')
-    
-    html_article = html_article.replace('/h1>', '/h1>\n<p class="container-md article-date">6 October 2025</p>\n<p class="container-sd article-author">Staff Tecnico Ozonogroup</p>')
-
-
-    html_index = f'''
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="/style.css">
-        </head>
-        <body>
-            {sections.header_light()}
-            <main>
-                {html_article}
-            </main>
-            {sections.spacer_1()}
-            {sections.footer_default()}
-        </body>
-        </html>
-    '''
-    html_index_filepath = f'public/{article_slug}.html'
-    with open(html_index_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html_index)
-
-
-    article_slug = f'ozono/sanificazione/disinfestazione'
-    article_folderpath = '/'.join(article_slug.split('/')[:-1])
-    try: os.makedirs(article_folderpath)
-    except: pass
-    html_article = ''
-
-    with open(f'database/hubs/{article_slug}.txt', encoding='utf-8', errors='ignore') as f: 
-        markdown_text = f.read()
-    lines = []
-    for line in markdown_text.split('\n'):
-        line = line.strip()
-        line = line.replace('**', '')
-        line = line.replace('—', '-')
-        line = line.replace('–', '-')
-        if line.startswith('## '): 
-            line = line.replace('## ', '')
-            line = line.capitalize()
-            line = f'## {line}'
-        if line.startswith('# '): 
-            line = line.replace('# ', '')
-            line = line.capitalize()
-            line = f'# {line}'
-        lines.append(line)
-    markdown_text = '\n'.join(lines)
-    html_article += markdown.markdown(markdown_text)
-
-    html_article = html_article.replace('<p><img', '<p class="container-lg"><img class="article-img"')
-    html_article = html_article.replace('<h1', '<h1 class="container-lg article-h1"')
-    html_article = html_article.replace('<h2', '<h2 class="container-md article-h2"')
-    html_article = html_article.replace('<ul', '<ul class="container-md article-ul"')
-    html_article = html_article.replace('<li', '<li class="article-li"')
-    html_article = html_article.replace('<p>', '<p class="container-md article-p"">')
-    
-    html_article = html_article.replace('/h1>', '/h1>\n<p class="container-md article-date">6 October 2025</p>\n<p class="container-sd article-author">Staff Tecnico Ozonogroup</p>')
-
-
-    html_index = f'''
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="/style.css">
-        </head>
-        <body>
-            {sections.header_light()}
-            <main>
-                {html_article}
-            </main>
-            {sections.spacer_1()}
-            {sections.footer_default()}
-        </body>
-        </html>
-    '''
-    try: os.makedirs(f'public/{article_folderpath}')
-    except: pass
-    html_filepath = f'public/{article_slug}.html'
-    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html_index)
-
-
-
-
-
-    article_slug = f'ozono/sanificazione/applicazioni/caseificio'
-    article_folderpath = '/'.join(article_slug.split('/')[:-1])
-    try: os.makedirs(article_folderpath)
-    except: pass
-    html_article = ''
-
-    with open(f'database/hubs/{article_slug}.txt', encoding='utf-8', errors='ignore') as f: 
+    with open(f'database/hubs/{article_url_slug}.txt', encoding='utf-8', errors='ignore') as f: 
         markdown_text = f.read()
     lines = []
     for line in markdown_text.split('\n'):
@@ -357,13 +196,12 @@ def gen():
     html_article = html_article.replace('<p><img', '<p class="container-lg"><img class="article-img"')
     html_article = html_article.replace('<h1', '<h1 class="container-lg article-h1"')
     html_article = html_article.replace('<h2', '<h2 class="container-md article-h2"')
-    html_article = html_article.replace('<h3', '<h2 class="container-md article-h3"')
+    html_article = html_article.replace('<h3', '<h3 class="container-md article-h3"')
     html_article = html_article.replace('<ul', '<ul class="container-md article-ul"')
     html_article = html_article.replace('<li', '<li class="article-li"')
     html_article = html_article.replace('<p>', '<p class="container-md article-p"">')
     
     html_article = html_article.replace('/h1>', '/h1>\n<p class="container-md article-date">6 October 2025</p>\n<p class="container-sd article-author">Staff Tecnico Ozonogroup</p>')
-
 
     html_index = f'''
         <!DOCTYPE html>
@@ -385,7 +223,94 @@ def gen():
     '''
     try: os.makedirs(f'public/{article_folderpath}')
     except: pass
-    html_filepath = f'public/{article_slug}.html'
+    html_filepath = f'public/{article_url_slug}.html'
     print(html_filepath)
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html_index)
 
+
+
+def ozono_gen():
+    html_article = ''
+    html_heading = components.h2_default(
+        text= f'''Ozono''',
+    )
+    image_h = '20rem'
+    html_cards = ''
+    html_cards += f'''
+        <a href="/ozono/chimica.html" style="text-decoration: none; color: #222222;">
+            <div style="background-color: {g.color_gray_extralight}; border-radius: 1rem;">
+                <img src='/immagini/home/sanificazione-ozono.png' style="height: {image_h}; object-fit: cover; border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
+                <div style="padding: 1rem 2rem;">
+                    <h3 style="margin-bottom: 1rem;">Chimica</h3>
+                    <p>Articolo sulla chimica dell'ozono.</p>
+                </div>
+            </div>
+        </a>
+    '''
+    html_cards += f'''
+        <a href="/ozono/ambiente.html" style="text-decoration: none; color: #222222;">
+            <div style="background-color: {g.color_gray_extralight}; border-radius: 1rem;">
+                <img src='/ozono.jpg' style="height: {image_h}; object-fit: cover; border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
+                <div style="padding: 1rem 2rem;">
+                    <h3 style="margin-bottom: 1rem;">Ambiente</h3>
+                    <p>Articolo sull'ozono ambientale.</p>
+                </div>
+            </div>
+        </a>
+    '''
+    html_cards += f'''
+        <a href="/ozono/sanificazione.html" style="text-decoration: none; color: #222222;">
+            <div style="background-color: {g.color_gray_extralight}; border-radius: 1rem;">
+                <img src='/ozono-sanificazione.jpg' style="height: {image_h}; object-fit: cover; border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
+                <div style="padding: 1rem 2rem;">
+                    <h3 style="margin-bottom: 1rem;">Sanificazione</h3>
+                    <p>Articolo sulla sanificazione ad ozono.</p>
+                </div>
+            </div>
+        </a>
+    '''
+    html_cards += f'''
+        <a href="/ozono/terapia.html" style="text-decoration: none; color: #222222;">
+            <div style="background-color: {g.color_gray_extralight}; border-radius: 1rem;">
+                <img src='/ozono-terapia.jpg' style="height: {image_h}; object-fit: cover; border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
+                <div style="padding: 1rem 2rem;">
+                    <h3 style="margin-bottom: 1rem;">Ozonoterapia</h3>
+                    <p>Articolo sulla ozonoterapia.</p>
+                </div>
+            </div>
+        </a>
+    '''
+    html_article = sections.grid_1_default(html_heading, html_cards, html_buttons='')
+    html_index = f'''
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="/style.css">
+        </head>
+        <body>
+            {sections.header_light()}
+            <main>
+                {html_article}
+            </main>
+            {sections.footer_default()}
+        </body>
+        </html>
+    '''
+    html_index_filepath = 'public/ozono.html'
+    with open(html_index_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html_index)
+
+def gen():
+    # reset tmp css
+    with open('styles/tmp/hub-ozone.css', 'w') as f: f.write('')
+    with open('styles/tmp-mobile/hub-ozone-mobile.css', 'w') as f: f.write('')
+
+    ozono_article_gen(article_url_slug=f'ozono/chimica')
+    ozono_article_gen(article_url_slug=f'ozono/ambiente')
+    ozono_article_gen(article_url_slug=f'ozono/sanificazione')
+    ozono_article_gen(article_url_slug=f'ozono/terapia')
+    ozono_article_gen(article_url_slug=f'ozono/sanificazione/applicazioni/caseificio')
+    ozono_article_gen(article_url_slug=f'ozono/sanificazione/disinfestazione')
+    
+    ozono_gen()

@@ -1,0 +1,35 @@
+# Chimica dell’ozono: reazioni, meccanismi e implicazioni atmosferiche
+
+![ozono chimica](/immagini/home/sanificazione-ozono.png)
+
+## Introduzione
+L’ozono è una molecola fondamentale per l’equilibrio chimico dell’atmosfera, ma il suo comportamento reattivo e i meccanismi che ne regolano la formazione e la distruzione meritano un’analisi dedicata. In questo articolo vengono esplorati i processi fotochimici e le reazioni complesse che definiscono la chimica dell’ozono, con particolare attenzione ai contesti stratosferici e troposferici. Per una panoramica generale sulla natura e la funzione dell’ozono, si rimanda all’articolo introduttivo dedicato alla sua formazione e struttura.
+
+## Struttura molecolare e proprietà reattive
+La molecola di ozono, O₃, presenta una struttura piegata con un angolo di circa 117°, dovuto all’ibridazione sp² degli atomi di ossigeno. La presenza di risonanza tra le due strutture limite conferisce all’ozono una distribuzione elettronica instabile e una notevole reattività. La parziale polarità del legame e l’elevata energia interna ne determinano la capacità ossidante, rendendolo un agente chimico in grado di reagire con numerosi composti organici e inorganici. La natura metastabile dell’ozono spiega la sua decomposizione spontanea e la sua tendenza a partecipare a reazioni radicaliche.
+
+## Meccanismi fotochimici fondamentali
+La fotolisi dell’ozono è alla base della sua chimica atmosferica. Quando l’ozono assorbe radiazione ultravioletta nelle bande di Hartley e Huggins, la molecola si dissocia producendo ossigeno molecolare e un atomo di ossigeno reattivo. Questo processo, insieme alla formazione di ozono da ossigeno molecolare e radicali ossigeno, costituisce il cosiddetto ciclo di Chapman. Nei livelli stratosferici, la concentrazione di radiazione UV e la temperatura determinano l’equilibrio tra produzione e distruzione, mentre nella troposfera l’interazione con altri composti, come NOx e VOC, altera profondamente questo equilibrio.
+
+## Reazioni dell’ozono con altri composti atmosferici
+
+### Reazioni con NOx
+Nella troposfera, l’ozono reagisce con gli ossidi di azoto secondo meccanismi che regolano la formazione di smog fotochimico. L’interazione tra ozono e monossido di azoto produce diossido di azoto e ossigeno molecolare, mentre la successiva fotolisi del NO₂ rigenera ozono, creando un ciclo di produzione continua in presenza di luce solare. La presenza di elevate concentrazioni di NOx accelera questi processi e contribuisce all’accumulo di ozono troposferico, un inquinante secondario con impatti sulla salute e sull’ambiente.
+
+### Reazioni con composti organici volatili
+L’ozono reagisce anche con i composti organici volatili, in particolare con gli alcheni, in un processo noto come ozonolisi. Questa reazione produce intermedi instabili come ozonidi e perossidi, che possono evolvere in radicali liberi e formare aerosol organici secondari. Tali particelle influenzano la qualità dell’aria, la visibilità e il bilancio radiativo dell’atmosfera. L’interazione tra ozono, VOC e NOx è uno dei nodi centrali della chimica atmosferica urbana.
+
+## Radicali liberi e cicli catalitici
+I radicali liberi giocano un ruolo determinante nella chimica dell’ozono. I radicali ossidrilici (OH·), perossilici (HO₂·) e nitrati (NO₃·) partecipano a cicli complessi che portano sia alla formazione che alla distruzione dell’ozono. Nella stratosfera, radicali contenenti cloro e bromo (ClOx, BrOx) accelerano la decomposizione dell’ozono attraverso reazioni catalitiche. Questi meccanismi, attivati da composti come i clorofluorocarburi, hanno contribuito alla riduzione della fascia di ozono osservata negli ultimi decenni. Le reazioni radicaliche sono quindi al centro del bilancio fotochimico atmosferico.
+
+## Fattori cinetici e termodinamici
+La velocità delle reazioni che coinvolgono l’ozono dipende fortemente da temperatura e pressione. In generale, l’aumento della temperatura favorisce la decomposizione, mentre la bassa pressione tipica della stratosfera ne prolunga la vita media. Le costanti di reazione sono determinate sperimentalmente e tramite modelli di chimica quantistica, che consentono di simulare i percorsi energetici delle reazioni. Le tecniche di modellazione cinetica e spettroscopia ad alta risoluzione hanno permesso di comprendere meglio i processi microscopici che determinano la dinamica dell’ozono atmosferico.
+
+## Implicazioni chimiche nella troposfera e nella stratosfera
+Nella stratosfera, l’ozono funge da scudo protettivo contro la radiazione ultravioletta, ma la sua concentrazione è regolata da un equilibrio dinamico tra fotolisi e ricombinazione. Nella troposfera, invece, l’ozono agisce come ossidante primario e contribuisce alla formazione di smog e aerosol secondari. Le interazioni con particelle e superfici liquide, come nel caso delle nubi stratosferiche polari, introducono processi eterogenei che possono accelerare la distruzione dell’ozono. Le differenze nei tempi di residenza e nei meccanismi di reazione determinano il comportamento chimico distinto delle due regioni atmosferiche.
+
+## Applicazioni e ricerche avanzate
+Oltre al ruolo atmosferico, la chimica dell’ozono trova applicazioni nei processi di ossidazione avanzata utilizzati nel trattamento delle acque e nella purificazione dell’aria. Le ricerche moderne impiegano isotopi stabili dell’ossigeno per tracciare l’origine e il destino dell’ozono in diversi ambienti. La modellizzazione computazionale, supportata da intelligenza artificiale e assimilazione di dati atmosferici, sta migliorando la previsione dei livelli di ozono e la comprensione dei meccanismi reattivi. Questi studi contribuiscono a sviluppare strategie di mitigazione per l’inquinamento e la protezione della fascia stratosferica.
+
+## Sintesi e conclusione
+La chimica dell’ozono è un sistema complesso di reazioni fotochimiche e catalitiche che coinvolge radicali, ossidi di azoto, composti organici e particelle atmosferiche. La comprensione dei meccanismi che ne regolano la formazione e la distruzione è essenziale per valutare gli impatti sull’ambiente e sul clima. Gli sviluppi della ricerca chimico-atmosferica e dei modelli di simulazione offrono nuove prospettive per il controllo delle emissioni e per la tutela dell’equilibrio chimico dell’atmosfera terrestre.
