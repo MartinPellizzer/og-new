@@ -2,10 +2,6 @@
 
 ![ozono chimica](/immagini/home/sanificazione-ozono.png)
 
-## Introduzione
-L’ozono è una molecola fondamentale per l’equilibrio chimico dell’atmosfera, ma il suo comportamento reattivo e i meccanismi che ne regolano la formazione e la distruzione meritano un’analisi dedicata. In questo articolo vengono esplorati i processi fotochimici e le reazioni complesse che definiscono la chimica dell’ozono, con particolare attenzione ai contesti stratosferici e troposferici. Per una panoramica generale sulla natura e la funzione dell’ozono, si rimanda all’articolo introduttivo dedicato alla sua formazione e struttura.
-
-## Struttura molecolare e proprietà reattive
 La molecola di ozono, O₃, presenta una struttura piegata con un angolo di circa 117°, dovuto all’ibridazione sp² degli atomi di ossigeno. La presenza di risonanza tra le due strutture limite conferisce all’ozono una distribuzione elettronica instabile e una notevole reattività. La parziale polarità del legame e l’elevata energia interna ne determinano la capacità ossidante, rendendolo un agente chimico in grado di reagire con numerosi composti organici e inorganici. La natura metastabile dell’ozono spiega la sua decomposizione spontanea e la sua tendenza a partecipare a reazioni radicaliche.
 
 ## Meccanismi fotochimici fondamentali

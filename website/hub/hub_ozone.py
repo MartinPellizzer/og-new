@@ -77,7 +77,7 @@ def ozono_article_gen(article_url_slug):
                 line-height: {g.typography_line_height_xl};
                 font-weight: normal;
                 margin-bottom: 16px;
-                margin-top: 48px;
+                margin-top: 4rem;
             }}
         '''
     class_name = '.article-h3'
@@ -85,11 +85,11 @@ def ozono_article_gen(article_url_slug):
         css += f'''
             {class_name} {{
                 color: #202124;
-                font-size: {g.typography_size_lg};
-                line-height: {g.typography_line_height_lg};
-                font-weight: normal;
+                font-size: {g.typography_size_md};
+                line-height: {g.typography_line_height_md};
+                font-weight: bold;
                 margin-bottom: 16px;
-                margin-top: 48px;
+                margin-top: 2rem;
             }}
         '''
     class_name = '.article-p'
@@ -110,12 +110,20 @@ def ozono_article_gen(article_url_slug):
                 margin-bottom: 16px;
             }}
         '''
+    class_name = '.article-ol'
+    if class_name not in css:
+        css += f'''
+            {class_name} {{
+                padding-left: 32px;
+                margin-bottom: 16px;
+            }}
+        '''
     class_name = '.article-li'
     if class_name not in css:
         css += f'''
             {class_name} {{
                 color: #5f6368;
-                margin-bottom: 8px;
+                margin-bottom: 0.25rem;
                 font-size: {g.typography_size_md};
                 line-height: {g.typography_line_height_md};
             }}
@@ -160,6 +168,7 @@ def ozono_article_gen(article_url_slug):
                 text-align: center;
             }}
         '''
+
     with open('styles/tmp/hub-ozone.css', 'w') as f: f.write(css)
     with open('styles/tmp-mobile/hub-ozone-mobile.css', 'w') as f: f.write(css_mobile)
     
@@ -198,10 +207,23 @@ def ozono_article_gen(article_url_slug):
     html_article = html_article.replace('<h2', '<h2 class="container-md article-h2"')
     html_article = html_article.replace('<h3', '<h3 class="container-md article-h3"')
     html_article = html_article.replace('<ul', '<ul class="container-md article-ul"')
+    html_article = html_article.replace('<ol', '<ol class="container-md article-ol"')
     html_article = html_article.replace('<li', '<li class="article-li"')
     html_article = html_article.replace('<p>', '<p class="container-md article-p"">')
     
     html_article = html_article.replace('/h1>', '/h1>\n<p class="container-md article-date">6 October 2025</p>\n<p class="container-sd article-author">Staff Tecnico Ozonogroup</p>')
+
+    breadcrumbs = article_url_slug.split('/')
+    breadcrumbs_html = f''
+    breadcrumbs_html += f'''<div class="container-xl">'''
+    breadcrumbs_html += f'''<a style="color: #5f6368; text-decoration: none; font-size: {g.typography_size_xs};" href="/">HOME</a><span> > </span>'''
+    chunk = '/'
+    for item in breadcrumbs[:-1]:
+        chunk += item
+        breadcrumbs_html += f'''<a style="color: #5f6368; text-decoration: none; font-size: {g.typography_size_xs};" href="{chunk}.html">{item.upper()}</a><span> > </span>'''
+        chunk += '/'
+    breadcrumbs_html += f'''<span style="color: #5f6368; text-decoration: none; font-size: {g.typography_size_xs};">{breadcrumbs[-1].upper()}</span>'''
+    breadcrumbs_html += f'''</div>'''
 
     html_index = f'''
         <!DOCTYPE html>
@@ -213,6 +235,7 @@ def ozono_article_gen(article_url_slug):
         </head>
         <body>
             {sections.header_light()}
+            {breadcrumbs_html}
             <main>
                 {html_article}
             </main>
@@ -226,22 +249,31 @@ def ozono_article_gen(article_url_slug):
     html_filepath = f'public/{article_url_slug}.html'
     print(html_filepath)
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html_index)
-
-
-
+    
 def ozono_gen():
     html_article = ''
     html_heading = components.h2_default(
         text= f'''Ozono''',
     )
-    image_h = '20rem'
+    image_h = '15rem'
+    border_radius = '0.5rem'
+    border_color = '#cdcdcd'
+    card_bg_color = g.color_gray_extralight
+    card_bg_color = '#ffffff'
+    card_style_h3 = f'''
+        style="
+            margin-bottom: 1rem; 
+            font-weight: normal;
+            font-size: {g.typography_size_lg};
+        "
+    '''
     html_cards = ''
     html_cards += f'''
         <a href="/ozono/chimica.html" style="text-decoration: none; color: #222222;">
-            <div style="background-color: {g.color_gray_extralight}; border-radius: 1rem;">
-                <img src='/immagini/home/sanificazione-ozono.png' style="height: {image_h}; object-fit: cover; border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
+            <div style="background-color: {card_bg_color}; border: 1px solid {border_color}; border-radius: {border_radius};">
+                <img src='/immagini/home/sanificazione-ozono.png' style="height: {image_h}; object-fit: cover; border-top-left-radius: {border_radius}; border-top-right-radius: {border_radius};">
                 <div style="padding: 1rem 2rem;">
-                    <h3 style="margin-bottom: 1rem;">Chimica</h3>
+                    <h3 {card_style_h3}>Chimica</h3>
                     <p>Articolo sulla chimica dell'ozono.</p>
                 </div>
             </div>
@@ -249,10 +281,10 @@ def ozono_gen():
     '''
     html_cards += f'''
         <a href="/ozono/ambiente.html" style="text-decoration: none; color: #222222;">
-            <div style="background-color: {g.color_gray_extralight}; border-radius: 1rem;">
-                <img src='/ozono.jpg' style="height: {image_h}; object-fit: cover; border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
+            <div style="background-color: {card_bg_color}; border: 1px solid {border_color}; border-radius: {border_radius};">
+                <img src='/ozono.jpg' style="height: {image_h}; object-fit: cover; border-top-left-radius: {border_radius}; border-top-right-radius: {border_radius};">
                 <div style="padding: 1rem 2rem;">
-                    <h3 style="margin-bottom: 1rem;">Ambiente</h3>
+                    <h3 {card_style_h3}>Ambiente</h3>
                     <p>Articolo sull'ozono ambientale.</p>
                 </div>
             </div>
@@ -260,10 +292,10 @@ def ozono_gen():
     '''
     html_cards += f'''
         <a href="/ozono/sanificazione.html" style="text-decoration: none; color: #222222;">
-            <div style="background-color: {g.color_gray_extralight}; border-radius: 1rem;">
-                <img src='/ozono-sanificazione.jpg' style="height: {image_h}; object-fit: cover; border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
+            <div style="background-color: {card_bg_color}; border: 1px solid {border_color}; border-radius: {border_radius};">
+                <img src='/ozono-sanificazione.jpg' style="height: {image_h}; object-fit: cover; border-top-left-radius: {border_radius}; border-top-right-radius: {border_radius};">
                 <div style="padding: 1rem 2rem;">
-                    <h3 style="margin-bottom: 1rem;">Sanificazione</h3>
+                    <h3 {card_style_h3}>Sanificazione</h3>
                     <p>Articolo sulla sanificazione ad ozono.</p>
                 </div>
             </div>
@@ -271,10 +303,10 @@ def ozono_gen():
     '''
     html_cards += f'''
         <a href="/ozono/terapia.html" style="text-decoration: none; color: #222222;">
-            <div style="background-color: {g.color_gray_extralight}; border-radius: 1rem;">
-                <img src='/ozono-terapia.jpg' style="height: {image_h}; object-fit: cover; border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
+            <div style="background-color: {card_bg_color}; border: 1px solid {border_color}; border-radius: {border_radius};">
+                <img src='/ozono-terapia.jpg' style="height: {image_h}; object-fit: cover; border-top-left-radius: {border_radius}; border-top-right-radius: {border_radius};">
                 <div style="padding: 1rem 2rem;">
-                    <h3 style="margin-bottom: 1rem;">Ozonoterapia</h3>
+                    <h3 {card_style_h3}">Ozonoterapia</h3>
                     <p>Articolo sulla ozonoterapia.</p>
                 </div>
             </div>
@@ -308,9 +340,9 @@ def gen():
 
     ozono_article_gen(article_url_slug=f'ozono/chimica')
     ozono_article_gen(article_url_slug=f'ozono/ambiente')
-    ozono_article_gen(article_url_slug=f'ozono/sanificazione')
     ozono_article_gen(article_url_slug=f'ozono/terapia')
+    ozono_article_gen(article_url_slug=f'ozono/sanificazione')
     ozono_article_gen(article_url_slug=f'ozono/sanificazione/applicazioni/caseificio')
-    ozono_article_gen(article_url_slug=f'ozono/sanificazione/disinfestazione')
+    ozono_article_gen(article_url_slug=f'ozono/sanificazione/applicazioni/disinfestazione')
     
     ozono_gen()
