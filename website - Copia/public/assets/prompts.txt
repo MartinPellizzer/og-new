@@ -1,0 +1,11 @@
+write a short 5-sentence paragraph for an article with the following CONTENT and GUIDELINES:
+
+CONTENT:
+The aim of research was to evaluate the effects of intrauterine foam ozone application in parturient endometritis on first service conception rate (FSCR), the average of straws until pregnancy (ASUP), the average of days not pregnant to first service (ADOFS) and the average of days not pregnant to pregnancy (ADOP). Another objective of this study was to observe the influence of ozone against uterine bacteria. The study involved 24 Holstein and Cross Breed Holstein cows, divided into two groups (Ozone O n=12, and Control C n=12) based on the uterine findings and diagnosis (puerperal endometritis and control). In cases when endometritis was diagnosed, we used ozone foam (RIGER SPRAY®, Novagen, Italy). Ozone was applied by means of a vial containing ozone foam under pressure for 10 seconds. Bacterial and fungal samples were taken at the first uterine examination and the second probe, at the moment of artificial insemination. After the days open period, all animals were put on hormonal therapy to induce the oestrus and then were inseminated. The next step was the ultrasonographic pregnancy diagnosis after 29-32 days. Bacteriological examination of uterine aspirate samples from the animals revealed single type of bacteria in 7 cases (29.16%) and mixed bacterial isolates in 17 cases (70.84%). The most isolated bacteria from group O was Escherichia coli (91%) followed by Staphylococcus hyicus (33%), Staphylococcus bovis (25%) and Arcanobacterium pyogenes (25%) and from group C Escherichia coli (66%), then Streptococcus bovis (16%). No fungal species were found. The median days open to first service and the median days open to pregnancy were similar in both groups: group O (65.4 days) and group C (65.1 days) for ADOFS, and for ADOP 112.3 days respectively 108.9 days. The significant difference between the two groups was observed for the FSCR and for the ASUP where half of the cows from the group O were pregnant at first service.
+
+GUIDELINES:
+- start by explaining the problem analyzed by the study
+- follow by explaining the methods used by the study
+- end by explaining the results found by the study, ONLY the positive ones related to ozono
+- reply in italian
+- start with the following words: "Uno studio ha valutato ".

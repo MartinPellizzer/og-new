@@ -1,0 +1,68 @@
+ozono
+    atmosfera
+    aria
+    acqua
+    chimica
+    sanificazione
+        biocida
+            virus
+            batteri
+            muffa
+        disinfezione
+        igienizzante
+
+        acqua 
+            acqua potabile
+            acque reflue
+            acquario
+            piscina
+
+        agricoltura
+            viticoltura
+                vigneto
+            serre
+        
+        disinfestazione
+            insetti
+                zanzare
+                pidocchi
+                pulci
+                cimici da letto
+                blatte (scarafaggi)
+                tarli
+                tarma
+                formiche
+            aracnidi
+                zecche
+                ragni
+                acari
+            mammiferi
+                topi
+        
+        indumenti
+            scarpe
+        
+        ambienti
+            hotel
+            casa
+                lavatrice
+                frigorifero
+                camera da letto
+                cucina
+        
+        auto
+        
+        odori
+            fumo
+        
+        
+        gatti
+        cani
+        
+        alimenti
+        utensili
+        
+        lavanderia
+        
+    terapia
+    prodotti

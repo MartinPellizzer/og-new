@@ -1,6 +1,6 @@
 # Ozono: significato, formula chimica O₃ e struttura molecolare spiegata in modo semplice
 
-![ozono chimica](/immagini/home/sanificazione-ozono.png)
+![ozono chimica](/immagini/ozono-chimica.jpg)
 
 L’**ozono**, simbolo **O₃**, è una **forma allotropica dell’ossigeno**: un gas triatomico composto da tre atomi di ossigeno legati in modo particolare.
 Il termine deriva dal greco *ozein*, che significa “emanare odore” — infatti l’ozono ha un **odore pungente caratteristico**, facilmente riconoscibile dopo un temporale o vicino a macchine elettriche ad alta tensione.
@@ -37,9 +37,9 @@ L’ozono e l’ossigeno sono **due forme allotropiche dello stesso elemento chi
 * L’**ozono (O₃)** è una forma metastabile, più energetica, ottenuta quando l’ossigeno assorbe energia (elettrica o ultravioletta) e si ricombina in molecole triatomiche.
 
 La **reazione di formazione dell’ozono** è:
-[
-3 O_2 \ \xrightarrow{UV\ o\ scarica\ elettrica}\ 2 O_3
-]
+
+3 O₂  ⟶[UV o scarica elettrica]  2 O₃
+
 Questa reazione mostra che l’ozono si forma a partire dall’ossigeno molecolare, ma la sua energia potenziale è maggiore — per questo tende a **decomporsi facilmente**.
 
 ---
@@ -169,9 +169,7 @@ Questo significa che è capace di:
 
 Per la stessa ragione, l’ozono è **instabile e reattivo**: tende a **decomporsi spontaneamente** in ossigeno secondo la reazione:
 
-[
-2 O_3 \rightarrow 3 O_2
-]
+2 O₃  ⟶  3 O₂
 
 Questa decomposizione è **esotermica**, cioè libera energia, e può essere accelerata da:
 
@@ -188,12 +186,9 @@ Questa decomposizione è **esotermica**, cioè libera energia, e può essere acc
 L’ozono si forma naturalmente nell’atmosfera quando la **radiazione ultravioletta solare (UV-C)** scinde le molecole di ossigeno (O₂) in **due atomi di ossigeno singolo (O)**.
 Questi atomi reagiscono rapidamente con altre molecole di ossigeno, formando ozono:
 
-[
-O_2 + h\nu (UV) \rightarrow 2O
-]
-[
-O + O_2 \rightarrow O_3
-]
+O₂ + hν (UV) ⟶ 2O
+
+O + O₂ ⟶ O₃
 
 Questo processo avviene principalmente nella **stratosfera**, dove si forma lo **strato di ozono** che filtra i raggi UV dannosi per la vita.
 
@@ -220,9 +215,8 @@ L’ozono è un **agente ossidante estremamente versatile**. Reagisce con:
 
 ### Esempio – Ozonolisi:
 
-[
-RCH=CHR' + O_3 \rightarrow RCHO + R'CHO
-]
+RCH=CHR′ + O₃ ⟶ RCHO + R′CHO
+
 (rompe il doppio legame e forma aldeidi o chetoni)
 
 Questa reattività fa sì che l’ozono venga utilizzato:
@@ -275,9 +269,7 @@ Le sue reazioni possono essere **esotermiche** (rilasciano calore) e persino **e
 
 ### Reazione di decomposizione catalitica:
 
-[
-2O_3 \xrightarrow{MnO_2, Ag, Pt} 3O_2
-]
+2 O₃  ⟶[MnO₂, Ag, Pt] 3 O₂
 
 Questa è la base del principio di sicurezza: nelle apparecchiature industriali l’ozono viene **distrutto cataliticamente** prima del rilascio.
 

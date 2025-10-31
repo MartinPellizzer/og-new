@@ -1,0 +1,104 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+}
+
+/* Navbar Container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #222;
+    color: white;
+    padding: 1rem 1.5rem;
+    position: relative;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+/* Hide checkbox */
+.menu-toggle {
+    display: none;
+}
+
+/* Hamburger Icon */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Menu Links */
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.menu a:hover {
+    color: #00bcd4;
+}
+
+/* Responsive Menu */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: flex;
+    }
+
+    .menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #222;
+        flex-direction: column;
+        align-items: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+
+    /* Toggle menu visibility */
+    .menu-toggle:checked~.menu {
+        max-height: 300px;
+    }
+
+    /* Animate hamburger into X */
+    .menu-toggle:checked+.menu-icon span:nth-child(1) {
+        transform: rotate(45deg) translateY(8px);
+    }
+
+    .menu-toggle:checked+.menu-icon span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle:checked+.menu-icon span:nth-child(3) {
+        transform: rotate(-45deg) translateY(-8px);
+    }
+}

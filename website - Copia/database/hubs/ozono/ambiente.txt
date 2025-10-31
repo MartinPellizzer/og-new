@@ -1,0 +1,195 @@
+# **Ozono nell’ambiente: cos’è, dove si trova e quali sono i suoi effetti sull’atmosfera**
+
+![ozono](/ozono.jpg)
+
+L’ozono è una delle molecole più affascinanti e controverse dell’atmosfera terrestre. 
+
+Può essere allo stesso tempo un prezioso alleato contro i raggi ultravioletti e un pericoloso inquinante se presente nei bassi strati dell’aria. 
+
+Comprendere dove si trova, come si forma e quali effetti ha sull’ambiente è fondamentale per capire il delicato equilibrio che regola la vita sulla Terra.
+
+---
+
+## **Cos’è l’ozono e qual è il suo ruolo nell’ambiente terrestre**
+
+L’ozono (O₃) è un gas composto da tre atomi di ossigeno. È incolore, ma in concentrazioni elevate assume una sfumatura azzurrina e un odore pungente caratteristico dopo i temporali o vicino a dispositivi elettrici ad alta tensione.
+
+A differenza dell’ossigeno molecolare (O₂), l’ozono è chimicamente instabile: tende a reagire facilmente con altre sostanze, motivo per cui è sia un agente ossidante potente sia un componente vitale dell’atmosfera.
+
+### **Ozono atmosferico e ozono troposferico: due facce della stessa molecola**
+
+* **Ozono “buono”**: si trova nella **stratosfera**, tra i 15 e i 35 km di altitudine, dove forma la celebre *cappa di ozono*. Qui protegge la vita filtrando le radiazioni ultraviolette (UV-B e UV-C) più dannose.
+* **Ozono “cattivo”**: è l’ozono presente nella **troposfera**, cioè nei primi 10-12 km di atmosfera. A livello del suolo diventa un inquinante secondario, prodotto da reazioni chimiche tra altre sostanze e la luce solare.
+
+In sintesi: lo stesso gas può essere un protettore indispensabile o un contaminante nocivo, a seconda di dove si trova.
+
+---
+
+## **Dove si trova l’ozono in natura e nell’atmosfera**
+
+L’ozono non è distribuito uniformemente nell’atmosfera. Circa il **90%** si trova nella **stratosfera**, dove forma lo **strato di ozono**, mentre il restante **10%** è concentrato nella **troposfera**.
+
+### **Distribuzione per strati atmosferici**
+
+1. **Stratosfera** (da 15 a 35 km): qui si accumula la massima concentrazione di ozono, con valori che variano in base a latitudine e stagione.
+2. **Troposfera** (0–12 km): l’ozono è presente in tracce (circa 0,03-0,07 ppm), ma può aumentare notevolmente in estate o in presenza di smog fotochimico.
+3. **Mesosfera e oltre**: la presenza è minima.
+
+Il livello e la **percentuale di ozono nell’atmosfera** variano a seconda del periodo dell’anno, dell’intensità della radiazione solare e della circolazione dei venti. Le mappe satellitari (NASA, ESA, Copernicus) permettono oggi di monitorare con precisione queste variazioni.
+
+---
+
+## **Come si forma l’ozono nell’atmosfera**
+
+### **Reazione naturale nella stratosfera**
+
+L’ozono si forma naturalmente quando le radiazioni ultraviolette (UV-C) colpiscono le molecole di ossigeno (O₂), dividendole in due atomi singoli (O). Questi atomi si combinano con altre molecole di ossigeno per formare O₃.
+Questo processo è bilanciato da reazioni inverse che ne causano la decomposizione, mantenendo un equilibrio dinamico chiamato **ciclo dell’ozono**.
+
+[
+O₂ + UV → 2O \
+O + O₂ → O₃
+]
+
+### **Ozono e temporali**
+
+Durante i **temporali**, le scariche elettriche ad alta energia scindono le molecole di ossigeno e formano ozono. È per questo che dopo la pioggia o un temporale si percepisce un odore “fresco” e pungente: è l’ozono prodotto localmente.
+
+### **Formazione antropica: l’ozono fotochimico**
+
+Nella troposfera, l’ozono non proviene direttamente dalle emissioni, ma da una serie di reazioni tra **ossidi di azoto (NOx)** e **composti organici volatili (VOC)** sotto l’azione della **luce solare**.
+Questo fenomeno, tipico delle città in estate, è noto come **smog fotochimico**.
+
+---
+
+## **A cosa serve l’ozono nell’atmosfera**
+
+### **1. Protezione dai raggi UV**
+
+Lo **strato di ozono** agisce come uno scudo naturale che assorbe oltre il **90% delle radiazioni UV-B e UV-C**, impedendo che raggiungano la superficie terrestre. Senza di esso, l’incidenza di tumori cutanei, cataratte e mutazioni genetiche sarebbe enormemente maggiore.
+
+### **2. Regolazione del bilancio termico**
+
+L’ozono contribuisce all’equilibrio energetico della Terra assorbendo energia solare e influenzando la temperatura della stratosfera.
+È, in misura minore, anche un **gas serra**, perché trattiene parte della radiazione infrarossa.
+
+### **3. Ozono buono e ozono cattivo**
+
+* **Ozono buono:** situato nella stratosfera, filtra le radiazioni UV.
+* **Ozono cattivo:** si forma al suolo, danneggia la vegetazione, gli ecosistemi e la salute umana.
+
+Il segreto sta nell’altitudine: in alto ci protegge, in basso ci danneggia.
+
+---
+
+## **L’ozono è un gas serra o un gas contaminante?**
+
+### **Ozono e gas serra**
+
+L’ozono è effettivamente un **gas serra**, ma secondario. La sua capacità di trattenere calore è significativa, anche se la concentrazione è molto inferiore rispetto a CO₂ o CH₄.
+Nella stratosfera, questa proprietà contribuisce alla stabilità termica; nella troposfera, invece, amplifica il riscaldamento locale e l’inquinamento.
+
+### **Ozono come gas contaminante**
+
+Quando si accumula vicino al suolo, l’ozono reagisce con altre sostanze producendo radicali ossidanti altamente irritanti. È quindi classificato come **inquinante secondario**, non emesso direttamente ma prodotto da reazioni chimiche.
+
+### **L’ozono non è un gas nobile**
+
+Contrariamente a un luogo comune, l’ozono non è un gas nobile: è estremamente reattivo, instabile e tende a decomporsi in ossigeno. I **gas nobili** (elio, neon, argon, krypton, xenon) non reagiscono chimicamente, mentre l’ozono sì.
+
+---
+
+## **Inquinamento da ozono: cause, effetti e soluzioni**
+
+### **Cos’è l’inquinamento da ozono**
+
+Si parla di **inquinamento da ozono** quando la concentrazione di O₃ al livello del suolo supera i limiti di sicurezza stabiliti (120 µg/m³ come valore obiettivo giornaliero).
+Questo tipo di inquinamento è tipico delle giornate estive, con forte irraggiamento solare e scarsa ventilazione.
+
+### **Cause principali**
+
+* Emissioni di **NOx** da traffico e industria
+* Evaporazione di **VOC** da carburanti e solventi
+* Reazioni fotochimiche accelerate dal sole
+
+Il risultato è lo **smog fotochimico**, una miscela di ozono e altri ossidanti che forma la caratteristica “cappa” sopra le città.
+
+### **Effetti ambientali e sanitari**
+
+* Danni alle **foglie delle piante** e riduzione della fotosintesi
+* Stress ossidativo su **animali e microorganismi**
+* Irritazioni a occhi e vie respiratorie nell’uomo
+* Riduzione della produttività agricola e forestale
+
+### **Soluzioni e politiche di controllo**
+
+* Ridurre le emissioni di precursori (NOx e VOC)
+* Promuovere il trasporto pubblico e l’uso di energie rinnovabili
+* Monitorare i livelli di ozono tramite reti come **ISPRA** e **Copernicus**
+* Sostenere gli accordi internazionali di riduzione dell’inquinamento atmosferico
+
+---
+
+## **Effetti dell’ozono sull’ambiente e sugli esseri viventi**
+
+### **Effetti positivi**
+
+* Filtraggio delle radiazioni UV
+* Regolazione della temperatura nella stratosfera
+* Mantenimento del bilancio climatico terrestre
+
+### **Effetti negativi**
+
+* Nella troposfera, l’ozono danneggia i tessuti vegetali e riduce la crescita delle piante.
+* Può alterare la composizione dei suoli e degli ecosistemi acquatici.
+* Nell’uomo causa irritazioni, tosse, riduzione della funzionalità polmonare e aggravamento di patologie respiratorie.
+
+Gli effetti sull’ambiente sono quindi **bidirezionali**: essenziale in alto, nocivo in basso.
+
+---
+
+## **Come si misura e si monitora l’ozono atmosferico**
+
+Il **livello di ozono nell’atmosfera** viene misurato con diversi strumenti:
+
+* **Spettrofotometri Dobson** e **Brewer** per misure a terra
+* **Sensori satellitari** (TOMS, OMI, Sentinel-5P)
+* **Stazioni ARPA/ISPRA** per il monitoraggio urbano
+
+I dati vengono espressi in **Unità Dobson (DU)** per la colonna totale o in **µg/m³** per la concentrazione al suolo. Le **immagini satellitari** mostrano variazioni globali e la formazione periodica del “buco dell’ozono” sopra l’Antartide.
+
+---
+
+## **Proteggere lo strato di ozono: cosa possiamo fare**
+
+### **Politiche internazionali**
+
+Il **Protocollo di Montreal** (1987) è l’accordo che ha ridotto drasticamente la produzione di **CFC** e altre sostanze responsabili della distruzione dell’ozono. È considerato uno dei più grandi successi ambientali della storia.
+
+### **Azioni individuali**
+
+* Limitare l’uso di prodotti spray e refrigeranti non certificati
+* Ridurre le emissioni di veicoli e fonti industriali
+* Sostenere politiche climatiche e consumo consapevole
+
+### **Futuro dell’ozono**
+
+Grazie alle misure globali, lo strato di ozono sta lentamente recuperando. Secondo l’ONU, ai ritmi attuali tornerà ai livelli pre-1980 entro la metà del XXI secolo. Tuttavia, la lotta contro l’ozono troposferico e i gas serra resta una priorità assoluta.
+
+---
+
+## **Conclusione**
+
+L’ozono è un gas cruciale per la vita sulla Terra: in stratosfera ci protegge, in troposfera ci minaccia.
+La sua duplice natura riflette la complessità dell’atmosfera e l’importanza di mantenerne l’equilibrio.
+Capire come si forma, dove si trova e quali effetti produce sull’ambiente significa comprendere uno dei pilastri dell’ecologia moderna e della lotta al cambiamento climatico.
+
+---
+
+### **Punti chiave**
+
+* L’ozono è un gas formato da tre atomi di ossigeno (O₃).
+* Nella stratosfera filtra le radiazioni UV: è “buono”.
+* Nella troposfera causa smog fotochimico: è “cattivo”.
+* È un gas serra secondario e un inquinante ossidante.
+* La sua tutela è essenziale per la salute e il clima del pianeta.
