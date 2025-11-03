@@ -306,84 +306,13 @@ def footer_default():
             </div>
         </footer>
     '''
-    with open('styles/tmp/pag-home.css') as f: css = f.read()
-    with open('styles/tmp-mobile/pag-home-mobile.css') as f: css_mobile = f.read()
-    class_name = '.container-xl'
-    if class_name not in css:
-        css += f'''
-            {class_name} {{
-                max-width: 1280px;
-                margin-left: auto;
-                margin-right: auto;
-                padding-left: 16px;
-                padding-right: 16px;
-            }}
-        '''
-    class_name = '.home-footer-container'
-    if class_name not in css:
-        css += f'''
-            {class_name} {{
-                background-color: {g.color_black_pearl};
-                padding-top: 96px;
-                padding-bottom: 96px;
-            }}
-        '''
-    class_name = '.home-footer-intro-container'
-    if class_name not in css:
-        css += f'''
-            {class_name} {{
-                display: flex;
-                justify-content: space-between;
-                margin-bottom: 64px;
-            }}
-        '''
-    class_name = '.home-footer-nav'
-    if class_name not in css:
-        css += f'''
-            {class_name} {{
-                display: flex;
-                flex-direction: column;
-                gap: 0.8rem;
-            }}
-        '''
-    class_name = '.home-footer-copyright-container'
-    if class_name not in css:
-        css += f'''
-            {class_name} {{
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }}
-        '''
-    class_name = '.home-footer-intro-container'
-    if class_name not in css_mobile:
-        css_mobile += f'''
-            @media screen and (max-width: 768px) {{
-                {class_name} {{
-                    flex-direction: column;
-                    gap: 32px;
-                }}
-            }}
-        '''
-    class_name = '.home-footer-copyright-container'
-    if class_name not in css_mobile:
-        css_mobile += f'''
-            @media screen and (max-width: 768px) {{
-                {class_name} {{
-                    flex-direction: column;
-                    gap: 16px;
-                }}
-            }}
-        '''
-    with open('styles/tmp/pag-home.css', 'w') as f: f.write(css)
-    with open('styles/tmp-mobile/pag-home-mobile.css', 'w') as f: f.write(css_mobile)
     return html
 
 ##########################################################
 
 def home_hero():
     title = components.h1_reverse(
-        text = f'''Sanificazione ozono per l'industria alimentare''',
+        text = f'''''',
         align_mobile = 'center',
     )
     html = f'''

@@ -75,6 +75,7 @@ def ozono_article_gen(article_url_slug):
             <main>
                 {html_article}
             </main>
+            {components.footer_dark()}
         </body>
         </html>
     '''
@@ -201,6 +202,7 @@ def ozono_gen():
             <main>
                 {html_article}
             </main>
+            {components.footer_dark()}
         </body>
         </html>
     '''
