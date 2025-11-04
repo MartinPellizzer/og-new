@@ -87,13 +87,18 @@ img {
     line-height: 1rem;
     font-weight: normal;
     margin-bottom: 16px;
-
 }
 
 .image_sm_default {
     height: 20rem;
     border-radius: 1rem;
     object-fit: cover;
+}
+
+.card_default {
+    background-color: #f8f9fb;
+    padding: 32px;
+    border-radius: 16px;
 }
 
 /* **************************************** */
@@ -130,7 +135,6 @@ img {
     font-weight: 500;
     transition: color 0.2s;
 }
-
 
 /* Responsive Menu */
 @media (max-width: 768px) {
@@ -416,6 +420,157 @@ footer h2 {
     }
 
     .home-hero-buttons-container {
+        flex-direction: column;
+    }
+}
+
+.home-services-intro-container {
+    max-width: 768px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.home-services-cards-container {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.home-services-card-offset {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 48px;
+}
+
+@media screen and (max-width: 768px) {
+    .home-services-cards-container {
+        flex-direction: column;
+    }
+
+    .home-services-card-offset {
+        margin-top: 0;
+    }
+}
+
+.home-industries-cards-container {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+@media screen and (max-width: 768px) {
+    .home-industries-cards-container {
+        flex-direction: column;
+    }
+}
+
+.h2-reverse {
+    color: #ffffff;
+    font-size: 3rem;
+    line-height: 1;
+    font-weight: normal;
+    margin-bottom: 16px;
+}
+
+.contact_reverse {
+    display: flex;
+    gap: 8px;
+}
+
+.contact_reverse p {
+    color: #ffffff;
+    font-size: 2rem;
+    line-height: 2rem;
+    margin-bottom: 16px;
+}
+
+.button_fill_reverse {
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 9999px;
+    padding: 8px 16px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.button_fill_reverse a {
+    color: #222222;
+    text-decoration-line: none;
+}
+
+.button_ghost_reverse {
+    border: 1px solid #ffffff;
+    border-radius: 9999px;
+    padding: 8px 16px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.button_ghost_reverse a {
+    color: #ffffff;
+    text-decoration-line: none;
+}
+
+.paragraph_reverse {
+    color: #ffffff;
+    font-size: 2rem;
+    line-height: 3rem;
+    margin-bottom: 1rem;
+}
+
+.home-contact-intro-container {
+    display: flex;
+    gap: 96px;
+    margin-bottom: 32px;
+    align-items: center;
+}
+
+.home-contact-intro-title {
+    font-size: 48px;
+    line-height: 56px;
+    color: #ffffff;
+}
+
+.home-contact-intro-content {
+    display: flex;
+    gap: 24px;
+}
+
+.home-contact-cta-container {
+    display: flex;
+    gap: 96px;
+}
+
+.home-contact-cta-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .home-contact-intro-container {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .home-contact-intro-content {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .home-contact-cta-container {
+        flex-direction: column;
+        gap: 1.6rem;
+    }
+
+    .home-contact-cta-buttons {
         flex-direction: column;
     }
 }

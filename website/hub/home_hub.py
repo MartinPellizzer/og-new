@@ -18,28 +18,36 @@ def gen():
                         <div class="home-hero-container">
                             <div class="home-hero-title-container">
                                 <div style="flex: 2;">
-                                    <h1>Sanificazione ozono per l'industria alimentare</h1>
+                                    <h1 style="font-size: 4rem; line-height: 1;">Sistemi di sanificazione ad ozono per l'igiene e la sostenibilità industriale</h1>
                                 </div>
                                 <div style="flex: 1;"></div>
                             </div>
                             <div class="home-hero-content-container">
                                 <div style="flex: 2;"></div>
                                 <div style="flex: 1;">
-                                    <p style="color: #ffffff; font-size: 16px; line-height: 24px; margin-bottom: 24px;">Progettiamo
-                                        sistemi di sanificazione con ozono per ambienti di produzione alimentari pi&#249;
-                                        sicuri e igienici (senza l'uso di sostanze chimiche).</p>
+                                    <p style="color: #ffffff; font-size: 16px; line-height: 24px; margin-bottom: 24px;">Progettiamo e produciamo tecnologie di disinfezione a base di ozono per settori industriali come quello alimentare, agricolo e dei rifiuti.
+                                    </p>
                                     <div class="home-hero-buttons-container">
                                         <div>
-                                            <a class="link_fill_reverse" href="/contatti.html">Prenota consulenza</a>
+                                            <a class="link_fill_reverse" href="/soluzioni.html">Esplora Soluzioni</a>
                                         </div>
                                         <div>
-                                            <a class="link_ghost_reverse" href="#">Come funziona</a>
+                                            <a class="link_ghost_reverse" href="/ozono.html">Scopri La Sanificazione Con Ozono</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                                
+                                    <div class="home-hero-buttons-container">
+                                        <div>
+                                            <a class="link_fill_reverse" href="/soluzioni.html">Esplora Soluzioni</a>
+                                        </div>
+                                        <div>
+                                            <a class="link_ghost_reverse" href="/ozono.html">Scopri La Sanificazione Con Ozono</a>
+                                        </div>
+                                    </div>
                 </section>
                 <section class="container-xl" style="margin-top: 6.4rem; margin-bottom: 6.4rem;">
                     <div class="container-sm" style="margin-bottom: 3rem;">
@@ -109,37 +117,178 @@ def gen():
                         </div>
                     </div>
                 </section>
-                <section>
-                    <section class="container-xl" style="margin-top: 6.4rem; margin-bottom: 6.4rem;">
-                        <div class="container-sm" style="margin-bottom: 3rem;">
-                            <h2 style="color: #222222; text-align: center; font-size: 3rem;" class="h2_default">Perché usare l'ozono?</h2>
-                            <p style="color: #555555; text-align: center;">L'ozono garantisce una potente attività antimicrobica, penetra superfici complesse, non lascia residui chimici, è compatibile con alimenti biologici e prolunga la shelf-life degli alimenti.</p>
-                        </div>
-                        <div style="display: flex; gap: 1.6rem;">
-                            <div style="flex: 10;">
-                                <div class="card_3_default">
-                                    <h3 style="color: #222222; margin-bottom: 1rem; font-size: 1.5rem; font-weight: normal;">Igiene in Secondi</h3>
-                                    <p style="color: #555555;">L'ozono è circa 3.000 volte più rapido ed efficace del cloro nel distruggere batteri, virus, muffe e funghi.<br><br>Riduce drasticamente i tempi di sanificazione, permette cicli produttivi più rapidi, minimizza il downtime degli impianti e garantisce igiene efficace in ambienti ad alta rotazione.</p>
-                                </div>
-                            </div>
-                            <div style="flex: 9;">
-                                <img class="image_sm_default" src="/immagini/veloce.webp">
+                <section class="container-xl" style="margin-top: 6.4rem; margin-bottom: 6.4rem;">
+                    <div class="container-sm" style="margin-bottom: 3rem;">
+                        <h2 style="color: #222222; text-align: center; font-size: 3rem;" class="h2_default">Perché usare l'ozono?</h2>
+                        <p style="color: #555555; text-align: center;">L'ozono garantisce una potente attività antimicrobica, penetra superfici complesse, non lascia residui chimici, è compatibile con alimenti biologici e prolunga la shelf-life degli alimenti.</p>
+                    </div>
+                    <div style="display: flex; gap: 1.6rem;">
+                        <div style="flex: 10;">
+                            <div class="card_3_default">
+                                <h3 style="color: #222222; margin-bottom: 1rem; font-size: 1.5rem; font-weight: normal;">Igiene in Secondi</h3>
+                                <p style="color: #555555;">L'ozono è circa 3.000 volte più rapido ed efficace del cloro nel distruggere batteri, virus, muffe e funghi.<br><br>Riduce drasticamente i tempi di sanificazione, permette cicli produttivi più rapidi, minimizza il downtime degli impianti e garantisce igiene efficace in ambienti ad alta rotazione.</p>
                             </div>
                         </div>
-                        <div style="margin-bottom: 1.6rem;"></div>
-                        <div style="display: flex; gap: 1.6rem;">
-                            <div style="flex: 9;">
-                                <img class="image_sm_default" src="/immagini/ecologico.webp">
-                            </div>
-                            <div style="flex: 10;">
-                                <div class="card_3_default">
-                                    <h3 style="color: #222222; margin-bottom: 1rem; font-size: 1.5rem; font-weight: normal;">Zero Residui Chimici</h3>
-                                    <p style="color: #555555;">L'ozono si decompone rapidamente in ossigeno, senza lasciare residui chimici su superfici o alimenti.<br><br>Garantisce sicurezza alimentare, preserva gusto e freschezza, ed elimina il risciacquo finale, con conseguente risparmio di tempo, acqua e costi produttivi.</p>
-                                </div>
+                        <div style="flex: 9;">
+                            <img class="image_sm_default" src="/immagini/veloce.webp">
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 1.6rem;"></div>
+                    <div style="display: flex; gap: 1.6rem;">
+                        <div style="flex: 9;">
+                            <img class="image_sm_default" src="/immagini/ecologico.webp">
+                        </div>
+                        <div style="flex: 10;">
+                            <div class="card_3_default">
+                                <h3 style="color: #222222; margin-bottom: 1rem; font-size: 1.5rem; font-weight: normal;">Zero Residui Chimici</h3>
+                                <p style="color: #555555;">L'ozono si decompone rapidamente in ossigeno, senza lasciare residui chimici su superfici o alimenti.<br><br>Garantisce sicurezza alimentare, preserva gusto e freschezza, ed elimina il risciacquo finale, con conseguente risparmio di tempo, acqua e costi produttivi.</p>
                             </div>
                         </div>
-                    </section>
+                    </div>
                 </section>
+                <section class="container-xl" style="margin-bottom: 6rem;">
+                    <div class="container-sm" style="margin-bottom: 3rem;">
+                        <h2 style="color: #222222; text-align: center; font-size: 3rem;" class="h2_default">Tecnologia personalizzata per ogni esigenza dell'industria alimentare</h2>
+                        <p style="color: #555555; text-align: center;">I nostri sistemi di sanificazione all'ozono sono progettati su misura per adattarsi a ogni fase del processo produttivo. Che tu operi nella trasformazione, nel confezionamento o nella logistica, Ozonogroup ha una soluzione efficace, sicura e automatizzata.</p>
+                    </div>
+                    <div class="home-services-cards-container">
+                        <div style="flex: 1;">
+                            <div style="display: flex; flex-direction: column; gap: 24px;">
+                                <div class="card_default">
+                                    <svg style="margin-bottom: 16px;" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                                        <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+                                    </svg>
+                                    <div style="margin-bottom: 1.6rem;"></div>
+                                    <h3 style="color: #222222; margin-bottom: 1rem; font-size: 1.5rem; font-weight: normal;">1. Analisi e Valutazione</h3>
+                                    <p style="color: #555555;">Sviluppiamo una soluzione su misura, combinando le migliori tecnologie a ozono con un design personalizzato per otimizzare igiene, efficienza e sostenibilita.</p>
+                                </div>
+                                <div class="card_default">
+                                    <svg style="margin-bottom: 16px;" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                                        <path d="m352-522 86-87-56-57-44 44-56-56 43-44-45-45-87 87 159 158Zm328 329 87-87-45-45-44 43-56-56 43-44-57-56-86 86 158 159Zm24-567 57 57-57-57ZM290-120H120v-170l175-175L80-680l200-200 216 216 151-152q12-12 27-18t31-6q16 0 31 6t27 18l53 54q12 12 18 27t6 31q0 16-6 30.5T816-647L665-495l215 215L680-80 465-295 290-120Zm-90-80h56l392-391-57-57-391 392v56Zm420-419-29-29 57 57-28-28Z" />
+                                    </svg>
+                                    <div style="margin-bottom: 1.6rem;"></div>
+                                    <h3 style="color: #222222; margin-bottom: 1rem; font-size: 1.5rem; font-weight: normal;">2. Progettazione e Realizzazione</h3>
+                                    <p style="color: #555555;">Sviluppiamo una soluzione su misura, combinando le migliori tecnologie a ozono con un design personalizzato per otimizzare igiene, efficienza e sostenibilita.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="flex: 1;">
+                            <div class="home-services-card-offset">
+                                <div class="card_default">
+                                    <svg style="margin-bottom: 16px;" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                                        <path d="M686-132 444-376q-20 8-40.5 12t-43.5 4q-100 0-170-70t-70-170q0-36 10-68.5t28-61.5l146 146 72-72-146-146q29-18 61.5-28t68.5-10q100 0 170 70t70 170q0 23-4 43.5T584-516l244 242q12 12 12 29t-12 29l-84 84q-12 12-29 12t-29-12Zm29-85 27-27-256-256q18-20 26-46.5t8-53.5q0-60-38.5-104.5T386-758l74 74q12 12 12 28t-12 28L332-500q-12 12-28 12t-28-12l-74-74q9 57 53.5 95.5T360-440q26 0 52-8t47-25l256 256ZM472-488Z" />
+                                    </svg>
+                                    <div style="margin-bottom: 1.6rem;"></div>
+                                    <h3 style="color: #222222; margin-bottom: 1rem; font-size: 1.5rem; font-weight: normal;">3. Installazione e Formazione</h3>
+                                    <p style="color: #555555;">Il nostro team tecnico si occupa dell'installazione e forma il tuo personale sull'utilizzo sicuro e ottimale del sistema.</p>
+                                </div>
+                                <div class="card_default">
+                                    <svg style="margin-bottom: 16px;" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                                        <path d="M240-400h320v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z" />
+                                    </svg>
+                                    <div style="margin-bottom: 1.6rem;"></div>
+                                    <h3 style="color: #222222; margin-bottom: 1rem; font-size: 1.5rem; font-weight: normal;">4. Assistenza e Manutenzione</h3>
+                                    <p style="color: #555555;">Forniamo supporto tecnico continuo e piano di manutenzione preventiva per assicurare performance costanti e conformita normativa nel tempo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="container-xl" style="margin-bottom: 5rem;">
+                    <div class="home-industries-cards-container">
+                        <div style="flex: 1;">
+                            <div class="container-sm" style="margin-bottom: 3rem;">
+                                <h2 style="color: #222222; font-size: 3rem;" class="h2_default">Soluzioni specifiche per ogni filiera alimentar</h2>
+                                <p style="color: #555555;">Ogni settore dell'industria alimentare ha esigenze diverse in termini di igiene, normativa e tipo di contaminazione microbiologica. I sistemi di sanificazione all'ozono di Ozonogroup sono progettati per adattarsi perfettamente a questi contesti, garantendo efficacia microbiologica, sostenibilità ambientale e conformità normativa.</p>
+                            </div>
+                        </div>
+                        <div style="flex: 1;">
+                            <div class="card_default_1">
+                                <div style="margin-bottom: 4rem;">
+                                    <h2 class="suptitle_default">01</h2>
+                                    <h3 style="color: #222222; margin-bottom: 1rem; font-size: 1.5rem; font-weight: normal;">Carne e Pollame</h3>
+                                    <p style="color: #555555;">Sanificazione profonda in ambienti ad alto rischio microbiologico. Eliminazione di patogeni come Salmonella, Listeria e E. coli da superfici, macchinari e ambienti. Sistemi integrati nelle linee di disosso, sezionamento e confezionamento. Controllo degli odori e prevenzione della formazione di biofilm.</p>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                                    <path d="M250-40v-160h-30q-42 0-71-29t-29-71q0-42 29-71t71-29h30v-40H120v-200h130v-40h-30q-42 0-71-29t-29-71q0-42 29-71t71-29h30v-40h60v40h30q42 0 71 29t29 71q0 42-29 71t-71 29h-30v40h130v200H310v40h30q42 0 71 29t29 71q0 42-29 71t-71 29h-30v160h-60Zm400 0v-160h-30q-42 0-71-29t-29-71q0-42 29-71t71-29h30v-40H520v-200h130v-40h-30q-42 0-71-29t-29-71q0-42 29-71t71-29h30v-40h60v40h30q42 0 71 29t29 71q0 42-29 71t-71 29h-30v40h130v200H710v40h30q42 0 71 29t29 71q0 42-29 71t-71 29h-30v160h-60ZM220-760h120q8 0 14-6t6-14q0-8-6-14t-14-6H220q-8 0-14 6t-6 14q0 8 6 14t14 6Zm400 0h120q8 0 14-6t6-14q0-8-6-14t-14-6H620q-8 0-14 6t-6 14q0 8 6 14t14 6ZM200-520h160v-40H200v40Zm400 0h160v-40H600v40ZM220-280h120q8 0 14-6t6-14q0-8-6-14t-14-6H220q-8 0-14 6t-6 14q0 8 6 14t14 6Zm400 0h120q8 0 14-6t6-14q0-8-6-14t-14-6H620q-8 0-14 6t-6 14q0 8 6 14t14 6ZM200-760v-40 40Zm400 0v-40 40ZM200-520v-40 40Zm400 0v-40 40ZM200-280v-40 40Zm400 0v-40 40Z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div style="flex: 1;">
+                            <div class="card_default_1">
+                                <div style="margin-bottom: 4rem;">
+                                    <h2 class="suptitle_default">02</h2>
+                                    <h3 style="color: #222222; margin-bottom: 1rem; font-size: 1.5rem; font-weight: normal;">Pesce e Frutti di Mare</h3>
+                                    <p style="color: #555555;">Igiene in ambienti umidi, a bassa temperatura e ad alto carico organico. Ozono efficace anche in ambienti freddi (5°C), ideale per celle e zone di lavorazione pesce. Riduzione della carica batterica su filetti, crostacei, superfici e nastri trasportatori. Prolungamento della shelf-life senza additivi chimici.</p>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                                    <path d="M440-120q-100 0-170-70t-70-170v-240l200 200-56 57-64-64v47q0 66 47 113t113 47q66 0 113-47t47-113v-127q-36-14-58-44.5T520-600q0-38 22-68.5t58-44.5v-167h80v167q36 14 58 44.5t22 68.5q0 38-22 69t-58 44v127q0 100-70 170t-170 70Zm200-440q17 0 28.5-11.5T680-600q0-17-11.5-28.5T640-640q-17 0-28.5 11.5T600-600q0 17 11.5 28.5T640-560Zm0-40Z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="home-industries-cards-container">
+                        <div style="flex: 1;">
+                            <div class="card_default_1">
+                                <div style="margin-bottom: 4rem;">
+                                    <h2 class="suptitle_default">03</h2>
+                                    <h3 style="color: #222222; margin-bottom: 1rem; font-size: 1.5rem; font-weight: normal;">Ortofrutta</h3>
+                                    <p style="color: #555555;">Sanificazione post-raccolta, durante lo stoccaggio e nel confezionamento. Rimozione di muffe e lieviti (Botrytis, Penicillium) responsabili del deterioramento precoce. Disinfezione di casse, nastri, vasche di lavaggio e aria nelle aree di confezionamento.</p>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                                    <path d="M480-120q-117 0-198.5-81.5T200-400q0-94 55.5-168.5T401-669q-20-5-39-14.5T328-708q-33-33-42.5-78.5T281-879q47-5 92.5 4.5T452-832q23 23 33.5 52t13.5 61q13-31 31.5-58.5T572-828q11-11 28-11t28 11q11 11 11 28t-11 28q-22 22-39 48.5T564-667q88 28 142 101.5T760-400q0 117-81.5 198.5T480-120Zm0-80q83 0 141.5-58.5T680-400q0-83-58.5-141.5T480-600q-83 0-141.5 58.5T280-400q0 83 58.5 141.5T480-200Zm0-200Z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div style="flex: 1;">
+                            <div class="card_default_1">
+                                <div style="margin-bottom: 4rem;">
+                                    <h2 class="suptitle_default">04</h2>
+                                    <h3 style="color: #222222; margin-bottom: 1rem; font-size: 1.5rem; font-weight: normal;">Latticini e Derivati del Latte</h3>
+                                    <p style="color: #555555;">Controllo microbiologico in ambienti sensibili alla contaminazione crociata. Rimozione di Listeria monocytogenes in vasche, superfici e impianti CIP. Disinfezione di aria e superfici nelle aree di fermentazione e maturazione. Sistemi compatibili con ambienti ad alta umidità e carico proteico.</p>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                                    <path d="M482-40 294-400q-71 3-122.5-41T120-560q0-51 29.5-92t74.5-58q18-91 89.5-150.5T480-920q95 0 166.5 59.5T736-710q45 17 74.5 58t29.5 92q0 75-53 119t-119 41L482-40ZM280-480q15 0 29.5-5t26.5-17l22-22 26 16q21 14 45.5 21t50.5 7q26 0 50.5-7t45.5-21l26-16 22 22q12 12 26.5 17t29.5 5q33 0 56.5-23.5T760-560q0-30-19-52.5T692-640l-30-4-2-32q-5-69-57-116.5T480-840q-71 0-123 47.5T300-676l-2 32-30 6q-30 6-49 27t-19 51q0 33 23.5 56.5T280-480Zm202 266 108-210q-24 12-52 18t-58 6q-27 0-54.5-6T372-424l110 210Zm-2-446Z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div style="flex: 1;">
+                            <div class="card_default_1">
+                                <div style="margin-bottom: 4rem;">
+                                    <h2 class="suptitle_default">05</h2>
+                                    <h3 style="color: #222222; margin-bottom: 1rem; font-size: 1.5rem; font-weight: normal;">Bevande e Imbottigliamento</h3>
+                                    <p style="color: #555555;">Igienizzazione delle linee e prevenzione di alterazioni microbiologiche nei liquidi. Ozono in forma gassosa e acquosa per la sanificazione di serbatoi, tubazioni, riempitrici. Sistemi integrati nei processi CIP e SIP. Nessun residuo chimico: ideale per produzione biologica o senza conservanti.</p>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                                    <path d="M491-200q12-1 20.5-9.5T520-230q0-14-9-22.5t-23-7.5q-41 3-87-22.5T343-375q-2-11-10.5-18t-19.5-7q-14 0-23 10.5t-6 24.5q17 91 80 130t127 35ZM480-80q-137 0-228.5-94T160-408q0-100 79.5-217.5T480-880q161 137 240.5 254.5T800-408q0 140-91.5 234T480-80Zm0-80q104 0 172-70.5T720-408q0-73-60.5-165T480-774Q361-665 300.5-573T240-408q0 107 68 177.5T480-160Zm0-320Z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div style="background-color: #ededed; height: 1px;"></div>
+                <section class="container-xl" style="margin-top: 6rem; margin-bottom: 6rem;">
+                    <div style="display: flex; align-items: center; gap: 3rem;">
+                        <h2 style="color: {g.color_black_pearl}; font-size: 1.25rem; font-weight: normal;">Contattaci</h2>
+                        <div style="display: flex; align-items: center; gap: 1.5rem;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="{g.color_black_pearl}">
+                                    <path
+                                        d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z" />
+                                </svg>
+                                <span>Email: info@ozonogroup.it</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="{g.color_black_pearl}">
+                                    <path
+                                        d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z" />
+                                </svg>
+                                <span>Telefono: +39 0423 952833</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
             </main>
             {components.footer_dark()}
         </body>

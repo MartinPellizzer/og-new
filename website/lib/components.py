@@ -12,11 +12,14 @@ def header_light():
             </label>
 
             <ul class="menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Applicazioni</a></li>
-                <li><a href="#">Prodotti</a></li>
-                <li><a href="#">Servizi</a></li>
-                <li><a href="#">Ozono</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/soluzioni.html">Soluzioni</a></li>
+                <li><a href="/prodotti.html">Prodotti</a></li>
+                <li><a href="/servizi.html">Servizi</a></li>
+                <li><a href="/industrie.html">Industrie</a></li>
+                <li><a href="/risorse.html">Risorse</a></li>
+                <li><a href="/ozono.html">Ozono</a></li>
+                <li><a href="/contatti.html">Contatti</a></li>
             </ul>
         </nav>
     '''
