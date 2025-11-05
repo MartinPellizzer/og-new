@@ -1,7 +1,7 @@
 def header_light():
     html = f'''
         <nav class="navbar-light">
-            <div class="logo">Ozonogroup</div>
+            <div class="logo"><a style="color: #222222;" href="/">Ozonogroup</a></div>
 
             <input type="checkbox" id="menu-toggle" class="menu-toggle" />
 
@@ -12,15 +12,17 @@ def header_light():
             </label>
 
             <ul class="menu">
-                <li><a href="/">Home</a></li>
-                <li><a href="/soluzioni.html">Soluzioni</a></li>
                 <li><a href="/prodotti.html">Prodotti</a></li>
                 <li><a href="/servizi.html">Servizi</a></li>
-                <li><a href="/industrie.html">Industrie</a></li>
-                <li><a href="/risorse.html">Risorse</a></li>
-                <li><a href="/ozono.html">Ozono</a></li>
-                <li><a href="/contatti.html">Contatti</a></li>
+                <li><a href="/settori.html">Settori</a></li>
+                <li><a href="/ozono.html">Guida all'Ozono</a></li>
+                <li><a href="/chi-siamo.html">Chi Siamo</a></li>
             </ul>
+            
+            <a class="header-button" href="/contatti.html">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M680-80v-120H560v-80h120v-120h80v120h120v80H760v120h-80Zm-480-80q-33 0-56.5-23.5T120-240v-480q0-33 23.5-56.5T200-800h40v-80h80v80h240v-80h80v80h40q33 0 56.5 23.5T760-720v244q-20-3-40-3t-40 3v-84H200v320h280q0 20 3 40t11 40H200Zm0-480h480v-80H200v80Zm0 0v-80 80Z"/></svg>
+                <span>Prenota Consulenza</span>
+            </a>
         </nav>
     '''
     return html

@@ -2,6 +2,61 @@ from lib import g
 from lib import components
 
 def gen():
+    hero = f'''
+        <section style="
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/immagini/sanificazione-ozono.png');
+                background-size: cover;
+                background-position: center;
+                margin-bottom: 6rem;
+                padding-top: 8rem;
+                padding-bottom: 8rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+        ">
+            <h1 class="container-lg" style="color: #ffffff; font-size: 4rem; line-height: 1; font-weight: normal; text-align: center; margin-bottom: 1rem;">
+                Sanificazione ad Ozono Professionale per l'Industria
+            </h1>
+            <p class="container-md" style="color: #ffffff; font-size: 1.25rem; line-height: 1.4; text-align: center; margin-bottom: 2rem;">
+                Progettiamo e produciamo tecnologie di disinfezione a base di ozono per settori industriali come quello alimentare, agricolo e dei rifiuti.
+            </p>
+            <div>
+                <a class="button-invert" href="/contatti.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M680-80v-120H560v-80h120v-120h80v120h120v80H760v120h-80Zm-480-80q-33 0-56.5-23.5T120-240v-480q0-33 23.5-56.5T200-800h40v-80h80v80h240v-80h80v80h40q33 0 56.5 23.5T760-720v244q-20-3-40-3t-40 3v-84H200v320h280q0 20 3 40t11 40H200Zm0-480h480v-80H200v80Zm0 0v-80 80Z"/></svg>
+                    <span>Richiedi Preventivo</span>
+                </a>
+            </div>
+        </section>
+    '''
+    servizi = f'''
+        <section class="container-xl">
+            <h2 style="
+                color: #222222;
+                font-size: 3rem; 
+                line-height: 1; 
+                font-weight: normal; 
+                margin-bottom: 3rem;
+            ">
+                Servizi
+            </h2>
+            <div class="grid-3">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="48px" width="48px" viewBox="0 -960 960 960" fill="blue"><path d="M680-80v-120H560v-80h120v-120h80v120h120v80H760v120h-80Zm-480-80q-33 0-56.5-23.5T120-240v-480q0-33 23.5-56.5T200-800h40v-80h80v80h240v-80h80v80h40q33 0 56.5 23.5T760-720v244q-20-3-40-3t-40 3v-84H200v320h280q0 20 3 40t11 40H200Zm0-480h480v-80H200v80Zm0 0v-80 80Z"/></svg>
+                    <h3 style="color: #222222; font-size: 2rem; line-height: 1.25; font-weight: bold; margin-bottom: 1rem;">Sanificazione dell'aria</h3>
+                    <p style="color: #555555; margin-bottom: 2rem;">
+                        Negli ambienti chiusi, virus e batteri si diffondono attraverso l'aria e i sistemi di ventilazione. La sanificazione a ozono agisce in profondità, neutralizzando cariche batteriche e odori negli impianti di trattamento aria. Ambienti di lavoro più salubri, riduzione del rischio biologico e miglior comfort per operatori e visitatori.
+                    </p>
+                </div>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="48px" width="48px" viewBox="0 -960 960 960" fill="blue"><path d="M680-80v-120H560v-80h120v-120h80v120h120v80H760v120h-80Zm-480-80q-33 0-56.5-23.5T120-240v-480q0-33 23.5-56.5T200-800h40v-80h80v80h240v-80h80v80h40q33 0 56.5 23.5T760-720v244q-20-3-40-3t-40 3v-84H200v320h280q0 20 3 40t11 40H200Zm0-480h480v-80H200v80Zm0 0v-80 80Z"/></svg>
+                    <h3 style="color: #222222; font-size: 2rem; line-height: 1.25; font-weight: bold; margin-bottom: 1rem;">Sanificazione dell'aria</h3>
+                    <p style="color: #555555; margin-bottom: 2rem;">
+                        Negli ambienti chiusi, virus e batteri si diffondono attraverso l'aria e i sistemi di ventilazione. La sanificazione a ozono agisce in profondità, neutralizzando cariche batteriche e odori negli impianti di trattamento aria. Ambienti di lavoro più salubri, riduzione del rischio biologico e miglior comfort per operatori e visitatori.
+                    </p>
+                </div>
+            <div>
+        </section>
+    '''
     html = f'''
         <!DOCTYPE html>
         <html lang="en">
@@ -13,42 +68,8 @@ def gen():
         <body>
             {components.header_light()}
             <main>
-                <section class="home-hero-section">
-                    <div class="container-xl" style="height: 100%;">
-                        <div class="home-hero-container">
-                            <div class="home-hero-title-container">
-                                <div style="flex: 2;">
-                                    <h1 style="font-size: 4rem; line-height: 1;">Sistemi di sanificazione ad ozono per l'igiene e la sostenibilità industriale</h1>
-                                </div>
-                                <div style="flex: 1;"></div>
-                            </div>
-                            <div class="home-hero-content-container">
-                                <div style="flex: 2;"></div>
-                                <div style="flex: 1;">
-                                    <p style="color: #ffffff; font-size: 16px; line-height: 24px; margin-bottom: 24px;">Progettiamo e produciamo tecnologie di disinfezione a base di ozono per settori industriali come quello alimentare, agricolo e dei rifiuti.
-                                    </p>
-                                    <div class="home-hero-buttons-container">
-                                        <div>
-                                            <a class="link_fill_reverse" href="/soluzioni.html">Esplora Soluzioni</a>
-                                        </div>
-                                        <div>
-                                            <a class="link_ghost_reverse" href="/ozono.html">Scopri La Sanificazione Con Ozono</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                                
-                                    <div class="home-hero-buttons-container">
-                                        <div>
-                                            <a class="link_fill_reverse" href="/soluzioni.html">Esplora Soluzioni</a>
-                                        </div>
-                                        <div>
-                                            <a class="link_ghost_reverse" href="/ozono.html">Scopri La Sanificazione Con Ozono</a>
-                                        </div>
-                                    </div>
-                </section>
+                {hero}
+                {servizi}
                 <section class="container-xl" style="margin-top: 6.4rem; margin-bottom: 6.4rem;">
                     <div class="container-sm" style="margin-bottom: 3rem;">
                         <h2 style="color: #222222; text-align: center; font-size: 3rem;" class="h2_default">A cosa serve l'ozono?</h2>
