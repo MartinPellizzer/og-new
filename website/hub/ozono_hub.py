@@ -43,7 +43,7 @@ def ozono_article_gen(article_url_slug):
     html_article = html_article.replace('<ul', '<ul class="container-md article-ul"')
     html_article = html_article.replace('<ol', '<ol class="container-md article-ol"')
     html_article = html_article.replace('<li', '<li class="article-li"')
-    html_article = html_article.replace('<p>', '<p class="container-md article-p"">')
+    html_article = html_article.replace('<p>', '<p class="container-md article-p">')
     html_article = html_article.replace('<table>', '<table class="container-md article-table"">')
     
     html_article = html_article.replace('/h1>', '/h1>\n<p class="container-md article-date">6 October 2025</p>\n<p class="container-sd article-author">Staff Tecnico Ozonogroup</p>')
