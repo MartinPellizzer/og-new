@@ -12,8 +12,8 @@ def header_light():
             </label>
 
             <ul class="menu">
-                <li><a href="/prodotti.html">Prodotti</a></li>
                 <li><a href="/servizi.html">Servizi</a></li>
+                <li><a href="/prodotti.html">Prodotti</a></li>
                 <li><a href="/settori.html">Settori</a></li>
                 <li><a href="/ozono.html">Guida all'Ozono</a></li>
                 <li><a href="/chi-siamo.html">Chi Siamo</a></li>
@@ -41,11 +41,11 @@ def header_dark():
             </label>
 
             <ul class="menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Applicazioni</a></li>
-                <li><a href="#">Prodotti</a></li>
-                <li><a href="#">Servizi</a></li>
-                <li><a href="#">Ozono</a></li>
+                <li><a href="/servizi.html">Servizi</a></li>
+                <li><a href="/prodotti.html">Prodotti</a></li>
+                <li><a href="/settori.html">Settori</a></li>
+                <li><a href="/ozono.html">Guida all'Ozono</a></li>
+                <li><a href="/chi-siamo.html">Chi Siamo</a></li>
             </ul>
         </nav>
     '''
@@ -76,7 +76,6 @@ def footer_dark():
                     <div>
                         <h2>Risorse</h2>
                         <div class="home-footer-nav">
-                            <a href="/">Home</a>
                             <a href="/chi-siamo.html">Chi Siamo</a>
                             <a href="/contatti.html">Contatti</a>
                         </div>
