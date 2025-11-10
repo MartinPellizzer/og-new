@@ -107,6 +107,7 @@ def gen():
         </div>
     '''
     
+    ########################################
     servizi_monitoraggio_controllo_data = [
         {
             'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M320-80q-66 0-113-47t-47-113v-400q0-66 47-113t113-47h50v-80h60v80h100v-80h60v80h50q66 0 113 47t47 113v400q0 66-47 113T640-80H320Zm0-60h320q42 0 71-29t29-71v-400q0-42-29-71t-71-29H320q-42 0-71 29t-29 71v400q0 42 29 71t71 29Zm0-440h320v-60H320v60Zm160 315q33 0 56.5-23.5T560-344q0-26-15-45t-65-76q-50 58-65 76.5T400-344q0 32 23.5 55.5T480-265ZM220-740v600-600Z"/></svg>''',
@@ -150,7 +151,67 @@ def gen():
             {cards}
         </div>
     '''
+    
+    ########################################
+    servizi_manutenzione_supporto_data = [
+        {
+            'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M705-128 447-388q-23 8-46 13t-47 5q-97.08 0-165.04-67.67Q121-505.33 121-602q0-31 8.16-60.39T152-718l145 145 92-86-149-149q25.91-15.16 54.96-23.58Q324-840 354-840q99.17 0 168.58 69.42Q592-701.17 592-602q0 24-5 47t-13 46l259 258q11 10.96 11 26.48T833-198l-76 70q-10.7 11-25.85 11Q716-117 705-128Zm28-57 40-40-273-273q16-21 24-49.5t8-54.5q0-75-55.5-127T350-782l102 104q9 9 8.5 21.5T451-635L318-510q-9.27 8-21.64 8-12.36 0-20.36-8l-98-97q3 77 54.67 127T354-430q25 0 53-8t49-24l277 277ZM476-484Z"/></svg>''',
+            'title': f'''Manutenzione programmata impianti ad ozono''',
+            'description': f'''Controlli e sostituzione componenti periodici.''',
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        # {
+        #     'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M320-80q-66 0-113-47t-47-113v-400q0-66 47-113t113-47h50v-80h60v80h100v-80h60v80h50q66 0 113 47t47 113v400q0 66-47 113T640-80H320Zm0-60h320q42 0 71-29t29-71v-400q0-42-29-71t-71-29H320q-42 0-71 29t-29 71v400q0 42 29 71t71 29Zm0-440h320v-60H320v60Zm160 315q33 0 56.5-23.5T560-344q0-26-15-45t-65-76q-50 58-65 76.5T400-344q0 32 23.5 55.5T480-265ZM220-740v600-600Z"/></svg>''',
+        #     'title': f'''Taratura e revisione generatori ad ozono''',
+        #     'description': f'''Calibrazione strumenti e controllo resa.''',
+        #     'link_href': f'''#''',
+        #     'link_anchor': f'''Maggiori info''',
+        # },
+        {
+            'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M240-399h313v-60H240v60Zm0-130h480v-60H240v60Zm0-130h480v-60H240v60ZM80-80v-740q0-24 18-42t42-18h680q24 0 42 18t18 42v520q0 24-18 42t-42 18H240L80-80Zm134-220h606v-520H140v600l74-80Zm-74 0v-520 520Z"/></svg>''',
+            'title': f'''Assistenza tecnica e pronto intervento''',
+            'description': f'''Supporto post-vendita per guasti e anomalie.''',
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+    ]
+    cards = []
+    for item in servizi_manutenzione_supporto_data:
+        cards.append(f'''
+            <div>
+                <div style="display: inline-block; margin-bottom: 2rem; border: 1px solid #f2f2f2; border-radius: 2rem; padding: 2rem;">
+                    { item['icon'] }
+                </div>
+                <h3 style="color: #222222; font-size: 1.5rem; line-height: 1.25; font-weight: bold; margin-bottom: 1rem;">
+                    { item['title'] }
+                </h3> 
+                <p style="color: #555555; margin-bottom: 2rem;">
+                    { item['description'] }                    
+                </p>
+                <p>
+                    <a style="color: #555555;" href="{ item['link_href'] }">{ item['link_anchor'] }</a>
+                </p>
+            </div>
+        ''')
+    cards = ''.join(cards)
+    servizi_manutenzione_supporto = f'''
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4rem;">
+            <div style="flex: 2;">
+                <h2 style="color: #222222; font-size: 3rem; line-height: 1; font-weight: normal;">
+                    Servizi di manutenzione e supporto tecnico
+                </h2>
+            </div>
+            <div style="flex: 1; display: flex; justify-content: end;">
+                
+            </div>
+        </div>
+        <div class="grid-3" style="column-gap: 3rem; row-gap: 3rem;">
+            {cards}
+        </div>
+    '''
 
+    ########################################
     servizi = f'''
         <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_py};">
             {servizi_sanificazione_ambientale}
@@ -158,6 +219,10 @@ def gen():
         <div style="background-color: #ededed; height: 1px;"></div>  
         <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_py};">
             {servizi_monitoraggio_controllo}
+        </section>
+        <div style="background-color: #ededed; height: 1px;"></div>  
+        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_py};">
+            {servizi_manutenzione_supporto}
         </section>
         <div style="background-color: #ededed; height: 1px;"></div>  
     '''
@@ -178,7 +243,6 @@ def gen():
             <main>
                 {hero}
                 {servizi}
-                <div style="background-color: #ededed; height: 1px;"></div>
                 <section class="container-xl" style="margin-top: 6rem; margin-bottom: 6rem;">
                     <div style="display: flex; align-items: center; gap: 3rem; margin-bottom: 2rem;">
                         <h2 style="color: {g.color_black_pearl}; font-size: 1.25rem; font-weight: normal;">Contattaci</h2>

@@ -11,5 +11,8 @@ home_hub.gen()
 from hub import servizi_hub
 servizi_hub.gen()
 
+from hub import prodotti_hub
+prodotti_hub.gen()
+
 from hub import ozono_hub
 ozono_hub.gen()
