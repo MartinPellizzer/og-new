@@ -25,7 +25,7 @@ def cta():
             </div>
             <div style="">
                 <div style="display: inline-block;">
-                    <a class="button-default-3" href="/ozono.html">
+                    <a class="button-default-3" href="/contatti.html">
                         <span>Prenota Consulenza Gratuita</span>
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>                
                     </a>
@@ -39,6 +39,16 @@ def gen():
     section_hero_py = '5rem'
     section_py = '8rem'
     
+    hero_button = f'''
+        <div style="flex: 1; display: flex; justify-content: end; margin-top: 0.25rem;">
+            <div style="display: inline-block;">
+                <a class="button-default-1" href="/contatti.html">
+                    <span>Prenota Consulenza Gratuita</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>                
+                </a>
+            </div>
+        </div>
+    '''
     ########################################
     # hero
     ########################################
@@ -53,14 +63,7 @@ def gen():
                         Un team di tecnici, ingegneri e ricercatori al servizio della qualità dell'aria e dell'igiene industriale.
                     </p>
                 </div>
-                <div style="flex: 1; display: flex; justify-content: end; margin-top: 0.25rem;">
-                    <div style="display: inline-block;">
-                        <a class="button-default-1" href="/servizi.html">
-                            <span>Richiedi Preventivo</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>                
-                        </a>
-                    </div>
-                </div>
+                {hero_button}
             </div>
         </section>
         <div style="background-color: #ededed; height: 1px;"></div>  

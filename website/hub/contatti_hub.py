@@ -1,8 +1,6 @@
 from lib import g
 from lib import components
 
-from data import settori_data
-
 def cta():
     html = f'''
         <section class="container-xl" style="margin-top: 6rem; margin-bottom: 6rem;">
@@ -23,14 +21,6 @@ def cta():
                         </svg>
                         <span>Telefono: +39 0423 952833</span>
                     </div>
-                </div>
-            </div>
-            <div style="">
-                <div style="display: inline-block;">
-                    <a class="button-default-3" href="/contatti.html">
-                        <span>Prenota Consulenza Gratuita</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>                
-                    </a>
                 </div>
             </div>
         </section>
@@ -58,65 +48,17 @@ def gen():
         <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_hero_py};">
             <div style="display: flex; justify-content: space-between; center;">
                 <div style="flex: 2;">
-                    <h2 style="color: #222222; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
-                        Soluzioni ad ozono su misura per ogni settore industriale
+                    <h2 style="color: #1f1f1f; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
+Parliamo del tuo progetto di sanificazione ad ozono
                     </h2>
                     <p style="color: #1f1f1f;">                        
-                        Dal trattamento dell’aria alla sanificazione degli impianti produttivi, le nostre tecnologie si adattano alle esigenze specifiche di ogni settore.
+Siamo a tua disposizione per consulenze tecniche, preventivi o semplici informazioni.
                     </p>
                 </div>
-                {hero_button}
+                <div style="flex: 1;"></div>
             </div>
         </section>
         <div style="background-color: #ededed; height: 1px;"></div>  
-    '''
-    
-    ########################################
-    # sttori
-    ########################################
-    data = settori_data.data
-    cards = []
-    for item in data:
-        cards.append(f'''
-            <div> 
-                <img style="margin-bottom: 1rem; border-radius: 1rem; height: 15rem; object-fit: cover;" 
-                    src="{ item['image_src'] }
-                ">
-                <h3 style="color: #222222; font-size: 1.5rem; line-height: 1.25; font-weight: bold; margin-bottom: 1rem;">
-                    { item['title'] }
-                </h3> 
-                <p style="color: #555555; margin-bottom: 2rem;">
-                    { item['description'] }                    
-                </p>
-                <p>
-                    <a style="color: #555555;" href="{ item['href'] }">Maggiori info</a>
-                </p>
-            </div>
-        ''')
-    cards = ''.join(cards)
-    settori_overview = f'''
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4rem;">
-            <div style="flex: 2;">
-                <h2 style="color: #222222; font-size: 3rem; line-height: 1; font-weight: normal;">
-                    I nostri principali ambiti di applicazione
-                </h2>
-            </div>
-            <div style="flex: 1; display: flex; justify-content: end;">
-
-            </div>
-        </div>
-        <div class="grid-3" style="column-gap: 3rem; row-gap: 3rem;">
-            {cards}
-        </div>
-    '''
-
-    
-
-    settori = f'''
-        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_py};">
-            {settori_overview}
-        </section>
-        <div style="background-color: #ededed; height: 1px;"></div>
     '''
 
     ########################################
@@ -134,13 +76,11 @@ def gen():
             {components.header_light()}
             <main>
                 {hero}
-                {settori}
                 {cta()}
             </main>
-                
             {components.footer_dark()}
         </body>
         </html>
     '''
-    html_filepath = f'{g.website_folderpath}/settori.html'
+    html_filepath = f'{g.website_folderpath}/contatti.html'
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)

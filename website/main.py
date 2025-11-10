@@ -20,5 +20,8 @@ settori_hub.gen()
 from hub import chi_siamo_hub
 chi_siamo_hub.gen()
 
+from hub import contatti_hub
+contatti_hub.gen()
+
 from hub import ozono_hub
 ozono_hub.gen()
