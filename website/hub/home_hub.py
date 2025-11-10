@@ -1,6 +1,8 @@
 from lib import g
 from lib import components
 
+from data import settori_data
+
 def gen():
     section_py = '8rem'
     hero = f'''
@@ -174,64 +176,8 @@ def gen():
     ########################################
     # settori
     ########################################
-    settori_data = [
-        {
-            'href': '''/settori.html''',
-            'image_src': '/immagini/settori-industria-alimentare.jpg',
-            'category': '',
-            'title': '''Industria alimentare''',
-            'description': '''Sanificazione di linee produttive e celle frigo in conformità HACCP.''',
-            'date': '''6 Ottobre 2025''',
-            'datetime': '''2025-10-06''',
-        },
-        {
-            'href': '''/settori.html''',
-            'image_src': '/immagini/settori-logistica-magazzini.jpg',
-            'category': '',
-            'title': '''Logistica e magazzini''',
-            'description': '''Ambienti di stoccaggio privi di muffe, odori e contaminazioni.''',
-            'date': '''6 Ottobre 2025''',
-            'datetime': '''2025-10-06''',
-        },
-        {
-            'href': '''/settori.html''',
-            'image_src': '/immagini/settori-hotel-ristorazione-catering.jpg',
-            'category': '',
-            'title': '''Ho.Re.Ca.''',
-            'description': '''Sanificazione di cucine, camere e aree comuni per standard elevati d'igiene.''',
-            'date': '''6 Ottobre 2025''',
-            'datetime': '''2025-10-06''',
-        },
-        {
-            'href': '''/settori.html''',
-            'image_src': '/immagini/settori-industria-farmaceutica-cosmetica.jpg',
-            'category': '',
-            'title': '''Industria farmaceutica e cosmetica''',
-            'description': '''Ambienti a contaminazione controllata con sistemi automatizzati ad ozono.''',
-            'date': '''6 Ottobre 2025''',
-            'datetime': '''2025-10-06''',
-        },
-        {
-            'href': '''/settori.html''',
-            'image_src': '/immagini/settori-agricolo-agroalimentare.jpg',
-            'category': '',
-            'title': '''Settore agricolo e agroalimentare''',
-            'description': '''Riduzione di batteri, muffe e odori in serre, stalle e impianti di trasformazione.''',
-            'date': '''6 Ottobre 2025''',
-            'datetime': '''2025-10-06''',
-        },
-        {
-            'href': '''/settori.html''',
-            'image_src': '/immagini/settori-impianti-sportivi-palestre.jpg',
-            'category': '',
-            'title': '''Impianti sportivi e palestre''',
-            'description': '''Disinfezione sicura e continua di spogliatoi, palestre e aree comuni.''',
-            'date': '''6 Ottobre 2025''',
-            'datetime': '''2025-10-06''',
-        },
-    ]
     settori_cards = []
-    for item_i, item in enumerate(settori_data):
+    for item_i, item in enumerate(settori_data.data):
         settore_card = f'''
             <div>
                 <img style="margin-bottom: 1rem; border-radius: 1rem; height: 15rem; object-fit: cover;" src="{item['image_src']}">
