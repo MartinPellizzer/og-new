@@ -38,21 +38,21 @@ def gen():
             'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M480-120q-117 0-198.5-81.5T200-400q0-100 61.5-176.5T420-674q-26-5-50-14.5T327-717q-28-29-37.5-67t-9.5-78v-18q86-2 148 56.5T489-680q14-43 39.5-80t57.5-69q9-9 21-9t21 9q9 9 9 21t-9 21q-25 25-45 54t-34 61q94 24 152.5 99.5T760-400q0 117-81.5 198.5T480-120Zm0-60q92 0 156-64t64-156q0-92-64-156t-156-64q-92 0-156 64t-64 156q0 92 64 156t156 64Zm0-220Z"/></svg>''',
             'title': f'''Sanificazione Prodotti''',
             'description': f'''Sanifichiamo prodotti, materie prime e imballaggi con ozono per eliminare cariche microbiche e prolungarne la sicurezza e la conservabilità.''',
-            'link_href': f'''/servizi/sanificazione-prodotti.html''',
+            'link_href': f'''/servizi.html''',
             'link_anchor': f'''Scopri Servizio''',
         },
         {
             'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M251-160q-88 0-149.5-61.5T40-371q0-78 50-137t127-71q20-97 94-158.5T482-799q112 0 189 81.5T748-522v24q72-2 122 46.5T920-329q0 69-50 119t-119 50H251Zm0-60h500q45 0 77-32t32-77q0-45-32-77t-77-32h-63v-84q0-91-61-154t-149-63q-88 0-149.5 63T267-522h-19q-62 0-105 43.5T100-371q0 63 44 107t107 44Zm229-260Z"/></svg>''',
             'title': f'''Sanificazione Aria''',
             'description': f'''Neutralizziamo virus, batteri e odori negli impianti di ventilazione con ozono, migliorando la qualità dell'aria e la sicurezza dei tuoi ambienti.''',
-            'link_href': f'''/servizi/sanificazione-aria.html''',
+            'link_href': f'''/servizi.html''',
             'link_anchor': f'''Scopri Servizio''',
         },
         {
             'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M176-120q-19-4-35.5-20.5T120-176l664-664q21 5 36 20.5t21 35.5L176-120Zm-56-252v-112l356-356h112L120-372Zm0-308v-80q0-33 23.5-56.5T200-840h80L120-680Zm560 560 160-160v80q0 33-23.5 56.5T760-120h-80Zm-308 0 468-468v112L484-120H372Z"/></svg>''',
             'title': f'''Sanificazione Superfici''',
             'description': f'''Trattiamo pavimenti, attrezzature e linee produttive con ozono per eliminare residui biologici e ridurre il rischio di contaminazioni.''',
-            'link_href': f'''/servizi/sanificazione-superfici.html''',
+            'link_href': f'''/servizi.html''',
             'link_anchor': f'''Scopri Servizio''',
         },
     ]
@@ -108,7 +108,7 @@ def gen():
             ''',
             'title': f'''Generatori di Ozono Industriali''',
             'description': f'''Sistemi ad alte portate per impianti produttivi e aree di grandi dimensioni. Integrabili con linee di sanificazione automatizzate.''',
-            'link_href': f'''/prodotti/generatori-ozono-industriali.html''',
+            'link_href': f'''/prodotti.html''',
             'link_anchor': f'''Scopri i modelli industriali''',
         },
         {
@@ -117,7 +117,7 @@ def gen():
             ''',
             'title': f'''Generatori di Ozono Portatili''',
             'description': f'''Dispositivi compatti per sanificazioni rapide di ambienti, veicoli e camere di stoccaggio. Facili da trasportare, potenti e certificati.''',
-            'link_href': f'''/prodotti/generatori-ozono-portatili.html''',
+            'link_href': f'''/prodotti.html''',
             'link_anchor': f'''Scopri i modelli portatili''',
         },
         {
@@ -126,7 +126,7 @@ def gen():
             ''',
             'title': f'''Accessori e Sistemi di Controllo''',
             'description': f'''Centraline di monitoraggio, sensori di concentrazione e sistemi di sicurezza per la gestione dell'ozono in ambiente industriale.''',
-            'link_href': f'''/prodotti/accessori.html''',
+            'link_href': f'''/prodotti.html''',
             'link_anchor': f'''Scopri gli accessori''',
         },
     ]

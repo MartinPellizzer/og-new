@@ -1,8 +1,34 @@
 import os
+import csv
 import json
 from fpdf import FPDF
 
-with open("data.json", "r", encoding="utf-8") as f: data = json.load(f)
+def csv_read(filepath, delimiter='\\'):
+    rows = []
+    with open(filepath, newline='') as f:
+        reader = csv.reader(f, delimiter=delimiter)
+        for row in reader:
+            if row != []:
+                rows.append(row)
+    return rows
+
+def csv_to_dict(filepath, delimiter='\\'):
+    rows = csv_read(filepath, delimiter=delimiter)
+    row_header = rows[0]
+    rows_body = rows[1:]
+    obj_list = []
+    for row in rows_body:
+        obj = {}
+        for element_i, e in enumerate(row):
+            obj[row_header[element_i]] = e.strip()
+        obj_list.append(obj)
+    return obj_list
+
+# with open("data.json", "r", encoding="utf-8") as f: data = json.load(f)
+
+proj_folderpath = r'C:\og-new'
+
+data = csv_to_dict(f'{proj_folderpath}/ssot/products/data.csv', delimiter='\\')
 
 def header_insert():
     # header
@@ -147,9 +173,94 @@ dati = []
 #     data['versioni'][5]['timer_manuale'],
 # ])
 
-for prodotto in data['prodotti']:
-    prodotto_image_src = prodotto['image_src']
-    prodotto_name = prodotto['name']
+
+# for prodotto in data['prodotti']:
+#     prodotto_image_src = prodotto['image_src']
+#     prodotto_name = prodotto['name']
+#     pdf = FPDF()
+#     pdf.set_font("Arial", size=10)
+
+#     pdf.add_page()
+#     header_insert()
+
+#     # Titolo
+#     font_size = 30
+#     pdf.set_font("Arial", "B", size=font_size)
+#     pdf.cell(0, font_size//2, prodotto_name, ln=True, align="C")
+#     pdf.set_font("Arial", size=10)
+#     pdf.ln(10)  # Spazio dopo il titolo
+
+#     # Dati della tabella
+#     intestazioni = ["Descrizione", "Valore", "Valore", "Valore", "Valore", "Valore", "Valore"]
+
+#     pdf.image(prodotto_image_src, w=100, x=210//2 - 100//2)
+
+#     for item in prodotto['versioni']:
+#         print(prodotto)
+#         intestazioni = ['Parametro', 'Valore',]
+#         dati = [
+#             ['Codice', item['codice'],],
+#             ['Modello', item['versione'],],
+#             ['Produzione nominale', item['produzione_nominale'],],
+#             ['Peso', item['peso'],],
+#             ['Dimensioni', item['dimensioni'],],
+#             ['Alimentazione', item['alimentazione'],],
+#             ['Potenza', item['potenza'],],
+#         ]
+
+#         pdf.add_page()
+#         header_insert()
+#         font_size = 30
+#         pdf.set_font("Arial", "B", size=font_size)
+#         pdf.cell(0, font_size//2, f"Modello: {item['versione']}", ln=True, align="C")
+#         pdf.ln(10)  # Spazio dopo il titolo
+        
+#         # Larghezza delle colonne (puoi regolarle)
+#         cell_valore_width = 95
+#         # larghezze = [40, cell_valore_width, cell_valore_width, cell_valore_width, cell_valore_width, cell_valore_width, cell_valore_width]
+#         larghezze = [cell_valore_width, cell_valore_width]
+
+#         # --- DISEGNA LA TABELLA ---
+
+#         # Intestazioni
+#         font_size = 12
+#         pdf.set_font("Arial", "B", size=font_size)
+#         for i, header in enumerate(intestazioni):
+#             pdf.cell(larghezze[i], font_size, f'  {header}  ', border=1, align="L")
+#         pdf.set_font("Arial", size=12)
+#         pdf.ln()
+
+#         # Righe dati
+#         for riga in dati:
+#             for i, cella in enumerate(riga):
+#                 pdf.cell(larghezze[i], font_size, f'  {cella}  ', border=1, align="L")
+#             pdf.ln()
+
+#     # Salvataggio
+#     prodotto_name = prodotto['name']
+#     prodotto_slug = prodotto_name.lower().strip().replace(' ', '-')
+#     output_filepath = f'{prodotto_slug}-scheda-tecnica.pdf'
+#     pdf.output(output_filepath)
+#     print(f"PDF creato: {output_filepath}")
+
+products_clusters = []
+for prodotto in data:
+    prodotto_nome = prodotto['nome'].strip()
+    found = False
+    for product_cluster in products_clusters:
+        if product_cluster['nome'] == prodotto_nome:
+            product_cluster['versioni'].append(prodotto)
+            found = True
+            break
+    if not found:
+        products_clusters.append({
+            'nome': prodotto_nome,
+            'versioni': [prodotto]
+        })
+
+for prodotto in products_clusters:
+    prodotto_immagine = prodotto['versioni'][0]['immagine']
+    prodotto_nome = prodotto['nome']
     pdf = FPDF()
     pdf.set_font("Arial", size=10)
 
@@ -159,59 +270,47 @@ for prodotto in data['prodotti']:
     # Titolo
     font_size = 30
     pdf.set_font("Arial", "B", size=font_size)
-    pdf.cell(0, font_size//2, prodotto_name, ln=True, align="C")
+    pdf.cell(0, font_size//2, prodotto_nome, ln=True, align="C")
     pdf.set_font("Arial", size=10)
     pdf.ln(10)  # Spazio dopo il titolo
-
-    # Dati della tabella
-    intestazioni = ["Descrizione", "Valore", "Valore", "Valore", "Valore", "Valore", "Valore"]
-
-    pdf.image(prodotto_image_src, w=100, x=210//2 - 100//2)
+    pdf.image(prodotto_immagine, w=100, x=210//2 - 100//2)
 
     for item in prodotto['versioni']:
-        print(prodotto)
         intestazioni = ['Parametro', 'Valore',]
         dati = [
             ['Codice', item['codice'],],
             ['Modello', item['versione'],],
-            ['Produzione nominale', item['produzione_nominale'],],
-            ['Peso', item['peso'],],
-            ['Dimensioni', item['dimensioni'],],
-            ['Alimentazione', item['alimentazione'],],
-            ['Potenza', item['potenza'],],
+            ['Produzione nominale (g/h)', item['produzione_nominale'],],
+            ['Peso (kg)', item['peso'],],
+            ['Dimensioni (mm)', item['dimensioni'],],
+            ['Tensione (V)', item['tensione'],],
+            ['Frequenza (Hz)', item['frequenza'],],
+            ['Potenza (W)', item['potenza'],],
         ]
-
+        
         pdf.add_page()
         header_insert()
         font_size = 30
         pdf.set_font("Arial", "B", size=font_size)
         pdf.cell(0, font_size//2, f"Modello: {item['versione']}", ln=True, align="C")
-        pdf.ln(10)  # Spazio dopo il titolo
-        
-        # Larghezza delle colonne (puoi regolarle)
+        pdf.ln(10) 
+
         cell_valore_width = 95
-        # larghezze = [40, cell_valore_width, cell_valore_width, cell_valore_width, cell_valore_width, cell_valore_width, cell_valore_width]
-        larghezze = [cell_valore_width, cell_valore_width]
-
-        # --- DISEGNA LA TABELLA ---
-
-        # Intestazioni
         font_size = 12
         pdf.set_font("Arial", "B", size=font_size)
         for i, header in enumerate(intestazioni):
-            pdf.cell(larghezze[i], font_size, f'  {header}  ', border=1, align="L")
+            pdf.cell(cell_valore_width, font_size, f'  {header}  ', border=1, align="L")
         pdf.set_font("Arial", size=12)
         pdf.ln()
 
-        # Righe dati
         for riga in dati:
             for i, cella in enumerate(riga):
-                pdf.cell(larghezze[i], font_size, f'  {cella}  ', border=1, align="L")
+                pdf.cell(cell_valore_width, font_size, f'  {cella}  ', border=1, align="L")
             pdf.ln()
 
+        
     # Salvataggio
-    prodotto_name = prodotto['name']
-    prodotto_slug = prodotto_name.lower().strip().replace(' ', '-')
+    prodotto_slug = prodotto_nome.lower().strip().replace(' ', '-')
     output_filepath = f'{prodotto_slug}-scheda-tecnica.pdf'
     pdf.output(output_filepath)
     print(f"PDF creato: {output_filepath}")

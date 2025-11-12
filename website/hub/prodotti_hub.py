@@ -68,7 +68,7 @@ def gen():
         </section>
         <div style="background-color: #ededed; height: 1px;"></div>  
     '''
-    
+
     ########################################
     # prodotti
     ########################################
@@ -132,15 +132,15 @@ def gen():
             'image_url': f'''/immagini/ozonogroup-ozonizzatore-bigpower.png''',
             'title': f'''Bigpower''',
             'description': f'''Generatore di media potenza è disponibile in più configurazioni e garantisce un'efficace sanificazione dell'aria.''',
-            'link_href': f'''#''',
-            'link_anchor': f'''Maggiori info''',
+            'link_href': f'''/documenti/big-power-iv-scheda-tecnica.pdf''',
+            'link_anchor': f'''Scheda Tecnica''',
         },
         {
             'image_url': f'''/immagini/ozonogroup-ozonizzatore-lympha.png''',
             'title': f'''Lympha''',
             'description': f'''Generatore di media potenza progettato per il trattamento dell'acqua in sistemi di media grandezza.''',
-            'link_href': f'''#''',
-            'link_anchor': f'''Maggiori info''',
+            'link_href': f'''/documenti/lympha-h2o-scheda-tecnica.pdf''',
+            'link_anchor': f'''Scheda Tecnica''',
         },
     ]
     cards = []
@@ -154,9 +154,14 @@ def gen():
                 <p style="color: #555555; margin-bottom: 2rem;">
                     { item['description'] }                    
                 </p>
-                <p>
-                    <a style="color: #555555;" href="{ item['link_href'] }">{ item['link_anchor'] }</a>
-                </p>
+                <div style="flex: 1; display: flex;;">
+                    <div style="display: inline-block;">
+                        <a class="button-default-2" href="{ item['link_href'] }">
+                            <span>{ item['link_anchor'] }</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M360-460h40v-80h40q17 0 28.5-11.5T480-580v-40q0-17-11.5-28.5T440-660h-80v200Zm40-120v-40h40v40h-40Zm120 120h80q17 0 28.5-11.5T640-500v-120q0-17-11.5-28.5T600-660h-80v200Zm40-40v-120h40v120h-40Zm120 40h40v-80h40v-40h-40v-40h40v-40h-80v200ZM320-240q-33 0-56.5-23.5T240-320v-480q0-33 23.5-56.5T320-880h480q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H320Zm0-80h480v-480H320v480ZM160-80q-33 0-56.5-23.5T80-160v-560h80v560h560v80H160Zm160-720v480-480Z"/></svg>
+                        </a>
+                    </div>
+                </div>
             </div>
         ''')
     cards = ''.join(cards)
@@ -183,22 +188,22 @@ def gen():
             'image_url': f'''/immagini/ozonogroup-ozonizzatore-greenozone.png''',
             'title': f'''Greenozone''',
             'description': f'''Generatore ad alta capacità progettato per trattare grandi volumi d'aria in ambienti industriali.''',
-            'link_href': f'''#''',
-            'link_anchor': f'''Maggiori info''',
+            'link_href': f'''/documenti/greenozone-scheda-tecnica.pdf''',
+            'link_anchor': f'''Scheda Tecnica''',
         },
         {
             'image_url': f'''/immagini/ozonogroup-ozonizzatore-hydor.png''',
             'title': f'''Hydor''',
             'description': f'''Generatore potente e altamente affidabile, specifico per il trattamento dell'acqua in impianti di grandi dimensioni.''',
-            'link_href': f'''#''',
-            'link_anchor': f'''Maggiori info''',
+            'link_href': f'''/documenti/hydor-h2o-scheda-tecnica.pdf''',
+            'link_anchor': f'''Scheda Tecnica''',
         },
         {
             'image_url': f'''/immagini/ozonogroup-ozonizzatore-delta.png''',
             'title': f'''Delta''',
             'description': f'''Generatore di ultima generazione, dotato di schermo touch per un controllo avanzato dei parametri.''',
-            'link_href': f'''#''',
-            'link_anchor': f'''Maggiori info''',
+            'link_href': f'''/documenti/delta-scheda-tecnica.pdf''',
+            'link_anchor': f'''Scheda Tecnica''',
         },
     ]
     cards = []
@@ -212,9 +217,14 @@ def gen():
                 <p style="color: #555555; margin-bottom: 2rem;">
                     { item['description'] }                    
                 </p>
-                <p>
-                    <a style="color: #555555;" href="{ item['link_href'] }">{ item['link_anchor'] }</a>
-                </p>
+                <div style="flex: 1; display: flex;;">
+                    <div style="display: inline-block;">
+                        <a class="button-default-2" href="{ item['link_href'] }">
+                            <span>{ item['link_anchor'] }</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M360-460h40v-80h40q17 0 28.5-11.5T480-580v-40q0-17-11.5-28.5T440-660h-80v200Zm40-120v-40h40v40h-40Zm120 120h80q17 0 28.5-11.5T640-500v-120q0-17-11.5-28.5T600-660h-80v200Zm40-40v-120h40v120h-40Zm120 40h40v-80h40v-40h-40v-40h40v-40h-80v200ZM320-240q-33 0-56.5-23.5T240-320v-480q0-33 23.5-56.5T320-880h480q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H320Zm0-80h480v-480H320v480ZM160-80q-33 0-56.5-23.5T80-160v-560h80v560h560v80H160Zm160-720v480-480Z"/></svg>
+                        </a>
+                    </div>
+                </div>
             </div>
         ''')
     cards = ''.join(cards)
