@@ -1,6 +1,7 @@
 data = [
     {
-        'href': '''/settori.html''',
+        'page_slug': '''alimentare''',
+        'href': '''/settori/alimentare.html''',
         'image_src': '/immagini/settori-industria-alimentare.jpg',
         'category': '',
         'title': '''Industria alimentare''',
@@ -9,7 +10,8 @@ data = [
         'datetime': '''2025-10-06''',
     },
     {
-        'href': '''/settori.html''',
+        'page_slug': '''logistico''',
+        'href': '''/settori/logistico.html''',
         'image_src': '/immagini/settori-logistica-magazzini.jpg',
         'category': '',
         'title': '''Logistica e magazzini''',
@@ -18,7 +20,8 @@ data = [
         'datetime': '''2025-10-06''',
     },
     {
-        'href': '''/settori.html''',
+        'page_slug': '''horeca''',
+        'href': '''/settori/horeca.html''',
         'image_src': '/immagini/settori-hotel-ristorazione-catering.jpg',
         'category': '',
         'title': '''Ho.Re.Ca.''',
@@ -27,7 +30,8 @@ data = [
         'datetime': '''2025-10-06''',
     },
     {
-        'href': '''/settori.html''',
+        'page_slug': '''farmaceutico''',
+        'href': '''/settori/farmaceutico.html''',
         'image_src': '/immagini/settori-industria-farmaceutica-cosmetica.jpg',
         'category': '',
         'title': '''Industria farmaceutica e cosmetica''',
@@ -36,16 +40,18 @@ data = [
         'datetime': '''2025-10-06''',
     },
     {
-        'href': '''/settori.html''',
+        'page_slug': '''agroalimentare''',
+        'href': '''/settori/agroalimentare.html''',
         'image_src': '/immagini/settori-agricolo-agroalimentare.jpg',
         'category': '',
-        'title': '''Settore agricolo e agroalimentare''',
+        'title': '''Agricolo e agroalimentare''',
         'description': '''Riduzione di batteri, muffe e odori in serre, stalle e impianti di trasformazione.''',
         'date': '''6 Ottobre 2025''',
         'datetime': '''2025-10-06''',
     },
     {
-        'href': '''/settori.html''',
+        'page_slug': '''sportivo''',
+        'href': '''/settori/sportivo.html''',
         'image_src': '/immagini/settori-impianti-sportivi-palestre.jpg',
         'category': '',
         'title': '''Impianti sportivi e palestre''',

@@ -1,6 +1,44 @@
 from lib import g
 from lib import components
 
+servizi_sanificazione_ambientale_data = [
+    {
+        'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M550.03-275q18.97 0 36.97-7.5t32-21.5l35-35-35-35-35 35q-6.79 7.09-15.84 10.05-9.05 2.95-18.11 2.95-9.05 0-18.14-2.95-9.09-2.96-15.91-10.05l-37.27-37.27Q465-390 446.97-397q-18.02-7-37-7-18.97 0-36.97 7t-32 21l-35 35 35 35 35-35q6.79-7.09 15.84-10.05 9.05-2.95 18.11-2.95 9.05 0 18.14 2.95 9.09 2.96 15.91 10.05l37.27 37.27Q495-290 513.03-282.5q18.02 7.5 37 7.5Zm0-120q18.97 0 36.97-7.5t32-21.5l35-35-35-35-35 35q-6.79 7.09-15.84 10.05-9.05 2.95-18.11 2.95-9.05 0-18.14-2.95-9.09-2.96-15.91-10.05l-37.27-37.27Q465-510 446.97-517q-18.02-7-37-7-18.97 0-36.97 7t-32 21l-35 35 35 35 35-35q6.79-7.09 15.84-10.05 9.05-2.95 18.11-2.95 9.05 0 18.14 2.95 9.09 2.96 15.91 10.05l37.27 37.27Q495-410 513.03-402.5q18.02 7.5 37 7.5Zm0-120q18.97 0 36.97-7.5t32-21.5l35-35-35-35-35 35q-6.79 7.09-15.84 10.05-9.05 2.95-18.11 2.95-9.05 0-18.14-2.95-9.09-2.96-15.91-10.05l-37.27-37.27Q465-630 446.97-637q-18.02-7-37-7-18.97 0-36.97 7t-32 21l-35 35 35 35 35-35q7-6 16-9.5t18-3.5q9 0 18.09 2.95 9.09 2.96 15.91 10.05l37.27 37.27Q495-530 513.03-522.5q18.02 7.5 37 7.5ZM160-160v-480l320-240 320 240v480H160Zm60-60h520v-394L480-803 220-614v394Zm260-292Z"/></svg>''',
+        'title': f'''Sanificazione ambienti industriali''',
+        'description': f'''Trattamenti completi di spazi produttivi, laboratori, magazzini.''',
+        'link_href': f'''#''',
+        'link_anchor': f'''Maggiori info''',
+    },
+    {
+        'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M161-120q-18-8-26-17.5T120-165l678-675q15 5 26.5 16.5T840-796L161-120Zm-41-278v-86l356-356h86L120-398Zm0-320v-62q0-24 18-42t42-18h62L120-718Zm598 598 122-122v62q0 24-18 42t-42 18h-62Zm-320 0 442-442v86L484-120h-86Z"/></svg>''',
+        'title': f'''Sanificazione superfici e attrezzature''',
+        'description': f'''Applicazioni mirate su macchinari, banchi, utensili, piani di lavoro.''',
+        'link_href': f'''#''',
+        'link_anchor': f'''Maggiori info''',
+    },
+    {
+        'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M480.24-260Q572-260 636-324.24q64-64.23 64-156Q700-572 635.76-636q-64.23-64-156-64Q388-700 324-635.76q-64 64.23-64 156Q260-388 324.24-324q64.23 64 156 64Zm-.24-60q-29 0-56-10.5T375-360h210q-22 19-49 29.5T480-320Zm-138-80q-8-14-13-29t-7-31h316q-2 16-7 31t-13 29H342Zm-20-100q2-16 7-31t13-29h276q8 14 13 29t7 31H322Zm53-100q22-19 49-29.5t56-10.5q29 0 56 10.5t49 29.5H375ZM180-120q-24.75 0-42.37-17.63Q120-155.25 120-180v-600q0-24.75 17.63-42.38Q155.25-840 180-840h600q24.75 0 42.38 17.62Q840-804.75 840-780v600q0 24.75-17.62 42.37Q804.75-120 780-120H180Zm0-60h600v-600H180v600Zm0-600v600-600Z"/></svg>''',
+        'title': f'''Sanificazione aria e impianti HVAC''',
+        'description': f'''Interventi su condotte, filtri, ventilazione e climatizzazione.''',
+        'link_href': f'''#''',
+        'link_anchor': f'''Maggiori info''',
+    },
+    {
+        'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M309-650v-118h60v118h-60Zm0 361v-196h60v196h-60ZM220-80q-24.75 0-42.37-17.63Q160-115.25 160-140v-680q0-24.75 17.63-42.38Q195.25-880 220-880h520q24.75 0 42.38 17.62Q800-844.75 800-820v680q0 24.75-17.62 42.37Q764.75-80 740-80H220Zm0-60h520v-398H220v398Zm0-458h520v-222H220v222Z"/></svg>''',
+        'title': f'''Sanificazione celle frigorifere e ambienti a temperatura controllata''',
+        'description': f'''Eliminazione di muffe e batteri in aree refrigerate.''',
+        'link_href': f'''#''',
+        'link_anchor': f'''Maggiori info''',
+    },
+    {
+        'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M224.12-161q-49.12 0-83.62-34.42Q106-229.83 106-279H40v-461q0-24 18-42t42-18h579v167h105l136 181v173h-71q0 49.17-34.38 83.58Q780.24-161 731.12-161t-83.62-34.42Q613-229.83 613-279H342q0 49-34.38 83.5t-83.5 34.5Zm-.12-60q24 0 41-17t17-41q0-24-17-41t-41-17q-24 0-41 17t-17 41q0 24 17 41t41 17ZM100-339h22q17-27 43.04-43t58-16q31.96 0 58.46 16.5T325-339h294v-401H100v401Zm631 118q24 0 41-17t17-41q0-24-17-41t-41-17q-24 0-41 17t-17 41q0 24 17 41t41 17Zm-52-204h186L754-573h-75v148ZM360-529Z"/></svg>''',
+        'title': f'''Sanificazione veicoli industriali e mezzi di trasporto''',
+        'description': f'''Per logistica, food delivery, flotte aziendali.''',
+        'link_href': f'''#''',
+        'link_anchor': f'''Maggiori info''',
+    },
+]
+
 def gen():
     section_hero_py = '5rem'
     section_py = '8rem'
@@ -38,43 +76,6 @@ def gen():
     ########################################
     # servizi
     ########################################
-    servizi_sanificazione_ambientale_data = [
-        {
-            'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M550.03-275q18.97 0 36.97-7.5t32-21.5l35-35-35-35-35 35q-6.79 7.09-15.84 10.05-9.05 2.95-18.11 2.95-9.05 0-18.14-2.95-9.09-2.96-15.91-10.05l-37.27-37.27Q465-390 446.97-397q-18.02-7-37-7-18.97 0-36.97 7t-32 21l-35 35 35 35 35-35q6.79-7.09 15.84-10.05 9.05-2.95 18.11-2.95 9.05 0 18.14 2.95 9.09 2.96 15.91 10.05l37.27 37.27Q495-290 513.03-282.5q18.02 7.5 37 7.5Zm0-120q18.97 0 36.97-7.5t32-21.5l35-35-35-35-35 35q-6.79 7.09-15.84 10.05-9.05 2.95-18.11 2.95-9.05 0-18.14-2.95-9.09-2.96-15.91-10.05l-37.27-37.27Q465-510 446.97-517q-18.02-7-37-7-18.97 0-36.97 7t-32 21l-35 35 35 35 35-35q6.79-7.09 15.84-10.05 9.05-2.95 18.11-2.95 9.05 0 18.14 2.95 9.09 2.96 15.91 10.05l37.27 37.27Q495-410 513.03-402.5q18.02 7.5 37 7.5Zm0-120q18.97 0 36.97-7.5t32-21.5l35-35-35-35-35 35q-6.79 7.09-15.84 10.05-9.05 2.95-18.11 2.95-9.05 0-18.14-2.95-9.09-2.96-15.91-10.05l-37.27-37.27Q465-630 446.97-637q-18.02-7-37-7-18.97 0-36.97 7t-32 21l-35 35 35 35 35-35q7-6 16-9.5t18-3.5q9 0 18.09 2.95 9.09 2.96 15.91 10.05l37.27 37.27Q495-530 513.03-522.5q18.02 7.5 37 7.5ZM160-160v-480l320-240 320 240v480H160Zm60-60h520v-394L480-803 220-614v394Zm260-292Z"/></svg>''',
-            'title': f'''Sanificazione ambienti industriali''',
-            'description': f'''Trattamenti completi di spazi produttivi, laboratori, magazzini.''',
-            'link_href': f'''#''',
-            'link_anchor': f'''Maggiori info''',
-        },
-        {
-            'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M161-120q-18-8-26-17.5T120-165l678-675q15 5 26.5 16.5T840-796L161-120Zm-41-278v-86l356-356h86L120-398Zm0-320v-62q0-24 18-42t42-18h62L120-718Zm598 598 122-122v62q0 24-18 42t-42 18h-62Zm-320 0 442-442v86L484-120h-86Z"/></svg>''',
-            'title': f'''Sanificazione superfici e attrezzature''',
-            'description': f'''Applicazioni mirate su macchinari, banchi, utensili, piani di lavoro.''',
-            'link_href': f'''#''',
-            'link_anchor': f'''Maggiori info''',
-        },
-        {
-            'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M480.24-260Q572-260 636-324.24q64-64.23 64-156Q700-572 635.76-636q-64.23-64-156-64Q388-700 324-635.76q-64 64.23-64 156Q260-388 324.24-324q64.23 64 156 64Zm-.24-60q-29 0-56-10.5T375-360h210q-22 19-49 29.5T480-320Zm-138-80q-8-14-13-29t-7-31h316q-2 16-7 31t-13 29H342Zm-20-100q2-16 7-31t13-29h276q8 14 13 29t7 31H322Zm53-100q22-19 49-29.5t56-10.5q29 0 56 10.5t49 29.5H375ZM180-120q-24.75 0-42.37-17.63Q120-155.25 120-180v-600q0-24.75 17.63-42.38Q155.25-840 180-840h600q24.75 0 42.38 17.62Q840-804.75 840-780v600q0 24.75-17.62 42.37Q804.75-120 780-120H180Zm0-60h600v-600H180v600Zm0-600v600-600Z"/></svg>''',
-            'title': f'''Sanificazione aria e impianti HVAC''',
-            'description': f'''Interventi su condotte, filtri, ventilazione e climatizzazione.''',
-            'link_href': f'''#''',
-            'link_anchor': f'''Maggiori info''',
-        },
-        {
-            'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M309-650v-118h60v118h-60Zm0 361v-196h60v196h-60ZM220-80q-24.75 0-42.37-17.63Q160-115.25 160-140v-680q0-24.75 17.63-42.38Q195.25-880 220-880h520q24.75 0 42.38 17.62Q800-844.75 800-820v680q0 24.75-17.62 42.37Q764.75-80 740-80H220Zm0-60h520v-398H220v398Zm0-458h520v-222H220v222Z"/></svg>''',
-            'title': f'''Sanificazione celle frigorifere e ambienti a temperatura controllata''',
-            'description': f'''Eliminazione di muffe e batteri in aree refrigerate.''',
-            'link_href': f'''#''',
-            'link_anchor': f'''Maggiori info''',
-        },
-        {
-            'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M224.12-161q-49.12 0-83.62-34.42Q106-229.83 106-279H40v-461q0-24 18-42t42-18h579v167h105l136 181v173h-71q0 49.17-34.38 83.58Q780.24-161 731.12-161t-83.62-34.42Q613-229.83 613-279H342q0 49-34.38 83.5t-83.5 34.5Zm-.12-60q24 0 41-17t17-41q0-24-17-41t-41-17q-24 0-41 17t-17 41q0 24 17 41t41 17ZM100-339h22q17-27 43.04-43t58-16q31.96 0 58.46 16.5T325-339h294v-401H100v401Zm631 118q24 0 41-17t17-41q0-24-17-41t-41-17q-24 0-41 17t-17 41q0 24 17 41t41 17Zm-52-204h186L754-573h-75v148ZM360-529Z"/></svg>''',
-            'title': f'''Sanificazione veicoli industriali e mezzi di trasporto''',
-            'description': f'''Per logistica, food delivery, flotte aziendali.''',
-            'link_href': f'''#''',
-            'link_anchor': f'''Maggiori info''',
-        },
-    ]
     cards = []
     for item in servizi_sanificazione_ambientale_data:
         cards.append(f'''

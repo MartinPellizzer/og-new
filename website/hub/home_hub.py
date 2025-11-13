@@ -224,19 +224,7 @@ def gen():
 
     ########################################
     # ozono
-    ########################################
-    # ozono_data = [
-    #     {
-    #         'icon': f'''
-    #             <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M80-80v-481l280-119v80l200-81v121h320v480H80Zm60-60h680v-359.8H500V-592l-200 80v-79l-160 71v380Zm310-100h60v-160h-60v160Zm-160 0h60v-160h-60v160Zm320 0h60v-160h-60v160Zm270-320H700l40-320h100l40 320ZM140-140h680-680Z"/></svg>
-    #         ''',
-    #         'title': f'''Generatori di Ozono Industriali''',
-    #         'description': f'''Sistemi ad alte portate per impianti produttivi e aree di grandi dimensioni. Integrabili con linee di sanificazione automatizzate.''',
-    #         'link_href': f'''/prodotti/generatori-ozono-industriali.html''',
-    #         'link_anchor': f'''Scopri i modelli industriali''',
-    #     },
-    # ]
-    
+    ########################################    
     ozono_data = [
         {
             'href': '''/ozono/chimica.html''',
@@ -270,7 +258,7 @@ def gen():
             'image_src': '/immagini/ozono-terapia.jpg',
             'category': 'OZONOTERAPIA',
             'title': '''Ozonoterapia: applicazioni, meccanismi e prospettive della terapia con ozono''',
-            'description': '''Negli ultimi anni l’ozonoterapia ha guadagnato un ruolo crescente all’interno della medicina rigenerativa e funzionale.''',
+            'description': '''Negli ultimi anni l'ozonoterapia ha guadagnato un ruolo crescente all'interno della medicina rigenerativa e funzionale.''',
             'date': '''6 Ottobre 2025''',
             'datetime': '''2025-10-06''',
         },
@@ -298,7 +286,7 @@ def gen():
                         <span>{item['date']}</span>
                         <span>{item['category'].capitalize()}</span>
                         <div style="display: inline-block;">
-                            <a style="color: #222222; display: flex; gap: 0.5rem; align-items: center;" href="/ozono.html">
+                            <a style="color: #222222; display: flex; gap: 0.5rem; align-items: center;" href="{item['href']}">
                                 <span>Leggi Articolo</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>                
                             </a>
@@ -340,7 +328,7 @@ def gen():
                         <span>{ozono_data[ozono_card_featured_index]['date']}</span>
                         <span>Sanificazione</span>
                         <div style="display: inline-block;">
-                            <a class="button-default-2" href="/ozono.html">
+                            <a class="button-default-2" href="{ozono_data[ozono_card_featured_index]['href']}">
                                 <span>Leggi Articolo</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>                
                             </a>
