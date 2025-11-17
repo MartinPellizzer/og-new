@@ -402,6 +402,366 @@ Scopri nel dettaglio come operiamo e quali risultati abbiamo ottenuto nel tuo se
     html_filepath = f'{g.website_folderpath}/settori/{page_slug}.html'
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)
 
+def settori_alimentare_lattiero_caseario_gen():
+    data = {
+        'page_slug': '''alimentare/lattiero-caseario''',
+        'href': '''/settori/alimentare.html''',
+        'image_src': '/immagini/settori-industria-alimentare.jpg',
+        'category': '',
+        'title': '''Sanificazione Caseifici: aree critiche, problemi e soluzioni per l'industria lattiero-casearia''',
+        'description': '''
+La sanificazione nei caseifici è fondamentale per garantire la sicurezza alimentare, prevenire contaminazioni e preservare la qualità dei prodotti lattiero-caseari. Ogni area di produzione ha rischi specifici, dal latte crudo alla stagionatura dei formaggi, e richiede procedure mirate e tecnologie avanzate come l'ozono, la nebulizzazione o i sistemi CIP (Clean-In-Place).
+        ''',
+        'date': '''6 Ottobre 2025''',
+        'datetime': '''2025-10-06''',
+    }
+    page_slug = data['page_slug']
+    ########################################
+    # hero
+    ########################################
+    html_hero = f'''
+        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_hero_py};">
+            <div style="display: flex; justify-content: space-between; center;">
+                <div style="flex: 2;">
+                    <h1 style="color: #1f1f1f; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
+Sanificazione ozono per il settore lattiero-caseario
+                    </h1>
+                    <p style="color: #1f1f1f;">                        
+La sanificazione nei caseifici è fondamentale per garantire la sicurezza alimentare, prevenire contaminazioni e preservare la qualità dei prodotti lattiero-caseari. Ogni area di produzione ha rischi specifici, dal latte crudo alla stagionatura dei formaggi, e richiede procedure mirate e tecnologie avanzate come l'ozono, la nebulizzazione o i sistemi CIP (Clean-In-Place).
+                    </p>
+                </div>
+                {hero_button}
+            </div>
+        </section>
+        <div style="background-color: #ededed; height: 1px;"></div>  
+    '''
+    
+    ########################################
+    # area
+    ########################################
+    data = [
+        {
+            'icon': f'''
+<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M646-80q-100 0-167-67t-67-167q0-100 67-167t167-67q100 0 167 67t67 167q0 100-67 167T646-80Zm0-60q72 0 123-51t51-123q0-72-51-123t-123-51q-72 0-123 51t-51 123q0 72 51 123t123 51Zm-506-20q-24 0-42-18t-18-42v-330q0-13 1.5-21t6.5-19l92-200h-22q-15 0-24.5-9.5T124-824v-22q0-15 9.5-24.5T158-880h261q15 0 24.5 9.5T453-846v22q0 15-9.5 24.5T419-790h-22l96 222q-12 6-25 15t-24 18L329-790h-82L140-559v339h224q3 15 10 31t15 29H140Zm506-438q-36 0-60-24t-24-60q0-36 24-60t60-24v168q0-36 24-60t60-24q36 0 60 24t24 60H646Z"/></svg>
+            ''',
+            'title': f'''Ricezione e stoccaggio del latte crudo''',
+            'description': f'''
+Questa fase è il primo punto critico: la sanificazione qui previene l'introduzione di patogeni nell'intera linea produttiva.
+            ''',
+            'punti_critici': [
+'serbatoi di raccolta', 'tubazioni', 'pompe', 'valvole'
+            ],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M220-400q0 63 28.5 118.5T328-189q-4-12-6-24.5t-2-24.5q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60q0 12-2 24.5t-6 24.5q51-37 79.5-92.5T740-400q0-54-23-105.5T651-600q-21 15-44 23.5t-46 8.5q-61 0-101-41.5T420-714v-20q-46 33-83 73t-63 83.5q-26 43.5-40 89T220-400Zm260 24-71 70q-14 14-21.5 31t-7.5 37q0 41 29 69.5t71 28.5q42 0 71-28.5t29-69.5q0-20-7.5-37T551-306l-71-70Zm0-464v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-128 86-246.5T480-840Z"/></svg>
+            ''',
+            'title': f'''
+Pastorizzazione e trattamento termico
+            ''',
+            'description': f'''
+La pastorizzazione riduce il carico microbico, ma le superfici e le tubazioni richiedono sanificazioni mirate per evitare ricontaminazioni.
+            ''',
+            'punti_critici': ['pastorizzatori', 'serbatoi di accumulo', 'tubazioni', 'valvole'],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M584.88-120Q539-120 507-152.12q-32-32.12-32-78T507.12-308q32.12-32 78-32T663-307.88q32 32.12 32 78T662.88-152q-32.12 32-78 32Zm-.06-60q21.18 0 35.68-14.32 14.5-14.33 14.5-35.5 0-21.18-14.32-35.68-14.33-14.5-35.5-14.5-21.18 0-35.68 14.32-14.5 14.33-14.5 35.5 0 21.18 14.32 35.68 14.33 14.5 35.5 14.5Zm80.12-230Q575-410 512.5-472.56 450-535.13 450-625.06q0-89.94 62.56-152.44 62.57-62.5 152.5-62.5 89.94 0 152.44 62.56 62.5 62.57 62.5 152.5 0 89.94-62.56 152.44-62.57 62.5-152.5 62.5Zm-.17-60Q730-470 775-514.77q45-44.78 45-110Q820-690 775.23-735q-44.78-45-110-45Q600-780 555-735.23q-45 44.78-45 110Q510-560 554.77-515q44.78 45 110 45ZM275-237q-65 0-110-45t-45-110q0-65 45-110t110-45q65 0 110 45t45 110q0 65-45 110t-110 45Zm-.13-60Q314-297 342-324.87q28-27.86 28-67Q370-431 342.13-459q-27.86-28-67-28Q236-487 208-459.13q-28 27.86-28 67Q180-353 207.87-325q27.86 28 67 28ZM585-230Zm80-395ZM275-392Z"/></svg>
+            ''',
+            'title': f'''
+Coagulazione e lavorazione della cagliata
+            ''',
+            'description': f'''
+Nelle vasche e sulle attrezzature di lavorazione la pulizia meccanica è fondamentale per rimuovere residui organici che favoriscono muffe e batteri.
+            ''',
+            'punti_critici': ['vasche di coagulazione', 'coltelli', 'nastri trasportatori'],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M160-410v-70h640v70H160Zm0-121v-60h640v60H160ZM449-80v-158l-77 76-42-42 149-148 147 148-42 42-75-76v158h-60Zm30-568L331-796l42-42 75 76v-158h60v158l77-76 42 42-148 148Z"/></svg>
+            ''',
+            'title': f'''
+Pressatura e formatura
+            ''',
+            'description': f'''
+Stampi, presse e superfici di lavoro sono punti di contatto diretto con il prodotto e richiedono sanificazioni tra un ciclo e l'altro.
+            ''',
+            'punti_critici': ['presse per formaggi', 'stampi', 'tavoli di lavoro'],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M480-80q-137 0-228.5-94T160-408h60q0 115 74 191.5T480-140q112 0 186-76.5T740-408h60q0 140-91.5 234T480-80ZM199.82-490q-12.82 0-21.32-8.68-8.5-8.67-8.5-21.5 0-12.82 8.68-21.32 8.67-8.5 21.5-8.5 12.82 0 21.32 8.68 8.5 8.67 8.5 21.5 0 12.82-8.68 21.32-8.67 8.5-21.5 8.5Zm180 0q-12.82 0-21.32-8.68-8.5-8.67-8.5-21.5 0-12.82 8.68-21.32 8.67-8.5 21.5-8.5 12.82 0 21.32 8.68 8.5 8.67 8.5 21.5 0 12.82-8.68 21.32-8.67 8.5-21.5 8.5Zm200 0q-12.82 0-21.32-8.68-8.5-8.67-8.5-21.5 0-12.82 8.68-21.32 8.67-8.5 21.5-8.5 12.82 0 21.32 8.68 8.5 8.67 8.5 21.5 0 12.82-8.68 21.32-8.67 8.5-21.5 8.5Zm180 0q-12.82 0-21.32-8.68-8.5-8.67-8.5-21.5 0-12.82 8.68-21.32 8.67-8.5 21.5-8.5 12.82 0 21.32 8.68 8.5 8.67 8.5 21.5 0 12.82-8.68 21.32-8.67 8.5-21.5 8.5Zm-470-110q-12.82 0-21.32-8.68-8.5-8.67-8.5-21.5 0-12.82 8.68-21.32 8.67-8.5 21.5-8.5 12.82 0 21.32 8.68 8.5 8.67 8.5 21.5 0 12.82-8.68 21.32-8.67 8.5-21.5 8.5Zm380 0q-12.82 0-21.32-8.68-8.5-8.67-8.5-21.5 0-12.82 8.68-21.32 8.67-8.5 21.5-8.5 12.82 0 21.32 8.68 8.5 8.67 8.5 21.5 0 12.82-8.68 21.32-8.67 8.5-21.5 8.5Zm-190-10q-12.82 0-21.32-8.68-8.5-8.67-8.5-21.5 0-12.82 8.68-21.32 8.67-8.5 21.5-8.5 12.82 0 21.32 8.68 8.5 8.67 8.5 21.5 0 12.82-8.68 21.32-8.67 8.5-21.5 8.5Zm-100-100q-12.82 0-21.32-8.68-8.5-8.67-8.5-21.5 0-12.82 8.68-21.32 8.67-8.5 21.5-8.5 12.82 0 21.32 8.68 8.5 8.67 8.5 21.5 0 12.82-8.68 21.32-8.67 8.5-21.5 8.5Zm200 0q-12.82 0-21.32-8.68-8.5-8.67-8.5-21.5 0-12.82 8.68-21.32 8.67-8.5 21.5-8.5 12.82 0 21.32 8.68 8.5 8.67 8.5 21.5 0 12.82-8.68 21.32-8.67 8.5-21.5 8.5Zm-100-100q-12.82 0-21.32-8.68-8.5-8.67-8.5-21.5 0-12.82 8.68-21.32 8.67-8.5 21.5-8.5 12.82 0 21.32 8.68 8.5 8.67 8.5 21.5 0 12.82-8.68 21.32-8.67 8.5-21.5 8.5Zm.18 402Z"/></svg>
+            ''',
+            'title': f'''
+Salatura
+            ''',
+            'description': f'''
+I bagni di salamoia e le vasche possono diventare serbatoi di contaminanti se non gestiti e sanificati correttamente.
+            ''',
+            'punti_critici': ['bagni salamoia', 'vasche', 'tavoli di applicazione sale'],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M620-530q-21 0-35.5-14.5T570-580q0-13 4.5-24t12-21.5q7.5-10.5 16.5-20t17-19.5q8 10 17 19.5t16.5 20q7.5 10.5 12 21.5t4.5 24q0 21-14.5 35.5T620-530Zm170-132q-21 0-35.5-14.5T740-712q0-13 4.5-24t12-21.5q7.5-10.5 16.5-20t17-19.5q8 10 17 19.5t16.5 20q7.5 10.5 12 21.5t4.5 24q0 21-14.5 35.5T790-662Zm0 262q-21 0-35.5-14.5T740-450q0-13 4.5-24t12-21.5q7.5-10.5 16.5-20t17-19.5q8 10 17 19.5t16.5 20q7.5 10.5 12 21.5t4.5 24q0 21-14.5 35.5T790-400ZM336-121q-76 0-129-53t-53-129q0-48 24-90.5t66-68.5v-286q0-38 27-65t65-27q38 0 65 27t27 65v286q42 26 66 68.5t24 90.5q0 76-53 129t-129 53ZM214-303h244q0-40-19-71.5T388-420l-20-9v-319q0-14-9-23t-23-9q-14 0-23 9t-9 23v319l-20 9q-32 14-51 46t-19 71Z"/></svg>
+            ''',
+            'title': f'''
+Stagionatura e maturazione
+            ''',
+            'description': f'''
+Le celle e gli scaffali di stagionatura richiedono un controllo rigoroso di umidità e aria perché sono le aree più sensibili alla formazione di muffe.
+            ''',
+            'punti_critici': ['celle frigorifere', 'scaffali', 'sistemi di umidificazione'],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M450-154v-309L180-619v309l270 156Zm60 0 270-156v-310L510-463v309Zm-60 69L150-258q-14-8-22-22t-8-30v-340q0-16 8-30t22-22l300-173q14-8 30-8t30 8l300 173q14 8 22 22t8 30v340q0 16-8 30t-22 22L510-85q-14 8-30 8t-30-8Zm194-525 102-59-266-154-102 59 266 154Zm-164 96 104-61-267-154-104 60 267 155Z"/></svg>
+            ''',
+            'title': f'''
+Confezionamento e packaging
+            ''',
+            'description': f'''
+Il confezionamento è il punto finale prima che il prodotto entri nel mercato: la sanificazione qui tutela la shelf-life e la sicurezza del consumatore.
+            ''',
+            'punti_critici': ['linee di confezionamento', 'nastri trasportatori', 'tavoli di imballaggi'],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M140-180h120v-320h440v320h120v-460L480-776 140-640v460Zm-60 60v-560l400-160 400 160v560H640v-320H320v320H80Zm290 0v-60h60v60h-60Zm80-120v-60h60v60h-60Zm80 120v-60h60v60h-60ZM260-500h440-440Z"/></svg>
+            ''',
+            'title': f'''
+Magazzino e stoccaggio prodotti finiti
+            ''',
+            'description': f'''
+Lo stoccaggio richiede sanificazioni per evitare contaminazioni da movimentazione e per preservare i prodotti fino alla distribuzione.
+            ''',
+            'punti_critici': ['celle frigorifere', 'scaffalature', 'carrelli e pallet'],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M200-120v-60h208v-104h-15q-81 0-137-56t-56-137q0-61 35-111t92-70q4-40 35-65t72-22l-21-59 41-14.56L440-856l66-24 14 37 40-14 113 295-43 15 14 37-64 23-14-37-43 16-25-68q-15 17-35.5 24.5t-43.83 6.5Q393-546 371-561t-35-38q-35 17-55.5 49.97Q260-516.07 260-477q0 55.42 38.79 94.21Q337.58-344 393-344h347v60H508v104h252v60H200Zm356-452 53-19-80-206-53 19 80 206Zm-130.18-23q21.18 0 35.68-14.32 14.5-14.33 14.5-35.5 0-21.18-14.32-35.68-14.33-14.5-35.5-14.5-21.18 0-35.68 14.32-14.5 14.33-14.5 35.5 0 21.18 14.32 35.68 14.33 14.5 35.5 14.5ZM556-572Zm-130-75Zm2 0Z"/></svg>
+            ''',
+            'title': f'''
+Laboratori di controllo qualità
+            ''',
+            'description': f'''
+I laboratori devono ridurre al minimo le contaminazioni incrociate per garantire risultati di analisi affidabili.
+            ''',
+            'punti_critici': ['strumenti analitici', 'tavoli di lavoro', 'microscopi', 'cappe di protezione'],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M212-80v-300h-50v-228q0-29 21.5-50.5t50.24-21.5h104.52q28.74 0 50.24 21.5Q410-637 410-608v228h-50v300H212Zm74.08-654q-30.08 0-51.58-21.42t-21.5-51.5q0-30.08 21.42-51.58t51.5-21.5q30.08 0 51.58 21.42t21.5 51.5q0 30.08-21.42 51.58t-51.5 21.5ZM630-80v-240H526l86-311q7.22-23.59 26.61-36.3Q658-680 684-680t45.39 12.7Q748.78-654.59 756-631l86 311H738v240H630Zm54.08-654q-30.08 0-51.58-21.42t-21.5-51.5q0-30.08 21.42-51.58t51.5-21.5q30.08 0 51.58 21.42t21.5 51.5q0 30.08-21.42 51.58t-51.5 21.5Z"/></svg>
+            ''',
+            'title': f'''
+Aree comuni e servizi
+            ''',
+            'description': f'''
+Pavimenti, corridoi, spogliatoi e servizi igienici sono punti di diffusione possibile di contaminanti che possono raggiungere l'area produttiva.
+            ''',
+            'punti_critici': ['pavimenti', 'corridoi', 'spogliatoi', 'bagni', 'zone di movimentazione carrelli'],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+    ]
+    cards = []
+    for item in data:
+        punti_critici = '\n'.join([f'<li style="margin-bottom: 0.5rem;">{x.capitalize()}</li>' for x in item['punti_critici']])
+        cards.append(f'''
+            <div>
+                <div style="display: inline-block; margin-bottom: 2rem; border: 1px solid #f2f2f2; border-radius: 2rem; padding: 2rem;">
+                    { item['icon'] }
+                </div>
+                <h3 style="color: #1f1f1f; font-size: 1.5rem; line-height: 1.25; font-weight: bold; margin-bottom: 1rem;">
+                    { item['title'] }
+                </h3> 
+                <p style="color: #555555; margin-bottom: 2rem;">
+                    { item['description'] }                    
+                </p>
+                <p style="color: #555555; margin-bottom: 0.675rem; font-size: 0.675rem;">
+                    PUNTI CRITICI
+                </p>
+                <ul style="list-style-type: none;">
+                    {punti_critici}
+                </ul>
+            </div>
+        ''')
+    cards = ''.join(cards)
+    html_aree = f'''
+        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_py};">
+            <div style="margin-bottom: 5rem;">
+                <h2 style="color: #1f1f1f; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
+                    Aree
+                </h2>
+            </div>
+            <div class="grid-3" style="column-gap: 8rem; row-gap: 3rem; margin-bottom: 0;">
+                {cards}
+            </div>
+        </section>
+        <div style="background-color: #ededed; height: 1px;"></div>  
+    '''
+
+    ########################################
+    # problemi
+    ########################################
+    data = [
+        {
+            'icon': f'''
+{g.GRASS_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Muffe
+            ''',
+            'description': f'''
+Le muffe sono tra i contaminanti più frequenti nei caseifici, soprattutto nelle aree ad alta umidità e contatto prolungato con le forme.
+            ''',
+            'aree_critiche': [
+'stagionatura', 'pressatura', 'bagni salamoia',
+            ],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.BACTERIA_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Contaminazione crociata
+            ''',
+            'description': f'''
+I batteri patogeni rappresentano un rischio critico per sicurezza alimentare e conformità normativa, richiedendo interventi rigorosi e continuativi.
+            ''',
+            'aree_critiche': ['latte crudo', 'pastorizzatori', 'linee di confezionamento'],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.CONTAMINATION_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Contaminazione crociata
+            ''',
+            'description': f'''
+È uno dei problemi più insidiosi, perché può diffondersi rapidamente attraverso superfici, utensili, ambienti e movimenti del personale.
+            ''',
+            'aree_critiche': ['cagliata', 'stagionatura', 'magazzino'],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.SMOKE_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Odori e qualità dell'aria
+            ''',
+            'description': f'''
+La qualità dell'aria influisce sia sul prodotto che sul comfort degli operatori e può indicare la presenza di batteri, muffe o VOC.
+            ''',
+            'aree_critiche': ['stagionatura', 'linee di confezionamento'],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.LAYERS_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Biofilm e residui organici
+            ''',
+            'description': f'''
+I biofilm sono tra i problemi più difficili da eliminare e richiedono protocolli specifici e verifiche regolari, poiché resistono ai normali detergenti.
+            ''',
+            'aree_critiche': ['tubazioni', 'vasche', 'superfici di contatto'],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+    ]
+    cards = []
+    for item in data:
+        aree_critiche = '\n'.join([f'<li style="margin-bottom: 0.5rem;">{x.capitalize()}</li>' for x in item['aree_critiche']])
+        cards.append(f'''
+            <div>
+                <div style="display: inline-block; margin-bottom: 2rem; border: 1px solid #f2f2f2; border-radius: 2rem; padding: 2rem;">
+                    { item['icon'] }
+                </div>
+                <h3 style="color: #1f1f1f; font-size: 1.5rem; line-height: 1.25; font-weight: bold; margin-bottom: 1rem;">
+                    { item['title'] }
+                </h3> 
+                <p style="color: #555555; margin-bottom: 2rem;">
+                    { item['description'] }                    
+                </p>
+                <p style="color: #555555; margin-bottom: 0.675rem; font-size: 0.675rem;">
+                    AREE CRITICHE
+                </p>
+                <ul style="list-style-type: none;">
+                    {aree_critiche}
+                </ul>
+            </div>
+        ''')
+    cards = ''.join(cards)
+    html_problemi = f'''
+        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_py};">
+            <div style="margin-bottom: 5rem;">
+                <h2 style="color: #1f1f1f; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
+                    Problemi
+                </h2>
+            </div>
+            <div class="grid-3" style="column-gap: 8rem; row-gap: 3rem; margin-bottom: 0;">
+                {cards}
+            </div>
+        </section>
+        <div style="background-color: #ededed; height: 1px;"></div>  
+    '''
+
+    ########################################
+    # html
+    ########################################
+    html = f'''
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="/style.css">
+        </head>
+        <body>
+            {components.header_light()}
+            <main>
+                {html_hero}
+                {html_aree}
+                {html_problemi}
+                {cta()}
+            </main>
+            {components.footer_dark()}
+        </body>
+        </html>
+    '''
+    try: os.makedirs(f'{g.website_folderpath}/settori')
+    except: pass
+    try: os.makedirs(f'{g.website_folderpath}/settori/alimentare')
+    except: pass
+    html_filepath = f'{g.website_folderpath}/settori/{page_slug}.html'
+    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)
+
 def settori_logistico_gen():
     data = settori_data.data[1]
     page_slug = data['page_slug']
@@ -741,9 +1101,799 @@ Per questo abbiamo sviluppato soluzioni specifiche per ambienti di stoccaggio, a
     html_filepath = f'{g.website_folderpath}/settori/{page_slug}.html'
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)
 
+def settori_horeca_gen():
+    data = settori_data.data[2]
+    page_slug = data['page_slug']
+    ########################################
+    # hero
+    ########################################
+    html_hero = f'''
+        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_hero_py};">
+            <div style="display: flex; justify-content: space-between; center;">
+                <div style="flex: 2;">
+                    <h1 style="color: #222222; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
+Sanificazione ad ozono per il settore Ho.Re.Ca.
+                    </h1>
+                    <p style="color: #1f1f1f;">                        
+Nel settore Ho.Re.Ca., igiene e qualità dell'aria non sono solo standard da rispettare, ma un elemento di fiducia immediata per clienti e ospiti. L'ozono offre un metodo sicuro, veloce e senza residui per eliminare batteri, virus, odori e allergeni in camere, cucine, sale ristorante e aree comuni.
+                    </p>
+                </div>
+                {hero_button}
+            </div>
+        </section>
+        <div style="background-color: #ededed; height: 1px;"></div>  
+    '''
+    
+    ########################################
+    # problemi
+    ########################################
+    problemi_data = [
+        {
+            'icon': f'''
+{g.BACTERIA_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Eliminazione di batteri, virus e allergeni
+            ''',
+            'description': f'''
+Camere, bagni, cucine e tessili sono soggetti a una costante esposizione a microrganismi patogeni e allergeni. Le pulizie tradizionali non sempre riescono a raggiungere superfici, tessuti e punti nascosti.
+            ''',
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.SMOKE_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Odori persistenti in camere e ambienti chiusi
+            ''',
+            'description': f'''
+Fumo, cibo, muffe, prodotti chimici e permanenza prolungata degli ospiti possono generare odori difficili da neutralizzare. I deodoranti coprono, ma non eliminano la fonte.
+            ''',
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.GAVEL_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Normative stringenti su cucine e aree ristoro
+            ''',
+            'description': f'''
+Il personale è tenuto a rispettare protocolli HACCP, tempi rapidi e standard di igiene elevati. Superfici, utensili, celle frigo e impianti di aerazione richiedono trattamenti costanti e controllabili.
+            ''',
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.CLOCK_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Riduzione dei tempi di sanificazione tra un ospite e l'altro
+            ''',
+            'description': f'''
+Il tempo è critico: camere, aree comuni e cucine devono essere pronte in pochi minuti, senza rischi residui o lunghi tempi di asciugatura.
+            ''',
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.SURFACE_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Sanificazione efficace di tessili e superfici delicate
+            ''',
+            'description': f'''
+Materassi, tende, divani, moquette e altre superfici assorbenti possono trattenere odori e cariche batteriche, rendendo difficile una pulizia profonda senza interventi invasivi.
+            ''',
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.CHEMICAL_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Sostenibilità e riduzione dei prodotti chimici
+            ''',
+            'description': f'''
+Gli ospiti sono sempre più sensibili all'impatto ambientale. Meno prodotti chimici significa meno residui, meno allergeni e un ambiente più naturale.
+            ''',
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+    ]
+    cards = []
+    for item in problemi_data:
+        cards.append(f'''
+            <div>
+                <div style="display: inline-block; margin-bottom: 2rem; border: 1px solid #f2f2f2; border-radius: 2rem; padding: 2rem;">
+                    { item['icon'] }
+                </div>
+                <h3 style="color: #1f1f1f; font-size: 1.5rem; line-height: 1.25; font-weight: bold; margin-bottom: 1rem;">
+                    { item['title'] }
+                </h3> 
+                <p style="color: #555555; margin-bottom: 2rem;">
+                    { item['description'] }                    
+                </p>
+            </div>
+        ''')
+                # <p>
+                #     <a style="color: #555555;" href="{ item['link_href'] }">{ item['link_anchor'] }</a>
+                # </p>
+    cards = ''.join(cards)
+    html_problemi = f'''
+        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_py};">
+            <div class="container-md" style="margin-bottom: 5rem;">
+                <h2 style="color: #1f1f1f; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
+Le sfide igieniche del settore Ho.Re.Ca.
+                </h2>
+                <p style="color: #1f1f1f; margin-bottom: 1rem;">    
+Nell'ospitalità la percezione dell'igiene è immediata: un odore sgradevole, una camera non perfettamente sanificata o un ambiente poco salubre possono compromettere recensioni, reputazione e ritorno dei clienti.
+A questo si aggiungono normative sanitarie stringenti, rotazione elevata degli ospiti e la necessità di ridurre i tempi di fermo tra una prenotazione e l'altra.
+                </p>     
+            </div>
+            <div class="grid-3" style="column-gap: 8rem; row-gap: 3rem;">
+                {cards}
+            </div>
+        </section> 
+        <div style="background-color: #ededed; height: 1px;"></div>  
+    '''
+    
+    ########################################
+    # soluzioni
+    ########################################
+    html_soluzioni = f'''
+        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_py};">
+            <div class="container-md" style="margin-bottom: 5rem;">
+                <h2 style="color: #1f1f1f; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
+Come l'ozono risolve le criticità del settore Ho.Re.Ca.
+                </h2>
+                <p style="color: #1f1f1f; margin-bottom: 1rem;">    
+L'ozono è un ossidante naturale ad altissima efficacia, in grado di penetrare nei punti difficili da raggiungere, trattare superfici complesse, tessuti e volumi d'aria senza lasciare residui. Agisce in profondità eliminando batteri, virus, muffe, lieviti, allergeni e odori organici direttamente alla radice, senza l'uso di prodotti chimici o deodoranti coprenti.
+               </p>
+            </div>
+            <div class="container-md">
+                <h3 style="color: #1f1f1f; font-size: 1.25rem; line-height: 1; font-weight: bold; margin-bottom: 1rem;">
+Eliminazione profonda di batteri, virus e allergeni
+                </h3>
+                <p style="color: #1f1f1f; margin-bottom: 3rem;">
+L'ozono agisce direttamente sulle membrane dei microrganismi, inattivando batteri, virus, funghi e allergeni presenti sulle superfici, nei tessuti e nell'aria. Grazie alla sua natura gassosa, raggiunge fessure, angoli nascosti e punti difficili da trattare con i metodi tradizionali, garantendo un livello di igiene uniforme e superiore in camere, cucine, bagni e spazi comuni.
+                </p>
+                <h3 style="color: #1f1f1f; font-size: 1.25rem; line-height: 1; font-weight: bold; margin-bottom: 1rem;">
+Trattamenti rapidi, senza risciacquo
+                </h3>
+                <p style="color: #1f1f1f; margin-bottom: 3rem;">
+I cicli di trattamento all'ozono durano pochi minuti e non richiedono risciacquo, asciugatura o tempi di attesa prolungati. Una volta completato il protocollo, l'ambiente è immediatamente pronto per essere riutilizzato, rendendo la tecnologia ideale per strutture con elevata rotazione delle camere e tempi stretti nella gestione operativa.
+                </p>
+                <h3 style="color: #1f1f1f; font-size: 1.25rem; line-height: 1; font-weight: bold; margin-bottom: 1rem;">
+Nessun residuo chimico
+                </h3>
+                <p style="color: #1f1f1f; margin-bottom: 3rem;">
+L'ozono non lascia tracce o sottoprodotti e riduce drasticamente la necessità di detergenti aggressivi. Questo significa ambienti più sicuri per ospiti e personale, minore rischio di allergie o irritazioni e totale assenza di contaminazioni che potrebbero alterare odori o sapori nelle aree cucina. Al termine del ciclo, l'ozono si riconverte in semplice ossigeno.
+                </p>
+                <h3 style="color: #1f1f1f; font-size: 1.25rem; line-height: 1; font-weight: bold; margin-bottom: 1rem;">
+Applicabile a superfici, aria e tessuti
+                </h3>
+                <p style="color: #1f1f1f;">
+L'ozono è una delle poche tecnologie in grado di sanificare efficacemente anche materiali porosi e oggetti difficili da trattare, come materassi, tende, moquette, cuscini e imbottiti. Il processo è non invasivo e non danneggia i materiali, offrendo una sanificazione profonda impossibile da ottenere con i metodi tradizionali e migliorando la qualità percepita degli ambienti Ho.Re.Ca.
+                </p>
+            </div>
+        </section>
+        <div style="background-color: #ededed; height: 1px;"></div>  
+    '''
+    
+    ########################################
+    # servizi
+    ########################################
+    servizi_data = [
+        {
+            'icon': f'''
+{g.BEDROOM_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Sanificazione camere e spazi di accoglienza
+            ''',
+            'description': f'''
+Ideale per camere d'hotel, hall, reception e aree comuni. L'ozono elimina rapidamente batteri, virus e odori da superfici e volumi d'aria, garantendo un livello di igiene superiore rispetto alla sola pulizia manuale. I cicli sono rapidi, non lasciano residui chimici e permettono una gestione più efficiente della rotazione camere.
+            ''',
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.SMOKE_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Deodorizzazione professionale per hotel e ristoranti
+            ''',
+            'description': f'''
+Pensata per camere, sale ristorante, cucine aperte e zone a rischio odori. L'ozono neutralizza definitivamente fumo, odori alimentari, muffe e composti organici volatili, intervenendo direttamente sulle molecole responsabili del cattivo odore. Il risultato è un ambiente più accogliente e una percezione immediata di freschezza.
+            ''',
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.KITCHEN_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Sanificazione cucine e aree HACCP
+            ''',
+            'description': f'''
+Un protocollo studiato per cucine professionali, dispense e aree di preparazione. I trattamenti a ozono riducono la carica microbica su superfici e attrezzature, migliorano l'igiene delle linee di lavoro e supportano il rispetto delle procedure HACCP, facilitando la conformità ai controlli ASL.
+            ''',
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.HVAC_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Trattamento aria e impianti di ventilazione
+            ''',
+            'description': f'''
+Adatto a materassi, tende, moquette, divani e superfici sensibili ai liquidi. L'ozono penetra nelle fibre eliminando odori, acari e batteri senza rischiare di danneggiare i materiali. È un trattamento sicuro, asciutto e non invasivo, ideale per mantenere i tessili freschi e igienizzati più a lungo.
+            ''',
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.LOOP_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Servizio programmato per strutture ricettive
+            ''',
+            'description': f'''
+Un piano ricorrente studiato sulle esigenze della struttura, con interventi programmati e continuità di igiene garantita. Riduce i costi nel lungo termine, assicura un livello costante di sanificazione e fornisce report periodici utili per audit e verifiche interne.
+           ''',
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+    ]
+    cards = []
+    for item in servizi_data:
+        cards.append(f'''
+            <div>
+                <div style="display: inline-block; margin-bottom: 2rem; border: 1px solid #f2f2f2; border-radius: 2rem; padding: 2rem;">
+                    { item['icon'] }
+                </div>
+                <h3 style="color: #222222; font-size: 1.5rem; line-height: 1.25; font-weight: bold; margin-bottom: 1rem;">
+                    { item['title'] }
+                </h3> 
+                <p style="color: #555555; margin-bottom: 2rem;">
+                    { item['description'] }                    
+                </p>
+            </div>
+        ''')
+    cards = ''.join(cards)
+    html_servizi = f'''
+        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_py};">
+            <div class="container-md" style="margin-bottom: 5rem;">
+                <h2 style="color: #222222; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
+Servizi per hotel, ristoranti e strutture ricettive
+                </h2>
+                <p style="color: #1f1f1f; margin-bottom: 1rem;">    
+Ogni ambiente dell'ospitalità richiede standard igienici elevati e risultati immediati. I nostri servizi sono pensati per rispondere alle esigenze operative del settore Ho.Re.Ca.: interventi rapidi, senza residui chimici e completamente sicuri per ospiti, personale e superfici delicate. Abbiamo sviluppato protocolli integrati che coprono ogni fase dell'attività — dalla cucina alle camere, dalla reception alle aree comuni — garantendo ambienti sempre freschi, igienizzati e perfettamente conformi alle normative.
+                </p>       
+            </div>
+            <div class="grid-3" style="column-gap: 5rem; row-gap: 3rem;">
+                {cards}
+            </div>
+        </section> 
+        <div style="background-color: #ededed; height: 1px;"></div>  
+    '''
+
+    ########################################
+    # html
+    ########################################
+    html = f'''
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="/style.css">
+        </head>
+        <body>
+            {components.header_light()}
+            <main>
+                {html_hero}
+                {html_problemi}
+                {html_soluzioni}
+                {html_servizi}
+                {cta()}
+            </main>
+            {components.footer_dark()}
+        </body>
+        </html>
+    '''
+    try: os.makedirs(f'{g.website_folderpath}/settori')
+    except: pass
+    html_filepath = f'{g.website_folderpath}/settori/{page_slug}.html'
+    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)
+
+def settori_farmaceutico_gen():
+    data = settori_data.data[3]
+    page_slug = data['page_slug']
+    ########################################
+    # hero
+    ########################################
+    html_hero = f'''
+        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_hero_py};">
+            <div style="display: flex; justify-content: space-between; center;">
+                <div style="flex: 2;">
+                    <h1 style="color: #222222; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
+Sanificazione ad ozono per l'industria farmaceutica e cosmetica
+                    </h1>
+                    <p style="color: #1f1f1f;">                        
+Soluzioni certificate per laboratori, clean room e linee di confezionamento: sicurezza, conformità e qualità garantite.
+                    </p>
+                </div>
+                {hero_button}
+            </div>
+        </section>
+        <div style="background-color: #ededed; height: 1px;"></div>  
+    '''
+    
+    ########################################
+    # problemi
+    ########################################
+    problemi_data = [
+        {
+            'icon': f'''
+{g.BACTERIA_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Contaminazione microbiologica in ambienti sterili
+            ''',
+            'description': f'''
+Clean room e laboratori devono mantenere valori estremamente bassi di carica microbica. Anche una minima variazione può invalidare interi lotti, test o campionature, con impatti economici significativi.
+            ''',
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.CONTAMINATION_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Rischio di contaminazione incrociata (cross-contamination)
+            ''',
+            'description': f'''
+In ambienti dove si manipolano principi attivi, composti sensibili o formulazioni cosmetiche, la contaminazione incrociata è un rischio critico. Si richiedono sistemi di igienizzazione che non introducano particelle, residui o sottoprodotti.
+            ''',
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.SURFACE_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Superfici complesse e strumenti delicati
+            ''',
+            'description': f'''
+Strumentazioni di laboratorio, cappe chimiche, aree di pesatura e macchine di confezionamento presentano superfici difficili da raggiungere. I metodi chimici spesso richiedono lunghi tempi di attesa o rischiano interazioni indesiderate con materiali sensibili.
+            ''',
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.GAVEL_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Conformità a standard GMP, FDA e ISO 14644
+            ''',
+            'description': f'''
+Le normative per ambienti controllati sono estremamente stringenti, come classificazione particellare, controllo microbico aerodisperso, validazioni periodiche delle procedure. Qualsiasi deviazione può portare a non conformità, sospensioni o perdita di certificazioni.
+            ''',
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.CHEMICAL_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Limiti dei detergenti chimici tradizionali
+            ''',
+            'description': f'''
+Molti sanificanti impiegati in ambito industriale possono lasciare residui, interagire con i materiali o alterare l'ambiente controllato. Occorre un sistema efficace e verificabile che non introduca contaminanti aggiuntivi.
+            ''',
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.CLOCK_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Riduzione dei tempi di fermo e continuità operativa
+            ''',
+            'description': f'''
+Clean room e linee di confezionamento devono garantire alta produttività con il minimo downtime. Servono protocolli rapidi, ripetibili e con tempi di rientro brevi per mantenere gli standard di efficienza.
+            ''',
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+    ]
+    cards = []
+    for item in problemi_data:
+        cards.append(f'''
+            <div>
+                <div style="display: inline-block; margin-bottom: 2rem; border: 1px solid #f2f2f2; border-radius: 2rem; padding: 2rem;">
+                    { item['icon'] }
+                </div>
+                <h3 style="color: #1f1f1f; font-size: 1.5rem; line-height: 1.25; font-weight: bold; margin-bottom: 1rem;">
+                    { item['title'] }
+                </h3> 
+                <p style="color: #555555; margin-bottom: 2rem;">
+                    { item['description'] }                    
+                </p>
+            </div>
+        ''')
+                # <p>
+                #     <a style="color: #555555;" href="{ item['link_href'] }">{ item['link_anchor'] }</a>
+                # </p>
+    cards = ''.join(cards)
+    html_problemi = f'''
+        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_py};">
+            <div class="container-md" style="margin-bottom: 5rem;">
+                <h2 style="color: #1f1f1f; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
+Le sfide igieniche dell'industria farmaceutica e cosmetica                </h2>
+                <p style="color: #1f1f1f; margin-bottom: 1rem;">    
+In laboratori, clean room e ambienti di confezionamento, anche piccole contaminazioni possono compromettere la qualità dei prodotti e la sicurezza dei consumatori. Normative severe e protocolli rigorosi richiedono trattamenti mirati e tracciabili.
+                </p>     
+            </div>
+            <div class="grid-3" style="column-gap: 8rem; row-gap: 3rem;">
+                {cards}
+            </div>
+        </section> 
+        <div style="background-color: #ededed; height: 1px;"></div>  
+    '''
+
+    ########################################
+    # html
+    ########################################
+    html = f'''
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="/style.css">
+        </head>
+        <body>
+            {components.header_light()}
+            <main>
+                {html_hero}
+                {html_problemi}
+                {cta()}
+            </main>
+            {components.footer_dark()}
+        </body>
+        </html>
+    '''
+    try: os.makedirs(f'{g.website_folderpath}/settori')
+    except: pass
+    html_filepath = f'{g.website_folderpath}/settori/{page_slug}.html'
+    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)
+
+def settori_agroalimentare_gen():
+    data = settori_data.data[4]
+    page_slug = data['page_slug']
+    ########################################
+    # hero
+    ########################################
+    html_hero = f'''
+        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_hero_py};">
+            <div style="display: flex; justify-content: space-between; center;">
+                <div style="flex: 2;">
+                    <h1 style="color: #222222; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
+Sanificazione ad ozono per l'industria agroalimentare
+                    </h1>
+                    <p style="color: #1f1f1f;">                        
+Soluzioni certificate per garantire igiene, sicurezza alimentare e conformità HACCP in stabilimenti produttivi, magazzini e cucine industriali.
+                    </p>
+                </div>
+                {hero_button}
+            </div>
+        </section>
+        <div style="background-color: #ededed; height: 1px;"></div>  
+    '''
+    
+    ########################################
+    # problemi
+    ########################################
+    problemi_data = [
+        {
+            'icon': f'''
+{g.BACTERIA_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Rischio contaminazioni da batteri e muffe su macchinari e superfici
+            ''',
+            'description': f'''
+Le superfici di lavorazione, i nastri trasportatori e le linee di confezionamento possono accumulare microrganismi nocivi se non sanificate correttamente. Batteri come Listeria monocytogenes o muffe invisibili possono proliferare rapidamente in ambienti umidi o poco ventilati. Controllare queste contaminazioni richiede tecniche precise e protocolli costanti, altrimenti il rischio di non conformità HACCP aumenta notevolmente.
+            ''',
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.FRIDGE_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Difficoltà di sanificazione in celle frigorifere e impianti complessi
+            ''',
+            'description': f'''
+Le celle frigorifere, essenziali per la conservazione dei prodotti, rappresentano spazi critici poiché basse temperature e umidità favoriscono la proliferazione di microrganismi. Alcuni impianti industriali presentano geometrie complesse e punti difficili da raggiungere, rendendo inefficaci i metodi tradizionali di pulizia. La sanificazione deve essere profonda, uniforme e non interferire con le operazioni quotidiane, senza generare residui chimici che compromettano la sicurezza degli alimenti.
+            ''',
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.GAVEL_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Conformità rigorosa alle normative HACCP e ISO 22000
+            ''',
+            'description': f'''
+Ogni stabilimento agroalimentare è soggetto a controlli ispettivi e deve rispettare norme severe sulla sicurezza alimentare. Errori nella sanificazione o mancanza di tracciabilità nei protocolli possono comportare sanzioni, richiami dei prodotti o danni reputazionali. Garantire conformità significa implementare interventi certificati, documentati e verificabili con report dettagliati.
+            ''',
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.SMOKE_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Necessità di eliminare odori senza introdurre residui chimici
+            ''',
+            'description': f'''
+L'odore è un indicatore spesso sottovalutato della presenza di microrganismi o contaminazioni. Molti prodotti chimici per la pulizia lasciano residui che possono contaminare gli alimenti o alterarne il gusto e l'aroma. La sfida è trovare soluzioni sicure, efficaci e compatibili con le normative, in grado di abbattere odori e microrganismi senza compromettere la qualità dei prodotti.
+            ''',
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+    ]
+    cards = []
+    for item in problemi_data:
+        cards.append(f'''
+            <div>
+                <div style="display: inline-block; margin-bottom: 2rem; border: 1px solid #f2f2f2; border-radius: 2rem; padding: 2rem;">
+                    { item['icon'] }
+                </div>
+                <h3 style="color: #1f1f1f; font-size: 1.5rem; line-height: 1.25; font-weight: bold; margin-bottom: 1rem;">
+                    { item['title'] }
+                </h3> 
+                <p style="color: #555555; margin-bottom: 2rem;">
+                    { item['description'] }                    
+                </p>
+            </div>
+        ''')
+                # <p>
+                #     <a style="color: #555555;" href="{ item['link_href'] }">{ item['link_anchor'] }</a>
+                # </p>
+    cards = ''.join(cards)
+    html_problemi = f'''
+        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_py};">
+            <div class="container-md" style="margin-bottom: 5rem;">
+                <h2 style="color: #1f1f1f; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
+Le sfide igieniche dell'industria agroalimentare
+                </h2>
+                <p style="color: #1f1f1f; margin-bottom: 1rem;">    
+La produzione agroalimentare richiede standard igienici elevatissimi. Ogni fase della lavorazione, dalla ricezione delle materie prime fino allo stoccaggio dei prodotti finiti, può rappresentare un punto critico per la sicurezza alimentare. Contaminazioni microbiche, residui organici e odori persistenti non solo compromettono la qualità dei prodotti, ma possono avere impatti legali e reputazionali significativi. Per questo, ogni intervento di sanificazione deve essere preciso, mirato e conforme alle normative vigenti.
+                </p>     
+            </div>
+            <div class="grid-3" style="column-gap: 8rem; row-gap: 3rem;">
+                {cards}
+            </div>
+        </section> 
+        <div style="background-color: #ededed; height: 1px;"></div>  
+    '''
+
+    ########################################
+    # html
+    ########################################
+    html = f'''
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="/style.css">
+        </head>
+        <body>
+            {components.header_light()}
+            <main>
+                {html_hero}
+                {html_problemi}
+                {cta()}
+            </main>
+            {components.footer_dark()}
+        </body>
+        </html>
+    '''
+    try: os.makedirs(f'{g.website_folderpath}/settori')
+    except: pass
+    html_filepath = f'{g.website_folderpath}/settori/{page_slug}.html'
+    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)
+
+def settori_sportivo_gen():
+    data = settori_data.data[5]
+    page_slug = data['page_slug']
+    ########################################
+    # hero
+    ########################################
+    html_hero = f'''
+        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_hero_py};">
+            <div style="display: flex; justify-content: space-between; center;">
+                <div style="flex: 2;">
+                    <h1 style="color: #222222; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
+Sanificazione ad ozono per strutture sportive
+                    </h1>
+                    <p style="color: #1f1f1f;">                        
+Soluzioni sicure e certificate per palestre, centri fitness, piscine e impianti sportivi, per garantire ambienti igienizzati e conformi alle normative sanitarie.
+                    </p>
+                </div>
+                {hero_button}
+            </div>
+        </section>
+        <div style="background-color: #ededed; height: 1px;"></div>  
+    '''
+    
+    ########################################
+    # problemi
+    ########################################
+    problemi_data = [
+        {
+            'icon': f'''
+{g.SURFACE_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Superfici di attrezzi e pavimenti ad alto rischio di contaminazione
+            ''',
+            'description': f'''
+Pesi, tapis roulant, cyclette, panche e tappeti sono a contatto diretto con mani e piedi degli utenti, diventando veicoli ideali per batteri e virus. Anche i pavimenti delle sale corsi e degli spogliatoi accumulano residui di sudore, prodotti cosmetici e polveri, aumentando il rischio microbiologico. La sanificazione tradizionale manuale spesso non basta o richiede tempi e risorse significative.
+            ''',
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.HVAC_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Aria chiusa e affollamento di ambienti indoor
+            ''',
+            'description': f'''
+Sale fitness, palestre e piscine al chiuso hanno una ventilazione spesso limitata. L'alta densità di persone negli spazi indoor aumenta il rischio di trasmissione aerea di virus e batteri. I sistemi HVAC non sempre garantiscono un ricambio d'aria ottimale, rendendo necessario un trattamento dell'aria mirato e costante.
+            ''',
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.CLOCK_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Necessità di sanificazione rapida tra turni di utilizzo
+            ''',
+            'description': f'''
+Le strutture sportive operano con orari continuativi e frequenti cambi di utenti. Interventi di pulizia lunghi possono ridurre la disponibilità della struttura e interrompere i programmi dei corsi. Serve quindi un sistema di sanificazione efficace e rapido, che non interferisca con l'attività quotidiana.
+            ''',
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.SMOKE_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Odori persistenti da spogliatoi e piscine
+            ''',
+            'description': f'''
+Sudore, cloro, umidità e materiali sintetici possono generare odori sgradevoli difficili da eliminare con pulizie tradizionali. La presenza di cattivi odori influisce sulla percezione della pulizia da parte degli utenti e sul loro grado di soddisfazione. Il trattamento deve garantire un ambiente fresco e igienicamente sicuro.
+            ''',
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.GAVEL_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Conformità a normative locali e linee guida sanitarie
+            ''',
+            'description': f'''
+Palestre e centri sportivi devono rispettare regolamenti igienico-sanitari locali, linee guida nazionali e protocolli HACCP dove applicabili. La mancata conformità può comportare sanzioni, chiusure temporanee o danni reputazionali. Le procedure di sanificazione devono essere tracciabili e certificabili, garantendo sicurezza e trasparenza.
+            ''',
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+    ]
+    cards = []
+    for item in problemi_data:
+        cards.append(f'''
+            <div>
+                <div style="display: inline-block; margin-bottom: 2rem; border: 1px solid #f2f2f2; border-radius: 2rem; padding: 2rem;">
+                    { item['icon'] }
+                </div>
+                <h3 style="color: #1f1f1f; font-size: 1.5rem; line-height: 1.25; font-weight: bold; margin-bottom: 1rem;">
+                    { item['title'] }
+                </h3> 
+                <p style="color: #555555; margin-bottom: 2rem;">
+                    { item['description'] }                    
+                </p>
+            </div>
+        ''')
+                # <p>
+                #     <a style="color: #555555;" href="{ item['link_href'] }">{ item['link_anchor'] }</a>
+                # </p>
+    cards = ''.join(cards)
+    html_problemi = f'''
+        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_py};">
+            <div class="container-md" style="margin-bottom: 5rem;">
+                <h2 style="color: #1f1f1f; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
+Le sfide igieniche nelle strutture sportive
+                </h2>
+                <p style="color: #1f1f1f; margin-bottom: 1rem;">    
+In palestre, centri fitness e piscine, la concentrazione di persone e il contatto con superfici condivise aumentano il rischio di batteri, virus e cattivi odori. Garantire un'igiene costante è fondamentale per la sicurezza degli utenti e la reputazione della struttura.
+                </p>     
+            </div>
+            <div class="grid-3" style="column-gap: 8rem; row-gap: 3rem;">
+                {cards}
+            </div>
+        </section> 
+        <div style="background-color: #ededed; height: 1px;"></div>  
+    '''
+
+    ########################################
+    # html
+    ########################################
+    html = f'''
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="/style.css">
+        </head>
+        <body>
+            {components.header_light()}
+            <main>
+                {html_hero}
+                {html_problemi}
+                {cta()}
+            </main>
+            {components.footer_dark()}
+        </body>
+        </html>
+    '''
+    try: os.makedirs(f'{g.website_folderpath}/settori')
+    except: pass
+    html_filepath = f'{g.website_folderpath}/settori/{page_slug}.html'
+    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)
+
 def gen():
     settori_alimentare_gen()
+    settori_alimentare_lattiero_caseario_gen()
     settori_logistico_gen()
+    settori_horeca_gen()
+    settori_farmaceutico_gen()
+    settori_agroalimentare_gen()
+    settori_sportivo_gen()
     
     ########################################
     # hero
@@ -836,7 +1986,6 @@ def gen():
             {components.header_light()}
             <main>
                 {hero}
-                {settori}
                 {settori}
                 {cta()}
             </main>
