@@ -54,7 +54,7 @@ hero_button = f'''
     </div>
 '''
 
-def settori_alimentare_gen():
+def settori_alimentare_gen_old():
     data = settori_data.data[0]
     page_slug = data['page_slug']
     ########################################
@@ -402,7 +402,478 @@ Scopri nel dettaglio come operiamo e quali risultati abbiamo ottenuto nel tuo se
     html_filepath = f'{g.website_folderpath}/settori/{page_slug}.html'
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)
 
-def settori_alimentare_lattiero_caseario_gen():
+def settori_alimentare_caseifici_gen():
+    data = {
+        'page_slug': '''alimentare/caseifici''',
+        'href': '''/settori/alimentare.html''',
+        'image_src': '/immagini/settori-industria-alimentare.jpg',
+        'category': '',
+        'title': '''Sanificazione Caseifici: aree critiche, problemi e soluzioni per l'industria lattiero-casearia''',
+        'description': '''
+La sanificazione nei caseifici è fondamentale per garantire la sicurezza alimentare, prevenire contaminazioni e preservare la qualità dei prodotti lattiero-caseari. Ogni area di produzione ha rischi specifici, dal latte crudo alla stagionatura dei formaggi, e richiede procedure mirate e tecnologie avanzate come l'ozono, la nebulizzazione o i sistemi CIP (Clean-In-Place).
+        ''',
+        'date': '''6 Ottobre 2025''',
+        'datetime': '''2025-10-06''',
+    }
+    page_slug = data['page_slug']
+    ########################################
+    # hero
+    ########################################
+    html_hero = f'''
+        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_hero_py};">
+            <div style="display: flex; justify-content: space-between; center;">
+                <div style="flex: 2;">
+                    <h1 style="color: #1f1f1f; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
+Sanificazione ozono per il settore lattiero-caseario
+                    </h1>
+                    <p style="color: #1f1f1f;">                        
+La sanificazione nei caseifici è fondamentale per garantire la sicurezza alimentare, prevenire contaminazioni e preservare la qualità dei prodotti lattiero-caseari. Ogni area di produzione ha rischi specifici, dal latte crudo alla stagionatura dei formaggi, e richiede procedure mirate e tecnologie avanzate come l'ozono, la nebulizzazione o i sistemi CIP (Clean-In-Place).
+                    </p>
+                </div>
+                {hero_button}
+            </div>
+        </section>
+        <div style="background-color: #ededed; height: 1px;"></div>  
+    '''
+    
+    ########################################
+    # area
+    ########################################
+    data = [
+        {
+            'icon': f'''
+<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M646-80q-100 0-167-67t-67-167q0-100 67-167t167-67q100 0 167 67t67 167q0 100-67 167T646-80Zm0-60q72 0 123-51t51-123q0-72-51-123t-123-51q-72 0-123 51t-51 123q0 72 51 123t123 51Zm-506-20q-24 0-42-18t-18-42v-330q0-13 1.5-21t6.5-19l92-200h-22q-15 0-24.5-9.5T124-824v-22q0-15 9.5-24.5T158-880h261q15 0 24.5 9.5T453-846v22q0 15-9.5 24.5T419-790h-22l96 222q-12 6-25 15t-24 18L329-790h-82L140-559v339h224q3 15 10 31t15 29H140Zm506-438q-36 0-60-24t-24-60q0-36 24-60t60-24v168q0-36 24-60t60-24q36 0 60 24t24 60H646Z"/></svg>
+            ''',
+            'title': f'''Ricezione e stoccaggio del latte crudo''',
+            'description': f'''
+Questa fase è il primo punto critico: la sanificazione qui previene l'introduzione di patogeni nell'intera linea produttiva.
+            ''',
+            'punti_critici': [
+'serbatoi di raccolta', 'tubazioni', 'pompe', 'valvole'
+            ],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M220-400q0 63 28.5 118.5T328-189q-4-12-6-24.5t-2-24.5q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60q0 12-2 24.5t-6 24.5q51-37 79.5-92.5T740-400q0-54-23-105.5T651-600q-21 15-44 23.5t-46 8.5q-61 0-101-41.5T420-714v-20q-46 33-83 73t-63 83.5q-26 43.5-40 89T220-400Zm260 24-71 70q-14 14-21.5 31t-7.5 37q0 41 29 69.5t71 28.5q42 0 71-28.5t29-69.5q0-20-7.5-37T551-306l-71-70Zm0-464v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-128 86-246.5T480-840Z"/></svg>
+            ''',
+            'title': f'''
+Pastorizzazione e trattamento termico
+            ''',
+            'description': f'''
+La pastorizzazione riduce il carico microbico, ma le superfici e le tubazioni richiedono sanificazioni mirate per evitare ricontaminazioni.
+            ''',
+            'punti_critici': ['pastorizzatori', 'serbatoi di accumulo', 'tubazioni', 'valvole'],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M584.88-120Q539-120 507-152.12q-32-32.12-32-78T507.12-308q32.12-32 78-32T663-307.88q32 32.12 32 78T662.88-152q-32.12 32-78 32Zm-.06-60q21.18 0 35.68-14.32 14.5-14.33 14.5-35.5 0-21.18-14.32-35.68-14.33-14.5-35.5-14.5-21.18 0-35.68 14.32-14.5 14.33-14.5 35.5 0 21.18 14.32 35.68 14.33 14.5 35.5 14.5Zm80.12-230Q575-410 512.5-472.56 450-535.13 450-625.06q0-89.94 62.56-152.44 62.57-62.5 152.5-62.5 89.94 0 152.44 62.56 62.5 62.57 62.5 152.5 0 89.94-62.56 152.44-62.57 62.5-152.5 62.5Zm-.17-60Q730-470 775-514.77q45-44.78 45-110Q820-690 775.23-735q-44.78-45-110-45Q600-780 555-735.23q-45 44.78-45 110Q510-560 554.77-515q44.78 45 110 45ZM275-237q-65 0-110-45t-45-110q0-65 45-110t110-45q65 0 110 45t45 110q0 65-45 110t-110 45Zm-.13-60Q314-297 342-324.87q28-27.86 28-67Q370-431 342.13-459q-27.86-28-67-28Q236-487 208-459.13q-28 27.86-28 67Q180-353 207.87-325q27.86 28 67 28ZM585-230Zm80-395ZM275-392Z"/></svg>
+            ''',
+            'title': f'''
+Coagulazione e lavorazione della cagliata
+            ''',
+            'description': f'''
+Nelle vasche e sulle attrezzature di lavorazione la pulizia meccanica è fondamentale per rimuovere residui organici che favoriscono muffe e batteri.
+            ''',
+            'punti_critici': ['vasche di coagulazione', 'coltelli', 'nastri trasportatori'],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M160-410v-70h640v70H160Zm0-121v-60h640v60H160ZM449-80v-158l-77 76-42-42 149-148 147 148-42 42-75-76v158h-60Zm30-568L331-796l42-42 75 76v-158h60v158l77-76 42 42-148 148Z"/></svg>
+            ''',
+            'title': f'''
+Pressatura e formatura
+            ''',
+            'description': f'''
+Stampi, presse e superfici di lavoro sono punti di contatto diretto con il prodotto e richiedono sanificazioni tra un ciclo e l'altro.
+            ''',
+            'punti_critici': ['presse per formaggi', 'stampi', 'tavoli di lavoro'],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M480-80q-137 0-228.5-94T160-408h60q0 115 74 191.5T480-140q112 0 186-76.5T740-408h60q0 140-91.5 234T480-80ZM199.82-490q-12.82 0-21.32-8.68-8.5-8.67-8.5-21.5 0-12.82 8.68-21.32 8.67-8.5 21.5-8.5 12.82 0 21.32 8.68 8.5 8.67 8.5 21.5 0 12.82-8.68 21.32-8.67 8.5-21.5 8.5Zm180 0q-12.82 0-21.32-8.68-8.5-8.67-8.5-21.5 0-12.82 8.68-21.32 8.67-8.5 21.5-8.5 12.82 0 21.32 8.68 8.5 8.67 8.5 21.5 0 12.82-8.68 21.32-8.67 8.5-21.5 8.5Zm200 0q-12.82 0-21.32-8.68-8.5-8.67-8.5-21.5 0-12.82 8.68-21.32 8.67-8.5 21.5-8.5 12.82 0 21.32 8.68 8.5 8.67 8.5 21.5 0 12.82-8.68 21.32-8.67 8.5-21.5 8.5Zm180 0q-12.82 0-21.32-8.68-8.5-8.67-8.5-21.5 0-12.82 8.68-21.32 8.67-8.5 21.5-8.5 12.82 0 21.32 8.68 8.5 8.67 8.5 21.5 0 12.82-8.68 21.32-8.67 8.5-21.5 8.5Zm-470-110q-12.82 0-21.32-8.68-8.5-8.67-8.5-21.5 0-12.82 8.68-21.32 8.67-8.5 21.5-8.5 12.82 0 21.32 8.68 8.5 8.67 8.5 21.5 0 12.82-8.68 21.32-8.67 8.5-21.5 8.5Zm380 0q-12.82 0-21.32-8.68-8.5-8.67-8.5-21.5 0-12.82 8.68-21.32 8.67-8.5 21.5-8.5 12.82 0 21.32 8.68 8.5 8.67 8.5 21.5 0 12.82-8.68 21.32-8.67 8.5-21.5 8.5Zm-190-10q-12.82 0-21.32-8.68-8.5-8.67-8.5-21.5 0-12.82 8.68-21.32 8.67-8.5 21.5-8.5 12.82 0 21.32 8.68 8.5 8.67 8.5 21.5 0 12.82-8.68 21.32-8.67 8.5-21.5 8.5Zm-100-100q-12.82 0-21.32-8.68-8.5-8.67-8.5-21.5 0-12.82 8.68-21.32 8.67-8.5 21.5-8.5 12.82 0 21.32 8.68 8.5 8.67 8.5 21.5 0 12.82-8.68 21.32-8.67 8.5-21.5 8.5Zm200 0q-12.82 0-21.32-8.68-8.5-8.67-8.5-21.5 0-12.82 8.68-21.32 8.67-8.5 21.5-8.5 12.82 0 21.32 8.68 8.5 8.67 8.5 21.5 0 12.82-8.68 21.32-8.67 8.5-21.5 8.5Zm-100-100q-12.82 0-21.32-8.68-8.5-8.67-8.5-21.5 0-12.82 8.68-21.32 8.67-8.5 21.5-8.5 12.82 0 21.32 8.68 8.5 8.67 8.5 21.5 0 12.82-8.68 21.32-8.67 8.5-21.5 8.5Zm.18 402Z"/></svg>
+            ''',
+            'title': f'''
+Salatura
+            ''',
+            'description': f'''
+I bagni di salamoia e le vasche possono diventare serbatoi di contaminanti se non gestiti e sanificati correttamente.
+            ''',
+            'punti_critici': ['bagni salamoia', 'vasche', 'tavoli di applicazione sale'],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M620-530q-21 0-35.5-14.5T570-580q0-13 4.5-24t12-21.5q7.5-10.5 16.5-20t17-19.5q8 10 17 19.5t16.5 20q7.5 10.5 12 21.5t4.5 24q0 21-14.5 35.5T620-530Zm170-132q-21 0-35.5-14.5T740-712q0-13 4.5-24t12-21.5q7.5-10.5 16.5-20t17-19.5q8 10 17 19.5t16.5 20q7.5 10.5 12 21.5t4.5 24q0 21-14.5 35.5T790-662Zm0 262q-21 0-35.5-14.5T740-450q0-13 4.5-24t12-21.5q7.5-10.5 16.5-20t17-19.5q8 10 17 19.5t16.5 20q7.5 10.5 12 21.5t4.5 24q0 21-14.5 35.5T790-400ZM336-121q-76 0-129-53t-53-129q0-48 24-90.5t66-68.5v-286q0-38 27-65t65-27q38 0 65 27t27 65v286q42 26 66 68.5t24 90.5q0 76-53 129t-129 53ZM214-303h244q0-40-19-71.5T388-420l-20-9v-319q0-14-9-23t-23-9q-14 0-23 9t-9 23v319l-20 9q-32 14-51 46t-19 71Z"/></svg>
+            ''',
+            'title': f'''
+Stagionatura e maturazione
+            ''',
+            'description': f'''
+Le celle e gli scaffali di stagionatura richiedono un controllo rigoroso di umidità e aria perché sono le aree più sensibili alla formazione di muffe.
+            ''',
+            'punti_critici': ['celle frigorifere', 'scaffali', 'sistemi di umidificazione'],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M450-154v-309L180-619v309l270 156Zm60 0 270-156v-310L510-463v309Zm-60 69L150-258q-14-8-22-22t-8-30v-340q0-16 8-30t22-22l300-173q14-8 30-8t30 8l300 173q14 8 22 22t8 30v340q0 16-8 30t-22 22L510-85q-14 8-30 8t-30-8Zm194-525 102-59-266-154-102 59 266 154Zm-164 96 104-61-267-154-104 60 267 155Z"/></svg>
+            ''',
+            'title': f'''
+Confezionamento e packaging
+            ''',
+            'description': f'''
+Il confezionamento è il punto finale prima che il prodotto entri nel mercato: la sanificazione qui tutela la shelf-life e la sicurezza del consumatore.
+            ''',
+            'punti_critici': ['linee di confezionamento', 'nastri trasportatori', 'tavoli di imballaggi'],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M140-180h120v-320h440v320h120v-460L480-776 140-640v460Zm-60 60v-560l400-160 400 160v560H640v-320H320v320H80Zm290 0v-60h60v60h-60Zm80-120v-60h60v60h-60Zm80 120v-60h60v60h-60ZM260-500h440-440Z"/></svg>
+            ''',
+            'title': f'''
+Magazzino e stoccaggio prodotti finiti
+            ''',
+            'description': f'''
+Lo stoccaggio richiede sanificazioni per evitare contaminazioni da movimentazione e per preservare i prodotti fino alla distribuzione.
+            ''',
+            'punti_critici': ['celle frigorifere', 'scaffalature', 'carrelli e pallet'],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M200-120v-60h208v-104h-15q-81 0-137-56t-56-137q0-61 35-111t92-70q4-40 35-65t72-22l-21-59 41-14.56L440-856l66-24 14 37 40-14 113 295-43 15 14 37-64 23-14-37-43 16-25-68q-15 17-35.5 24.5t-43.83 6.5Q393-546 371-561t-35-38q-35 17-55.5 49.97Q260-516.07 260-477q0 55.42 38.79 94.21Q337.58-344 393-344h347v60H508v104h252v60H200Zm356-452 53-19-80-206-53 19 80 206Zm-130.18-23q21.18 0 35.68-14.32 14.5-14.33 14.5-35.5 0-21.18-14.32-35.68-14.33-14.5-35.5-14.5-21.18 0-35.68 14.32-14.5 14.33-14.5 35.5 0 21.18 14.32 35.68 14.33 14.5 35.5 14.5ZM556-572Zm-130-75Zm2 0Z"/></svg>
+            ''',
+            'title': f'''
+Laboratori di controllo qualità
+            ''',
+            'description': f'''
+I laboratori devono ridurre al minimo le contaminazioni incrociate per garantire risultati di analisi affidabili.
+            ''',
+            'punti_critici': ['strumenti analitici', 'tavoli di lavoro', 'microscopi', 'cappe di protezione'],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M212-80v-300h-50v-228q0-29 21.5-50.5t50.24-21.5h104.52q28.74 0 50.24 21.5Q410-637 410-608v228h-50v300H212Zm74.08-654q-30.08 0-51.58-21.42t-21.5-51.5q0-30.08 21.42-51.58t51.5-21.5q30.08 0 51.58 21.42t21.5 51.5q0 30.08-21.42 51.58t-51.5 21.5ZM630-80v-240H526l86-311q7.22-23.59 26.61-36.3Q658-680 684-680t45.39 12.7Q748.78-654.59 756-631l86 311H738v240H630Zm54.08-654q-30.08 0-51.58-21.42t-21.5-51.5q0-30.08 21.42-51.58t51.5-21.5q30.08 0 51.58 21.42t21.5 51.5q0 30.08-21.42 51.58t-51.5 21.5Z"/></svg>
+            ''',
+            'title': f'''
+Aree comuni e servizi
+            ''',
+            'description': f'''
+Pavimenti, corridoi, spogliatoi e servizi igienici sono punti di diffusione possibile di contaminanti che possono raggiungere l'area produttiva.
+            ''',
+            'punti_critici': ['pavimenti', 'corridoi', 'spogliatoi', 'bagni', 'zone di movimentazione carrelli'],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+    ]
+    cards = []
+    for item in data:
+        punti_critici = '\n'.join([f'<li style="margin-bottom: 0.5rem;">{x.capitalize()}</li>' for x in item['punti_critici']])
+        cards.append(f'''
+            <div>
+                <div style="display: inline-block; margin-bottom: 2rem; border: 1px solid #f2f2f2; border-radius: 2rem; padding: 2rem;">
+                    { item['icon'] }
+                </div>
+                <h3 style="color: #1f1f1f; font-size: 1.5rem; line-height: 1.25; font-weight: bold; margin-bottom: 1rem;">
+                    { item['title'] }
+                </h3> 
+                <p style="color: #555555; margin-bottom: 2rem;">
+                    { item['description'] }                    
+                </p>
+                <p style="color: #555555; margin-bottom: 0.675rem; font-size: 0.675rem;">
+                    PUNTI CRITICI
+                </p>
+                <ul style="list-style-type: none;">
+                    {punti_critici}
+                </ul>
+            </div>
+        ''')
+    cards = ''.join(cards)
+    html_aree = f'''
+        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_py};">
+            <div style="margin-bottom: 5rem;">
+                <h2 style="color: #1f1f1f; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
+                    Aree
+                </h2>
+            </div>
+            <div class="grid-3" style="column-gap: 8rem; row-gap: 3rem; margin-bottom: 0;">
+                {cards}
+            </div>
+        </section>
+        <div style="background-color: #ededed; height: 1px;"></div>  
+    '''
+
+    ########################################
+    # problemi
+    ########################################
+    data = [
+        {
+            'icon': f'''
+{g.GRASS_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Muffe
+            ''',
+            'description': f'''
+Le muffe sono tra i contaminanti più frequenti nei caseifici, soprattutto nelle aree ad alta umidità e contatto prolungato con le forme.
+            ''',
+            'aree_critiche': [
+'stagionatura', 'pressatura', 'bagni salamoia',
+            ],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.BACTERIA_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Batteri patogeni
+            ''',
+            'description': f'''
+I batteri patogeni rappresentano un rischio critico per sicurezza alimentare e conformità normativa, richiedendo interventi rigorosi e continuativi.
+            ''',
+            'aree_critiche': ['latte crudo', 'pastorizzatori', 'linee di confezionamento'],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.CONTAMINATION_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Contaminazione crociata
+            ''',
+            'description': f'''
+È uno dei problemi più insidiosi, perché può diffondersi rapidamente attraverso superfici, utensili, ambienti e movimenti del personale.
+            ''',
+            'aree_critiche': ['cagliata', 'stagionatura', 'magazzino'],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.SMOKE_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Odori e qualità dell'aria
+            ''',
+            'description': f'''
+La qualità dell'aria influisce sia sul prodotto che sul comfort degli operatori e può indicare la presenza di batteri, muffe o VOC.
+            ''',
+            'aree_critiche': ['stagionatura', 'linee di confezionamento'],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.LAYERS_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Biofilm e residui organici
+            ''',
+            'description': f'''
+I biofilm sono tra i problemi più difficili da eliminare e richiedono protocolli specifici e verifiche regolari, poiché resistono ai normali detergenti.
+            ''',
+            'aree_critiche': ['tubazioni', 'vasche', 'superfici di contatto'],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+    ]
+    cards = []
+    for item in data:
+        aree_critiche = '\n'.join([f'<li style="margin-bottom: 0.5rem;">{x.capitalize()}</li>' for x in item['aree_critiche']])
+        cards.append(f'''
+            <div>
+                <div style="display: inline-block; margin-bottom: 2rem; border: 1px solid #f2f2f2; border-radius: 2rem; padding: 2rem;">
+                    { item['icon'] }
+                </div>
+                <h3 style="color: #1f1f1f; font-size: 1.5rem; line-height: 1.25; font-weight: bold; margin-bottom: 1rem;">
+                    { item['title'] }
+                </h3> 
+                <p style="color: #555555; margin-bottom: 2rem;">
+                    { item['description'] }                    
+                </p>
+                <p style="color: #555555; margin-bottom: 0.675rem; font-size: 0.675rem;">
+                    AREE CRITICHE
+                </p>
+                <ul style="list-style-type: none;">
+                    {aree_critiche}
+                </ul>
+            </div>
+        ''')
+    cards = ''.join(cards)
+    html_problemi = f'''
+        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_py};">
+            <div style="margin-bottom: 5rem;">
+                <h2 style="color: #1f1f1f; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
+                    Problemi
+                </h2>
+            </div>
+            <div class="grid-3" style="column-gap: 8rem; row-gap: 3rem; margin-bottom: 0;">
+                {cards}
+            </div>
+        </section>
+        <div style="background-color: #ededed; height: 1px;"></div>  
+    '''
+
+    ########################################
+    # html
+    ########################################
+    html = f'''
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="/style.css">
+        </head>
+        <body>
+            {components.header_light()}
+            <main>
+                {html_hero}
+                {html_aree}
+                {html_problemi}
+                {cta()}
+            </main>
+            {components.footer_dark()}
+        </body>
+        </html>
+    '''
+    try: os.makedirs(f'{g.website_folderpath}/settori')
+    except: pass
+    try: os.makedirs(f'{g.website_folderpath}/settori/alimentare')
+    except: pass
+    html_filepath = f'{g.website_folderpath}/settori/{page_slug}.html'
+    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)
+
+
+def settori_alimentare_gen():
+    ########################################
+    # hero
+    ########################################
+    hero = f'''
+        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_hero_py};">
+            <div style="display: flex; justify-content: space-between; center;">
+                <div style="flex: 2;">
+                    <h1 style="color: #222222; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
+                        Sanificazione ad ozono per l'industria alimentare
+                    </h1>
+                    <p style="color: #1f1f1f;">                        
+                        Soluzioni per la sicurezza alimentare e la conformità HACCP.
+                    </p>
+                </div>
+                {hero_button}
+            </div>
+        </section>
+        <div style="background-color: #ededed; height: 1px;"></div>  
+    '''
+    
+    ########################################
+    # settori
+    ########################################
+    data = [
+        {
+            'href': '''/settori/alimentare/caseifici.html''',
+            'image_src': '/immagini/settori-industria-alimentare-caseifici.jpg',
+            'category': '',
+            'title': '''Caseifici''',
+            'description': '''Sanifichiamo aree di ricezione delle carni, stagionatura, e altro da batteri patogeni, muffe e biofilm.''',
+        },
+        {
+            'href': '''/settori/alimentare/salumifici.html''',
+            'image_src': '/immagini/settori-industria-alimentare-salumifici.jpg',
+            'category': '',
+            'title': '''Salumifici''',
+            'description': '''
+Sanifichiamo aree di produzione, di trattamento del latte crudo e di stagionatura dei formaggi per prevenire contaminazioni e preservare la qualità.
+            ''',
+        },
+    ]
+    cards = []
+    for item in data:
+        cards.append(f'''
+            <div> 
+                <img style="margin-bottom: 1rem; border-radius: 1rem; height: 15rem; object-fit: cover;" 
+                    src="{ item['image_src'] }
+                ">
+                <h3 style="color: #1f1f1f; font-size: 1.5rem; line-height: 1.25; font-weight: bold; margin-bottom: 1rem;">
+                    { item['title'] }
+                </h3> 
+                <p style="color: #555555; margin-bottom: 2rem;">
+                    { item['description'] }                    
+                </p>
+                <p>
+                    <a style="color: #555555;" href="{ item['href'] }">Maggiori info</a>
+                </p>
+            </div>
+        ''')
+    cards = ''.join(cards)
+    settori_overview = f'''
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4rem;">
+            <div style="flex: 2;">
+                <h2 style="color: #222222; font-size: 3rem; line-height: 1; font-weight: normal;">
+                    I nostri principali ambiti di applicazione
+                </h2>
+            </div>
+            <div style="flex: 1; display: flex; justify-content: end;">
+
+            </div>
+        </div>
+        <div class="grid-3" style="column-gap: 3rem; row-gap: 3rem;">
+            {cards}
+        </div>
+    '''
+
+    settori = f'''
+        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_py};">
+            {settori_overview}
+        </section>
+        <div style="background-color: #ededed; height: 1px;"></div>
+    '''
+
+    ########################################
+    # html
+    ########################################
+    html = f'''
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="/style.css">
+        </head>
+        <body>
+            {components.header_light()}
+            <main>
+                {hero}
+                {settori}
+                {cta()}
+            </main>
+                
+            {components.footer_dark()}
+        </body>
+        </html>
+    '''
+    html_filepath = f'{g.website_folderpath}/settori/alimentare.html'
+    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)
+
+def settori_alimentare_caseifici_gen():
     data = {
         'page_slug': '''alimentare/lattiero-caseario''',
         'href': '''/settori/alimentare.html''',
@@ -643,7 +1114,437 @@ Le muffe sono tra i contaminanti più frequenti nei caseifici, soprattutto nelle
 {g.BACTERIA_48_BLUE_SVG}
             ''',
             'title': f'''
+Batteri patogeni
+            ''',
+            'description': f'''
+I batteri patogeni rappresentano un rischio critico per sicurezza alimentare e conformità normativa, richiedendo interventi rigorosi e continuativi.
+            ''',
+            'aree_critiche': ['latte crudo', 'pastorizzatori', 'linee di confezionamento'],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.CONTAMINATION_48_BLUE_SVG}
+            ''',
+            'title': f'''
 Contaminazione crociata
+            ''',
+            'description': f'''
+È uno dei problemi più insidiosi, perché può diffondersi rapidamente attraverso superfici, utensili, ambienti e movimenti del personale.
+            ''',
+            'aree_critiche': ['cagliata', 'stagionatura', 'magazzino'],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.SMOKE_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Odori e qualità dell'aria
+            ''',
+            'description': f'''
+La qualità dell'aria influisce sia sul prodotto che sul comfort degli operatori e può indicare la presenza di batteri, muffe o VOC.
+            ''',
+            'aree_critiche': ['stagionatura', 'linee di confezionamento'],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.LAYERS_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Biofilm e residui organici
+            ''',
+            'description': f'''
+I biofilm sono tra i problemi più difficili da eliminare e richiedono protocolli specifici e verifiche regolari, poiché resistono ai normali detergenti.
+            ''',
+            'aree_critiche': ['tubazioni', 'vasche', 'superfici di contatto'],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+    ]
+    cards = []
+    for item in data:
+        aree_critiche = '\n'.join([f'<li style="margin-bottom: 0.5rem;">{x.capitalize()}</li>' for x in item['aree_critiche']])
+        cards.append(f'''
+            <div>
+                <div style="display: inline-block; margin-bottom: 2rem; border: 1px solid #f2f2f2; border-radius: 2rem; padding: 2rem;">
+                    { item['icon'] }
+                </div>
+                <h3 style="color: #1f1f1f; font-size: 1.5rem; line-height: 1.25; font-weight: bold; margin-bottom: 1rem;">
+                    { item['title'] }
+                </h3> 
+                <p style="color: #555555; margin-bottom: 2rem;">
+                    { item['description'] }                    
+                </p>
+                <p style="color: #555555; margin-bottom: 0.675rem; font-size: 0.675rem;">
+                    AREE CRITICHE
+                </p>
+                <ul style="list-style-type: none;">
+                    {aree_critiche}
+                </ul>
+            </div>
+        ''')
+    cards = ''.join(cards)
+    html_problemi = f'''
+        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_py};">
+            <div style="margin-bottom: 5rem;">
+                <h2 style="color: #1f1f1f; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
+                    Problemi
+                </h2>
+            </div>
+            <div class="grid-3" style="column-gap: 8rem; row-gap: 3rem; margin-bottom: 0;">
+                {cards}
+            </div>
+        </section>
+        <div style="background-color: #ededed; height: 1px;"></div>  
+    '''
+
+    ########################################
+    # html
+    ########################################
+    html = f'''
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="/style.css">
+        </head>
+        <body>
+            {components.header_light()}
+            <main>
+                {html_hero}
+                {html_aree}
+                {html_problemi}
+                {cta()}
+            </main>
+            {components.footer_dark()}
+        </body>
+        </html>
+    '''
+    try: os.makedirs(f'{g.website_folderpath}/settori')
+    except: pass
+    try: os.makedirs(f'{g.website_folderpath}/settori/alimentare')
+    except: pass
+    html_filepath = f'{g.website_folderpath}/settori/{page_slug}.html'
+    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)
+
+def settori_alimentare_salumifici_gen():
+    data = {
+        'page_slug': '''alimentare/salumifici''',
+        'href': '''/settori/alimentare.html''',
+        'image_src': '/immagini/settori-industria-alimentare.jpg',
+        'category': '',
+        'title': '''
+Sanificazione nei Salumifici: Guida Completa per Aree, Problemi e Soluzioni
+        ''',
+        'description': '''
+La sanificazione nei salumifici richiede un approccio scientifico e costante: ogni fase, dalla ricezione delle carni alla stagionatura, presenta rischi specifici legati a batteri patogeni, muffe, biofilm e contaminazioni crociate.
+        ''',
+        'date': '''6 Ottobre 2025''',
+        'datetime': '''2025-10-06''',
+    }
+    page_slug = data['page_slug']
+    ########################################
+    # hero
+    ########################################
+    html_hero = f'''
+        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_hero_py};">
+            <div style="display: flex; justify-content: space-between; center;">
+                <div style="flex: 2;">
+                    <h1 style="color: #1f1f1f; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
+Sanificazione ozono per i salumifici
+                    </h1>
+                    <p style="color: #1f1f1f;">                        
+La sanificazione nei salumifici richiede un approccio scientifico e costante: ogni fase, dalla ricezione delle carni alla stagionatura, presenta rischi specifici legati a batteri patogeni, muffe, biofilm e contaminazioni crociate.
+                    </p>
+                </div>
+                {hero_button}
+            </div>
+        </section>
+        <div style="background-color: #ededed; height: 1px;"></div>  
+    '''
+    
+    ########################################
+    # area
+    ########################################
+    data = [
+        {
+            'icon': f'''
+{g.INVENTORY_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Ricevimento e Preparazione Carni
+            ''',
+            'description': f'''
+Questa è l'area in cui si determinano le condizioni igieniche dell'intero processo produttivo.
+            ''',
+            'punti_critici': [
+'celle frigo carni fresche', 'tavoli di sezionamento', 'coltelleria', 'nastri trasportatori',
+            ],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.BLENDER_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Macinazione e impasto
+            ''',
+            'description': f'''
+Una fase ad alto rischio di biofilm e residui proteici.
+            ''',
+            'punti_critici': [
+'tritacarne', 'impastatrici', 'tubazioni', 'contenitori di impasto',
+            ],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.COMPRESS_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Insacco e legatura
+            ''',
+            'description': f'''
+Qui ogni contatto diretto con il prodotto amplifica il rischio batterico.
+            ''',
+            'punti_critici': [
+'insaccatrici', 'budelli', 'tavoli', 'zone di legatura',
+            ],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.AIR_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Asciugatura
+            ''',
+            'description': f'''
+Una fase che determina l'avvio corretto della maturazione.
+            ''',
+            'punti_critici': [
+'celle di asciugatura', 'ventilazione', 'griglie e carrelli',
+            ],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.THERMOSTAT_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Stagionatura
+            ''',
+            'description': f'''
+È l'area più delicata di tutto il salumificio e la più soggetta a muffe indesiderate.
+            ''',
+            'punti_critici': [
+'celle di stagionatura', 'impianti di climatizzazione', 'scaffalature e telai',
+            ],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.AIRWAVE_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Affumicatura
+            ''',
+            'description': f'''
+Quando presente, può accumulare residui e contaminanti da fumo.
+            ''',
+            'punti_critici': [
+'forni di affumicatura', 'camere fumigazione', 'condotti',
+            ],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.GRILL_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Cottura
+            ''',
+            'description': f'''
+Per i prodotti cotti, la sanificazione evita ricontaminazioni post-trattamento termico.
+            ''',
+            'punti_critici': [
+'forni', 'vasche di scottatura', 'tavoli post-cottura',
+            ],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.COOL_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Raffreddamento
+            ''',
+            'description': f'''
+Una zona critica per la formazione di condensa.
+            ''',
+            'punti_critici': [
+'celle frigo', 'tunnel di raffreddamento', 'carrelli',
+            ],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.KNIFE_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Pelatura e pulizia prodotto
+            ''',
+            'description': f'''
+Presente nei salumifici di prodotti cotti o semilavorati.
+            ''',
+            'punti_critici': [
+'pelatrici', 'tavoli', 'nastri',
+            ],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.PACKAGE_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Confezionamento e packaging
+            ''',
+            'description': f'''
+L'ultima barriera prima della distribuzione.
+            ''',
+            'punti_critici': [
+'linee flowpack', 'sottovuoto', 'nastri', 'tavoli',
+            ],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.WAREHOUSE_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Magazzino prodotti finiti
+            ''',
+            'description': f'''
+Qui si preserva la sicurezza del prodotto già confezionato.
+            ''',
+            'punti_critici': [
+'celle', 'scaffali', 'muletti',
+            ],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.DROP_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Aree di lavaggio attrezzature
+            ''',
+            'description': f'''
+Devono impedire la ricontaminazione degli strumenti già lavati.
+            ''',
+            'punti_critici': [
+'vasche', 'lavelli', 'aree di asciugatura',
+            ],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.WC_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Aree comuni e personale
+            ''',
+            'description': f'''
+Spogliatoi e corridoi sono spesso la fonte di contaminanti portati “dall'esterno”.
+            ''',
+            'punti_critici': [
+'pavimenti', 'corridoi', 'bagni', 'varchi igienici',
+            ],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+    ]
+    cards = []
+    for item in data:
+        punti_critici = '\n'.join([f'<li style="margin-bottom: 0.5rem;">{x.capitalize()}</li>' for x in item['punti_critici']])
+        cards.append(f'''
+            <div>
+                <div style="display: inline-block; margin-bottom: 2rem; border: 1px solid #f2f2f2; border-radius: 2rem; padding: 2rem;">
+                    { item['icon'] }
+                </div>
+                <h3 style="color: #1f1f1f; font-size: 1.5rem; line-height: 1.25; font-weight: bold; margin-bottom: 1rem;">
+                    { item['title'] }
+                </h3> 
+                <p style="color: #555555; margin-bottom: 2rem;">
+                    { item['description'] }                    
+                </p>
+                <p style="color: #555555; margin-bottom: 0.675rem; font-size: 0.675rem;">
+                    PUNTI CRITICI
+                </p>
+                <ul style="list-style-type: none;">
+                    {punti_critici}
+                </ul>
+            </div>
+        ''')
+    cards = ''.join(cards)
+    html_aree = f'''
+        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_py};">
+            <div style="margin-bottom: 5rem;">
+                <h2 style="color: #1f1f1f; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
+                    Aree
+                </h2>
+            </div>
+            <div class="grid-3" style="column-gap: 8rem; row-gap: 3rem; margin-bottom: 0;">
+                {cards}
+            </div>
+        </section>
+        <div style="background-color: #ededed; height: 1px;"></div>  
+    '''
+
+    ########################################
+    # problemi
+    ########################################
+    data = [
+        {
+            'icon': f'''
+{g.GRASS_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Muffe
+            ''',
+            'description': f'''
+Le muffe sono tra i contaminanti più frequenti nei caseifici, soprattutto nelle aree ad alta umidità e contatto prolungato con le forme.
+            ''',
+            'aree_critiche': [
+'stagionatura', 'pressatura', 'bagni salamoia',
+            ],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.BACTERIA_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Batteri patogeni
             ''',
             'description': f'''
 I batteri patogeni rappresentano un rischio critico per sicurezza alimentare e conformità normativa, richiedendo interventi rigorosi e continuativi.
@@ -1886,15 +2787,7 @@ In palestre, centri fitness e piscine, la concentrazione di persone e il contatt
     html_filepath = f'{g.website_folderpath}/settori/{page_slug}.html'
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)
 
-def gen():
-    settori_alimentare_gen()
-    settori_alimentare_lattiero_caseario_gen()
-    settori_logistico_gen()
-    settori_horeca_gen()
-    settori_farmaceutico_gen()
-    settori_agroalimentare_gen()
-    settori_sportivo_gen()
-    
+def settori_gen():
     ########################################
     # hero
     ########################################
@@ -1996,3 +2889,19 @@ def gen():
     '''
     html_filepath = f'{g.website_folderpath}/settori.html'
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)
+
+
+def gen():
+    settori_alimentare_caseifici_gen()
+    settori_alimentare_salumifici_gen()
+    settori_alimentare_gen()
+
+    settori_logistico_gen()
+    settori_horeca_gen()
+    settori_farmaceutico_gen()
+    settori_agroalimentare_gen()
+    settori_sportivo_gen()
+
+    settori_gen()
+    
+    
