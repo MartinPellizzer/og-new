@@ -60,3 +60,34 @@ data = [
         'datetime': '''2025-10-06''',
     },
 ]
+
+
+
+alimentare_sottosettori_data = [
+    {
+        'href': '''/settori/alimentare/lattiero-caseario.html''',
+        'image_src': '/immagini/settori-industria-alimentare-lattiero-caseario.jpg',
+        'category': '',
+        'title': '''Lattiero-Caseario''',
+        'description': '''Sanifichiamo aree di ricezione delle carni, stagionatura, e altro da batteri patogeni, muffe e biofilm.''',
+    },
+    {
+        'href': '''/settori/alimentare/carni.html''',
+        'image_src': '/immagini/settori-industria-alimentare-carni.jpg',
+        'category': '',
+        'title': '''Carni''',
+        'description': '''
+Sanifichiamo aree di produzione, di trattamento del latte crudo e di stagionatura dei formaggi per prevenire contaminazioni e preservare la qualità.
+        ''',
+    },
+    {
+        'href': '''/settori/alimentare/ortofrutta.html''',
+        'image_src': '/immagini/settori-industria-alimentare-ortofrutta.jpg',
+        'category': '',
+        'title': '''
+Ortofrutta
+        ''',
+        'description': '''
+        ''',
+    },
+]
