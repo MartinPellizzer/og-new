@@ -113,6 +113,17 @@ img {
     gap: 0.25rem;
 }
 
+.button-invert-ghost {
+    display: inline-block;
+    color: #ffffff;
+    padding: 0.5rem 1.0rem;
+    border: 1px solid #ffffff;
+    border-radius: 9999px;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+}
+
 
 .button-default-1 {
     display: flex;

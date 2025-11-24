@@ -421,7 +421,7 @@ def settori_alimentare_gen():
         <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_hero_py};">
             <div style="display: flex; justify-content: space-between; center;">
                 <div style="flex: 2;">
-                    <h1 style="color: #222222; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
+                    <h1 style="color: #1f1f1f; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
                         Sanificazione ad ozono per l'industria alimentare
                     </h1>
                     <p style="color: #1f1f1f;">                        
@@ -802,10 +802,10 @@ Spogliatoi e corridoi sono spesso la fonte di contaminanti portati “dall'ester
 Muffe
             ''',
             'description': f'''
-Le muffe sono tra i contaminanti più frequenti nei caseifici, soprattutto nelle aree ad alta umidità e contatto prolungato con le forme.
+Problema più comune in stagionatura e asciugatura.
             ''',
             'aree_critiche': [
-'stagionatura', 'pressatura', 'bagni salamoia',
+'celle', 'scaffali', 'carrelli',
             ],
             'link_href': f'''#''',
             'link_anchor': f'''Maggiori info''',
@@ -818,9 +818,11 @@ Le muffe sono tra i contaminanti più frequenti nei caseifici, soprattutto nelle
 Batteri patogeni
             ''',
             'description': f'''
-I batteri patogeni rappresentano un rischio critico per sicurezza alimentare e conformità normativa, richiedendo interventi rigorosi e continuativi.
+Rischio più grave per i salumifici.
             ''',
-            'aree_critiche': ['latte crudo', 'pastorizzatori', 'linee di confezionamento'],
+            'aree_critiche': [
+'carni fresche', 'impasti', 'confezionamento'
+            ],
             'link_href': f'''#''',
             'link_anchor': f'''Maggiori info''',
         },
@@ -829,12 +831,14 @@ I batteri patogeni rappresentano un rischio critico per sicurezza alimentare e c
 {g.CONTAMINATION_48_BLUE_SVG}
             ''',
             'title': f'''
-Contaminazione crociata
+Biofilm
             ''',
             'description': f'''
-È uno dei problemi più insidiosi, perché può diffondersi rapidamente attraverso superfici, utensili, ambienti e movimenti del personale.
+Uno dei contaminanti più difficili da eliminare.
             ''',
-            'aree_critiche': ['cagliata', 'stagionatura', 'magazzino'],
+            'aree_critiche': [
+'impastatrici', 'tubazioni', 'superfici umide'
+            ],
             'link_href': f'''#''',
             'link_anchor': f'''Maggiori info''',
         },
@@ -846,9 +850,11 @@ Contaminazione crociata
 Odori e qualità dell'aria
             ''',
             'description': f'''
-La qualità dell'aria influisce sia sul prodotto che sul comfort degli operatori e può indicare la presenza di batteri, muffe o VOC.
+Influenzano sia la qualità del prodotto sia il comfort del personale.
             ''',
-            'aree_critiche': ['stagionatura', 'linee di confezionamento'],
+            'aree_critiche': [
+'stagionatura', 'affumicatura', 'confezionamento'
+            ],
             'link_href': f'''#''',
             'link_anchor': f'''Maggiori info''',
         },
@@ -857,12 +863,14 @@ La qualità dell'aria influisce sia sul prodotto che sul comfort degli operatori
 {g.LAYERS_48_BLUE_SVG}
             ''',
             'title': f'''
-Biofilm e residui organici
+Contaminazione Crociata
             ''',
             'description': f'''
-I biofilm sono tra i problemi più difficili da eliminare e richiedono protocolli specifici e verifiche regolari, poiché resistono ai normali detergenti.
+Dovuta a utensili, operatori o flussi errati.
             ''',
-            'aree_critiche': ['tubazioni', 'vasche', 'superfici di contatto'],
+            'aree_critiche': [
+'legatura', 'stagionatura', 'magazzino'
+            ],
             'link_href': f'''#''',
             'link_anchor': f'''Maggiori info''',
         },
@@ -936,7 +944,7 @@ I biofilm sono tra i problemi più difficili da eliminare e richiedono protocoll
 
 def settori_alimentare_ortofrutta_gen():
     data = settori_data.alimentare_sottosettori_data[2]
-    page_slug = data['page_slug']
+    page_slug = data['page_slug'].strip()
     ########################################
     # hero
     ########################################
@@ -963,176 +971,16 @@ La sanificazione nei ortofrutta richiede un approccio scientifico e costante: og
     data = [
         {
             'icon': f'''
-{g.INVENTORY_48_BLUE_SVG}
+{g.APPLE_48_BLUE_SVG}
             ''',
             'title': f'''
-Ricevimento e Preparazione Carni
+Ricevimento Materia Prima
             ''',
             'description': f'''
-Questa è l'area in cui si determinano le condizioni igieniche dell'intero processo produttivo.
+È la fase più critica per il controllo della carica microbica iniziale.
             ''',
             'punti_critici': [
-'celle frigo carni fresche', 'tavoli di sezionamento', 'coltelleria', 'nastri trasportatori',
-            ],
-            'link_href': f'''#''',
-            'link_anchor': f'''Maggiori info''',
-        },
-        {
-            'icon': f'''
-{g.BLENDER_48_BLUE_SVG}
-            ''',
-            'title': f'''
-Macinazione e impasto
-            ''',
-            'description': f'''
-Una fase ad alto rischio di biofilm e residui proteici.
-            ''',
-            'punti_critici': [
-'tritacarne', 'impastatrici', 'tubazioni', 'contenitori di impasto',
-            ],
-            'link_href': f'''#''',
-            'link_anchor': f'''Maggiori info''',
-        },
-        {
-            'icon': f'''
-{g.COMPRESS_48_BLUE_SVG}
-            ''',
-            'title': f'''
-Insacco e legatura
-            ''',
-            'description': f'''
-Qui ogni contatto diretto con il prodotto amplifica il rischio batterico.
-            ''',
-            'punti_critici': [
-'insaccatrici', 'budelli', 'tavoli', 'zone di legatura',
-            ],
-            'link_href': f'''#''',
-            'link_anchor': f'''Maggiori info''',
-        },
-        {
-            'icon': f'''
-{g.AIR_48_BLUE_SVG}
-            ''',
-            'title': f'''
-Asciugatura
-            ''',
-            'description': f'''
-Una fase che determina l'avvio corretto della maturazione.
-            ''',
-            'punti_critici': [
-'celle di asciugatura', 'ventilazione', 'griglie e carrelli',
-            ],
-            'link_href': f'''#''',
-            'link_anchor': f'''Maggiori info''',
-        },
-        {
-            'icon': f'''
-{g.THERMOSTAT_48_BLUE_SVG}
-            ''',
-            'title': f'''
-Stagionatura
-            ''',
-            'description': f'''
-È l'area più delicata di tutto il salumificio e la più soggetta a muffe indesiderate.
-            ''',
-            'punti_critici': [
-'celle di stagionatura', 'impianti di climatizzazione', 'scaffalature e telai',
-            ],
-            'link_href': f'''#''',
-            'link_anchor': f'''Maggiori info''',
-        },
-        {
-            'icon': f'''
-{g.AIRWAVE_48_BLUE_SVG}
-            ''',
-            'title': f'''
-Affumicatura
-            ''',
-            'description': f'''
-Quando presente, può accumulare residui e contaminanti da fumo.
-            ''',
-            'punti_critici': [
-'forni di affumicatura', 'camere fumigazione', 'condotti',
-            ],
-            'link_href': f'''#''',
-            'link_anchor': f'''Maggiori info''',
-        },
-        {
-            'icon': f'''
-{g.GRILL_48_BLUE_SVG}
-            ''',
-            'title': f'''
-Cottura
-            ''',
-            'description': f'''
-Per i prodotti cotti, la sanificazione evita ricontaminazioni post-trattamento termico.
-            ''',
-            'punti_critici': [
-'forni', 'vasche di scottatura', 'tavoli post-cottura',
-            ],
-            'link_href': f'''#''',
-            'link_anchor': f'''Maggiori info''',
-        },
-        {
-            'icon': f'''
-{g.COOL_48_BLUE_SVG}
-            ''',
-            'title': f'''
-Raffreddamento
-            ''',
-            'description': f'''
-Una zona critica per la formazione di condensa.
-            ''',
-            'punti_critici': [
-'celle frigo', 'tunnel di raffreddamento', 'carrelli',
-            ],
-            'link_href': f'''#''',
-            'link_anchor': f'''Maggiori info''',
-        },
-        {
-            'icon': f'''
-{g.KNIFE_48_BLUE_SVG}
-            ''',
-            'title': f'''
-Pelatura e pulizia prodotto
-            ''',
-            'description': f'''
-Presente nei salumifici di prodotti cotti o semilavorati.
-            ''',
-            'punti_critici': [
-'pelatrici', 'tavoli', 'nastri',
-            ],
-            'link_href': f'''#''',
-            'link_anchor': f'''Maggiori info''',
-        },
-        {
-            'icon': f'''
-{g.PACKAGE_48_BLUE_SVG}
-            ''',
-            'title': f'''
-Confezionamento e packaging
-            ''',
-            'description': f'''
-L'ultima barriera prima della distribuzione.
-            ''',
-            'punti_critici': [
-'linee flowpack', 'sottovuoto', 'nastri', 'tavoli',
-            ],
-            'link_href': f'''#''',
-            'link_anchor': f'''Maggiori info''',
-        },
-        {
-            'icon': f'''
-{g.WAREHOUSE_48_BLUE_SVG}
-            ''',
-            'title': f'''
-Magazzino prodotti finiti
-            ''',
-            'description': f'''
-Qui si preserva la sicurezza del prodotto già confezionato.
-            ''',
-            'punti_critici': [
-'celle', 'scaffali', 'muletti',
+'aree di scarico', 'cassoni', 'bins', 'tavoli di selezione',
             ],
             'link_href': f'''#''',
             'link_anchor': f'''Maggiori info''',
@@ -1142,29 +990,137 @@ Qui si preserva la sicurezza del prodotto già confezionato.
 {g.DROP_48_BLUE_SVG}
             ''',
             'title': f'''
-Aree di lavaggio attrezzature
+Prelavaggio e Cernita
             ''',
             'description': f'''
-Devono impedire la ricontaminazione degli strumenti già lavati.
+Prima rimozione di residui e selezione del prodotto non idoneo.
             ''',
             'punti_critici': [
-'vasche', 'lavelli', 'aree di asciugatura',
+'nastri', 'tavoli', 'spazzolatrici', 'rulliere',
             ],
             'link_href': f'''#''',
             'link_anchor': f'''Maggiori info''',
         },
         {
             'icon': f'''
-{g.WC_48_BLUE_SVG}
+{g.WATER_48_BLUE_SVG}
             ''',
             'title': f'''
-Aree comuni e personale
+Lavaggio e Gestione Acque
             ''',
             'description': f'''
-Spogliatoi e corridoi sono spesso la fonte di contaminanti portati “dall'esterno”.
+Il punto più sensibile dell'intero stabilimento.
             ''',
             'punti_critici': [
-'pavimenti', 'corridoi', 'bagni', 'varchi igienici',
+'vasche', 'tunnel', 'pompe', 'filtri', 'ricircolo acqua',
+            ],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.KNIFE_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Taglio, Pelatura e Preparazione
+            ''',
+            'description': f'''
+Le superfici entrano in contatto diretto con il prodotto.
+            ''',
+            'punti_critici': [
+'affettatrici', 'cubettatrici', 'pelatrici', 'nastri',
+            ],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.SALINITY_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Trattamenti Post-Taglio (IV Gamma)
+            ''',
+            'description': f'''
+Fase con rischio microbiologico molto elevato.
+            ''',
+            'punti_critici': [
+'vasche con additivi', 'tunnel di asciugatura', 'centrifughe',
+            ],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.AIR_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Sgocciolamento e Asciugatura
+            ''',
+            'description': f'''
+            ''',
+            'punti_critici': [
+'tunnel ventilati', 'carrelli', 'superfici ad alta umidità',
+            ],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.PACKAGE_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Confezionamento e Packaging
+            ''',
+            'description': f'''
+Fase decisiva per la shelf-life.
+            ''',
+            'punti_critici': [
+'flowpack', 'pesatrici', 'nastri', 'aree di imballaggio',
+            ],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.FRIDGE_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Stoccaggio e Celle Frigorifere
+            ''',
+            'description': f'''
+            ''',
+            'punti_critici': [
+'celle', 'scaffali', 'evaporatori', 'muletti',
+            ],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.HVAC_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Trattamento Aria (UTA e condotte)
+            ''',
+            'description': f'''
+            ''',
+            'punti_critici': [
+'filtri', 'condotti', 'diffusori',
+            ],
+            'link_href': f'''#''',
+            'link_anchor': f'''Maggiori info''',
+        },
+        {
+            'icon': f'''
+{g.RECYCLING_48_BLUE_SVG}
+            ''',
+            'title': f'''
+Aree Accessorie e Rifiuti
+            ''',
+            'description': f'''
+            ''',
+            'punti_critici': [
+'locali rifiuti', 'press-container', 'vasche sporche',
             ],
             'link_href': f'''#''',
             'link_anchor': f'''Maggiori info''',
@@ -2479,37 +2435,60 @@ def settori_gen():
     ########################################
     # hero
     ########################################
-    hero_button = f'''
-        <div style="flex: 1; display: flex; justify-content: end; margin-top: 0.25rem;">
-            <div style="display: inline-block;">
-                <a class="button-default-1" href="/contatti.html">
-                    <span>Prenota Consulenza Gratuita</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>                
-                </a>
-            </div>
-        </div>
-    '''
-    hero = f'''
-        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_hero_py};">
-            <div style="display: flex; justify-content: space-between; center;">
-                <div style="flex: 2;">
-                    <h1 style="color: #222222; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
-                        Soluzioni ad ozono su misura per ogni settore industriale
-                    </h1>
-                    <p style="color: #1f1f1f;">                        
-                        Dal trattamento dell'aria alla sanificazione degli impianti produttivi, le nostre tecnologie si adattano alle esigenze specifiche di ogni settore.
-                    </p>
+    hero = ''
+    if 1:
+        hero = f'''
+            <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_hero_py};">
+                <div style="display: flex; justify-content: space-between; center;">
+                    <div style="flex: 2;">
+                        <h1 style="color: #1f1f1f; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
+                            Settori di applicazione dei sistemi di sanificazione Ozonogroup
+                        </h1>
+                        <p style="color: #1f1f1f;">                        
+                            Dal trattamento dell'aria alla sanificazione degli impianti produttivi, le nostre tecnologie si adattano alle esigenze specifiche di ogni settore.
+                        </p>
+                    </div>
+                    {hero_button}
                 </div>
-                {hero_button}
+            </section>
+            <div style="background-color: #ededed; height: 1px;"></div>  
+        '''
+    
+    settore_principale = f'''
+        <section style="width: 90vw; margin-left: auto; margin-right: auto; padding-top: {section_hero_py};">
+            <div style="
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                    url('/immagini/settori-industria-alimentare.jpg');
+                background-size: cover;
+                background-position: center;
+                padding-top: 8rem;
+                padding-bottom: 8rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                border-radius: 2rem;
+                height: 70vh; 
+            ">
+                <h1 class="container-lg" style="color: #ffffff; font-size: 6rem; line-height: 1; font-weight: normal; text-align: center; margin-bottom: 1rem;">
+                    Alimentare
+                </h1>
+                <p class="container-md" style="color: #ffffff; font-size: 1.25rem; line-height: 1.4; text-align: center; margin-bottom: 2rem;">
+                    Il nostro settore principale
+                </p>
+                <div style="display: flex; gap: 1rem;">
+                    <a class="button-invert" href="/settori/alimentare.html">
+                        <span>Esplora Settore Alimentare</span>
+                    </a>
+                </div>
             </div>
-        </section>
-        <div style="background-color: #ededed; height: 1px;"></div>  
+        </section>      
     '''
     
     ########################################
     # settori
     ########################################
-    data = settori_data.data
+    data = settori_data.data[1:]
     cards = []
     for item in data:
         cards.append(f'''
@@ -2517,7 +2496,7 @@ def settori_gen():
                 <img style="margin-bottom: 1rem; border-radius: 1rem; height: 15rem; object-fit: cover;" 
                     src="{ item['image_src'] }
                 ">
-                <h3 style="color: #222222; font-size: 1.5rem; line-height: 1.25; font-weight: bold; margin-bottom: 1rem;">
+                <h3 style="color: #1f1f1f; font-size: 1.5rem; line-height: 1.25; font-weight: bold; margin-bottom: 1rem;">
                     { item['title'] }
                 </h3> 
                 <p style="color: #555555; margin-bottom: 2rem;">
@@ -2532,8 +2511,8 @@ def settori_gen():
     settori_overview = f'''
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4rem;">
             <div style="flex: 2;">
-                <h2 style="color: #222222; font-size: 3rem; line-height: 1; font-weight: normal;">
-                    I nostri principali ambiti di applicazione
+                <h2 style="color: #1f1f1f; font-size: 3rem; line-height: 1; font-weight: normal;">
+                    Settori secondari di Ozonogroup
                 </h2>
             </div>
             <div style="flex: 1; display: flex; justify-content: end;">
@@ -2567,6 +2546,7 @@ def settori_gen():
             {components.header_light()}
             <main>
                 {hero}
+                {settore_principale}
                 {settori}
                 {cta()}
             </main>
