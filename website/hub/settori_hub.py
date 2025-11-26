@@ -1308,7 +1308,12 @@ I biofilm sono tra i problemi più difficili da eliminare e richiedono protocoll
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)
 
 def settori_logistico_gen():
-    data = settori_data.data[1]
+    ### get sector data
+    data = {}
+    for item in settori_data.data:
+        if item['page_slug'] == 'logistico':
+            data = item
+            break
     page_slug = data['page_slug']
     ########################################
     # hero
@@ -1647,7 +1652,12 @@ Per questo abbiamo sviluppato soluzioni specifiche per ambienti di stoccaggio, a
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)
 
 def settori_horeca_gen():
-    data = settori_data.data[2]
+    ### get sector data
+    data = {}
+    for item in settori_data.data:
+        if item['page_slug'] == 'horeca':
+            data = item
+            break
     page_slug = data['page_slug']
     ########################################
     # hero
@@ -1965,7 +1975,12 @@ Ogni ambiente dell'ospitalità richiede standard igienici elevati e risultati im
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)
 
 def settori_farmaceutico_gen():
-    data = settori_data.data[3]
+    ### get sector data
+    data = {}
+    for item in settori_data.data:
+        if item['page_slug'] == 'farmaceutico':
+            data = item
+            break
     page_slug = data['page_slug']
     ########################################
     # hero
@@ -2133,7 +2148,12 @@ In laboratori, clean room e ambienti di confezionamento, anche piccole contamina
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)
 
 def settori_agroalimentare_gen():
-    data = settori_data.data[4]
+    ### get sector data
+    data = {}
+    for item in settori_data.data:
+        if item['page_slug'] == 'agroalimentare':
+            data = item
+            break
     page_slug = data['page_slug']
     ########################################
     # hero
@@ -2276,7 +2296,12 @@ La produzione agroalimentare richiede standard igienici elevatissimi. Ogni fase 
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)
 
 def settori_sportivo_gen():
-    data = settori_data.data[5]
+    ### get sector data
+    data = {}
+    for item in settori_data.data:
+        if item['page_slug'] == 'sportivo':
+            data = item
+            break
     page_slug = data['page_slug']
     ########################################
     # hero
@@ -2453,12 +2478,14 @@ def settori_gen():
             </section>
             <div style="background-color: #ededed; height: 1px;"></div>  
         '''
-    
-    settore_principale = f'''
-        <section style="width: 90vw; margin-left: auto; margin-right: auto; padding-top: {section_hero_py};">
-            <div style="
-                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                    url('/immagini/settori-industria-alimentare.jpg');
+
+
+    section_py = '8rem'
+    opacity = '0.66'
+    hero = f'''
+        <section style="
+                background: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), 
+                    url('/immagini/settori-industria-alimentare-2.jpg');                background-size: cover;
                 background-size: cover;
                 background-position: center;
                 padding-top: 8rem;
@@ -2466,29 +2493,61 @@ def settori_gen():
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                justify-content: center;
-                border-radius: 2rem;
-                height: 70vh; 
-            ">
-                <h1 class="container-lg" style="color: #ffffff; font-size: 6rem; line-height: 1; font-weight: normal; text-align: center; margin-bottom: 1rem;">
-                    Alimentare
-                </h1>
-                <p class="container-md" style="color: #ffffff; font-size: 1.25rem; line-height: 1.4; text-align: center; margin-bottom: 2rem;">
-                    Il nostro settore principale
-                </p>
-                <div style="display: flex; gap: 1rem;">
-                    <a class="button-invert" href="/settori/alimentare.html">
-                        <span>Esplora Settore Alimentare</span>
-                    </a>
-                </div>
+        ">
+            <h1 class="container-lg" style="color: #ffffff; font-size: 4rem; line-height: 1; font-weight: normal; text-align: center; margin-bottom: 1rem;">
+                Settori trattati con i sistemi di sanificazione Ozonogroup
+            </h1>
+            <p class="container-md" style="color: #ffffff; font-size: 1.25rem; line-height: 1.4; text-align: center; margin-bottom: 2rem;">
+                Dal trattamento dell'aria alla sanificazione degli impianti produttivi, le nostre tecnologie si adattano alle esigenze specifiche dei settori elencati qui sotto.
+            </p>
+            <div>
+                <a class="button-invert" href="/contatti.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M680-80v-120H560v-80h120v-120h80v120h120v80H760v120h-80Zm-480-80q-33 0-56.5-23.5T120-240v-480q0-33 23.5-56.5T200-800h40v-80h80v80h240v-80h80v80h40q33 0 56.5 23.5T760-720v244q-20-3-40-3t-40 3v-84H200v320h280q0 20 3 40t11 40H200Zm0-480h480v-80H200v80Zm0 0v-80 80Z"/></svg>
+                    <span>Prenota Consulenza</span>
+                </a>
             </div>
         </section>      
     '''
+    ########################################
+    # settori_principali
+    ########################################
+    settori_principali = ''
+    if 0:
+        opacity = '0.66'
+        settori_principali = f'''
+            <section style="width: 90vw; margin-left: auto; margin-right: auto; padding-top: {section_hero_py}; padding-bottom: {section_hero_py};">
+                <div style="
+                    background: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), 
+                        url('/immagini/settori-industria-alimentare.jpg');
+                    background-size: cover;
+                    background-position: center;
+                    padding-top: 8rem;
+                    padding-bottom: 8rem;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 2rem;
+                    height: 70vh; 
+                ">
+                    <h1 class="container-lg" style="color: #ffffff; font-weight: normal; text-align: center; margin-bottom: 1rem;">
+                        <span style="font-size: 6rem; line-height: 1;">Alimentare:</span><br>
+                        <span style="font-size: 3rem;">Il nostro settore principale</span>
+                    </h1>
+                    <p class="container-md" style="color: #ffffff; font-size: 1.25rem; line-height: 1.4; text-align: center; margin-bottom: 2rem;">
+    Soluzioni a base di ozono per garantire igiene, sicurezza e qualità in ogni fase della filiera alimentare.
+                    </p>
+                    <div style="display: flex; gap: 1rem;">
+                        <a class="button-invert" href="/settori/alimentare.html">
+                            <span>Esplora Settore Alimentare</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <div style="background-color: #ededed; height: 1px;"></div>  
+        '''
     
-    ########################################
-    # settori
-    ########################################
-    data = settori_data.data[1:]
+    data = settori_data.data[:2]
     cards = []
     for item in data:
         cards.append(f'''
@@ -2523,8 +2582,52 @@ def settori_gen():
             {cards}
         </div>
     '''
+    settori_principali = f'''
+        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_py};">
+            {settori_overview}
+        </section>
+        <div style="background-color: #ededed; height: 1px;"></div>
+    '''
 
-    settori = f'''
+    ########################################
+    # settori_secondari
+    ########################################
+    data = settori_data.data[2:]
+    cards = []
+    for item in data:
+        cards.append(f'''
+            <div> 
+                <img style="margin-bottom: 1rem; border-radius: 1rem; height: 15rem; object-fit: cover;" 
+                    src="{ item['image_src'] }
+                ">
+                <h3 style="color: #1f1f1f; font-size: 1.5rem; line-height: 1.25; font-weight: bold; margin-bottom: 1rem;">
+                    { item['title'] }
+                </h3> 
+                <p style="color: #555555; margin-bottom: 2rem;">
+                    { item['description'] }                    
+                </p>
+                <p>
+                    <a style="color: #555555;" href="{ item['href'] }">Maggiori info</a>
+                </p>
+            </div>
+        ''')
+    cards = ''.join(cards)
+    settori_overview = f'''
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4rem;">
+            <div style="flex: 2;">
+                <h2 style="color: #1f1f1f; font-size: 3rem; line-height: 1; font-weight: normal;">
+                    Settori secondari di Ozonogroup
+                </h2>
+            </div>
+            <div style="flex: 1; display: flex; justify-content: end;">
+
+            </div>
+        </div>
+        <div class="grid-3" style="column-gap: 3rem; row-gap: 3rem;">
+            {cards}
+        </div>
+    '''
+    settori_secondari = f'''
         <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_py};">
             {settori_overview}
         </section>
@@ -2546,8 +2649,8 @@ def settori_gen():
             {components.header_light()}
             <main>
                 {hero}
-                {settore_principale}
-                {settori}
+                {settori_principali}
+                {settori_secondari}
                 {cta()}
             </main>
                 
