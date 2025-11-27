@@ -8,6 +8,41 @@ from data import settori_data
 section_hero_py = '5rem'
 section_py = '8rem'
 
+def html_button_gen():
+    html = f'''
+        <div>
+            <a class="button-invert" href="/contatti.html">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M680-80v-120H560v-80h120v-120h80v120h120v80H760v120h-80Zm-480-80q-33 0-56.5-23.5T120-240v-480q0-33 23.5-56.5T200-800h40v-80h80v80h240v-80h80v80h40q33 0 56.5 23.5T760-720v244q-20-3-40-3t-40 3v-84H200v320h280q0 20 3 40t11 40H200Zm0-480h480v-80H200v80Zm0 0v-80 80Z"/></svg>
+                <span>Prenota Consulenza</span>
+            </a>
+        </div> 
+    '''
+    return html
+
+def html_hero_gen(image_src, title, subtitle, opacity):
+    html = f'''
+        <section style="
+            background: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), 
+                url({image_src});
+            background-size: cover;
+            background-position: center;
+            padding-top: 8rem;
+            padding-bottom: 8rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        ">
+            <h1 class="container-lg" style="color: #ffffff; font-size: 4rem; line-height: 1; font-weight: normal; text-align: center; margin-bottom: 1rem;">
+                {title}
+            </h1>
+            <p class="container-md" style="color: #ffffff; font-size: 1.25rem; line-height: 1.4; text-align: center; margin-bottom: 2rem;">
+                {subtitle}
+            </p>
+            {html_button_gen()}
+        </section>      
+    '''
+    return html
+
 def cta():
     html = f'''
         <section class="container-xl" style="margin-top: 6rem; margin-bottom: 6rem;">
@@ -55,36 +90,22 @@ hero_button = f'''
 '''
 
 def settori_alimentare_lattiero_caseario_gen():
-    data = {
-        'page_slug': '''alimentare/lattiero-caseario''',
-        'category': '',
-        'title': '''
-Sanificazione Caseifici: aree critiche, problemi e soluzioni per l'industria lattiero-casearia
-''',
-        'description': '''
-La sanificazione nei caseifici è fondamentale per garantire la sicurezza alimentare, prevenire contaminazioni e preservare la qualità dei prodotti lattiero-caseari. Ogni area di produzione ha rischi specifici, dal latte crudo alla stagionatura dei formaggi, e richiede procedure mirate e tecnologie avanzate come l'ozono, la nebulizzazione o i sistemi CIP (Clean-In-Place).
-        ''',
-    }
-    page_slug = data['page_slug']
+    page_slug = '''alimentare/lattiero-caseario'''
     ########################################
     # hero
     ########################################
-    html_hero = f'''
-        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_hero_py};">
-            <div style="display: flex; justify-content: space-between; center;">
-                <div style="flex: 2;">
-                    <h1 style="color: #1f1f1f; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
+    html_hero = html_hero_gen(
+        image_src = f'''
+/immagini/settori-industria-alimentare-lattiero-caseario.jpg
+        ''', 
+        title = f'''
 Sanificazione ozono per il settore lattiero-caseario
-                    </h1>
-                    <p style="color: #1f1f1f;">                        
-La sanificazione nei caseifici è fondamentale per garantire la sicurezza alimentare, prevenire contaminazioni e preservare la qualità dei prodotti lattiero-caseari. Ogni area di produzione ha rischi specifici, dal latte crudo alla stagionatura dei formaggi, e richiede procedure mirate e tecnologie avanzate come l'ozono, la nebulizzazione o i sistemi CIP (Clean-In-Place).
-                    </p>
-                </div>
-                {hero_button}
-            </div>
-        </section>
-        <div style="background-color: #ededed; height: 1px;"></div>  
-    '''
+        ''', 
+        subtitle = f'''
+I nostri sistemi di sanificazione con ozono vengono usati in aree come vasche di coagulazione, sale di formatura e locali di stagionatura per risolvere problemi come biofilm batterici sulle superfici di lavorazione, contaminazioni da muffe in ambienti umidi e cattivi odori derivanti dalla fermentazione indesiderata.
+        ''',
+        opacity = 0.66,
+    )
     
     ########################################
     # area
@@ -417,23 +438,33 @@ def settori_alimentare_gen():
     ########################################
     # hero
     ########################################
+    opacity = '0.66'
     hero = f'''
-        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_hero_py};">
-            <div style="display: flex; justify-content: space-between; center;">
-                <div style="flex: 2;">
-                    <h1 style="color: #1f1f1f; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
-                        Sanificazione ad ozono per l'industria alimentare
-                    </h1>
-                    <p style="color: #1f1f1f;">                        
-                        Soluzioni per la sicurezza alimentare e la conformità HACCP.
-                    </p>
-                </div>
-                {hero_button}
+        <section style="
+                background: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), 
+                    url('/immagini/settori-industria-alimentare.jpg');                background-size: cover;
+                background-size: cover;
+                background-position: center;
+                padding-top: 8rem;
+                padding-bottom: 8rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+        ">
+            <h1 class="container-lg" style="color: #ffffff; font-size: 4rem; line-height: 1; font-weight: normal; text-align: center; margin-bottom: 1rem;">
+                Sanificazione ad ozono per l'industria alimentare
+            </h1>
+            <p class="container-md" style="color: #ffffff; font-size: 1.25rem; line-height: 1.4; text-align: center; margin-bottom: 2rem;">
+                Soluzioni per la sicurezza alimentare e la conformità HACCP.
+            </p>
+            <div>
+                <a class="button-invert" href="/contatti.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M680-80v-120H560v-80h120v-120h80v120h120v80H760v120h-80Zm-480-80q-33 0-56.5-23.5T120-240v-480q0-33 23.5-56.5T200-800h40v-80h80v80h240v-80h80v80h40q33 0 56.5 23.5T760-720v244q-20-3-40-3t-40 3v-84H200v320h280q0 20 3 40t11 40H200Zm0-480h480v-80H200v80Zm0 0v-80 80Z"/></svg>
+                    <span>Prenota Consulenza</span>
+                </a>
             </div>
-        </section>
-        <div style="background-color: #ededed; height: 1px;"></div>  
+        </section>      
     '''
-    
     ########################################
     # settori
     ########################################
@@ -507,38 +538,22 @@ def settori_alimentare_gen():
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)
 
 def settori_alimentare_carni_gen():
-    data = {
-        'page_slug': '''alimentare/carni''',
-        'category': '',
-        'title': '''
-Sanificazione nei Salumifici: Guida Completa per Aree, Problemi e Soluzioni
-        ''',
-        'description': '''
-La sanificazione nei salumifici richiede un approccio scientifico e costante: ogni fase, dalla ricezione delle carni alla stagionatura, presenta rischi specifici legati a batteri patogeni, muffe, biofilm e contaminazioni crociate.
-        ''',
-        'date': '''6 Ottobre 2025''',
-        'datetime': '''2025-10-06''',
-    }
-    page_slug = data['page_slug']
+    page_slug = '''alimentare/carni'''
     ########################################
     # hero
     ########################################
-    html_hero = f'''
-        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_hero_py};">
-            <div style="display: flex; justify-content: space-between; center;">
-                <div style="flex: 2;">
-                    <h1 style="color: #1f1f1f; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
-Sanificazione ozono per i il settore carni
-                    </h1>
-                    <p style="color: #1f1f1f;">                        
-La sanificazione nel settore carni richiede un approccio scientifico e costante: ogni fase, dalla ricezione delle carni alla stagionatura, presenta rischi specifici legati a batteri patogeni, muffe, biofilm e contaminazioni crociate.
-                    </p>
-                </div>
-                {hero_button}
-            </div>
-        </section>
-        <div style="background-color: #ededed; height: 1px;"></div>  
-    '''
+    html_hero = html_hero_gen(
+        image_src = f'''
+/immagini/settori-industria-alimentare-carni.jpg
+        ''', 
+        title = f'''
+Sanificazione ozono per il settore carni
+        ''', 
+        subtitle = f'''
+I nostri sistemi di sanificazione con ozono vengono usati in aree come celle frigorifere, sale di lavorazione e locali di stagionatura per risolvere problemi come contaminazioni microbiche, odori persistenti e presenza di muffe.
+        ''',
+        opacity = 0.66,
+    )
     
     ########################################
     # area
@@ -948,22 +963,18 @@ def settori_alimentare_ortofrutta_gen():
     ########################################
     # hero
     ########################################
-    html_hero = f'''
-        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_hero_py};">
-            <div style="display: flex; justify-content: space-between; center;">
-                <div style="flex: 2;">
-                    <h1 style="color: #1f1f1f; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
+    html_hero = html_hero_gen(
+        image_src = f'''
+/immagini/settori-industria-alimentare-ortofrutta.jpg
+        ''', 
+        title = f'''
 Sanificazione ozono per il settore ortofrutta
-                    </h1>
-                    <p style="color: #1f1f1f;">                        
-La sanificazione nei ortofrutta richiede un approccio scientifico e costante: ogni fase, dalla ricezione delle carni alla stagionatura, presenta rischi specifici legati a batteri patogeni, muffe, biofilm e contaminazioni crociate.
-                    </p>
-                </div>
-                {hero_button}
-            </div>
-        </section>
-        <div style="background-color: #ededed; height: 1px;"></div>  
-    '''
+        ''', 
+        subtitle = f'''
+I nostri sistemi di sanificazione con ozono vengono usati in aree come celle frigorifere, magazzini di stoccaggio e linee di lavorazione per risolvere problemi come muffe persistenti, contaminazioni batteriche e cattivi odori generati dalla degradazione dei prodotti ortofrutticoli.
+        ''',
+        opacity = 0.66,
+    )
     
     ########################################
     # area
@@ -2479,7 +2490,6 @@ def settori_gen():
             <div style="background-color: #ededed; height: 1px;"></div>  
         '''
 
-
     section_py = '8rem'
     opacity = '0.66'
     hero = f'''
@@ -2546,7 +2556,7 @@ def settori_gen():
             </section>
             <div style="background-color: #ededed; height: 1px;"></div>  
         '''
-    
+
     data = settori_data.data[:2]
     cards = []
     for item in data:
@@ -2571,7 +2581,7 @@ def settori_gen():
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4rem;">
             <div style="flex: 2;">
                 <h2 style="color: #1f1f1f; font-size: 3rem; line-height: 1; font-weight: normal;">
-                    Settori secondari di Ozonogroup
+                    Settori principali di Ozonogroup
                 </h2>
             </div>
             <div style="flex: 1; display: flex; justify-content: end;">

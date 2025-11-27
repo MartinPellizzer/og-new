@@ -65,9 +65,13 @@ data = [
 
 alimentare_sottosettori_data = [
     {
-        'href': '''/settori/alimentare/lattiero-caseario.html''',
-        'image_src': '/immagini/settori-industria-alimentare-lattiero-caseario.jpg',
-        'category': '',
+        'href': '''
+/settori/alimentare/lattiero-caseario.html
+        ''',
+        'image_src': '''
+/immagini/settori-industria-alimentare-lattiero-caseario.jpg
+        ''',
+        'category': '''''',
         'title': '''
 Lattiero-Caseario
         ''',
