@@ -1,0 +1,17 @@
+========================================
+TODO
+========================================
+
+ozonogroup settings:
+	- cycle: 
+		- DONE: base cycle on/off (working/resting)
+		- TODO: integrate calendar when selected by user
+	- sensor:
+		- TODO: check if values are read correctly
+		- TODO: select if cycle is managed by sensor (target value)
+			this option excludes base cycle on/off management
+	- remove unused functionalities
+
+user analytics:
+	1. last 24h: TODO
+	2. micro sd: TODO
