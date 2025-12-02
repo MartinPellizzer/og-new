@@ -5,11 +5,16 @@ TODO
 ozonogroup settings:
 	- cycle: 
 		- DONE: base cycle on/off (working/resting)
-		- TODO: integrate calendar when selected by user
+		- DONE: integrate calendar when selected by user
 	- sensor:
-		- TODO: check if values are read correctly
-		- TODO: select if cycle is managed by sensor (target value)
-			this option excludes base cycle on/off management
+		- DONE: check if values are read correctly
+		- TODO: page sensor value list for when cycle managed by sensor
+	- mode:
+		- TODO: select if cycle is managed manually or by sensor
+	- allarme:
+		- TODO: crea schermata allarme quando qualcuno cerca di
+			accedere alla schemata "SETTINGS" senza aver fermato
+			il ciclo di lavoro
 	- remove unused functionalities
 
 user analytics:

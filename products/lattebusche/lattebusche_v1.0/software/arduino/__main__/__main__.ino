@@ -7,22 +7,10 @@ RTC_DS3231 rtc_lib;
 #define EEPROM_SIZE 1024
 
 #define RO_1 12
-// #define RO_2 26
-// #define RO_3 13
-// #define RO_4 15
-// #define RO_5 5
-// #define RO_6 18
-// #define RO_7 19
-// #define RO_8 23
-
-// #define RI_1 33
-// #define RI_2 32
-// #define S1_010V 35
-
 
 typedef struct core_t 
 {
-  uint8_t generators_num = 2;
+  uint8_t placeholder = 0;
 } core_t;
 core_t core = {};
 
@@ -108,6 +96,14 @@ typedef struct power_t {
 } power_t;
 power_t power = {};
 
+///////////////////////////////////////////////////////////////////////
+// ;cycle
+///////////////////////////////////////////////////////////////////////
+enum Mode {
+  MANUAL,
+  SENSOR
+};
+
 typedef struct cycle_t {
   int8_t  state_working_old = -2;
   int8_t  state_working_cur = -1;
@@ -116,19 +112,21 @@ typedef struct cycle_t {
   int32_t millis_cur = 0;
   int32_t working_millis_timer = 0;
   int32_t resting_millis_timer = 10*1000;
+  enum Mode mode = MANUAL;
 } cycle_t;
 cycle_t cycle = {};
 
-enum Cycle {
-  OXY_01,
-  O3_01,
-  OXY_02,
-  O3_02,
-  OFF_O3,
-  OFF_OXY
-};
+// enum Cycle {
+//   OXY_01,
+//   O3_01,
+//   OXY_02,
+//   O3_02,
+//   OFF_O3,
+//   OFF_OXY
+// };
 
-enum Cycle cycle_state;
+// enum Cycle cycle_state;
+
 
 enum Nextion_Pages {
   P_SPLASH,
@@ -155,28 +153,28 @@ enum Nextion_Pages {
 ///////////////////////////////////////////////////////////////////////
 // ;O3 sensor internal alarm
 ///////////////////////////////////////////////////////////////////////
-typedef struct o3_sensor_alarm_t {
-  int8_t enable_old = -2;
-  int8_t enable_tmp = -1;
-  int8_t enable_cur = 1;
-  int16_t ppb_old = -2;
-  int16_t ppb_cur = -1;
-  uint32_t millis1_cur = 0;
-  uint32_t millis2_cur = 0;
-  int16_t ppb_alarm_old = -2;
-  int16_t ppb_alarm_tmp = -2;
-  int16_t ppb_alarm_cur = 100;
-  int16_t alarm_timer_minutes_old = -2;
-  int16_t alarm_timer_minutes_tmp = -2;
-  int16_t alarm_timer_minutes_cur = 2;
-  int8_t is_over_max_old = -2;
-  int8_t is_over_max_cur = 0;
-  int8_t is_alarm_old = -2;
-  int8_t is_alarm_cur = 0;
-  int32_t alarm_millis_cur = 0;
+// typedef struct o3_sensor_alarm_t {
+//   int8_t enable_old = -2;
+//   int8_t enable_tmp = -1;
+//   int8_t enable_cur = 1;
+//   int16_t ppb_old = -2;
+//   int16_t ppb_cur = -1;
+//   uint32_t millis1_cur = 0;
+//   uint32_t millis2_cur = 0;
+//   int16_t ppb_alarm_old = -2;
+//   int16_t ppb_alarm_tmp = -2;
+//   int16_t ppb_alarm_cur = 100;
+//   int16_t alarm_timer_minutes_old = -2;
+//   int16_t alarm_timer_minutes_tmp = -2;
+//   int16_t alarm_timer_minutes_cur = 2;
+//   int8_t is_over_max_old = -2;
+//   int8_t is_over_max_cur = 0;
+//   int8_t is_alarm_old = -2;
+//   int8_t is_alarm_cur = 0;
+//   int32_t alarm_millis_cur = 0;
   
-} o3_sensor_alarm_t;
-o3_sensor_alarm_t o3_sensor_alarm = {};
+// } o3_sensor_alarm_t;
+// o3_sensor_alarm_t o3_sensor_alarm = {};
 
 ///////////////////////////////////////////////////////////////////////
 // ;sensor
@@ -224,31 +222,49 @@ nextion_t nextion = {};
 ///////////////////////////////////////////////////////////////////////
 // ;external input (signal to abilitate cycle)
 ///////////////////////////////////////////////////////////////////////
-typedef struct external_input_t {  
+// typedef struct external_input_t {  
+//   int8_t state_old = -2;
+//   int8_t state_cur = -1;
+//   int8_t is_abilitated_old = -2;
+//   int8_t is_abilitated_tmp = -1;
+//   int8_t is_abilitated_cur = 0;
+// } external_input_t;
+// external_input_t external_input = {};
+
+typedef struct mode_2_t {  
   int8_t state_old = -2;
   int8_t state_cur = -1;
   int8_t is_abilitated_old = -2;
   int8_t is_abilitated_tmp = -1;
   int8_t is_abilitated_cur = 0;
-} external_input_t;
-external_input_t external_input = {};
+} mode_2_t;
+mode_2_t external_input = {};
+
+// typedef struct mode_t {  
+//   int8_t state_old = -2;
+//   int8_t state_cur = -1;
+//   int8_t is_abilitated_old = -2;
+//   int8_t is_abilitated_tmp = -1;
+//   int8_t is_abilitated_cur = 0;
+// } mode_t;
+// mode_t mode = {};
 
 
 ///////////////////////////////////////////////////////////////////////
 // ;sensor temperature
 ///////////////////////////////////////////////////////////////////////
-typedef struct sensor_temperature_t {  
-  int8_t state_old = -2;
-  int8_t state_cur = -1;
-  int32_t alarm_millis_cur = 0;
-  int8_t enable_old = -2;
-  int8_t enable_tmp = -1;
-  int8_t enable_cur = 1;
-  int8_t alarm_seconds_old = -2;
-  int8_t alarm_seconds_tmp = -1;
-  int8_t alarm_seconds_cur = 5;
-} sensor_temperature_t;
-sensor_temperature_t sensor_temperature = {};
+// typedef struct sensor_temperature_t {  
+//   int8_t state_old = -2;
+//   int8_t state_cur = -1;
+//   int32_t alarm_millis_cur = 0;
+//   int8_t enable_old = -2;
+//   int8_t enable_tmp = -1;
+//   int8_t enable_cur = 1;
+//   int8_t alarm_seconds_old = -2;
+//   int8_t alarm_seconds_tmp = -1;
+//   int8_t alarm_seconds_cur = 5;
+// } sensor_temperature_t;
+// sensor_temperature_t sensor_temperature = {};
 
 ///////////////////////////////////////////////////////////////////////
 // ;password
@@ -277,21 +293,7 @@ void setup()
   // pinMode(RI_2, INPUT_PULLUP);
 
   pinMode(RO_1, OUTPUT);
-  // pinMode(RO_2, OUTPUT);
-  // pinMode(RO_3, OUTPUT);
-  // pinMode(RO_4, OUTPUT);
-  // pinMode(RO_5, OUTPUT);
-  // pinMode(RO_6, OUTPUT);
-  // pinMode(RO_7, OUTPUT);
-  // pinMode(RO_8, OUTPUT);
   digitalWrite(RO_1, 0);
-  // digitalWrite(RO_2, 0);
-  // digitalWrite(RO_3, 0);
-  // digitalWrite(RO_4, 0);
-  // digitalWrite(RO_5, 0);
-  // digitalWrite(RO_6, 0);
-  // digitalWrite(RO_7, 0);
-  // digitalWrite(RO_8, 0);
   
   EEPROM.begin(EEPROM_SIZE);
   

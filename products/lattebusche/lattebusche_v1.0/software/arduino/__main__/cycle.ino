@@ -213,7 +213,7 @@ void cycle_stop()
   }
 }
 
-void cycle_manager()
+void cycle_manual()
 {
   if (cycle.state_on_cur == 1)
   {  
@@ -223,5 +223,38 @@ void cycle_manager()
   else
   {
     cycle_stop();
+  }
+}
+
+void cycle_calendar()
+{
+  if (cycle.state_on_cur == 1)
+  {
+    bool is_time_calendar = is_time_cur_in_calendar();
+    if (is_time_calendar)
+    {  
+      cycle_start();
+      cycle_run();
+    }
+    else
+    {
+      cycle_stop();
+    }
+  }
+  else
+  {
+    cycle_stop();
+  }
+}
+
+void cycle_manager()
+{
+  if (calendar_onoff_cur)
+  {
+    cycle_calendar();
+  }
+  else
+  {
+    cycle_manual();
   }
 }
