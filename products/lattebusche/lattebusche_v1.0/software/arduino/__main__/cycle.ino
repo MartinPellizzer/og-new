@@ -247,7 +247,7 @@ void cycle_calendar()
   }
 }
 
-void cycle_manager()
+void cycle_mode_manual()
 {
   if (calendar_onoff_cur)
   {
@@ -257,4 +257,118 @@ void cycle_manager()
   {
     cycle_manual();
   }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// cycle sensor
+////////////////////////////////////////////////////////////////////////////////
+
+// when cycle start (init)
+// when people press the start button and/or in calendar
+void cycle_sensor_start()
+{
+  if (cycle.state_on_old != cycle.state_on_cur)
+  {
+    cycle.state_on_old = cycle.state_on_cur;
+    cycle.millis_cur = millis();
+    cycle.state_working_cur = 1;
+    digitalWrite(RO_1, 1); 
+  }
+}
+
+// when cycle runs
+// when running and/or in calendar
+void cycle_sensor_run()
+{
+  if (cycle.state_working_cur == 1)
+  {
+    if (sensor.ppb_cur > 100) 
+    {
+      cycle.state_working_cur = 0;
+      digitalWrite(RO_1, 0);
+    }
+  }
+  else
+  {
+    if (sensor.ppb_cur < 100) 
+    {
+      cycle.state_working_cur = 1;
+      digitalWrite(RO_1, 1);
+    }
+  }
+}
+
+// when user stop the cycly by pressing general button
+void cycle_sensor_stop()
+{
+  if (cycle.state_on_old != cycle.state_on_cur)
+  {
+    cycle.state_on_old = cycle.state_on_cur;
+    cycle.state_working_cur = 0;
+    digitalWrite(RO_1, 0); 
+  }
+}
+
+// when general button is pressed, calendar enabled but not in calendar time
+// pause the production of ozono
+// ONLY in calendar mode
+void cycle_sensor_pause()
+{
+  cycle.state_working_cur = 0;
+  digitalWrite(RO_1, 0); 
+}
+
+void cycle_sensor_calendar()
+{
+  if (cycle.state_on_cur == 1)
+  {
+    bool is_time_calendar = is_time_cur_in_calendar();
+    if (is_time_calendar)
+    {  
+      cycle_sensor_start();
+      cycle_sensor_run();
+    }
+    else
+    {
+      cycle_sensor_pause();
+    }
+  }
+  else
+  {
+    cycle_sensor_stop();
+  }
+}
+
+void cycle_sensor_base()
+{
+  if (cycle.state_on_cur == 1)
+  {  
+    cycle_sensor_start();
+    cycle_sensor_run();
+  }
+  else
+  {
+    cycle_sensor_stop();
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// cycles
+////////////////////////////////////////////////////////////////////////////////
+void cycle_mode_sensor()
+{
+  if (calendar_onoff_cur)
+  {
+    cycle_sensor_calendar();
+  }
+  else
+  {
+    cycle_sensor_base();
+  }
+}
+
+void cycle_manager()
+{
+  if (cycle.mode_cur == 0) cycle_mode_manual();
+  else if (cycle.mode_cur == 1) cycle_mode_sensor();
 }

@@ -99,10 +99,6 @@ power_t power = {};
 ///////////////////////////////////////////////////////////////////////
 // ;cycle
 ///////////////////////////////////////////////////////////////////////
-enum Mode {
-  MANUAL,
-  SENSOR
-};
 
 typedef struct cycle_t {
   int8_t  state_working_old = -2;
@@ -112,7 +108,9 @@ typedef struct cycle_t {
   int32_t millis_cur = 0;
   int32_t working_millis_timer = 0;
   int32_t resting_millis_timer = 10*1000;
-  enum Mode mode = MANUAL;
+  int8_t  mode_old = -2;
+  int8_t  mode_tmp = -1;
+  int8_t  mode_cur = 0;
 } cycle_t;
 cycle_t cycle = {};
 
@@ -126,7 +124,6 @@ cycle_t cycle = {};
 // };
 
 // enum Cycle cycle_state;
-
 
 enum Nextion_Pages {
   P_SPLASH,
@@ -148,6 +145,7 @@ enum Nextion_Pages {
   P_OZONE_ALARM,
   P_TEMPERATURE_ALARM,
   P_TEMPERATURE,
+  P_SENSOR_OZONE,
 };
 
 ///////////////////////////////////////////////////////////////////////
@@ -240,7 +238,7 @@ typedef struct mode_2_t {
 } mode_2_t;
 mode_2_t external_input = {};
 
-// typedef struct mode_t {  
+// typedef struct mode_t {
 //   int8_t state_old = -2;
 //   int8_t state_cur = -1;
 //   int8_t is_abilitated_old = -2;

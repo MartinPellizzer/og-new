@@ -25,12 +25,12 @@ void sensor_update()
   {
     if (millis() - timer > 40) 
     {
-      for (int i = 0; i < BUFF_LEN; i++)
-      {
-        Serial.print(buff[i]);
-        Serial.print(", ");
-      }
-      Serial.println();
+      // for (int i = 0; i < BUFF_LEN; i++)
+      // {
+      //   Serial.print(buff[i]);
+      //   Serial.print(", ");
+      // }
+      // Serial.println();
 
       timer_no_signal = millis();
       i = 0;
@@ -42,7 +42,7 @@ void sensor_update()
         sensor_connected_millis = millis();
         sensor_connected_seconds = 0;
         sensor.is_connected = 1;
-        Serial.println(sensor.ppb_cur);
+        // Serial.println(sensor.ppb_cur);
       }
       clear_buffer(buff, BUFF_LEN);
     }

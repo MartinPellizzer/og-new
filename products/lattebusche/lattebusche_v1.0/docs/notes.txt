@@ -3,14 +3,23 @@ TODO
 ========================================
 
 ozonogroup settings:
+	- homepage: 
+		- TODO: update label/value for "metodo funzionamento" (man. sen.)
+		- TODO: update label for "ozono generato" (man. sen.)
+		- TODO: remove sensor ozone alarm
+	- settings page: 
+		- TODO: change icon of "mode" button
 	- cycle: 
 		- DONE: base cycle on/off (working/resting)
 		- DONE: integrate calendar when selected by user
+		- TODO: set resting time to 30 minutes (now using 10 senconds
+		        for testing purposes)
 	- sensor:
 		- DONE: check if values are read correctly
 		- TODO: page sensor value list for when cycle managed by sensor
+		- TODO: update target value of cycle with sensor value setted
 	- mode:
-		- TODO: select if cycle is managed manually or by sensor
+		- DONE: select if cycle is managed manually or by sensor
 	- allarme:
 		- TODO: crea schermata allarme quando qualcuno cerca di
 			accedere alla schemata "SETTINGS" senza aver fermato

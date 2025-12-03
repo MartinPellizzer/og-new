@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 #define ALARM_PPB             20
 #define ALARM_TIMER_MINUTES   22
-#define EXTERNAL_INPUT        24
+#define EEPROM_ADDRESS_EXTERNAL_INPUT        24
 #define CALENDAR_ENABLED      26
 #define SENSOR_TEMPERATURE_ENABLE   28
 #define SENSOR_TEMPERATURE_SECONDS  30
@@ -50,11 +50,11 @@ void eeprom_init()
   // {
   //   o3_sensor_alarm.alarm_timer_minutes_cur = eeprom_alarm_timer_minutes_cur;
   // }
-  // external input
-  uint16_t eeprom_external_input_cur = eeprom_read_uint16(EXTERNAL_INPUT);
-  if (eeprom_external_input_cur != 65535)
+  // cycle mode
+  uint16_t eeprom_cycle_mode_cur = eeprom_read_uint16(EEPROM_ADDRESS_EXTERNAL_INPUT);
+  if (eeprom_cycle_mode_cur != 65535)
   {
-    external_input.is_abilitated_cur = eeprom_external_input_cur;
+    cycle.mode_cur = eeprom_cycle_mode_cur;
   }
   // calendar
   uint16_t eeprom_calendar_enabled = eeprom_read_uint16(CALENDAR_ENABLED);
