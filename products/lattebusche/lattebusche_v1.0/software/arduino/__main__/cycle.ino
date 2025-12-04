@@ -282,15 +282,17 @@ void cycle_sensor_run()
 {
   if (cycle.state_working_cur == 1)
   {
-    if (sensor.ppb_cur > 100) 
+    int16_t target_ppb_with_delta = sensor.target_ppb_cur + ((sensor.target_ppb_cur / 100) * sensor.delta_perc_cur);
+    if (sensor.ppb_cur > target_ppb_with_delta) 
     {
       cycle.state_working_cur = 0;
       digitalWrite(RO_1, 0);
     }
   }
   else
-  {
-    if (sensor.ppb_cur < 100) 
+  {    
+    int16_t target_ppb_with_delta = sensor.target_ppb_cur - ((sensor.target_ppb_cur / 100) * sensor.delta_perc_cur);
+    if (sensor.ppb_cur < target_ppb_with_delta) 
     {
       cycle.state_working_cur = 1;
       digitalWrite(RO_1, 1);

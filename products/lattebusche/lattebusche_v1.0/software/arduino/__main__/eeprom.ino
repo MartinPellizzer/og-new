@@ -8,6 +8,8 @@
 #define SENSOR_TEMPERATURE_ENABLE   28
 #define SENSOR_TEMPERATURE_SECONDS  30
 #define SENSOR_OZONE_ALARM_ENABLE   32
+#define EEPROM_ADDRESS_SENSOR_OZONE_TARGET_PPB  34
+#define EEPROM_ADDRESS_SENSOR_OZONE_DELTA_PERC  36
 
 
 uint8_t get_eeprom_address_calendar(int day_i, int time_i, int offset)
@@ -68,11 +70,16 @@ void eeprom_init()
   // {
   //   sensor_temperature.enable_cur = eeprom_sensor_temperature_enable_cur;
   // }
-  // uint16_t eeprom_sensor_temperature_alarm_seconds_cur = eeprom_read_uint16(SENSOR_TEMPERATURE_SECONDS);
-  // if (eeprom_sensor_temperature_alarm_seconds_cur != 65535)
-  // {
-  //   sensor_temperature.alarm_seconds_cur = eeprom_sensor_temperature_alarm_seconds_cur;
-  // }
+  uint16_t eeprom_sensor_ozone_target_ppb_cur = eeprom_read_uint16(EEPROM_ADDRESS_SENSOR_OZONE_TARGET_PPB);
+  if (eeprom_sensor_ozone_target_ppb_cur != 65535)
+  {
+    sensor.target_ppb_cur = eeprom_sensor_ozone_target_ppb_cur;
+  }
+  uint16_t eeprom_sensor_ozone_delta_perc_cur = eeprom_read_uint16(EEPROM_ADDRESS_SENSOR_OZONE_DELTA_PERC);
+  if (eeprom_sensor_ozone_delta_perc_cur != 65535)
+  {
+    sensor.delta_perc_cur = eeprom_sensor_ozone_delta_perc_cur;
+  }
 
   // Serial.println(o3_sensor_alarm.ppb_alarm_cur);
   // Serial.println(o3_sensor_alarm.alarm_timer_minutes_cur);

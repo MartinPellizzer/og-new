@@ -16,8 +16,8 @@ ozonogroup settings:
 		        for testing purposes)
 	- sensor:
 		- DONE: check if values are read correctly
-		- TODO: page sensor value list for when cycle managed by sensor
-		- TODO: update target value of cycle with sensor value setted
+		- DONE: page sensor value list for when cycle managed by sensor
+		- DONE: update target value of cycle with sensor value setted
 	- mode:
 		- DONE: select if cycle is managed manually or by sensor
 	- allarme:

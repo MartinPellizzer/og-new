@@ -191,6 +191,12 @@ typedef struct sensor_t {
   int16_t ppb_old = -2;
   int16_t ppb_cur = -1;
   int8_t is_connected = 0;
+  int16_t target_ppb_old = -2;
+  int16_t target_ppb_tmp = -1;
+  int16_t target_ppb_cur = 100;
+  int8_t delta_perc_old = -2;
+  int8_t delta_perc_tmp = -1;
+  int8_t delta_perc_cur = 20;
 } sensor_t;
 sensor_t sensor = {};
 
