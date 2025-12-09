@@ -38,18 +38,38 @@ typedef struct cycle_t {
   int8_t state_vi_old = -2;
   int8_t state_vi_tmp = -1;
   int8_t state_vi_cur = 0;
+  int8_t state_vi_ncno_old = -2;
+  int8_t state_vi_ncno_tmp = -1;
+  int8_t state_vi_ncno_cur = 0;
+
   int8_t state_vo_old = -2;
   int8_t state_vo_tmp = -1;
   int8_t state_vo_cur = 0;
+  int8_t state_vo_ncno_old = -2;
+  int8_t state_vo_ncno_tmp = -1;
+  int8_t state_vo_ncno_cur = 0;
+
   int8_t state_vb_old = -2;
   int8_t state_vb_tmp = -1;
   int8_t state_vb_cur = 0;
+  int8_t state_vb_ncno_old = -2;
+  int8_t state_vb_ncno_tmp = -1;
+  int8_t state_vb_ncno_cur = 0;
+
   int8_t state_pb_old = -2;
   int8_t state_pb_tmp = -1;
   int8_t state_pb_cur = 0;
+  int8_t state_pb_ncno_old = -2;
+  int8_t state_pb_ncno_tmp = -1;
+  int8_t state_pb_ncno_cur = 0;
+
   int8_t state_pn_old = -2;
   int8_t state_pn_tmp = -1;
   int8_t state_pn_cur = 0;
+  int8_t state_pn_ncno_old = -2;
+  int8_t state_pn_ncno_tmp = -1;
+  int8_t state_pn_ncno_cur = 0;
+
   int8_t mode_old = -2;
   int8_t mode_tmp = -1;
   int8_t mode_cur = 0;
@@ -62,6 +82,10 @@ typedef struct cycle_t {
   uint16_t flow_switch_state_cur = 0;
   int32_t bypass_millis_cur = 0;
   int32_t bypass_timer_cur = 15000;
+
+  int8_t state_onoff_old = -2;
+  int8_t state_onoff_tmp = -1;
+  int8_t state_onoff_cur = 0;
 } cycle_t;
 cycle_t cycle = {};
 

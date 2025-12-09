@@ -1,3 +1,4 @@
+uint8_t cmd_p_home_onoff[BUFFER_SIZE] = { 101, 1, 2, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 uint8_t cmd_p_home_vi[BUFFER_SIZE] = { 101, 1, 3, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 uint8_t cmd_p_home_vo[BUFFER_SIZE] = { 101, 1, 4, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 uint8_t cmd_p_home_vb[BUFFER_SIZE] = { 101, 1, 5, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -63,37 +64,59 @@ void nextion_inputs()
 
 void nextion_input_p_home()
 {
+  if (nextion_array_compare(cmd_p_home_onoff, nextion.inputs_buff))
+  {
+    if (cycle.state_onoff_cur == 0) cycle.state_onoff_cur = 1;
+    else cycle.state_onoff_cur = 0;
+  }
   // manual mode
   if (cycle.mode_cur == 0)
   {
     if (nextion_array_compare(cmd_p_home_vi, nextion.inputs_buff))
     {
-      cycle.state_vi_cur = !cycle.state_vi_cur;
+      if (cycle.state_onoff_cur == 1)
+      {
+        cycle.state_vi_cur = !cycle.state_vi_cur;
+      }
     }
     if (nextion_array_compare(cmd_p_home_vo, nextion.inputs_buff))
     {
-      cycle.state_vo_cur = !cycle.state_vo_cur;
+      if (cycle.state_onoff_cur == 1)
+      {
+        cycle.state_vo_cur = !cycle.state_vo_cur;
+      }
     }
     if (nextion_array_compare(cmd_p_home_vb, nextion.inputs_buff))
     {
-      cycle.state_vb_cur = !cycle.state_vb_cur;
+      if (cycle.state_onoff_cur == 1)
+      {
+        cycle.state_vb_cur = !cycle.state_vb_cur;
+      }
     }
     if (nextion_array_compare(cmd_p_home_pb, nextion.inputs_buff))
     {
-      cycle.state_pb_cur = !cycle.state_pb_cur;
+      if (cycle.state_onoff_cur == 1)
+      {
+        cycle.state_pb_cur = !cycle.state_pb_cur;
+      }
     }
     if (nextion_array_compare(cmd_p_home_pn, nextion.inputs_buff))
     {
-      cycle.state_pn_cur = !cycle.state_pn_cur;
+      if (cycle.state_onoff_cur == 1)
+      {
+        cycle.state_pn_cur = !cycle.state_pn_cur;
+      }
     }
   }
   if (nextion_array_compare(cmd_p_home_m, nextion.inputs_buff))
   {
     cycle.mode_cur = 0;
+    cycle.state_onoff_cur = 0;
   }
   if (nextion_array_compare(cmd_p_home_p, nextion.inputs_buff))
   {
     cycle.mode_cur = 1;
+    cycle.state_onoff_cur = 0;
   }
 } 
 
@@ -122,11 +145,35 @@ void nextion_update_page_home(uint8_t force_refresh)
     {
       Serial2.write(_buffer[i]);
     }
+    cycle.state_onoff_old = -2;
     cycle.state_vi_old = -2;
     cycle.state_vo_old = -2;
     cycle.state_vb_old = -2;
     cycle.state_pb_old = -2;
     cycle.state_pn_old = -2;
+  }
+  // onoff
+  if (force_refresh || cycle.state_onoff_old != cycle.state_onoff_cur) 
+  {
+    cycle.state_onoff_old = cycle.state_onoff_cur;
+    {
+      if (cycle.state_onoff_cur == 1)
+      {
+        uint8_t _buffer[] = { 0x70, 0x30, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x33, 0xff, 0xff, 0xff };
+        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+        {
+          Serial2.write(_buffer[i]);
+        }
+      }
+      else
+      {
+        uint8_t _buffer[] = { 0x70, 0x30, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x32, 0xff, 0xff, 0xff };
+        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+        {
+          Serial2.write(_buffer[i]);
+        }
+      }
+    }
   }
   // vi
   if (force_refresh || cycle.state_vi_old != cycle.state_vi_cur) 
