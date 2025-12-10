@@ -15,6 +15,7 @@ core_t core = {};
 enum Nextion_Pages {
   P_SPLASH,
   P_HOME,
+  P_SETTINGS,
 };
 
 ///////////////////////////////////////////////////////////////////////
@@ -130,7 +131,7 @@ void setup()
   pinMode(RI_P, INPUT_PULLUP);
 
   delay(3000);
-  nextion.page_cur = 1;
+  nextion.page_cur = P_HOME;
   Serial.println("setup");
 }
 

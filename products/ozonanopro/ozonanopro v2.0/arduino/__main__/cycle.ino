@@ -158,11 +158,11 @@ void cycle_mode_manual()
 
 void cycle_off()
 {
-      vi_off();
-      vo_off();
-      vb_off();
-      pb_off();
-      pn_off();
+  vi_off();
+  vo_off();
+  vb_off();
+  pb_off();
+  pn_off();
 }
 
 void cycle_manager()
