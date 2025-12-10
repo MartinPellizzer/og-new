@@ -1,4 +1,3 @@
-// TODO: Avvio esterno?
 
 #include "RTClib.h"
 RTC_DS3231 rtc_lib;
