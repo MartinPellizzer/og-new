@@ -111,6 +111,9 @@ power_t power = {};
 typedef struct cycle_t {
   int8_t state_old = -2;
   int8_t state_cur = -1;
+  int8_t custom_state_old = -2;
+  int8_t custom_state_tmp = -1;
+  int8_t custom_state_cur = 0;
   int8_t custom_minutes_working_old = -2;
   int8_t custom_minutes_working_tmp = -1;
   int8_t custom_minutes_working_cur = 1;

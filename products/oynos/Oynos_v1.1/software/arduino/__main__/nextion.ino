@@ -127,6 +127,8 @@ uint8_t cmd_p_set_list_4_item2_left[BUFFER_SIZE] = { 101, 21, 13, 1, 255, 255, 2
 uint8_t cmd_p_set_list_4_item2_right[BUFFER_SIZE] = { 101, 21, 14, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 uint8_t cmd_p_set_list_4_item3_left[BUFFER_SIZE] = { 101, 21, 15, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 uint8_t cmd_p_set_list_4_item3_right[BUFFER_SIZE] = { 101, 21, 16, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+uint8_t cmd_p_set_list_4_item4_left[BUFFER_SIZE] = { 101, 21, 17, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+uint8_t cmd_p_set_list_4_item4_right[BUFFER_SIZE] = { 101, 21, 18, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
 bool nextion_array_compare(uint8_t *a, uint8_t *b) 
 {
@@ -1037,36 +1039,45 @@ void nextion_input_p_cycle_custom()
   else if (nextion_array_compare(cmd_p_set_list_4_save, nextion.inputs_buff)) 
   {
     nextion.page_cur = P_SET;
+    cycle.custom_state_cur = cycle.custom_state_tmp;
     cycle.custom_minutes_working_cur = cycle.custom_minutes_working_tmp;
     cycle.custom_minutes_resting_cur = cycle.custom_minutes_resting_tmp;
     cycle.custom_cycles_num_cur = cycle.custom_cycles_num_tmp;
   }
   else if (nextion_array_compare(cmd_p_set_list_4_item1_left, nextion.inputs_buff)) 
   {
+    cycle.custom_state_tmp = !cycle.custom_state_tmp;
+  }
+  else if (nextion_array_compare(cmd_p_set_list_4_item1_right, nextion.inputs_buff)) 
+  {
+    cycle.custom_state_tmp = !cycle.custom_state_tmp;
+  }
+  else if (nextion_array_compare(cmd_p_set_list_4_item2_left, nextion.inputs_buff)) 
+  {
     cycle.custom_minutes_working_tmp -= 1;
     if (cycle.custom_minutes_working_tmp < 1) cycle.custom_minutes_working_tmp = 1;
   }
-  else if (nextion_array_compare(cmd_p_set_list_4_item1_right, nextion.inputs_buff)) 
+  else if (nextion_array_compare(cmd_p_set_list_4_item2_right, nextion.inputs_buff)) 
   {
     cycle.custom_minutes_working_tmp += 1;
     if (cycle.custom_minutes_working_tmp > 60) cycle.custom_minutes_working_tmp = 60;
   }
-  else if (nextion_array_compare(cmd_p_set_list_4_item2_left, nextion.inputs_buff)) 
+  else if (nextion_array_compare(cmd_p_set_list_4_item3_left, nextion.inputs_buff)) 
   {
     cycle.custom_minutes_resting_tmp -= 1;
     if (cycle.custom_minutes_resting_tmp < 1) cycle.custom_minutes_resting_tmp = 1;
   }
-  else if (nextion_array_compare(cmd_p_set_list_4_item2_right, nextion.inputs_buff)) 
+  else if (nextion_array_compare(cmd_p_set_list_4_item3_right, nextion.inputs_buff)) 
   {
     cycle.custom_minutes_resting_tmp += 1;
     if (cycle.custom_minutes_resting_tmp > 60) cycle.custom_minutes_resting_tmp = 60;
   }
-  else if (nextion_array_compare(cmd_p_set_list_4_item3_left, nextion.inputs_buff)) 
+  else if (nextion_array_compare(cmd_p_set_list_4_item4_left, nextion.inputs_buff)) 
   {
     cycle.custom_cycles_num_tmp -= 1;
     if (cycle.custom_cycles_num_tmp < 1) cycle.custom_cycles_num_tmp = 1;
   }
-  else if (nextion_array_compare(cmd_p_set_list_4_item3_right, nextion.inputs_buff)) 
+  else if (nextion_array_compare(cmd_p_set_list_4_item4_right, nextion.inputs_buff)) 
   {
     cycle.custom_cycles_num_tmp += 1;
     if (cycle.custom_cycles_num_tmp > 60) cycle.custom_cycles_num_tmp = 60;
@@ -1122,7 +1133,7 @@ void nextion_update()
   else if (nextion.page_cur == P_OZONE_ALARM)       nextion_update_page_ozone_alarm(force_refresh);
   else if (nextion.page_cur == P_TEMPERATURE_ALARM) nextion_update_page_temperature_alarm(force_refresh);
   else if (nextion.page_cur == P_TEMPERATURE)       nextion_update_page_sensor_temperature(force_refresh);
-  else if (nextion.page_cur == P_CYCLE_CUSTOM)       nextion_update_page_cycle_custom(force_refresh);
+  else if (nextion.page_cur == P_CYCLE_CUSTOM)      nextion_update_page_cycle_custom(force_refresh);
 }
 
 ////////////////////////////////////////////////////////
@@ -2498,21 +2509,28 @@ void nextion_update_page_cycle_custom(uint8_t force_refresh)
     }
     // options
     {
-      uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x54, 0x65, 0x6D, 0x70, 0x6F, 0x20, 0x4C, 0x61, 0x76, 0x6F, 0x72, 0x6F, 0x20, 0x28, 0x4D, 0x69, 0x6E, 0x75, 0x74, 0x69, 0x29, 0x22, 0xff, 0xff, 0xff };
+      uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x41, 0x62, 0x69, 0x6C, 0x69, 0x74, 0x61, 0x20, 0x43, 0x69, 0x63, 0x6C, 0x6F, 0x20, 0x50, 0x65, 0x72, 0x73, 0x6F, 0x6E, 0x61, 0x6C, 0x69, 0x7A, 0x7A, 0x61, 0x74, 0x6F, 0x22, 0xff, 0xff, 0xff };
       for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++)
       {
         Serial2.write(_buffer[i]);
       }
     }
     {
-      uint8_t _buffer[] = { 0x74, 0x32, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x54, 0x65, 0x6D, 0x70, 0x6F, 0x20, 0x50, 0x61, 0x75, 0x73, 0x61, 0x20, 0x28, 0x4D, 0x69, 0x6E, 0x75, 0x74, 0x69, 0x29, 0x22, 0xff, 0xff, 0xff };
+      uint8_t _buffer[] = { 0x74, 0x32, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x54, 0x65, 0x6D, 0x70, 0x6F, 0x20, 0x4C, 0x61, 0x76, 0x6F, 0x72, 0x6F, 0x20, 0x28, 0x4D, 0x69, 0x6E, 0x75, 0x74, 0x69, 0x29, 0x22, 0xff, 0xff, 0xff };
       for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++)
       {
         Serial2.write(_buffer[i]);
       }
     }
     {
-      uint8_t _buffer[] = { 0x74, 0x34, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4E, 0x75, 0x6D, 0x65, 0x72, 0x6F, 0x20, 0x43, 0x69, 0x63, 0x6C, 0x69, 0x22, 0xff, 0xff, 0xff };
+      uint8_t _buffer[] = { 0x74, 0x34, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x54, 0x65, 0x6D, 0x70, 0x6F, 0x20, 0x50, 0x61, 0x75, 0x73, 0x61, 0x20, 0x28, 0x4D, 0x69, 0x6E, 0x75, 0x74, 0x69, 0x29, 0x22, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++)
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+    {
+      uint8_t _buffer[] = { 0x74, 0x36, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4E, 0x75, 0x6D, 0x65, 0x72, 0x6F, 0x20, 0x43, 0x69, 0x63, 0x6C, 0x69, 0x22, 0xff, 0xff, 0xff };
       for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++)
       {
         Serial2.write(_buffer[i]);
@@ -2561,16 +2579,51 @@ void nextion_update_page_cycle_custom(uint8_t force_refresh)
         Serial2.write(_buffer[i]);
       }
     }
+    {
+      uint8_t _buffer[] = { 0x70, 0x36, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x32, 0x37, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++)
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+    {
+      uint8_t _buffer[] = { 0x70, 0x37, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x32, 0x38, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++)
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+    cycle.custom_state_tmp = cycle.custom_state_cur;
     cycle.custom_minutes_working_tmp = cycle.custom_minutes_working_cur;
     cycle.custom_minutes_resting_tmp = cycle.custom_minutes_resting_cur;
     cycle.custom_cycles_num_tmp = cycle.custom_cycles_num_cur;
+  }
+  if (force_refresh || cycle.custom_state_old != cycle.custom_state_tmp)
+  {
+    cycle.custom_state_old = cycle.custom_state_tmp;
+    if (cycle.custom_state_tmp == 0)
+    {
+      uint8_t _buffer[] = { 0x74, 0x31, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4F, 0x46, 0x46, 0x22, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+    else
+    {
+      uint8_t _buffer[] = { 0x74, 0x31, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4F, 0x4E, 0x22, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
   }
   if (force_refresh || cycle.custom_minutes_working_old != cycle.custom_minutes_working_tmp)
   {
     cycle.custom_minutes_working_old = cycle.custom_minutes_working_tmp;
     if (cycle.custom_minutes_working_tmp < 10)
     {
-      uint8_t _buffer[] = { 0x74, 0x31, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x20, 0x4D, 0x69, 0x6E, 0x75, 0x74, 0x69, 0x22, 0xff, 0xff, 0xff };
+      uint8_t _buffer[] = { 0x74, 0x33, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x20, 0x4D, 0x69, 0x6E, 0x75, 0x74, 0x69, 0x22, 0xff, 0xff, 0xff };
       _buffer[8] = (cycle.custom_minutes_working_tmp % 10 / 1) + 0x30;
       for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
       {
@@ -2579,7 +2632,7 @@ void nextion_update_page_cycle_custom(uint8_t force_refresh)
     }
     else
     {
-      uint8_t _buffer[] = { 0x74, 0x31, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x31, 0x30, 0x20, 0x4D, 0x69, 0x6E, 0x75, 0x74, 0x69, 0x22, 0xff, 0xff, 0xff };
+      uint8_t _buffer[] = { 0x74, 0x33, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x31, 0x30, 0x20, 0x4D, 0x69, 0x6E, 0x75, 0x74, 0x69, 0x22, 0xff, 0xff, 0xff };
       _buffer[8] = (cycle.custom_minutes_working_tmp % 100 / 10) + 0x30;
       _buffer[9] = (cycle.custom_minutes_working_tmp % 10 / 1) + 0x30;
       for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
@@ -2593,7 +2646,7 @@ void nextion_update_page_cycle_custom(uint8_t force_refresh)
     cycle.custom_minutes_resting_old = cycle.custom_minutes_resting_tmp;
     if (cycle.custom_minutes_resting_tmp < 10)
     {
-      uint8_t _buffer[] = { 0x74, 0x33, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x20, 0x4D, 0x69, 0x6E, 0x75, 0x74, 0x69, 0x22, 0xff, 0xff, 0xff };
+      uint8_t _buffer[] = { 0x74, 0x35, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x20, 0x4D, 0x69, 0x6E, 0x75, 0x74, 0x69, 0x22, 0xff, 0xff, 0xff };
       _buffer[8] = (cycle.custom_minutes_resting_tmp % 10 / 1) + 0x30;
       for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
       {
@@ -2602,7 +2655,7 @@ void nextion_update_page_cycle_custom(uint8_t force_refresh)
     }
     else
     {
-      uint8_t _buffer[] = { 0x74, 0x33, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x31, 0x30, 0x20, 0x4D, 0x69, 0x6E, 0x75, 0x74, 0x69, 0x22, 0xff, 0xff, 0xff };
+      uint8_t _buffer[] = { 0x74, 0x35, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x31, 0x30, 0x20, 0x4D, 0x69, 0x6E, 0x75, 0x74, 0x69, 0x22, 0xff, 0xff, 0xff };
       _buffer[8] = (cycle.custom_minutes_resting_tmp % 100 / 10) + 0x30;
       _buffer[9] = (cycle.custom_minutes_resting_tmp % 10 / 1) + 0x30;
       for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
@@ -2616,7 +2669,7 @@ void nextion_update_page_cycle_custom(uint8_t force_refresh)
     cycle.custom_cycles_num_old = cycle.custom_cycles_num_tmp;
     if (cycle.custom_cycles_num_tmp < 10)
     {
-      uint8_t _buffer[] = { 0x74, 0x35, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x22, 0xff, 0xff, 0xff };
+      uint8_t _buffer[] = { 0x74, 0x37, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x22, 0xff, 0xff, 0xff };
       _buffer[8] = (cycle.custom_cycles_num_tmp % 10 / 1) + 0x30;
       for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
       {
@@ -2625,7 +2678,7 @@ void nextion_update_page_cycle_custom(uint8_t force_refresh)
     }
     else
     {
-      uint8_t _buffer[] = { 0x74, 0x35, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x31, 0x30, 0x22, 0xff, 0xff, 0xff };
+      uint8_t _buffer[] = { 0x74, 0x37, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x31, 0x30, 0x22, 0xff, 0xff, 0xff };
       _buffer[8] = (cycle.custom_cycles_num_tmp % 100 / 10) + 0x30;
       _buffer[9] = (cycle.custom_cycles_num_tmp % 10 / 1) + 0x30;
       for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
