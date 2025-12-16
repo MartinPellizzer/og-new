@@ -111,6 +111,15 @@ power_t power = {};
 typedef struct cycle_t {
   int8_t state_old = -2;
   int8_t state_cur = -1;
+  int8_t custom_minutes_working_old = -2;
+  int8_t custom_minutes_working_tmp = -1;
+  int8_t custom_minutes_working_cur = 1;
+  int8_t custom_minutes_resting_old = -2;
+  int8_t custom_minutes_resting_tmp = -1;
+  int8_t custom_minutes_resting_cur = 1;
+  int8_t custom_cycles_num_old = -2;
+  int8_t custom_cycles_num_tmp = -1;
+  int8_t custom_cycles_num_cur = 1;
 } cycle_t;
 cycle_t cycle = {};
 
@@ -145,6 +154,7 @@ enum Nextion_Pages {
   P_OZONE_ALARM,
   P_TEMPERATURE_ALARM,
   P_TEMPERATURE,
+  P_CYCLE_CUSTOM,
 };
 
 ///////////////////////////////////////////////////////////////////////
