@@ -9,6 +9,10 @@
 #define SENSOR_TEMPERATURE_SECONDS  30
 #define SENSOR_OZONE_ALARM_ENABLE   32
 
+#define CUSTOM_STATE_CUR            34
+#define CUSTOM_MINUTES_WORKING_CUR  36
+#define CUSTOM_MINUTES_RESTING_CUR  38
+#define CUSTOM_CYCLES_NUM_CUR       40
 
 uint8_t get_eeprom_address_calendar(int day_i, int time_i, int offset)
 {
@@ -72,6 +76,13 @@ void eeprom_init()
   if (eeprom_sensor_temperature_alarm_seconds_cur != 65535)
   {
     sensor_temperature.alarm_seconds_cur = eeprom_sensor_temperature_alarm_seconds_cur;
+  }
+
+  // custom cycle
+  uint16_t eeprom_custom_state_cur = eeprom_read_uint16(CUSTOM_STATE_CUR);
+  if (eeprom_custom_state_cur != 65535)
+  {
+    cycle.custom_state_cur = eeprom_custom_state_cur;
   }
 
   // Serial.println(o3_sensor_alarm.ppb_alarm_cur);

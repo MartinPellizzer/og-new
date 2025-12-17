@@ -195,7 +195,11 @@ void nextion_input_p_home()
     if (nextion_array_compare(cmd_p_home_on, nextion.inputs_buff))
     {
       if (is_on_cur == 1) is_on_cur = 0;
-      else if (is_on_cur == 0) is_on_cur = 1;
+      else if (is_on_cur == 0) 
+      {
+        is_on_cur = 1;
+        cycle.custom_cycles_init_state = 1;
+      }
     }
   }
 } 
@@ -1043,6 +1047,7 @@ void nextion_input_p_cycle_custom()
     cycle.custom_minutes_working_cur = cycle.custom_minutes_working_tmp;
     cycle.custom_minutes_resting_cur = cycle.custom_minutes_resting_tmp;
     cycle.custom_cycles_num_cur = cycle.custom_cycles_num_tmp;
+    eeprom_write_uint16(CUSTOM_STATE_CUR, cycle.custom_state_cur);
   }
   else if (nextion_array_compare(cmd_p_set_list_4_item1_left, nextion.inputs_buff)) 
   {
