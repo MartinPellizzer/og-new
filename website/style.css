@@ -1,6 +1,18 @@
+:root {
+    --color-blue: #327cfa;
+    --color-blue-navy: #1E3A8A;
+    --color-blue-cobalt: #2563EB;
+
+}
+
 @font-face {
     font-family: 'inter-regular';
     src: url('/assets/Inter/static/Inter_18pt-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'inter-bold';
+    src: url('/assets/Inter/static/Inter_18pt-Bold.ttf');
 }
 
 * {
@@ -13,7 +25,7 @@ body {
     font-family: inter-regular, sans-serif;
     /* font-family: sans-serif; */
     color: #555555;
-    font-size: 1rem;
+    font-size: 1.125rem;
     line-height: 1.5;
 }
 
@@ -51,6 +63,32 @@ img {
     margin-right: auto;
     padding-left: 16px;
     padding-right: 16px;
+}
+
+h1 {
+    font-family: inter-bold;
+    font-weight: normal;
+}
+
+h2 {
+    font-family: inter-bold;
+    font-weight: normal;
+    font-size: 3.0rem;
+    color: #111111;
+}
+
+h3 {
+    font-family: inter-bold;
+    font-weight: normal;
+    font-size: 2.0rem;
+    color: #111111;
+}
+
+p {
+    font-family: inter-regular;
+    font-weight: normal;
+    font-size: 1.125rem;
+    color: #111111;
 }
 
 .h2_default {
@@ -99,6 +137,13 @@ img {
     background-color: #f8f9fb;
     padding: 32px;
     border-radius: 16px;
+}
+
+.button-square-default-accent {
+    display: inline-block;
+    color: white;
+    background-color: var(--color-blue-cobalt);
+    padding: 0.75rem 1.5rem;
 }
 
 .button-invert {
@@ -350,8 +395,8 @@ img {
 /* FOOTER                                     */
 /* **************************************** */
 footer h2,
-p,
-a {
+footer p,
+footer a {
     color: #ffffff;
     text-decoration: none;
 }

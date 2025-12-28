@@ -1,4 +1,5 @@
-website_folderpath = r'C:\ozonogroup'
+WEBSITE_FOLDERPATH = r'C:\ozonogroup'
+WEBSITE_FOLDERPATH = r'/home/ubuntu/vault/ozonogroup'
 
 color_black_pearl = '#08162C'
 

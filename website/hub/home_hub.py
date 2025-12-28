@@ -5,31 +5,752 @@ from data import settori_data
 
 def gen():
     section_py = '8rem'
-    hero = f'''
+    opacity = 0.66
+    hero_old = f'''
         <section style="
-                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/immagini/sanificazione-ozono.png');
+                background: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('/immagini/home/generatore-ozono-industriale-impianto.jpg');
                 background-size: cover;
                 background-position: center;
                 padding-top: 8rem;
                 padding-bottom: 8rem;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
         ">
-            <h1 class="container-lg" style="color: #ffffff; font-size: 4rem; line-height: 1; font-weight: normal; text-align: center; margin-bottom: 1rem;">
-                Sanificazione ad Ozono Professionale per l'Industria
-            </h1>
-            <p class="container-md" style="color: #ffffff; font-size: 1.25rem; line-height: 1.4; text-align: center; margin-bottom: 2rem;">
-                Progettiamo e produciamo tecnologie di disinfezione a base di ozono per settori industriali come quello alimentare, agricolo e dei rifiuti.
-            </p>
-            <div>
-                <a class="button-invert" href="/contatti.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M680-80v-120H560v-80h120v-120h80v120h120v80H760v120h-80Zm-480-80q-33 0-56.5-23.5T120-240v-480q0-33 23.5-56.5T200-800h40v-80h80v80h240v-80h80v80h40q33 0 56.5 23.5T760-720v244q-20-3-40-3t-40 3v-84H200v320h280q0 20 3 40t11 40H200Zm0-480h480v-80H200v80Zm0 0v-80 80Z"/></svg>
-                    <span>Prenota Consulenza Gratuita</span>
-                </a>
+            <div class="container-xl" style="display: flex;">
+                <div style="flex: 3;">
+                    <h1 style="color: #ffffff; font-size: 4rem; line-height: 1; font-weight: bold; text-align: left; margin-bottom: 1rem;">
+                        Produciamo generatori di ozono industriali ad alta efficienza
+                    </h1>
+                    <p style="color: #ffffff; font-size: 1.25rem; line-height: 1.4; text-align: left; margin-bottom: 2rem;">
+                      <strong>I generatori di ozono industriali</strong> sono sistemi progettati e prodotti internamente
+                      per il trattamento delle acque e la sanitizzazione industriale,
+                      garantendo controllo preciso dell’ozono, affidabilità operativa
+                      e conformità alle normative di sicurezza.
+                    </p>
+                    <a class="button-square-default-accent"> 
+                        <span>Prenota Consulenza Gratuita</span>
+                    </a>
+                </div>
+                <div style="flex: 2;">
+                </div>
             </div>
         </section>      
     '''
+
+    hero_1 = f'''
+        <section style="
+                background: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('/immagini/home/generatore-ozono-industriale-impianto.jpg');
+                background-size: cover;
+                background-position: center;
+                height: 60vh;
+        ">
+            <div class="container-xl" style="display: flex; align-items: center; height: 100%;">
+                <div style="flex: 3;">
+                    <h1 style="color: #ffffff; font-size: 4rem; line-height: 1; text-align: left; margin-bottom: 1rem;">
+                        Generatori di ozono industriali per la sanificazione efficace di impianti e ambienti
+                    </h1>
+                    <p style="color: #ffffff; font-size: 1.25rem; line-height: 1.4; text-align: left; margin-bottom: 2rem;">
+                      Ozonogroup progetta e produce sistemi a ozono per la sanificazione industriale, garantendo sicurezza, efficienza e conformità alle normative.conformità alle normative di sicurezza.
+                    </p>
+                    <a class="button-square-default-accent"> 
+                        <span>Richiedi una consulenza gratuita</span>
+                    </a>
+                </div>
+                <div style="flex: 1;">
+                </div>
+            </div>
+        </section>      
+    '''
+
+    hero_2 = f'''
+        <section class="container-xl" style="margin-top: 5rem;">
+            <div style="display: flex; gap: 3rem;">
+                <div style="flex: 3;">
+                    <h1 style="color: #111111; font-size: 4rem; line-height: 1; font-weight: normal; text-align: left; margin-bottom: 1rem;">
+                        Produciamo generatori di ozono industriali ad alta efficienza
+                    </h1>
+                    <p style="color: #111111; font-size: 1.125rem; line-height: 1.4; text-align: left; margin-bottom: 2rem;">
+                        <strong>I generatori di ozono industriali</strong> sono sistemi progettati e prodotti ad-hoc
+                        per il trattamento delle acque e la sanitizzazione industriale,
+                        garantendo controllo preciso dell’ozono, affidabilità operativa
+                        e conformità alle normative di sicurezza.
+                    </p>
+                    <div>
+                        <a class="button-invert" href="/contatti.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M680-80v-120H560v-80h120v-120h80v120h120v80H760v120h-80Zm-480-80q-33 0-56.5-23.5T120-240v-480q0-33 23.5-56.5T200-800h40v-80h80v80h240v-80h80v80h40q33 0 56.5 23.5T760-720v244q-20-3-40-3t-40 3v-84H200v320h280q0 20 3 40t11 40H200Zm0-480h480v-80H200v80Zm0 0v-80 80Z"/></svg>
+                            <span>Prenota Consulenza Gratuita</span>
+                        </a>
+                    </div>
+                </div>
+                <div style="flex: 2">
+                    <img src="/immagini/home/generatore-ozono-industriale-impianto.jpg" alt="Generatore di ozono industriale installato in un impianto per il trattamento delle acque">
+                </div>
+            </div>
+        </section>      
+    '''
+
+    # settori
+    settori_1 = f'''
+        <section style="padding-top: 6rem;">
+            <div class="container-xl">
+                <h2 style="margin-bottom: 1rem;">
+                    Applicazioni industriali dei nostri sistemi
+                </h2>
+                <p>
+I sistemi a ozono industriali di Ozonogroup trovano applicazione in molteplici settori, garantendo sanificazione efficace, sicurezza e piena conformità alle normative. Scopri come le nostre soluzioni possono supportare il tuo settore industriale, riducendo rischi di contaminazione e migliorando l’igiene degli impianti.
+                </p>
+                <div class="grid-4" style="padding-top: 3rem;">
+                    <div>
+                        <h3 style="margin-bottom: 1rem;">
+                            Alimentare
+                        </h3>
+                        <img src="/immagini/home/generatore-ozono-industriale-impianto.jpg" style="margin-bottom: 1rem;">
+                        <p>
+Sanificazione industriale alimentare con generatori di ozono. Sicurezza HACCP e igiene completa per impianti e linee produttive.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: 1rem;">
+                            Farmaceutico
+                        </h3>
+                        <img src="/immagini/home/generatore-ozono-industriale-impianto.jpg" style="margin-bottom: 1rem;">
+                        <p>
+Generatori di ozono per sanificazione farmaceutica. Controllo contaminazioni e ambienti conformi agli standard GMP.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: 1rem;">
+                            Logistico
+                        </h3>
+                        <img src="/immagini/home/generatore-ozono-industriale-impianto.jpg" style="margin-bottom: 1rem;">
+                        <p>
+Sanificazione industriale per magazzini e trasporti con ozono. Protezione della catena logistica senza interrompere operazioni.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: 1rem;">
+                            Ospedaliero
+                        </h3>
+                        <img src="/immagini/home/generatore-ozono-industriale-impianto.jpg" style="margin-bottom: 1rem;">
+                        <p>
+Generatori di ozono per ospedali. Sicurezza sanitaria e aria pulita, riduzione di agenti patogeni in ambienti critici.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </ection>
+    '''
+
+
+    ########################################
+    # servizi
+    ########################################
+    servizi_data = [
+        {
+            'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M480-120q-117 0-198.5-81.5T200-400q0-100 61.5-176.5T420-674q-26-5-50-14.5T327-717q-28-29-37.5-67t-9.5-78v-18q86-2 148 56.5T489-680q14-43 39.5-80t57.5-69q9-9 21-9t21 9q9 9 9 21t-9 21q-25 25-45 54t-34 61q94 24 152.5 99.5T760-400q0 117-81.5 198.5T480-120Zm0-60q92 0 156-64t64-156q0-92-64-156t-156-64q-92 0-156 64t-64 156q0 92 64 156t156 64Zm0-220Z"/></svg>''',
+            'title': f'''Sanificazione Prodotti''',
+            'description': f'''Sanifichiamo prodotti, materie prime e imballaggi con ozono per eliminare cariche microbiche e prolungarne la sicurezza e la conservabilità.''',
+            'link_href': f'''/servizi.html''',
+            'link_anchor': f'''Scopri Servizio''',
+        },
+        {
+            'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M251-160q-88 0-149.5-61.5T40-371q0-78 50-137t127-71q20-97 94-158.5T482-799q112 0 189 81.5T748-522v24q72-2 122 46.5T920-329q0 69-50 119t-119 50H251Zm0-60h500q45 0 77-32t32-77q0-45-32-77t-77-32h-63v-84q0-91-61-154t-149-63q-88 0-149.5 63T267-522h-19q-62 0-105 43.5T100-371q0 63 44 107t107 44Zm229-260Z"/></svg>''',
+            'title': f'''Sanificazione Aria''',
+            'description': f'''Neutralizziamo virus, batteri e odori negli impianti di ventilazione con ozono, migliorando la qualità dell'aria e la sicurezza dei tuoi ambienti.''',
+            'link_href': f'''/servizi.html''',
+            'link_anchor': f'''Scopri Servizio''',
+        },
+        {
+            'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M176-120q-19-4-35.5-20.5T120-176l664-664q21 5 36 20.5t21 35.5L176-120Zm-56-252v-112l356-356h112L120-372Zm0-308v-80q0-33 23.5-56.5T200-840h80L120-680Zm560 560 160-160v80q0 33-23.5 56.5T760-120h-80Zm-308 0 468-468v112L484-120H372Z"/></svg>''',
+            'title': f'''Sanificazione Superfici''',
+            'description': f'''Trattiamo pavimenti, attrezzature e linee produttive con ozono per eliminare residui biologici e ridurre il rischio di contaminazioni.''',
+            'link_href': f'''/servizi.html''',
+            'link_anchor': f'''Scopri Servizio''',
+        },
+    ]
+    servizi_cards = []
+    for item in servizi_data:
+        servizi_cards.append(f'''
+            <div>
+                <div style="display: inline-block; margin-bottom: 2rem; border: 1px solid #f2f2f2; border-radius: 2rem; padding: 2rem;">
+                    { item['icon'] }
+                </div>
+                <h3 style="color: #222222; font-size: 1.5rem; line-height: 1.25; font-weight: bold; margin-bottom: 1rem;">
+                    { item['title'] }
+                </h3> 
+                <p style="color: #555555; margin-bottom: 2rem;">
+                    { item['description'] }                    
+                </p>
+                <p>
+                    <a style="color: #555555;" href="{ item['link_href'] }">{ item['link_anchor'] }</a>
+                </p>
+            </div>
+        ''')
+    servizi_cards = ''.join(servizi_cards)
+    servizi = f'''
+        <section class="container-xl" style="padding-top: {section_py}; padding-bottom: {section_py};">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4rem;">
+                <div style="flex: 2;">
+                    <h2 style="color: #222222; font-size: 3rem; line-height: 1; font-weight: normal;">
+                        Servizi di sanificazione industriale con ozono
+                    </h2>
+                </div>
+                <div style="flex: 1; display: flex; justify-content: end;">
+                    <div style="display: inline-block;">
+                        <a class="button-default-1" href="/servizi.html">
+                            <span>Vedi Servizi</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>                
+                        </a>
+                    </div>
+                    <div>
+                </div>
+            </div>
+        </ection>
+    '''
+
+
+    ########################################
+    # servizi
+    ########################################
+    servizi_data = [
+        {
+            'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M480-120q-117 0-198.5-81.5T200-400q0-100 61.5-176.5T420-674q-26-5-50-14.5T327-717q-28-29-37.5-67t-9.5-78v-18q86-2 148 56.5T489-680q14-43 39.5-80t57.5-69q9-9 21-9t21 9q9 9 9 21t-9 21q-25 25-45 54t-34 61q94 24 152.5 99.5T760-400q0 117-81.5 198.5T480-120Zm0-60q92 0 156-64t64-156q0-92-64-156t-156-64q-92 0-156 64t-64 156q0 92 64 156t156 64Zm0-220Z"/></svg>''',
+            'title': f'''Sanificazione Prodotti''',
+            'description': f'''Sanifichiamo prodotti, materie prime e imballaggi con ozono per eliminare cariche microbiche e prolungarne la sicurezza e la conservabilità.''',
+            'link_href': f'''/servizi.html''',
+            'link_anchor': f'''Scopri Servizio''',
+        },
+        {
+            'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M251-160q-88 0-149.5-61.5T40-371q0-78 50-137t127-71q20-97 94-158.5T482-799q112 0 189 81.5T748-522v24q72-2 122 46.5T920-329q0 69-50 119t-119 50H251Zm0-60h500q45 0 77-32t32-77q0-45-32-77t-77-32h-63v-84q0-91-61-154t-149-63q-88 0-149.5 63T267-522h-19q-62 0-105 43.5T100-371q0 63 44 107t107 44Zm229-260Z"/></svg>''',
+            'title': f'''Sanificazione Aria''',
+            'description': f'''Neutralizziamo virus, batteri e odori negli impianti di ventilazione con ozono, migliorando la qualità dell'aria e la sicurezza dei tuoi ambienti.''',
+            'link_href': f'''/servizi.html''',
+            'link_anchor': f'''Scopri Servizio''',
+        },
+        {
+            'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M176-120q-19-4-35.5-20.5T120-176l664-664q21 5 36 20.5t21 35.5L176-120Zm-56-252v-112l356-356h112L120-372Zm0-308v-80q0-33 23.5-56.5T200-840h80L120-680Zm560 560 160-160v80q0 33-23.5 56.5T760-120h-80Zm-308 0 468-468v112L484-120H372Z"/></svg>''',
+            'title': f'''Sanificazione Superfici''',
+            'description': f'''Trattiamo pavimenti, attrezzature e linee produttive con ozono per eliminare residui biologici e ridurre il rischio di contaminazioni.''',
+            'link_href': f'''/servizi.html''',
+            'link_anchor': f'''Scopri Servizio''',
+        },
+    ]
+    servizi_cards = []
+    for item in servizi_data:
+        servizi_cards.append(f'''
+            <div>
+                <div style="display: inline-block; margin-bottom: 2rem; border: 1px solid #f2f2f2; border-radius: 2rem; padding: 2rem;">
+                    { item['icon'] }
+                </div>
+                <h3 style="color: #222222; font-size: 1.5rem; line-height: 1.25; font-weight: bold; margin-bottom: 1rem;">
+                    { item['title'] }
+                </h3> 
+                <p style="color: #555555; margin-bottom: 2rem;">
+                    { item['description'] }                    
+                </p>
+                <p>
+                    <a style="color: #555555;" href="{ item['link_href'] }">{ item['link_anchor'] }</a>
+                </p>
+            </div>
+        ''')
+    servizi_cards = ''.join(servizi_cards)
+    servizi = f'''
+        <section class="container-xl" style="padding-top: {section_py}; padding-bottom: {section_py};">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4rem;">
+                <div style="flex: 2;">
+                    <h2 style="color: #222222; font-size: 3rem; line-height: 1; font-weight: normal;">
+                        Servizi di sanificazione industriale con ozono
+                    </h2>
+                </div>
+                <div style="flex: 1; display: flex; justify-content: end;">
+                    <div style="display: inline-block;">
+                        <a class="button-default-1" href="/servizi.html">
+                            <span>Vedi Servizi</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>                
+                        </a>
+                    </div>
+                    <div>
+                </div>
+            </div>
+        </ection>
+    '''
+
+
+    ########################################
+    # servizi
+    ########################################
+    servizi_data = [
+        {
+            'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M480-120q-117 0-198.5-81.5T200-400q0-100 61.5-176.5T420-674q-26-5-50-14.5T327-717q-28-29-37.5-67t-9.5-78v-18q86-2 148 56.5T489-680q14-43 39.5-80t57.5-69q9-9 21-9t21 9q9 9 9 21t-9 21q-25 25-45 54t-34 61q94 24 152.5 99.5T760-400q0 117-81.5 198.5T480-120Zm0-60q92 0 156-64t64-156q0-92-64-156t-156-64q-92 0-156 64t-64 156q0 92 64 156t156 64Zm0-220Z"/></svg>''',
+            'title': f'''Sanificazione Prodotti''',
+            'description': f'''Sanifichiamo prodotti, materie prime e imballaggi con ozono per eliminare cariche microbiche e prolungarne la sicurezza e la conservabilità.''',
+            'link_href': f'''/servizi.html''',
+            'link_anchor': f'''Scopri Servizio''',
+        },
+        {
+            'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M251-160q-88 0-149.5-61.5T40-371q0-78 50-137t127-71q20-97 94-158.5T482-799q112 0 189 81.5T748-522v24q72-2 122 46.5T920-329q0 69-50 119t-119 50H251Zm0-60h500q45 0 77-32t32-77q0-45-32-77t-77-32h-63v-84q0-91-61-154t-149-63q-88 0-149.5 63T267-522h-19q-62 0-105 43.5T100-371q0 63 44 107t107 44Zm229-260Z"/></svg>''',
+            'title': f'''Sanificazione Aria''',
+            'description': f'''Neutralizziamo virus, batteri e odori negli impianti di ventilazione con ozono, migliorando la qualità dell'aria e la sicurezza dei tuoi ambienti.''',
+            'link_href': f'''/servizi.html''',
+            'link_anchor': f'''Scopri Servizio''',
+        },
+        {
+            'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M176-120q-19-4-35.5-20.5T120-176l664-664q21 5 36 20.5t21 35.5L176-120Zm-56-252v-112l356-356h112L120-372Zm0-308v-80q0-33 23.5-56.5T200-840h80L120-680Zm560 560 160-160v80q0 33-23.5 56.5T760-120h-80Zm-308 0 468-468v112L484-120H372Z"/></svg>''',
+            'title': f'''Sanificazione Superfici''',
+            'description': f'''Trattiamo pavimenti, attrezzature e linee produttive con ozono per eliminare residui biologici e ridurre il rischio di contaminazioni.''',
+            'link_href': f'''/servizi.html''',
+            'link_anchor': f'''Scopri Servizio''',
+        },
+    ]
+    servizi_cards = []
+    for item in servizi_data:
+        servizi_cards.append(f'''
+            <div>
+                <div style="display: inline-block; margin-bottom: 2rem; border: 1px solid #f2f2f2; border-radius: 2rem; padding: 2rem;">
+                    { item['icon'] }
+                </div>
+                <h3 style="color: #222222; font-size: 1.5rem; line-height: 1.25; font-weight: bold; margin-bottom: 1rem;">
+                    { item['title'] }
+                </h3> 
+                <p style="color: #555555; margin-bottom: 2rem;">
+                    { item['description'] }                    
+                </p>
+                <p>
+                    <a style="color: #555555;" href="{ item['link_href'] }">{ item['link_anchor'] }</a>
+                </p>
+            </div>
+        ''')
+    servizi_cards = ''.join(servizi_cards)
+    servizi = f'''
+        <section class="container-xl" style="padding-top: {section_py}; padding-bottom: {section_py};">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4rem;">
+                <div style="flex: 2;">
+                    <h2 style="color: #222222; font-size: 3rem; line-height: 1; font-weight: normal;">
+                        Servizi di sanificazione industriale con ozono
+                    </h2>
+                </div>
+                <div style="flex: 1; display: flex; justify-content: end;">
+                    <div style="display: inline-block;">
+                        <a class="button-default-1" href="/servizi.html">
+                            <span>Vedi Servizi</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>                
+                        </a>
+                    </div>
+                    <div>
+                </div>
+            </div>
+        </ection>
+    '''
+
+
+    ########################################
+    # servizi
+    ########################################
+    servizi_data = [
+        {
+            'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M480-120q-117 0-198.5-81.5T200-400q0-100 61.5-176.5T420-674q-26-5-50-14.5T327-717q-28-29-37.5-67t-9.5-78v-18q86-2 148 56.5T489-680q14-43 39.5-80t57.5-69q9-9 21-9t21 9q9 9 9 21t-9 21q-25 25-45 54t-34 61q94 24 152.5 99.5T760-400q0 117-81.5 198.5T480-120Zm0-60q92 0 156-64t64-156q0-92-64-156t-156-64q-92 0-156 64t-64 156q0 92 64 156t156 64Zm0-220Z"/></svg>''',
+            'title': f'''Sanificazione Prodotti''',
+            'description': f'''Sanifichiamo prodotti, materie prime e imballaggi con ozono per eliminare cariche microbiche e prolungarne la sicurezza e la conservabilità.''',
+            'link_href': f'''/servizi.html''',
+            'link_anchor': f'''Scopri Servizio''',
+        },
+        {
+            'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M251-160q-88 0-149.5-61.5T40-371q0-78 50-137t127-71q20-97 94-158.5T482-799q112 0 189 81.5T748-522v24q72-2 122 46.5T920-329q0 69-50 119t-119 50H251Zm0-60h500q45 0 77-32t32-77q0-45-32-77t-77-32h-63v-84q0-91-61-154t-149-63q-88 0-149.5 63T267-522h-19q-62 0-105 43.5T100-371q0 63 44 107t107 44Zm229-260Z"/></svg>''',
+            'title': f'''Sanificazione Aria''',
+            'description': f'''Neutralizziamo virus, batteri e odori negli impianti di ventilazione con ozono, migliorando la qualità dell'aria e la sicurezza dei tuoi ambienti.''',
+            'link_href': f'''/servizi.html''',
+            'link_anchor': f'''Scopri Servizio''',
+        },
+        {
+            'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M176-120q-19-4-35.5-20.5T120-176l664-664q21 5 36 20.5t21 35.5L176-120Zm-56-252v-112l356-356h112L120-372Zm0-308v-80q0-33 23.5-56.5T200-840h80L120-680Zm560 560 160-160v80q0 33-23.5 56.5T760-120h-80Zm-308 0 468-468v112L484-120H372Z"/></svg>''',
+            'title': f'''Sanificazione Superfici''',
+            'description': f'''Trattiamo pavimenti, attrezzature e linee produttive con ozono per eliminare residui biologici e ridurre il rischio di contaminazioni.''',
+            'link_href': f'''/servizi.html''',
+            'link_anchor': f'''Scopri Servizio''',
+        },
+    ]
+    servizi_cards = []
+    for item in servizi_data:
+        servizi_cards.append(f'''
+            <div>
+                <div style="display: inline-block; margin-bottom: 2rem; border: 1px solid #f2f2f2; border-radius: 2rem; padding: 2rem;">
+                    { item['icon'] }
+                </div>
+                <h3 style="color: #222222; font-size: 1.5rem; line-height: 1.25; font-weight: bold; margin-bottom: 1rem;">
+                    { item['title'] }
+                </h3> 
+                <p style="color: #555555; margin-bottom: 2rem;">
+                    { item['description'] }                    
+                </p>
+                <p>
+                    <a style="color: #555555;" href="{ item['link_href'] }">{ item['link_anchor'] }</a>
+                </p>
+            </div>
+        ''')
+    servizi_cards = ''.join(servizi_cards)
+    servizi = f'''
+        <section class="container-xl" style="padding-top: {section_py}; padding-bottom: {section_py};">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4rem;">
+                <div style="flex: 2;">
+                    <h2 style="color: #222222; font-size: 3rem; line-height: 1; font-weight: normal;">
+                        Servizi di sanificazione industriale con ozono
+                    </h2>
+                </div>
+                <div style="flex: 1; display: flex; justify-content: end;">
+                    <div style="display: inline-block;">
+                        <a class="button-default-1" href="/servizi.html">
+                            <span>Vedi Servizi</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>                
+                        </a>
+                    </div>
+                    <div>
+                </div>
+            </div>
+        </ection>
+    '''
+
+
+    ########################################
+    # servizi
+    ########################################
+    servizi_data = [
+        {
+            'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M480-120q-117 0-198.5-81.5T200-400q0-100 61.5-176.5T420-674q-26-5-50-14.5T327-717q-28-29-37.5-67t-9.5-78v-18q86-2 148 56.5T489-680q14-43 39.5-80t57.5-69q9-9 21-9t21 9q9 9 9 21t-9 21q-25 25-45 54t-34 61q94 24 152.5 99.5T760-400q0 117-81.5 198.5T480-120Zm0-60q92 0 156-64t64-156q0-92-64-156t-156-64q-92 0-156 64t-64 156q0 92 64 156t156 64Zm0-220Z"/></svg>''',
+            'title': f'''Sanificazione Prodotti''',
+            'description': f'''Sanifichiamo prodotti, materie prime e imballaggi con ozono per eliminare cariche microbiche e prolungarne la sicurezza e la conservabilità.''',
+            'link_href': f'''/servizi.html''',
+            'link_anchor': f'''Scopri Servizio''',
+        },
+        {
+            'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M251-160q-88 0-149.5-61.5T40-371q0-78 50-137t127-71q20-97 94-158.5T482-799q112 0 189 81.5T748-522v24q72-2 122 46.5T920-329q0 69-50 119t-119 50H251Zm0-60h500q45 0 77-32t32-77q0-45-32-77t-77-32h-63v-84q0-91-61-154t-149-63q-88 0-149.5 63T267-522h-19q-62 0-105 43.5T100-371q0 63 44 107t107 44Zm229-260Z"/></svg>''',
+            'title': f'''Sanificazione Aria''',
+            'description': f'''Neutralizziamo virus, batteri e odori negli impianti di ventilazione con ozono, migliorando la qualità dell'aria e la sicurezza dei tuoi ambienti.''',
+            'link_href': f'''/servizi.html''',
+            'link_anchor': f'''Scopri Servizio''',
+        },
+        {
+            'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M176-120q-19-4-35.5-20.5T120-176l664-664q21 5 36 20.5t21 35.5L176-120Zm-56-252v-112l356-356h112L120-372Zm0-308v-80q0-33 23.5-56.5T200-840h80L120-680Zm560 560 160-160v80q0 33-23.5 56.5T760-120h-80Zm-308 0 468-468v112L484-120H372Z"/></svg>''',
+            'title': f'''Sanificazione Superfici''',
+            'description': f'''Trattiamo pavimenti, attrezzature e linee produttive con ozono per eliminare residui biologici e ridurre il rischio di contaminazioni.''',
+            'link_href': f'''/servizi.html''',
+            'link_anchor': f'''Scopri Servizio''',
+        },
+    ]
+    servizi_cards = []
+    for item in servizi_data:
+        servizi_cards.append(f'''
+            <div>
+                <div style="display: inline-block; margin-bottom: 2rem; border: 1px solid #f2f2f2; border-radius: 2rem; padding: 2rem;">
+                    { item['icon'] }
+                </div>
+                <h3 style="color: #222222; font-size: 1.5rem; line-height: 1.25; font-weight: bold; margin-bottom: 1rem;">
+                    { item['title'] }
+                </h3> 
+                <p style="color: #555555; margin-bottom: 2rem;">
+                    { item['description'] }                    
+                </p>
+                <p>
+                    <a style="color: #555555;" href="{ item['link_href'] }">{ item['link_anchor'] }</a>
+                </p>
+            </div>
+        ''')
+    servizi_cards = ''.join(servizi_cards)
+    servizi = f'''
+        <section class="container-xl" style="padding-top: {section_py}; padding-bottom: {section_py};">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4rem;">
+                <div style="flex: 2;">
+                    <h2 style="color: #222222; font-size: 3rem; line-height: 1; font-weight: normal;">
+                        Servizi di sanificazione industriale con ozono
+                    </h2>
+                </div>
+                <div style="flex: 1; display: flex; justify-content: end;">
+                    <div style="display: inline-block;">
+                        <a class="button-default-1" href="/servizi.html">
+                            <span>Vedi Servizi</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>                
+                        </a>
+                    </div>
+                    <div>
+                </div>
+            </div>
+        </ection>
+    '''
+
+
+    ########################################
+    # servizi
+    ########################################
+    servizi_data = [
+        {
+            'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M480-120q-117 0-198.5-81.5T200-400q0-100 61.5-176.5T420-674q-26-5-50-14.5T327-717q-28-29-37.5-67t-9.5-78v-18q86-2 148 56.5T489-680q14-43 39.5-80t57.5-69q9-9 21-9t21 9q9 9 9 21t-9 21q-25 25-45 54t-34 61q94 24 152.5 99.5T760-400q0 117-81.5 198.5T480-120Zm0-60q92 0 156-64t64-156q0-92-64-156t-156-64q-92 0-156 64t-64 156q0 92 64 156t156 64Zm0-220Z"/></svg>''',
+            'title': f'''Sanificazione Prodotti''',
+            'description': f'''Sanifichiamo prodotti, materie prime e imballaggi con ozono per eliminare cariche microbiche e prolungarne la sicurezza e la conservabilità.''',
+            'link_href': f'''/servizi.html''',
+            'link_anchor': f'''Scopri Servizio''',
+        },
+        {
+            'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M251-160q-88 0-149.5-61.5T40-371q0-78 50-137t127-71q20-97 94-158.5T482-799q112 0 189 81.5T748-522v24q72-2 122 46.5T920-329q0 69-50 119t-119 50H251Zm0-60h500q45 0 77-32t32-77q0-45-32-77t-77-32h-63v-84q0-91-61-154t-149-63q-88 0-149.5 63T267-522h-19q-62 0-105 43.5T100-371q0 63 44 107t107 44Zm229-260Z"/></svg>''',
+            'title': f'''Sanificazione Aria''',
+            'description': f'''Neutralizziamo virus, batteri e odori negli impianti di ventilazione con ozono, migliorando la qualità dell'aria e la sicurezza dei tuoi ambienti.''',
+            'link_href': f'''/servizi.html''',
+            'link_anchor': f'''Scopri Servizio''',
+        },
+        {
+            'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M176-120q-19-4-35.5-20.5T120-176l664-664q21 5 36 20.5t21 35.5L176-120Zm-56-252v-112l356-356h112L120-372Zm0-308v-80q0-33 23.5-56.5T200-840h80L120-680Zm560 560 160-160v80q0 33-23.5 56.5T760-120h-80Zm-308 0 468-468v112L484-120H372Z"/></svg>''',
+            'title': f'''Sanificazione Superfici''',
+            'description': f'''Trattiamo pavimenti, attrezzature e linee produttive con ozono per eliminare residui biologici e ridurre il rischio di contaminazioni.''',
+            'link_href': f'''/servizi.html''',
+            'link_anchor': f'''Scopri Servizio''',
+        },
+    ]
+    servizi_cards = []
+    for item in servizi_data:
+        servizi_cards.append(f'''
+            <div>
+                <div style="display: inline-block; margin-bottom: 2rem; border: 1px solid #f2f2f2; border-radius: 2rem; padding: 2rem;">
+                    { item['icon'] }
+                </div>
+                <h3 style="color: #222222; font-size: 1.5rem; line-height: 1.25; font-weight: bold; margin-bottom: 1rem;">
+                    { item['title'] }
+                </h3> 
+                <p style="color: #555555; margin-bottom: 2rem;">
+                    { item['description'] }                    
+                </p>
+                <p>
+                    <a style="color: #555555;" href="{ item['link_href'] }">{ item['link_anchor'] }</a>
+                </p>
+            </div>
+        ''')
+    servizi_cards = ''.join(servizi_cards)
+    servizi = f'''
+        <section class="container-xl" style="padding-top: {section_py}; padding-bottom: {section_py};">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4rem;">
+                <div style="flex: 2;">
+                    <h2 style="color: #222222; font-size: 3rem; line-height: 1; font-weight: normal;">
+                        Servizi di sanificazione industriale con ozono
+                    </h2>
+                </div>
+                <div style="flex: 1; display: flex; justify-content: end;">
+                    <div style="display: inline-block;">
+                        <a class="button-default-1" href="/servizi.html">
+                            <span>Vedi Servizi</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>                
+                        </a>
+                    </div>
+                    <div>
+                </div>
+            </div>
+        </ection>
+    '''
+
+
+    ########################################
+    # servizi
+    ########################################
+    servizi_data = [
+        {
+            'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M480-120q-117 0-198.5-81.5T200-400q0-100 61.5-176.5T420-674q-26-5-50-14.5T327-717q-28-29-37.5-67t-9.5-78v-18q86-2 148 56.5T489-680q14-43 39.5-80t57.5-69q9-9 21-9t21 9q9 9 9 21t-9 21q-25 25-45 54t-34 61q94 24 152.5 99.5T760-400q0 117-81.5 198.5T480-120Zm0-60q92 0 156-64t64-156q0-92-64-156t-156-64q-92 0-156 64t-64 156q0 92 64 156t156 64Zm0-220Z"/></svg>''',
+            'title': f'''Sanificazione Prodotti''',
+            'description': f'''Sanifichiamo prodotti, materie prime e imballaggi con ozono per eliminare cariche microbiche e prolungarne la sicurezza e la conservabilità.''',
+            'link_href': f'''/servizi.html''',
+            'link_anchor': f'''Scopri Servizio''',
+        },
+        {
+            'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M251-160q-88 0-149.5-61.5T40-371q0-78 50-137t127-71q20-97 94-158.5T482-799q112 0 189 81.5T748-522v24q72-2 122 46.5T920-329q0 69-50 119t-119 50H251Zm0-60h500q45 0 77-32t32-77q0-45-32-77t-77-32h-63v-84q0-91-61-154t-149-63q-88 0-149.5 63T267-522h-19q-62 0-105 43.5T100-371q0 63 44 107t107 44Zm229-260Z"/></svg>''',
+            'title': f'''Sanificazione Aria''',
+            'description': f'''Neutralizziamo virus, batteri e odori negli impianti di ventilazione con ozono, migliorando la qualità dell'aria e la sicurezza dei tuoi ambienti.''',
+            'link_href': f'''/servizi.html''',
+            'link_anchor': f'''Scopri Servizio''',
+        },
+        {
+            'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M176-120q-19-4-35.5-20.5T120-176l664-664q21 5 36 20.5t21 35.5L176-120Zm-56-252v-112l356-356h112L120-372Zm0-308v-80q0-33 23.5-56.5T200-840h80L120-680Zm560 560 160-160v80q0 33-23.5 56.5T760-120h-80Zm-308 0 468-468v112L484-120H372Z"/></svg>''',
+            'title': f'''Sanificazione Superfici''',
+            'description': f'''Trattiamo pavimenti, attrezzature e linee produttive con ozono per eliminare residui biologici e ridurre il rischio di contaminazioni.''',
+            'link_href': f'''/servizi.html''',
+            'link_anchor': f'''Scopri Servizio''',
+        },
+    ]
+    servizi_cards = []
+    for item in servizi_data:
+        servizi_cards.append(f'''
+            <div>
+                <div style="display: inline-block; margin-bottom: 2rem; border: 1px solid #f2f2f2; border-radius: 2rem; padding: 2rem;">
+                    { item['icon'] }
+                </div>
+                <h3 style="color: #222222; font-size: 1.5rem; line-height: 1.25; font-weight: bold; margin-bottom: 1rem;">
+                    { item['title'] }
+                </h3> 
+                <p style="color: #555555; margin-bottom: 2rem;">
+                    { item['description'] }                    
+                </p>
+                <p>
+                    <a style="color: #555555;" href="{ item['link_href'] }">{ item['link_anchor'] }</a>
+                </p>
+            </div>
+        ''')
+    servizi_cards = ''.join(servizi_cards)
+    servizi = f'''
+        <section class="container-xl" style="padding-top: {section_py}; padding-bottom: {section_py};">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4rem;">
+                <div style="flex: 2;">
+                    <h2 style="color: #222222; font-size: 3rem; line-height: 1; font-weight: normal;">
+                        Servizi di sanificazione industriale con ozono
+                    </h2>
+                </div>
+                <div style="flex: 1; display: flex; justify-content: end;">
+                    <div style="display: inline-block;">
+                        <a class="button-default-1" href="/servizi.html">
+                            <span>Vedi Servizi</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>                
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </ection>
+    '''
+
+
+    ########################################
+    # servizi
+    ########################################
+    servizi_data = [
+        {
+            'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M480-120q-117 0-198.5-81.5T200-400q0-100 61.5-176.5T420-674q-26-5-50-14.5T327-717q-28-29-37.5-67t-9.5-78v-18q86-2 148 56.5T489-680q14-43 39.5-80t57.5-69q9-9 21-9t21 9q9 9 9 21t-9 21q-25 25-45 54t-34 61q94 24 152.5 99.5T760-400q0 117-81.5 198.5T480-120Zm0-60q92 0 156-64t64-156q0-92-64-156t-156-64q-92 0-156 64t-64 156q0 92 64 156t156 64Zm0-220Z"/></svg>''',
+            'title': f'''Sanificazione Prodotti''',
+            'description': f'''Sanifichiamo prodotti, materie prime e imballaggi con ozono per eliminare cariche microbiche e prolungarne la sicurezza e la conservabilità.''',
+            'link_href': f'''/servizi.html''',
+            'link_anchor': f'''Scopri Servizio''',
+        },
+        {
+            'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M251-160q-88 0-149.5-61.5T40-371q0-78 50-137t127-71q20-97 94-158.5T482-799q112 0 189 81.5T748-522v24q72-2 122 46.5T920-329q0 69-50 119t-119 50H251Zm0-60h500q45 0 77-32t32-77q0-45-32-77t-77-32h-63v-84q0-91-61-154t-149-63q-88 0-149.5 63T267-522h-19q-62 0-105 43.5T100-371q0 63 44 107t107 44Zm229-260Z"/></svg>''',
+            'title': f'''Sanificazione Aria''',
+            'description': f'''Neutralizziamo virus, batteri e odori negli impianti di ventilazione con ozono, migliorando la qualità dell'aria e la sicurezza dei tuoi ambienti.''',
+            'link_href': f'''/servizi.html''',
+            'link_anchor': f'''Scopri Servizio''',
+        },
+        {
+            'icon': f'''<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M176-120q-19-4-35.5-20.5T120-176l664-664q21 5 36 20.5t21 35.5L176-120Zm-56-252v-112l356-356h112L120-372Zm0-308v-80q0-33 23.5-56.5T200-840h80L120-680Zm560 560 160-160v80q0 33-23.5 56.5T760-120h-80Zm-308 0 468-468v112L484-120H372Z"/></svg>''',
+            'title': f'''Sanificazione Superfici''',
+            'description': f'''Trattiamo pavimenti, attrezzature e linee produttive con ozono per eliminare residui biologici e ridurre il rischio di contaminazioni.''',
+            'link_href': f'''/servizi.html''',
+            'link_anchor': f'''Scopri Servizio''',
+        },
+    ]
+    servizi_cards = []
+    for item in servizi_data:
+        servizi_cards.append(f'''
+            <div>
+                <div style="display: inline-block; margin-bottom: 2rem; border: 1px solid #f2f2f2; border-radius: 2rem; padding: 2rem;">
+                    { item['icon'] }
+                </div>
+                <h3 style="color: #222222; font-size: 1.5rem; line-height: 1.25; font-weight: bold; margin-bottom: 1rem;">
+                    { item['title'] }
+                </h3> 
+                <p style="color: #555555; margin-bottom: 2rem;">
+                    { item['description'] }                    
+                </p>
+                <p>
+                    <a style="color: #555555;" href="{ item['link_href'] }">{ item['link_anchor'] }</a>
+                </p>
+            </div>
+        ''')
+    servizi_cards = ''.join(servizi_cards)
+    servizi = f'''
+        <section class="container-xl" style="padding-top: {section_py}; padding-bottom: {section_py};">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4rem;">
+                <div style="flex: 2;">
+                    <h2 style="color: #222222; font-size: 3rem; line-height: 1; font-weight: normal;">
+                        Servizi di sanificazione industriale con ozono
+                    </h2>
+                </div>
+                <div style="flex: 1; display: flex; justify-content: end;">
+                    <div style="display: inline-block;">
+                        <a class="button-default-1" href="/servizi.html">
+                            <span>Vedi Servizi</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>                
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-3" style="column-gap: 3rem; row-gap: 0;">
+                {servizi_cards}
+            <div>
+        </section>
+        <div style="background-color: #ededed; height: 1px;"></div>  
+    '''
+    ########################################
+    # prodotti
+    ########################################
+    prodotti_data = [
+        {
+            'icon': f'''
+                <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M80-80v-481l280-119v80l200-81v121h320v480H80Zm60-60h680v-359.8H500V-592l-200 80v-79l-160 71v380Zm310-100h60v-160h-60v160Zm-160 0h60v-160h-60v160Zm320 0h60v-160h-60v160Zm270-320H700l40-320h100l40 320ZM140-140h680-680Z"/></svg>
+            ''',
+            'title': f'''Generatori di Ozono Industriali''',
+            'description': f'''Sistemi ad alte portate per impianti produttivi e aree di grandi dimensioni. Integrabili con linee di sanificazione automatizzate.''',
+            'link_href': f'''/prodotti.html''',
+            'link_anchor': f'''Scopri i modelli industriali''',
+        },
+        {
+            'icon': f'''
+                <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M140-180h120v-320h440v320h120v-460L480-776 140-640v460Zm-60 60v-560l400-160 400 160v560H640v-320H320v320H80Zm290 0v-60h60v60h-60Zm80-120v-60h60v60h-60Zm80 120v-60h60v60h-60ZM260-500h440-440Z"/></svg>           
+            ''',
+            'title': f'''Generatori di Ozono Portatili''',
+            'description': f'''Dispositivi compatti per sanificazioni rapide di ambienti, veicoli e camere di stoccaggio. Facili da trasportare, potenti e certificati.''',
+            'link_href': f'''/prodotti.html''',
+            'link_anchor': f'''Scopri i modelli portatili''',
+        },
+        {
+            'icon': f'''
+                <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#327CFA"><path d="M320-80q-66 0-113-47t-47-113v-400q0-66 47-113t113-47h50v-80h60v80h100v-80h60v80h50q66 0 113 47t47 113v400q0 66-47 113T640-80H320Zm0-60h320q42 0 71-29t29-71v-400q0-42-29-71t-71-29H320q-42 0-71 29t-29 71v400q0 42 29 71t71 29Zm0-440h320v-60H320v60Zm160 315q33 0 56.5-23.5T560-344q0-26-15-45t-65-76q-50 58-65 76.5T400-344q0 32 23.5 55.5T480-265ZM220-740v600-600Z"/></svg>            
+            ''',
+            'title': f'''Accessori e Sistemi di Controllo''',
+            'description': f'''Centraline di monitoraggio, sensori di concentrazione e sistemi di sicurezza per la gestione dell'ozono in ambiente industriale.''',
+            'link_href': f'''/prodotti.html''',
+            'link_anchor': f'''Scopri gli accessori''',
+        },
+    ]
+    prodotti_cards = []
+    for item in prodotti_data:
+        prodotti_cards.append(f'''
+            <div>
+                <div style="display: inline-block; margin-bottom: 2rem; border: 1px solid #f2f2f2; border-radius: 2rem; padding: 2rem;">
+                    { item['icon'] }
+                </div>
+                <h3 style="color: #222222; font-size: 1.5rem; line-height: 1.25; font-weight: bold; margin-bottom: 1rem;">
+                    { item['title'] }
+                </h3> 
+                <p style="color: #555555; margin-bottom: 2rem;">
+                    { item['description'] }                    
+                </p>
+                <p>
+                    <a style="color: #555555;" href="{ item['link_href'] }">{ item['link_anchor'] }</a>
+                </p>
+            </div>
+        ''')
+    prodotti_cards = ''.join(prodotti_cards)
+    prodotti = f'''
+        <section class="container-xl" style="padding-top: {section_py}; padding-bottom: {section_py};">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4rem;">
+                <div style="flex: 2;">
+                    <h2 style="color: #222222; font-size: 3rem; line-height: 1; font-weight: normal;">
+                        I nostri generatori di ozono professionali per la sanificazione industriale                   
+                    </h2>
+                </div>
+                <div style="flex: 1; display: flex; justify-content: end;">
+                    <div style="display: inline-block;">
+                        <a class="button-default-1" href="/prodotti.html">
+                            <span>Vedi Prodotti</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>                
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-3" style="column-gap: 3rem; row-gap: 0;">
+                {prodotti_cards}
+            <div>
+        </section>
+        <div style="background-color: #ededed; height: 1px;"></div>  
+    '''
+
     ########################################
     # servizi
     ########################################
@@ -358,7 +1079,8 @@ def gen():
         <body>
             {components.header_light()}
             <main>
-                {hero}
+                {hero_1}
+                {settori_1}
                 {servizi}
                 {prodotti}
                 {settori}
@@ -398,5 +1120,5 @@ def gen():
         </body>
         </html>
     '''
-    html_filepath = f'{g.website_folderpath}/index.html'
+    html_filepath = f'{g.WEBSITE_FOLDERPATH}/index.html'
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)
