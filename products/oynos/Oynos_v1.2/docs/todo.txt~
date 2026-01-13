@@ -1,0 +1,77 @@
+========================================
+TODO: OYNOS V1.2
+========================================
+
+1. Creatre schermata per impostare "numero operazioni stimate" 
+2. Aggiungere "numero operazioni eseguite" nella schermata principale
+
+
+
+----------------------------------------
+1. Creatre schermata per impostare "numero operazioni stimate" 
+----------------------------------------
+
+Descrizione Generale:
+----------------------------------------
+In questa schermata, il responsabile imposta il numero di 
+operazioni che si stima debbano essere eseguite da un cliente.
+Lo scopo è quello di verificare se l'operatore ha eseguito
+il numero corretto di operazioni da un cliente.
+
+Note:
+----------------------------------------
+Per "operazione" si intende un ciclo completo di sanificazione.
+Per esempio, se si devono sanificare 5 botti contemporaneamente,
+questo conta come 1 operazione. 
+
+Esempio Utilizzo:
+----------------------------------------
+1. Il responsabile imposta il numero di operazioni da eseguire 
+a un cliente. Il numero di operazioni viene calcolato come segue:
+NUMERO_BOTTI_TOTALE / NUMERO_BOTTI_SANIFICATE_CONTEMPORNEAMENTE
+2. L'operatore sanifica tutte le botti del cliente.
+3. Il responsabile verifica che il numero di operazioni effettuate
+dall'operatore coincida con quello impostato al punto 1. Il numero
+di operazioni effettuate dall'operatore viene registrato dal
+generatore di ozono e visualizzato nella pagina principale del
+touchscreen.
+4. Ripeti dal punto 1 al punto 3 per il prossimo cliente.
+
+
+
+----------------------------------------
+2. Aggiungere "numero operazioni eseguite" nella schermata principale
+----------------------------------------
+
+Descrizione Generale:
+----------------------------------------
+Nella scherma principale, il responsabile può vedere sia il numero
+di operazioni eseguite dall'operatore, sia il numero di operazioni
+stimate da eseguire. Il formato è il seguente:
+NUMERO_OPERAZIONI_ESEGUITE / NUMERO_OPERAZIONI_STIMATE
+
+Esempio Utilizzo:
+----------------------------------------
+1. Nella schermata principale, controllare se il numero totale di operazioni
+eseguite dal cliente corrisponde a quello impostate prima del trattamento.
+
+
+
+----------------------------------------
+3. Aggiungere passwords diverse in base ai livelli di accesso
+----------------------------------------
+
+Descrizione Generale:
+----------------------------------------
+Attualmente, le tutte le impostazioni sono accessibili se si inserisce 
+una password. Ora si vuole dividere queste impostazioni in gruppi e 
+fare in modo di usare password diverse per accedere a queste impostazioni.
+Per esempio, il responsabile avrà una password per accedere alle impostazioni
+più critiche, mentre l'operatore avra un'altra password per accedere
+ad impostazioni meno critiche.
+
+Esempio Utilizzo:
+----------------------------------------
+1. Entrare nella schermata di inserimento password.
+2. Inserire la propria password per accedere alle proprie impostazioni di
+competenza.
