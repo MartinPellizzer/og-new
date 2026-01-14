@@ -6,35 +6,6 @@ from data import settori_data
 def gen():
     section_py = '8rem'
     opacity = 0.66
-    hero_old = f'''
-        <section style="
-                background: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('/immagini/home/generatore-ozono-industriale-impianto.jpg');
-                background-size: cover;
-                background-position: center;
-                padding-top: 8rem;
-                padding-bottom: 8rem;
-        ">
-            <div class="container-xl" style="display: flex;">
-                <div style="flex: 3;">
-                    <h1 style="color: #ffffff; font-size: 4rem; line-height: 1; font-weight: bold; text-align: left; margin-bottom: 1rem;">
-                        Produciamo generatori di ozono industriali ad alta efficienza
-                    </h1>
-                    <p style="color: #ffffff; font-size: 1.25rem; line-height: 1.4; text-align: left; margin-bottom: 2rem;">
-                      <strong>I generatori di ozono industriali</strong> sono sistemi progettati e prodotti internamente
-                      per il trattamento delle acque e la sanitizzazione industriale,
-                      garantendo controllo preciso dell’ozono, affidabilità operativa
-                      e conformità alle normative di sicurezza.
-                    </p>
-                    <a class="button-square-default-accent"> 
-                        <span>Prenota Consulenza Gratuita</span>
-                    </a>
-                </div>
-                <div style="flex: 2;">
-                </div>
-            </div>
-        </section>      
-    '''
-
     hero_1 = f'''
         <section style="
                 background: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('/immagini/home/generatore-ozono-industriale-impianto.jpg');
@@ -48,7 +19,7 @@ def gen():
                         Generatori di ozono industriali per la sanificazione efficace di impianti e ambienti
                     </h1>
                     <p style="color: #ffffff; font-size: 1.25rem; line-height: 1.4; text-align: left; margin-bottom: 2rem;">
-                      Ozonogroup progetta e produce sistemi a ozono per la sanificazione industriale, garantendo sicurezza, efficienza e conformità alle normative.conformità alle normative di sicurezza.
+                      Ozonogroup progetta e produce sistemi a ozono per la sanificazione industriale, garantendo sicurezza, efficienza e conformità alle normative di sicurezza.
                     </p>
                     <a class="button-square-default-accent"> 
                         <span>Richiedi una consulenza gratuita</span>
@@ -94,81 +65,109 @@ def gen():
                 <h2 style="margin-bottom: 1rem;">
                     Applicazioni industriali dei nostri sistemi
                 </h2>
-                <p style="margin-bttom: 3rem;">
-I sistemi a ozono industriali di Ozonogroup trovano applicazione in molteplici settori, garantendo sanificazione efficace, sicurezza e piena conformità alle normative. Scopri come le nostre soluzioni possono supportare il tuo settore industriale, riducendo rischi di contaminazione e migliorando l’igiene degli impianti.
-                </p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <div style="flex: 2;">
+                        <p style="margin-bttom: 3rem;">
+        I sistemi a ozono industriali di Ozonogroup trovano applicazione in molteplici settori, garantendo sanificazione efficace, sicurezza e piena conformità alle normative. Scopri come le nostre soluzioni possono supportare il tuo settore industriale, riducendo rischi di contaminazione e migliorando l’igiene degli impianti.
+                        </p>
+                    </div>
+                    <div style="flex: 1; display: flex; justify-content: end;">
+                        <div style="display: inline-block;">
+                            <a class="button-default-1" href="/settori.html">
+                                <span>Vedi Settori</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>                
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 <div class="grid-4" style="padding-top: 3rem; row-gap: 3rem;">
                     <div>
-                        <h3 style="margin-bottom: 1rem;">
-                            Alimentare
-                        </h3>
-                        <img src="/immagini/home/alimentare.jpg" style="margin-bottom: 1rem;">
-                        <p>
-                            Sanificazione industriale alimentare con generatori di ozono. Igiene completa, sicurezza HACCP e protezione di linee produttive e impianti.
-                        </p>
+                        <a href="/settori/alimentare.html" style="text-decoration: none;">
+                            <h3 style="margin-bottom: 1rem;">
+                                Alimentare
+                            </h3>
+                            <img src="/immagini/home/alimentare.jpg" style="margin-bottom: 1rem;">
+                            <p>
+                                Sanificazione industriale alimentare con generatori di ozono. Igiene completa, sicurezza HACCP e protezione di linee produttive e impianti.
+                            </p>
+                        </a>
                     </div>
                     <div>
-                        <h3 style="margin-bottom: 1rem;">
-                            Farmaceutico
-                        </h3>
-                        <img src="/immagini/home/farmaceutico.jpg" style="margin-bottom: 1rem;">
-                        <p>
-                            Ozono industriale per impianti farmaceutici. Controllo contaminazioni, igiene rigorosa e piena conformità agli standard GMP.
-                        </p>
+                        <a href="/settori/farmaceutico.html" style="text-decoration: none;">
+                            <h3 style="margin-bottom: 1rem;">
+                                Farmaceutico
+                            </h3>
+                            <img src="/immagini/home/farmaceutico.jpg" style="margin-bottom: 1rem;">
+                            <p>
+                                Ozono industriale per impianti farmaceutici. Controllo contaminazioni, igiene rigorosa e piena conformità agli standard GMP.
+                            </p>
+                        </a>
                     </div>
                     <div>
-                        <h3 style="margin-bottom: 1rem;">
-                            Confezionamento
-                        </h3>
-                        <img src="/immagini/home/packaging.jpg" style="margin-bottom: 1rem;">
-                        <p>
-                            Generatori di ozono per linee di packaging industriale. Igiene e sicurezza in ogni fase della produzione e del confezionamento.
-                        </p>
+                        <a href="/settori/confezionamento.html" style="text-decoration: none;">
+                            <h3 style="margin-bottom: 1rem;">
+                                Confezionamento
+                            </h3>
+                            <img src="/immagini/home/packaging.jpg" style="margin-bottom: 1rem;">
+                            <p>
+                                Generatori di ozono per linee di packaging industriale. Igiene e sicurezza in ogni fase della produzione e del confezionamento.
+                            </p>
+                        </a>
                     </div>
                     <div>
-                        <h3 style="margin-bottom: 1rem;">
-                            Trasporti
-                        </h3>
-                        <img src="/immagini/home/trasporti.jpg" style="margin-bottom: 1rem;">
-                        <p>
-                            Sanificazione industriale di magazzini e centri logistici. Protezione della merce e riduzione contaminazioni senza fermare le operazioni.
-                        </p>
+                        <a href="/settori/trasporto.html" style="text-decoration: none;">
+                            <h3 style="margin-bottom: 1rem;">
+                                Trasporto
+                            </h3>
+                            <img src="/immagini/home/trasporti.jpg" style="margin-bottom: 1rem;">
+                            <p>
+                                Sanificazione industriale di magazzini e centri logistici. Protezione della merce e riduzione contaminazioni senza fermare le operazioni.
+                            </p>
+                        </a>
                     </div>
                     <div>
-                        <h3 style="margin-bottom: 1rem;">
-                            Cosmetico
-                        </h3>
-                        <img src="/immagini/home/cosmetico.jpg" style="margin-bottom: 1rem;">
-                        <p>
-                            Ozono industriale per impianti cosmetici. Controllo contaminazioni e igiene completa durante la produzione e lo stoccaggio.
-                        </p>
+                        <a href="/settori/cosmetico.html" style="text-decoration: none;">
+                            <h3 style="margin-bottom: 1rem;">
+                                Cosmetico
+                            </h3>
+                            <img src="/immagini/home/cosmetico.jpg" style="margin-bottom: 1rem;">
+                            <p>
+                                Ozono industriale per impianti cosmetici. Controllo contaminazioni e igiene completa durante la produzione e lo stoccaggio.
+                            </p>
+                        </a>
                     </div>
                     <div>
-                        <h3 style="margin-bottom: 1rem;">
-                            Chimico
-                        </h3>
-                        <img src="/immagini/home/chimico.jpg" style="margin-bottom: 1rem;">
-                        <p>
-                            Sanificazione industriale in impianti chimici. Riduzione di contaminazioni e protezione dei macchinari e dell’ambiente di lavoro.
-                        </p>
+                        <a href="/settori/chimico.html" style="text-decoration: none;">
+                            <h3 style="margin-bottom: 1rem;">
+                                Chimico
+                            </h3>
+                            <img src="/immagini/home/chimico.jpg" style="margin-bottom: 1rem;">
+                            <p>
+                                Sanificazione industriale in impianti chimici. Riduzione di contaminazioni e protezione dei macchinari e dell’ambiente di lavoro.
+                            </p>
+                        </a>
                     </div>
                     <div>
-                        <h3 style="margin-bottom: 1rem;">
-                            Agricolo
-                        </h3>
-                        <img src="/immagini/home/agricolo.jpg" style="margin-bottom: 1rem;">
-                        <p>
-                            Sanificazione di impianti agroindustriali e serre. Protezione da muffe, batteri e contaminazioni biologiche durante la produzione.
-                        </p>
+                        <a href="/settori/agricolo.html" style="text-decoration: none;">
+                            <h3 style="margin-bottom: 1rem;">
+                                Agricolo
+                            </h3>
+                            <img src="/immagini/home/agricolo.jpg" style="margin-bottom: 1rem;">
+                            <p>
+                                Sanificazione di impianti agroindustriali e serre. Protezione da muffe, batteri e contaminazioni biologiche durante la produzione.
+                            </p>
+                        </a>
                     </div>
                     <div>
-                        <h3 style="margin-bottom: 1rem;">
-                            Tessile
-                        </h3>
-                        <img src="/immagini/home/tessile.jpg" style="margin-bottom: 1rem;">
-                        <p>
-                            Ozono industriale per linee tessili. Sanificazione di macchinari e ambienti, riducendo contaminazioni e odori durante la produzione.
-                        </p>
+                        <a href="/settori/tessile.html" style="text-decoration: none;">
+                            <h3 style="margin-bottom: 1rem;">
+                                Tessile
+                            </h3>
+                            <img src="/immagini/home/tessile.jpg" style="margin-bottom: 1rem;">
+                            <p>
+                                Ozono industriale per linee tessili. Sanificazione di macchinari e ambienti, riducendo contaminazioni e odori durante la produzione.
+                            </p>
+                        </a>
                     </div>
                 </div>
             </div>

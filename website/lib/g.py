@@ -1,3 +1,7 @@
+
+DATABASE_FOLDERPATH = r'C:\ozonogroup'
+DATABASE_FOLDERPATH = r'/home/ubuntu/proj/og-new/website/database'
+
 WEBSITE_FOLDERPATH = r'C:\ozonogroup'
 WEBSITE_FOLDERPATH = r'/home/ubuntu/vault/ozonogroup'
 
