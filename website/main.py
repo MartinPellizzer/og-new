@@ -5,8 +5,9 @@ from lib import g
 
 shutil.copy2(f'style.css', f'{g.WEBSITE_FOLDERPATH}/style.css')
 
-from hub import settori_hub
-settori_hub.gen()
+if 1:
+    from hub import settori_hub
+    settori_hub.gen()
 
 from hub import home_hub
 home_hub.gen()

@@ -3,7 +3,7 @@ import shutil
 
 from lib import g
 from lib import io
-from lib import llm
+# from lib import llm
 from lib import components
 
 from data import settori_data
@@ -278,6 +278,134 @@ def settori_settore_gen(settore, side_level_sectors=None):
     html_filepath = f'{g.WEBSITE_FOLDERPATH}/settori/{settore}.html'
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)
 
+def sectors_sector_subsector_gen(item):
+    sector_name = item['sector_name']
+    subsector_name = item['subsector_name']
+    sector_slug = sector_name.lower().strip().replace(' ', '-')
+    subsector_slug = subsector_name.lower().strip().replace(' ', '-')
+    ###
+    html = f'''
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="/style.css">
+        </head>
+        <body>
+            {components.header_light()}
+            <main>
+            </main>
+            {components.footer_dark()}
+        </body>
+        </html>
+    '''
+    html_filepath = f'{g.WEBSITE_FOLDERPATH}/settori/{sector_slug}/{subsector_slug}.html'
+    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)
+
+def sectors_sector_gen(item):
+    sector_name = item['name']
+    sector_slug = sector_name.lower().strip().replace(' ', '-')
+    ###
+    subsectors_cards_html = ''
+    subsectors = item['subsectors']
+    for subsector in subsectors:
+        subsector_name = subsector['name']
+        subsector_image_src = subsector['image_src']
+        subsector_slug = subsector_name.lower().strip().replace(' ', '-')
+        subsector_href = f'/settori/{sector_slug}/{subsector_slug}.html'
+        subsectors_cards_html += f'''
+            <div>
+                <img src="{subsector_image_src}">
+                <a href="{subsector_href}">{subsector_name}</a>
+            </div>
+        '''
+    ###
+    subsectors_html = f'''
+        <div class="container-lg">
+            <div class="grid-3" style="padding-top: 3rem; row-gap: 3rem;">
+                {subsectors_cards_html}
+            </div>
+        </div>
+    '''
+    ###
+    html = f'''
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="/style.css">
+        </head>
+        <body>
+            {components.header_light()}
+            <main>
+                {subsectors_html}
+            </main>
+            {components.footer_dark()}
+        </body>
+        </html>
+    '''
+    html_filepath = f'{g.WEBSITE_FOLDERPATH}/settori/{sector_slug}.html'
+    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)
+
+def sectors_gen(item):    
+    sectors_cards_html = ''
+    sectors = item
+    for sector in sectors:
+        sector_name = sector['name']
+        sector_image_src = sector['image_src']
+        sector_slug = sector_name.lower().strip().replace(' ', '-')
+        sector_href = f'/settori/{sector_slug}.html'
+        '''
+        <div>
+                <a href="{sector_href}" style="display: block;">
+                    <img src="{sector_image_src}">
+                    <h2>{sector_name}</h2>
+                </a>
+            </div>
+            '''
+        sectors_cards_html += f'''
+            <div>
+                <a href="/settori/alimentare.html" style="text-decoration: none;">
+                    <img src="{sector_image_src}" style="margin-bottom: 1rem;">
+                    <h3 style="margin-bottom: 1rem;">
+                        {sector_name}
+                    </h3>
+                </a>
+            </div>
+        '''
+    ###
+    sectors_html = f'''
+        <section style="padding-top: 6rem;">
+            <div class="container-xl">
+                <div class="grid-4" style="padding-top: 3rem; row-gap: 3rem;">
+                    {sectors_cards_html}
+                </div>
+            </div>
+        </section>
+    '''
+    print(sectors_html)
+    ###
+    html = f'''
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="/style.css">
+        </head>
+        <body>
+            {components.header_light()}
+            <main>
+                {sectors_html}
+            </main>
+            {components.footer_dark()}
+        </body>
+        </html>
+    '''
+    html_filepath = f'{g.WEBSITE_FOLDERPATH}/settori.html'
+    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)
 
 
 def gen():
@@ -285,11 +413,33 @@ def gen():
     # settori_alimentare_carni_gen()
     # settori_alimentare_ortofrutta_gen()
     # settori_alimentare_gen()
-    sector_rows = io.csv_read(f'{g.DATABASE_FOLDERPATH}/settori.csv')
+    # sector_rows = io.csv_read(f'{g.DATABASE_FOLDERPATH}/settori.csv')
+
+    sectors = io.json_read(f'{g.SSOT_FOLDERPATH}/sectors.json')
+    for sector in sectors:
+        sector_name = sector['name']
+        subsectors = sector['subsectors']
+        for subsector in subsectors:
+            subsector_name = subsector['name']
+            item = {
+                'sector_name': sector_name,
+                'subsector_name': subsector_name,
+            }
+            sectors_sector_subsector_gen(item)
+        item = sector
+        sectors_sector_gen(item)
+    item = sectors
+    sectors_gen(item)
+
+    quit()
+
+    '''
     for sector_row in sector_rows:
         sector_name = sector_row[0]
         settori_settore_gen(sector_name, ['confezionamento', 'trasporti', 'agricolo'])
+        sectors_sector_subsector_gen(subsector_name, ['confezionamento', 'trasporti', 'agricolo'])
     quit()
+    '''
     
 
     '''

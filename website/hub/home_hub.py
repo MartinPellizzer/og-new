@@ -108,7 +108,7 @@ def gen():
                             <h3 style="margin-bottom: 1rem;">
                                 Confezionamento
                             </h3>
-                            <img src="/immagini/home/packaging.jpg" style="margin-bottom: 1rem;">
+                            <img src="/immagini/home/confezionamento.jpg" style="margin-bottom: 1rem;">
                             <p>
                                 Generatori di ozono per linee di packaging industriale. Igiene e sicurezza in ogni fase della produzione e del confezionamento.
                             </p>

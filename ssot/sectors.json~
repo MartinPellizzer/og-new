@@ -1,0 +1,63 @@
+[
+	{
+		"name": "alimentare",
+		"image_src": "/immagini/home/alimentare.jpg",
+		"subsectors": 
+		[
+			{
+				"name": "lattiero caseario",
+				"image_src": "/immagini/settori-industria-alimentare-lattiero-caseario.jpg"
+			},
+			{
+				"name": "carni",
+				"image_src": "/immagini/settori-industria-alimentare-carni.jpg"
+			},
+			{
+				"name": "ortofrutta",
+				"image_src": "/immagini/settori-industria-alimentare-ortofrutta.jpg"
+			}
+		]
+	},
+	{
+		"name": "agricolo",
+		"image_src": "/immagini/home/agricolo.jpg",
+		"subsectors": 
+		[]
+	},
+	{
+		"name": "confezionamento",
+		"image_src": "/immagini/home/confezionamento.jpg",
+		"subsectors": 
+		[]
+	},
+	{
+		"name": "trasporto",
+		"image_src": "/immagini/home/trasporto.jpg",
+		"subsectors": 
+		[]
+	},
+	{
+		"name": "farmaceutico",
+		"image_src": "/immagini/home/farmaceutico.jpg",
+		"subsectors": 
+		[]
+	},
+	{
+		"name": "cosmetico",
+		"image_src": "/immagini/home/cosmetico.jpg",
+		"subsectors": 
+		[]
+	},
+	{
+		"name": "chimico",
+		"image_src": "/immagini/home/chimico.jpg",
+		"subsectors": 
+		[]
+	},
+	{
+		"name": "tessile",
+		"image_src": "/immagini/home/tessile.jpg",
+		"subsectors": 
+		[]
+	}
+]
