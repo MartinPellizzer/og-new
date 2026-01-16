@@ -1,0 +1,304 @@
+
+
+void vi_on()
+{
+  if (cycle.state_vi_ncno_cur == 0) cycle.state_vi_cur = 1;
+  else cycle.state_vi_cur = 0;
+  digitalWrite(RO_VI, cycle.state_vi_cur);
+}
+
+void vi_off()
+{
+  if (cycle.state_vi_ncno_cur == 0) cycle.state_vi_cur = 0;
+  else cycle.state_vi_cur = 1;
+  digitalWrite(RO_VI, cycle.state_vi_cur);
+}
+
+void vo_on()
+{
+  if (cycle.state_vo_ncno_cur == 0) cycle.state_vo_cur = 1;
+  else cycle.state_vo_cur = 0;
+  digitalWrite(RO_VO, cycle.state_vo_cur);
+}
+
+void vo_off()
+{
+  if (cycle.state_vo_ncno_cur == 0) cycle.state_vo_cur = 0;
+  else cycle.state_vo_cur = 1;
+  digitalWrite(RO_VO, cycle.state_vo_cur);
+}
+
+void vb_on()
+{
+  if (cycle.state_vb_ncno_cur == 0) cycle.state_vb_cur = 1;
+  else cycle.state_vb_cur = 0;
+  digitalWrite(RO_VB, cycle.state_vb_cur);
+}
+
+void vb_off()
+{
+  if (cycle.state_vb_ncno_cur == 0) cycle.state_vb_cur = 0;
+  else cycle.state_vb_cur = 1;
+  digitalWrite(RO_VB, cycle.state_vb_cur);
+}
+
+void pb_on()
+{
+  if (cycle.state_pb_ncno_cur == 0) cycle.state_pb_cur = 1;
+  else cycle.state_pb_cur = 0;
+  digitalWrite(RO_PB, cycle.state_pb_cur);
+}
+
+void pb_off()
+{
+  if (cycle.state_pb_ncno_cur == 0) cycle.state_pb_cur = 0;
+  else cycle.state_pb_cur = 1;
+  digitalWrite(RO_PB, cycle.state_pb_cur);
+}
+
+void pn_on()
+{
+  if (cycle.state_pn_ncno_cur == 0) cycle.state_pn_cur = 1;
+  else cycle.state_pn_cur = 0;
+  digitalWrite(RO_PN, cycle.state_pn_cur);
+}
+
+void pn_off()
+{
+  if (cycle.state_pn_ncno_cur == 0) cycle.state_pn_cur = 0;
+  else cycle.state_pn_cur = 1;
+  digitalWrite(RO_PN, cycle.state_pn_cur);
+}
+
+void o2_on()
+{
+  if (cycle.state_o2_ncno_cur == 0) cycle.state_o2_cur = 1;
+  else cycle.state_o2_cur = 0;
+  digitalWrite(RO_O2, cycle.state_o2_cur);
+}
+
+void o2_off()
+{
+  if (cycle.state_o2_ncno_cur == 0) cycle.state_o2_cur = 0;
+  else cycle.state_o2_cur = 1;
+  digitalWrite(RO_O2, cycle.state_o2_cur);
+}
+
+void o3_on()
+{
+  if (cycle.state_o3_ncno_cur == 0) cycle.state_o3_cur = 1;
+  else cycle.state_o3_cur = 0;
+  digitalWrite(RO_O3, cycle.state_o3_cur);
+}
+
+void o3_off()
+{
+  if (cycle.state_o3_ncno_cur == 0) cycle.state_o3_cur = 0;
+  else cycle.state_o3_cur = 1;
+  digitalWrite(RO_O3, cycle.state_o3_cur);
+}
+
+void so_on()
+{
+  if (cycle.state_so_ncno_cur == 0) cycle.state_so_cur = 1;
+  else cycle.state_so_cur = 0;
+  digitalWrite(RO_SO, cycle.state_so_cur);
+}
+
+void so_off()
+{
+  if (cycle.state_so_ncno_cur == 0) cycle.state_so_cur = 0;
+  else cycle.state_so_cur = 1;
+  digitalWrite(RO_SO, cycle.state_so_cur);
+}
+
+// cycle.state_cur: 0 -> splashing nanobubble water (before producing ozone)
+// cycle.state_cur: 1 -> splashing nanobubble water with ozone
+// cycle.state_cur: 2 -> nanobubble water bypass
+// cycle.state_cur: 3 -> stop after bypass timeout
+
+void cycle_mode_pressostato()
+{
+  if (cycle.state_cur == 0)
+  {  
+    // pressure down
+    if (cycle.pressure_switch_state_cur == 0)
+    {
+      vi_on();
+      vo_on();
+      vb_off();
+      pb_on();
+      pn_on();
+      o2_off();
+      o3_off();
+      so_off();
+      
+      if (millis() - cycle.ozone_millis_cur > cycle.ozone_timer_cur) 
+      {
+        // Serial.println("here");
+        cycle.state_cur = 1;
+      }
+    }
+    // pressure up
+    else
+    {
+      vi_off();
+      vo_off();
+      vb_on();
+      pb_on();
+      pn_on();
+      o2_off();
+      o3_off();
+      so_off();
+      
+      cycle.bypass_millis_cur = millis();
+      cycle.state_cur = 2;
+    }
+  }
+  else if (cycle.state_cur == 1)
+  {  
+    // pressure down
+    if (cycle.pressure_switch_state_cur == 0)
+    {
+      vi_on();
+      vo_on();
+      vb_off();
+      pb_on();
+      pn_on();
+      o2_on();
+      o3_on();
+      so_on();
+    }
+    // pressure up
+    else
+    {
+      vi_off();
+      vo_off();
+      vb_on();
+      pb_on();
+      pn_on();
+      o2_off();
+      o3_off();
+      so_off();
+      
+      cycle.bypass_millis_cur = millis();
+      cycle.state_cur = 2;
+    }
+  }
+  else if (cycle.state_cur == 2) // nanobubble water bypass
+  {
+    // pressure down
+    if (cycle.pressure_switch_state_cur == 0)
+    {
+      vi_on();
+      vo_on();
+      vb_off();
+      pb_on();
+      pn_on();
+      o2_off();
+      o3_off();
+      so_off();
+      
+      cycle.ozone_millis_cur = millis();
+      cycle.state_cur = 0;
+    }
+    // pressure up
+    else
+    {
+      vi_off();
+      vo_off();
+      vb_on();
+      pb_on();
+      pn_on();
+      o2_off();
+      o3_off();
+      so_off();
+      
+      if (millis() - cycle.bypass_millis_cur > cycle.bypass_timer_cur) 
+      {
+        cycle.state_cur = 3;
+      }
+    }
+  }
+  else if (cycle.state_cur == 3)
+  {
+    // pressure down
+    if (cycle.pressure_switch_state_cur == 0)
+    {
+        cycle.ozone_millis_cur = millis();
+        cycle.state_cur = 0;
+    }
+    // pressure up
+    else
+    {
+      vi_on();
+      vo_on();
+      vb_off();
+      pb_off();
+      pn_off();
+      o2_off();
+      o3_off();
+      so_off();
+    }
+  }
+  else
+  {
+    Serial.println("INVALID STATE");
+  }
+  
+  if (millis() - debug_millis_cur > 1000) 
+  {
+    debug_millis_cur = millis();
+    Serial.print("state_cur: ");
+    Serial.println(cycle.state_cur);
+    // Serial.print("pressure_switch_state_cur: ");
+    // Serial.println(cycle.pressure_switch_state_cur);
+    // Serial.print("ozone_millis_cur: ");
+    // Serial.println(cycle.ozone_millis_cur);
+    // Serial.print("ozone_timer_cur: ");
+    // Serial.println(cycle.ozone_timer_cur);
+    // Serial.print("ozone_timeout: ");
+    // Serial.println(millis() - cycle.ozone_millis_cur);
+    // if (millis() - cycle.ozone_millis_cur > cycle.ozone_timer_cur) 
+    // {
+    //   Serial.println("here");
+    // }
+  }
+}
+
+void cycle_mode_manual()
+{
+  digitalWrite(RO_VI, cycle.state_vi_cur);
+  digitalWrite(RO_VO, cycle.state_vo_cur);
+  digitalWrite(RO_VB, cycle.state_vb_cur);
+  digitalWrite(RO_PB, cycle.state_pb_cur);
+  digitalWrite(RO_PN, cycle.state_pn_cur);
+  digitalWrite(RO_O2, cycle.state_o2_cur);
+  digitalWrite(RO_O3, cycle.state_o3_cur);
+  digitalWrite(RO_SO, cycle.state_so_cur);
+}
+
+void cycle_off()
+{
+  vi_off();
+  vo_off();
+  vb_off();
+  pb_off();
+  pn_off();
+  o2_off();
+  o3_off();
+  so_off();
+}
+
+void cycle_manager()
+{
+  if (cycle.state_onoff_cur == 1)
+  {
+    if (cycle.mode_cur == 0) cycle_mode_manual();
+    else if (cycle.mode_cur == 1) cycle_mode_pressostato();
+  }
+  else
+  {
+    cycle_off();
+  }
+}
