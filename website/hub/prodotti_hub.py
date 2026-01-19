@@ -1,5 +1,10 @@
+import os
+
 from lib import g
+from lib import io
 from lib import components
+
+products_data = io.csv_to_dict(f'{g.SSOT_FOLDERPATH}/products/data.csv', delimiter=',')
 
 def cta():
     html = f'''
@@ -35,7 +40,7 @@ def cta():
     '''
     return html
 
-def gen():
+def products_gen():
     section_hero_py = '5rem'
     section_py = '8rem'
     
@@ -260,6 +265,214 @@ def gen():
         <div style="background-color: #ededed; height: 1px;"></div>  
     '''
 
+
+
+    ########################################
+    # NEW html
+    ########################################
+    prodotti_tutti_data = [
+        {
+            'image_url': f'''/immagini/ozonogroup-ozonizzatore-mini.png''',
+            'title': f'''Mini''',
+            'description': f'''Generatore compatto e disponibile in diversi modelli, progettato per purificare l'aria in ambienti di dimensioni contenute.''',
+            'link_href': f'''/documenti/mini-o3-scheda-tecnica.pdf''',
+            'link_anchor': f'''Scheda Tecnica''',
+            'type': f'''Aria'''.title(),
+            'price': f'''€2,700''',
+        },
+        {
+            'image_url': f'''/immagini/ozonogroup-ozonizzatore-nymphea.png''',
+            'title': f'''Nymphea''',
+            'description': f'''Generatore pratico e funzionale, progettato specificamente per il trattamento dell'acqua in contesti domestici e di piccola scala.''',
+            'link_href': f'''/documenti/nymphaea-h2o-scheda-tecnica.pdf''',
+            'link_anchor': f'''Scheda Tecnica''',
+            'type': f'''Acqua'''.title(),
+            'price': f'''€1,600''',
+        },
+        {
+            'image_url': f'''/immagini/ozonogroup-ozonizzatore-bigpower.png''',
+            'title': f'''Bigpower''',
+            'description': f'''Generatore di media potenza è disponibile in più configurazioni e garantisce un'efficace sanificazione dell'aria.''',
+            'link_href': f'''/documenti/big-power-iv-scheda-tecnica.pdf''',
+            'link_anchor': f'''Scheda Tecnica''',
+            'type': f'''Aria'''.title(),
+            'price': f'''€2,700''',
+        },
+        {
+            'image_url': f'''/immagini/ozonogroup-ozonizzatore-lympha.png''',
+            'title': f'''Lympha''',
+            'description': f'''Generatore di media potenza progettato per il trattamento dell'acqua in sistemi di media grandezza.''',
+            'link_href': f'''/documenti/lympha-h2o-scheda-tecnica.pdf''',
+            'link_anchor': f'''Scheda Tecnica''',
+            'type': f'''Acqua'''.title(),
+            'price': f'''€2,700''',
+        },
+        {
+            'image_url': f'''/immagini/ozonogroup-ozonizzatore-greenozone.png''',
+            'title': f'''Greenozone''',
+            'description': f'''Generatore ad alta capacità progettato per trattare grandi volumi d'aria in ambienti industriali.''',
+            'link_href': f'''/documenti/greenozone-scheda-tecnica.pdf''',
+            'link_anchor': f'''Scheda Tecnica''',
+            'type': f'''Aria'''.title(),
+            'price': f'''€2,700''',
+        },
+        {
+            'image_url': f'''/immagini/ozonogroup-ozonizzatore-hydor.png''',
+            'title': f'''Hydor''',
+            'description': f'''Generatore potente e altamente affidabile, specifico per il trattamento dell'acqua in impianti di grandi dimensioni.''',
+            'link_href': f'''/documenti/hydor-h2o-scheda-tecnica.pdf''',
+            'link_anchor': f'''Scheda Tecnica''',
+            'type': f'''Acqua'''.title(),
+            'price': f'''€2,700''',
+        },
+        {
+            'image_url': f'''/immagini/ozonogroup-ozonizzatore-delta.png''',
+            'title': f'''Delta''',
+            'description': f'''Generatore di ultima generazione, dotato di schermo touch per un controllo avanzato dei parametri.''',
+            'link_href': f'''/documenti/delta-scheda-tecnica.pdf''',
+            'link_anchor': f'''Scheda Tecnica''',
+            'type': f'''Aria'''.title(),
+            'price': f'''€2,700''',
+        },
+    ]
+    cards_html = ''
+    for item in products_data:
+        card_html = f'''
+            <div>
+                <div style="background-color: #f7f7f7; padding: 3rem; margin-bottom: 1rem;">
+                    <img src="/immagini/{item['immagine']}" style="height: 10rem; object-fit: contain;">
+                </div>
+                <p class="font-inter-regular" style="font-size: 0.675rem; color: #666666; line-height: 1; margin-bottom: 0.5rem;">{item['tipo'].upper()}</p>
+                <h2 class="font-inter-medium" style="font-size: 1rem; color: #222222; line-height: 1; margin-bottom: 0.5rem;">
+                    <a style="
+                            color: #222222; text-decoration: none;
+                        "
+                        href="/prodotti/{item['codice']}.html">{item['codice']}</a>
+                </h2>
+                <p class="font-inter-bold" style="font-size: 1.125rem; color: #222222; line-height: 1;">€{item['prezzo']}</p>
+            </div>
+        '''
+        cards_html += card_html
+    ###
+    categories_data = [
+        {
+            'category_name': 'piccole', 
+            'category_href': '/prodotti/generatori-dimensioni-piccole.html', 
+        },
+        {
+            'category_name': 'medie', 
+            'category_href': '/prodotti/generatori-dimensioni-medie.html', 
+        },
+        {
+            'category_name': 'grandi', 
+            'category_href': '/prodotti/generatori-dimensioni-grandi.html', 
+        },
+        {
+            'category_name': 'aria', 
+            'category_href': '/prodotti/generatori-aria.html', 
+        },
+        {
+            'category_name': 'acqua', 
+            'category_href': '/prodotti/generatori-acqua.html', 
+        },
+        {
+            'category_name': 'accessori', 
+            'category_href': '/prodotti/accessori.html', 
+        },
+    ]
+    categories_html = ''
+    for item in categories_data:
+        card_html = f'''
+            <a class="font-inter-medium" 
+                style="
+                display: block; 
+                font-size: 0.875rem; color: #666666; text-decoration: none; 
+                line-height: 1; margin-bottom: 0.875rem; 
+                padding-bottom: 0.875rem; border-bottom: 1px solid #e7e7e7;
+                padding-left: 1rem;
+                padding-rignt: 1rem;
+                "
+                href="{item['category_href']}">
+                > {item['category_name'].title()}
+            </a>
+        '''
+        categories_html += card_html
+        
+    products_popular_data = [
+        {
+            'image_url': f'''/immagini/ozonogroup-ozonizzatore-mini.png''',
+            'title': f'''Mini''',
+            'description': f'''Generatore compatto e disponibile in diversi modelli, progettato per purificare l'aria in ambienti di dimensioni contenute.''',
+            'link_href': f'''/documenti/mini-o3-scheda-tecnica.pdf''',
+            'link_anchor': f'''Scheda Tecnica''',
+            'type': f'''Aria'''.title(),
+            'price': f'''€2,700''',
+        },
+        {
+            'image_url': f'''/immagini/ozonogroup-ozonizzatore-bigpower.png''',
+            'title': f'''Bigpower''',
+            'description': f'''Generatore di media potenza è disponibile in più configurazioni e garantisce un'efficace sanificazione dell'aria.''',
+            'link_href': f'''/documenti/big-power-iv-scheda-tecnica.pdf''',
+            'link_anchor': f'''Scheda Tecnica''',
+            'type': f'''Aria'''.title(),
+            'price': f'''€2,700''',
+        },
+        {
+            'image_url': f'''/immagini/ozonogroup-ozonizzatore-delta.png''',
+            'title': f'''Delta''',
+            'description': f'''Generatore di ultima generazione, dotato di schermo touch per un controllo avanzato dei parametri.''',
+            'link_href': f'''/documenti/delta-scheda-tecnica.pdf''',
+            'link_anchor': f'''Scheda Tecnica''',
+            'type': f'''Aria'''.title(),
+            'price': f'''€2,700''',
+        },
+    ]
+    popular_cards_html = ''
+    for item in products_popular_data:
+        popular_card_html = f'''
+            <div style="display: flex; gap: 1rem;">
+                <div style="flex: 2;">
+                    <div style="background-color: #f7f7f7; padding: 1rem; margin-bottom: 1rem;">
+                        <img src="{item['image_url']}" style="height: 4rem; object-fit: contain;">
+                    </div>
+                </div>
+                <div style="flex: 3;">
+                    <p class="font-inter-regular" style="font-size: 0.675rem; color: #666666; line-height: 1; margin-bottom: 0.5rem;">{item['type'].upper()}</p>
+                    <h2 class="font-inter-medium" style="font-size: 1rem; color: #222222; line-height: 1; margin-bottom: 0.5rem;">{item['title']}</h2>
+                    <p class="font-inter-bold" style="font-size: 0.875rem; color: #222222; line-height: 1;">{item['price']}</p>
+                </div>
+            </div>
+        '''
+        popular_cards_html += popular_card_html
+    sidebar_html = f'''
+        <h2 class="font-inter-medium" 
+            style="font-size: 0.875rem; color: #222222; line-height: 1; 
+            margin-bottom: 1.5rem;">
+            CATEGORIE
+        </h2>
+        {categories_html}
+        <h2 class="font-inter-medium" 
+            style="font-size: 0.875rem; color: #222222; line-height: 1; 
+            margin-bottom: 1.5rem; margin-top: 3rem;">
+            PRODOTTI POPOLARI
+        </h2>
+        {popular_cards_html}
+    '''
+    prodotti = f'''
+        <section class="container-xl" style="margin-top: 2rem;">
+            <div style="display: flex; gap: 2rem;">
+                <div style="flex: 1;">
+                {sidebar_html}
+                </div>
+                <div style="flex: 3;">
+                    <div class="grid-3" style="gap: 1.6rem;">
+                        {cards_html}
+                    </div>
+                </div>
+            </div>
+        </section>
+    '''
+
     ########################################
     # html
     ########################################
@@ -285,3 +498,37 @@ def gen():
     '''
     html_filepath = f'{g.website_folderpath}/prodotti.html'
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)
+
+def products_product_gen():
+    try: os.makedirs(f'{g.website_folderpath}/prodotti')
+    except: pass
+    for item in products_data:
+        image_url = item['immagine']
+        code = item['codice']
+        html_filepath = f'{g.website_folderpath}/prodotti/{code}.html'
+        ########################################
+        # html
+        ########################################
+        html = f'''
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="stylesheet" href="/style.css">
+            </head>
+            <body>
+                {components.header_light()}
+                <main>
+                </main>
+                {components.footer_dark()}
+            </body>
+            </html>
+        '''
+        with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
+            f.write(html)
+
+def gen():
+    # products_gen()
+    products_product_gen()
+    
