@@ -45,7 +45,7 @@ body {
     font-family: inter-regular, sans-serif;
     /* font-family: sans-serif; */
     color: #555555;
-    font-size: 1.125rem;
+    font-size: 1rem;
     line-height: 1.5;
 }
 
@@ -839,4 +839,89 @@ footer h2 {
     border: 1px solid #000;
     padding: 6px 8px;
     text-align: left;
+}
+
+
+
+
+
+/* TABS */
+
+.tabs {
+    max-width: 800px;
+    font-family: Arial, sans-serif;
+}
+
+/* Hide radios */
+.tabs input[type="radio"] {
+    display: none;
+}
+
+/* Tab labels */
+.tab-labels {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+}
+
+.tab-labels label {
+    padding: 12px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #888;
+    border-bottom: 2px solid transparent;
+}
+
+
+/* Content */
+.tab-content .content {
+    display: none;
+    padding: 20px 0;
+}
+
+/* Block 0 */
+#tabs0-a:checked~.tab-labels label[for="tabs0-a"],
+#tabs0-b:checked~.tab-labels label[for="tabs0-b"] {
+    color: #000;
+    border-bottom-color: #000;
+}
+
+#tabs0-a:checked~.tab-content .a,
+#tabs0-b:checked~.tab-content .b {
+    display: block;
+}
+
+/* Block 1 */
+#tabs1-a:checked~.tab-labels label[for="tabs1-a"],
+#tabs1-b:checked~.tab-labels label[for="tabs1-b"] {
+    color: #000;
+    border-bottom-color: #000;
+}
+
+#tabs1-a:checked~.tab-content .a,
+#tabs1-b:checked~.tab-content .b {
+    display: block;
+}
+
+/* Block 2 */
+#tabs2-a:checked~.tab-labels label[for="tabs2-a"],
+#tabs2-b:checked~.tab-labels label[for="tabs2-b"] {
+    color: #000;
+    border-bottom-color: #000;
+}
+
+#tabs2-a:checked~.tab-content .a,
+#tabs2-b:checked~.tab-content .b {
+    display: block;
+}
+
+/* Block 3 */
+#tabs3-a:checked~.tab-labels label[for="tabs3-a"],
+#tabs3-b:checked~.tab-labels label[for="tabs3-b"] {
+    color: #000;
+    border-bottom-color: #000;
+}
+
+#tabs3-a:checked~.tab-content .a,
+#tabs3-b:checked~.tab-content .b {
+    display: block;
 }
