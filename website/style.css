@@ -925,3 +925,51 @@ footer h2 {
 #tabs3-b:checked~.tab-content .b {
     display: block;
 }
+
+/* Block 4 */
+#tabs4-a:checked~.tab-labels label[for="tabs4-a"],
+#tabs4-b:checked~.tab-labels label[for="tabs4-b"] {
+    color: #000;
+    border-bottom-color: #000;
+}
+
+#tabs4-a:checked~.tab-content .a,
+#tabs4-b:checked~.tab-content .b {
+    display: block;
+}
+
+/* Block 5 */
+#tabs5-a:checked~.tab-labels label[for="tabs5-a"],
+#tabs5-b:checked~.tab-labels label[for="tabs5-b"] {
+    color: #000;
+    border-bottom-color: #000;
+}
+
+#tabs5-a:checked~.tab-content .a,
+#tabs5-b:checked~.tab-content .b {
+    display: block;
+}
+
+/* Block 6 */
+#tabs6-a:checked~.tab-labels label[for="tabs6-a"],
+#tabs6-b:checked~.tab-labels label[for="tabs6-b"] {
+    color: #000;
+    border-bottom-color: #000;
+}
+
+#tabs6-a:checked~.tab-content .a,
+#tabs6-b:checked~.tab-content .b {
+    display: block;
+}
+
+/* Block 7 */
+#tabs7-a:checked~.tab-labels label[for="tabs7-a"],
+#tabs7-b:checked~.tab-labels label[for="tabs7-b"] {
+    color: #000;
+    border-bottom-color: #000;
+}
+
+#tabs7-a:checked~.tab-content .a,
+#tabs7-b:checked~.tab-content .b {
+    display: block;
+}

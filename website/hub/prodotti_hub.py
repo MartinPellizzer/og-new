@@ -6,9 +6,10 @@ from lib import g
 from lib import io
 from lib import components
 
-products_data = io.csv_to_dict(f'{g.SSOT_FOLDERPATH}/products/data.csv', delimiter=',')
+# products_data = io.csv_to_dict(f'{g.SSOT_FOLDERPATH}/products/data.csv', delimiter=',')
+products_data = io.json_read(f'{g.SSOT_FOLDERPATH}/products/data.json')
 
-def group_products_by_name():
+def group_products_by_name_old():
     groups = []
     for item in products_data:
         found = False
@@ -20,6 +21,23 @@ def group_products_by_name():
         if not found:
             _item = {
                 'nome': item['nome'],
+                'data': [item],
+            }
+            groups.append(_item)
+    return groups
+
+def group_products_by_name():
+    groups = []
+    for item in products_data:
+        found = False
+        for group in groups:
+            if group['name'] == item['name']:
+                found = True
+                group['data'].append(item)
+                break
+        if not found:
+            _item = {
+                'name': item['name'],
                 'data': [item],
             }
             groups.append(_item)
@@ -364,8 +382,8 @@ def sidebar_gen():
             'category_href': '/prodotti/generatori-dimensioni-grandi.html', 
         },
         {
-            'category_name': 'aria', 
-            'category_href': '/prodotti/generatori-aria.html', 
+            'category_name': 'gas', 
+            'category_href': '/prodotti/generatori-gas.html', 
         },
         {
             'category_name': 'acqua', 
@@ -394,47 +412,108 @@ def sidebar_gen():
         '''
         categories_html += card_html
         
-    products_popular_data = [
-        {
-            'image_url': f'''/immagini/ozonogroup-ozonizzatore-mini.png''',
-            'title': f'''Mini''',
-            'description': f'''Generatore compatto e disponibile in diversi modelli, progettato per purificare l'aria in ambienti di dimensioni contenute.''',
-            'link_href': f'''/documenti/mini-o3-scheda-tecnica.pdf''',
-            'link_anchor': f'''Scheda Tecnica''',
-            'type': f'''Aria'''.title(),
-            'price': f'''€2,700''',
-        },
-        {
-            'image_url': f'''/immagini/ozonogroup-ozonizzatore-bigpower.png''',
-            'title': f'''Bigpower''',
-            'description': f'''Generatore di media potenza è disponibile in più configurazioni e garantisce un'efficace sanificazione dell'aria.''',
-            'link_href': f'''/documenti/big-power-iv-scheda-tecnica.pdf''',
-            'link_anchor': f'''Scheda Tecnica''',
-            'type': f'''Aria'''.title(),
-            'price': f'''€2,700''',
-        },
-        {
-            'image_url': f'''/immagini/ozonogroup-ozonizzatore-delta.png''',
-            'title': f'''Delta''',
-            'description': f'''Generatore di ultima generazione, dotato di schermo touch per un controllo avanzato dei parametri.''',
-            'link_href': f'''/documenti/delta-scheda-tecnica.pdf''',
-            'link_anchor': f'''Scheda Tecnica''',
-            'type': f'''Aria'''.title(),
-            'price': f'''€2,700''',
-        },
-    ]
+    product_1 = products_data[0]
+    product_2 = products_data[1]
+    product_3 = products_data[2]
+    products_popular_data = [product_1, product_2, product_3, ]
     popular_cards_html = ''
     for item in products_popular_data:
+        item = item['versions'][0]
         popular_card_html = f'''
             <div style="display: flex; gap: 1rem;">
                 <div style="flex: 2;">
                     <div style="background-color: #f7f7f7; padding: 1rem; margin-bottom: 1rem;">
-                        <img src="{item['image_url']}" style="height: 4rem; object-fit: contain;">
+                        <img src="/immagini/{item['image_filename']}" style="height: 4rem; object-fit: contain;">
                     </div>
                 </div>
                 <div style="flex: 3;">
-                    <p class="font-inter-regular" style="font-size: 0.675rem; color: #666666; line-height: 1; margin-bottom: 0.5rem;">{item['type'].upper()}</p>
-                    <h2 class="font-inter-medium" style="font-size: 1rem; color: #222222; line-height: 1; margin-bottom: 0.5rem;">{item['title']}</h2>
+                    <p class="font-inter-regular" style="font-size: 0.675rem; color: #666666; line-height: 1; margin-bottom: 0.5rem;">{item['output'].upper()}</p>
+                    <h2 class="font-inter-medium" style="font-size: 1rem; color: #222222; line-height: 1; margin-bottom: 0.5rem;">{item['name']}</h2>
+                    <p class="font-inter-bold" style="font-size: 0.875rem; color: #222222; line-height: 1;">{item['price']}</p>
+                </div>
+            </div>
+        '''
+        popular_cards_html += popular_card_html
+    sidebar_html = f'''
+        <h2 class="font-inter-medium" 
+            style="font-size: 0.875rem; color: #222222; line-height: 1; 
+            margin-bottom: 1.5rem;">
+            CATEGORIE
+        </h2>
+        {categories_html}
+        <h2 class="font-inter-medium" 
+            style="font-size: 0.875rem; color: #222222; line-height: 1; 
+            margin-bottom: 1.5rem; margin-top: 3rem;">
+            PRODOTTI POPOLARI
+        </h2>
+        {popular_cards_html}
+    '''
+    return sidebar_html
+
+def sidebar_gen_old():
+    categories_data = [
+        {
+            'category_name': 'piccole', 
+            'category_href': '/prodotti/generatori-dimensioni-piccole.html', 
+        },
+        {
+            'category_name': 'medie', 
+            'category_href': '/prodotti/generatori-dimensioni-medie.html', 
+        },
+        {
+            'category_name': 'grandi', 
+            'category_href': '/prodotti/generatori-dimensioni-grandi.html', 
+        },
+        {
+            'category_name': 'gas', 
+            'category_href': '/prodotti/generatori-gas.html', 
+        },
+        {
+            'category_name': 'acqua', 
+            'category_href': '/prodotti/generatori-acqua.html', 
+        },
+        {
+            'category_name': 'accessori', 
+            'category_href': '/prodotti/accessori.html', 
+        },
+    ]
+    categories_html = ''
+    for item in categories_data:
+        card_html = f'''
+            <a class="font-inter-medium" 
+                style="
+                display: block; 
+                font-size: 0.875rem; color: #666666; text-decoration: none; 
+                line-height: 1; margin-bottom: 0.875rem; 
+                padding-bottom: 0.875rem; border-bottom: 1px solid #e7e7e7;
+                padding-left: 1rem;
+                padding-rignt: 1rem;
+                "
+                href="{item['category_href']}">
+                > {item['category_name'].title()}
+            </a>
+        '''
+        categories_html += card_html
+        
+    groups = group_products_by_name()
+    group_1_data = groups[0]['data']
+    group_2_data = groups[1]['data']
+    group_3_data = groups[2]['data']
+    products_popular_data = [group_1_data, group_2_data, group_3_data, ]
+    popular_cards_html = ''
+    for item in products_popular_data:
+        item = item[0]
+        print(item)
+        popular_card_html = f'''
+            <div style="display: flex; gap: 1rem;">
+                <div style="flex: 2;">
+                    <div style="background-color: #f7f7f7; padding: 1rem; margin-bottom: 1rem;">
+                        <img src="/immagini/{item['image_filename']}" style="height: 4rem; object-fit: contain;">
+                    </div>
+                </div>
+                <div style="flex: 3;">
+                    <p class="font-inter-regular" style="font-size: 0.675rem; color: #666666; line-height: 1; margin-bottom: 0.5rem;">{item['output'].upper()}</p>
+                    <h2 class="font-inter-medium" style="font-size: 1rem; color: #222222; line-height: 1; margin-bottom: 0.5rem;">{item['name']}</h2>
                     <p class="font-inter-bold" style="font-size: 0.875rem; color: #222222; line-height: 1;">{item['price']}</p>
                 </div>
             </div>
@@ -494,27 +573,27 @@ def products_gen():
     # NEW html
     ########################################
     
-    ### group by nome
-    groups = group_products_by_name()
+    ### group by name
+    # groups = group_products_by_name()
 
     cards_html = ''
-    for group in groups:
-        product_name = group['nome']
+    for group in products_data:
+        product_name = group['name']
         product_slug = product_name.lower().strip().replace(' ', '-')
-        item = group['data'][0]
+        item = group['versions'][0]
         card_html = f'''
             <div>
                 <div style="background-color: #f7f7f7; padding: 3rem; margin-bottom: 1rem;">
-                    <img src="/immagini/{item['immagine']}" style="height: 10rem; object-fit: contain;">
+                    <img src="/immagini/{item['image_filename']}" style="height: 10rem; object-fit: contain;">
                 </div>
-                <p class="font-inter-regular" style="font-size: 0.675rem; color: #666666; line-height: 1; margin-bottom: 0.5rem;">{item['tipo'].upper()}</p>
+                <p class="font-inter-regular" style="font-size: 0.675rem; color: #666666; line-height: 1; margin-bottom: 0.5rem;">{item['output'].upper()}</p>
                 <h2 class="font-inter-medium" style="font-size: 1rem; color: #222222; line-height: 1; margin-bottom: 0.5rem;">
                     <a style="
                             color: #222222; text-decoration: none;
                         "
                         href="/prodotti/{product_slug}.html">{product_name}</a>
                 </h2>
-                <p class="font-inter-bold" style="font-size: 1.125rem; color: #222222; line-height: 1;">€{item['prezzo']}</p>
+                <p class="font-inter-bold" style="font-size: 1.125rem; color: #222222; line-height: 1;">€{item['price']}</p>
             </div>
         '''
         cards_html += card_html
@@ -565,16 +644,18 @@ def products_gen():
 def products_product_gen():
     try: os.makedirs(f'{g.website_folderpath}/prodotti')
     except: pass
-    ### group by nome
-    groups = group_products_by_name()
+    ### group by name
+    # groups = group_products_by_name()
 
-    for group in groups:
-        product_name = group['nome']
+    for product in products_data:
+        product_name = product['name']
         product_slug = product_name.lower().strip().replace(' ', '-')
         html_filepath = f'{g.website_folderpath}/prodotti/{product_slug}.html'
-        item = group['data'][0]
-        models_num = len(group['data'])
-        product_versions = [item['versione'] for item in group['data']]
+        item = product['versions'][0]
+        models_num = len(product['versions'])
+        product_description = product['description']
+        ###
+        product_versions = [item['version'] for item in product['versions']]
         product_versions_html = ''
         for product_version in product_versions:
             _html = f'''
@@ -594,15 +675,23 @@ def products_product_gen():
                     # border-radius: 16px;
         ###
         versions_details_html = ''
-        for item_i, item in enumerate(group['data']):
-            product_desc = lorem.paragraph()
+        for item_i, item in enumerate(product['versions']):
+            # product_desc = lorem.paragraph()
+            product_desc = item['description']
+            product_code = item['code']
+            product_producion_nominal = item['production_nominal']
+            product_weight = item['weight'].replace('.', ',')
+            product_size = item['size']
+            product_voltage = item['voltage']
+            product_frequency = item['frequency']
+            product_power = item['power']
             version_details_html = f'''
                 <div style="margin-top: 2rem;">
                     <h2 class="font-inter-bold" 
                         style="color: #222222; font-size: 1.25rem; 
                         line-height: 1; margin-bottom: 1rem;
                     ">
-                        Versione {item['versione']}
+                        Versione {item['version']}
                     </h2>
                     <div class="tabs">
                         <!-- Radio buttons -->
@@ -628,43 +717,43 @@ def products_product_gen():
                                     style="font-size: 1rem; color: #777777; 
                                     margin-bottom: 1rem; line-height: 1.625rem;
                                 ">
-                                    Codice: MINIO31220EU1 
+                                    Codice: {product_code} 
                                 </p>
                                 <p class="font-inter-regular" 
                                     style="font-size: 1rem; color: #777777; 
                                     margin-bottom: 1rem; line-height: 1.625rem;
                                 ">
-                                    Produzione (Nominale): 1 g/h 
+                                    Produzione (Nominale): {product_producion_nominal}  g/h 
                                 </p>
                                 <p class="font-inter-regular" 
                                     style="font-size: 1rem; color: #777777; 
                                     margin-bottom: 1rem; line-height: 1.625rem;
                                 ">
-                                    Peso: 1,8 kg 
+                                    Peso: {product_weight} kg 
                                 </p>
                                 <p class="font-inter-regular" 
                                     style="font-size: 1rem; color: #777777; 
                                     margin-bottom: 1rem; line-height: 1.625rem;
                                 ">
-                                    Dimensioni: 150x250x130mm
+                                    Dimensioni: {product_size} mm
                                 </p>
                                 <p class="font-inter-regular" 
                                     style="font-size: 1rem; color: #777777; 
                                     margin-bottom: 1rem; line-height: 1.625rem;
                                 ">
-                                    Tensione Alimentazione: 220/240V
+                                    Tensione Alimentazione: {product_voltage} V
                                 </p>
                                 <p class="font-inter-regular" 
                                     style="font-size: 1rem; color: #777777; 
                                     margin-bottom: 1rem; line-height: 1.625rem;
                                 ">
-                                    Frequenza Alimentazione: 50Hz
+                                    Frequenza Alimentazione: {product_frequency} Hz
                                 </p>
                                 <p class="font-inter-regular" 
                                     style="font-size: 1rem; color: #777777; 
                                     margin-bottom: 1rem; line-height: 1.625rem;
                                 ">
-                                    Potenza: 40Watt
+                                    Potenza: {product_power} Watt
                                 </p>
                             </div>
                         </div>
@@ -677,15 +766,15 @@ def products_product_gen():
         ########################################
         # html
         ########################################
-        product_preview = lorem.paragraph()
-        product_desc = lorem.paragraph()
+        # product_preview = lorem.paragraph()
+        # product_desc = lorem.paragraph()
 
         sidebar_html = sidebar_gen()
         product_html = f'''
             <div style="display: flex; gap: 2rem; margin-bottom: 0rem;">
                 <div style="flex: 1;">
                     <div style="background-color: #f7f7f7; padding: 3rem; margin-bottom: 1rem;">
-                        <img src="/immagini/{item['immagine']}" style="height: 20rem; object-fit: contain;">
+                        <img src="/immagini/{item['image_filename']}" style="height: 20rem; object-fit: contain;">
                     </div>
                 </div>
                 <div style="flex: 1;">
@@ -693,19 +782,19 @@ def products_product_gen():
                         style="color: #222222; font-size: 2rem; 
                         line-height: 1; margin-bottom: 1rem;
                     ">
-                        {item['nome']}
+                        {item['name']}
                     </h1>
                     <p class="font-inter-bold" 
                         style="font-size: 1.375rem; color: #222222; 
                         line-height: 1; margin-bottom: 1rem;
                     ">€
-                        {item['prezzo']}
+                        {item['price']}
                     </p>
                     <p class="font-inter-regular" 
                         style="font-size: 1rem; color: #777777; 
                          margin-bottom: 1rem;
                     ">
-                        {product_preview}
+                        {product_description}
                     </p>
                     <p class="font-inter-medium" 
                         style="font-size: 0.75rem; color: #777777; 
@@ -749,13 +838,12 @@ def products_product_gen():
                     </div>
                 </div>
             </div>
-
             {versions_details_html}
 
         '''
 
         content_html = f'''
-            <section class="container-xl" style="margin-top: 2rem;">
+            <section class="container-xl" style="margin-top: 2rem; margin-bottom: 4rem;">
                 <div style="display: flex; gap: 2rem;">
                     <div style="flex: 1;">
                     {sidebar_html}
