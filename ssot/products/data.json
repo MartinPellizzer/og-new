@@ -16,6 +16,9 @@
                 "image_filename": "ozonogroup-ozonizzatore-mini.png",
                 "price": "788",
                 "output": "gas",
+                "categories": [
+                    "piccole"
+                ],
                 "description": "La versione Mini O3 da 1 g/h è ideale per piccoli ambienti e utilizzi leggeri, dove è richiesta un’azione mirata e controllata. È particolarmente indicata per la sanificazione di piccole stanze, bagni, armadi, ripostigli, interni di automobili e vani di dimensioni ridotte. Questa potenza è adatta ad ambienti fino a circa 10–20 m³, risultando efficace per l’eliminazione di odori persistenti, muffe leggere e contaminazioni batteriche superficiali, senza risultare eccessiva."
             },
             {
@@ -31,6 +34,7 @@
                 "image_filename": "ozonogroup-ozonizzatore-mini.png",
                 "price": "915",
                 "output": "gas",
+                "categories": [],
                 "description": "La Mini O3 da 2 g/h rappresenta una soluzione versatile per ambienti di piccole e medie dimensioni. È consigliato per camere da letto, uffici, studi professionali, cucine domestiche, camper e piccole aree commerciali. Grazie alla maggiore produzione di ozono, garantisce una sanificazione più rapida e profonda in spazi fino a 30–40 m³, risultando ideale per il controllo di odori organici, fumo e microrganismi."
             },
             {
@@ -46,6 +50,7 @@
                 "image_filename": "ozonogroup-ozonizzatore-mini.png",
                 "price": "954",
                 "output": "gas",
+                "categories": [],
                 "description": "La versione da 4 g/h è progettata per ambienti di medie dimensioni che richiedono un’azione più incisiva. È adatta per negozi, ambulatori, palestre di piccola taglia, magazzini, sale riunioni e appartamenti di medie dimensioni. Può essere utilizzata efficacemente in ambienti fino a 60–80 m³, offrendo un’elevata capacità di abbattimento di batteri, virus, muffe e odori intensi."
             },
             {
@@ -61,6 +66,7 @@
                 "image_filename": "ozonogroup-ozonizzatore-mini.png",
                 "price": "812",
                 "output": "gas",
+                "categories": [],
                 "description": "La Mini O3 da 5 g/h è indicato per applicazioni professionali e semi-industriali. È ideale per la sanificazione di ristoranti, bar, strutture ricettive, laboratori, spogliatoi e uffici di grandi dimensioni. Questa versione è adatta a volumi fino a 100–120 m³ e garantisce risultati rapidi anche in ambienti molto frequentati o soggetti a contaminazioni odorose persistenti."
             },
             {
@@ -76,6 +82,7 @@
                 "image_filename": "ozonogroup-ozonizzatore-mini.png",
                 "price": "865",
                 "output": "gas",
+                "categories": [],
                 "description": "La versione da 7 g/h è pensata per ambienti ampi e per utilizzi professionali intensivi. Trova applicazione in capannoni, grandi magazzini, celle frigorifere, officine, mezzi di trasporto commerciali e aree produttive. È efficace in spazi fino a 150–180 m³, offrendo una sanificazione profonda e uniforme anche in contesti complessi e difficili."
             },
             {
@@ -91,6 +98,7 @@
                 "image_filename": "ozonogroup-ozonizzatore-mini.png",
                 "price": "1210",
                 "output": "gas",
+                "categories": [],
                 "description": "La Mini O3 da 10 g/h è la versione più potente della gamma ed è destinata a grandi ambienti industriali e commerciali. È ideale per capannoni, magazzini logistici, industrie alimentari, grandi sale, strutture sanitarie e ambienti con elevato carico biologico. Può operare efficacemente in volumi fino a 250–300 m³, garantendo un trattamento rapido, intenso e professionale per le esigenze più elevate."
             }
         ]
@@ -112,6 +120,7 @@
                 "image_filename": "ozonogroup-ozonizzatore-bigpower.png",
                 "price": "6810",
                 "output": "gas",
+                "categories": [],
                 "description": "La versione Big Power IV 3/9 con produzione di 9 g/h di ozono è ideale per applicazioni professionali in ambienti medio-grandi. È particolarmente indicata per la sanificazione di uffici ampi, ristoranti, palestre, spogliatoi, sale riunioni, strutture ricettive e magazzini di medie dimensioni. Garantisce un’azione efficace contro odori persistenti, batteri e muffe in ambienti fino a circa 200–250 m³, offrendo un ottimo equilibrio tra potenza e versatilità."
             },
             {
@@ -127,6 +136,7 @@
                 "image_filename": "ozonogroup-ozonizzatore-bigpower.png",
                 "price": "7906",
                 "output": "gas",
+                "categories": [],
                 "description": "La Big Power IV 5/15 sviluppa 15 g/h di ozono ed è pensato per interventi intensivi e rapidi. È adatto a grandi locali commerciali, laboratori, industrie alimentari, mense, officine e depositi. Grazie all’elevata resa, può trattare ambienti fino a 350–400 m³, risultando ideale per sanificazioni profonde e per la neutralizzazione di contaminazioni odorose particolarmente forti."
             },
             {
@@ -142,6 +152,7 @@
                 "image_filename": "ozonogroup-ozonizzatore-bigpower.png",
                 "price": "8958",
                 "output": "gas",
+                "categories": [],
                 "description": "La versione più potente, Big Power IV 6/18, produce 18 g/h di ozono ed è destinata a utilizzi industriali e professionali avanzati. È indicata per capannoni, grandi magazzini logistici, celle frigorifere, industrie, allevamenti e ambienti ad alto carico biologico. Può operare efficacemente in volumi fino a 450–500 m³, assicurando trattamenti rapidi, uniformi e ad alta efficacia."
             },
             {
@@ -157,6 +168,7 @@
                 "image_filename": "ozonogroup-ozonizzatore-bigpower.png",
                 "price": "5867",
                 "output": "gas",
+                "categories": [],
                 "description": "La Big Power IV 5+5, con produzione di 5 g/h di ozono, è ideale per applicazioni più mirate e controllate. È particolarmente indicato per piccoli ambienti professionali, studi, ambulatori, veicoli, cabine, locali tecnici o singole stanze. Può essere utilizzato in spazi fino a 80–100 m³, risultando perfetto per trattamenti localizzati e per il mantenimento igienico continuo."
             }
         ]
@@ -178,6 +190,7 @@
                 "image_filename": "ozonogroup-ozonizzatore-nymphea.png",
                 "price": "1575",
                 "output": "acqua",
+                "categories": [],
                 "description": "La Nymphaea H2O è un generatore di ozono progettato per la produzione di acqua ozonata con una resa di 0,8 g/h, ideale per applicazioni che richiedono un’igienizzazione efficace ma delicata. È particolarmente indicato per la sanificazione di superfici, attrezzature, utensili, alimenti, ambienti del settore alimentare, ristorazione, laboratori e ambiti sanitari, garantendo un’azione antibatterica e deodorante senza residui chimici."
             }
         ]
@@ -199,6 +212,7 @@
                 "image_filename": "ozonogroup-ozonizzatore-lympha.png",
                 "price": "2580",
                 "output": "acqua",
+                "categories": [],
                 "description": "La versione Lympha H2O 10, con produzione di 1 g/h di ozono, è ideale per applicazioni leggere e mirate, come la sanificazione di piccoli strumenti, superfici domestiche, utensili da cucina e alimenti. Perfetta per uso personale o in ambienti professionali di piccole dimensioni, permette di ottenere acqua ozonata efficace per la disinfezione quotidiana senza uso di prodotti chimici aggressivi."
             },
             {
@@ -214,6 +228,7 @@
                 "image_filename": "ozonogroup-ozonizzatore-lympha.png",
                 "price": "7200",
                 "output": "acqua",
+                "categories": [],
                 "description": "La versione Lympha H2O 30, con 4 g/h di ozono, è indicata per ambienti di medie dimensioni e applicazioni professionali. È ideale per la produzione di acqua ozonata per ristoranti, bar, laboratori, studi medici, palestre e cucine professionali, dove è richiesta una sanificazione rapida e costante di superfici, strumenti e alimenti, garantendo sicurezza e igiene elevata."
             },
             {
@@ -229,6 +244,7 @@
                 "image_filename": "ozonogroup-ozonizzatore-lympha.png",
                 "price": "10560",
                 "output": "acqua",
+                "categories": [],
                 "description": "La versione Lympha H2O 33, con produzione di 6 g/h di ozono, è pensata per applicazioni professionali intensive. È perfetta per industrie alimentari, ristorazione di grandi dimensioni, ospedali, cliniche e laboratori, dove è necessaria una sanificazione continua di superfici, strumenti e alimenti. Offre acqua ozonata altamente ossidante, efficace contro batteri, virus e odori persistenti."
             },
             {
@@ -244,6 +260,7 @@
                 "image_filename": "ozonogroup-ozonizzatore-lympha.png",
                 "price": "11444",
                 "output": "acqua",
+                "categories": [],
                 "description": "La versione più potente, Lympha H2O 50, con 12 g/h di ozono, è destinata a contesti industriali e grandi strutture. Ideale per industrie alimentari, magazzini, ospedali, impianti di lavorazione alimentare e ambienti ad alto carico biologico, permette la produzione di grandi quantità di acqua ozonata per sanificazioni rapide e continue, garantendo igiene profonda e risultati professionali in sicurezza."
             }
         ]
@@ -265,6 +282,7 @@
                 "image_filename": "ozonogroup-ozonizzatore-greenozone.png",
                 "price": "20790",
                 "output": "gas",
+                "categories": [],
                 "description": "La versione V2 15 g/h è ideale per la sanificazione di ambienti medio-piccoli come uffici, negozi, studi professionali, camere d’albergo e cucine commerciali. Garantisce un’azione efficace contro batteri, virus, muffe e odori persistenti in spazi fino a circa 200–250 m³, risultando perfetta per interventi regolari e controllati in contesti professionali."
             },
             {
@@ -280,6 +298,7 @@
                 "image_filename": "ozonogroup-ozonizzatore-greenozone.png",
                 "price": "24810",
                 "output": "gas",
+                "categories": [],
                 "description": "La versione V2 30 g/h è adatta a ambienti più ampi, come ristoranti, palestre, sale riunioni, laboratori e magazzini di medie dimensioni. Grazie alla maggiore produzione di ozono, assicura sanificazione rapida e profonda in spazi fino a 350–400 m³, eliminando odori, batteri e contaminazioni organiche in modo efficace e sicuro."
             },
             {
@@ -295,6 +314,7 @@
                 "image_filename": "ozonogroup-ozonizzatore-greenozone.png",
                 "price": "26450",
                 "output": "gas",
+                "categories": [],
                 "description": "La versione V2 15/30 g/h offre la flessibilità di regolazione della potenza, ideale per chi necessita di adattare la sanificazione a spazi diversi, dai piccoli uffici ai locali commerciali di medie dimensioni. Perfetta per ambienti fino a 350 m³, permette interventi mirati e rapidi contro odori intensi, muffe e contaminazioni batteriche."
             },
             {
@@ -310,6 +330,7 @@
                 "image_filename": "ozonogroup-ozonizzatore-greenozone.png",
                 "price": "29880",
                 "output": "gas",
+                "categories": [],
                 "description": "La versione V2 30/60 g/h è pensata per ambienti grandi o altamente frequentati, come capannoni, grandi ristoranti, palestre ampie, ospedali e industrie alimentari. Può operare efficacemente in spazi fino a 500–600 m³, garantendo una sanificazione potente, uniforme e professionale contro batteri, virus e odori difficili da eliminare."
             },
             {
@@ -325,6 +346,7 @@
                 "image_filename": "ozonogroup-ozonizzatore-greenozone.png",
                 "price": "34000",
                 "output": "gas",
+                "categories": [],
                 "description": "La versione più potente V2 60/120 g/h è destinata a contesti industriali e commerciali di grandi dimensioni, come magazzini, industrie alimentari, ospedali e grandi sale eventi. Con capacità di trattamento fino a 1.000 m³, assicura una sanificazione rapida, intensa e completa, eliminando batteri, muffe e odori persistenti anche in ambienti complessi e ad alto carico biologico."
             },
             {
@@ -340,6 +362,7 @@
                 "image_filename": "ozonogroup-ozonizzatore-greenozone.png",
                 "price": "32000",
                 "output": "gas",
+                "categories": [],
                 "description": "La versione V2T1 15/30 g/h è ideale per chi cerca un generatore con controllo temporizzato, adatto a uffici, negozi e locali di medie dimensioni. Consente di regolare la produzione di ozono in base alle necessità, garantendo sanificazione efficace e sicura in ambienti fino a 350 m³, ottimizzando tempi e consumo energetico."
             },
             {
@@ -355,6 +378,7 @@
                 "image_filename": "ozonogroup-ozonizzatore-greenozone.png",
                 "price": "34880",
                 "output": "gas",
+                "categories": [],
                 "description": "La versione V2T1 30/60 g/h, con controllo temporizzato, è indicata per ambienti grandi come ristoranti, palestre, capannoni o laboratori, dove è richiesta sanificazione rapida e programmabile. Può trattare spazi fino a 500–600 m³, assicurando risultati uniformi e professionali, eliminando odori, batteri e contaminazioni in modo sicuro e controllato."
             },
             {
@@ -370,6 +394,7 @@
                 "image_filename": "ozonogroup-ozonizzatore-greenozone.png",
                 "price": "36000",
                 "output": "gas",
+                "categories": [],
                 "description": "La versione V2T1 60/120 g/h è progettata per grandi ambienti industriali e commerciali, con sanificazione programmabile e potente. Perfetta per magazzini, ospedali, industrie alimentari e sale eventi di grandi dimensioni, può operare fino a 1.000 m³, garantendo un’azione intensa e uniforme contro batteri, muffe, virus e odori persistenti, con massima sicurezza e controllo."
             }
         ]
@@ -391,6 +416,7 @@
                 "image_filename": "ozonogroup-ozonizzatore-hydor.png",
                 "price": "22195",
                 "output": "acqua",
+                "categories": [],
                 "description": "La versione Eco, con produzione di 6 g/h di ozono, è ideale per applicazioni leggere e mirate. Perfetta per piccoli studi, uffici, cucine professionali, laboratori e superfici domestiche, permette di ottenere acqua ozonata per sanificazioni quotidiane di strumenti, utensili e alimenti. Garantisce un’igienizzazione efficace e sicura senza residui chimici."
             },
             {
@@ -406,6 +432,7 @@
                 "image_filename": "ozonogroup-ozonizzatore-hydor.png",
                 "price": "25088",
                 "output": "acqua",
+                "categories": [],
                 "description": "La versione 5x4 V2, con 14 g/h di ozono, è indicata per ambienti di medie dimensioni e applicazioni professionali più intense. Ideale per ristoranti, bar, laboratori, palestre e cucine professionali, consente di produrre acqua ozonata per sanificazioni rapide e continue di superfici, strumenti e alimenti, assicurando igiene elevata e sicurezza per operatori e utenti."
             },
             {
@@ -421,6 +448,7 @@
                 "image_filename": "ozonogroup-ozonizzatore-hydor.png",
                 "price": "26992",
                 "output": "acqua",
+                "categories": [],
                 "description": "La versione 6x4 V2, con produzione di 19 g/h di ozono, è pensata per applicazioni professionali e industriali. Perfetta per industrie alimentari, grandi cucine, ospedali e laboratori, garantisce acqua ozonata altamente ossidante per la sanificazione efficace di superfici, strumenti, alimenti e ambienti, eliminando batteri, virus, muffe e odori persistenti."
             },
             {
@@ -436,6 +464,7 @@
                 "image_filename": "ozonogroup-ozonizzatore-hydor.png",
                 "price": "37250",
                 "output": "acqua",
+                "categories": [],
                 "description": "La versione più potente 2525C V2, con 25 g/h di ozono, è destinata a contesti industriali e grandi strutture. Ideale per industrie alimentari, ospedali, magazzini, impianti di trasformazione e grandi cucine professionali, permette di produrre grandi quantità di acqua ozonata per sanificazioni rapide, continue e profonde, garantendo risultati professionali e igiene totale."
             }
         ]
@@ -457,6 +486,7 @@
                 "image_filename": "ozonogroup-ozonizzatore-delta.png",
                 "price": "32100",
                 "output": "gas",
+                "categories": [],
                 "description": "La versione AirO3 3612x4, con produzione di 36 g/h di ozono, è ideale per la sanificazione di ambienti grandi o molto frequentati, come ristoranti, palestre, sale conferenze e uffici di grandi dimensioni. Garantisce eliminazione efficace di batteri, virus, muffe e odori persistenti, operando in spazi fino a circa 600–700 m³, offrendo trattamenti rapidi e professionali."
             },
             {
@@ -472,6 +502,7 @@
                 "image_filename": "ozonogroup-ozonizzatore-delta.png",
                 "price": "33560",
                 "output": "gas",
+                "categories": [],
                 "description": "La versione AirO3 4020x3, con 40 g/h di ozono, è progettata per ambienti ampi e ad alto traffico, come capannoni, grandi magazzini, ospedali e laboratori. La sua potenza consente sanificazioni rapide e profonde in spazi fino a 700–800 m³, eliminando in modo efficace odori forti, contaminazioni batteriche e muffe persistenti, ideale per applicazioni commerciali e industriali."
             },
             {
@@ -487,6 +518,7 @@
                 "image_filename": "ozonogroup-ozonizzatore-delta.png",
                 "price": "35812",
                 "output": "gas",
+                "categories": [],
                 "description": "La versione più potente AirO3 6020x4, con produzione di 60 g/h di ozono, è destinata a grandi ambienti industriali e commerciali, come industrie alimentari, magazzini logistici, ospedali e impianti di produzione. Può operare efficacemente in spazi fino a 1.000 m³, garantendo sanificazione intensa, uniforme e professionale, con eliminazione completa di batteri, virus, muffe e odori difficili da trattare."
             }
         ]
