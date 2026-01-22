@@ -11,27 +11,35 @@ products_data = io.json_read(f'{g.SSOT_FOLDERPATH}/products/data.json')
 
 categories_data = [
     {
-        'category_name': 'piccole', 
-        'category_href': '/prodotti/generatori-dimensioni-piccole.html', 
+        'category_name': 'Tutti', 
+        'category_href': '/prodotti.html', 
     },
     {
-        'category_name': 'medie', 
-        'category_href': '/prodotti/generatori-dimensioni-medie.html', 
+        'category_name': 'Generatori', 
+        'category_href': '/prodotti/generatori.html', 
     },
     {
-        'category_name': 'grandi', 
-        'category_href': '/prodotti/generatori-dimensioni-grandi.html', 
+        'category_name': 'Generatori Piccoli', 
+        'category_href': '/prodotti/generatori/piccoli.html', 
     },
     {
-        'category_name': 'gas', 
-        'category_href': '/prodotti/generatori-gas.html', 
+        'category_name': 'Generatori Medi', 
+        'category_href': '/prodotti/generatori/medi.html', 
     },
     {
-        'category_name': 'acqua', 
-        'category_href': '/prodotti/generatori-acqua.html', 
+        'category_name': 'Generatori Grandi', 
+        'category_href': '/prodotti/generatori/grandi.html', 
     },
     {
-        'category_name': 'accessori', 
+        'category_name': 'Generatori Gas', 
+        'category_href': '/prodotti/generatori/gas.html', 
+    },
+    {
+        'category_name': 'Generatori Acqua', 
+        'category_href': '/prodotti/generatori/acqua.html', 
+    },
+    {
+        'category_name': 'Accessori', 
         'category_href': '/prodotti/accessori.html', 
     },
 ]
@@ -251,7 +259,6 @@ def sidebar_gen_old():
 def products_gen():
     section_hero_py = '5rem'
     section_py = '8rem'
-    
     hero_button = f'''
         <div style="flex: 1; display: flex; justify-content: end; margin-top: 0.25rem;">
             <div style="display: inline-block;">
@@ -285,10 +292,6 @@ def products_gen():
     ########################################
     # NEW html
     ########################################
-    
-    ### group by name
-    # groups = group_products_by_name()
-
     cards_html = ''
     for group in products_data:
         product_name = group['name']
@@ -319,9 +322,7 @@ def products_gen():
             </div>
         '''
         cards_html += card_html
-
     sidebar_html = sidebar_gen()
-    
     prodotti = f'''
         <section class="container-xl" style="margin-top: 2rem;">
             <div style="display: flex; gap: 2rem;">
@@ -601,6 +602,7 @@ def products_category_gen(category):
     section_hero_py = '5rem'
     section_py = '8rem'
     category_name = category['category_name']
+    category_href = category['category_href']
     hero_button = f'''
         <div style="flex: 1; display: flex; justify-content: end; margin-top: 0.25rem;">
             <div style="display: inline-block;">
@@ -614,23 +616,71 @@ def products_category_gen(category):
     ########################################
     # hero
     ########################################
-    hero = f'''
+    hero_html = f'''
         <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_hero_py};">
             <div style="display: flex; justify-content: space-between; center;">
                 <div style="flex: 2;">
                     <h1 style="color: #222222; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
                         {category_name}
                     </h1>
-                    <p style="color: #1f1f1f;">                        
-                        Progettiamo e forniamo soluzioni affidabili per la sanificazione di ambienti, superfici e impianti produttivi.
-                    </p>
                 </div>
                 {hero_button}
             </div>
         </section>
         <div style="background-color: #ededed; height: 1px;"></div>  
     '''
-
+    ########################################
+    # NEW html
+    ########################################
+    cards_html = ''
+    for product in products_data:
+        product_name = product['name']
+        product_slug = product_name.lower().strip().replace(' ', '-')
+        version = product['versions'][0]
+        product_categories = [category.lower().strip() for category in version['categories']]
+        if category_name.lower().strip() != 'tutti':
+            if category_name.lower().strip() not in product_categories: continue
+        card_html = f'''
+            <div>
+                <a style="
+                        color: #222222; text-decoration: none;
+                    "
+                    href="/prodotti/{product_slug}.html"
+                >
+                    <div style="background-color: #f7f7f7; padding: 3rem; margin-bottom: 1rem;">
+                        <img src="/immagini/{version['image_filename']}" style="height: 10rem; object-fit: contain;">
+                    </div>
+                </a>
+                <p class="font-inter-regular" style="font-size: 0.675rem; color: #666666; line-height: 1; margin-bottom: 0.5rem;">{version['output'].upper()}</p>
+                <h2 class="font-inter-medium" style="font-size: 1rem; color: #222222; line-height: 1; margin-bottom: 0.5rem;">
+                    <a style="
+                            color: #222222; text-decoration: none;
+                        "
+                        href="/prodotti/{product_slug}.html"
+                    >
+                        {product_name}
+                    </a>
+                </h2>
+                <p class="font-inter-bold" style="font-size: 1.125rem; color: #222222; line-height: 1;">€{version['price']}</p>
+            </div>
+        '''
+        cards_html += card_html
+    sidebar_html = sidebar_gen()
+    prodotti = f'''
+        <section class="container-xl" style="margin-top: 2rem;">
+            <div style="display: flex; gap: 2rem;">
+                <div style="flex: 1;">
+                {sidebar_html}
+                </div>
+                <div style="flex: 3;">
+                    <div class="grid-3" style="gap: 1.6rem;">
+                        {cards_html}
+                    </div>
+                </div>
+            </div>
+        </section>
+    '''
+    ###
     html = f'''
         <!DOCTYPE html>
         <html lang="en">
@@ -641,14 +691,15 @@ def products_category_gen(category):
         </head>
         <body>
             {components.header_light()}
-            <main>
-                {hero}
+            <main style="margin-bottom: 4.8rem;">
+                {hero_html}
+                {prodotti}
             </main>
             {components.footer_dark()}
         </body>
         </html>
     '''
-    html_filepath = f'{g.website_folderpath}/prodotti/generatori-dimensioni-piccole.html'
+    html_filepath = f'{g.website_folderpath}/{category_href}'
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
         f.write(html)
 
