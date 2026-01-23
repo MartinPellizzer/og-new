@@ -15,7 +15,7 @@
                 "power": "40",
                 "image_filename": "ozonogroup-ozonizzatore-mini.png",
                 "price": "788",
-                "output": "gas",
+                "output": "ozono gassoso",
                 "categories": [
                     "generatori",
                     "generatori piccoli",
@@ -35,7 +35,7 @@
                 "power": "45",
                 "image_filename": "ozonogroup-ozonizzatore-mini.png",
                 "price": "915",
-                "output": "gas",
+                "output": "ozono gassoso",
                 "categories": [
                     "generatori",
                     "generatori piccoli",
@@ -55,7 +55,7 @@
                 "power": "60",
                 "image_filename": "ozonogroup-ozonizzatore-mini.png",
                 "price": "954",
-                "output": "gas",
+                "output": "ozono gassoso",
                 "categories": [
                     "generatori",
                     "generatori piccoli",
@@ -75,7 +75,7 @@
                 "power": "90",
                 "image_filename": "ozonogroup-ozonizzatore-mini.png",
                 "price": "812",
-                "output": "gas",
+                "output": "ozono gassoso",
                 "categories": [
                     "generatori",
                     "generatori piccoli",
@@ -95,7 +95,7 @@
                 "power": "110",
                 "image_filename": "ozonogroup-ozonizzatore-mini.png",
                 "price": "865",
-                "output": "gas",
+                "output": "ozono gassoso",
                 "categories": [
                     "generatori",
                     "generatori piccoli",
@@ -115,13 +115,179 @@
                 "power": "125",
                 "image_filename": "ozonogroup-ozonizzatore-mini.png",
                 "price": "1210",
-                "output": "gas",
+                "output": "ozono gassoso",
                 "categories": [
                     "generatori",
                     "generatori piccoli",
                     "generatori gas"
                 ],
                 "description": "La Mini O3 da 10 g/h è la versione più potente della gamma ed è destinata a grandi ambienti industriali e commerciali. È ideale per capannoni, magazzini logistici, industrie alimentari, grandi sale, strutture sanitarie e ambienti con elevato carico biologico. Può operare efficacemente in volumi fino a 250–300 m³, garantendo un trattamento rapido, intenso e professionale per le esigenze più elevate."
+            }
+        ]
+    },
+    {
+        "name": "Omega O3",
+        "description": "Il Omega O3 è un generatore di ozono compatto e affidabile, progettato per applicazioni industriali e professionali di sanificazione e ossidazione. Ideale per trattamento dell’aria, controllo microbiologico e integrazione in impianti e macchinari, offre prestazioni costanti e sicure. Disponibile in diverse potenze, si adatta a processi industriali leggeri e medi, garantendo efficienza, versatilità e continuità operativa.",
+        "versions": [
+            {
+                "name": "Omega O3",
+                "version": "2 g/h",
+                "code": "OM2G220EU2S",
+                "production_nominal": "2",
+                "weight": "3.6",
+                "size": "30x20x26",
+                "voltage": "240",
+                "frequency": "50",
+                "power": "85",
+                "image_filename": "ozonogroup-ozonizzatore-omega.png",
+                "price": "1529",
+                "output": "ozono gassoso",
+                "categories": [
+                    "generatori",
+                    "generatori piccoli",
+                    "generatori gas"
+                ],
+                "description": "La versione Omega O3 da 2 g/h è ideale per applicazioni industriali leggere e controllate. È indicata per laboratori, piccoli impianti pilota, quadri elettrici, cabine tecniche e supporto a processi di sanificazione localizzata, dove è richiesta una produzione costante ma contenuta di ozono per il controllo microbiologico e degli odori."
+            },
+            {
+                "name": "Omega O3",
+                "version": "3 g/h",
+                "code": "OM3G220EU2S",
+                "production_nominal": "3",
+                "weight": "3.8",
+                "size": "30x20x26",
+                "voltage": "240",
+                "frequency": "50",
+                "power": "110",
+                "image_filename": "ozonogroup-ozonizzatore-omega.png",
+                "price": "1946",
+                "output": "ozono gassoso",
+                "categories": [
+                    "generatori",
+                    "generatori piccoli",
+                    "generatori gas"
+                ],
+                "description": "La versione 3 g/h è adatta a piccoli processi industriali continui, come trattamento di aria in locali tecnici, sanificazione di macchinari, celle di stoccaggio di piccole dimensioni e supporto a sistemi di ossidazione. Offre un buon equilibrio tra efficacia e controllo, ideale per utilizzi professionali regolari."
+            },
+            {
+                "name": "Omega O3",
+                "version": "5 g/h",
+                "code": "OM5G220EU2S",
+                "production_nominal": "5",
+                "weight": "4.0",
+                "size": "30x20x26",
+                "voltage": "240",
+                "frequency": "50",
+                "power": "120",
+                "image_filename": "ozonogroup-ozonizzatore-omega.png",
+                "price": "2410",
+                "output": "ozono gassoso",
+                "categories": [
+                    "generatori",
+                    "generatori piccoli",
+                    "generatori gas"
+                ],
+                "description": "La versione Omega O3 da 5 g/h è progettata per applicazioni industriali di media intensità, come industrie alimentari, laboratori di produzione, impianti di confezionamento e trattamento aria in ambienti produttivi. Garantisce una sanificazione efficace e uniforme contro batteri, muffe e odori persistenti, migliorando l’igiene dei processi."
+            },
+            {
+                "name": "Omega O3",
+                "version": "6 g/h",
+                "code": "OM6G220EU2S",
+                "production_nominal": "6",
+                "weight": "4.2",
+                "size": "30x20x26",
+                "voltage": "240",
+                "frequency": "50",
+                "power": "125",
+                "image_filename": "ozonogroup-ozonizzatore-omega.png",
+                "price": "2842",
+                "output": "ozono gassoso",
+                "categories": [
+                    "generatori",
+                    "generatori piccoli",
+                    "generatori gas"
+                ],
+                "description": "La versione 6 g/h è indicata per processi industriali più intensivi, come sanificazione di ambienti produttivi, celle frigorifere, magazzini di stoccaggio e supporto a impianti di trattamento aria e acqua. Assicura prestazioni elevate e affidabilità operativa in contesti professionali continuativi."
+            },
+            {
+                "name": "Omega O3",
+                "version": "2",
+                "code": "OM2G110A2S",
+                "production_nominal": "2",
+                "weight": "3.6",
+                "size": "30x20x26",
+                "voltage": "110",
+                "frequency": "50",
+                "power": "85",
+                "image_filename": "ozonogroup-ozonizzatore-omega.png",
+                "price": "1529",
+                "output": "ozono gassoso",
+                "categories": [
+                    "generatori",
+                    "generatori piccoli",
+                    "generatori gas"
+                ],
+                "description": "La versione Omega O3 – 2 mantiene una produzione di 2 g/h, risultando ideale per applicazioni industriali compatte, quali impianti integrati, macchinari OEM, sistemi automatizzati e trattamenti localizzati, dove lo spazio ridotto e il controllo preciso dell’ozono sono fattori determinanti."
+            },
+            {
+                "name": "Omega O3",
+                "version": "3",
+                "code": "OM3G110A2S",
+                "production_nominal": "3",
+                "weight": "3.8",
+                "size": "30x20x26",
+                "voltage": "110",
+                "frequency": "50",
+                "power": "110",
+                "image_filename": "ozonogroup-ozonizzatore-omega.png",
+                "price": "1946",
+                "output": "ozono gassoso",
+                "categories": [
+                    "generatori",
+                    "generatori piccoli",
+                    "generatori gas"
+                ],
+                "description": "La versione Omega O3 – 3, con 3 g/h, è pensata per l’integrazione in linee industriali, impianti di trattamento aria e sistemi di sanificazione automatizzati, offrendo continuità operativa e un’efficace azione ossidante per applicazioni professionali standard."
+            },
+            {
+                "name": "Omega O3",
+                "version": "5",
+                "code": "OM5G110A2S",
+                "production_nominal": "5",
+                "weight": "4.0",
+                "size": "30x20x26",
+                "voltage": "110",
+                "frequency": "50",
+                "power": "120",
+                "image_filename": "ozonogroup-ozonizzatore-omega.png",
+                "price": "2410",
+                "output": "ozono gassoso",
+                "categories": [
+                    "generatori",
+                    "generatori piccoli",
+                    "generatori gas"
+                ],
+                "description": "La versione Omega O3 – 5 con produzione di 5 g/h è ideale per impianti industriali strutturati, come industrie alimentari, processi di conservazione, sanificazione di linee produttive e supporto a trattamenti ambientali, garantendo risultati affidabili e ripetibili nel tempo."
+            },
+            {
+                "name": "Omega O3",
+                "version": "6",
+                "code": "OM6G110A2S",
+                "production_nominal": "6",
+                "weight": "4.2",
+                "size": "30x20x26",
+                "voltage": "110",
+                "frequency": "50",
+                "power": "125",
+                "image_filename": "ozonogroup-ozonizzatore-omega.png",
+                "price": "2842",
+                "output": "ozono gassoso",
+                "categories": [
+                    "generatori",
+                    "generatori piccoli",
+                    "generatori gas"
+                ],
+                "description": "La versione Omega O3 – 6, con 6 g/h, è destinata a applicazioni industriali avanzate, come impianti di trattamento aria e acqua, sanificazione di ambienti produttivi complessi e processi di ossidazione intensiva. Offre massima efficienza, stabilità e prestazioni elevate per utilizzi professionali continuativi."
             }
         ]
     },
@@ -141,7 +307,7 @@
                 "power": "290",
                 "image_filename": "ozonogroup-ozonizzatore-bigpower.png",
                 "price": "6810",
-                "output": "gas",
+                "output": "ozono gassoso",
                 "categories": [
                     "generatori",
                     "generatori medi",
@@ -161,7 +327,7 @@
                 "power": "360",
                 "image_filename": "ozonogroup-ozonizzatore-bigpower.png",
                 "price": "7906",
-                "output": "gas",
+                "output": "ozono gassoso",
                 "categories": [
                     "generatori",
                     "generatori medi",
@@ -181,7 +347,7 @@
                 "power": "420",
                 "image_filename": "ozonogroup-ozonizzatore-bigpower.png",
                 "price": "8958",
-                "output": "gas",
+                "output": "ozono gassoso",
                 "categories": [
                     "generatori",
                     "generatori medi",
@@ -201,7 +367,7 @@
                 "power": "280",
                 "image_filename": "ozonogroup-ozonizzatore-bigpower.png",
                 "price": "5867",
-                "output": "gas",
+                "output": "ozono gassoso",
                 "categories": [
                     "generatori",
                     "generatori medi",
@@ -227,7 +393,7 @@
                 "power": "55",
                 "image_filename": "ozonogroup-ozonizzatore-nymphea.png",
                 "price": "1575",
-                "output": "acqua",
+                "output": "acqua ozonizzata",
                 "categories": [
                     "generatori",
                     "generatori piccoli",
@@ -253,7 +419,7 @@
                 "power": "300",
                 "image_filename": "ozonogroup-ozonizzatore-lympha.png",
                 "price": "2580",
-                "output": "acqua",
+                "output": "acqua ozonizzata",
                 "categories": [
                     "generatori",
                     "generatori medi",
@@ -273,7 +439,7 @@
                 "power": "600",
                 "image_filename": "ozonogroup-ozonizzatore-lympha.png",
                 "price": "7200",
-                "output": "acqua",
+                "output": "acqua ozonizzata",
                 "categories": [
                     "generatori",
                     "generatori medi",
@@ -293,7 +459,7 @@
                 "power": "850",
                 "image_filename": "ozonogroup-ozonizzatore-lympha.png",
                 "price": "10560",
-                "output": "acqua",
+                "output": "acqua ozonizzata",
                 "categories": [
                     "generatori",
                     "generatori medi",
@@ -313,7 +479,7 @@
                 "power": "1080",
                 "image_filename": "ozonogroup-ozonizzatore-lympha.png",
                 "price": "11444",
-                "output": "acqua",
+                "output": "acqua ozonizzata",
                 "categories": [
                     "generatori",
                     "generatori medi",
@@ -339,7 +505,7 @@
                 "power": "590",
                 "image_filename": "ozonogroup-ozonizzatore-greenozone.png",
                 "price": "20790",
-                "output": "gas",
+                "output": "ozono gassoso",
                 "categories": [
                     "generatori",
                     "generatori grandi",
@@ -359,7 +525,7 @@
                 "power": "620",
                 "image_filename": "ozonogroup-ozonizzatore-greenozone.png",
                 "price": "24810",
-                "output": "gas",
+                "output": "ozono gassoso",
                 "categories": [
                     "generatori",
                     "generatori grandi",
@@ -379,7 +545,7 @@
                 "power": "690",
                 "image_filename": "ozonogroup-ozonizzatore-greenozone.png",
                 "price": "26450",
-                "output": "gas",
+                "output": "ozono gassoso",
                 "categories": [
                     "generatori",
                     "generatori grandi",
@@ -399,7 +565,7 @@
                 "power": "800",
                 "image_filename": "ozonogroup-ozonizzatore-greenozone.png",
                 "price": "29880",
-                "output": "gas",
+                "output": "ozono gassoso",
                 "categories": [
                     "generatori",
                     "generatori grandi",
@@ -419,7 +585,7 @@
                 "power": "1200",
                 "image_filename": "ozonogroup-ozonizzatore-greenozone.png",
                 "price": "34000",
-                "output": "gas",
+                "output": "ozono gassoso",
                 "categories": [
                     "generatori",
                     "generatori grandi",
@@ -439,7 +605,7 @@
                 "power": "690",
                 "image_filename": "ozonogroup-ozonizzatore-greenozone.png",
                 "price": "32000",
-                "output": "gas",
+                "output": "ozono gassoso",
                 "categories": [
                     "generatori",
                     "generatori grandi",
@@ -459,7 +625,7 @@
                 "power": "800",
                 "image_filename": "ozonogroup-ozonizzatore-greenozone.png",
                 "price": "34880",
-                "output": "gas",
+                "output": "ozono gassoso",
                 "categories": [
                     "generatori",
                     "generatori grandi",
@@ -479,7 +645,7 @@
                 "power": "1200",
                 "image_filename": "ozonogroup-ozonizzatore-greenozone.png",
                 "price": "36000",
-                "output": "gas",
+                "output": "ozono gassoso",
                 "categories": [
                     "generatori",
                     "generatori grandi",
@@ -505,7 +671,7 @@
                 "power": "580",
                 "image_filename": "ozonogroup-ozonizzatore-hydor.png",
                 "price": "22195",
-                "output": "acqua",
+                "output": "acqua ozonizzata",
                 "categories": [
                     "generatori",
                     "generatori grandi",
@@ -525,7 +691,7 @@
                 "power": "700",
                 "image_filename": "ozonogroup-ozonizzatore-hydor.png",
                 "price": "25088",
-                "output": "acqua",
+                "output": "acqua ozonizzata",
                 "categories": [
                     "generatori",
                     "generatori grandi",
@@ -545,7 +711,7 @@
                 "power": "850",
                 "image_filename": "ozonogroup-ozonizzatore-hydor.png",
                 "price": "26992",
-                "output": "acqua",
+                "output": "acqua ozonizzata",
                 "categories": [
                     "generatori",
                     "generatori grandi",
@@ -565,7 +731,7 @@
                 "power": "2260",
                 "image_filename": "ozonogroup-ozonizzatore-hydor.png",
                 "price": "37250",
-                "output": "acqua",
+                "output": "acqua ozonizzata",
                 "categories": [
                     "generatori",
                     "generatori grandi",
@@ -591,7 +757,7 @@
                 "power": "1950",
                 "image_filename": "ozonogroup-ozonizzatore-delta.png",
                 "price": "32100",
-                "output": "gas",
+                "output": "ozono gassoso",
                 "categories": [
                     "generatori",
                     "generatori grandi",
@@ -611,7 +777,7 @@
                 "power": "2250",
                 "image_filename": "ozonogroup-ozonizzatore-delta.png",
                 "price": "33560",
-                "output": "gas",
+                "output": "ozono gassoso",
                 "categories": [
                     "generatori",
                     "generatori grandi",
@@ -631,7 +797,7 @@
                 "power": "2450",
                 "image_filename": "ozonogroup-ozonizzatore-delta.png",
                 "price": "35812",
-                "output": "gas",
+                "output": "ozono gassoso",
                 "categories": [
                     "generatori",
                     "generatori grandi",
@@ -643,7 +809,7 @@
     },
     {
         "name": "Oxy",
-        "description": "",
+        "description": "Il Oxy è un generatore di ossigeno progettato per applicazioni industriali e professionali, ideale come supporto a processi di ozonizzazione, ossidazione e trattamento delle acque. Garantisce una fornitura continua e affidabile di ossigeno, migliorando l’efficienza dei processi produttivi e ambientali. Disponibile in diverse versioni, si adatta a impianti di varie dimensioni con prestazioni elevate e funzionamento stabile.",
         "versions": [
             {
                 "name": "Oxy",
@@ -661,7 +827,7 @@
                 "categories": [
                     "accessori"
                 ],
-                "description": ""
+                "description": "La versione EasyA, con portata di 1 l/min di ossigeno, è indicata per applicazioni industriali leggere e di supporto. È ideale per processi di ossidazione controllata, piccoli impianti pilota, laboratori industriali e trattamenti localizzati, dove è richiesta una fornitura costante ma contenuta di ossigeno, con elevata affidabilità e bassi consumi."
             },
             {
                 "name": "Oxy",
@@ -679,7 +845,7 @@
                 "categories": [
                     "accessori"
                 ],
-                "description": ""
+                "description": "L’Oxy EasyB, con 3 l/min, è adatto a piccole linee produttive, laboratori industriali, trattamenti chimici leggeri e supporto a processi di ozonizzazione o ossidazione. Offre una soluzione compatta ed efficiente per applicazioni industriali continue che richiedono una portata stabile di ossigeno senza impianti complessi."
             },
             {
                 "name": "Oxy",
@@ -697,7 +863,7 @@
                 "categories": [
                     "accessori"
                 ],
-                "description": ""
+                "description": "La versione Oxy NB, con 3 l/min di ossigeno, è pensata per applicazioni industriali standard come trattamento acque, supporto a generatori di ozono, processi di sanificazione industriale e ossidazioni chimiche controllate. Garantisce affidabilità operativa e continuità, ideale per utilizzi professionali regolari."
             },
             {
                 "name": "Oxy",
@@ -715,7 +881,7 @@
                 "categories": [
                     "accessori"
                 ],
-                "description": ""
+                "description": "L’Oxy NC, con portata di 5 l/min, è indicato per impianti industriali di medie dimensioni, come trattamento delle acque, industria alimentare, processi di ossidazione avanzata e supporto a sistemi di disinfezione. Assicura un apporto di ossigeno adeguato per migliorare l’efficienza dei processi produttivi e di sanificazione."
             },
             {
                 "name": "Oxy",
@@ -733,7 +899,7 @@
                 "categories": [
                     "accessori"
                 ],
-                "description": ""
+                "description": "La versione Oxy ND, con 8 l/min di ossigeno, è ideale per applicazioni industriali più intensive, come impianti di depurazione, processi chimici, ossidazione avanzata e sistemi di ozonizzazione ad alta resa. È progettata per lavorare in modo continuo, garantendo prestazioni elevate e affidabilità in ambienti industriali esigenti."
             },
             {
                 "name": "Oxy",
@@ -751,7 +917,79 @@
                 "categories": [
                     "accessori"
                 ],
-                "description": ""
+                "description": "L’Oxy NE, con 10 l/min, è destinato a grandi impianti industriali, come trattamento acque su larga scala, industrie chimiche, alimentari e ambientali, dove è richiesta una portata elevata e costante di ossigeno. Offre massima efficienza operativa e supporto a processi industriali ad alta intensità."
+            },
+            {
+                "name": "Oxy",
+                "version": "Oxy ProB",
+                "code": "OXP3B220",
+                "production_nominal": "3",
+                "weight": "17",
+                "size": "400x400x950",
+                "voltage": "220",
+                "frequency": "50",
+                "power": "690",
+                "image_filename": "ozonogroup-ozonizzatore-oxy.png",
+                "price": "9414",
+                "output": "ossigeno",
+                "categories": [
+                    "accessori"
+                ],
+                "description": "La versione Oxy ProB, con 3 l/min, è progettata per applicazioni industriali professionali continuative, come supporto a generatori di ozono, processi di sanificazione industriale e linee produttive controllate. Rispetto alla linea Easy, garantisce maggiore robustezza e affidabilità per utilizzi prolungati."
+            },
+            {
+                "name": "Oxy",
+                "version": "Oxy ProC",
+                "code": "OXP5C220",
+                "production_nominal": "5",
+                "weight": "19",
+                "size": "400x400x950",
+                "voltage": "220",
+                "frequency": "50",
+                "power": "810",
+                "image_filename": "ozonogroup-ozonizzatore-oxy.png",
+                "price": "10650",
+                "output": "ossigeno",
+                "categories": [
+                    "accessori"
+                ],
+                "description": "L’Oxy ProC, con 5 l/min di ossigeno, è ideale per impianti industriali strutturati, inclusi trattamenti delle acque, industrie alimentari, processi chimici e ambientali. È progettato per operare in modo continuo, migliorando l’efficienza dei processi di ossidazione e disinfezione industriale."
+            },
+            {
+                "name": "Oxy",
+                "version": "Oxy ProD",
+                "code": "OXP8D220",
+                "production_nominal": "8",
+                "weight": "21.5",
+                "size": "400x400x950",
+                "voltage": "220",
+                "frequency": "50",
+                "power": "890",
+                "image_filename": "ozonogroup-ozonizzatore-oxy.png",
+                "price": "11525",
+                "output": "ossigeno",
+                "categories": [
+                    "accessori"
+                ],
+                "description": "La versione Oxy ProD, con 8 l/min, è indicata per applicazioni industriali ad alta intensità, come impianti di depurazione, industrie chimiche e sistemi avanzati di ozonizzazione. Garantisce elevata stabilità operativa e prestazioni costanti anche in cicli di lavoro prolungati."
+            },
+            {
+                "name": "Oxy",
+                "version": "Oxy ProE",
+                "code": "OXP10E220",
+                "production_nominal": "10",
+                "weight": "22",
+                "size": "400x400x950",
+                "voltage": "220",
+                "frequency": "50",
+                "power": "920",
+                "image_filename": "ozonogroup-ozonizzatore-oxy.png",
+                "price": "11825",
+                "output": "ossigeno",
+                "categories": [
+                    "accessori"
+                ],
+                "description": "L’Oxy ProE, con portata di 10 l/min, rappresenta la soluzione più potente della gamma. È progettato per grandi impianti industriali e ambientali, come trattamento acque su larga scala, industrie chimiche, alimentari e impianti di sanificazione industriale complessi, assicurando massima efficienza, continuità operativa e prestazioni professionali elevate."
             }
         ]
     }

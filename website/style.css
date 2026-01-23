@@ -225,6 +225,22 @@ p {
 
 
 /* **************************************** */
+/* LAYOUT                                   */
+/* **************************************** */
+
+@media (min-width: 768px) {
+    .flex-d {
+        display: flex;
+    }
+}
+
+@media (max-width: 767px) {
+    .hide-m {
+        display: none;
+    }
+}
+
+/* **************************************** */
 /* HEADER                                   */
 /* **************************************** */
 
@@ -871,7 +887,6 @@ footer h2 {
     border-bottom: 2px solid transparent;
 }
 
-
 /* Content */
 .tab-content .content {
     display: none;
@@ -971,5 +986,29 @@ footer h2 {
 
 #tabs7-a:checked~.tab-content .a,
 #tabs7-b:checked~.tab-content .b {
+    display: block;
+}
+
+/* Block 8 */
+#tabs8-a:checked~.tab-labels label[for="tabs8-a"],
+#tabs8-b:checked~.tab-labels label[for="tabs8-b"] {
+    color: #000;
+    border-bottom-color: #000;
+}
+
+#tabs8-a:checked~.tab-content .a,
+#tabs8-b:checked~.tab-content .b {
+    display: block;
+}
+
+/* Block 9 */
+#tabs9-a:checked~.tab-labels label[for="tabs9-a"],
+#tabs9-b:checked~.tab-labels label[for="tabs9-b"] {
+    color: #000;
+    border-bottom-color: #000;
+}
+
+#tabs9-a:checked~.tab-content .a,
+#tabs9-b:checked~.tab-content .b {
     display: block;
 }

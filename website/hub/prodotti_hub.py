@@ -44,6 +44,42 @@ categories_data = [
     },
 ]
 
+def hero_html_gen(category=''):
+    section_hero_py = '5rem'
+    section_py = '8rem'
+    hero_button = f'''
+        <div style="flex: 1; display: flex; justify-content: end; margin-top: 0.25rem;">
+            <div style="display: inline-block;">
+                <a class="button-default-1" href="/contatti.html">
+                    <span>Prenota Consulenza Gratuita</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>                
+                </a>
+            </div>
+        </div>
+    '''
+    if category == '':
+        title = '''Generatori e sistemi professionali ad ozono per l'industria'''
+    else: 
+        category_name = category['category_name']
+        category_href = category['category_href']
+        title = category_name
+    ########################################
+    # hero
+    ########################################
+    hero_html = f'''
+        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_hero_py};">
+            <div style="display: flex; justify-content: space-between; center;">
+                <div style="flex: 2;">
+                    <h1 style="color: #222222; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
+                        {title}
+                    </h1>
+                </div>
+            </div>
+        </section>
+        <div style="background-color: #ededed; height: 1px;"></div>  
+    '''
+    return hero_html
+
 def group_products_by_name_old():
     groups = []
     for item in products_data:
@@ -114,7 +150,6 @@ def cta():
 
 
 def sidebar_gen():
-    
     categories_html = ''
     for item in categories_data:
         card_html = f'''
@@ -139,18 +174,31 @@ def sidebar_gen():
     products_popular_data = [product_1, product_2, product_3, ]
     popular_cards_html = ''
     for item in products_popular_data:
+        product_name = item['name']
+        product_slug = product_name.lower().strip().replace(' ', '-')
         item = item['versions'][0]
         popular_card_html = f'''
             <div style="display: flex; gap: 1rem;">
                 <div style="flex: 2;">
+                <a style="
+                        color: #222222; text-decoration: none;
+                    "
+                    href="/prodotti/{product_slug}.html"
+                >
                     <div style="background-color: #f7f7f7; padding: 1rem; margin-bottom: 1rem;">
                         <img src="/immagini/{item['image_filename']}" style="height: 4rem; object-fit: contain;">
                     </div>
+                </a>
                 </div>
                 <div style="flex: 3;">
                     <p class="font-inter-regular" style="font-size: 0.675rem; color: #666666; line-height: 1; margin-bottom: 0.5rem;">{item['output'].upper()}</p>
-                    <h2 class="font-inter-medium" style="font-size: 1rem; color: #222222; line-height: 1; margin-bottom: 0.5rem;">{item['name']}</h2>
-                    <p class="font-inter-bold" style="font-size: 0.875rem; color: #222222; line-height: 1;">{item['price']}</p>
+                    <a style="
+                            color: #222222; text-decoration: none;
+                        "
+                        href="/prodotti/{product_slug}.html"
+                    >
+                        <h2 class="font-inter-medium" style="font-size: 1rem; color: #222222; line-height: 1; margin-bottom: 0.5rem;">{item['name']}</h2>
+                    </a>
                 </div>
             </div>
         '''
@@ -257,37 +305,7 @@ def sidebar_gen_old():
     return sidebar_html
 
 def products_gen():
-    section_hero_py = '5rem'
-    section_py = '8rem'
-    hero_button = f'''
-        <div style="flex: 1; display: flex; justify-content: end; margin-top: 0.25rem;">
-            <div style="display: inline-block;">
-                <a class="button-default-1" href="/contatti.html">
-                    <span>Prenota Consulenza Gratuita</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>                
-                </a>
-            </div>
-        </div>
-    '''
-    ########################################
-    # hero
-    ########################################
-    hero = f'''
-        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_hero_py};">
-            <div style="display: flex; justify-content: space-between; center;">
-                <div style="flex: 2;">
-                    <h1 style="color: #222222; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
-                        Generatori e sistemi professionali ad ozono per l'industria
-                    </h1>
-                    <p style="color: #1f1f1f;">                        
-                        Progettiamo e forniamo soluzioni affidabili per la sanificazione di ambienti, superfici e impianti produttivi.
-                    </p>
-                </div>
-                {hero_button}
-            </div>
-        </section>
-        <div style="background-color: #ededed; height: 1px;"></div>  
-    '''
+    hero = hero_html_gen()
 
     ########################################
     # NEW html
@@ -297,6 +315,7 @@ def products_gen():
         product_name = group['name']
         product_slug = product_name.lower().strip().replace(' ', '-')
         item = group['versions'][0]
+        # product_versions_html = product_versions_html_gen(group)
         card_html = f'''
             <div>
                 <a style="
@@ -318,15 +337,15 @@ def products_gen():
                         {product_name}
                     </a>
                 </h2>
-                <p class="font-inter-bold" style="font-size: 1.125rem; color: #222222; line-height: 1;">€{item['price']}</p>
             </div>
         '''
         cards_html += card_html
     sidebar_html = sidebar_gen()
+
     prodotti = f'''
         <section class="container-xl" style="margin-top: 2rem;">
-            <div style="display: flex; gap: 2rem;">
-                <div style="flex: 1;">
+            <div class="flex-d" style="gap: 2rem;">
+                <div class="hide-m" style="flex: 1;">
                 {sidebar_html}
                 </div>
                 <div style="flex: 3;">
@@ -351,10 +370,9 @@ def products_gen():
         </head>
         <body>
             {components.header_light()}
-            <main>
+            <main style="margin-bottom: 4.8rem;">
                 {hero}
                 {prodotti}
-                {cta()}
             </main>
                 
             {components.footer_dark()}
@@ -363,6 +381,40 @@ def products_gen():
     '''
     html_filepath = f'{g.website_folderpath}/prodotti.html'
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)
+
+def product_versions_html_gen(product):
+    product_versions = [item['version'] for item in product['versions']]
+    product_versions_html = ''
+    for product_version in product_versions:
+        _html = f'''
+            <span class="font-inter-bold" 
+                style="
+                white-space: nowrap;
+                padding: 6px 12px;
+                border: 1px solid #e7e7e7;
+                color: #222222;
+                font-size: 0.75rem;
+            ">
+                {product_version}
+            </span>
+        '''
+        product_versions_html += _html
+    product_versions_html = f'''
+        <p class="font-inter-medium" 
+            style="font-size: 0.75rem; color: #777777; 
+            line-height: 1; margin-bottom: 0.625rem;
+            letter-spacing: 0.5px;
+        ">
+            VERSIONI:
+        </p>
+        <div style="
+            display: flex; flex-wrap: wrap; gap: 0.5rem;
+            margin-bottom: 1rem;
+        ">
+        {product_versions_html}
+        </div>
+    '''
+    return product_versions_html
 
 def products_product_gen():
     try: os.makedirs(f'{g.website_folderpath}/prodotti')
@@ -378,24 +430,8 @@ def products_product_gen():
         models_num = len(product['versions'])
         product_description = product['description']
         ###
-        product_versions = [item['version'] for item in product['versions']]
-        product_versions_html = ''
-        for product_version in product_versions:
-            _html = f'''
-                <span class="font-inter-bold" 
-                    style="
-                    white-space: nowrap;
-                    padding: 6px 12px;
-                    border: 1px solid #e7e7e7;
-                    color: #222222;
-                    font-size: 0.75rem;
-                ">
-                    {product_version}
-                </span>
-            '''
-            product_versions_html += _html
-                    # background-color: #e7e7e7;
-                    # border-radius: 16px;
+        product_versions_html = product_versions_html_gen(product)
+        
         ###
         versions_details_html = ''
         for item_i, item in enumerate(product['versions']):
@@ -492,9 +528,18 @@ def products_product_gen():
         # product_preview = lorem.paragraph()
         # product_desc = lorem.paragraph()
 
+        '''
+        <p class="font-inter-bold" 
+            style="font-size: 1.375rem; color: #222222; 
+            line-height: 1; margin-bottom: 1rem;
+        ">€
+            {item['price']}
+        </p>
+        '''
+
         sidebar_html = sidebar_gen()
         product_html = f'''
-            <div style="display: flex; gap: 2rem; margin-bottom: 0rem;">
+            <div class="flex-d" style="gap: 2rem; margin-bottom: 0rem;">
                 <div style="flex: 1;">
                     <div style="background-color: #f7f7f7; padding: 3rem; margin-bottom: 1rem;">
                         <img src="/immagini/{item['image_filename']}" style="height: 20rem; object-fit: contain;">
@@ -507,12 +552,6 @@ def products_product_gen():
                     ">
                         {item['name']}
                     </h1>
-                    <p class="font-inter-bold" 
-                        style="font-size: 1.375rem; color: #222222; 
-                        line-height: 1; margin-bottom: 1rem;
-                    ">€
-                        {item['price']}
-                    </p>
                     <p class="font-inter-regular" 
                         style="font-size: 1rem; color: #777777; 
                          margin-bottom: 1rem;
@@ -531,19 +570,8 @@ def products_product_gen():
                             {item['output'].upper()}
                         </span>
                     </p>
-                    <p class="font-inter-medium" 
-                        style="font-size: 0.75rem; color: #777777; 
-                        line-height: 1; margin-bottom: 0.625rem;
-                        letter-spacing: 0.5px;
-                    ">
-                        VERSIONI:
-                    </p>
-                    <div style="
-                        display: flex; flex-wrap: wrap; gap: 0.5rem;
-                        margin-bottom: 1rem;
-                    ">
-                        {product_versions_html}
-                    </div>
+                    
+                    {product_versions_html}
                     <div style="
                         display: inline-block;
                         padding: 12px 24px;
@@ -567,8 +595,8 @@ def products_product_gen():
 
         content_html = f'''
             <section class="container-xl" style="margin-top: 2rem; margin-bottom: 4rem;">
-                <div style="display: flex; gap: 2rem;">
-                    <div style="flex: 1;">
+                <div class="flex-d" style="gap: 2rem;">
+                    <div class="hide-m" style="flex: 1;">
                     {sidebar_html}
                     </div>
                     <div style="flex: 3;">
@@ -599,36 +627,9 @@ def products_product_gen():
             f.write(html)
 
 def products_category_gen(category):
-    section_hero_py = '5rem'
-    section_py = '8rem'
+    hero_html = hero_html_gen(category)
     category_name = category['category_name']
     category_href = category['category_href']
-    hero_button = f'''
-        <div style="flex: 1; display: flex; justify-content: end; margin-top: 0.25rem;">
-            <div style="display: inline-block;">
-                <a class="button-default-1" href="/contatti.html">
-                    <span>Prenota Consulenza Gratuita</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>                
-                </a>
-            </div>
-        </div>
-    '''
-    ########################################
-    # hero
-    ########################################
-    hero_html = f'''
-        <section class="container-xl" style="padding-top: {section_hero_py}; padding-bottom: {section_hero_py};">
-            <div style="display: flex; justify-content: space-between; center;">
-                <div style="flex: 2;">
-                    <h1 style="color: #222222; font-size: 3rem; line-height: 1; font-weight: normal; margin-bottom: 1rem;">
-                        {category_name}
-                    </h1>
-                </div>
-                {hero_button}
-            </div>
-        </section>
-        <div style="background-color: #ededed; height: 1px;"></div>  
-    '''
     ########################################
     # NEW html
     ########################################
@@ -661,15 +662,14 @@ def products_category_gen(category):
                         {product_name}
                     </a>
                 </h2>
-                <p class="font-inter-bold" style="font-size: 1.125rem; color: #222222; line-height: 1;">€{version['price']}</p>
             </div>
         '''
         cards_html += card_html
     sidebar_html = sidebar_gen()
     prodotti = f'''
         <section class="container-xl" style="margin-top: 2rem;">
-            <div style="display: flex; gap: 2rem;">
-                <div style="flex: 1;">
+            <div class="flex-d" style="gap: 2rem;">
+                <div class="hide-m" style="flex: 1;">
                 {sidebar_html}
                 </div>
                 <div style="flex: 3;">
@@ -708,4 +708,3 @@ def gen():
     for category in categories_data:
         products_category_gen(category)
     products_gen()
-    
