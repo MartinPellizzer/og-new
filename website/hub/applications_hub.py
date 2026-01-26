@@ -419,28 +419,36 @@ def applications_gen():
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
                 <meta name="robots" content="index, follow">
 
-                <title>Applicazioni dell'Ozono</title>
-                <meta name="description" content="Una panoramica delle principali applicazioni dell'ozono negli ambienti residenziali, commerciali e industriali.">
+                <title>Applicazioni dell'Ozono | Ozonogroup</title>
+                <meta name="description" content="Scopri le diverse applicazioni dell’ozono in ambienti residenziali, commerciali e industriali. Questa pagina presenta i principali ambiti in cui l’ozono può essere utilizzato.">
             </head>
 
             <body>
 
             <header>
-                <!-- Global navigation will live here later -->
-            </header>
+                <nav>
+                  <!-- Placeholder menu -->
+                  <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="applications.html">Applications</a></li>
+                    <li><a href="#">Problems</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About</a></li>
+                  </ul>
+                </nav>
+              </header>
 
             <main>
                 <h1>Applicazioni dell'Ozono</h1>
 
                 <p>
-                    L'ozono è utilizzato in un'ampia gamma di ambienti per migliorare la qualità dell'aria, il trattamento delle acque, la sanificazione e la sicurezza dei processi. Questa pagina introduce i principali contesti in cui vengono applicati i sistemi a ozono e fornisce una panoramica strutturata di dove e come l'ozono è comunemente utilizzato.
+                    Questa pagina presenta le principali aree in cui l’ozono può essere applicato in diversi ambienti. Funziona come punto di partenza per esplorare le applicazioni dell’ozono nei contesti residenziali, commerciali e industriali.
                 </p>
             </main>
 
             <footer>
-                <!-- Global footer content will live here later -->
+                <p>&copy; 2026 [Your Company Name]. All rights reserved.</p>
             </footer>
-
             </body>
         </html>
 
