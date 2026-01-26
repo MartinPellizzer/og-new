@@ -407,8 +407,50 @@ def sectors_gen(item):
     html_filepath = f'{g.WEBSITE_FOLDERPATH}/settori.html'
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)
 
+def applications_gen():
+    ###
+    html = f'''
+        <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="robots" content="index, follow">
+
+                <title>Applicazioni dell'Ozono</title>
+                <meta name="description" content="Una panoramica delle principali applicazioni dell'ozono negli ambienti residenziali, commerciali e industriali.">
+            </head>
+
+            <body>
+
+            <header>
+                <!-- Global navigation will live here later -->
+            </header>
+
+            <main>
+                <h1>Applicazioni dell'Ozono</h1>
+
+                <p>
+                    L'ozono è utilizzato in un'ampia gamma di ambienti per migliorare la qualità dell'aria, il trattamento delle acque, la sanificazione e la sicurezza dei processi. Questa pagina introduce i principali contesti in cui vengono applicati i sistemi a ozono e fornisce una panoramica strutturata di dove e come l'ozono è comunemente utilizzato.
+                </p>
+            </main>
+
+            <footer>
+                <!-- Global footer content will live here later -->
+            </footer>
+
+            </body>
+        </html>
+
+    '''
+    html_filepath = f'{g.WEBSITE_FOLDERPATH}/applicazioni.html'
+    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)
 
 def gen():
+    applications_gen()
+    quit()
     # settori_alimentare_lattiero_caseario_gen()
     # settori_alimentare_carni_gen()
     # settori_alimentare_ortofrutta_gen()
