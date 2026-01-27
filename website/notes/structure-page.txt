@@ -1,0 +1,358 @@
+ACTION PLAN — applications.html (Standalone, STA-Ready)
+STEP 1 — Define the single purpose of applications.html
+
+Purpose
+
+Introduce all ozone applications
+
+Explain how ozone is used across environments
+
+Act as the root node of the Applications knowledge graph
+
+What it must NOT do
+
+Solve problems
+
+Sell products
+
+Go deep into any single use case
+
+STA rule
+
+One page = one dominant intent
+
+This page = orientation + authority
+
+STEP 2 — Decide the information hierarchy of the page
+
+This page should answer, in order:
+
+What does “applications of ozone” mean?
+
+In which environments is ozone used?
+
+How should a reader explore deeper topics?
+
+Why should they trust you as the source?
+
+This hierarchy determines the layout.
+
+STEP 3 — Global document structure (HTML skeleton)
+
+Required semantic elements
+
+<html lang="en">
+
+<head>
+
+<title> (neutral, encyclopedic)
+
+<meta name="description">
+
+<body>
+
+<header> → global navigation
+
+<main> → only applications content
+
+<footer>
+
+STA rule
+
+<main> must contain only application-related knowledge
+
+STEP 4 — Main heading & topical declaration
+
+Goal
+
+Declare topical ownership immediately
+
+Elements
+
+<h1> → “Applications of Ozone”
+
+Short <p> directly under <h1>
+
+Content role
+
+Define ozone applications broadly
+
+Mention residential, commercial, industrial contexts
+
+No links yet
+
+STA reason
+
+Google needs a clear topic declaration early
+
+STEP 5 — Introductory explanatory section (context-setting)
+
+Goal
+
+Educate users who don’t yet know what ozone can do
+
+Elements
+
+<section>
+
+<h2> → “What Are Ozone Applications?”
+
+2–3 paragraphs of explanation
+
+Content scope
+
+Why ozone is used
+
+General benefits
+
+Types of environments (high-level)
+
+Future-proofing
+
+Do NOT mention specific facilities or problems yet
+
+STEP 6 — Primary Applications categories section (core of the page)
+
+Goal
+
+Present the main navigational branches
+
+Even if subpages don’t exist yet
+
+Elements
+
+<section>
+
+<h2> → “Ozone Applications by Environment”
+
+<div> or <section> blocks for each category
+
+Categories (minimum)
+
+Residential Applications
+
+Commercial Applications
+
+Industrial Applications
+
+Each category block contains:
+
+<h3> → category name
+
+<p> → short explanation
+
+Optional placeholder link (# or future URL)
+
+STA rule
+
+These are semantic anchors, even before links exist
+
+STEP 7 — “How to explore applications” guidance section
+
+Goal
+
+Help users self-orient
+
+Reduce bounce rate
+
+Prepare them for future depth
+
+Elements
+
+<section>
+
+<h2> → “How to Explore Ozone Applications”
+
+<ul> or structured paragraphs
+
+Explain
+
+You can explore by environment
+
+You can explore by type of operation
+
+You can explore by specific areas (rooms, zones)
+
+STA benefit
+
+Teaches users how your knowledge system works
+
+STEP 8 — Authority & scope declaration section
+
+Goal
+
+Establish leadership without marketing fluff
+
+Elements
+
+<section>
+
+<h2> → “Our Approach to Ozone Applications”
+
+Paragraphs describing:
+
+manufacturer perspective
+
+custom system design
+
+real-world deployments
+
+Important
+
+No calls to action
+
+No product links yet
+
+STA reason
+
+Explains why your information is comprehensive and trustworthy
+
+
+
+STEP 9 — Future-facing internal linking placeholders (very important)
+
+Goal
+
+Prepare the page to link downward later
+
+Elements
+
+<section>
+
+<h2> → “Detailed Application Areas”
+
+<ul> with non-clickable or placeholder items
+
+Example items:
+
+Food industry facilities
+
+Cold storage environments
+
+Residential air treatment
+
+Water treatment systems
+
+Why
+
+These list items will become real links later
+
+No layout change required
+
+
+
+STEP 10 — Content boundaries disclaimer (optional but powerful)
+
+Goal
+
+Prevent intent confusion
+
+Elements
+
+<aside> or <section>
+
+Brief explanation:
+
+this page introduces applications
+
+detailed problems & solutions live elsewhere
+
+STA benefit
+
+Keeps topical purity
+
+Helps Google separate hubs from leaf pages
+
+
+
+STEP 11 — Footer contextual reinforcement
+
+Goal
+
+Reinforce topical network
+
+Elements
+
+<footer>
+
+Links (even placeholders) to:
+
+Problems
+
+Products
+
+About your technology
+
+Why
+
+Signals a broader ecosystem
+
+No dependency on subpages yet
+
+
+
+STEP 12 — What NOT to include (critical)
+
+To keep it future-proof, do not include:
+
+Product grids
+
+Technical specs
+
+Problem-solving guides
+
+Industry regulations
+
+Sales CTAs
+
+Those belong downstream.
+
+
+
+STEP 13 — Minimal CSS layout guidance (conceptual only)
+
+Design goals
+
+Clear vertical hierarchy
+
+Scannable sections
+
+No visual dependency on subpages
+
+Structural ideas
+
+One-column layout
+
+Clear spacing between <section>
+
+Visual boxes for application categories
+
+No CSS implementation yet.
+
+
+
+STEP 14 — Ready-for-expansion checklist
+
+Before publishing, verify:
+
+Every category can become a link later
+
+No section will need to be removed
+
+Headings form a clean H1 → H2 → H3 tree
+
+Content is timeless (no “coming soon” language)
+
+
+
+STEP 15 — Publishing mindset
+
+Once live:
+
+This page is finished enough
+
+You do NOT revisit it when adding child pages
+
+You only activate links
+
+This is the core of scalable STA.

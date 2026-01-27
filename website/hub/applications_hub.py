@@ -411,48 +411,130 @@ def applications_gen():
     ###
     html = f'''
         <!DOCTYPE html>
-            <html lang="en">
-            <head>
-                <meta charset="UTF-8">
+        <html lang="it">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="robots" content="index, follow">
 
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                <meta name="robots" content="index, follow">
+            <title>Applicazioni dell'Ozono | Ozonogroup</title>
+            <meta name="description" content="Scopri le diverse applicazioni dell'ozono in ambienti residenziali, commerciali e industriali. Questa pagina presenta i principali ambiti in cui l'ozono può essere utilizzato.">
+        </head>
 
-                <title>Applicazioni dell'Ozono | Ozonogroup</title>
-                <meta name="description" content="Scopri le diverse applicazioni dell’ozono in ambienti residenziali, commerciali e industriali. Questa pagina presenta i principali ambiti in cui l’ozono può essere utilizzato.">
-            </head>
-
-            <body>
+        <body>
 
             <header>
                 <nav>
-                  <!-- Placeholder menu -->
-                  <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="applications.html">Applications</a></li>
-                    <li><a href="#">Problems</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">About</a></li>
-                  </ul>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="applications.html">Applicazioni</a></li>
+                        <li><a href="#">Problemi</a></li>
+                        <li><a href="#">Prodotti</a></li>
+                        <li><a href="#">Chi Siamo</a></li>
+                    </ul>
                 </nav>
-              </header>
+            </header>
 
             <main>
                 <h1>Applicazioni dell'Ozono</h1>
 
+                <!-- Lead paragraph immediately under H1 -->
                 <p>
-                    Questa pagina presenta le principali aree in cui l’ozono può essere applicato in diversi ambienti. Funziona come punto di partenza per esplorare le applicazioni dell’ozono nei contesti residenziali, commerciali e industriali.
+                    Questa pagina introduce le principali aree in cui l'ozono può essere applicato in diversi ambienti.
+                    È il punto di partenza per esplorare le applicazioni residenziali, commerciali e industriali.
                 </p>
+
+                <!-- STEP 5: Introductory explanatory section -->
+                <section>
+                    <h2>Cos'è un'Applicazione dell'Ozono?</h2>
+                    <p>
+                        Le applicazioni dell'ozono rappresentano tutti i modi in cui questo gas può essere utilizzato per migliorare la qualità dell'aria, dell'acqua e degli ambienti in cui viviamo o lavoriamo. 
+                        Grazie alle sue proprietà ossidanti e purificanti, l'ozono trova impiego in contesti residenziali, commerciali e industriali.
+                    </p>
+                    <p>
+                        Questa pagina funge da punto di partenza per comprendere i diversi ambienti in cui l'ozono può essere applicato e i benefici che può portare. 
+                        In seguito, sarà possibile esplorare le applicazioni specifiche per ciascun tipo di ambiente o struttura.
+                    </p>
+                    <p>
+                        L'obiettivo è fornire un quadro completo e chiaro delle possibilità offerte dall'ozono, aiutando sia chi cerca informazioni generali sia chi desidera approfondire casi specifici.
+                    </p>
+                </section>
+
+                <!-- STEP 6: Primary Applications Categories Section -->
+                <section>
+                    <h2>Tipologie di Applicazioni</h2>
+
+                    <article>
+                        <h3>Applicazioni Residenziali</h3>
+                        <p>
+        Le applicazioni dell'ozono in ambito residenziale migliorano la qualità dell'aria e aiutano a eliminare odori e allergeni presenti nelle abitazioni. 
+        Sono soluzioni pensate per case, appartamenti e spazi privati, contribuendo a creare ambienti più salubri e confortevoli. 
+        In futuro, sarà possibile approfondire le applicazioni specifiche per ogni ambiente domestico.
+    </p>
+                    </article>
+
+                    <article>
+                        <h3>Applicazioni Commerciali</h3>
+                        <p>
+        In ambito commerciale, l'ozono viene utilizzato per igienizzare uffici, negozi, ristoranti e strutture pubbliche, migliorando la qualità dell'aria e delle superfici. 
+        Queste applicazioni garantiscono spazi sicuri e salubri per clienti e personale. 
+        Successivamente sarà possibile esplorare i casi specifici per ciascun tipo di attività commerciale.
+    </p>
+                    </article>
+
+                    <article>
+                        <h3>Applicazioni Industriali</h3>
+                        <p>
+        Le applicazioni industriali comprendono stabilimenti produttivi, magazzini e processi industriali in cui l'ozono aiuta a controllare odori, batteri e contaminanti. 
+        Queste soluzioni migliorano la sicurezza e la qualità degli ambienti su larga scala. 
+        In futuro, saranno disponibili approfondimenti per i diversi settori industriali e le loro aree operative specifiche.
+    </p>
+                    </article>
+                </section>
+
+                <!-- STEP 3: Exploration guidance section -->
+                <section>
+                    <h2>Come Esplorare le Applicazioni dell'Ozono</h2>
+                    <p>
+                        È possibile esplorare le applicazioni in base al tipo di ambiente, alla struttura o al tipo di operazione.
+                        Questa pagina introduce le categorie principali per aiutarti a trovare informazioni più dettagliate in futuro.
+                    </p>
+                </section>
+
+                <!-- STEP 3: Authority section -->
+                <section>
+                    <h2>Il Nostro Approccio alle Applicazioni dell'Ozono</h2>
+                    <p>
+                        Offriamo una conoscenza completa delle applicazioni dell'ozono in tutti gli ambienti,
+                        combinando anni di esperienza con la ricerca e la pratica nella progettazione di sistemi a ozono.
+                    </p>
+                </section>
+
             </main>
 
             <footer>
-                <p>&copy; 2026 [Your Company Name]. All rights reserved.</p>
+                <p>&copy; 2026 Ozonogroup. Tutti i diritti riservati.</p>
             </footer>
-            </body>
+
+        </body>
         </html>
 
+
     '''
+    '''
+<!-- Placeholder per aree dettagliate future -->
+    <section>
+      <h2>Aree di Applicazione Dettagliate</h2>
+      <ul>
+        <li>Strutture dell'industria alimentare</li>
+        <li>Ambientazioni per la conservazione a freddo</li>
+        <li>Trattamento dell'aria residenziale</li>
+        <li>Sistemi di trattamento dell'acqua</li>
+      </ul>
+    </section>
+    '''
+
     html_filepath = f'{g.WEBSITE_FOLDERPATH}/applicazioni.html'
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)
 
