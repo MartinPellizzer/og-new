@@ -1,3 +1,7 @@
+great, now do STEP 7 — “How to explore applications” guidance section. explain it to me in detail ad give me the best code. How to explore applications
+
+
+
 ACTION PLAN — applications.html (Standalone, STA-Ready)
 STEP 1 — Define the single purpose of applications.html
 
@@ -147,6 +151,8 @@ STA rule
 
 These are semantic anchors, even before links exist
 
+
+
 STEP 7 — “How to explore applications” guidance section
 
 Goal
@@ -176,6 +182,8 @@ You can explore by specific areas (rooms, zones)
 STA benefit
 
 Teaches users how your knowledge system works
+
+
 
 STEP 8 — Authority & scope declaration section
 
