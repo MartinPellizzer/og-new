@@ -4,6 +4,7 @@ import shutil
 from lib import g
 
 shutil.copy2(f'style.css', f'{g.WEBSITE_FOLDERPATH}/style.css')
+shutil.copy2(f'styles-applications.css', f'{g.WEBSITE_FOLDERPATH}/styles-applications.css')
 
 if 1:
     from hub import applications_hub

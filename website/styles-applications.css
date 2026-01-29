@@ -1,0 +1,408 @@
+/* ==================================================
+   Ozonogroup Applications Page CSS
+   Author: Martin Pellizzer
+   Description: Full style guide implementation for 
+   applications.html, responsive and scalable
+   ================================================== */
+
+/* --------- Root Variables / Design Tokens --------- */
+:root {
+    /* Colors */
+    --color-primary: #1A73E8;
+    --color-primary-dark: #1558B0;
+    --color-secondary: #FFA726;
+    --color-neutral-light: #FAFAFA;
+    --color-neutral-lighter: #F5F5F5;
+    --color-neutral-dark: #333333;
+    --color-text-muted: #B0B0B0;
+    --color-footer-bg: #0F1C2C;
+    --color-footer-text: #FFFFFF;
+
+    /* Typography */
+    --font-heading: 'Inter', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+    --font-mono: 'Source Code Pro', monospace;
+
+    /* Spacing */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-xxl: 64px;
+
+    /* Borders / Radius */
+    --radius-sm: 6px;
+
+    /* Shadows */
+    --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+    /* Layout */
+    --max-width-desktop: 1200px;
+    --max-width-tablet: 1024px;
+    --max-width-mobile: 768px;
+
+    /* Line heights */
+    --line-height-body: 1.6;
+}
+
+/* --------- Global Styles --------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: var(--font-body);
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #ffffff;
+    color: var(--color-neutral-dark);
+    line-height: var(--line-height-body);
+    font-weight: 400;
+    overflow-x: hidden;
+}
+
+/* --------- Links --------- */
+a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover,
+a:focus {
+    color: var(--color-primary-dark);
+    outline: none;
+}
+
+/* --------- Typography --------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    margin-bottom: var(--space-md);
+    line-height: 1.3;
+    color: var(--color-neutral-dark);
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-lg);
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-md);
+}
+
+h3 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+}
+
+h4 {
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-sm);
+}
+
+h5 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: var(--space-sm);
+    margin-bottom: var(--space-xs);
+}
+
+h6 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: var(--space-sm);
+    margin-bottom: var(--space-xs);
+}
+
+/* Paragraphs */
+p {
+    margin-bottom: var(--space-md);
+}
+
+/* --------- Layout / Containers --------- */
+main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+section {
+    padding-top: var(--space-xl);
+}
+
+/* --------- Articles / Cards --------- */
+article {
+    background-color: var(--color-neutral-lighter);
+    border-radius: var(--radius-sm);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-md);
+    box-shadow: var(--shadow-light);
+}
+
+/* --------- Lists --------- */
+ul,
+ol {
+    padding-left: 1.5em;
+    margin-bottom: var(--space-md);
+}
+
+li {
+    margin-bottom: var(--space-sm);
+}
+
+/* --------- Buttons --------- */
+.btn {
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+    border: none;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-dark);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+    background-color: var(--color-secondary);
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #cc8400;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* -------------------------
+   Header Container
+------------------------- */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-md) var(--space-lg);
+    background-color: #ffffff;
+    /* clean white */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* -------------------------
+   Logo
+------------------------- */
+header .logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+/* -------------------------
+   Navigation (Desktop)
+------------------------- */
+.main-nav .nav-links {
+    display: flex;
+    gap: var(--space-lg);
+    list-style: none;
+}
+
+.main-nav .nav-links li a {
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--color-neutral-dark);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.main-nav .nav-links li a:hover,
+.main-nav .nav-links li a:focus {
+    color: var(--color-primary);
+    outline: none;
+}
+
+/* -------------------------
+   Hamburger (Mobile)
+------------------------- */
+#nav-toggle {
+    display: none;
+    /* hidden checkbox */
+}
+
+.hamburger {
+    display: none;
+    /* hidden on desktop */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--color-neutral-dark);
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* --------- Footer --------- */
+footer {
+    background-color: var(--color-footer-bg);
+    color: var(--color-footer-text);
+    padding: var(--space-xl) var(--space-lg);
+    margin-top: var(--space-xxl);
+    font-size: 0.9rem;
+}
+
+footer nav ul {
+    display: flex;
+    gap: var(--space-lg);
+    list-style: none;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-md);
+}
+
+footer a {
+    color: var(--color-neutral-lighter);
+    text-decoration: underline;
+}
+
+/* --------- Forms --------- */
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 0.5em 1em;
+    border: 1px solid var(--color-text-muted);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 16px;
+    margin-bottom: var(--space-md);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--color-primary);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+}
+
+label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: var(--space-xs);
+}
+
+/* --------- Responsive --------- */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    main {
+        padding: 0 var(--space-md);
+    }
+
+    .hamburger {
+        display: flex;
+        cursor: pointer;
+    }
+
+    .main-nav .nav-links {
+        display: none;
+        /* hidden by default */
+        position: absolute;
+        top: 100%;
+        /* below header */
+        right: 0;
+        width: 100%;
+        background-color: #ffffff;
+        flex-direction: column;
+        padding: var(--space-md) var(--space-lg);
+        gap: var(--space-md);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Use general sibling combinator ~ instead of + */
+    #nav-toggle:checked~.main-nav .nav-links {
+        display: flex;
+    }
+
+    section {
+        padding-top: var(--space-lg);
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    article {
+        padding: var(--space-md);
+    }
+
+    section {
+        padding-top: var(--space-md);
+    }
+
+}
+
+/* --------- Misc / Accessibility --------- */
+:focus {
+    outline: 2px dashed var(--color-primary);
+    outline-offset: 2px;
+}
