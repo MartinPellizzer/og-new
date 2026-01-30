@@ -1,0 +1,293 @@
+Perfect brief. I’ll stay **strategic, structured, and sequential**, and I’ll write **only the website content labels/headings in Italian**, while **explaining everything in English** as requested.
+
+Below is **Step 1: Homepage purpose → hierarchy → section rationale**.
+No code, no implementation, no copy blocks yet—just the plan.
+
+---
+
+## STEP 1 — Define the Homepage’s Strategic Role (STA-aligned)
+
+### What the homepage is **not**
+
+* Not a sales page
+* Not a keyword dump
+* Not a duplicate of /applicazioni.html
+* Not a generic “chi siamo + prodotti” landing page
+
+### What the homepage **must be**
+
+From a Semantic Topical Authority perspective, the homepage is:
+
+> **A semantic index + credibility gateway**
+> that defines the **entire topical universe of ozone**,
+> and routes users (and crawlers) into **clear topic hubs**.
+
+### Primary goals
+
+1. **Define scope**: “We cover ozone as a technology, not just products”
+2. **Signal authority**: industrial, scientific, standards-aware
+3. **Expose topology**: applications, products, services, guides
+4. **Enable internal linking** without cannibalization
+5. **Serve mixed intent** (industrial, commercial, residential) cleanly
+
+---
+
+## STEP 2 — Global Information Architecture (Homepage Level)
+
+The homepage should visually and semantically answer one question:
+
+> *“What parts of the ozone domain does this company own?”*
+
+### Mandatory topic hubs (top-level links)
+
+You already have:
+
+* `/applicazioni.html`
+* `/prodotti.html`
+
+From an STA perspective, these **must be complemented** by:
+
+| Hub                        | Why it’s mandatory                        |
+| -------------------------- | ----------------------------------------- |
+| **Applicazioni**           | Intent: “dove si usa” (already done)      |
+| **Prodotti**               | Commercial + technical discovery          |
+| **Servizi**                | Differentiates manufacturer vs integrator |
+| **Guida all’Ozono**        | Authority, education, E-E-A-T             |
+| **Blog / Approfondimenti** | Freshness, long-tail capture              |
+| **Contatti**               | Trust & conversion, not salesy            |
+
+These should all be **exposed on the homepage**, not hidden only in nav.
+
+---
+
+## STEP 3 — Homepage Section Stack (Top → Bottom)
+
+Below is the **recommended section order**, with **Italian section titles only**, and the **reasoning in English**.
+
+---
+
+### 1. Hero / Above the Fold
+
+**Section label (Italian):**
+**Tecnologie a ozono per aria, acqua e superfici**
+
+**Purpose**
+
+* Define the *domain*, not the offer
+* Immediately communicate industrial + scientific credibility
+* Avoid marketing language (“soluzioni innovative”, “leader di mercato”)
+
+**Why this works for STA**
+
+* Establishes **topical breadth** (aria, acqua, superfici)
+* Avoids narrowing into products too early
+* Supports multiple user intents
+
+**CTA logic**
+
+* Primary: *Esplora le applicazioni* → `/applicazioni.html`
+* Secondary: *Guida all’ozono* → `/guida-ozono/` (future hub)
+
+---
+
+### 2. Authority & Scope Definition
+
+**Section label:**
+**Competenza scientifica sull’ozono**
+
+**Purpose**
+
+* Answer: *“Why should I trust this site?”*
+* Position company as **manufacturer + solutions provider**
+* Introduce standards, safety, engineering mindset (without details yet)
+
+**Content focus (high level)**
+
+* Ozone as a technology
+* Controlled generation
+* Regulatory awareness
+* Industrial design approach
+
+**STA role**
+
+* Reinforces **E-E-A-T**
+* Sets tone for Guides and Services hubs
+
+---
+
+### 3. Topic Gateway: Applicazioni
+
+**Section label:**
+**Ambiti di applicazione dell’ozono**
+
+**Purpose**
+
+* Preview the existing long-form hub
+* Do NOT repeat its content
+* Act as a semantic gateway
+
+**Structure idea (no implementation yet)**
+
+* Short intro (what “applications” means)
+* 4–6 high-level domains (e.g. aria, acqua, alimentare, sanitario, industriale)
+
+**CTA**
+
+* *Vai a tutte le applicazioni* → `/applicazioni.html`
+
+**Why this matters**
+
+* Clear internal link funnel
+* Prevents homepage from competing with the hub
+* Supports future leaf expansion
+
+---
+
+### 4. Topic Gateway: Prodotti
+
+**Section label:**
+**Generatori e sistemi a ozono**
+
+**Purpose**
+
+* Signal that products exist
+* Avoid turning homepage into a catalog
+* Frame products as **systems**, not SKUs
+
+**Content positioning**
+
+* Categories, not models
+* Industrial vs commercial vs residenziale (if applicable)
+
+**CTA**
+
+* *Scopri i prodotti* → `/prodotti.html`
+
+**STA benefit**
+
+* Keeps commercial intent siloed
+* Supports clean product taxonomy later
+
+---
+
+### 5. Topic Gateway: Servizi
+
+**Section label:**
+**Progettazione, integrazione e supporto**
+
+**Purpose**
+
+* Distinguish you from “hardware-only” competitors
+* Speak to B2B decision-makers
+
+**Typical service buckets**
+
+* Progettazione impianti
+* Integrazione sistemi
+* Assistenza e manutenzione
+* Consulenza applicativa
+
+**CTA**
+
+* *I nostri servizi* → `/servizi.html`
+
+---
+
+### 6. Educational Pillar
+
+**Section label:**
+**Guida completa all’ozono**
+
+**Purpose**
+
+* Anchor topical authority
+* Capture informational intent
+* Support long-term SEO growth
+
+**Content role**
+
+* Safety
+* Chemistry basics
+* Regulations
+* Best practices
+* Myths & limits
+
+**CTA**
+
+* *Consulta la guida all’ozono* → `/guida-ozono/`
+
+**Why this is critical**
+
+* This is your **authority engine**
+* Separates you from purely commercial competitors
+
+---
+
+### 7. Trust & Proof (Non-Marketing)
+
+**Section label:**
+**Affidabilità industriale**
+
+**Purpose**
+
+* Reinforce seriousness without testimonials fluff
+* Optional but recommended
+
+**Possible elements**
+
+* Years of experience
+* Compliance references
+* Industrial sectors served
+* Certifications (if applicable)
+
+**STA role**
+
+* Supports conversion *indirectly*
+* Reinforces expertise signals
+
+---
+
+### 8. Soft Conversion / Contact
+
+**Section label:**
+**Contatto tecnico**
+
+**Purpose**
+
+* Enable action without pressure
+* Especially for engineers, buyers, consultants
+
+**Tone**
+
+* “Parla con un tecnico”
+* “Valuta un’applicazione specifica”
+
+**CTA**
+
+* *Contattaci* → `/contatti.html`
+
+---
+
+## STEP 4 — Semantic Principles (No Code Yet)
+
+At a high level, the homepage should follow:
+
+* **One `<h1>` only** → domain definition
+* Section titles as `<h2>`
+* No product or application `<h3>` overload
+* Each section = **one intent**
+* Every CTA points to a **hub**, not a leaf
+
+---
+
+## STEP 5 — What We’ll Do Next (Future Prompts)
+
+When you’re ready, next steps can be:
+
+1. Define **exact Italian microcopy** for each section
+2. Map **internal linking rules** (homepage → hubs → leaves)
+3. Design **semantic section outlines** (headings only)
+4. Only then: **HTML structure**
+
+Just tell me:
+**“Execute Step X”** and we’ll go one layer deeper—clean, controlled, and scalable.

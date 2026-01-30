@@ -41,7 +41,7 @@ def gen():
                     <p style="color: #111111; font-size: 1.125rem; line-height: 1.4; text-align: left; margin-bottom: 2rem;">
                         <strong>I generatori di ozono industriali</strong> sono sistemi progettati e prodotti ad-hoc
                         per il trattamento delle acque e la sanitizzazione industriale,
-                        garantendo controllo preciso dell’ozono, affidabilità operativa
+                        garantendo controllo preciso dell'ozono, affidabilità operativa
                         e conformità alle normative di sicurezza.
                     </p>
                     <div>
@@ -68,7 +68,7 @@ def gen():
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
                     <div style="flex: 2;">
                         <p style="margin-bttom: 3rem;">
-        I sistemi a ozono industriali di Ozonogroup trovano applicazione in molteplici settori, garantendo sanificazione efficace, sicurezza e piena conformità alle normative. Scopri come le nostre soluzioni possono supportare il tuo settore industriale, riducendo rischi di contaminazione e migliorando l’igiene degli impianti.
+        I sistemi a ozono industriali di Ozonogroup trovano applicazione in molteplici settori, garantendo sanificazione efficace, sicurezza e piena conformità alle normative. Scopri come le nostre soluzioni possono supportare il tuo settore industriale, riducendo rischi di contaminazione e migliorando l'igiene degli impianti.
                         </p>
                     </div>
                     <div style="flex: 1; display: flex; justify-content: end;">
@@ -143,7 +143,7 @@ def gen():
                             </h3>
                             <img src="/immagini/home/chimico.jpg" style="margin-bottom: 1rem;">
                             <p>
-                                Sanificazione industriale in impianti chimici. Riduzione di contaminazioni e protezione dei macchinari e dell’ambiente di lavoro.
+                                Sanificazione industriale in impianti chimici. Riduzione di contaminazioni e protezione dei macchinari e dell'ambiente di lavoro.
                             </p>
                         </a>
                     </div>
@@ -1154,5 +1154,159 @@ def gen():
         </body>
         </html>
     '''
+
+    html = f'''
+        <!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/styles-home.css">
+    <link rel="stylesheet" href="/styles-components.css">
+
+    <title>Tecnologie a ozono per aria, acqua e superfici</title>
+    <meta name="description" content="Tecnologie e sistemi a ozono per applicazioni industriali, commerciali e civili. Progettazione, applicazioni e guida tecnica sull'ozono.">
+
+</head>
+<body>
+
+    <!-- =======================================
+         SITE HEADER
+         Add logo and main navigation here
+    ======================================== -->
+    {components.header_default()}
+
+    <!-- =======================================
+         MAIN CONTENT
+    ======================================== -->
+    <main id="contenuto-principale">
+
+        <!-- HERO SECTION -->
+        <section aria-labelledby="hero-title">
+            <div class="contenuto-hero">
+                <h1 id="hero-title">Tecnologie a ozono per aria, acqua e superfici</h1>
+                <p>Progettiamo e realizziamo sistemi a ozono sicuri, controllati e affidabili, adatti a diversi ambiti applicativi, dall'industriale al residenziale.</p>
+                <nav aria-label="Percorsi principali">
+                    <ul class="azioni-hero">
+                        <li><a href="/applicazioni.html">Esplora le applicazioni</a></li>
+                        <li><a href="/guida-ozono/">Guida all'ozono</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+
+        <!-- AUTHORITY & SCOPE -->
+        <section aria-labelledby="authority-title">
+            <div class="contenuto-authority">
+                <h2 id="authority-title">Competenza tecnica sull'ozono</h2>
+                <p>I nostri sistemi a ozono sono sviluppati secondo rigorosi standard tecnici e di sicurezza, garantendo prestazioni affidabili e conformità alle normative di settore.</p>
+                <ul>
+                    <li>Monitoraggio e controllo continuo dei sistemi</li>
+                    <li>Soluzioni progettate su misura per specifiche esigenze applicative</li>
+                    <li>Supporto tecnico specializzato per ogni fase operativa</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- TOPIC GATEWAY: APPLICAZIONI -->
+        <section aria-labelledby="applications-title">
+            <div class="contenuto-applicazioni">
+                <h2 id="applications-title">Ambiti di applicazione dell'ozono</h2>
+                <p>L'ozono trova impiego in diversi contesti: trattamento aria e acqua, sanificazione di ambienti, e processi industriali, offrendo soluzioni controllate e sicure.</p>
+                <ul>
+                    <li>Purificazione dell'aria</li>
+                    <li>Trattamento e depurazione dell'acqua</li>
+                    <li>Sanificazione di superfici e ambienti</li>
+                    <li>Applicazioni industriali e commerciali</li>
+                </ul>
+                <nav aria-label="Vai al hub Applicazioni"><a href="/applicazioni.html">Vai al hub Applicazioni</a></nav>
+            </div>
+        </section>
+
+        <!-- TOPIC GATEWAY: PRODOTTI -->
+        <section aria-labelledby="products-title">
+            <div class="contenuto-prodotti">
+                <h2 id="products-title">Generatori e sistemi a ozono</h2>
+                <p>Offriamo sistemi e generatori a ozono progettati per diversi settori, garantendo soluzioni efficienti e controllate.</p>
+                <ul>
+                    <li>Generatori d'aria per purificazione e sanificazione</li>
+                    <li>Sistemi per trattamento e depurazione dell'acqua</li>
+                    <li>Unità compatte per ambienti residenziali o commerciali</li>
+                    <li>Soluzioni integrate per impianti industriali</li>
+                </ul>
+                <nav aria-label="Vai al hub Prodotti"><a href="/prodotti.html">Scopri i prodotti</a></nav>
+            </div>
+        </section>
+
+        <!-- TOPIC GATEWAY: SERVIZI -->
+        <section aria-labelledby="services-title">
+            <div class="contenuto-servizi">
+                <h2 id="services-title">Servizi di progettazione e supporto</h2>
+                <p>Offriamo servizi completi per progettazione, integrazione e manutenzione di sistemi a ozono, garantendo soluzioni personalizzate e supporto tecnico continuativo.</p>
+                <ul>
+                    <li>Progettazione impianti su misura</li>
+                    <li>Integrazione con sistemi industriali e commerciali</li>
+                    <li>Manutenzione programmata e assistenza tecnica</li>
+                    <li>Consulenza applicativa per ottimizzare le prestazioni</li>
+                </ul>
+                <nav aria-label="Vai al hub Servizi"><a href="/servizi.html">I nostri servizi</a></nav>
+            </div>
+        </section>
+
+        <!-- EDUCATIONAL PILLAR -->
+        <section aria-labelledby="guide-title">
+            <div class="contenuto-guida">
+                <h2 id="guide-title">Guida completa all'ozono</h2>
+                <p>Approfondisci i principi dell'ozono, la sicurezza d'uso e le migliori pratiche operative per applicazioni industriali, commerciali e residenziali, con contenuti tecnici e formativi.</p>
+                <ul>
+                    <li>Chimica e proprietà dell'ozono</li>
+                    <li>Sicurezza e normative</li>
+                    <li>Applicazioni industriali e commerciali</li>
+                    <li>Miti, limiti e buone pratiche</li>
+                </ul>
+                <nav aria-label="Vai al hub Guida all'Ozono"><a href="/guida-ozono/">Consulta la guida all'ozono</a></nav>
+            </div>
+        </section>
+
+        <!-- TRUST & PROOF -->
+        <section aria-labelledby="trust-title">
+            <div class="contenuto-trust">
+                <h2 id="trust-title">Affidabilità per applicazioni professionali</h2>
+                <p>Con oltre X anni di esperienza nella progettazione e realizzazione di sistemi a ozono, operiamo nei diversi settori rispettando standard di sicurezza e certificazioni riconosciute.</p>
+                <ul>
+                    <li>Esperienza consolidata in contesti industriali e commerciali</li>
+                    <li>Progettazione secondo standard internazionali</li>
+                    <li>Certificazioni e conformità regolatoria</li>
+                    <li>Collaborazioni con operatori professionali e aziende leader</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SOFT CONVERSION / CONTACT -->
+        <section aria-labelledby="contact-title">
+            <div class="contenuto-contatto">
+                <h2 id="contact-title">Contatto tecnico</h2>
+                <p>Per soluzioni personalizzate o approfondimenti sulle applicazioni dei nostri sistemi a ozono, il team tecnico è disponibile per consulenze e supporto dedicato.</p>
+                <nav aria-label="Vai alla pagina contatti"><a href="/contatti.html">Contattaci</a></nav>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =======================================
+         FOOTER
+         Include company info, legal, sitemap, social links
+    ======================================== -->
+    <footer></footer>
+
+</body>
+</html>
+
+
+
+
+
+    '''
     html_filepath = f'{g.WEBSITE_FOLDERPATH}/index.html'
-    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)
+    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
+        f.write(html)

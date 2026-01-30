@@ -417,6 +417,7 @@ def applications_gen():
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="robots" content="index, follow">
             <link rel="stylesheet" href="/styles-applications.css">
+            <link rel="stylesheet" href="/styles-components.css">
 
             <title>Applicazioni dell'Ozono – Ambiti, Contesti e Utilizzi | Ozonogroup</title>
             <meta name="description" content="Panoramica completa delle applicazioni dell'ozono nei diversi ambiti residenziali, commerciali e industriali. Una guida introduttiva per comprendere contesti, ambienti e utilizzi dell'ozono.">
@@ -424,36 +425,7 @@ def applications_gen():
 
         <body>
 
-            <header>
-                <!-- Logo -->
-                <div class="logo">
-                    <a href="index.html">
-                    <img src="/immagini/logo.png" alt="Ozonogroup" />
-                    </a>
-                </div>
-
-                <!-- Hidden checkbox for mobile toggle -->
-                <input type="checkbox" id="nav-toggle" />
-
-                <!-- Navigation -->
-                <nav class="main-nav" aria-label="Main Navigation">
-                    <ul class="nav-links">
-                    <li><a href="applications.html">Applicazioni</a></li>
-                    <li><a href="prodotti.html">Prodotti</a></li>
-                    <li><a href="servizi.html">Servizi</a></li>
-                    <li><a href="guida.html">Guida all'Ozono</a></li>
-                    <li><a href="contatti.html">Contatti</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    </ul>
-                </nav>
-
-                <!-- Hamburger button -->
-                <label for="nav-toggle" class="hamburger" aria-label="Toggle navigation menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </label>
-            </header>
+            {components.header_default()}
 
             <!--
             Page Intent:

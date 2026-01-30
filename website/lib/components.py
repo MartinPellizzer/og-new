@@ -89,3 +89,38 @@ def footer_dark():
         </footer>
     '''
     return html
+
+def header_default():
+    html = f'''
+        <header>
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html">
+                <img src="/immagini/logo.png" alt="Ozonogroup" />
+                </a>
+            </div>
+
+            <!-- Hidden checkbox for mobile toggle -->
+            <input type="checkbox" id="nav-toggle" />
+
+            <!-- Navigation -->
+            <nav class="main-nav" aria-label="Main Navigation">
+                <ul class="nav-links">
+                <li><a href="applications.html">Applicazioni</a></li>
+                <li><a href="prodotti.html">Prodotti</a></li>
+                <li><a href="servizi.html">Servizi</a></li>
+                <li><a href="guida.html">Guida all'Ozono</a></li>
+                <li><a href="contatti.html">Contatti</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+
+            <!-- Hamburger button -->
+            <label for="nav-toggle" class="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </header>
+    '''
+    return html

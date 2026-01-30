@@ -1,0 +1,176 @@
+/* =========================================
+   GLOBAL RESET & TYPOGRAPHY
+   ========================================= */
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Headings: Inter */
+h1,
+h2,
+h3 {
+    font-family: 'Inter', sans-serif;
+    color: #0a0a0a;
+    line-height: 1.3;
+}
+
+/* =========================================
+   MAIN CONTENT COLUMN
+   ========================================= */
+#contenuto-principale {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* =========================================
+   SECTION SPACING
+   ========================================= */
+section {
+    padding: 80px 0;
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 50px 16px;
+    }
+}
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+.contenuto-hero h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.contenuto-hero p {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.azioni-hero {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+}
+
+.azioni-hero a {
+    text-decoration: none;
+    color: #0072CE;
+    /* accent color */
+    font-weight: 500;
+    padding: 0.5em 1em;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.azioni-hero a:hover,
+.azioni-hero a:focus {
+    border-bottom: 2px solid #0072CE;
+    outline: none;
+}
+
+/* Mobile Hero CTA stacking */
+@media (max-width: 768px) {
+    .azioni-hero {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* =========================================
+   SECTION HEADINGS
+   ========================================= */
+h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* =========================================
+   BULLETS / LISTS
+   ========================================= */
+ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* =========================================
+   CTA LINKS IN SECTIONS
+   ========================================= */
+section nav a {
+    color: #0072CE;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+section nav a:hover,
+section nav a:focus {
+    text-decoration: underline;
+    outline: none;
+}
+
+/* =========================================
+   TRUST & CONTACT SECTIONS DIFFERENTIATION
+   ========================================= */
+.contenuto-trust,
+.contenuto-contatto {
+    background-color: #f9f9f9;
+    padding: 60px 16px;
+    border-radius: 8px;
+}
+
+/* =========================================
+   FOCUS & ACCESSIBILITY
+   ========================================= */
+a:focus {
+    outline: 3px solid #0072CE;
+    outline-offset: 2px;
+}
+
+/* =========================================
+   RESPONSIVE TYPOGRAPHY
+   ========================================= */
+@media (max-width: 1024px) {
+    .contenuto-hero h1 {
+        font-size: 2rem;
+    }
+}
