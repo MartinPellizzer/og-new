@@ -1155,14 +1155,50 @@ def gen():
         </html>
     '''
 
+    hero_html = f'''
+        <section class="hero">
+            <div class="container-xl hero-layout">
+                <div class="hero-content">
+                    <h1>
+                        Tecnologie a ozono per aria, acqua e superfici
+                    </h1>
+                    <p>
+                        Progettiamo e realizziamo sistemi a ozono sicuri, controllati e affidabili,
+                        adatti a diversi ambiti applicativi, dall’industriale al residenziale.
+                    </p>
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="/applicazioni.html">
+                                    Esplora le applicazioni
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/guida-ozono/">
+                                    Guida all’ozono
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="hero-visual">
+                    <figure>
+                        <img
+                            src="/immagini/sistema-ozono-industriale.jpg"
+                            alt="Sistema a ozono per trattamento di aria e acqua in ambiente industriale">
+                    </figure>
+                </div>
+            </div>
+        </section>
+    '''
+
     html = f'''
         <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/styles-home.css">
-    <link rel="stylesheet" href="/styles-components.css">
+    <link rel="stylesheet" href="/styles.css">
 
     <title>Tecnologie a ozono per aria, acqua e superfici</title>
     <meta name="description" content="Tecnologie e sistemi a ozono per applicazioni industriali, commerciali e civili. Progettazione, applicazioni e guida tecnica sull'ozono.">
@@ -1181,19 +1217,7 @@ def gen():
     ======================================== -->
     <main id="contenuto-principale">
 
-        <!-- HERO SECTION -->
-        <section aria-labelledby="hero-title">
-            <div class="contenuto-hero">
-                <h1 id="hero-title">Tecnologie a ozono per aria, acqua e superfici</h1>
-                <p>Progettiamo e realizziamo sistemi a ozono sicuri, controllati e affidabili, adatti a diversi ambiti applicativi, dall'industriale al residenziale.</p>
-                <nav aria-label="Percorsi principali">
-                    <ul class="azioni-hero">
-                        <li><a href="/applicazioni.html">Esplora le applicazioni</a></li>
-                        <li><a href="/guida-ozono/">Guida all'ozono</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </section>
+        {hero_html}
 
         <!-- AUTHORITY & SCOPE -->
         <section aria-labelledby="authority-title">
@@ -1310,3 +1334,5 @@ def gen():
     html_filepath = f'{g.WEBSITE_FOLDERPATH}/index.html'
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
         f.write(html)
+    print(html_filepath)
+
