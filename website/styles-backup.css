@@ -1,11 +1,10 @@
+
 :root {
     /* Colors */
     --color-primary: #1A73E8;
     --color-primary-dark: #1558B0;
     --color-neutral-light: #FAFAFA;
     --color-neutral-lighter: #F5F5F5;
-    --color-text-muted: #B0B0B0;
-    --color-blue-light: #edf1f6;
 
     /* Typography */
     --font-heading: 'Inter', sans-serif;
@@ -81,67 +80,60 @@ img {
 
 .authority {
     padding-top: 4rem;
+    padding-bottom: 4rem;
+    background-color: var(--color-neutral-lighter);
 }
 
 .authority h2 {
     font-family: var(--font-heading);
     font-size: 2rem;
     line-height: 1.2;
-    color: var(--color-primary-dark);
+    color: #222;
     margin-bottom: 1rem;
-    text-align: center;
 }
 
 .authority p {
     font-family: var(--font-body);
     line-height: 1.5;
     color: #333;
-    text-align: center;
-    max-width: 80ch;
-    margin: 0 auto 2rem auto;
+    margin-bottom: 1.5rem;
 }
 
 .authority ul {
+    display: grid;
+    grid-template-columns: 1.0fr 1.0fr 1.0fr;
+    gap: 2rem;
+    /* align-items: center; */
     list-style: none;
-    border-top: 1px solid #efefef;
-    max-width: 120ch;
-    margin: 0 auto;
-    padding-top: 1rem;
 }
 
 .authority li {
     font-family: var(--font-body);
     line-height: 1.5;
     color: #333;
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    padding: 1rem 0;
-    border-bottom: 1px solid #efefef;
-    max-width: 80ch;
-    margin: 0 auto 1.5rem auto;
+    background-color: var(--color-neutral-lighter);
+    /* padding: 1rem 2rem; */
+    /* padding: 1rem 2rem 0 2rem; */
+    max-width: 40ch;
 }
 
 .authority svg {
     display: block;
     margin-bottom: 0.25rem;
-    background-color: var(--color-blue-light);
-    padding: 0.75rem;
-    border-radius: 9999px;
 }
 
 .applications {
     padding-top: 4rem;
     padding-bottom: 4rem;
+    /* background-color: var(--color-neutral-lighter); */
 }
 
 .applications h2 {
     font-family: var(--font-heading);
     font-size: 2rem;
     line-height: 1.2;
-    color: var(--color-primary-dark);
+    color: #222;
     margin-bottom: 1rem;
-    text-align: center;
 }
 
 .applications h3 {
@@ -156,9 +148,7 @@ img {
     font-family: var(--font-body);
     line-height: 1.5;
     color: #333;
-    text-align: center;
-    max-width: 80ch;
-    margin: 0 auto 3rem auto;
+    margin-bottom: 1.5rem;
 }
 
 .applications-cards {
@@ -166,30 +156,30 @@ img {
     grid-template-columns: 1.0fr 1.0fr 1.0fr;
     gap: 2rem;
     list-style: none;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 .applications-cards a {
     text-decoration: none;
     line-height: 1.5;
     color: #333;
+    background-color: var(--color-neutral-lighter);
     padding: 2rem;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    border-top: 3px solid var(--color-primary-dark);
-    /* border-radius: 5px; */
 }
 
 .applications-cards p {
     margin-bottom: 0;
-    text-align: left;
+}
+
+.applications svg {
+    display: block;
+    margin-bottom: 0.25rem;
 }
 
 .applications nav a {
     color: var(--color-primary-dark);
     text-decoration: none;
     font-weight: bold;
-    text-align: center;
-    display: block;
 }
 
 

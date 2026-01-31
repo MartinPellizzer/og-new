@@ -1192,6 +1192,9 @@ def gen():
         </section>
     '''
 
+    icon_color = '#1558B0'
+    icon_width = '64px'
+    icon_height = icon_width
     authority_html = f'''
         <section class="authority">
             <div class="container-xl authority-content">
@@ -1199,15 +1202,15 @@ def gen():
                 <p>I nostri sistemi a ozono sono sviluppati secondo rigorosi standard tecnici e di sicurezza, garantendo prestazioni affidabili e conformità alle normative di settore.</p>
                 <ul>
                     <li>
-<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#333"><path d="M80-570v-170q0-24 18-42t42-18h680q24 0 42 18t18 42v170h-60v-170H140v170H80Zm60 410q-24 0-42-18t-18-42v-170h60v170h680v-170h60v170q0 24-18 42t-42 18H140Zm259.81-130q8.19 0 15.79-4t11.4-12l133-266 53 106q3.75 8 11.25 12t15.75 4h240v-60H659l-72-143q-3.72-8.25-11.17-11.63-7.45-3.37-15.64-3.37-8.19 0-15.79 3.37-7.6 3.38-11.4 11.63L400-388l-53-106q-3.75-8-11.25-12T320-510H80v60h221l72 144q3.72 8 11.17 12 7.45 4 15.64 4ZM480-480Z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" height="{icon_height}" viewBox="0 -960 960 960" width="{icon_width}" fill="{icon_color}"><path d="M80-570v-170q0-24 18-42t42-18h680q24 0 42 18t18 42v170h-60v-170H140v170H80Zm60 410q-24 0-42-18t-18-42v-170h60v170h680v-170h60v170q0 24-18 42t-42 18H140Zm259.81-130q8.19 0 15.79-4t11.4-12l133-266 53 106q3.75 8 11.25 12t15.75 4h240v-60H659l-72-143q-3.72-8.25-11.17-11.63-7.45-3.37-15.64-3.37-8.19 0-15.79 3.37-7.6 3.38-11.4 11.63L400-388l-53-106q-3.75-8-11.25-12T320-510H80v60h221l72 144q3.72 8 11.17 12 7.45 4 15.64 4ZM480-480Z"/></svg>
                         Monitoraggio e controllo continuo dei sistemi in funzione
                     </li>
                     <li>
-<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#333"><path d="M705-128 447-388q-23 8-46 13t-47 5q-97.08 0-165.04-67.67Q121-505.33 121-602q0-31 8.16-60.39T152-718l145 145 92-86-149-149q25.91-15.16 54.96-23.58Q324-840 354-840q99.17 0 168.58 69.42Q592-701.17 592-602q0 24-5 47t-13 46l259 258q11 10.96 11 26.48T833-198l-76 70q-10.7 11-25.85 11Q716-117 705-128Zm28-57 40-40-273-273q16-21 24-49.5t8-54.5q0-75-55.5-127T350-782l102 104q9 9 8.5 21.5T451-635L318-510q-9.27 8-21.64 8-12.36 0-20.36-8l-98-97q3 77 54.67 127T354-430q25 0 53-8t49-24l277 277ZM476-484Z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" height="{icon_height}" viewBox="0 -960 960 960" width="{icon_width}" fill="{icon_color}"><path d="M705-128 447-388q-23 8-46 13t-47 5q-97.08 0-165.04-67.67Q121-505.33 121-602q0-31 8.16-60.39T152-718l145 145 92-86-149-149q25.91-15.16 54.96-23.58Q324-840 354-840q99.17 0 168.58 69.42Q592-701.17 592-602q0 24-5 47t-13 46l259 258q11 10.96 11 26.48T833-198l-76 70q-10.7 11-25.85 11Q716-117 705-128Zm28-57 40-40-273-273q16-21 24-49.5t8-54.5q0-75-55.5-127T350-782l102 104q9 9 8.5 21.5T451-635L318-510q-9.27 8-21.64 8-12.36 0-20.36-8l-98-97q3 77 54.67 127T354-430q25 0 53-8t49-24l277 277ZM476-484Z"/></svg>
                         Soluzioni progettate su misura per specifiche esigenze applicative
                     </li>
                     <li>
-<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#333"><path d="m296-334 122-122 80 80 152-151v77h60v-180H530v60h77L498-461l-80-80-164 165 42 42ZM180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm0-600v600-600Z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" height="{icon_height}" viewBox="0 -960 960 960" width="{icon_width}" fill="{icon_color}"><path d="m296-334 122-122 80 80 152-151v77h60v-180H530v60h77L498-461l-80-80-164 165 42 42ZM180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm0-600v600-600Z"/></svg>
                         Supporto tecnico specializzato per ogni fase operativa
                     </li>
                 </ul>
@@ -1217,16 +1220,44 @@ def gen():
 
     applications_html = f'''
         <section class="applications">
-            <div class="container-xl">
-                <h2 id="applications-title">Ambiti di applicazione dell'ozono</h2>
-                <p>L'ozono trova impiego in diversi contesti: trattamento aria e acqua, sanificazione di ambienti, e processi industriali, offrendo soluzioni controllate e sicure.</p>
-                <ul>
-                    <li>Purificazione dell'aria</li>
-                    <li>Trattamento e depurazione dell'acqua</li>
-                    <li>Sanificazione di superfici e ambienti</li>
-                    <li>Applicazioni industriali e commerciali</li>
-                </ul>
-                <nav aria-label="Vai al hub Applicazioni"><a href="/applicazioni.html">Vai al hub Applicazioni</a></nav>
+            <div class="applications-content container-xl">
+                <h2>
+                    Ambiti di applicazione dell’ozono
+                </h2>
+                <p>
+                    Le applicazioni dell’ozono variano in base al contesto d’uso.
+                    Esplora i principali ambiti applicativi per soluzioni residenziali,
+                    commerciali e industriali.
+                </p>
+                <div class="applications-cards">
+                    <a href="/applicazioni.html#residenziali" class="applicazione-card">
+                        <h3>Applicazioni residenziali</h3>
+                        <p>
+                            Utilizzo dell’ozono in ambienti domestici per il trattamento
+                            di aria, acqua e superfici, nel rispetto della sicurezza.
+                        </p>
+                    </a>
+                    <a href="/applicazioni.html#commerciali" class="applicazione-card">
+                        <h3>Applicazioni commerciali</h3>
+                        <p>
+                            Soluzioni a ozono per attività commerciali, strutture ricettive,
+                            uffici e spazi aperti al pubblico.
+                        </p>
+                    </a>
+                    <a href="/applicazioni.html#industriali" class="applicazione-card">
+                        <h3>Applicazioni industriali</h3>
+                        <p>
+                            Impiego dell’ozono in processi industriali, impianti complessi
+                            e ambienti produttivi regolamentati.
+                        </p>
+                    </a>
+
+                </div>
+                <nav>
+                    <a href="/applicazioni.html">
+                        Vai alla pagina Applicazioni
+                    </a>
+                </nav>
             </div>
         </section>
     '''
