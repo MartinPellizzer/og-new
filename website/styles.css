@@ -490,6 +490,13 @@ img {
     /* border-radius: 5px; */
 }
 
+.trust-item svg {
+    display: block;
+    background-color: var(--color-blue-light);
+    padding: 0.75rem;
+    border-radius: 9999px;
+}
+
 .trust-items p {
     margin-bottom: 0;
     text-align: left;
@@ -652,8 +659,26 @@ header .logo img {
         grid-template-columns: 1.0fr;
     }
 
+    .trust p {
+        text-align: center;
+    }
+
     .trust-items {
         grid-template-columns: repeat(1, 1.0fr);
+        text-align: center;
+    }
+
+    .trust-item svg {
+        display: block;
+        background-color: var(--color-blue-light);
+        padding: 0.75rem;
+        border-radius: 9999px;
+        margin: 0 auto 0.25rem auto;
+    }
+
+    .authority li {
+        flex-direction: column;
+        text-align: center;
     }
 
 }
@@ -681,6 +706,7 @@ header .logo img {
     .hero h1 {
         font-size: 2.5rem;
     }
+
 }
 
 /* **************************************** */
