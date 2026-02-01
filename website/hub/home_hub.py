@@ -1374,25 +1374,25 @@ def gen():
                     tecnologia, sicurezza e buone prassi.
                 </p>
                 <div class="guide-cards">
-                    <a href="/guida-ozono/chimica-proprieta" class="guida-tile">
+                    <a href="/ozono.html" class="guida-tile">
                         <h3>Chimica e proprietà dell’ozono</h3>
                         <p>Fondamenti chimici e caratteristiche principali dell’ozono.</p>
                     </a>
-                    <a href="/guida-ozono/sicurezza-normative" class="guida-tile">
+                    <a href="/ozono.html" class="guida-tile">
                         <h3>Sicurezza e normative</h3>
                         <p>Regole, standard e precauzioni per un utilizzo sicuro.</p>
                     </a>
-                    <a href="/guida-ozono/applicazioni-industriali" class="guida-tile">
+                    <a href="/ozono.html" class="guida-tile">
                         <h3>Applicazioni industriali e commerciali</h3>
                         <p>Esempi concreti di utilizzo nei diversi contesti operativi.</p>
                     </a>
-                    <a href="/guida-ozono/miti-limiti-pratiche" class="guida-tile">
+                    <a href="/ozono.html" class="guida-tile">
                         <h3>Miti, limiti e buone pratiche</h3>
                         <p>Approfondimenti su convinzioni errate e buone pratiche operative.</p>
                     </a>
                 </div>
                 <nav>
-                    <a href="/guida-ozono/">
+                    <a href="/ozono.html">
                         Consulta la guida completa
                     </a>
                 </nav>

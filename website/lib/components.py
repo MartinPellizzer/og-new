@@ -106,12 +106,11 @@ def header_default():
             <!-- Navigation -->
             <nav class="main-nav" aria-label="Main Navigation">
                 <ul class="nav-links">
-                <li><a href="applications.html">Applicazioni</a></li>
+                <li><a href="applicazioni.html">Applicazioni</a></li>
                 <li><a href="prodotti.html">Prodotti</a></li>
                 <li><a href="servizi.html">Servizi</a></li>
-                <li><a href="guida.html">Guida all'Ozono</a></li>
+                <li><a href="ozono.html">Guida all'Ozono</a></li>
                 <li><a href="contatti.html">Contatti</a></li>
-                <li><a href="blog.html">Blog</a></li>
                 </ul>
             </nav>
 
