@@ -1155,6 +1155,44 @@ def gen():
         </html>
     '''
 
+    if 0:
+        hero_html = f'''
+            <section class="hero">
+                <div class="container-xl-raw hero-layout">
+                    <div class="hero-content">
+                        <h1>
+                            Tecnologie a ozono per aria, acqua e superfici
+                        </h1>
+                        <p>
+                            Progettiamo e realizziamo sistemi a ozono sicuri, controllati e affidabili,
+                            adatti a diversi ambiti applicativi, dall’industriale al residenziale.
+                        </p>
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="/applicazioni.html">
+                                        Esplora le applicazioni
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/guida-ozono/">
+                                        Guida all’ozono
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="hero-visual">
+                        <figure>
+                            <img
+                                src="/immagini/sistema-ozono-industriale.jpg"
+                                alt="Sistema a ozono per trattamento di aria e acqua in ambiente industriale">
+                        </figure>
+                    </div>
+                </div>
+            </section>
+        '''
+
     hero_html = f'''
         <section class="hero">
             <div class="container-xl-raw hero-layout">
@@ -1188,6 +1226,25 @@ def gen():
                             alt="Sistema a ozono per trattamento di aria e acqua in ambiente industriale">
                     </figure>
                 </div>
+            </div>
+        </section>
+    '''
+
+    ozone_html = f'''
+        <section class="ozone">
+            <div class="ozone_content container-xl">
+              <h2>
+                Cos’è l’ozono e come funziona
+              </h2>
+              <p>
+                L’ozono è un gas instabile composto da tre atomi di ossigeno, utilizzato come agente ossidante naturale. 
+                Ha applicazioni in trattamento dell’aria, depurazione dell’acqua e sanificazione di superfici, quando 
+                impiegato correttamente secondo parametri tecnici e sicurezza normativa.
+              </p>
+              <p>
+                Scopri i principi chimici, i limiti e le modalità di utilizzo corrette nella nostra 
+                <a href="/ozono.html" title="Guida completa all’ozono">Guida completa all’ozono</a>.
+              </p>
             </div>
         </section>
     '''
@@ -1452,6 +1509,80 @@ def gen():
         </section>
     '''
 
+    problems_html = f'''
+        <section class="problems">
+          <div class="container-xl">
+            <h2>
+              Problemi che l’ozono può contribuire a risolvere
+            </h2>
+            <p>
+              L’ozono viene impiegato come tecnologia di supporto
+              nella gestione di specifiche problematiche ambientali e di processo.
+              L’efficacia dipende dal contesto, dalla progettazione e dall’utilizzo corretto.
+            </p>
+            <ul>
+              <li>
+                <h3>Problemi di qualità dell’aria</h3>
+                <p>
+                  Contaminazione microbica, odori persistenti e composti ossidabili
+                  in ambienti chiusi e industriali.
+                </p>
+                <a href="/problemi/aria.html">
+                  Approfondisci i problemi legati all’aria
+                </a>
+              </li>
+              <li>
+                <h3>Problemi di trattamento dell’acqua</h3>
+                <p>
+                  Presenza di microrganismi, carichi organici e contaminanti
+                  in acqua potabile, di processo o reflua.
+                </p>
+                <a href="/problemi/acqua.html">
+                  Approfondisci i problemi legati all’acqua
+                </a>
+              </li>
+              <li>
+                <h3>Problemi su superfici e processi</h3>
+                <p>
+                  Controllo microbiologico, sanificazione e gestione dell’igiene
+                  in superfici, impianti e cicli produttivi.
+                </p>
+                <a href="/problemi/superfici-processi.html">
+                  Approfondisci i problemi di superfici e processi
+                </a>
+              </li>
+              <li>
+                <h3>Problemi complessi e ambienti regolamentati</h3>
+                <p>
+                  Applicazioni in contesti industriali avanzati,
+                  con vincoli normativi e requisiti di sicurezza elevati.
+                </p>
+                <a href="/problemi/ambienti-regolamentati.html">
+                  Approfondisci i contesti regolamentati
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+    '''
+
+                # {authority_html}
+
+    design_html = f'''
+      <section class="design">
+          <div class="container-xl">
+            <h2>
+              Progettazione di sistemi a ozono
+            </h2>
+            <p>
+              L’efficacia dell’ozono dipende dalla progettazione del sistema.
+              Analisi del contesto, sicurezza, controllo e conformità normativa
+              sono elementi fondamentali di ogni progetto.
+            </p>
+          </div>
+      </section>
+    '''
+
     html = f'''
         <!DOCTYPE html>
         <html lang="it">
@@ -1466,8 +1597,10 @@ def gen():
             {components.header_default()}
             <main id="contenuto-principale">
                 {hero_html}
-                {authority_html}
+                {ozone_html}
+                {problems_html}
                 {applications_html}
+                {design_html}
                 {products_html}
                 {services_html}
                 {guide_html}
@@ -1482,6 +1615,7 @@ def gen():
         </body>
         </html>
     '''
+    
     html_filepath = f'{g.WEBSITE_FOLDERPATH}/index.html'
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
         f.write(html)
