@@ -1155,158 +1155,335 @@ def gen():
         </html>
     '''
 
-    html = f'''
-        <!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/styles-home.css">
-    <link rel="stylesheet" href="/styles-components.css">
+    hero_html = f'''
+        <section class="hero">
+            <div class="container-xl-raw hero-layout">
+                <div class="hero-content">
+                    <h1>
+                        Tecnologie a ozono per aria, acqua e superfici
+                    </h1>
+                    <p>
+                        Progettiamo e realizziamo sistemi a ozono sicuri, controllati e affidabili,
+                        adatti a diversi ambiti applicativi, dall’industriale al residenziale.
+                    </p>
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="/applicazioni.html">
+                                    Esplora le applicazioni
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/guida-ozono/">
+                                    Guida all’ozono
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="hero-visual">
+                    <figure>
+                        <img
+                            src="/immagini/sistema-ozono-industriale.jpg"
+                            alt="Sistema a ozono per trattamento di aria e acqua in ambiente industriale">
+                    </figure>
+                </div>
+            </div>
+        </section>
+    '''
 
-    <title>Tecnologie a ozono per aria, acqua e superfici</title>
-    <meta name="description" content="Tecnologie e sistemi a ozono per applicazioni industriali, commerciali e civili. Progettazione, applicazioni e guida tecnica sull'ozono.">
+    icon_color = '#1558B0'
+    icon_width = '64px'
+    icon_height = icon_width
+    authority_html = f'''
+        <section class="authority">
+            <div class="container-xl authority-content">
+                <h2>Competenza tecnica sull'ozono</h2>
+                <p>I nostri sistemi a ozono sono sviluppati secondo rigorosi standard tecnici e di sicurezza, garantendo prestazioni affidabili e conformità alle normative di settore.</p>
+                <ul>
+                    <li>
+<svg xmlns="http://www.w3.org/2000/svg" height="{icon_height}" viewBox="0 -960 960 960" width="{icon_width}" fill="{icon_color}"><path d="M80-570v-170q0-24 18-42t42-18h680q24 0 42 18t18 42v170h-60v-170H140v170H80Zm60 410q-24 0-42-18t-18-42v-170h60v170h680v-170h60v170q0 24-18 42t-42 18H140Zm259.81-130q8.19 0 15.79-4t11.4-12l133-266 53 106q3.75 8 11.25 12t15.75 4h240v-60H659l-72-143q-3.72-8.25-11.17-11.63-7.45-3.37-15.64-3.37-8.19 0-15.79 3.37-7.6 3.38-11.4 11.63L400-388l-53-106q-3.75-8-11.25-12T320-510H80v60h221l72 144q3.72 8 11.17 12 7.45 4 15.64 4ZM480-480Z"/></svg>
+                        Monitoraggio e controllo continuo dei sistemi in funzione
+                    </li>
+                    <li>
+<svg xmlns="http://www.w3.org/2000/svg" height="{icon_height}" viewBox="0 -960 960 960" width="{icon_width}" fill="{icon_color}"><path d="M705-128 447-388q-23 8-46 13t-47 5q-97.08 0-165.04-67.67Q121-505.33 121-602q0-31 8.16-60.39T152-718l145 145 92-86-149-149q25.91-15.16 54.96-23.58Q324-840 354-840q99.17 0 168.58 69.42Q592-701.17 592-602q0 24-5 47t-13 46l259 258q11 10.96 11 26.48T833-198l-76 70q-10.7 11-25.85 11Q716-117 705-128Zm28-57 40-40-273-273q16-21 24-49.5t8-54.5q0-75-55.5-127T350-782l102 104q9 9 8.5 21.5T451-635L318-510q-9.27 8-21.64 8-12.36 0-20.36-8l-98-97q3 77 54.67 127T354-430q25 0 53-8t49-24l277 277ZM476-484Z"/></svg>
+                        Soluzioni progettate su misura per specifiche esigenze applicative
+                    </li>
+                    <li>
+<svg xmlns="http://www.w3.org/2000/svg" height="{icon_height}" viewBox="0 -960 960 960" width="{icon_width}" fill="{icon_color}"><path d="m296-334 122-122 80 80 152-151v77h60v-180H530v60h77L498-461l-80-80-164 165 42 42ZM180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm0-600v600-600Z"/></svg>
+                        Supporto tecnico specializzato per ogni fase operativa
+                    </li>
+                </ul>
+            </div>
+        </section>
+    '''
 
-</head>
-<body>
-
-    <!-- =======================================
-         SITE HEADER
-         Add logo and main navigation here
-    ======================================== -->
-    {components.header_default()}
-
-    <!-- =======================================
-         MAIN CONTENT
-    ======================================== -->
-    <main id="contenuto-principale">
-
-        <!-- HERO SECTION -->
-        <section aria-labelledby="hero-title">
-            <div class="contenuto-hero">
-                <h1 id="hero-title">Tecnologie a ozono per aria, acqua e superfici</h1>
-                <p>Progettiamo e realizziamo sistemi a ozono sicuri, controllati e affidabili, adatti a diversi ambiti applicativi, dall'industriale al residenziale.</p>
-                <nav aria-label="Percorsi principali">
-                    <ul class="azioni-hero">
-                        <li><a href="/applicazioni.html">Esplora le applicazioni</a></li>
-                        <li><a href="/guida-ozono/">Guida all'ozono</a></li>
-                    </ul>
+    applications_html = f'''
+        <section class="applications">
+            <div class="applications-content container-xl">
+                <h2>
+                    Ambiti di applicazione dell’ozono
+                </h2>
+                <p>
+                    Le applicazioni dell’ozono variano in base al contesto d’uso.
+                    Esplora i principali ambiti applicativi per soluzioni residenziali,
+                    commerciali e industriali.
+                </p>
+                <div class="applications-cards">
+                    <a href="/applicazioni.html#residenziali" class="applicazione-card">
+                        <h3>Applicazioni residenziali</h3>
+                        <p>
+                            Utilizzo dell’ozono in ambienti domestici per il trattamento
+                            di aria, acqua e superfici, nel rispetto della sicurezza.
+                        </p>
+                    </a>
+                    <a href="/applicazioni.html#commerciali" class="applicazione-card">
+                        <h3>Applicazioni commerciali</h3>
+                        <p>
+                            Soluzioni a ozono per attività commerciali, strutture ricettive,
+                            uffici e spazi aperti al pubblico.
+                        </p>
+                    </a>
+                    <a href="/applicazioni.html#industriali" class="applicazione-card">
+                        <h3>Applicazioni industriali</h3>
+                        <p>
+                            Impiego dell’ozono in processi industriali, impianti complessi
+                            e ambienti produttivi regolamentati.
+                        </p>
+                    </a>
+                </div>
+                <nav>
+                    <a href="/applicazioni.html">
+                        Vai alla pagina Applicazioni
+                    </a>
                 </nav>
             </div>
         </section>
+    '''
 
-        <!-- AUTHORITY & SCOPE -->
-        <section aria-labelledby="authority-title">
-            <div class="contenuto-authority">
-                <h2 id="authority-title">Competenza tecnica sull'ozono</h2>
-                <p>I nostri sistemi a ozono sono sviluppati secondo rigorosi standard tecnici e di sicurezza, garantendo prestazioni affidabili e conformità alle normative di settore.</p>
-                <ul>
-                    <li>Monitoraggio e controllo continuo dei sistemi</li>
-                    <li>Soluzioni progettate su misura per specifiche esigenze applicative</li>
-                    <li>Supporto tecnico specializzato per ogni fase operativa</li>
-                </ul>
+    products_html = f'''
+        <section class="products">
+            <div class="products-content container-xl">
+                <h2>
+                    Generatori e sistemi a ozono
+                </h2>
+                <p>
+                    La nostra offerta comprende generatori e sistemi a ozono progettati
+                    per diversi contesti applicativi, con soluzioni scalabili, sicure
+                    e controllate.
+                </p>
+                <div class="products-list">
+                    <a href="/prodotti.html#generatori" class="prodotto-item">
+                        <h3>Generatori di ozono</h3>
+                        <p>
+                            Unità progettate per la produzione controllata di ozono,
+                            adatte a impianti civili, commerciali e industriali.
+                        </p>
+                    </a>
+                    <a href="/prodotti.html#acqua" class="prodotto-item">
+                        <h3>Sistemi per trattamento acqua</h3>
+                        <p>
+                            Soluzioni dedicate al trattamento e alla depurazione dell’acqua
+                            in applicazioni civili e industriali.
+                        </p>
+                    </a>
+                    <a href="/prodotti.html#integrati" class="prodotto-item">
+                        <h3>Soluzioni integrate</h3>
+                        <p>
+                            Sistemi a ozono progettati per l’integrazione in impianti
+                            complessi e processi industriali.
+                        </p>
+                    </a>
+                    <a href="/prodotti.html#compatti" class="prodotto-item">
+                        <h3>Unità compatte e civili</h3>
+                        <p>
+                            Dispositivi compatti per applicazioni residenziali o commerciali,
+                            con particolare attenzione alla sicurezza operativa.
+                        </p>
+                    </a>
+                </div>
+                <nav>
+                    <a href="/prodotti.html">
+                        Scopri tutti i prodotti
+                    </a>
+                </nav>
             </div>
         </section>
+    '''
 
-        <!-- TOPIC GATEWAY: APPLICAZIONI -->
-        <section aria-labelledby="applications-title">
-            <div class="contenuto-applicazioni">
-                <h2 id="applications-title">Ambiti di applicazione dell'ozono</h2>
-                <p>L'ozono trova impiego in diversi contesti: trattamento aria e acqua, sanificazione di ambienti, e processi industriali, offrendo soluzioni controllate e sicure.</p>
-                <ul>
-                    <li>Purificazione dell'aria</li>
-                    <li>Trattamento e depurazione dell'acqua</li>
-                    <li>Sanificazione di superfici e ambienti</li>
-                    <li>Applicazioni industriali e commerciali</li>
-                </ul>
-                <nav aria-label="Vai al hub Applicazioni"><a href="/applicazioni.html">Vai al hub Applicazioni</a></nav>
+    services_html = f'''
+        <section class="services">
+            <div class="services-content container-xl">
+                <h2>
+                    Servizi di progettazione e supporto
+                </h2>
+                <p>
+                    Accompagniamo i sistemi a ozono lungo l’intero ciclo di vita,
+                    dalla progettazione iniziale alla manutenzione operativa,
+                    garantendo continuità, sicurezza e prestazioni controllate.
+                </p>
+                <div class="services-line"></div>
+                <div class="services-timeline">
+                    <div class="service-step">
+                        <h3>Progettazione</h3>
+                        <p>
+                            Analisi tecnica e progettazione di sistemi a ozono
+                            in base alle specifiche applicative e normative.
+                        </p>
+                    </div>
+                    <div class="service-step">
+                        <h3>Integrazione</h3>
+                        <p>
+                            Integrazione dei sistemi a ozono in impianti esistenti
+                            o di nuova realizzazione.
+                        </p>
+                    </div>
+                    <div class="service-step">
+                        <h3>Avviamento e collaudo</h3>
+                        <p>
+                            Messa in servizio, test operativi e verifica delle
+                            prestazioni in condizioni reali.
+                        </p>
+                    </div>
+                    <div class="service-step">
+                        <h3>Assistenza e manutenzione</h3>
+                        <p>
+                            Supporto tecnico continuo, manutenzione programmata
+                            e consulenza operativa.
+                        </p>
+                    </div>
+                </div>
+                <nav>
+                    <a href="/servizi.html">
+                        Approfondisci i servizi
+                    </a>
+                </nav>
             </div>
         </section>
+    '''
 
-        <!-- TOPIC GATEWAY: PRODOTTI -->
-        <section aria-labelledby="products-title">
-            <div class="contenuto-prodotti">
-                <h2 id="products-title">Generatori e sistemi a ozono</h2>
-                <p>Offriamo sistemi e generatori a ozono progettati per diversi settori, garantendo soluzioni efficienti e controllate.</p>
-                <ul>
-                    <li>Generatori d'aria per purificazione e sanificazione</li>
-                    <li>Sistemi per trattamento e depurazione dell'acqua</li>
-                    <li>Unità compatte per ambienti residenziali o commerciali</li>
-                    <li>Soluzioni integrate per impianti industriali</li>
-                </ul>
-                <nav aria-label="Vai al hub Prodotti"><a href="/prodotti.html">Scopri i prodotti</a></nav>
+    guide_html = f'''
+        <section class="guide">
+            <div class="container-xl">
+                <h2>
+                    Guida completa all’ozono
+                </h2>
+                <p>
+                    Approfondisci i principi dell’ozono, le applicazioni sicure e le migliori pratiche operative
+                    per impieghi industriali, commerciali e civili. Un percorso completo per comprendere
+                    tecnologia, sicurezza e buone prassi.
+                </p>
+                <div class="guide-cards">
+                    <a href="/ozono.html" class="guida-tile">
+                        <h3>Chimica e proprietà dell’ozono</h3>
+                        <p>Fondamenti chimici e caratteristiche principali dell’ozono.</p>
+                    </a>
+                    <a href="/ozono.html" class="guida-tile">
+                        <h3>Sicurezza e normative</h3>
+                        <p>Regole, standard e precauzioni per un utilizzo sicuro.</p>
+                    </a>
+                    <a href="/ozono.html" class="guida-tile">
+                        <h3>Applicazioni industriali e commerciali</h3>
+                        <p>Esempi concreti di utilizzo nei diversi contesti operativi.</p>
+                    </a>
+                    <a href="/ozono.html" class="guida-tile">
+                        <h3>Miti, limiti e buone pratiche</h3>
+                        <p>Approfondimenti su convinzioni errate e buone pratiche operative.</p>
+                    </a>
+                </div>
+                <nav>
+                    <a href="/ozono.html">
+                        Consulta la guida completa
+                    </a>
+                </nav>
             </div>
         </section>
+    '''
 
-        <!-- TOPIC GATEWAY: SERVIZI -->
-        <section aria-labelledby="services-title">
-            <div class="contenuto-servizi">
-                <h2 id="services-title">Servizi di progettazione e supporto</h2>
-                <p>Offriamo servizi completi per progettazione, integrazione e manutenzione di sistemi a ozono, garantendo soluzioni personalizzate e supporto tecnico continuativo.</p>
-                <ul>
-                    <li>Progettazione impianti su misura</li>
-                    <li>Integrazione con sistemi industriali e commerciali</li>
-                    <li>Manutenzione programmata e assistenza tecnica</li>
-                    <li>Consulenza applicativa per ottimizzare le prestazioni</li>
-                </ul>
-                <nav aria-label="Vai al hub Servizi"><a href="/servizi.html">I nostri servizi</a></nav>
-            </div>
-        </section>
-
-        <!-- EDUCATIONAL PILLAR -->
-        <section aria-labelledby="guide-title">
-            <div class="contenuto-guida">
-                <h2 id="guide-title">Guida completa all'ozono</h2>
-                <p>Approfondisci i principi dell'ozono, la sicurezza d'uso e le migliori pratiche operative per applicazioni industriali, commerciali e residenziali, con contenuti tecnici e formativi.</p>
-                <ul>
-                    <li>Chimica e proprietà dell'ozono</li>
-                    <li>Sicurezza e normative</li>
-                    <li>Applicazioni industriali e commerciali</li>
-                    <li>Miti, limiti e buone pratiche</li>
-                </ul>
-                <nav aria-label="Vai al hub Guida all'Ozono"><a href="/guida-ozono/">Consulta la guida all'ozono</a></nav>
-            </div>
-        </section>
-
-        <!-- TRUST & PROOF -->
-        <section aria-labelledby="trust-title">
-            <div class="contenuto-trust">
+    icon_color = '#1558B0'
+    icon_width = '64px'
+    icon_height = icon_width
+    trust_html = f'''
+        <section class="trust">
+            <div class="container-xl">
                 <h2 id="trust-title">Affidabilità per applicazioni professionali</h2>
-                <p>Con oltre X anni di esperienza nella progettazione e realizzazione di sistemi a ozono, operiamo nei diversi settori rispettando standard di sicurezza e certificazioni riconosciute.</p>
-                <ul>
-                    <li>Esperienza consolidata in contesti industriali e commerciali</li>
-                    <li>Progettazione secondo standard internazionali</li>
-                    <li>Certificazioni e conformità regolatoria</li>
-                    <li>Collaborazioni con operatori professionali e aziende leader</li>
-                </ul>
+                <div class="trust-items">
+                    <div class="trust-item">
+<svg xmlns="http://www.w3.org/2000/svg" height="{icon_height}" viewBox="0 -960 960 960" width="{icon_width}" fill="{icon_color}"><path d="m363-310 117-71 117 71-31-133 104-90-137-11-53-126-53 126-137 11 104 90-31 133ZM481-29 346-160H160v-186L26-480l134-134v-186h186l135-134 133 134h186v186l134 134-134 134v186H614L481-29Zm0-84 107.92-107H740v-151l109-109-109-109v-151H589L481-849 371-740H220v151L111-480l109 109v151h150l111 107Zm0-368Z"/></svg>
+                        <h3>Esperienza consolidata</h3>
+                        <p>Oltre 20 anni nella progettazione e realizzazione di sistemi a ozono</p>
+                    </div>
+                    <div class="trust-item">
+<svg xmlns="http://www.w3.org/2000/svg" height="{icon_height}" viewBox="0 -960 960 960" width="{icon_width}" fill="{icon_color}"><path d="M480-450q-45 0-77.5-32.5T370-560q0-45 32.5-77.5T480-670q45 0 77.5 32.5T590-560q0 45-32.5 77.5T480-450ZM244-40v-304q-45-47-64.5-103T160-560q0-136 92-228t228-92q136 0 228 92t92 228q0 57-19.5 113T716-344v304l-236-79-236 79Zm236-260q109 0 184.5-75.5T740-560q0-109-75.5-184.5T480-820q-109 0-184.5 75.5T220-560q0 109 75.5 184.5T480-300ZM304-124l176-55 176 55v-171q-40 29-86 42t-90 13q-44 0-90-13t-86-42v171Zm176-86Z"/></svg>
+                        <h3>Certificazioni e standard</h3>
+                        <p>Conformità a standard internazionali di sicurezza e qualità</p>
+                    </div>
+                    <div class="trust-item">
+<svg xmlns="http://www.w3.org/2000/svg" height="{icon_height}" viewBox="0 -960 960 960" width="{icon_width}" fill="{icon_color}"><path d="M0-240v-53q0-38.57 41.5-62.78Q83-380 150.38-380q12.16 0 23.39.5t22.23 2.15q-8 17.35-12 35.17-4 17.81-4 37.18v65H0Zm240 0v-65q0-32 17.5-58.5T307-410q32-20 76.5-30t96.5-10q53 0 97.5 10t76.5 30q32 20 49 46.5t17 58.5v65H240Zm540 0v-65q0-19.86-3.5-37.43T765-377.27q11-1.73 22.17-2.23 11.17-.5 22.83-.5 67.5 0 108.75 23.77T960-293v53H780Zm-480-60h360v-6q0-37-50.5-60.5T480-390q-79 0-129.5 23.5T300-305v5ZM149.57-410q-28.57 0-49.07-20.56Q80-451.13 80-480q0-29 20.56-49.5Q121.13-550 150-550q29 0 49.5 20.5t20.5 49.93q0 28.57-20.5 49.07T149.57-410Zm660 0q-28.57 0-49.07-20.56Q740-451.13 740-480q0-29 20.56-49.5Q781.13-550 810-550q29 0 49.5 20.5t20.5 49.93q0 28.57-20.5 49.07T809.57-410ZM480-480q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T600-600q0 50-34.5 85T480-480Zm.35-60Q506-540 523-557.35t17-43Q540-626 522.85-643t-42.5-17q-25.35 0-42.85 17.15t-17.5 42.5q0 25.35 17.35 42.85t43 17.5ZM480-300Zm0-300Z"/></svg>
+                        <h3>Collaborazioni professionali</h3>
+                        <p>Progetti realizzati con aziende leader e operatori specializzati</p>
+                    </div>
+                    <div class="trust-item">
+<svg xmlns="http://www.w3.org/2000/svg" height="{icon_height}" viewBox="0 -960 960 960" width="{icon_width}" fill="{icon_color}"><path d="m357-513 90-90-75-75-48 48-42-42 48-48-75-74-90 90 192 191Zm346 348 90-91-75-75-48 48-42-42 48-48-74-74-90 90 191 192Zm8-615 70 70-70-70ZM276-120H120v-156l194-194L80-704l174-176 236 235 178-178q9-9 20-13t22-4q11 0 22 4t20 13l71 71q9 9 13 20t4 22q0 11-4 22t-13 20L645-490l235 235L705-81 471-315 276-120Zm-96-60h70l393-394-70-70-393 394v70Zm428-429-35-35 70 70-35-35Z"/></svg>
+                        <h3>Progetti industriali completati</h3>
+                        <p>Soluzioni implementate con successo in contesti civili, commerciali e industriali</p>
+                    </div>
+                </div>
             </div>
         </section>
+    '''
 
-        <!-- SOFT CONVERSION / CONTACT -->
-        <section aria-labelledby="contact-title">
-            <div class="contenuto-contatto">
-                <h2 id="contact-title">Contatto tecnico</h2>
-                <p>Per soluzioni personalizzate o approfondimenti sulle applicazioni dei nostri sistemi a ozono, il team tecnico è disponibile per consulenze e supporto dedicato.</p>
-                <nav aria-label="Vai alla pagina contatti"><a href="/contatti.html">Contattaci</a></nav>
+    contacts_html = f'''
+        <section class="contacts">
+            <div class="container-xl">
+                <h2>
+                    Contatto tecnico
+                </h2>
+                <p>
+                    Per valutare soluzioni personalizzate o approfondire le applicazioni dei nostri sistemi a ozono,
+                    il nostro team tecnico è disponibile per consulenze e supporto dedicato.
+                </p>
+                <nav>
+                    <a href="/contatti.html">
+                        Contattaci
+                    </a>
+                </nav>
             </div>
         </section>
+    '''
 
-    </main>
-
-    <!-- =======================================
-         FOOTER
-         Include company info, legal, sitemap, social links
-    ======================================== -->
-    <footer></footer>
-
-</body>
-</html>
-
-
-
-
-
+    html = f'''
+        <!DOCTYPE html>
+        <html lang="it">
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="/styles.css">
+            <title>Tecnologie a ozono per aria, acqua e superfici</title>
+            <meta name="description" content="Tecnologie e sistemi a ozono per applicazioni industriali, commerciali e civili. Progettazione, applicazioni e guida tecnica sull'ozono.">
+        </head>
+        <body>
+            {components.header_default()}
+            <main id="contenuto-principale">
+                {hero_html}
+                {authority_html}
+                {applications_html}
+                {products_html}
+                {services_html}
+                {guide_html}
+                {trust_html}
+                {contacts_html}
+            </main>
+            <!-- =======================================
+                 FOOTER
+                 Include company info, legal, sitemap, social links
+            ======================================== -->
+            {components.footer_dark()}
+        </body>
+        </html>
     '''
     html_filepath = f'{g.WEBSITE_FOLDERPATH}/index.html'
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
         f.write(html)
+    print(html_filepath)
+

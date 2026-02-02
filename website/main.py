@@ -7,8 +7,9 @@ shutil.copy2(f'style.css', f'{g.WEBSITE_FOLDERPATH}/style.css')
 shutil.copy2(f'styles-applications.css', f'{g.WEBSITE_FOLDERPATH}/styles-applications.css')
 shutil.copy2(f'styles-home.css', f'{g.WEBSITE_FOLDERPATH}/styles-home.css')
 shutil.copy2(f'styles-components.css', f'{g.WEBSITE_FOLDERPATH}/styles-components.css')
+shutil.copy2(f'styles.css', f'{g.WEBSITE_FOLDERPATH}/styles.css')
 
-if 1:
+if 0:
     from hub import applications_hub
     applications_hub.gen()
 
