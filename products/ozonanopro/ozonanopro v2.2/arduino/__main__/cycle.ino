@@ -99,130 +99,151 @@ void so_off()
 // cycle.state_cur: 2 -> nanobubble water bypass
 // cycle.state_cur: 3 -> stop after bypass timeout
 
+int pistol_pressed()
+{
+  if (cycle.pressure_switch_state_cur == 0) return 1;
+  else return 0;
+}
+
+int pistol_released()
+{
+  if (cycle.pressure_switch_state_cur == 1) return 1;
+  else return 0;
+}
+
+void output_water()
+{
+  vi_on();
+  vo_on();
+  vb_off();
+  pb_on();
+  pn_on();
+  o2_off();
+  o3_off();
+  so_off();
+}
+
+void output_water_ozone()
+{
+  vi_on();
+  vo_on();
+  vb_off();
+  pb_on();
+  pn_on();
+  o2_on();
+  o3_on();
+  so_on();
+}
+
+void bypass_water()
+{
+  vi_off();
+  vo_off();
+  vb_on();
+  pb_on();
+  pn_on();
+  o2_off();
+  o3_off();
+  so_off();
+}
+
+void pause_water()
+{
+  vi_on();
+  vo_on();
+  vb_off();
+  pb_off();
+  pn_off();
+  o2_off();
+  o3_off();
+  so_off();
+}
+
+int state_water()
+{
+  if (cycle.state_cur == 0) return 1;
+  else return 0;
+}
+
 void cycle_mode_pressostato()
 {
-  if (cycle.state_cur == 0)
+  // STARTING STATE
+  if (state_water())
   {  
-    // pressure down
-    if (cycle.pressure_switch_state_cur == 0)
+    if (pistol_pressed())
     {
-      vi_on();
-      vo_on();
-      vb_off();
-      pb_on();
-      pn_on();
-      o2_off();
-      o3_off();
-      so_off();
+      output_water();
       
+      // PISTOL TRIGGER PRESSED FOR X SECONDS...
       if (millis() - cycle.ozone_millis_cur > cycle.ozone_timer_cur) 
       {
-        // Serial.println("here");
+        // GOTO STATE: OUTPUT WATER + OZONE 
         cycle.state_cur = 1;
       }
     }
-    // pressure up
-    else
+    else if (pistol_released())
     {
-      vi_off();
-      vo_off();
-      vb_on();
-      pb_on();
-      pn_on();
-      o2_off();
-      o3_off();
-      so_off();
+      bypass_water();
       
+      // GOTO STATE: BYPASS
       cycle.bypass_millis_cur = millis();
       cycle.state_cur = 2;
     }
   }
+  // STATE WATER + OZONE
   else if (cycle.state_cur == 1)
   {  
-    // pressure down
-    if (cycle.pressure_switch_state_cur == 0)
+    if (pistol_pressed())
     {
-      vi_on();
-      vo_on();
-      vb_off();
-      pb_on();
-      pn_on();
-      o2_on();
-      o3_on();
-      so_on();
+      output_water_ozone();
     }
-    // pressure up
-    else
+    else if (pistol_released())
     {
-      vi_off();
-      vo_off();
-      vb_on();
-      pb_on();
-      pn_on();
-      o2_off();
-      o3_off();
-      so_off();
+      bypass_water();
       
+      // GOTO STATE: BYPASS
       cycle.bypass_millis_cur = millis();
       cycle.state_cur = 2;
     }
   }
+  // STATE BYPASS
   else if (cycle.state_cur == 2) // nanobubble water bypass
   {
-    // pressure down
-    if (cycle.pressure_switch_state_cur == 0)
+    if (pistol_pressed())
     {
-      vi_on();
-      vo_on();
-      vb_off();
-      pb_on();
-      pn_on();
-      o2_off();
-      o3_off();
-      so_off();
+      output_water();
       
+      // GOTO STATE: STARTING STATE
       cycle.ozone_millis_cur = millis();
       cycle.state_cur = 0;
     }
-    // pressure up
-    else
+    else if (pistol_released())
     {
-      vi_off();
-      vo_off();
-      vb_on();
-      pb_on();
-      pn_on();
-      o2_off();
-      o3_off();
-      so_off();
+      bypass_water();
       
+      // PISTOL TRIGGER RELEASED FOR X SECONDS...
       if (millis() - cycle.bypass_millis_cur > cycle.bypass_timer_cur) 
       {
+        // GOTO STATE: PAUSE
         cycle.state_cur = 3;
       }
     }
   }
+  // STATE PAUSE
   else if (cycle.state_cur == 3)
   {
-    // pressure down
-    if (cycle.pressure_switch_state_cur == 0)
+    if (pistol_pressed())
     {
+      // GOTO STATE: STARTING STATE
         cycle.ozone_millis_cur = millis();
         cycle.state_cur = 0;
     }
-    // pressure up
-    else
+    else if (pistol_released())
     {
-      vi_on();
-      vo_on();
-      vb_off();
-      pb_off();
-      pn_off();
-      o2_off();
-      o3_off();
-      so_off();
+      pause_water();
     }
   }
+  // STATE INVALID
   else
   {
     Serial.println("INVALID STATE");
