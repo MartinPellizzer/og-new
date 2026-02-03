@@ -265,7 +265,7 @@ void cycle_mode_manual()
 
 // when cycle start (init)
 // when people press the start button and/or in calendar
-void F()
+void cycle_sensor_start()
 {
   if (cycle.state_on_old != cycle.state_on_cur)
   {

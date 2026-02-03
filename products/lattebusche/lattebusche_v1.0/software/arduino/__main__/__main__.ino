@@ -3,6 +3,10 @@
 #include "RTClib.h"
 RTC_DS3231 rtc_lib;
 
+#include "FS.h"
+#include "SD.h"
+#include "SPI.h"
+
 #include <EEPROM.h>
 #define EEPROM_SIZE 1024
 
@@ -271,7 +275,7 @@ mode_2_t external_input = {};
 // sensor_temperature_t sensor_temperature = {};
 
 ///////////////////////////////////////////////////////////////////////
-// ;password
+///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
 #define PASSWORD_DIGITS_NUM 8
 typedef struct password_t {
@@ -284,6 +288,98 @@ typedef struct password_t {
 } password_t;
 password_t password = {};
 
+
+///////////////////////////////////////////////////////////////////////
+// ;sd
+///////////////////////////////////////////////////////////////////////
+#define sd_cd 15
+uint32_t sd_millis_cur = 0;
+typedef struct sd_card_t 
+{
+  uint8_t state;
+  int8_t inserted_old = -1;
+  int8_t inserted_cur = 0;
+  int8_t tried_to_initialize;
+  uint8_t is_initialized = 0;
+  uint8_t pin;
+  uint8_t pin_cd;
+  int16_t minute_cur = -1;
+} sd_card_t;
+sd_card_t sd_card = {};
+
+// ----------------------------------------------------------------------------------------------------------
+// ;sd card
+// ----------------------------------------------------------------------------------------------------------
+File file;
+int is_insert = 0;
+int is_init = 0;
+int sd_val = 123;
+
+void sd_manager_2() 
+{
+  sd_card_init_2();
+  sd_card_write_2();
+}
+
+uint8_t here_num = 0;
+void sd_card_init_2() 
+{
+  sd_card.inserted_cur = (digitalRead(sd_card.pin_cd) == LOW) ? 1 : 0;
+  // Serial.print("here ");
+  // Serial.print(here_num);
+  // Serial.print(": ");
+  // Serial.println(sd_card.inserted_cur);
+  // here_num += 1;
+
+  if (sd_card.inserted_cur)
+  {
+    if (!sd_card.tried_to_initialize)
+    {
+      sd_card.tried_to_initialize = 1;
+      if (!SD.begin()) Serial.println("Card Mount Failed");
+      else Serial.println("Card Mounted");
+    }
+  }
+  else
+  {
+    if (sd_card.tried_to_initialize)
+    {
+      SD.end();
+      sd_card.tried_to_initialize = 0;
+      Serial.println("Card Unmounted");
+    }
+  }
+}
+
+void sd_card_write_2() 
+{
+  if (sd_card.minute_cur != rtc.minute_cur)
+  {
+    sd_card.minute_cur = rtc.minute_cur;
+    if (sd_card.tried_to_initialize)
+    {
+      Serial.printf("Appending to file: %s\n", "/data.csv");
+      file = SD.open("/data.csv", FILE_APPEND);
+      if (!file) Serial.println("Failed to open file for appending");
+      if (file.print(String(rtc.year_cur))) Serial.println("Message 1 appended");
+      if (file.print(String(","))) Serial.println("Message 2 appended");
+      if (file.print(String(rtc.month_cur))) Serial.println("Message 3 appended");
+      if (file.print(String(","))) Serial.println("Message 4 appended");
+      if (file.print(String(rtc.day_cur))) Serial.println("Message 5 appended");
+      if (file.print(String(","))) Serial.println("Message 6 appended");
+      if (file.print(String(rtc.hour_cur))) Serial.println("Message 7 appended");
+      if (file.print(String(","))) Serial.println("Message 8 appended");
+      if (file.print(String(rtc.minute_cur))) Serial.println("Message 9 appended");
+      if (file.print(String(","))) Serial.println("Message 10 appended");
+      if (file.print(String(rtc.second_cur))) Serial.println("Message 11 appended");
+      if (file.print(String(","))) Serial.println("Message 12 appended");
+      // if (file.print(String(sensor.ppb_curr))) Serial.println("Message 13 appended");
+      // if (file.print('\n')) Serial.println("Message appended");
+      file.close();
+    }
+  }
+}
+
 void setup() 
 {
   Serial.begin(9600);
@@ -292,6 +388,10 @@ void setup()
   Sensor1.begin(9600, SERIAL_8N1, 17, 4);  // RO, DI
   pinMode(SENSOR1_RE_DE_PIN, OUTPUT);
   digitalWrite(SENSOR1_RE_DE_PIN, LOW);
+
+  /* ;sd */
+  sd_card.pin_cd = 15;
+  pinMode(sd_card.pin_cd, INPUT);
 
   // pinMode(RI_1, INPUT_PULLUP);
   // pinMode(RI_2, INPUT_PULLUP);
@@ -380,9 +480,12 @@ void setup()
   Serial.println("setup");
 }
 
+
 void loop() 
 {
-  
+  // ;sd
+  sd_manager_2();
+
   // external_input.state_cur = digitalRead(RI_1);
   
   debug_manager();
@@ -402,4 +505,5 @@ void loop()
 
   // ;valves
   // valves_manager();
+
 }
