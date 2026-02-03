@@ -1175,7 +1175,7 @@ def gen():
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/guida-ozono/">
+                                    <a href="/ozono.html">
                                         Guida all’ozono
                                     </a>
                                 </li>
@@ -1212,7 +1212,7 @@ def gen():
                                 </a>
                             </li>
                             <li>
-                                <a href="/guida-ozono/">
+                                <a href="/ozono.html">
                                     Guida all’ozono
                                 </a>
                             </li>
@@ -1528,7 +1528,7 @@ def gen():
                   in ambienti chiusi e industriali.
                 </p>
                 <a href="/problemi/aria.html">
-                  Approfondisci i problemi legati all’aria
+                  <!-- Approfondisci i problemi legati all’aria -->
                 </a>
               </li>
               <li>
@@ -1538,7 +1538,7 @@ def gen():
                   in acqua potabile, di processo o reflua.
                 </p>
                 <a href="/problemi/acqua.html">
-                  Approfondisci i problemi legati all’acqua
+                  <!-- Approfondisci i problemi legati all’acqua -->
                 </a>
               </li>
               <li>
@@ -1548,7 +1548,7 @@ def gen():
                   in superfici, impianti e cicli produttivi.
                 </p>
                 <a href="/problemi/superfici-processi.html">
-                  Approfondisci i problemi di superfici e processi
+                  <!-- Approfondisci i problemi di superfici e processi -->
                 </a>
               </li>
               <li>
@@ -1558,7 +1558,7 @@ def gen():
                   con vincoli normativi e requisiti di sicurezza elevati.
                 </p>
                 <a href="/problemi/ambienti-regolamentati.html">
-                  Approfondisci i contesti regolamentati
+                  <!-- Approfondisci i contesti regolamentati -->
                 </a>
               </li>
             </ul>
@@ -1569,18 +1569,215 @@ def gen():
                 # {authority_html}
 
     design_html = f'''
-      <section class="design">
+        <section class="design">
           <div class="container-xl">
-            <h2>
-              Progettazione di sistemi a ozono
-            </h2>
-            <p>
-              L’efficacia dell’ozono dipende dalla progettazione del sistema.
-              Analisi del contesto, sicurezza, controllo e conformità normativa
-              sono elementi fondamentali di ogni progetto.
-            </p>
-          </div>
-      </section>
+              <h2>
+                Progettazione di sistemi a ozono
+              </h2>
+
+              <p>
+                Un sistema a ozono efficace non dipende dal generatore,
+                ma dalla progettazione complessiva del processo.
+                Parametri operativi, sicurezza, controllo e normativa
+                determinano il successo o il fallimento dell’applicazione.
+              </p>
+
+              <ul>
+                <li>Analisi del contesto applicativo</li>
+                <li>Definizione dei parametri di processo</li>
+                <li>Gestione della sicurezza e dei rischi</li>
+                <li>Monitoraggio e controllo operativo</li>
+                <li>Conformità normativa e validazione</li>
+              </ul>
+
+            </div>
+        </section>
+    '''
+    # TODO
+    '''
+              <p>
+                <a href="/progettazione-sistemi-ozono.html">
+                  Approfondisci la progettazione dei sistemi a ozono
+                </a>
+              </p>
+    '''
+
+    technologies_html = f'''
+        <section class="technologies">
+          <div class="container-xl">
+              <h2>
+                Tecnologie a ozono
+              </h2>
+              <p>
+                Le tecnologie a ozono si differenziano in base alla modalità di generazione
+                e al contesto di applicazione. Ogni sistema richiede soluzioni progettate
+                in funzione del mezzo trattato e delle condizioni operative.
+              </p>
+              <ul>
+                <li>
+                  <h3>
+                      Generazione dell’ozono
+                  </h3>
+                  <p>
+                    Sistemi per la produzione controllata di ozono,
+                    progettati in base a portata, concentrazione e continuità operativa.
+                  </p>
+                </li>
+                <li>
+                  <h3>
+                      Trattamento dell’aria
+                  </h3>
+                  <p>
+                    Tecnologie per la sanificazione, deodorazione
+                    e trattamento dell’aria in ambienti civili e industriali.
+                  </p>
+                </li>
+                <li>
+                  <h3>
+                      Trattamento dell’acqua
+                  </h3>
+                  <p>
+                    Sistemi a ozono per il trattamento, la depurazione
+                    e il controllo microbiologico dell’acqua.
+                  </p>
+                </li>
+                <li>
+                  <h3>
+                      Sistemi integrati
+                  </h3>
+                  <p>
+                    Soluzioni a ozono integrate in impianti complessi
+                    e processi industriali regolamentati.
+                  </p>
+                </li>
+              </ul>
+              <nav>
+                <a href="/prodotti.html">
+                  Esplora tutte le tecnologie a ozono
+                </a>
+              </nav>
+          <div>
+        </section>
+    '''
+
+    services_html = f'''
+        <section class="services">
+            <div class="container-xl">
+              <h2>
+                Servizi tecnici per sistemi a ozono
+              </h2>
+              <p>
+                L’ozono è una tecnologia che richiede progettazione, controllo
+                e gestione nel tempo. I nostri servizi garantiscono che ogni sistema
+                funzioni in modo sicuro, conforme ed efficace nel suo contesto reale.
+              </p>
+              <ul>
+                <li>
+                  <strong>Consulenza tecnica</strong> per la valutazione di problemi
+                  risolvibili con l’ozono
+                </li>
+                <li>
+                  <strong>Progettazione dei sistemi</strong> in base a parametri,
+                  normative e condizioni operative
+                </li>
+                <li>
+                  <strong>Integrazione e avviamento</strong> in impianti nuovi o esistenti
+                </li>
+                <li>
+                  <strong>Assistenza e manutenzione</strong> per garantire continuità
+                  e sicurezza nel tempo
+                </li>
+              </ul>
+              <p>
+                <a href="/servizi.html">
+                  Approfondisci i servizi tecnici
+                </a>
+              </p>
+            </div>
+        </section>
+    '''
+
+    guide_html = f'''
+        <section class="guide">
+            <div class="container-xl">
+                <h2>
+                  Guida all’ozono: conoscenza, sicurezza e applicazioni
+                </h2>
+                <p>
+                  La guida all’ozono di Ozonogroup è un hub tecnico dedicato
+                  alla comprensione completa dell’ozono come tecnologia.
+                  Include fondamenti scientifici, criteri di sicurezza,
+                  normative e applicazioni reali.
+                </p>
+                <ul>
+                  <li>
+                      Fondamenti dell’ozono
+                  </li>
+                  <li>
+                      Sicurezza e normative
+                  </li>
+                  <li>
+                      Progettazione dei sistemi a ozono
+                  </li>
+                  <li>
+                      Applicazioni tecniche dell’ozono
+                  </li>
+                  <li>
+                      Limiti, rischi e buone pratiche
+                  </li>
+                </ul>
+                <nav>
+                    <p>
+                      <a href="/ozono.html">
+                        Accedi all’hub completo sulla tecnologia dell’ozono
+                      </a>
+                    </p>
+                </nav>
+            </div>
+        </section>
+    '''
+
+    trust_html = '''
+        <section class="trust">
+            <div class="container-xl">
+              <h2>
+                Affidabilità tecnica e continuità operativa
+              </h2>
+              <p>
+                L’utilizzo dell’ozono richiede competenza, controllo e responsabilità.
+                La nostra affidabilità si basa su esperienza documentata, conformità
+                normativa e progetti reali in contesti complessi.
+              </p>
+              <ul>
+                <li>
+                  <strong>Esperienza consolidata</strong><br>
+                  Progettazione e applicazione di sistemi a ozono da oltre 20 anni.
+                </li>
+                <li>
+                  <strong>Standard e normative</strong><br>
+                  Sistemi progettati secondo standard tecnici e requisiti di sicurezza.
+                </li>
+                <li>
+                  <strong>Progetti verificabili</strong><br>
+                  Implementazioni in ambiti civili, commerciali e industriali.
+                </li>
+                <li>
+                  <strong>Collaborazioni qualificate</strong><br>
+                  Attività svolte con operatori, aziende e tecnici specializzati.
+                </li>
+              </ul>
+            </div>
+        </section>
+    '''
+    # TODO
+    '''
+          <nav>
+            <ul>
+              <li><a href="/chi-siamo.html">Profilo e competenze</a></li>
+              <li><a href="/progetti.html">Progetti e casi applicativi</a></li>
+              <li><a href="/certificazioni.html">Certificazioni e conformità</a></li>
+            </ul>
+          </nav>
     '''
 
     html = f'''
@@ -1595,13 +1792,13 @@ def gen():
         </head>
         <body>
             {components.header_default()}
-            <main id="contenuto-principale">
+            <main class="home" id="contenuto-principale">
                 {hero_html}
                 {ozone_html}
                 {problems_html}
                 {applications_html}
                 {design_html}
-                {products_html}
+                {technologies_html}
                 {services_html}
                 {guide_html}
                 {trust_html}
