@@ -1,0 +1,7 @@
+schema.org consigliato
+
+oppure verifica cannibalizzazione con /applicazioni.html
+
+oppure ottimizzazione per featured snippet
+
+implementa uno alla volta in ordine i consigli che mi hai appena dato. dimmi quale codice html devo cambiare e con cosa. non rispondere con intere sezioni, solo i contenuti necessari da sostituire e dove li trovo. sii molto mirato. una volta datomi un consiglio, chiedimi di passare al prossimo in ordine.
