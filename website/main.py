@@ -8,6 +8,11 @@ shutil.copy2(f'styles-applications.css', f'{g.WEBSITE_FOLDERPATH}/styles-applica
 shutil.copy2(f'styles-home.css', f'{g.WEBSITE_FOLDERPATH}/styles-home.css')
 shutil.copy2(f'styles-components.css', f'{g.WEBSITE_FOLDERPATH}/styles-components.css')
 shutil.copy2(f'styles.css', f'{g.WEBSITE_FOLDERPATH}/styles.css')
+shutil.copy2(f'styles-topic-hub.css', f'{g.WEBSITE_FOLDERPATH}/styles-topic-hub.css')
+
+if 1:
+    from hub import ozone_hub
+    ozone_hub.gen()
 
 if 0:
     from hub import applications_hub

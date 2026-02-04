@@ -47,6 +47,12 @@
     padding: 0 1rem;
 }
 
+.container-md {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
 .container-xl-raw {
     max-width: 1280px;
     margin: 0 auto;
@@ -957,3 +963,40 @@ footer h2 {
     }
 }
 
+
+/* **************************************** */
+/* HUB                                      */
+/* **************************************** */
+.hub h1 {
+    font-family: var(--font-heading);
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.hub h2 {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.hub h3 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.hub section {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.hub p {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #222;
+}
