@@ -814,42 +814,54 @@ Questa guida fornisce una panoramica completa sulle sue proprietà, modalità di
     decision_html = f'''
 <section aria-labelledby="quando-ozono">
   <h2 id="quando-ozono">
-    Quando usare e quando no l’ozono
+    Quando usare e quando evitare l’ozono
   </h2>
   <p>
-    L’ozono è una tecnologia potente, ma la sua efficacia dipende da condizioni operative controllate e dalla compatibilità del contesto. Questa sezione aiuta a prendere decisioni informate, evitando applicazioni improprie o rischiose.
+    L’ozono è una tecnologia potente, ma non è sempre adatta a tutti i contesti. Questa sezione fornisce linee guida pratiche per decidere rapidamente quando l’uso dell’ozono è indicato e quando è meglio optare per soluzioni alternative.
   </p>
-  <h3>Condizioni per uso corretto</h3>
+  <!-- CONDIZIONI IDEALI -->
+  <h3>Condizioni per un utilizzo corretto</h3>
   <p>
-    L’ozono è indicato quando:
-  </p>
-  <ul>
-    <li>È necessario un effetto ossidante rapido e mirato senza residui chimici.</li>
-    <li>I parametri di concentrazione, tempo e distribuzione possono essere controllati con precisione.</li>
-    <li>Il contesto operativo consente un monitoraggio costante e il rispetto delle normative vigenti.</li>
-    <li>La progettazione integra l’ozono come parte di un sistema complesso, non come soluzione generica.</li>
-  </ul>
-  <h3>Contesti non idonei</h3>
-  <p>
-    L’ozono non è adatto quando:
+    L’ozono è consigliato quando i seguenti criteri sono soddisfatti:
   </p>
   <ul>
-    <li>Non è possibile garantire controllo sicuro di concentrazione e tempi di esposizione.</li>
-    <li>Sono presenti materiali sensibili o contaminanti non ossidabili.</li>
-    <li>Il contesto operativo è regolamentato con limiti restrittivi che impediscono l’uso dell’ozono.</li>
-    <li>Sono richieste azioni meccaniche, filtrazione fisica o processi biologici specifici che l’ozono non può sostituire.</li>
+    <li>È richiesto un effetto ossidante rapido e mirato senza residui chimici persistenti.</li>
+    <li>I parametri di concentrazione, tempo di esposizione e distribuzione possono essere monitorati e controllati con precisione.</li>
+    <li>Il contesto operativo consente monitoraggio continuo e rispetto delle normative vigenti.</li>
+    <li>L’ozono è integrato come parte di un sistema progettato per un obiettivo specifico, non come soluzione generica.</li>
   </ul>
-  <h3>Tecnologie alternative quando l’ozono non è adatto</h3>
   <p>
-    In contesti non compatibili con l’ozono, altre soluzioni possono garantire risultati efficaci, ad esempio:
+    Per dettagli su concentrazioni sicure e dispositivi di controllo, consulta la sezione 
+    <a href="#sicurezza-rischi-normative-ozono">Sicurezza e normative</a>.
+  </p>
+  <!-- CONDIZIONI NON IDONEE -->
+  <h3>Situazioni in cui evitare l’uso dell’ozono</h3>
+  <p>
+    L’ozono non è indicato se una o più delle seguenti condizioni si verificano:
   </p>
   <ul>
-    <li>Filtrazione fisica (HEPA, carbone attivo) per rimuovere particelle solide e VOC senza ossidazione chimica.</li>
-    <li>Radiazioni UV per inattivazione mirata di microrganismi in aria e acqua.</li>
-    <li>Prodotti chimici alternativi come cloro o perossido di idrogeno, quando è necessario un effetto ossidante con tempi di contatto più lunghi.</li>
+    <li>Impossibilità di garantire controllo sicuro di concentrazione e tempi di esposizione.</li>
+    <li>Presenza di materiali sensibili a ossidazione (gomme, plastiche, vernici, metalli reattivi).</li>
+    <li>Contaminanti non ossidabili o chimici stabili che non reagiscono con l’ozono.</li>
+    <li>Vincoli normativi che limitano concentrazione, tempi o modalità di applicazione.</li>
+    <li>Esigenza di processi meccanici, filtrazione fisica o trattamenti biologici specifici che l’ozono non può sostituire.</li>
+  </ul>
+  <!-- TECNOLOGIE ALTERNATIVE -->
+  <h3>Alternative quando l’ozono non è adatto</h3>
+  <p>
+    In contesti non compatibili con l’ozono, possono essere utilizzate soluzioni alternative più sicure o efficaci:
+  </p>
+  <ul>
+    <li><strong>Filtrazione fisica:</strong> HEPA, carbone attivo, per rimuovere particelle solide e VOC senza ossidazione chimica.</li>
+    <li><strong>Radiazioni UV:</strong> inattivazione mirata di microrganismi in aria o acqua.</li>
+    <li><strong>Prodotti chimici alternativi:</strong> cloro o perossido di idrogeno per ossidazione controllata con tempi di contatto più lunghi.</li>
   </ul>
   <p>
-    <a href="#applicazioni-realizzate-ozono">Torna a Applicazioni reali e casi tecnici</a> | 
+    Per una comparazione completa tra l’ozono e altre tecnologie, consulta la sezione 
+    <a href="#ozono-vs-altre-tecnologie">Ozono vs altre tecnologie</a>.
+  </p>
+  <p>
+    <a href="#applicazioni-casi-reali">Torna a Applicazioni e casi reali</a> | 
     <a href="#approfondimenti-ozono">Prossimo: Approfondimenti tematici sull’ozono</a>
   </p>
 </section>
