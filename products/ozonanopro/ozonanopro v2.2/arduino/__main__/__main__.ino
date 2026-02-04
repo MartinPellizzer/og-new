@@ -105,6 +105,7 @@ typedef struct pressure_switch_t {
   int8_t state_old = -1;
   int8_t state_cur = 0;
   int8_t nextion_refresh = 0;
+  uint32_t trigger_counter = 0;
 } pressure_switch_t;
 pressure_switch_t pressure_switch = {};
 
@@ -117,7 +118,17 @@ void pressure_switch_state_update()
     pressure_switch.state_old = pressure_switch.state_cur;
     pressure_switch.nextion_refresh = 1;
     cycle.pressure_switch_state_cur = pressure_switch.state_cur;
+    if (pressure_switch.state_cur == 0)
+    {
+      pressure_switch.trigger_counter += 1;
+      Serial.println(pressure_switch.trigger_counter);
+    }
   }
+}
+
+
+void debug()
+{
 }
 
 void setup() 
@@ -158,4 +169,6 @@ void loop()
   
   // ;nextion
   nextion_manager();
+
+  debug();
 }

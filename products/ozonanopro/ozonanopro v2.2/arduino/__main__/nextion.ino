@@ -423,25 +423,18 @@ void nextion_update_page_home(uint8_t force_refresh)
       }
     }
   }
-  
+  //pressure
   if (force_refresh || pressure_switch.nextion_refresh == 1) 
   {
     pressure_switch.nextion_refresh = 0;
-    if (pressure_switch.state_cur == 1)
+    uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x30, 0x30, 0x30, 0x22, 0xff, 0xff, 0xff };
+    _buffer[8] = (pressure_switch.trigger_counter % 10000 / 1000) + 0x30;
+    _buffer[9] = (pressure_switch.trigger_counter % 1000 / 100) + 0x30;
+    _buffer[10] = (pressure_switch.trigger_counter % 100 / 10) + 0x30;
+    _buffer[11] = (pressure_switch.trigger_counter % 10 / 1) + 0x30;
+    for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
     {
-      uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x31, 0x22, 0xff, 0xff, 0xff };
-      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
-      {
-        Serial2.write(_buffer[i]);
-      }
-    }
-    else
-    {
-      uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x22, 0xff, 0xff, 0xff };
-      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
-      {
-        Serial2.write(_buffer[i]);
-      }
+      Serial2.write(_buffer[i]);
     }
   }
 }
