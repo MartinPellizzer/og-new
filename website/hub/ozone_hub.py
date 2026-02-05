@@ -82,6 +82,27 @@ L’ozono (O<sub>3</sub>) è una forma allotropica dell’ossigeno, caratterizza
 </section>
     '''
 
+    ozone_types_html = f'''
+    <section aria-labelledby="tipologie-ozono">
+  <h2 id="tipologie-ozono">Tipologie di ozono e forme di utilizzo</h2>
+  <p>
+    L’ozono può essere classificato in base alla sua origine, modalità di generazione e applicazione. Comprendere queste tipologie è fondamentale per scegliere l’approccio corretto in ogni contesto operativo.
+  </p>
+  <h3>Ozono naturale e ozono tecnico</h3>
+  <p>
+    L’ozono naturale si forma nell’atmosfera attraverso scariche elettriche o radiazioni UV e contribuisce alla protezione dai raggi ultravioletti. L’ozono tecnico, invece, è prodotto artificialmente mediante generatori e utilizzato in ambiti civili, industriali e ambientali.
+  </p>
+  <h3>Ozono in aria e ozono in acqua</h3>
+  <p>
+    L’ozono può essere applicato come gas (ozono in aria) per sanificazione di ambienti e superfici, oppure disciolto in acqua (ozono in acqua) per trattamenti igienico-sanitari e ossidazione di contaminanti chimici.
+  </p>
+  <h3>Trattamento continuo e shock</h3>
+  <p>
+    L’ozono può essere impiegato in modalità continua, con basse concentrazioni monitorate per periodi prolungati, o in modalità shock, con elevate concentrazioni per brevi periodi, per rimuovere contaminanti o odori persistenti.
+  </p>
+</section>
+    '''
+
     toc_html = f'''
     <h2>Indice della guida</h2>
 <p>Consulta le sezioni principali cliccando sui titoli qui sotto:</p>
@@ -708,6 +729,7 @@ La <strong>progettazione dei sistemi a ozono</strong> richiede analisi tecnica, 
                 {standards_html}
                 {toc_html}
                 {what_html}
+                {ozone_types_html}
                 {history_html}
                 {research_html}
                 {mechanisms_html}
