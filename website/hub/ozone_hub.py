@@ -3,26 +3,49 @@ from lib import components
 
 def gen():
     intro_html = f'''
-<h1>Ozono: guida completa, proprietà, applicazioni e sicurezza</h1>
+<h1>Ozono: guida completa alla tecnologia, alle proprietà chimiche e alle applicazioni operative</h1>
+<p class="last-updated">
+  Ultimo aggiornamento: <time datetime="2026-02">febbraio 2026</time>
+</p>
+
 <p>
-Questa pagina è una guida completa all’ozono come tecnologia: ne analizza le proprietà, i meccanismi di azione, le applicazioni, i limiti e le corrette modalità di utilizzo.
+
+Questa pagina è una guida completa all’ozono come tecnologia ossidante, analizzata dal punto di vista chimico, tecnico e applicativo. Il contenuto affronta proprietà, meccanismi di reazione, ambiti di utilizzo, limiti operativi e criteri di sicurezza, fornendo un riferimento strutturato per un uso consapevole dell’ozono in aria, acqua e superfici.
 </p>
 <h2>Introduzione</h2>
 <p>
 Questa guida è pensata per chi vuole comprendere quando e come utilizzare l’ozono in modo consapevole, evitando applicazioni improprie e interpretazioni semplificate. Le sezioni seguenti possono essere lette in ordine o consultate singolarmente in base all’esigenza.
 </p>
-<h2>Indice della guida</h2>
-<p>Consulta le sezioni principali cliccando sui titoli qui sotto:</p>
-<ul>
-  <li><a href="#cos-e-ozono">Cos’è l’ozono</a></li>
-  <li><a href="#meccanismi-azione-ozono">Come funziona</a></li>
-  <li><a href="#sicurezza-rischi-normative-ozono">Sicurezza e rischi</a></li>
-  <li><a href="#applicazioni-casi-reali">Applicazioni</a></li>
-  <li><a href="#ozono-vs-altre-tecnologie">Ozono vs altre tecnologie</a></li>
-  <li><a href="#quando-ozono">Quando usare l’ozono</a></li>
-  <li><a href="#approfondimenti-ozono">Approfondimenti</a></li>
-</ul>
+
 '''
+    
+    responsability_html = f'''
+    <section aria-labelledby="responsabilita-uso-ozono">
+  <h2 id="responsabilita-uso-ozono">
+    Uso responsabile e limiti informativi
+  </h2>
+  <p>
+    Le informazioni fornite hanno finalità esclusivamente informative e non sostituiscono analisi tecniche specifiche, valutazioni di rischio o progetti esecutivi. L’utilizzo dell’ozono richiede sempre una valutazione preliminare del contesto applicativo e il rispetto delle normative vigenti.
+  </p>
+  <p>
+    Ogni applicazione reale deve essere progettata e gestita da personale qualificato, con sistemi di controllo adeguati e procedure operative documentate.
+  </p>
+</section>
+    '''
+
+    standards_html = f'''
+    <section aria-labelledby="standard-pratiche-ozono">
+  <h2 id="standard-pratiche-ozono">
+    Allineamento a pratiche tecniche e standard di settore
+  </h2>
+  <p>
+    La progettazione e l’utilizzo dei sistemi a ozono fanno riferimento a pratiche tecniche consolidate, documentazione di settore e linee guida operative adottate nei contesti industriali, ambientali e sanitari.
+  </p>
+  <p>
+    L’efficacia e la sicurezza dell’ozono dipendono dall’aderenza a tali pratiche, dall’aggiornamento continuo delle competenze e dall’integrazione con sistemi di monitoraggio e controllo affidabili.
+  </p>
+</section>
+    '''
 
     what_html = f'''
 <section aria-labelledby="cos-e-ozono">
@@ -30,8 +53,8 @@ Questa guida è pensata per chi vuole comprendere quando e come utilizzare l’o
     Cos’è l’ozono e le sue caratteristiche principali
   </h2>
   <p>
-    L’ozono (O<sub>3</sub>) è una forma allotropica dell’ossigeno composta da tre atomi legati in una struttura instabile e altamente reattiva. Questa instabilità conferisce al gas un elevato potere ossidante, utile per trattamenti mirati su aria, acqua e superfici.
-  </p>
+L’ozono (O<sub>3</sub>) è una forma allotropica dell’ossigeno, caratterizzata da una struttura molecolare instabile e da un elevato potere ossidante, che lo rende efficace nei processi di ossidazione chimica e inattivazione microbiologica.
+</p>
   <h3>Composizione chimica e struttura</h3>
   <p>
     La molecola di ozono è angolata e instabile, con legami diversi da quelli dell’ossigeno molecolare (O<sub>2</sub>). Questa caratteristica determina la capacità di reagire rapidamente con contaminanti chimici e microbiologici.
@@ -56,6 +79,133 @@ Questa guida è pensata per chi vuole comprendere quando e come utilizzare l’o
     <a href="#meccanismi-azione-ozono">Meccanismi di azione</a> e 
     <a href="#progettazione-sistemi-ozono">Progettazione dei sistemi a ozono</a>.
   </p>
+</section>
+    '''
+
+    toc_html = f'''
+    <h2>Indice della guida</h2>
+<p>Consulta le sezioni principali cliccando sui titoli qui sotto:</p>
+<ul>
+  <li><a href="#cos-e-ozono">Cos’è l’ozono</a></li>
+  <li><a href="#storia-ozono">Storia</a></li>
+  <li><a href="#ricerca-scientifica-ozono">Ricerca Scientifica</a></li>
+  <li><a href="#glossario-ozono">Glossario</a></li>
+  <li><a href="#meccanismi-azione-ozono">Come funziona</a></li>
+  <li><a href="#sicurezza-rischi-normative-ozono">Sicurezza e rischi</a></li>
+  <li><a href="#applicazioni-casi-reali">Applicazioni</a></li>
+  <li><a href="#ozono-vs-altre-tecnologie">Ozono vs altre tecnologie</a></li>
+  <li><a href="#quando-ozono">Quando usare l’ozono</a></li>
+  <li><a href="#faq-ozono">FAQ</a></li>
+  <li><a href="#approfondimenti-ozono">Approfondimenti</a></li>
+</ul>
+    '''
+
+    context_html = f'''
+    <section aria-labelledby="contesto-competenza-ozono">
+  <h2 id="contesto-competenza-ozono">
+    Contesto tecnico e competenza professionale
+  </h2>
+  <p>
+    I contenuti di questa guida si basano sull’esperienza diretta nella progettazione, gestione e analisi di sistemi a ozono applicati in contesti civili, commerciali e industriali. L’approccio adottato privilegia criteri tecnici, valutazioni operative e rispetto dei vincoli di sicurezza e conformità.
+  </p>
+  <p>
+    L’obiettivo non è promuovere l’ozono come soluzione universale, ma fornire una base informativa solida per comprenderne potenzialità, limiti e condizioni di utilizzo corretto.
+  </p>
+</section>
+    '''
+
+    history_html = f'''
+    <section aria-labelledby="storia-ozono">
+  <h2 id="storia-ozono">
+    Storia, scoperta e sviluppo dell’ozono
+  </h2>
+  <p>
+    L’ozono è stato identificato scientificamente nel XIX secolo e il suo utilizzo tecnologico si è evoluto parallelamente allo sviluppo dell’ingegneria chimica e dei sistemi di trattamento ambientale.
+  </p>
+  <h3>Scoperta scientifica</h3>
+  <p>
+    L’ozono venne identificato per la prima volta nel 1840 da Christian Friedrich Schönbein, che ne osservò l’odore caratteristico durante esperimenti con scariche elettriche. Da qui il termine greco <em>ózein</em>, “odorare”.
+  </p>
+  <h3>Evoluzione dell’utilizzo tecnologico</h3>
+  <p>
+    Le prime applicazioni pratiche dell’ozono risalgono alla fine del XIX secolo nel trattamento delle acque potabili. Nel corso del XX secolo, l’ozono è stato progressivamente adottato in ambiti industriali, sanitari e ambientali grazie alla sua elevata capacità ossidante e all’assenza di residui chimici persistenti.
+  </p>
+  <h3>Diffusione moderna</h3>
+  <p>
+    Oggi l’ozono è utilizzato in sistemi automatizzati e controllati, integrati in processi civili, commerciali e industriali, con applicazioni che spaziano dalla sanificazione ambientale al trattamento avanzato delle acque.
+  </p>
+</section>
+    '''
+
+    research_html = f'''
+    <section aria-labelledby="ricerca-scientifica-ozono">
+  <h2 id="ricerca-scientifica-ozono">
+    Ricerca scientifica e validazione dell’ozono
+  </h2>
+  <p>
+    L’utilizzo dell’ozono come tecnologia di trattamento è supportato da numerosi studi scientifici che ne analizzano efficacia, limiti e condizioni operative ottimali in diversi contesti applicativi.
+  </p>
+  <h3>Ambiti di ricerca principali</h3>
+  <ul>
+    <li>Ossidazione di contaminanti chimici e microinquinanti.</li>
+    <li>Inattivazione microbiologica in aria e acqua.</li>
+    <li>Interazioni tra ozono, materiali e sottoprodotti di reazione.</li>
+    <li>Ottimizzazione dei parametri operativi (concentrazione, tempo, temperatura).</li>
+  </ul>
+  <h3>Validazione tecnica</h3>
+  <p>
+    La letteratura tecnica evidenzia come l’efficacia dell’ozono dipenda fortemente dalla progettazione del sistema, dal controllo dei parametri e dal contesto applicativo. Studi comparativi dimostrano che l’ozono è particolarmente efficace quando integrato in processi progettati su misura, piuttosto che come soluzione universale.
+  </p>
+  <p>
+    Le evidenze scientifiche costituiscono la base per normative, linee guida operative e standard di settore, che regolano l’uso sicuro e conforme dell’ozono.
+  </p>
+</section>
+<section aria-labelledby="ricerca-scientifica-ozono">
+  <h2 id="ricerca-scientifica-ozono">
+    Ricerca scientifica e validazione dell’ozono
+  </h2>
+  <p>
+    L’utilizzo dell’ozono come tecnologia di trattamento è supportato da numerosi studi scientifici che ne analizzano efficacia, limiti e condizioni operative ottimali in diversi contesti applicativi.
+  </p>
+  <h3>Ambiti di ricerca principali</h3>
+  <ul>
+    <li>Ossidazione di contaminanti chimici e microinquinanti.</li>
+    <li>Inattivazione microbiologica in aria e acqua.</li>
+    <li>Interazioni tra ozono, materiali e sottoprodotti di reazione.</li>
+    <li>Ottimizzazione dei parametri operativi (concentrazione, tempo, temperatura).</li>
+  </ul>
+  <h3>Validazione tecnica</h3>
+  <p>
+    La letteratura tecnica evidenzia come l’efficacia dell’ozono dipenda fortemente dalla progettazione del sistema, dal controllo dei parametri e dal contesto applicativo. Studi comparativi dimostrano che l’ozono è particolarmente efficace quando integrato in processi progettati su misura, piuttosto che come soluzione universale.
+  </p>
+  <p>
+    Le evidenze scientifiche costituiscono la base per normative, linee guida operative e standard di settore, che regolano l’uso sicuro e conforme dell’ozono.
+  </p>
+</section>
+    '''
+
+    glossary_html = f'''
+    <section aria-labelledby="glossario-ozono">
+  <h2 id="glossario-ozono">
+    Glossario tecnico dell’ozono
+  </h2>
+  <p>
+    Questo glossario definisce i principali termini tecnici utilizzati nei sistemi e nelle applicazioni a ozono, facilitando una comprensione precisa e coerente della tecnologia.
+  </p>
+  <dl>
+    <dt>Ozono (O<sub>3</sub>)</dt>
+    <dd>Forma allotropica dell’ossigeno composta da tre atomi, caratterizzata da elevata reattività chimica.</dd>
+    <dt>Potere ossidante</dt>
+    <dd>Capacità di una sostanza di ossidare altri composti chimici tramite trasferimento di elettroni.</dd>
+    <dt>Ozonizzazione</dt>
+    <dd>Processo di trattamento che utilizza ozono per ossidare contaminanti in aria, acqua o su superfici.</dd>
+    <dt>Tempo di contatto</dt>
+    <dd>Durata durante la quale l’ozono interagisce con il mezzo o il contaminante target.</dd>
+    <dt>Concentrazione</dt>
+    <dd>Quantità di ozono presente in un dato volume di aria o acqua, generalmente espressa in ppm o mg/L.</dd>
+    <dt>Decomposizione dell’ozono</dt>
+    <dd>Processo naturale mediante il quale l’ozono si trasforma in ossigeno molecolare.</dd>
+  </dl>
 </section>
     '''
 
@@ -156,9 +306,12 @@ Questa guida è pensata per chi vuole comprendere quando e come utilizzare l’o
     Applicazioni e casi reali dell’ozono
   </h2>
   <p>
-
 L’ozono è una tecnologia versatile, le cui prestazioni dipendono dal contesto d’uso e dalla corretta progettazione dei sistemi. In questa sezione esploriamo sia i contesti teorici in cui l’ozono è applicabile, sia esempi reali che dimostrano risultati concreti e lezioni operative.
   </p>
+  <p>
+Per un’analisi dettagliata dei singoli settori applicativi, dei requisiti tecnici e dei vincoli normativi specifici, consulta la pagina dedicata alle 
+<a href="/applicazioni.html">applicazioni dell’ozono</a>.
+</p>
   <!-- CONTEXTI TEORICI -->
   <h3>Contesti teorici di applicazione</h3>
   <p>
@@ -232,8 +385,8 @@ L’ozono è una tecnologia versatile, le cui prestazioni dipendono dal contesto
     Ozono vs altre tecnologie
   </h2>
   <p>
-    L’ozono è una tecnologia ossidante potente, ma non sempre la soluzione più adatta. Confrontarlo con altre tecnologie permette di scegliere lo strumento più adeguato in funzione dei vincoli applicativi e degli obiettivi specifici. 
-  </p>
+L’ozono è una tecnologia di trattamento basata su ossidazione avanzata, spesso confrontata con sistemi fisici, chimici o fotochimici. Il confronto con altre tecnologie consente di valutare efficacia, limiti operativi, residui e requisiti di sicurezza in funzione dell’obiettivo specifico.
+</p>
   <h3>Filtrazione fisica</h3>
   <p>
     Sistemi come filtri HEPA o a carbone attivo rimuovono particelle solide e alcuni contaminanti chimici. A differenza dell’ozono, non modificano chimicamente i composti organici o biologici, quindi non ossidano VOC o microrganismi.
@@ -296,6 +449,91 @@ L’ozono è una tecnologia versatile, le cui prestazioni dipendono dal contesto
   <p>
     L’efficacia dell’ozono dipende da una progettazione accurata dei sistemi di generazione e distribuzione. Questa sezione fornisce linee guida pratiche per implementazioni sicure, efficienti e conformi alle normative.
   </p>
+  <p>
+I criteri qui descritti rappresentano una base generale. La progettazione operativa viene approfondita nella sezione dedicata ai 
+<a href="/servizi.html">servizi di progettazione dei sistemi a ozono</a>.
+</p>
+  <h3>Parametri tecnici indicativi dell’ozono</h3>
+<p>
+I valori riportati rappresentano intervalli tipici utilizzati come riferimento preliminare nella progettazione dei sistemi a ozono. I parametri reali devono essere sempre definiti tramite analisi specifica del contesto.
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>Ambito</th>
+      <th>Parametro</th>
+      <th>Intervallo indicativo</th>
+      <th>Unità di misura</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Aria</td>
+      <td>Concentrazione operativa</td>
+      <td>0,1 – 5</td>
+      <td>ppm</td>
+    </tr>
+    <tr>
+      <td>Aria</td>
+      <td>Tempo di contatto</td>
+      <td>10 – 120</td>
+      <td>minuti</td>
+    </tr>
+    <tr>
+      <td>Acqua</td>
+      <td>Concentrazione disciolta</td>
+      <td>0,1 – 5</td>
+      <td>mg/L</td>
+    </tr>
+    <tr>
+      <td>Acqua</td>
+      <td>Tempo di contatto</td>
+      <td>1 – 20</td>
+      <td>minuti</td>
+    </tr>
+    <tr>
+      <td>Generazione</td>
+      <td>Produzione di ozono</td>
+      <td>g/h – kg/h</td>
+      <td>variabile</td>
+    </tr>
+  </tbody>
+</table>
+<h3>Relazione tra problema, parametri e vincoli</h3>
+<p>
+La scelta dei parametri di utilizzo dell’ozono dipende dal tipo di problema da risolvere e dai vincoli tecnici, materiali e normativi presenti nel contesto applicativo.
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>Problema principale</th>
+      <th>Parametro critico</th>
+      <th>Vincolo dominante</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Contaminazione microbiologica</td>
+      <td>Tempo di contatto</td>
+      <td>Limiti di esposizione</td>
+    </tr>
+    <tr>
+      <td>Odori persistenti</td>
+      <td>Concentrazione</td>
+      <td>Sensibilità dei materiali</td>
+    </tr>
+    <tr>
+      <td>Trattamento acqua</td>
+      <td>Solubilità e pH</td>
+      <td>Temperatura e composizione chimica</td>
+    </tr>
+    <tr>
+      <td>Processi industriali</td>
+      <td>Produzione di ozono</td>
+      <td>Normative di settore</td>
+    </tr>
+  </tbody>
+</table>
   <h3>Analisi del problema e obiettivi</h3>
   <p>
     La progettazione parte dall’identificazione del problema reale: tipo di contaminante, contesto operativo e risultati desiderati. Gli obiettivi devono essere chiari, misurabili e compatibili con i limiti normativi.
@@ -371,6 +609,45 @@ L’ozono è una tecnologia versatile, le cui prestazioni dipendono dal contesto
 </section>
     '''
 
+    faq_html = f'''
+    <section aria-labelledby="faq-ozono">
+  <h2 id="faq-ozono">
+    Domande frequenti sull’ozono (FAQ)
+  </h2>
+  <p>
+    Questa sezione risponde alle domande più comuni sull’ozono, chiarendo dubbi ricorrenti e aspetti spesso fraintesi, senza sostituire la progettazione tecnica o le valutazioni normative.
+  </p>
+  <h3>L’ozono elimina virus e batteri?</h3>
+  <p>
+    L’ozono può inattivare batteri, virus e funghi tramite ossidazione, ma l’efficacia dipende da concentrazione, tempo di contatto e contesto applicativo.
+  </p>
+  <h3>L’ozono può essere utilizzato in presenza di persone?</h3>
+  <p>
+    No. I trattamenti con ozono devono essere effettuati in ambienti non occupati, salvo applicazioni specifiche progettate per concentrazioni estremamente basse e controllate.
+  </p>
+  <h3>L’ozono lascia residui chimici?</h3>
+  <p>
+    No. L’ozono si decompone naturalmente in ossigeno molecolare e non lascia residui chimici persistenti.
+  </p>
+  <h3>L’ozono rimuove gli odori o li copre?</h3>
+  <p>
+    L’ozono non maschera gli odori: ossida i composti responsabili, trasformandoli in sostanze meno odorose o inodori.
+  </p>
+  <h3>L’ozono è adatto a tutti i materiali?</h3>
+  <p>
+    No. Materiali come gomme, alcune plastiche e vernici possono degradarsi se esposti a ozono in modo prolungato o non controllato.
+  </p>
+  <h3>Qual è la differenza tra sanificazione e disinfezione con ozono?</h3>
+  <p>
+    Il termine “sanificazione” indica un miglioramento delle condizioni igieniche, mentre “disinfezione” implica una riduzione controllata dei microrganismi secondo criteri specifici. L’uso corretto dipende dal contesto normativo.
+  </p>
+  <h3>L’ozono sostituisce altri sistemi di trattamento?</h3>
+  <p>
+    No. In molti casi l’ozono funziona meglio come parte di un sistema integrato, non come soluzione unica o universale.
+  </p>
+</section>
+    '''
+
     more_html = f'''
 <section aria-labelledby="approfondimenti-ozono">
   <h2 id="approfondimenti-ozono">
@@ -379,36 +656,37 @@ L’ozono è una tecnologia versatile, le cui prestazioni dipendono dal contesto
   <p>
     Per comprendere appieno le potenzialità dell’ozono e integrarlo efficacemente, è utile esplorare le risorse correlate. Questi approfondimenti completano la pagina principale, creando un hub di riferimento autorevole.
   </p>
-  <h3>Applicazioni</h3>
+  <h3>Applicazioni dell’ozono</h3>
+<p>
+La pagina dedicata alle <strong>applicazioni dell’ozono</strong> approfondisce in modo specifico i contesti civili, commerciali e industriali in cui questa tecnologia viene utilizzata, con esempi operativi e criteri decisionali.
+<a href="/applicazioni.html">Approfondisci le applicazioni dell’ozono</a>
+</p>
+
+<h3>Tecnologie e generatori di ozono</h3>
+<p>
+I <strong>sistemi e generatori di ozono</strong> rappresentano il cuore tecnologico delle applicazioni. Questa sezione analizza le principali soluzioni disponibili e le loro caratteristiche operative.
+<a href="/prodotti.html">Analisi delle tecnologie a ozono</a>
+</p>
+
+<h3>Servizi di progettazione e consulenza</h3>
+<p>
+La <strong>progettazione dei sistemi a ozono</strong> richiede analisi tecnica, valutazione dei rischi e conformità normativa. Questa pagina descrive i servizi dedicati alla corretta implementazione della tecnologia.
+<a href="/servizi.html">Servizi di progettazione a ozono</a>
+</p>
+</section>
+    '''
+
+    conclusion_html = f'''
+    <section aria-labelledby="conclusione-ozono">
+  <h2 id="conclusione-ozono">
+    Considerazioni finali
+  </h2>
   <p>
-    Scopri casi concreti e scenari d’uso dell’ozono in contesti civili, commerciali e industriali.  
-    <a href="/applicazioni.html">Vai alle applicazioni</a>
-  </p>
-  <h3>Tecnologie e sistemi</h3>
-  <p>
-    Approfondisci generatori, sistemi integrati per aria e acqua e soluzioni tecnologiche innovative per il trattamento con ozono.  
-    <a href="/prodotti.html">Esplora le tecnologie</a>
-  </p>
-  <h3>Servizi e progettazione</h3>
-  <p>
-    Linee guida per progettare impianti sicuri ed efficaci, analisi dei parametri critici e gestione dei rischi.  
-    <a href="/servizi.html">Scopri i servizi di progettazione</a>
-  </p>
-  <h3>Casi tecnici</h3>
-  <p>
-    Analisi di applicazioni reali, criticità riscontrate e lezioni apprese dai progetti sul campo.  
-    <a href="/progetti.html">Visualizza i casi tecnici</a>
-  </p>
-  <h3>Normative e certificazioni</h3>
-  <p>
-    Normative di riferimento, limiti di esposizione e certificazioni per l’uso sicuro e conforme dell’ozono.  
-    <a href="/certificazioni.html">Consulta normative e certificazioni</a>
-  </p>
-  <p>
-    <a href="#quando-ozono">Torna a Quando usare e quando no l’ozono</a>
+    L’ozono è una tecnologia potente e versatile, il cui valore dipende dalla corretta comprensione dei principi di funzionamento, dei limiti applicativi e dei requisiti di sicurezza. Una valutazione tecnica consapevole è il presupposto per un utilizzo efficace e responsabile.
   </p>
 </section>
     '''
+
 
 
     html = f'''
@@ -425,14 +703,22 @@ L’ozono è una tecnologia versatile, le cui prestazioni dipendono dal contesto
             {components.header_default()}
             <main class="hub container-md" id="contenuto-principale">
                 {intro_html}
+                {context_html}
+                {responsability_html}
+                {standards_html}
+                {toc_html}
                 {what_html}
+                {history_html}
+                {research_html}
                 {mechanisms_html}
                 {safety_html}
                 {applicazioni_html}
                 {comparation_html}
                 {design_html}
                 {decision_html}
+                {faq_html}
                 {more_html}
+                {conclusion_html}
             </main>
             <!-- =======================================
                  FOOTER

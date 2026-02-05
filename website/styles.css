@@ -64,8 +64,7 @@ img {
     height: auto;
 }
 
-.home {
-}
+.home {}
 
 .home h2 {
     font-family: var(--font-heading);
@@ -492,7 +491,7 @@ img {
 .services-timeline {
     position: relative;
     padding-left: 32px;
-    border-left: 2px solid #D9E5F7; 
+    border-left: 2px solid #D9E5F7;
     font-family: var(--font-body);
     color: #333;
     max-width: 80ch;
@@ -1015,4 +1014,17 @@ footer h2 {
     font-size: 1rem;
     line-height: 2;
     color: #333;
+}
+
+.hub table {
+    font-family: var(--font-body);
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+.hub table,
+td,
+th {
+    border: 1px solid #333;
+    padding: 0.5rem 0.75rem;
 }

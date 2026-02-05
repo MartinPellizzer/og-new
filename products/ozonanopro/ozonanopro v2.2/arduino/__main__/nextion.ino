@@ -9,6 +9,12 @@ uint8_t cmd_p_home_p[BUFFER_SIZE] = { 101, 1, 9, 1, 255, 255, 255, 0, 0, 0, 0, 0
 uint8_t cmd_p_home_o2[BUFFER_SIZE] = { 101, 1, 11, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 uint8_t cmd_p_home_o3[BUFFER_SIZE] = { 101, 1, 12, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 uint8_t cmd_p_home_so[BUFFER_SIZE] = { 101, 1, 13, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+uint8_t cmd_p_home_set[BUFFER_SIZE] = { 101, 1, 10, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+uint8_t cmd_p_set_back[BUFFER_SIZE] = { 101, 2, 2, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+uint8_t cmd_p_set_save[BUFFER_SIZE] = { 101, 2, 1, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+uint8_t cmd_p_set_1_left[BUFFER_SIZE] = { 101, 2, 3, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+uint8_t cmd_p_set_1_right[BUFFER_SIZE] = { 101, 2, 4, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
 bool nextion_array_compare(uint8_t *a, uint8_t *b)
 {
@@ -147,11 +153,47 @@ void nextion_input_p_home()
     cycle.mode_cur = 1;
     cycle.state_onoff_cur = 0;
   }
+  if (nextion_array_compare(cmd_p_home_set, nextion.inputs_buff))
+  {
+    cycle.state_onoff_cur = 0;
+    nextion.page_cur = P_SET;
+  }
+}
+
+void nextion_input_p_set()
+{
+  if (nextion_array_compare(cmd_p_set_back, nextion.inputs_buff))
+  {
+    nextion.page_cur = P_HOME;
+  }
+  else if (nextion_array_compare(cmd_p_set_save, nextion.inputs_buff))
+  {
+    nextion.page_cur = P_HOME;
+    settings.pressure_delay_mills_cur = settings.pressure_delay_mills_tmp;
+  }
+  else if (nextion_array_compare(cmd_p_set_1_left, nextion.inputs_buff))
+  {
+    settings.pressure_delay_mills_tmp -= 10;
+    if (settings.pressure_delay_mills_tmp < 0)
+    {
+      settings.pressure_delay_mills_tmp = 0;
+    }
+  }
+  else if (nextion_array_compare(cmd_p_set_1_right, nextion.inputs_buff)) 
+  {
+    settings.pressure_delay_mills_tmp += 10;
+    if (settings.pressure_delay_mills_tmp > 9990)
+    {
+      settings.pressure_delay_mills_tmp = 9990;
+    }
+  }
+  
 }
 
 void nextion_eval_serial()
 {
   /**/ if (nextion.page_cur == P_HOME)                  nextion_input_p_home();
+  else if (nextion.page_cur == P_SET)                   nextion_input_p_set();
 }
 
 void nextion_update()
@@ -163,6 +205,7 @@ void nextion_update()
     force_refresh = 1;
   }
   /**/ if (nextion.page_cur == P_HOME)                  nextion_update_page_home(force_refresh);
+  else if (nextion.page_cur == P_SET)                   nextion_update_page_set(force_refresh);
 }
 
 void nextion_update_page_home(uint8_t force_refresh)
@@ -435,6 +478,35 @@ void nextion_update_page_home(uint8_t force_refresh)
     for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
     {
       Serial2.write(_buffer[i]);
+    }
+  }
+}
+
+void nextion_update_page_set(uint8_t force_refresh)
+{
+  if (force_refresh) 
+  {
+    uint8_t _buffer[] = { 0x70, 0x61, 0x67, 0x65, 0x20, 0x70, 0x5F, 0x73, 0x65, 0x74, 0x5F, 0x6C, 0x69, 0x73, 0x74, 0xff, 0xff, 0xff };
+    for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+    {
+      Serial2.write(_buffer[i]);
+    }
+    settings.pressure_delay_mills_tmp = settings.pressure_delay_mills_cur;
+  }
+  //pressure delay millis
+  if (force_refresh || settings.pressure_delay_mills_old != settings.pressure_delay_mills_tmp)
+  {
+    settings.pressure_delay_mills_old = settings.pressure_delay_mills_tmp;
+    {
+      uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x30, 0x30, 0x30, 0x22, 0xff, 0xff, 0xff };
+      _buffer[8] = (settings.pressure_delay_mills_tmp % 10000 / 1000) + 0x30;
+      _buffer[9] = (settings.pressure_delay_mills_tmp % 1000 / 100) + 0x30;
+      _buffer[10] = (settings.pressure_delay_mills_tmp % 100 / 10) + 0x30;
+      _buffer[11] = (settings.pressure_delay_mills_tmp % 10 / 1) + 0x30;
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
+        Serial2.write(_buffer[i]);
+      }
     }
   }
 }

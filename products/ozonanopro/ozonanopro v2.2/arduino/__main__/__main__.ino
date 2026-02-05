@@ -16,6 +16,7 @@
 enum Nextion_Pages {
   P_SPLASH,
   P_HOME,
+  P_SET,
 };
 
 enum Cycle_States {
@@ -99,6 +100,16 @@ cycle_t cycle = {};
 int32_t debug_millis_cur = 0;
 
 ///////////////////////////////////////////////////////////////////////
+// ;cycle
+///////////////////////////////////////////////////////////////////////
+typedef struct settings_t {
+  int16_t pressure_delay_mills_old = -2;
+  int16_t pressure_delay_mills_tmp = -1;
+  int16_t pressure_delay_mills_cur = 0;
+} settings_t;
+settings_t settings = {};
+
+///////////////////////////////////////////////////////////////////////
 // ;pressure switch
 ///////////////////////////////////////////////////////////////////////
 typedef struct pressure_switch_t {
@@ -106,24 +117,38 @@ typedef struct pressure_switch_t {
   int8_t state_cur = 0;
   int8_t nextion_refresh = 0;
   uint32_t trigger_counter = 0;
+  uint32_t trigger_debounce_millis = 0;
+  uint32_t trigger_debounce_millis_delay = 50;
+
 } pressure_switch_t;
 pressure_switch_t pressure_switch = {};
 
 
 void pressure_switch_state_update()
 {
-  pressure_switch.state_cur = !digitalRead(RI_P);
-  if (pressure_switch.state_old != pressure_switch.state_cur) 
+  int reading = !digitalRead(RI_P);
+
+  if (reading != pressure_switch.state_old) 
   {
-    pressure_switch.state_old = pressure_switch.state_cur;
-    pressure_switch.nextion_refresh = 1;
-    cycle.pressure_switch_state_cur = pressure_switch.state_cur;
-    if (pressure_switch.state_cur == 0)
+    pressure_switch.trigger_debounce_millis = millis();
+  }
+
+  if ((millis() - pressure_switch.trigger_debounce_millis) > settings.pressure_delay_mills_cur) 
+  {
+    if (reading != pressure_switch.state_cur) 
     {
-      pressure_switch.trigger_counter += 1;
-      Serial.println(pressure_switch.trigger_counter);
+      pressure_switch.state_cur = reading;
+      pressure_switch.nextion_refresh = 1;
+      cycle.pressure_switch_state_cur = pressure_switch.state_cur;
+      if (pressure_switch.state_cur == 0)
+      {
+        pressure_switch.trigger_counter += 1;
+        Serial.println(pressure_switch.trigger_counter);
+      }
     }
   }
+
+  pressure_switch.state_old = reading;
 }
 
 
