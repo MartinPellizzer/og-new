@@ -2,22 +2,111 @@ from lib import g
 from lib import components
 
 def gen():
+H1 – Ozono (O₃): guida completa su proprietà, chimica, ambiente, salute e applicazioni
+
+H2 – Introduzione all’ozono
+H3 – Cos’è l’ozono: definizione chimica e identità molecolare
+H3 – Differenze tra O₃, O₂ e altre forme di ossigeno
+H3 – Struttura molecolare, caratteristiche uniche e stabilità
+
+H2 – Storia e scoperta dell’ozono
+H3 – Scopritore e contesto storico
+H3 – Evoluzione della comprensione scientifica
+H3 – Prime applicazioni storiche e casi studio
+
+H2 – Proprietà e reattività chimica
+H3 – Proprietà fisiche e chimiche principali
+H3 – Meccanismi chimici: ozonolisi, radicali liberi, radicali singoletto
+H3 – Interazioni con acqua, aria e altri composti
+H3 – Isotopi di ossigeno e fotocatalisi
+
+H2 – Ozono nell’ambiente naturale
+H3 – Strati atmosferici: troposfera vs stratosfera e ozonosfera
+H3 – Cicli naturali e formazione dell’ozono
+H3 – Interazioni con gas serra, inquinanti e particolato (NOx, VOC, PM2.5, SOx)
+H3 – Buco dell’ozono e protezione globale
+H3 – Effetti biologici su ecosistemi: piante, animali e microbiomi ambientali
+H3 – Qualità dell’aria urbana e indoor
+
+H2 – Generazione artificiale dell’ozono
+H3 – Principi e metodi: UV, corona discharge, elettrolisi
+H3 – Differenze tra ozono naturale e generato: vantaggi e limiti
+H3 – Controlli di sicurezza e monitoraggio
+H3 – Limitazioni e scenari di rischio
+
+H2 – Applicazioni industriali e pratiche
+H3 – Aria e depurazione ambientale
+H3 – Trattamento acqua potabile e reflui
+H3 – Industria alimentare: ossidazione controllata e sicurezza
+H3 – Chimica industriale e processi specifici
+H3 – Impatto sui materiali e corrosione
+H3 – Confronto con altre tecnologie ossidanti: cloro, ossigeno attivo
+H3 – Sostenibilità e costi delle tecnologie a ozono
+
+H2 – Misurazione e monitoraggio
+H3 – Unità di misura e concentrazione
+H3 – Strumenti e metodologie avanzate: ambientale, industriale, urbano/indoor, sensori IoT, fotometri, spettroscopia
+
+H2 – Effetti sulla salute e normative
+H3 – Esposizione: dose, tempo, concentrazione
+H3 – Effetti sull’uomo: ozonoterapia, esposizione ambientale
+H3 – Rischi, tossicologia e sicurezza
+H3 – Linee guida operative e casi studio
+H3 – Normative globali e italiane: UE, WHO, EPA, ISO, UNI, Protocollo di Montreal
+
+H2 – Innovazione e futuro
+H3 – Tecnologie emergenti: fotocatalisi, nuove terapie, microbiomi
+H3 – Trend scientifici, pubblicazioni recenti e ricerche in corso
+H3 – Impatti futuri su salute, ambiente e industria
+H3 – Sfide e limiti dell’ozono: ricerca, regolamentazione e sostenibilità
+
+H2 – FAQ e miti comuni
+H3 – Chimica e proprietà
+H3 – Salute e sicurezza
+H3 – Ambiente e clima
+H3 – Industria e applicazioni
+H3 – Falsi miti e interpretazioni commerciali
+
+H2 – Risorse e approfondimenti
+H3 – Sintesi concettuale: concetti chiave da ricordare
+H3 – Mini-mappa concettuale visuale
+H3 – Glossario ed entità correlate: O₃, ozonosfera, ozonolisi, tipologie e applicazioni, VOC, PM2.5, UV, protocolli e standard
+H3 – Link interni a hub correlati: applicazioni, servizi
+
+H2 – Call-to-action
+H3 – Approfondimenti, download risorse
+
     intro_html = f'''
 <h1>Ozono: guida completa alla tecnologia, alle proprietà chimiche e alle applicazioni operative</h1>
 <p class="last-updated">
   Ultimo aggiornamento: <time datetime="2026-02">febbraio 2026</time>
 </p>
-
 <p>
-
 Questa pagina è una guida completa all’ozono come tecnologia ossidante, analizzata dal punto di vista chimico, tecnico e applicativo. Il contenuto affronta proprietà, meccanismi di reazione, ambiti di utilizzo, limiti operativi e criteri di sicurezza, fornendo un riferimento strutturato per un uso consapevole dell’ozono in aria, acqua e superfici.
 </p>
 <h2>Introduzione</h2>
 <p>
 Questa guida è pensata per chi vuole comprendere quando e come utilizzare l’ozono in modo consapevole, evitando applicazioni improprie e interpretazioni semplificate. Le sezioni seguenti possono essere lette in ordine o consultate singolarmente in base all’esigenza.
 </p>
-
 '''
+
+    toc_html = f'''
+    <h2>Indice della guida</h2>
+<p>Consulta le sezioni principali cliccando sui titoli qui sotto:</p>
+<ul>
+  <li><a href="#cos-e-ozono">Cos’è l’ozono</a></li>
+  <li><a href="#storia-ozono">Storia</a></li>
+  <li><a href="#ricerca-scientifica-ozono">Ricerca Scientifica</a></li>
+  <li><a href="#glossario-ozono">Glossario</a></li>
+  <li><a href="#meccanismi-azione-ozono">Come funziona</a></li>
+  <li><a href="#sicurezza-rischi-normative-ozono">Sicurezza e rischi</a></li>
+  <li><a href="#applicazioni-casi-reali">Applicazioni</a></li>
+  <li><a href="#ozono-vs-altre-tecnologie">Ozono vs altre tecnologie</a></li>
+  <li><a href="#quando-ozono">Quando usare l’ozono</a></li>
+  <li><a href="#faq-ozono">FAQ</a></li>
+  <li><a href="#approfondimenti-ozono">Approfondimenti</a></li>
+</ul>
+    '''
     
     responsability_html = f'''
     <section aria-labelledby="responsabilita-uso-ozono">
@@ -103,22 +192,54 @@ L’ozono (O<sub>3</sub>) è una forma allotropica dell’ossigeno, caratterizza
 </section>
     '''
 
-    toc_html = f'''
-    <h2>Indice della guida</h2>
-<p>Consulta le sezioni principali cliccando sui titoli qui sotto:</p>
-<ul>
-  <li><a href="#cos-e-ozono">Cos’è l’ozono</a></li>
-  <li><a href="#storia-ozono">Storia</a></li>
-  <li><a href="#ricerca-scientifica-ozono">Ricerca Scientifica</a></li>
-  <li><a href="#glossario-ozono">Glossario</a></li>
-  <li><a href="#meccanismi-azione-ozono">Come funziona</a></li>
-  <li><a href="#sicurezza-rischi-normative-ozono">Sicurezza e rischi</a></li>
-  <li><a href="#applicazioni-casi-reali">Applicazioni</a></li>
-  <li><a href="#ozono-vs-altre-tecnologie">Ozono vs altre tecnologie</a></li>
-  <li><a href="#quando-ozono">Quando usare l’ozono</a></li>
-  <li><a href="#faq-ozono">FAQ</a></li>
-  <li><a href="#approfondimenti-ozono">Approfondimenti</a></li>
-</ul>
+    ozone_production_html = f'''
+<section aria-labelledby="produzione-ozono">
+  <h2 id="produzione-ozono">Come viene prodotto l’ozono</h2>
+  <p>
+    L’ozono tecnico non può essere conservato a lungo e deve essere prodotto in loco mediante generatori specializzati. La scelta della tecnologia di generazione influisce su efficacia, stabilità e sicurezza.
+  </p>
+  <h3>Scarica a corona</h3>
+  <p>
+    Questo metodo sfrutta una differenza di potenziale elettrico tra due elettrodi per trasformare l’ossigeno in ozono. È il metodo più diffuso per la produzione di ozono in aria e acqua, grazie alla sua efficienza e affidabilità.
+  </p>
+  <h3>Radiazione UV</h3>
+  <p>
+    L’ozono può essere generato esponendo l’ossigeno a radiazioni ultraviolette specifiche. Questo metodo produce basse concentrazioni ed è tipicamente usato per applicazioni di laboratorio o purificazione dell’aria in piccoli spazi.
+  </p>
+  <h3>Elettrolisi</h3>
+  <p>
+    L’elettrolisi dell’acqua produce ozono insieme ad ossigeno. Questo metodo è più recente e permette integrazione in sistemi di trattamento idrico e dispositivi sanitari, riducendo la necessità di ossigeno puro.
+  </p>
+  <h3>Ossigeno puro vs aria ambiente</h3>
+  <p>
+    I generatori possono utilizzare ossigeno puro o aria ambiente come fonte. L’uso di ossigeno puro aumenta la concentrazione massima di ozono generabile, mentre l’aria ambiente è più economica ma limita la concentrazione e richiede gestione dei sottoprodotti.
+  </p>
+</section>
+    '''
+
+    propriety_html = f'''
+        <section aria-labelledby="proprieta-ambientali-chimiche">
+          <h2 id="proprieta-ambientali-chimiche">Proprietà ambientali e chimiche avanzate</h2>
+          <p>
+            L’ozono è un gas altamente reattivo con caratteristiche chimiche e fisiche che influenzano la sua applicazione tecnica e il comportamento ambientale.
+          </p>
+          <h3>Instabilità e decomposizione</h3>
+          <p>
+            L’ozono si decompone rapidamente in ossigeno, con una velocità influenzata da temperatura, umidità e presenza di catalizzatori chimici. Questa instabilità impone produzione on-demand e sistemi di distribuzione controllati.
+          </p>
+          <h3>Interazioni chimiche</h3>
+          <p>
+            L’ozono reagisce con composti organici e inorganici, ossidando contaminanti chimici e microrganismi. L’efficacia dipende dalla concentrazione, dal tempo di contatto e dalla natura dei substrati.
+          </p>
+          <h3>Effetti ambientali</h3>
+          <p>
+            Nell’alta atmosfera, l’ozono è benefico, proteggendo dai raggi UV. Al livello del suolo, può agire come inquinante secondario. In applicazioni controllate, il rapido decadimento previene residui chimici persistenti.
+          </p>
+          <h3>Compatibilità con materiali</h3>
+          <p>
+            L’ozono può ossidare materiali sensibili come gomme, plastiche e metalli. La conoscenza della reattività chimica permette di pianificare protezioni o limitare l’esposizione, minimizzando danni a strutture o componenti.
+          </p>
+        </section>
     '''
 
     context_html = f'''
@@ -730,6 +851,8 @@ La <strong>progettazione dei sistemi a ozono</strong> richiede analisi tecnica, 
                 {toc_html}
                 {what_html}
                 {ozone_types_html}
+                {ozone_production_html}
+                {propriety_html}
                 {history_html}
                 {research_html}
                 {mechanisms_html}
