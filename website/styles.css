@@ -974,12 +974,12 @@ footer h2 {
 .hub {
     margin-top: 4rem;
     margin-bottom: 4rem;
-}
-
-.hub-layout {
     display: grid;
     grid-template-columns: 240px minmax(0, 1fr) 200px;
     gap: 4rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .hub .nav-global {
