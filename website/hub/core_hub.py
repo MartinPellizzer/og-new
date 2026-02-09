@@ -589,6 +589,164 @@ def ozono_industriale_gen():
     </body>
     </html>
     '''
+
+    html = f'''
+    <!DOCTYPE html>
+    <html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sistemi ad Ozono Industriali</title>
+        <meta name="description" content="Sistemi ad Ozono Industriali: componenti, ingegneria, applicazioni, sicurezza, performance, scienza e R&D.">
+        <link rel="canonical" href="https://ozonogroup.it/ozono-industriale/">
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        {components.header_default()}
+        <div class="hub hub-layout container-xxl">
+            {sidebar_core_entity()}
+            <main>
+                <article itemscope itemtype="https://schema.org/Thing">
+
+  <section>
+    <h1 itemprop="name">Sistemi ad ozono industriali</h1>
+    <p itemprop="description">
+      I sistemi ad ozono industriali sono impianti progettati per la produzione e
+      l’utilizzo controllato dell’ozono in ambito industriale, utilizzati per
+      sanificazione, disinfezione, ossidazione e trattamento di aria, acqua e superfici.
+    </p>
+  </section>
+
+  <!-- 1. DEFINIZIONE E IDENTITÀ -->
+  <section id="definizione-sistemi-ozono-industriali">
+    <h2>Definizione e identità dei sistemi ad ozono industriali</h2>
+    <p>
+      Questa sezione definisce cosa sono i sistemi ad ozono industriali,
+      chiarendo il loro ruolo, le differenze rispetto ai sistemi civili
+      e il contesto industriale di utilizzo.
+    </p>
+  </section>
+
+  <!-- 2. PRINCIPIO DI FUNZIONAMENTO -->
+  <section id="funzionamento-sistemi-ozono-industriali">
+    <h2>Come funzionano i sistemi ad ozono industriali</h2>
+    <p>
+      I sistemi ad ozono industriali funzionano attraverso processi di
+      generazione controllata dell’ozono e la sua applicazione nei processi
+      industriali tramite meccanismi di ossidazione.
+    </p>
+  </section>
+
+  <!-- 3. COMPONENTI -->
+  <section id="componenti-sistemi-ozono-industriali">
+    <h2>Componenti di un sistema ad ozono industriale</h2>
+    <p>
+      Un sistema ad ozono industriale è composto da diversi elementi
+      strutturali e funzionali che lavorano insieme per garantire
+      sicurezza, efficienza e continuità operativa.
+    </p>
+  </section>
+
+  <!-- 4. ATTRIBUTI TECNICI -->
+  <section id="caratteristiche-tecniche-sistemi-ozono-industriali">
+    <h2>Caratteristiche tecniche dei sistemi ad ozono industriali</h2>
+    <p>
+      Le prestazioni di un sistema ad ozono industriale sono definite
+      da parametri tecnici misurabili come capacità di produzione,
+      consumo energetico ed efficienza.
+    </p>
+  </section>
+
+  <!-- 5. CONTESTI DI UTILIZZO -->
+  <section id="applicazioni-sistemi-ozono-industriali">
+    <h2>Applicazioni e contesti di utilizzo industriale</h2>
+    <p>
+      I sistemi ad ozono industriali trovano applicazione in numerosi
+      settori industriali, adattandosi a diversi processi produttivi
+      e ambienti operativi.
+    </p>
+  </section>
+
+  <!-- 6. FUNZIONI E BENEFICI -->
+  <section id="benefici-sistemi-ozono-industriali">
+    <h2>Funzioni e benefici dei sistemi ad ozono industriali</h2>
+    <p>
+      L’utilizzo dell’ozono in ambito industriale offre benefici
+      funzionali, economici e ambientali rispetto ad altre tecnologie
+      di sanificazione e trattamento.
+    </p>
+  </section>
+
+  <!-- 7. RISCHI E SICUREZZA -->
+  <section id="sicurezza-rischi-ozono-industriale">
+    <h2>Rischi e sicurezza nell’uso dell’ozono industriale</h2>
+    <p>
+      L’ozono è una sostanza altamente reattiva e il suo utilizzo
+      industriale richiede sistemi di sicurezza, monitoraggio e
+      gestione dei rischi adeguati.
+    </p>
+  </section>
+
+  <!-- 8. NORMATIVE -->
+  <section id="normative-sistemi-ozono-industriali">
+    <h2>Normative e standard sui sistemi ad ozono industriali</h2>
+    <p>
+      L’installazione e l’uso dei sistemi ad ozono industriali sono
+      regolamentati da normative nazionali ed europee che definiscono
+      limiti, obblighi e requisiti di conformità.
+    </p>
+  </section>
+
+  <!-- 9. INSTALLAZIONE E MANUTENZIONE -->
+  <section id="installazione-manutenzione-sistemi-ozono-industriali">
+    <h2>Installazione, gestione e manutenzione</h2>
+    <p>
+      Un corretto processo di installazione e una manutenzione
+      programmata sono essenziali per garantire l’efficacia e la
+      sicurezza del sistema nel tempo.
+    </p>
+  </section>
+
+  <!-- 10. VARIANTI -->
+  <section id="tipologie-sistemi-ozono-industriali">
+    <h2>Tipologie e varianti di sistemi ad ozono industriali</h2>
+    <p>
+      I sistemi ad ozono industriali possono essere classificati in
+      base alla capacità, alla mobilità e alla configurazione
+      impiantistica.
+    </p>
+  </section>
+
+  <!-- 11. CONFRONTI -->
+  <section id="confronto-tecnologie-sanificazione-industriale">
+    <h2>Confronto con altre tecnologie di sanificazione industriale</h2>
+    <p>
+      Il confronto tra i sistemi ad ozono industriali e altre tecnologie
+      consente di valutare vantaggi, limiti e scenari di utilizzo
+      ottimali.
+    </p>
+  </section>
+
+  <!-- 12. SCELTA E VALUTAZIONE -->
+  <section id="scelta-sistemi-ozono-industriali">
+    <h2>Come scegliere un sistema ad ozono industriale</h2>
+    <p>
+      La scelta di un sistema ad ozono industriale dipende da fattori
+      tecnici, normativi ed economici che devono essere valutati in
+      relazione al contesto applicativo.
+    </p>
+  </section>
+
+</article>
+
+            </main>
+            {sidebar_page_html}
+        </div>
+        {components.footer_dark()}
+    </body>
+    </html>
+    '''
     html_folderpath = f'{g.WEBSITE_FOLDERPATH}/{url_slug}'
     os.makedirs(html_folderpath, exist_ok=True)
     html_filepath = f'{html_folderpath}/index.html'
