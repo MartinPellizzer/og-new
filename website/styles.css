@@ -975,7 +975,7 @@ footer h2 {
     margin-top: 4rem;
     margin-bottom: 4rem;
     display: grid;
-    grid-template-columns: 240px minmax(0, 1fr) 200px;
+    grid-template-columns: 240px minmax(0, 1fr) 240px;
     gap: 4rem;
     max-width: 1280px;
     margin: 0 auto;
@@ -985,7 +985,7 @@ footer h2 {
 .hub .nav-global {
   grid-column: 1;
   position: sticky;
-  top: 146px;
+  top: calc(82px + var(--space-xl));
 }
 
 .hub .content {
@@ -995,13 +995,18 @@ footer h2 {
 .hub .nav-page {
   grid-column: 3;
   position: sticky;
-  top: 146px;
+  top: calc(82px + var(--space-xl));
+}
+
+.hub h2 {
+  scroll-margin-top: calc(82px + var(--space-xl));
 }
 
 .hub h1 {
     font-family: var(--font-heading);
     font-size: 2.25rem;
     margin-bottom: 1rem;
+    margin-top: 2rem;
     color: #222;
 }
 
