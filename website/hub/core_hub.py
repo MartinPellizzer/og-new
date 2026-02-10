@@ -13,6 +13,7 @@ def sidebar_core_entity():
                     <ul>
                         <li><a href="/ozono-industriale/struttura/">Struttura</a></li>
                         <li><a href="/ozono-industriale/tecnologia/">Tecnologia</a></li>
+                        <li><a href="/ozono-industriale/funzionamento/">Funzionamento</a></li>
                     </ul>
                 </li>
             </ul>
@@ -1895,11 +1896,115 @@ I sistemi ad ozono industriali utilizzano diverse tecnologie per generare ozono 
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
         f.write(html)
 
+def ozono_industriale_funzionamento_gen():
+    url_slug = 'ozono-industriale/funzionamento'
+    sidebar_page_html = sidebar_page([]) 
+    
+    article_html = f'''
+        <h1>Funzionamento dei Sistemi ad Ozono Industriali</h1>
+        <p>
+I sistemi ad ozono industriali generano e distribuiscono ozono per trattare acqua, aria e superfici, ossidando batteri, virus e sostanze organiche. La loro efficacia dipende da generatore, dosaggio, tempo di contatto e parametri ambientali. Controlli automatici e sensori assicurano sicurezza, uniformità e prestazioni ottimali in applicazioni industriali di vario tipo.
+        </p>
+
+<section>
+  <h2>Come si genera?</h2>
+  <p>L’ozono industriale si produce con generatori a scarica corona, UV o elettrolitici, usando aria secca o ossigeno concentrato. La produzione dipende da temperatura, umidità e capacità del generatore. L’ozono generato è pronto per trattare acqua, aria o superfici industriali in modo efficace ed ecologico.</p>
+</section>
+
+<section>
+  <h2>Come si distribuisce?</h2>
+  <p>L’ozono viene immesso nel fluido o nell’aria tramite diffusori a bolle fini o Venturi injector, garantendo uniformità e tempo di contatto ottimale. La portata è calibrata secondo volume e applicazione, assicurando ossidazione di batteri, virus e sostanze organiche.</p>
+</section>
+
+<section>
+  <h2>Quanto e come dosare?</h2>
+  <p>Il dosaggio dell’ozono dipende da volume, qualità del fluido e concentrazione target. Sensori ORP/Redox e controlli automatici PLC/HMI regolano la quantità in tempo reale, prevenendo sovradosaggi e garantendo sicurezza ed efficacia nella rimozione di contaminanti.</p>
+</section>
+
+<section>
+  <h2>Come agisce sul fluido?</h2>
+  <p>L’ozono ossida batteri, virus e sostanze organiche, riducendo COD, BOD e torbidità in acqua o eliminando odori in aria. La sua efficacia dipende da pH, temperatura, solidi sospesi e tempo di contatto, e si decompone naturalmente in ossigeno, senza residui chimici.</p>
+</section>
+
+<section>
+  <h2>È sicuro?</h2>
+  <p>I sistemi ad ozono sono sicuri se dotati di sensori, ventilazione, distruttori di ozono residuo e operatori formati con DPI. Procedure standard e controlli automatici riducono rischi chimici e biologici, garantendo trattamenti efficaci senza esposizione pericolosa.</p>
+</section>
+
+<section>
+  <h2>Come si integra?</h2>
+  <p>L’ozono si inserisce in impianti industriali batch o in-linea, compatibile con altri trattamenti. Il controllo integrato PLC/SCADA ottimizza il flusso e la distribuzione, garantendo trattamento uniforme di acqua, aria o superfici senza interrompere i processi principali.</p>
+</section>
+
+<section>
+  <h2>Quanto è efficace?</h2>
+  <p>L’efficacia dipende da concentrazione, tempo di contatto, tipo di fluido e generatore. I sistemi riducono batteri, virus, COD e BOD, migliorando la qualità e sicurezza. KPI e monitoraggio continuo ottimizzano efficienza energetica e sostenibilità ambientale.</p>
+</section>
+
+<section>
+  <h2>Quali modalità esistono?</h2>
+  <p>I sistemi possono operare continui, intermittenti, batch o in-linea, con controllo manuale o automatico. Alcuni regolano il dosaggio in tempo reale per adattarsi a variazioni di qualità o portata, massimizzando l’efficacia del trattamento industriale.</p>
+</section>
+
+<section>
+  <h2>Come si mantiene?</h2>
+  <p>La manutenzione comprende pulizia diffusori, verifica sensori, monitoraggio generatori e consumabili. Controlli periodici e logging garantiscono prestazioni ottimali, sicurezza operativa e compliance normativa, riducendo downtime e prolungando la vita dei componenti.</p>
+</section>
+    '''
+
+    article_with_ids_html = ''
+    toc = []
+    i = 0
+    for line in article_html.split('\n'):
+        line = line.strip()
+        if '<h2>' in line:
+            line_content = line.replace('<h2>', '').replace('</h2>', '')
+            line = line.replace('<h2>', f'<h2 id="{i}">')
+            toc.append({'href': i, 'anchor': line_content})
+            i += 1
+        article_with_ids_html += f'{line}\n'
+    article_html = article_with_ids_html
+    sidebar_page_html = sidebar_page(toc) 
+
+    html = f'''
+    <!DOCTYPE html>
+    <html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Funzionamento Sistemi ad Ozono Industriali</title>
+        <meta name="description" content="Acopri come funzionano i sistemi ad ozono industriali: generazione, distribuzione, dosaggio, efficacia e sicurezza per acqua, aria e superfici industriali.">
+        <link rel="canonical" href="https://ozonogroup.it/ozono-industriale/funzionamento">
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        {components.header_default()}
+        <div class="hub">
+            {sidebar_core_entity()}
+            <main>
+                <article>
+                    {article_html}
+                </article>
+            </main>
+            {sidebar_page_html}
+        </div>
+        {components.footer_dark()}
+</body>
+</html>
+    '''
+    html_folderpath = f'{g.WEBSITE_FOLDERPATH}/{url_slug}'
+    os.makedirs(html_folderpath, exist_ok=True)
+    html_filepath = f'{html_folderpath}/index.html'
+    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
+        f.write(html)
+
 
 def gen():
     ozono_industriale_gen()
     ozono_industriale_struttura_gen()
     ozono_industriale_tecnologia_gen()
+    ozono_industriale_funzionamento_gen()
 
     ozono_industriale_applicazioni_gen()
     ozono_industriale_sicurezza_gen()
