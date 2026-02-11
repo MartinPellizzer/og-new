@@ -21,6 +21,8 @@ def sidebar_core_entity():
                         <li><a href="/ozono-industriale/progettazione/">Progettazione</a></li>
                         <li><a href="/ozono-industriale/gestione/">Gestione</a></li>
                         <li><a href="/ozono-industriale/prestazioni/">Prestazioni</a></li>
+                        <li><a href="/ozono-industriale/confronti/">Confronti</a></li>
+                        <li><a href="/ozono-industriale/confronti/">Limiti</a></li>
                     </ul>
                 </li>
             </ul>
@@ -1611,146 +1613,107 @@ I sistemi ad ozono industriali offrono prestazioni elevate in termini di disinfe
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
         f.write(html)
 
-
-def ozono_industriale_performance_gen():
-    url_slug = 'ozono-industriale/performance'
+def ozono_industriale_confronti_gen():
+    url_slug = 'ozono-industriale/confronti'
     sidebar_page_html = sidebar_page([]) 
+    
+    article_html = f'''
+        <h1>
+Confronti dei sistemi ad ozono industriali: tecnologia, prestazioni e costi
+        </h1>
+        <p>
+I sistemi ad ozono industriali offrono soluzioni avanzate per disinfezione, depurazione acqua e trattamento aria, ma come si confrontano con alternative come cloro, biossido di cloro o UV? Questa guida analizza i principali aspetti comparativi: prestazioni, efficienza, sicurezza, costi, applicazioni e sostenibilità. Capire le differenze tra queste tecnologie permette di scegliere la soluzione più efficace e sostenibile per il tuo settore industriale, garantendo risultati ottimali e conformità normativa. Esplora tutti i punti di confronto per ottenere una panoramica completa e decisioni informate.
+        </p>
+
+<section>
+  <h2>Chimica</h2>
+  <p>I sistemi ad ozono industriali si confrontano con alternative chimiche come cloro, biossido di cloro e perossido di idrogeno. L’ozono offre maggiore efficacia ossidativa, minori residui chimici e un approccio più ecologico. In confronto, cloro e biossido di cloro richiedono maggiore dosaggio e gestione di residui, mentre l’ozono si decompone naturalmente in ossigeno, riducendo l’impatto ambientale.</p>
+</section>
+
+<section>
+  <h2>Tecnologia</h2>
+  <p>L’ozono industriale compete con tecnologie alternative come UV, elettrolisi e filtrazione avanzata. Ogni tecnologia differisce in efficienza, stabilità, consumi energetici e manutenzione. L’ozono è più versatile, applicabile a acqua, aria e superfici, mentre UV è limitato a trattamenti superficiali o acqua chiara. Le soluzioni combinate (UV + ozono) massimizzano l’ossidazione, ma richiedono maggior investimento.</p>
+</section>
+
+<section>
+  <h2>Prestazioni</h2>
+  <p>L’efficacia dell’ozono supera spesso le alternative in termini di abbattimento batterico, virale e ossidazione contaminanti organici. COD e BOD vengono ridotti più rapidamente rispetto a cloro o UV, con tempi di trattamento minori. Tuttavia, parametri ambientali come temperatura, pH e turbolenza influenzano le performance, rendendo essenziale il monitoraggio continuo.</p>
+</section>
+
+<section>
+  <h2>Sicurezza</h2>
+  <p>L’ozono è tossico ad alte concentrazioni, ma l’uso controllato tramite sensori, distruttori e ventilazione lo rende sicuro per operatori e ambiente. Rispetto a cloro e biossido di cloro, l’ozono genera meno residui chimici e riduce rischi di esposizione prolungata. La formazione degli operatori e i DPI restano essenziali per prevenire incidenti.</p>
+</section>
+
+<section>
+  <h2>Costi</h2>
+  <p>I sistemi ad ozono industriali hanno costi iniziali superiori a cloro o UV, ma minori costi operativi grazie all’assenza di consumabili chimici. Il ROI tende a essere più veloce in settori dove si richiede alta disinfezione e minori residui, come industria alimentare, farmaceutica e tessile. La durata dei componenti e manutenzione preventiva ottimizzano il rapporto costo-beneficio.</p>
+</section>
+
+<section>
+  <h2>Applicazioni</h2>
+  <p>L’ozono è più efficace in settori dove si richiede trattamento acqua, depurazione reflui, aria e superfici industriali. Funziona in industria alimentare, farmaceutica, tessile, cartaria e zootecnica, mentre alternative come UV o cloro possono essere limitate dalla trasparenza dell’acqua o regolazioni chimiche. L’ozono consente anche controllo odori e disinfezione aria in ambienti chiusi.</p>
+</section>
+
+<section>
+  <h2>Sostenibilità</h2>
+  <p>Rispetto a cloro, biossido di cloro o perossido di idrogeno, l’ozono produce meno residui chimici, riduce emissioni e consuma meno risorse chimiche. L’energia richiesta per i generatori è contenuta, e l’ozono si decompone in ossigeno puro. Queste caratteristiche lo rendono certificabile secondo ISO 14001 e ideale per aziende con obiettivi ambientali e sostenibilità.</p>
+</section>
+
+<section>
+  <h2>Normativa</h2>
+  <p>L’ozono industriale deve rispettare limiti OSHA/EU, REACH, regolamenti su acque potabili e HACCP per l’industria alimentare. Le alternative chimiche spesso richiedono ulteriori certificazioni e gestione dei residui. L’ozono riduce il rischio di non conformità grazie alla decomposizione naturale e minori scarti chimici, pur mantenendo obbligatorie le certificazioni CE e ISO.</p>
+</section>
+
+<section>
+  <h2>Gestione</h2>
+  <p>I sistemi ad ozono richiedono installazione tecnica, monitoraggio continuo, manutenzione ordinaria e straordinaria, formazione operatori e controllo qualità. Rispetto a cloro o UV, la gestione è più automatizzata ma richiede attenzione alla concentrazione dell’ozono e parametri ambientali, garantendo affidabilità e continuità del processo.</p>
+</section>
+
+<section>
+  <h2>Limitazioni</h2>
+  <p>L’ozono presenta sensibilità a temperatura, pH e umidità, compatibilità limitata con alcuni materiali e necessità di monitoraggio costante. Non è indicato in ambienti dove il contatto chimico deve essere minimizzato senza sistemi di controllo. Rispetto a cloro o UV, queste limitazioni sono compensate dalla maggiore efficienza e minor impatto residuo.</p>
+</section>
+    '''
+
+    article_with_ids_html = ''
+    toc = []
+    i = 0
+    for line in article_html.split('\n'):
+        line = line.strip()
+        if '<h2>' in line:
+            line_content = line.replace('<h2>', '').replace('</h2>', '')
+            line = line.replace('<h2>', f'<h2 id="{i}">')
+            toc.append({'href': i, 'anchor': line_content})
+            i += 1
+        article_with_ids_html += f'{line}\n'
+    article_html = article_with_ids_html
+    sidebar_page_html = sidebar_page(toc) 
+
     html = f'''
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Performance e ottimizzazione dei sistemi ad ozono industriali | Ozonogroup</title>
-    <meta name="description" content="Approfondimento sulla performance dei sistemi ad ozono industriali, coprendo efficienza dei generatori, distribuzione, monitoraggio, manutenzione predittiva e ottimizzazione continua.">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.ozonogroup.it/performance/">
+    <!DOCTYPE html>
+    <html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Confronti sistemi ad ozono industriali: prestazioni, costi e alternative</title>
+        <meta name="description" content="Scopri i confronti tra ozono, cloro, UV e altre tecnologie per prestazioni, sicurezza, costi e sostenibilità nei sistemi ad ozono industriali.">
+        <link rel="canonical" href="https://ozonogroup.it/ozono-industriale/confronti">
         <link rel="stylesheet" href="/styles.css">
-</head>
-<body>
-
-    {components.header_default()}
-        <div class="hub hub-layout container-xxl">
-        {sidebar_core_entity()}
-        <main>
-            <article>
-
-<h1>Performance e ottimizzazione dei sistemi ad ozono industriali</h1>
-
-<section>
-  <p>
-    La performance dei sistemi ad ozono industriali riguarda l’efficienza operativa, il controllo preciso della
-    concentrazione, la distribuzione uniforme e l’ottimizzazione dei consumi energetici. Questa pagina esplora
-    tutti gli aspetti critici che influenzano le prestazioni, inclusi monitoraggio, manutenzione predittiva
-    e strategie di miglioramento continuo, fornendo una panoramica completa per garantire massima efficienza
-    e affidabilità dei sistemi.
-  </p>
-  <p>
-    Ogni sezione rappresenta un nodo chiave dell’entità “performance dei sistemi ad ozono industriali”,
-    contribuendo a definire l’autorità della pagina come riferimento completo per ottimizzazione,
-    efficienza e controllo dei processi industriali.
-  </p>
-</section>
-
-<section>
-  <h2>Efficienza dei generatori di ozono</h2>
-  <p>
-    L’efficienza dei generatori di ozono è fondamentale per garantire prestazioni ottimali
-    dei sistemi industriali. La capacità di produrre ozono in modo stabile e controllato
-    influisce direttamente sulla qualità del trattamento e sull’efficienza energetica complessiva.
-  </p>
-  <h3>Output e concentrazione di ozono</h3>
-  <p>
-    Il monitoraggio dell’output dei generatori permette di verificare che la produzione di ozono
-    sia conforme alle specifiche progettuali. Controllare la concentrazione reale consente
-    di adattare i parametri operativi e assicurare un trattamento uniforme dei fluidi o degli ambienti industriali.
-  </p>
-  <h3>Consumo energetico</h3>
-  <p>
-    L’analisi del consumo energetico dei generatori è essenziale per ottimizzare la performance
-    e ridurre i costi operativi. Strategie come regolazione della potenza, gestione dei cicli
-    di produzione e monitoraggio continuo permettono di massimizzare l’efficienza energetica
-    senza compromettere la produzione di ozono.
-  </p>
-</section>
-
-<section>
-  <h2>Ottimizzazione del flusso e della distribuzione</h2>
-  <p>
-    L’ottimizzazione del flusso e della distribuzione dell’ozono è fondamentale per
-    garantire uniformità del trattamento e massima efficienza dei sistemi industriali.
-    Una gestione corretta dei percorsi e dei parametri operativi permette di ridurre
-    perdite di ozono e migliorare l’efficacia del processo.
-  </p>
-  <h3>Condotte, reattori e camere di contatto</h3>
-  <p>
-    La progettazione e configurazione di condotte, reattori e camere di contatto
-    influisce direttamente sulla distribuzione dell’ozono. Minimizzare perdite,
-    garantire tempi di contatto adeguati e ottimizzare la geometria dei componenti
-    assicura un trattamento uniforme e stabile dei fluidi o dell’aria trattata.
-  </p>
-  <h3>Sistemi di dosaggio e controllo</h3>
-  <p>
-    I sistemi di dosaggio regolano la quantità di ozono immessa in funzione delle
-    esigenze operative. L’integrazione con sensori di flusso e concentrazione,
-    unitamente a sistemi di automazione, permette un controllo preciso,
-    migliorando l’efficienza complessiva e riducendo sprechi energetici.
-  </p>
-</section>
-
-<section>
-  <h2>Monitoraggio delle performance</h2>
-  <p>
-    Il monitoraggio continuo delle performance dei sistemi ad ozono industriali è essenziale
-    per garantire efficienza, sicurezza e affidabilità. L’analisi dei dati raccolti dai sensori
-    permette di rilevare anomalie, ottimizzare parametri operativi e supportare decisioni
-    strategiche per il miglioramento continuo.
-  </p>
-  <h3>Sensori di concentrazione e flusso</h3>
-  <p>
-    I sensori di concentrazione e flusso misurano costantemente i livelli di ozono
-    nei generatori, nelle condotte e nelle camere di contatto. Questi dispositivi consentono
-    di verificare che l’impianto operi entro limiti sicuri e secondo le specifiche progettuali,
-    prevenendo sprechi e perdite di efficienza.
-  </p>
-  <h3>Analisi dei dati e reporting</h3>
-  <p>
-    I dati raccolti dai sensori vengono elaborati per creare report di performance dettagliati.
-    Indicatori chiave (KPI) e trend storici consentono di valutare l’efficienza del sistema,
-    identificare aree di miglioramento e pianificare interventi di manutenzione predittiva,
-    garantendo ottimizzazione continua e riduzione dei costi operativi.
-  </p>
-</section>
-
-<section>
-  <h2>Manutenzione predittiva e ottimizzazione continua</h2>
-  <p>
-    La manutenzione predittiva e l’ottimizzazione continua rappresentano elementi chiave
-    per garantire prestazioni costanti dei sistemi ad ozono industriali. Monitorando lo stato
-    dei componenti e analizzando i dati operativi, è possibile prevenire guasti, ridurre i tempi
-    di fermo e mantenere livelli di efficienza ottimali.
-  </p>
-  <h3>Manutenzione basata sui dati</h3>
-  <p>
-    L’utilizzo di sensori e sistemi di monitoraggio consente di rilevare anomalie e prevedere
-    interventi manutentivi prima che si verifichino malfunzionamenti. La manutenzione predittiva
-    riduce i costi operativi, aumenta la sicurezza e prolunga la vita dei componenti critici del sistema.
-  </p>
-  <h3>Miglioramento continuo</h3>
-  <p>
-    L’analisi dei dati storici e dei KPI operativi permette di identificare opportunità di miglioramento
-    e ottimizzare parametri di produzione e distribuzione dell’ozono. L’adozione di strategie di
-    miglioramento continuo garantisce efficienza, riduzione dei consumi e prestazioni sempre
-    al massimo livello.
-  </p>
-</section>
-
-            </article>
-        </main>
+    </head>
+    <body>
+        {components.header_default()}
+        <div class="hub">
+            {sidebar_core_entity()}
+            <main>
+                <article>
+                    {article_html}
+                </article>
+            </main>
             {sidebar_page_html}
         </div>
         {components.footer_dark()}
-
 </body>
 </html>
     '''
@@ -1760,170 +1723,97 @@ def ozono_industriale_performance_gen():
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
         f.write(html)
 
-def ozono_industriale_scienza_gen():
-    url_slug = 'ozono-industriale/scienza'
+def ozono_industriale_limiti_gen():
+    url_slug = 'ozono-industriale/confronti'
     sidebar_page_html = sidebar_page([]) 
+    
+    article_html = f'''
+        <h1>
+Limitazioni dei Sistemi ad Ozono Industriali
+        </h1>
+        <p>
+I sistemi ad ozono industriali sono strumenti potenti per la disinfezione e il trattamento di acqua e aria, ma presentano diversi limiti e vincoli che è fondamentale conoscere. Questi includono restrizioni tecnologiche, operativi, di sicurezza, normative, economiche e ambientali. Comprendere queste limitazioni aiuta a garantire l’efficacia del sistema, la sicurezza degli operatori e la conformità normativa, ottimizzando l’uso dell’ozono in ogni contesto industriale.
+        </p>
+
+<section>
+  <h2>Limiti tecnologici</h2>
+  <p>I sistemi ad ozono industriali hanno limiti tecnologici legati alla capacità dei generatori, alla concentrazione massima di ozono raggiungibile e alla stabilità dell’ozono in funzione di temperatura e umidità. La sensibilità dei materiali ai fenomeni ossidativi può causare degradazione di componenti come tubazioni, diffusori e reattori. Alcune sostanze chimiche presenti nel fluido trattato, come ammoniaca o metalli, possono interferire con la produzione di ozono, riducendo l’efficacia del sistema.</p>
+</section>
+
+<section>
+  <h2>Limiti operativi</h2>
+  <p>Il corretto funzionamento dei sistemi dipende da manutenzione regolare, calibrazione dei sensori, e controllo dei parametri come tempo di contatto, portata e concentrazione dell’ozono. Alcuni impianti non garantiscono continuità in funzionamento batch o in condizioni di flusso variabile. La qualità dell’aria o dell’ossigeno alimentante influisce direttamente sulla produzione di ozono, richiedendo personale formato per gestire eventuali anomalie.</p>
+</section>
+
+<section>
+  <h2>Limiti di sicurezza</h2>
+  <p>L’ozono è un gas tossico ad alte concentrazioni: i sistemi industriali devono prevedere sensori di rilevamento, ventilazione e dispositivi di distruzione dell’ozono residuo. L’esposizione massima consentita per operatori è regolamentata da normative OSHA ed europee. L’utilizzo improprio in ambienti chiusi senza adeguata protezione può comportare rischi chimici e biologici, rendendo fondamentale la formazione del personale e l’adozione di DPI adeguati.</p>
+</section>
+
+<section>
+  <h2>Limiti normativi</h2>
+  <p>I sistemi devono rispettare regolamenti ambientali, standard ISO, direttive CE e linee guida HACCP nei settori alimentare e farmaceutico. Alcune applicazioni richiedono monitoraggio continuo e reporting sulle emissioni di ozono e sulle condizioni operative. Il mancato rispetto delle normative può comportare sanzioni o sospensione dell’attività, quindi ogni progetto deve prevedere compliance settoriale specifica.</p>
+</section>
+
+<section>
+  <h2>Limiti economici</h2>
+  <p>I costi di installazione, manutenzione e gestione energetica dei sistemi ad ozono industriali possono essere superiori rispetto a tecnologie chimiche tradizionali. Il ROI è influenzato dalla frequenza d’uso, dalla dimensione dell’impianto e dai costi di energia elettrica. È necessario considerare anche l’investimento in sensori, materiali resistenti all’ozono e formazione del personale, che incidono sul budget complessivo.</p>
+</section>
+
+<section>
+  <h2>Limiti ambientali</h2>
+  <p>La produzione e l’efficacia dell’ozono dipendono da temperatura, umidità e presenza di contaminanti nell’aria o nell’acqua. L’esposizione dei materiali come tubi, reattori e diffusori a ozono concentrato può accelerare la degradazione. Alcuni ambienti industriali sensibili, con contaminanti chimici o organici complessi, riducono l’efficacia del trattamento, richiedendo interventi aggiuntivi o pre-trattamenti.</p>
+</section>
+
+<section>
+  <h2>Limiti di applicazione</h2>
+  <p>Non tutti i processi industriali sono compatibili con l’ozono. Limiti principali includono acque altamente torbide, alti carichi biologici o sostanze chimiche complesse. Alcuni settori richiedono concentrazioni precise e tempi di contatto controllati, mentre in altri contesti l’ozono può reagire con materiali o agenti presenti, riducendo l’efficacia del trattamento. La compatibilità con linee di processo esistenti deve sempre essere verificata.</p>
+</section>
+
+<section>
+  <h2>Problemi comuni</h2>
+  <p>I problemi più frequenti includono malfunzionamenti dei generatori, sensori mal calibrati, distruttori di ozono insufficienti e guasti dovuti a materiali degradati. L’uso improprio o la mancata manutenzione possono compromettere l’efficacia del sistema e la sicurezza degli operatori. È fondamentale prevedere procedure di troubleshooting, interventi programmati e monitoraggio continuo dei parametri operativi.</p>
+</section>
+    '''
+
+    article_with_ids_html = ''
+    toc = []
+    i = 0
+    for line in article_html.split('\n'):
+        line = line.strip()
+        if '<h2>' in line:
+            line_content = line.replace('<h2>', '').replace('</h2>', '')
+            line = line.replace('<h2>', f'<h2 id="{i}">')
+            toc.append({'href': i, 'anchor': line_content})
+            i += 1
+        article_with_ids_html += f'{line}\n'
+    article_html = article_with_ids_html
+    sidebar_page_html = sidebar_page(toc) 
+
     html = f'''
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scienza e tecnologia dei sistemi ad ozono industriali | Ozonogroup</title>
-    <meta name="description" content="Approfondimento scientifico sui sistemi ad ozono industriali: proprietà chimiche, meccanismi di ossidazione, tecnologie di generazione, monitoraggio e innovazioni R&D.">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.ozonogroup.it/scienza/">
+    <!DOCTYPE html>
+    <html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Limitazioni dei Sistemi ad Ozono Industriali: Tutti i Vincoli e Problemi Tecnici</title>
+        <meta name="description" content="Scopri tutte le limitazioni dei sistemi ad ozono industriali: limiti tecnologici, operativi, di sicurezza, normativi, economici e ambientali. Una guida completa ai vincoli e problemi comuni per ottimizzare efficienza e sicurezza.">
+        <link rel="canonical" href="https://ozonogroup.it/ozono-industriale/limiti">
         <link rel="stylesheet" href="/styles.css">
-</head>
-<body>
-
-    {components.header_default()}
-        <div class="hub hub-layout container-xxl">
-        {sidebar_core_entity()}
-        <main>
-            <article>
-
-<h1>Scienza e tecnologia dei sistemi ad ozono industriali</h1>
-
-<section>
-  <p>
-    La scienza e la tecnologia dei sistemi ad ozono industriali si concentrano sui principi chimici, fisici
-    e tecnologici che determinano l’efficacia, la sicurezza e l’affidabilità di questi impianti. Questa pagina
-    esplora proprietà dell’ozono, meccanismi di ossidazione, metodi di generazione, monitoraggio scientifico
-    e innovazioni tecnologiche, fornendo una panoramica completa dei nodi critici che definiscono l’entità
-    scientifica dei sistemi industriali.
-  </p>
-  <p>
-    Ogni sezione approfondisce un aspetto fondamentale della scienza applicata ai sistemi ad ozono,
-    contribuendo a costruire autorità e rilevanza della pagina come riferimento tecnico-scientifico
-    per l’ottimizzazione dei processi industriali.
-  </p>
-</section>
-
-<section>
-  <h2>Proprietà chimiche e fisiche dell’ozono</h2>
-  <p>
-    La comprensione delle proprietà chimiche e fisiche dell’ozono è fondamentale per
-    ottimizzare i sistemi industriali e garantire efficienza e sicurezza. Queste proprietà
-    determinano il comportamento dell’ozono nei processi di ossidazione, nella distribuzione
-    e nella stabilità operativa.
-  </p>
-  <h3>Struttura molecolare e reattività</h3>
-  <p>
-    L’ozono (O₃) è una molecola triatomica altamente reattiva, caratterizzata da un forte
-    potere ossidante. La sua struttura instabile lo rende efficace nel degradare contaminanti
-    organici e inorganici, ma richiede sistemi progettati per gestire la reattività e prevenire
-    decomposizioni premature o rischi operativi.
-  </p>
-  <h3>Solubilità e diffusione</h3>
-  <p>
-    L’ozono è solubile in acqua e gas, con una diffusione che dipende da temperatura, pressione
-    e caratteristiche del fluido trattato. La conoscenza di solubilità e diffusione è essenziale
-    per progettare camere di contatto, condotte e reattori, garantendo uniformità del trattamento
-    e massimizzando l’efficacia ossidativa senza perdite di ozono.
-  </p>
-</section>
-
-<section>
-  <h2>Meccanismi di ossidazione</h2>
-  <p>
-    I meccanismi di ossidazione sono alla base dell’efficacia dei sistemi ad ozono industriali.
-    Comprendere come l’ozono reagisce con diverse sostanze permette di ottimizzare il trattamento
-    dei fluidi e dell’aria, migliorando prestazioni e sicurezza.
-  </p>
-  <h3>Reazioni con contaminanti organici</h3>
-  <p>
-    L’ozono ossida contaminanti organici come residui alimentari, microrganismi o composti chimici
-    presenti nelle acque o nei gas industriali. Queste reazioni degradano molecole complesse in
-    prodotti più semplici, garantendo sanificazione e depurazione efficaci, riducendo la formazione
-    di sottoprodotti indesiderati.
-  </p>
-  <h3>Reazioni con contaminanti inorganici</h3>
-  <p>
-    L’ozono reagisce anche con sostanze inorganiche, ossidando metalli, solfuri o altre
-    molecole presenti nei processi industriali. La conoscenza di queste reazioni permette di
-    progettare sistemi sicuri, prevenire corrosione o accumuli indesiderati e massimizzare
-    l’efficienza del trattamento.
-  </p>
-</section>
-
-<section>
-  <h2>Tecnologie e sistemi di generazione dell’ozono</h2>
-  <p>
-    La produzione controllata di ozono è fondamentale per garantire efficienza e sicurezza nei sistemi
-    industriali. La scelta della tecnologia di generazione e il corretto controllo dei parametri operativi
-    determinano la qualità dell’ozono prodotto e la sua efficacia nei processi di ossidazione.
-  </p>
-  <h3>Metodi di generazione</h3>
-  <p>
-    I sistemi industriali utilizzano diversi metodi per generare ozono, tra cui la scarica a corona,
-    la fotolisi UV e altre tecnologie avanzate. Ciascun metodo presenta vantaggi specifici in termini
-    di produzione, stabilità e compatibilità con i processi industriali, consentendo di selezionare
-    la soluzione più adatta alle esigenze operative.
-  </p>
-  <h3>Efficienza e controllo dei sistemi</h3>
-  <p>
-    La regolazione precisa della produzione di ozono e il monitoraggio dei parametri chiave
-    garantiscono efficienza e sicurezza. L’integrazione con sensori di concentrazione, flusso e
-    sistemi di automazione permette di ottimizzare il rendimento dei generatori e di mantenere
-    prestazioni costanti nei processi industriali.
-  </p>
-</section>
-
-<section>
-  <h2>Monitoraggio scientifico e misurazioni</h2>
-  <p>
-    Il monitoraggio scientifico dei sistemi ad ozono industriali è essenziale per garantire
-    prestazioni affidabili e sicurezza operativa. Misurare in modo preciso concentrazione,
-    flusso e parametri chimico-fisici permette di ottimizzare il processo e prevenire inefficienze
-    o rischi per l’impianto.
-  </p>
-  <h3>Tecniche di analisi dell’ozono</h3>
-  <p>
-    L’ozono può essere rilevato attraverso diverse tecniche analitiche, tra cui sensori chimici,
-    fotometria e metodi basati su reazioni indicatori. La scelta della tecnica dipende dall’applicazione
-    industriale, dal range di concentrazione e dalla necessità di monitoraggio continuo, assicurando
-    misurazioni affidabili e coerenti con le specifiche del processo.
-  </p>
-  <h3>Indicatori di performance scientifica</h3>
-  <p>
-    I sistemi di monitoraggio forniscono indicatori chiave di performance (KPI) scientifici, come
-    livelli di concentrazione, tempo di contatto e stabilità operativa. Questi dati consentono
-    di valutare l’efficacia dei processi di ossidazione, ottimizzare parametri operativi e
-    supportare strategie di miglioramento continuo.
-  </p>
-</section>
-
-<section>
-  <h2>Innovazioni scientifiche e R&D</h2>
-  <p>
-    L’innovazione scientifica e la ricerca e sviluppo (R&D) costituiscono un elemento chiave
-    per migliorare le prestazioni e l’efficienza dei sistemi ad ozono industriali. L’adozione
-    di nuove tecnologie e approcci scientifici consente di aumentare l’affidabilità dei processi,
-    ridurre consumi energetici e ottimizzare i risultati di ossidazione.
-  </p>
-  <h3>Nuove tecnologie di generazione</h3>
-  <p>
-    La ricerca continua ha portato allo sviluppo di generatori più efficienti e avanzati, capaci
-    di produrre ozono in modo stabile e controllato con minori consumi energetici. Tecnologie
-    innovative includono generatori a scarica a corona ottimizzata, sistemi a fotolisi UV migliorata
-    e materiali avanzati resistenti all’ozono, aumentando efficienza e durata dei componenti.
-  </p>
-  <h3>Ottimizzazione dei processi industriali</h3>
-  <p>
-    L’R&D consente di applicare principi scientifici per ottimizzare parametri operativi come
-    concentrazione di ozono, tempo di contatto e distribuzione nei fluidi. Attraverso simulazioni,
-    monitoraggio avanzato e analisi dei dati, le aziende possono implementare strategie di
-    miglioramento continuo, garantendo prestazioni costanti e massimizzando l’efficacia del trattamento.
-  </p>
-</section>
-
-            </article>
-        </main>
+    </head>
+    <body>
+        {components.header_default()}
+        <div class="hub">
+            {sidebar_core_entity()}
+            <main>
+                <article>
+                    {article_html}
+                </article>
+            </main>
             {sidebar_page_html}
         </div>
         {components.footer_dark()}
-
 </body>
 </html>
     '''
@@ -1933,157 +1823,6 @@ def ozono_industriale_scienza_gen():
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
         f.write(html)
 
-def ozono_industriale_ricerca_gen():
-    url_slug = 'ozono-industriale/ricerca'
-    sidebar_page_html = sidebar_page([]) 
-    html = f'''
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Innovazione e ricerca dei sistemi ad ozono industriali | Ozonogroup</title>
-    <meta name="description" content="Esplora l'innovazione e la ricerca sui sistemi ad ozono industriali: sviluppo di nuove tecnologie, ottimizzazione dei processi, applicazioni industriali e collaborazioni scientifiche.">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.ozonogroup.it/ricerca/">
-        <link rel="stylesheet" href="/styles.css">
-</head>
-<body>
-
-    {components.header_default()}
-        <div class="hub hub-layout container-xxl">
-        {sidebar_core_entity()}
-        <main>
-            <article>
-
-<h1>Innovazione e ricerca dei sistemi ad ozono industriali</h1>
-
-<section>
-  <p>
-    La ricerca e l’innovazione nei sistemi ad ozono industriali rappresentano il motore
-    che guida lo sviluppo di tecnologie avanzate e processi più efficienti. Questa pagina
-    esplora come la progettazione dei generatori, i sistemi di distribuzione, l’ottimizzazione
-    dei processi e le partnership scientifiche contribuiscono a definire l’eccellenza nei
-    sistemi industriali ad ozono.
-  </p>
-  <p>
-    L’obiettivo è fornire una panoramica completa dei nodi critici di innovazione, mostrando
-    l’impatto della R&D su prestazioni, sostenibilità e applicazioni industriali,
-    costruendo autorità e rilevanza della pagina come riferimento tecnico-scientifico
-    della Core Entity.
-  </p>
-</section>
-
-<section>
-  <h2>Sviluppo di nuove tecnologie</h2>
-  <p>
-    L’evoluzione tecnologica dei sistemi ad ozono industriali è guidata dalla ricerca
-    continua su generatori, materiali e sistemi di distribuzione. Lo sviluppo di nuove
-    tecnologie consente di aumentare efficienza, affidabilità e sicurezza dei processi industriali,
-    definendo l’autorità della pagina come riferimento per innovazione e R&D.
-  </p>
-  <h3>Generator design avanzato</h3>
-  <p>
-    I generatori di ultima generazione sono progettati con materiali resistenti all’ozono
-    e configurazioni ottimizzate per massimizzare output e durata. Innovazioni nel design
-    permettono una produzione più stabile e controllata, riducendo consumi energetici
-    e migliorando le prestazioni complessive del sistema.
-  </p>
-  <h3>Sistemi di distribuzione e controllo innovativi</h3>
-  <p>
-    Le nuove tecnologie di distribuzione includono camere di contatto ottimizzate,
-    condotte avanzate e sistemi di dosaggio intelligenti. L’integrazione con sensori
-    e automazione avanzata consente un controllo preciso dei parametri operativi,
-    garantendo uniformità del trattamento e supportando strategie di manutenzione predittiva.
-  </p>
-</section>
-
-<section>
-  <h2>Ottimizzazione dei processi industriali</h2>
-  <p>
-    L’ottimizzazione dei processi industriali è un elemento chiave della ricerca e sviluppo
-    sui sistemi ad ozono. Analizzando dati operativi e parametri di processo, le aziende
-    possono migliorare l’efficienza energetica, ridurre sprechi e garantire prestazioni costanti,
-    rafforzando l’autorità della pagina come riferimento per innovazione e gestione avanzata dei sistemi.
-  </p>
-  <h3>Miglioramento dell’efficienza energetica</h3>
-  <p>
-    Attraverso simulazioni, progettazione modulare e controllo intelligente dei generatori,
-    è possibile ottimizzare i consumi energetici dei sistemi ad ozono. L’efficienza energetica
-    è fondamentale per rendere sostenibili i processi industriali e ridurre costi operativi,
-    senza compromettere le prestazioni di ossidazione.
-  </p>
-  <h3>Controllo qualità e prestazioni</h3>
-  <p>
-    Il monitoraggio continuo dei parametri operativi, come concentrazione di ozono, tempo
-    di contatto e distribuzione, permette di mantenere elevati standard di qualità.
-    L’analisi dei KPI e l’implementazione di sistemi predittivi di manutenzione garantiscono
-    prestazioni stabili e processi affidabili, supportando strategie di miglioramento continuo.
-  </p>
-</section>
-
-<section>
-  <h2>Innovazioni applicative</h2>
-  <p>
-    Le innovazioni applicative nei sistemi ad ozono industriali permettono di estendere
-    le capacità dei processi tradizionali e introdurre nuove soluzioni sostenibili.
-    L’adozione di tecnologie avanzate consente di affrontare sfide emergenti nei diversi
-    settori industriali, garantendo efficienza, sicurezza e riduzione dell’impatto ambientale.
-  </p>
-  <h3>Nuovi settori industriali</h3>
-  <p>
-    L’innovazione apre opportunità in settori emergenti come farmaceutico, biotech,
-    tessile e trattamento dei rifiuti industriali. Applicazioni pionieristiche
-    includono sanificazione avanzata, ossidazione controllata e depurazione di reflui,
-    dimostrando l’adattabilità dei sistemi ad ozono a diverse esigenze industriali.
-  </p>
-  <h3>Tecnologie sostenibili e green</h3>
-  <p>
-    Lo sviluppo di soluzioni eco-efficienti integra materiali resistenti all’ozono,
-    generatori a basso consumo energetico e sistemi di dosaggio ottimizzati. L’obiettivo
-    è massimizzare l’efficienza dei processi riducendo sprechi e impatto ambientale,
-    consolidando il ruolo dei sistemi ad ozono come tecnologia sostenibile e all’avanguardia.
-  </p>
-</section>
-
-<section>
-  <h2>Collaborazioni e partnership scientifiche</h2>
-  <p>
-    Le collaborazioni con centri di ricerca, università e aziende rappresentano un elemento fondamentale
-    per lo sviluppo e l’innovazione dei sistemi ad ozono industriali. Queste partnership permettono
-    di coniugare ricerca scientifica avanzata con applicazioni pratiche, accelerando l’adozione di
-    nuove tecnologie e il miglioramento dei processi industriali.
-  </p>
-  <h3>Centri di ricerca e università</h3>
-  <p>
-    La collaborazione con laboratori universitari e centri di ricerca consente di approfondire
-    aspetti scientifici fondamentali, testare materiali e configurazioni innovative,
-    e validare nuovi metodi di generazione e distribuzione dell’ozono.
-    Queste attività consolidano l’autorità della pagina come riferimento scientifico nel settore.
-  </p>
-  <h3>Collaborazioni industriali</h3>
-  <p>
-    Le partnership con aziende leader permettono di sperimentare le tecnologie in contesti
-    reali, sviluppare prototipi pilota e raccogliere dati operativi per ottimizzare
-    le prestazioni. Questi legami con il mondo industriale dimostrano l’applicabilità pratica
-    dell’innovazione e rafforzano l’autorevolezza della pagina e della Core Entity.
-  </p>
-</section>
-
-            </article>
-        </main>
-            {sidebar_page_html}
-        </div>
-        {components.footer_dark()}
-
-</body>
-</html>
-    '''
-    html_folderpath = f'{g.WEBSITE_FOLDERPATH}/{url_slug}'
-    os.makedirs(html_folderpath, exist_ok=True)
-    html_filepath = f'{html_folderpath}/index.html'
-    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
-        f.write(html)
 
 def ozono_industriale_tecnologia_gen():
     url_slug = 'ozono-industriale/tecnologia'
@@ -2304,10 +2043,8 @@ def gen():
     ozono_industriale_progettazione_gen()
     ozono_industriale_gestione_gen()
     ozono_industriale_prestazioni_gen()
-
-    # ozono_industriale_performance_gen()
-    # ozono_industriale_scienza_gen()
-    # ozono_industriale_ricerca_gen()
+    ozono_industriale_confronti_gen()
+    ozono_industriale_limiti_gen()
 
 '''
 | Tipo        | URL ottimizzato                    | Funzione                          |
