@@ -133,6 +133,7 @@ enum Nextion_Pages {
   P_SPLASH,
   P_HOME,
   P_PASSWORD,
+  P_SD,
   P_SET,
   P_POWER,
   P_CAL_EN,
@@ -304,8 +305,30 @@ typedef struct sd_card_t
   uint8_t pin;
   uint8_t pin_cd;
   int16_t minute_cur = -1;
+  uint8_t nextion_update = 0;
+  uint8_t demo_val = 0;
+  uint32_t demo_val_millis_cur = 0;
+  uint32_t demo_val_millis_tmr = 1000;
+  
+  uint8_t second_old = -2;
+  uint8_t second_cur = 0;
+  uint8_t buff_minute_old = -2;
+  uint8_t buff_minute_cur = 0;
+  uint8_t buff_hour_old = -2;
+  uint8_t buff_hour_cur = 0;
 } sd_card_t;
 sd_card_t sd_card = {};
+
+
+#define LINES 10
+#define LINE_SIZE 24+1
+
+uint16_t sd_hour_buff[60] = {0};
+uint8_t sd_hour_buff_i = 0;
+
+char sd_hour_nextion_lines_buff[LINES][LINE_SIZE] = {0};
+char sd_minute_nextion_lines_buff[LINES][LINE_SIZE] = {0};
+
 
 // ----------------------------------------------------------------------------------------------------------
 // ;sd card
@@ -315,70 +338,7 @@ int is_insert = 0;
 int is_init = 0;
 int sd_val = 123;
 
-void sd_manager_2() 
-{
-  sd_card_init_2();
-  sd_card_write_2();
-}
 
-uint8_t here_num = 0;
-void sd_card_init_2() 
-{
-  sd_card.inserted_cur = (digitalRead(sd_card.pin_cd) == LOW) ? 1 : 0;
-  // Serial.print("here ");
-  // Serial.print(here_num);
-  // Serial.print(": ");
-  // Serial.println(sd_card.inserted_cur);
-  // here_num += 1;
-
-  if (sd_card.inserted_cur)
-  {
-    if (!sd_card.tried_to_initialize)
-    {
-      sd_card.tried_to_initialize = 1;
-      if (!SD.begin()) Serial.println("Card Mount Failed");
-      else Serial.println("Card Mounted");
-    }
-  }
-  else
-  {
-    if (sd_card.tried_to_initialize)
-    {
-      SD.end();
-      sd_card.tried_to_initialize = 0;
-      Serial.println("Card Unmounted");
-    }
-  }
-}
-
-void sd_card_write_2() 
-{
-  if (sd_card.minute_cur != rtc.minute_cur)
-  {
-    sd_card.minute_cur = rtc.minute_cur;
-    if (sd_card.tried_to_initialize)
-    {
-      Serial.printf("Appending to file: %s\n", "/data.csv");
-      file = SD.open("/data.csv", FILE_APPEND);
-      if (!file) Serial.println("Failed to open file for appending");
-      if (file.print(String(rtc.year_cur))) Serial.println("Message 1 appended");
-      if (file.print(String(","))) Serial.println("Message 2 appended");
-      if (file.print(String(rtc.month_cur))) Serial.println("Message 3 appended");
-      if (file.print(String(","))) Serial.println("Message 4 appended");
-      if (file.print(String(rtc.day_cur))) Serial.println("Message 5 appended");
-      if (file.print(String(","))) Serial.println("Message 6 appended");
-      if (file.print(String(rtc.hour_cur))) Serial.println("Message 7 appended");
-      if (file.print(String(","))) Serial.println("Message 8 appended");
-      if (file.print(String(rtc.minute_cur))) Serial.println("Message 9 appended");
-      if (file.print(String(","))) Serial.println("Message 10 appended");
-      if (file.print(String(rtc.second_cur))) Serial.println("Message 11 appended");
-      if (file.print(String(","))) Serial.println("Message 12 appended");
-      // if (file.print(String(sensor.ppb_curr))) Serial.println("Message 13 appended");
-      // if (file.print('\n')) Serial.println("Message appended");
-      file.close();
-    }
-  }
-}
 
 void setup() 
 {
@@ -481,11 +441,18 @@ void setup()
 }
 
 
+#define MAX_LINES 10
+#define MAX_LINE_LENGTH 128
+
+char lastLines[MAX_LINES][MAX_LINE_LENGTH];
+int lineCount = 0;
+int storedLines = 0;
+
+
+
+
 void loop() 
 {
-  // ;sd
-  sd_manager_2();
-
   // external_input.state_cur = digitalRead(RI_1);
   
   debug_manager();
@@ -503,7 +470,32 @@ void loop()
   // ;nextion
   nextion_manager();
 
+  // ;sd
+  sd_manager();
+
   // ;valves
   // valves_manager();
+
+  // if (millis() - sd_card.demo_val_millis_cur > sd_card.demo_val_millis_tmr) 
+  // {
+  //   sd_card.demo_val_millis_cur = millis();
+  //   sd_card.demo_val = (sd_card.demo_val + 1) % 10;
+  //   sd_card.nextion_update = 1;
+  // }
+
+  if (millis() - sd_card.demo_val_millis_cur > sd_card.demo_val_millis_tmr) 
+  {
+    sd_card.demo_val_millis_cur = millis();
+
+    if (sd_card.tried_to_initialize)
+    {
+      // readFile(SD, "/data.csv");
+      readLastCSVLinesOrdered(SD, "/data.csv");
+    }
+    Serial.println();
+
+    sd_card.demo_val = (sd_card.demo_val + 1) % 10;
+    // sd_card.nextion_update = 1;
+  }
 
 }
