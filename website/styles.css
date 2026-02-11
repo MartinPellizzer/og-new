@@ -972,14 +972,16 @@ footer h2 {
 /* HUB                                      */
 /* **************************************** */
 .hub {
-    margin-top: 4rem;
-    margin-bottom: 4rem;
     display: grid;
     grid-template-columns: 240px minmax(0, 1fr) 240px;
     gap: 4rem;
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 1rem;
+}
+
+.hub article {
+    margin-bottom: 4rem;
 }
 
 .hub .nav-global {

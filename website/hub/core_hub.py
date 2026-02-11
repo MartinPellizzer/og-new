@@ -14,6 +14,13 @@ def sidebar_core_entity():
                         <li><a href="/ozono-industriale/struttura/">Struttura</a></li>
                         <li><a href="/ozono-industriale/tecnologia/">Tecnologia</a></li>
                         <li><a href="/ozono-industriale/funzionamento/">Funzionamento</a></li>
+                        <li><a href="/ozono-industriale/applicazioni/">Applicazioni</a></li>
+                        <li><a href="/ozono-industriale/benefici/">Benefici</a></li>
+                        <li><a href="/ozono-industriale/sicurezza/">Sicurezza</a></li>
+                        <li><a href="/ozono-industriale/normativa/">Normativa</a></li>
+                        <li><a href="/ozono-industriale/progettazione/">Progettazione</a></li>
+                        <li><a href="/ozono-industriale/gestione/">Gestione</a></li>
+                        <li><a href="/ozono-industriale/prestazioni/">Prestazioni</a></li>
                     </ul>
                 </li>
             </ul>
@@ -837,6 +844,80 @@ I sistemi ad ozono industriali sono composti da una serie di componenti integrat
 def ozono_industriale_applicazioni_gen():
     url_slug = 'ozono-industriale/applicazioni'
     sidebar_page_html = sidebar_page([]) 
+    
+    article_html = f'''
+        <h1>
+            Applicazioni dei Sistemi ad Ozono Industriali
+        </h1>
+        <p>
+I sistemi ad ozono industriali trovano applicazione in numerosi settori produttivi, tra cui industria alimentare, farmaceutica, chimica e trattamento acque industriali. Grazie al forte potere ossidante dell’ozono, questi impianti vengono impiegati per disinfezione microbiologica, ossidazione di contaminanti organici, deodorizzazione e riduzione di COD e BOD. Possono trattare acqua potabile, reflui industriali, aria di processo e ambienti produttivi, integrandosi in linea o come retrofit su impianti esistenti. La corretta applicazione richiede valutazione di parametri operativi, normative settoriali e obiettivi di trattamento, garantendo sicurezza, conformità ambientale e miglioramento delle performance industriali.
+        </p>
+
+<section>
+  <h2>In quali settori si applica?</h2>
+  <p>I sistemi ad ozono industriali si applicano nei settori alimentare, farmaceutico, chimico, tessile, cartario, zootecnico e municipale. Sono utilizzati nel trattamento di acque di processo, reflue industriali e aria ambientale, garantendo disinfezione microbiologica e ossidazione di contaminanti organici.</p>
+</section>
+
+<section>
+  <h2>Quali fluidi tratta?</h2>
+  <p>I sistemi ad ozono industriali trattano acqua potabile, acqua di processo, acque reflue industriali, aria e gas di processo. L’ozono viene disciolto tramite diffusori o iniettori Venturi o distribuito in fase gassosa per sanificazione e deodorizzazione.</p>
+</section>
+
+<section>
+  <h2>Con quale finalità si usa?</h2>
+  <p>L’ozono industriale si usa per disinfezione microbiologica, ossidazione chimica e deodorizzazione. Riduce batteri, virus, muffe, biofilm, COD e BOD, migliorando sicurezza, qualità del fluido trattato e conformità ambientale.</p>
+</section>
+
+<section>
+  <h2>Quali contaminanti elimina?</h2>
+  <p>I sistemi ad ozono industriali eliminano batteri, virus, muffe, biofilm, fenoli, solventi organici, pesticidi, idrocarburi e composti solforati. L’elevato potere ossidante consente la degradazione di microinquinanti e la rimozione di odori persistenti.</p>
+</section>
+
+<section>
+  <h2>In quali processi interviene?</h2>
+  <p>I sistemi ad ozono industriali intervengono in CIP, sanificazione linee produttive, trattamento reflui, ricircolo acque di raffreddamento e sterilizzazione ambienti controllati. Migliorano stabilità microbiologica e riducono carichi organici prima dello scarico.</p>
+</section>
+
+<section>
+  <h2>Quali parametri operativi richiede?</h2>
+  <p>L’efficacia dipende da concentrazione di ozono, tempo di contatto, pH, temperatura, portata e ORP. Il corretto dosaggio, continuo o batch, garantisce massima ossidazione, efficienza energetica e sicurezza operativa.</p>
+</section>
+
+<section>
+  <h2>Quali normative si applicano?</h2>
+  <p>I sistemi ad ozono industriali devono rispettare HACCP, GMP, REACH, direttive europee su acque potabili e scarichi industriali, oltre ai limiti di esposizione professionale. La conformità garantisce sicurezza operativa e validità normativa.</p>
+</section>
+
+<section>
+  <h2>Quali benefici per settore?</h2>
+  <p>I sistemi ad ozono industriali offrono riduzione contaminazioni, estensione shelf life, diminuzione costi chimici, miglioramento qualità acqua e aria e maggiore sostenibilità ambientale, con benefici specifici per ogni settore produttivo.</p>
+</section>
+
+<section>
+  <h2>Come si integra negli impianti?</h2>
+  <p>I sistemi ad ozono industriali si integrano in linea, in by-pass o come retrofit, anche con UV, membrane e trattamenti biologici. L’integrazione dipende da portata, layout impiantistico e compatibilità dei materiali.</p>
+</section>
+
+<section>
+  <h2>Quali limiti applicativi ha?</h2>
+  <p>L’ozono industriale presenta limiti legati a compatibilità materiali, controllo concentrazione, costi iniziali e vincoli normativi. Richiede monitoraggio continuo per evitare sovradosaggio e garantire sicurezza operativa.</p>
+</section>
+    '''
+
+    article_with_ids_html = ''
+    toc = []
+    i = 0
+    for line in article_html.split('\n'):
+        line = line.strip()
+        if '<h2>' in line:
+            line_content = line.replace('<h2>', '').replace('</h2>', '')
+            line = line.replace('<h2>', f'<h2 id="{i}">')
+            toc.append({'href': i, 'anchor': line_content})
+            i += 1
+        article_with_ids_html += f'{line}\n'
+    article_html = article_with_ids_html
+    sidebar_page_html = sidebar_page(toc) 
+
     html = f'''
     <!DOCTYPE html>
     <html lang="it">
@@ -844,320 +925,145 @@ def ozono_industriale_applicazioni_gen():
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Applicazioni industriali dei sistemi ad ozono</title>
-        <meta name="description" content="Scopri le principali applicazioni industriali dei sistemi ad ozono, dai trattamenti delle acque all'industria alimentare e chimica, fino al controllo dell'aria e degli odori.">
-        <link rel="canonical" href="https://ozonogroup.it/{url_slug}/">
+        <title>Sistemi ad Ozono Industriali: Applicazioni e Settori</title>
+        <meta name="description" content="Scopri le applicazioni dei sistemi ad ozono industriali nei settori alimentare, farmaceutico e nel trattamento acque, contaminanti eliminati e parametri operativi.">
+        <link rel="canonical" href="https://ozonogroup.it/ozono-industriale/applicazioni">
         <link rel="stylesheet" href="/styles.css">
     </head>
     <body>
-    {components.header_default()}
-        <div class="hub hub-layout container-xxl">
-        {sidebar_core_entity()}
-        <main>
-            <article>
-
-<h1>Applicazioni industriali dei sistemi ad ozono</h1>
-<section>
-  <p>
-    Le applicazioni industriali dei sistemi ad ozono riguardano l’insieme di processi
-    in cui questa tecnologia viene impiegata per ottenere risultati specifici,
-    come la disinfezione, il trattamento di contaminanti, l’ossidazione controllata
-    o il miglioramento della qualità di materiali, prodotti e ambienti industriali.
-  </p>
-  <p>
-    Questa pagina illustra i principali ambiti di utilizzo dell’ozono nei contesti industriali,
-    mostrando come i sistemi siano integrati in processi strutturati per settori diversi,
-    dal trattamento delle acque, all’industria alimentare e delle bevande,
-    fino al settore chimico, farmaceutico e altri settori specializzati.
-  </p>
-  <p>
-    Le sezioni successive approfondiscono ciascun settore e applicazione,
-    definendo nodi critici della conoscenza sull’impiego industriale dell’ozono
-    e contribuendo a consolidare l’autorità semantica della pagina.
-  </p>
-</section>
-
-<section>
-  <h2>Trattamento delle acque</h2>
-  <p>
-    Il trattamento delle acque rappresenta una delle principali applicazioni
-    dei sistemi ad ozono industriali.
-    In questo ambito, l’ozono viene utilizzato come agente di ossidazione
-    e disinfezione per migliorare la qualità dell’acqua
-    e supportare processi industriali che richiedono elevati standard
-    di sicurezza e controllo.
-  </p>
-  <p>
-    L’impiego dell’ozono nei trattamenti idrici
-    consente di affrontare contaminazioni biologiche e chimiche
-    senza introdurre residui persistenti,
-    rendendo questa tecnologia adatta a contesti regolamentati
-    e a processi sensibili.
-  </p>
-  <h3>Acque potabili</h3>
-  <p>
-    Nei sistemi di trattamento delle acque potabili,
-    l’ozono viene impiegato per la disinfezione
-    e il miglioramento delle caratteristiche organolettiche dell’acqua.
-    La sua azione consente la riduzione di microrganismi,
-    odori e sapori indesiderati,
-    contribuendo alla produzione di acqua conforme
-    ai requisiti di potabilità.
-  </p>
-  <p>
-    L’applicazione dell’ozono in questo contesto
-    è integrata in processi controllati
-    che tengono conto delle normative vigenti
-    e delle condizioni operative degli impianti di potabilizzazione.
-  </p>
-  <h3>Acque reflue industriali</h3>
-  <p>
-    Nel trattamento delle acque reflue industriali,
-    i sistemi ad ozono industriali
-    vengono utilizzati per ridurre il carico inquinante
-    e trattare contaminanti difficilmente degradabili
-    con tecnologie convenzionali.
-  </p>
-  <p>
-    L’ozono supporta processi di ossidazione avanzata
-    finalizzati al miglioramento dell’effluente,
-    facilitando il rispetto dei limiti di scarico
-    e l’integrazione con sistemi di depurazione esistenti.
-  </p>
-  <h3>Trattamento acque per processi industriali</h3>
-  <p>
-    In numerosi processi industriali,
-    l’acqua è utilizzata come fluido di processo
-    e deve rispettare specifici requisiti qualitativi.
-    I sistemi ad ozono industriali
-    vengono applicati per il trattamento di queste acque
-    al fine di garantire stabilità e affidabilità del processo.
-  </p>
-  <p>
-    L’utilizzo dell’ozono consente di mantenere
-    condizioni controllate lungo il ciclo produttivo,
-    riducendo la necessità di trattamenti chimici tradizionali
-    e migliorando la gestione complessiva delle risorse idriche.
-  </p>
-</section>
-
-<section>
-  <h2>Industria alimentare e delle bevande</h2>
-  <p>
-    Nell’industria alimentare e delle bevande,
-    i sistemi ad ozono industriali
-    vengono applicati per supportare processi
-    che richiedono elevati standard igienico-sanitari
-    e un controllo rigoroso della contaminazione.
-    L’ozono viene utilizzato come tecnologia di trattamento
-    in contesti produttivi regolamentati,
-    in cui sicurezza e qualità sono requisiti fondamentali.
-  </p>
-  <p>
-    L’impiego dell’ozono in questo settore
-    è integrato all’interno di processi industriali strutturati,
-    con soluzioni progettate per operare
-    in modo controllato e conforme alle normative di settore.
-  </p>
-  <h3>Sanificazione di superfici e ambienti</h3>
-  <p>
-    La sanificazione di superfici e ambienti produttivi
-    rappresenta una delle principali applicazioni
-    dei sistemi ad ozono industriali
-    nell’industria alimentare e delle bevande.
-  </p>
-  <p>
-    L’ozono viene utilizzato per il controllo microbiologico
-    di aree di lavorazione, attrezzature e ambienti,
-    contribuendo alla riduzione del rischio di contaminazione
-    lungo le diverse fasi del processo produttivo.
-  </p>
-  <h3>Trattamento prodotti alimentari</h3>
-  <p>
-    I sistemi ad ozono industriali
-    trovano applicazione nel trattamento di prodotti alimentari
-    per il controllo della carica microbica
-    e il miglioramento delle condizioni igieniche
-    senza introdurre residui chimici persistenti.
-  </p>
-  <p>
-    Questo approccio consente di supportare
-    processi di conservazione e manipolazione degli alimenti
-    nel rispetto dei requisiti qualitativi
-    e delle normative applicabili.
-  </p>
-  <h3>Linee di produzione e confezionamento</h3>
-  <p>
-    Nelle linee di produzione e confezionamento,
-    i sistemi ad ozono industriali
-    vengono integrati per garantire
-    condizioni igieniche controllate
-    lungo il flusso produttivo.
-  </p>
-  <p>
-    L’integrazione dell’ozono nei processi di linea
-    contribuisce a migliorare la sicurezza del prodotto finale
-    e a supportare la continuità operativa
-    degli impianti industriali.
-  </p>
-</section>
-
-<section>
-  <h2>Industria chimica e farmaceutica</h2>
-  <p>
-    Nell’industria chimica e farmaceutica,
-    i sistemi ad ozono industriali
-    vengono applicati in contesti produttivi
-    che richiedono un elevato livello di controllo
-    sui processi e sulle condizioni operative.
-    L’ozono viene utilizzato come strumento di trattamento
-    all’interno di processi industriali regolamentati,
-    in cui precisione e affidabilità sono elementi essenziali.
-  </p>
-  <p>
-    Le applicazioni dell’ozono in questi settori
-    sono integrate in soluzioni progettate
-    per operare in ambienti complessi,
-    supportando obiettivi di qualità,
-    sicurezza e gestione dei flussi di processo.
-  </p>
-  <h3>Ossidazione controllata</h3>
-  <p>
-    L’ossidazione controllata rappresenta
-    una delle applicazioni dei sistemi ad ozono industriali
-    nell’industria chimica.
-    In questo contesto, l’ozono viene impiegato
-    come agente di ossidazione
-    all’interno di processi che richiedono
-    un controllo preciso delle reazioni.
-  </p>
-  <p>
-    L’utilizzo dell’ozono consente di supportare
-    trattamenti mirati su specifiche sostanze,
-    integrandosi con processi industriali esistenti
-    e con sistemi di gestione del processo.
-  </p>
-  <h3>Gestione reflui chimici</h3>
-  <p>
-    Nei processi di gestione dei reflui chimici,
-    i sistemi ad ozono industriali
-    vengono applicati per il trattamento
-    di effluenti contenenti contaminanti complessi.
-  </p>
-  <p>
-    L’integrazione dell’ozono nei sistemi di trattamento
-    contribuisce al miglioramento della qualità del refluo,
-    facilitando il rispetto dei requisiti ambientali
-    e l’ottimizzazione dei processi di depurazione.
-  </p>
-  <h3>Produzione farmaceutica</h3>
-  <p>
-    Nel settore della produzione farmaceutica,
-    i sistemi ad ozono industriali
-    trovano applicazione in processi
-    che richiedono elevati standard igienici
-    e un controllo rigoroso dell’ambiente produttivo.
-  </p>
-  <p>
-    L’utilizzo dell’ozono in questo ambito
-    è integrato in soluzioni progettate
-    per supportare la qualità del processo
-    e la conformità ai requisiti normativi del settore.
-  </p>
-</section>
-
-<section>
-  <h2>Trattamento dell’aria e controllo odori</h2>
-  <p>
-    I sistemi ad ozono industriali trovano applicazione anche
-    nel trattamento dell’aria e nel controllo degli odori,
-    ambiti in cui è necessario intervenire su contaminanti aerodispersi
-    e composti volatili senza introdurre sostanze chimiche persistenti.
-  </p>
-  <p>
-    L’impiego dell’ozono in questi contesti permette
-    di migliorare la qualità dell’aria all’interno di impianti industriali
-    e di ridurre odori indesiderati generati da processi produttivi,
-    contribuendo a creare ambienti più sicuri e conformi alle normative ambientali.
-  </p>
-  <h3>Abbattimento odori industriali</h3>
-  <p>
-    I sistemi ad ozono industriali vengono utilizzati
-    per l’abbattimento di odori provenienti da impianti chimici,
-    alimentari o di trattamento dei rifiuti.
-    L’ozono ossida i composti responsabili degli odori
-    riducendo la percezione olfattiva e il potenziale impatto ambientale.
-  </p>
-  <p>
-    L’applicazione è progettata per operare
-    in modo controllato e sicuro,
-    ottimizzando il tempo di contatto e la concentrazione
-    dell’ozono in funzione delle caratteristiche del flusso d’aria.
-  </p>
-  <h3>Miglioramento qualità dell’aria</h3>
-  <p>
-    Nei sistemi di miglioramento della qualità dell’aria,
-    l’ozono viene impiegato per ridurre contaminanti aerodispersi,
-    composti organici volatili (VOC) e microrganismi presenti nell’ambiente.
-  </p>
-  <p>
-    L’integrazione dei sistemi ad ozono nei processi di ventilazione
-    consente di mantenere un livello costante di purificazione dell’aria,
-    supportando la salute degli operatori e la conformità alle normative industriali.
-  </p>
-</section>
-
-<section>
-  <h2>Settori industriali specializzati</h2>
-  <p>
-    I sistemi ad ozono industriali trovano applicazione anche in settori specializzati
-    che richiedono soluzioni dedicate per il trattamento di materiali, prodotti o effluenti.
-    Questi ambiti includono industrie con esigenze particolarmente elevate
-    di igiene, controllo dei contaminanti e qualità del prodotto.
-  </p>
-  <p>
-    L’impiego dell’ozono in questi settori consente di affrontare problematiche specifiche
-    dei processi industriali, garantendo sicurezza, efficienza e conformità normativa.
-  </p>
-  <h3>Farmaceutico e biotech</h3>
-  <p>
-    Nei settori farmaceutico e biotech, i sistemi ad ozono industriali
-    vengono utilizzati per la sanificazione di ambienti, attrezzature e fluidi di processo,
-    contribuendo a mantenere condizioni controllate e a ridurre rischi microbiologici.
-  </p>
-  <p>
-    L’integrazione dell’ozono supporta la qualità dei prodotti finali
-    e la conformità a standard di settore come le normative GMP.
-  </p>
-  <h3>Tessile e carta</h3>
-  <p>
-    Nelle industrie tessili e della carta, l’ozono viene impiegato per trattamenti
-    come sbiancamento e riduzione dell’uso di agenti chimici tradizionali.
-  </p>
-  <p>
-    I sistemi ad ozono industriali consentono di migliorare l’efficienza dei cicli produttivi
-    e di ridurre l’impatto ambientale associato a sostanze chimiche persistenti.
-  </p>
-  <h3>Altri settori industriali</h3>
-  <p>
-    L’ozono trova applicazione anche in altri settori industriali specializzati,
-    come il trattamento di rifiuti organici, piscine industriali
-    e nell’industria elettronica per la purificazione di acqua o ambienti produttivi.
-  </p>
-  <p>
-    L’adozione dei sistemi ad ozono industriali in questi ambiti
-    è guidata da esigenze di controllo, efficienza e conformità,
-    rafforzando la versatilità della tecnologia in contesti complessi.
-  </p>
-</section>
-
-            </article>
-        </main>
+        {components.header_default()}
+        <div class="hub">
+            {sidebar_core_entity()}
+            <main>
+                <article>
+                    {article_html}
+                </article>
+            </main>
             {sidebar_page_html}
         </div>
         {components.footer_dark()}
-    </body>
-    </html>
+</body>
+</html>
+    '''
+    html_folderpath = f'{g.WEBSITE_FOLDERPATH}/{url_slug}'
+    os.makedirs(html_folderpath, exist_ok=True)
+    html_filepath = f'{html_folderpath}/index.html'
+    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
+        f.write(html)
+
+def ozono_industriale_benefici_gen():
+    url_slug = 'ozono-industriale/benefici'
+    sidebar_page_html = sidebar_page([]) 
+    
+    article_html = f'''
+        <h1>
+Benefici dei Sistemi ad Ozono Industriali
+        </h1>
+        <p>
+I sistemi ad ozono industriali offrono numerosi benefici per acqua, aria e processi produttivi. Garantendo sanificazione rapida, ossidazione di contaminanti, efficienza operativa e qualità dei prodotti, riducono l’uso di chimici pericolosi, migliorano la sostenibilità ambientale e assicurano conformità normativa e sicurezza industriale. 
+        </p>
+
+<section>
+  <h2>Sanificazione</h2>
+  <p>I sistemi ad ozono industriali disinfettano acqua, aria e superfici eliminando batteri, virus, muffe e spore, riducendo biofilm e contaminazioni crociate. Il dosaggio controllato garantisce sicurezza alimentare e ambientale, sostituendo prodotti chimici tradizionali con un metodo rapido e ecologico.</p>
+</section>
+
+<section>
+  <h2>Ossidazione</h2>
+  <p>L’ozono ossida rapidamente composti organici, pesticidi, fenoli e idrocarburi. Riduce colore, torbidità, COD e BOD, trasformando sostanze nocive in prodotti innocui. I sistemi industriali sfruttano questa capacità per trattamento acque e reflui, migliorando l’efficienza chimica dei processi industriali.</p>
+</section>
+
+<section>
+  <h2>Sostenibilità</h2>
+  <p>I sistemi ad ozono riducono l’uso di prodotti chimici, non generano residui tossici e l’ozono si decompone in ossigeno. Migliorano la qualità ambientale dei reflui, riducono l’impatto sugli ecosistemi e garantiscono compliance normativa, offrendo una soluzione industriale sostenibile ed ecologica.</p>
+</section>
+
+<section>
+  <h2>Efficienza</h2>
+  <p>I sistemi ad ozono industriali accelerano sanificazione e processi produttivi, riducendo fermi impianto e interventi manuali. La modularità e i sensori assicurano trattamenti ripetibili e precisi, aumentando l’efficienza operativa e la produttività complessiva dell’industria.</p>
+</section>
+
+<section>
+  <h2>Economicità</h2>
+  <p>L’uso dell’ozono riduce costi chimici, energetici e di smaltimento, migliora il ROI e previene perdite da contaminazioni. Con un minor TCO, rappresenta una scelta economica vantaggiosa rispetto ai metodi chimici tradizionali, ottimizzando le risorse aziendali.</p>
+</section>
+
+<section>
+  <h2>Qualità</h2>
+  <p>I sistemi ad ozono migliorano qualità dell’acqua e prodotti, preservano proprietà organolettiche e prolungano la shelf-life. Eliminano odori residui e riducono alterazioni microbiche, garantendo standard qualitativi elevati per industrie alimentari, farmaceutiche e chimiche.</p>
+</section>
+
+<section>
+  <h2>Conformità</h2>
+  <p>I sistemi ad ozono supportano compliance HACCP, ISO e limiti di scarico. Monitoraggio continuo e tracciabilità facilitano gli audit, riducendo rischi di non conformità e sanzioni, e garantendo la gestione normativa completa all’interno degli impianti industriali.</p>
+</section>
+
+<section>
+  <h2>Protezione</h2>
+  <p>L’ozono riduce l’uso di chimici pericolosi, abbassa il rischio di incidenti e limita l’esposizione degli operatori. I sensori di sicurezza e i distruttori di ozono creano un ambiente industriale salubre, minimizzando contaminazioni e rischi chimici.</p>
+</section>
+
+<section>
+  <h2>Competitività</h2>
+  <p>Rispetto a cloro, UV e perossido, l’ozono offre spettro ossidante più ampio, rapidità d’azione e assenza di residui. I sistemi industriali aumentano la sostenibilità, efficienza e qualità, migliorando la competitività delle aziende nei settori alimentare, farmaceutico e chimico.</p>
+</section>
+
+<section>
+  <h2>Strategia</h2>
+  <p>I sistemi ad ozono contribuiscono a green positioning e ESG, migliorando reputazione e accesso a incentivi. Favoriscono scelte strategiche sostenibili e riducono rischi reputazionali, rendendo le aziende più attrattive e competitive sul mercato industriale.</p>
+</section>
+
+<section>
+  <h2>Affidabilità</h2>
+  <p>I sistemi garantiscono stabilità operativa e continuità di processo, con concentrazione di ozono costante e componenti modulari. La ripetibilità dei trattamenti e la manutenzione ridotta aumentano l’affidabilità industriale, riducendo fermi e inefficienze.</p>
+</section>
+
+<section>
+  <h2>Specializzazione</h2>
+  <p>I sistemi ad ozono sono personalizzabili per settore: alimentare (sicurezza microbiologica), farmaceutico (sterilità), tessile (sbiancamento), cartario (sbiancamento) e zootecnico (riduzione odori). La specializzazione massimizza i benefici settoriali mantenendo efficienza e conformità.</p>
+</section>
+    '''
+
+    article_with_ids_html = ''
+    toc = []
+    i = 0
+    for line in article_html.split('\n'):
+        line = line.strip()
+        if '<h2>' in line:
+            line_content = line.replace('<h2>', '').replace('</h2>', '')
+            line = line.replace('<h2>', f'<h2 id="{i}">')
+            toc.append({'href': i, 'anchor': line_content})
+            i += 1
+        article_with_ids_html += f'{line}\n'
+    article_html = article_with_ids_html
+    sidebar_page_html = sidebar_page(toc) 
+
+    html = f'''
+    <!DOCTYPE html>
+    <html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Benefici dei Sistemi ad Ozono Industriali: Sanificazione, Efficienza e Sostenibilità</title>
+        <meta name="description" content="Scopri i benefici dei sistemi ad ozono industriali: sanificazione efficace, ossidazione di contaminanti, efficienza operativa, qualità dei prodotti e sostenibilità ambientale. Migliora sicurezza, conformità e competitività industriale con soluzioni avanzate e affidabili.">
+        <link rel="canonical" href="https://ozonogroup.it/ozono-industriale/benefici">
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        {components.header_default()}
+        <div class="hub">
+            {sidebar_core_entity()}
+            <main>
+                <article>
+                    {article_html}
+                </article>
+            </main>
+            {sidebar_page_html}
+        </div>
+        {components.footer_dark()}
+</body>
+</html>
     '''
     html_folderpath = f'{g.WEBSITE_FOLDERPATH}/{url_slug}'
     os.makedirs(html_folderpath, exist_ok=True)
@@ -1168,149 +1074,99 @@ def ozono_industriale_applicazioni_gen():
 def ozono_industriale_sicurezza_gen():
     url_slug = 'ozono-industriale/sicurezza'
     sidebar_page_html = sidebar_page([]) 
+    
+    article_html = f'''
+        <h1>
+Sicurezza nei sistemi ad ozono industriali
+        </h1>
+        <p>
+La sicurezza nei sistemi ad ozono industriali è fondamentale per proteggere operatori, impianti e ambiente. L’ozono è un potente ossidante che, se non gestito correttamente, può causare rischi respiratori, esposizioni acute e danni materiali. Per garantire un funzionamento sicuro, è necessario combinare misure di protezione, monitoraggio continuo, procedure operative standard e conformità a normative come OSHA, REACH e ISO. Questa guida copre tutti gli aspetti principali per ridurre i rischi e ottimizzare la sicurezza dei sistemi ad ozono industriali.
+        </p>
+
+<section>
+  <h2>Sicurezza sistemi ad ozono</h2>
+  <p>I sistemi ad ozono industriali richiedono una gestione attenta della sicurezza, poiché l’ozono (O₃) è un ossidante potente e tossico ad alte concentrazioni. La sicurezza comprende la protezione degli operatori, il monitoraggio continuo della concentrazione in aria e acqua, la prevenzione di incidenti, e l’adozione di procedure operative standard. Una gestione corretta garantisce efficienza del sistema, rispetto delle normative di sicurezza e riduzione dei rischi ambientali e chimici.</p>
+</section>
+
+<section>
+  <h2>Rischi ozono industriale</h2>
+  <p>I principali rischi derivano dall’esposizione diretta all’ozono, che può provocare irritazioni respiratorie, danni ai polmoni e tossicità acuta. Altri pericoli includono malfunzionamenti del generatore, concentrazioni elevate in ambienti chiusi, perdite accidentali e contaminazioni ambientali. Gli impianti devono prevedere sensori, sistemi di allarme e procedure di emergenza per mitigare ogni rischio.</p>
+</section>
+
+<section>
+  <h2>Misure protezione operatori</h2>
+  <p>Per proteggere gli operatori si utilizzano DPI come maschere, guanti e occhiali, sistemi di ventilazione controllata, sensori di monitoraggio ozono, e distruttori di ozono residuo. Le procedure operative standard e la formazione continua del personale sono essenziali per prevenire incidenti e garantire la conformità normativa.</p>
+</section>
+
+<section>
+  <h2>Monitoraggio e controllo</h2>
+  <p>Il monitoraggio include sensori di concentrazione, allarmi visivi e sonori, registrazione dei dati e integrazione con PLC e sistemi di automazione. Il controllo continuo permette di verificare la corretta distribuzione dell’ozono e prevenire esposizioni accidentali. L’uso di software di gestione sicurezza consente reportistica e audit in tempo reale.</p>
+</section>
+
+<section>
+  <h2>Normativa e standard</h2>
+  <p>I sistemi devono rispettare limiti di esposizione OSHA e UE, direttive REACH, linee guida WHO e standard ISO per la sicurezza chimica e industriale. I generatori devono avere certificazione CE, mentre gli impianti alimentari seguono anche HACCP. La conformità normativa riduce rischi legali e migliora la sicurezza complessiva.</p>
+</section>
+
+<section>
+  <h2>Gestione emergenze</h2>
+  <p>Le emergenze comprendono fughe di ozono, malfunzionamenti del generatore e incidenti operativi. Le procedure includono evacuazione, isolamento dell’impianto, spegnimento controllato, comunicazione interna ed esterna, e primo soccorso per esposizione acuta. Un piano di emergenza ben definito e simulazioni periodiche garantiscono risposta rapida e sicurezza operatori.</p>
+</section>
+
+<section>
+  <h2>Manutenzione sicura impianto</h2>
+  <p>La manutenzione include interventi ordinari e straordinari, controllo dei sensori di sicurezza, sostituzione di componenti compatibili, e checklist operative pre-avvio e pre-fermo impianto. Seguire queste procedure riduce rischi di esposizione, malfunzionamenti e degrado dei materiali, garantendo continuità operativa e sicurezza.</p>
+</section>
+
+<section>
+  <h2>Vincoli operativi</h2>
+  <p>I vincoli principali riguardano limiti di concentrazione dell’ozono, tempo di esposizione degli operatori, compatibilità dei materiali e condizioni ambientali (temperatura, umidità). Conoscere e rispettare questi vincoli è fondamentale per la sicurezza dell’impianto, la protezione dei lavoratori e la conformità normativa.</p>
+</section>
+
+<section>
+  <h2>Linee guida migliori pratiche</h2>
+  <p>Le linee guida comprendono procedure operative ottimizzate, checklist di audit, controllo qualità della sicurezza, benchmark rispetto ad altri impianti e formazione continua. L’adozione di queste best practices assicura sicurezza massima, riduzione dei rischi e conformità alle normative.</p>
+</section>
+    '''
+
+    article_with_ids_html = ''
+    toc = []
+    i = 0
+    for line in article_html.split('\n'):
+        line = line.strip()
+        if '<h2>' in line:
+            line_content = line.replace('<h2>', '').replace('</h2>', '')
+            line = line.replace('<h2>', f'<h2 id="{i}">')
+            toc.append({'href': i, 'anchor': line_content})
+            i += 1
+        article_with_ids_html += f'{line}\n'
+    article_html = article_with_ids_html
+    sidebar_page_html = sidebar_page(toc) 
+
     html = f'''
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sicurezza e normative dei sistemi ad ozono industriali | Ozonogroup</title>
-    <meta name="description" content="Approfondimento sulla sicurezza dei sistemi ad ozono industriali, coprendo normative, gestione dei rischi, protocolli operativi e manutenzione per garantire conformità e affidabilità.">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.ozonogroup.it/sicurezza/">
+    <!DOCTYPE html>
+    <html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sicurezza sistemi ad ozono industriali: rischi, norme e best practice</title>
+        <meta name="description" content="Scopri come garantire la sicurezza nei sistemi ad ozono industriali. Rischi, protezioni, normative e best practice per operatori e impianti.">
+        <link rel="canonical" href="https://ozonogroup.it/ozono-industriale/sicurezza">
         <link rel="stylesheet" href="/styles.css">
-</head>
-<body>
-    {components.header_default()}
-        <div class="hub hub-layout container-xxl">
-        {sidebar_core_entity()}
-        <main>
-            <article>
-
-<h1>Sicurezza e normative dei sistemi ad ozono industriali</h1>
-
-<section>
-  <p>
-    La sicurezza dei sistemi ad ozono industriali comprende norme, protocolli operativi e
-    procedure di gestione dei rischi necessari per proteggere operatori, impianti e ambiente.
-    Questa pagina esplora normative internazionali e locali, identificazione dei rischi chimici,
-    operativi e ambientali, protocolli di sicurezza e procedure di manutenzione, fornendo una
-    visione completa per garantire conformità e affidabilità dei sistemi.
-  </p>
-  <p>
-    Ogni sezione rappresenta un nodo critico dell’entità sicurezza, contribuendo a definire
-    l’autorità della pagina come riferimento completo per gestione, monitoraggio e controllo
-    dei sistemi ad ozono industriali.
-  </p>
-</section>
-
-<section>
-  <h2>Normative e standard di riferimento</h2>
-  <p>
-    La sicurezza dei sistemi ad ozono industriali è regolata da normative e standard che definiscono
-    requisiti tecnici, procedure operative e limiti di esposizione. La conformità a questi standard
-    garantisce protezione per gli operatori, efficienza del processo e affidabilità dell’impianto.
-  </p>
-  <h3>Normative internazionali</h3>
-  <p>
-    Le normative internazionali forniscono linee guida e standard globali per la progettazione,
-    l’installazione e l’esercizio dei sistemi ad ozono. Tra i principali riferimenti ci sono
-    gli standard ISO, le linee guida OSHA e le normative europee di riferimento per la sicurezza industriale,
-    che stabiliscono criteri di esposizione, procedure operative e controlli necessari.
-  </p>
-  <h3>Normative locali e regionali</h3>
-  <p>
-    Le normative locali e regionali definiscono requisiti specifici applicabili agli impianti industriali
-    sul territorio. In Italia e nell’Unione Europea, ad esempio, regolamenti nazionali integrano
-    gli standard internazionali, indicando procedure di autorizzazione, monitoraggio e verifica
-    per garantire sicurezza, conformità e gestione dei rischi ambientali.
-  </p>
-</section>
-
-<section>
-  <h2>Gestione dei rischi</h2>
-  <p>
-    La gestione dei rischi nei sistemi ad ozono industriali è fondamentale per garantire
-    sicurezza degli operatori, protezione dell’impianto e rispetto delle normative.
-    L’approccio si basa sull’identificazione, valutazione e mitigazione dei principali
-    rischi chimici, operativi e ambientali.
-  </p>
-  <h3>Rischi chimici e ossidativi</h3>
-  <p>
-    L’ozono è un potente ossidante e può rappresentare un rischio chimico se non gestito correttamente.
-    La gestione dei rischi chimici comprende controlli sulla concentrazione di ozono,
-    ventilazione adeguata, sensori di rilevamento e procedure per prevenire esposizioni accidentali.
-  </p>
-  <h3>Rischi operativi</h3>
-  <p>
-    I rischi operativi includono sovraccarichi dei generatori, malfunzionamenti dei sistemi di distribuzione
-    e guasti dei sensori di monitoraggio. L’adozione di procedure operative standardizzate,
-    sistemi di automazione e protocolli di emergenza riduce la probabilità di incidenti e interruzioni
-    del processo industriale.
-  </p>
-  <h3>Rischi ambientali</h3>
-  <p>
-    I rischi ambientali riguardano emissioni accidentali di ozono e possibili impatti su aria e acqua.
-    La mitigazione include progettazione di sistemi chiusi, monitoraggio continuo, allarmi automatici
-    e piani di emergenza per limitare la dispersione e proteggere l’ambiente circostante.
-  </p>
-</section>
-
-<section>
-  <h2>Protocolli di sicurezza operativa</h2>
-  <p>
-    I protocolli di sicurezza operativa garantiscono che i sistemi ad ozono industriali
-    funzionino in modo sicuro, riducendo al minimo rischi per gli operatori e per l’ambiente.
-    Questi protocolli integrano monitoraggio continuo, procedure di emergenza e formazione specifica del personale.
-  </p>
-  <h3>Sensori e sistemi di allarme</h3>
-  <p>
-    Sensori di concentrazione, flusso e pressione rilevano condizioni critiche in tempo reale.
-    I sistemi di allarme collegati ai sensori notificano anomalie e possono attivare spegnimenti
-    automatici per prevenire incidenti e proteggere l’impianto e gli operatori.
-  </p>
-  <h3>Procedure di emergenza</h3>
-  <p>
-    Le procedure di emergenza prevedono azioni immediate in caso di malfunzionamenti o dispersioni
-    di ozono, inclusi spegnimenti automatici dei generatori, evacuazioni controllate e interventi
-    di contenimento. Questi protocolli sono standardizzati per garantire rapidità ed efficacia
-    in ogni scenario operativo.
-  </p>
-  <h3>Formazione e addestramento</h3>
-  <p>
-    La formazione degli operatori è essenziale per l’efficace applicazione dei protocolli di sicurezza.
-    Addestramento regolare, aggiornamenti normativi e simulazioni pratiche permettono al personale
-    di gestire correttamente sistemi, sensori e procedure di emergenza, rafforzando sicurezza e conformità.
-  </p>
-</section>
-
-<section>
-  <h2>Manutenzione e verifiche periodiche</h2>
-  <p>
-    La manutenzione e le verifiche periodiche sono essenziali per assicurare il funzionamento sicuro
-    e conforme dei sistemi ad ozono industriali. Attraverso controlli programmati e documentazione accurata,
-    si riducono rischi operativi e ambientali, garantendo continuità e affidabilità dell’impianto.
-  </p>
-  <h3>Controlli programmati</h3>
-  <p>
-    I controlli programmati comprendono ispezioni periodiche di generatori, sensori, sistemi di distribuzione
-    e reattori. Verifiche regolari dei livelli di ozono, dei flussi e delle pressioni assicurano che il sistema
-    operi entro limiti sicuri, prevenendo guasti e incidenti.
-  </p>
-  <h3>Documentazione e audit</h3>
-  <p>
-    La registrazione delle attività di manutenzione e dei risultati dei controlli è fondamentale
-    per dimostrare conformità normativa e supportare audit periodici. Documenti accurati permettono
-    di tracciare interventi, identificare trend e migliorare continuamente le procedure operative.
-  </p>
-</section>
-
-            </article>
-        </main>
+    </head>
+    <body>
+        {components.header_default()}
+        <div class="hub">
+            {sidebar_core_entity()}
+            <main>
+                <article>
+                    {article_html}
+                </article>
+            </main>
             {sidebar_page_html}
         </div>
         {components.footer_dark()}
-
 </body>
 </html>
     '''
@@ -1319,6 +1175,442 @@ def ozono_industriale_sicurezza_gen():
     html_filepath = f'{html_folderpath}/index.html'
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
         f.write(html)
+
+def ozono_industriale_normativa_gen():
+    url_slug = 'ozono-industriale/normativa'
+    sidebar_page_html = sidebar_page([]) 
+    
+    article_html = f'''
+        <h1>
+Normativa nei sistemi ad ozono industriali
+        </h1>
+        <p>
+La normativa nei sistemi ad ozono industriali stabilisce regole per proteggere operatori, impianti e ambiente. Comprende leggi nazionali, direttive europee e standard ISO, definendo limiti di esposizione, requisiti di sicurezza, certificazioni e procedure di conformità. Applicare correttamente queste norme garantisce sicurezza operativa, riduce rischi legali e ambientali e ottimizza l’efficienza degli impianti ad ozono industriali, creando processi sicuri e conformi alle regolamentazioni più aggiornate.
+        </p>
+
+<section>
+  <h2>Normativa sistemi ad ozono</h2>
+  <p>La normativa sui sistemi ad ozono industriali stabilisce regole per proteggere operatori, impianti e ambiente, garantire sicurezza e conformità legale. Include leggi nazionali, direttive europee e standard internazionali che regolano progettazione, installazione e gestione degli impianti industriali.</p>
+</section>
+
+<section>
+  <h2>Sicurezza lavoratori</h2>
+  <p>Le norme sulla sicurezza definiscono limiti di esposizione all’ozono, obblighi per l’uso di DPI e requisiti di formazione. Direttive OSHA, UE e leggi nazionali regolano la gestione del rischio chimico e proteggono la salute degli operatori.</p>
+</section>
+
+<section>
+  <h2>Normativa ambientale</h2>
+  <p>Le normative ambientali regolano emissioni di ozono, scarico acqua e sostanze chimiche secondo REACH. Prevedono procedure di controllo impatto ambientale e registrazione emissioni per proteggere l’ambiente e ridurre sanzioni.</p>
+</section>
+
+<section>
+  <h2>Normativa tecnica</h2>
+  <p>La normativa tecnica include standard ISO, marcatura CE e requisiti di progettazione e collaudo. Garantisce conformità industriale, sicurezza impianti e affidabilità dei sistemi ad ozono.</p>
+</section>
+
+<section>
+  <h2>Normativa settoriale</h2>
+  <p>Ogni settore ha regole specifiche: alimentare (HACCP, FDA), farmaceutico (GMP), tessile, cartario e zootecnico. Conformarsi assicura sicurezza impianti e operatori e tutela legale.</p>
+</section>
+
+<section>
+  <h2>Conformità impianti</h2>
+  <p>La conformità impianti richiede procedure, registri, audit e validazioni per garantire rispetto delle leggi, standard tecnici e sicurezza operativa, prevenendo incidenti e sanzioni.</p>
+</section>
+
+<section>
+  <h2>Responsabilità legale</h2>
+  <p>Il mancato rispetto delle norme comporta sanzioni amministrative, penali o civili. Datore di lavoro e responsabile sicurezza devono adottare procedure preventive, audit e formazione continua.</p>
+</section>
+
+<section>
+  <h2>Best practice normativa</h2>
+  <p>Le best practice comprendono aggiornamenti normativi continui, procedure interne proattive e benchmarking. Applicarle ottimizza sicurezza, efficienza impianti e conformità legale dei sistemi ad ozono industriali.</p>
+</section>
+    '''
+
+    article_with_ids_html = ''
+    toc = []
+    i = 0
+    for line in article_html.split('\n'):
+        line = line.strip()
+        if '<h2>' in line:
+            line_content = line.replace('<h2>', '').replace('</h2>', '')
+            line = line.replace('<h2>', f'<h2 id="{i}">')
+            toc.append({'href': i, 'anchor': line_content})
+            i += 1
+        article_with_ids_html += f'{line}\n'
+    article_html = article_with_ids_html
+    sidebar_page_html = sidebar_page(toc) 
+
+    html = f'''
+    <!DOCTYPE html>
+    <html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Normativa sistemi ad ozono industriali: leggi, standard e sicurezza</title>
+        <meta name="description" content="Scopri la normativa per sistemi ad ozono industriali: leggi, standard ISO, sicurezza operatori e ambiente, conformità impianti e best practice aggiornate.">
+        <link rel="canonical" href="https://ozonogroup.it/ozono-industriale/normativa">
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        {components.header_default()}
+        <div class="hub">
+            {sidebar_core_entity()}
+            <main>
+                <article>
+                    {article_html}
+                </article>
+            </main>
+            {sidebar_page_html}
+        </div>
+        {components.footer_dark()}
+</body>
+</html>
+    '''
+    html_folderpath = f'{g.WEBSITE_FOLDERPATH}/{url_slug}'
+    os.makedirs(html_folderpath, exist_ok=True)
+    html_filepath = f'{html_folderpath}/index.html'
+    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
+        f.write(html)
+
+def ozono_industriale_progettazione_gen():
+    url_slug = 'ozono-industriale/progettazione'
+    sidebar_page_html = sidebar_page([]) 
+    
+    article_html = f'''
+        <h1>
+Progettazione Sistemi ad Ozono Industriali
+        </h1>
+        <p>
+La progettazione dei sistemi ad ozono industriali richiede un approccio preciso e integrato, considerando dimensionamento impianti, scelta della tecnologia, componenti, layout e automazione. Ogni decisione influisce sulla sicurezza, sull’efficienza energetica, sulle prestazioni e sul rispetto delle normative HACCP, CE e ISO. Un impianto ben progettato garantisce rimozione efficace di contaminanti, continuità operativa e sostenibilità, offrendo soluzioni affidabili per industrie alimentari, farmaceutiche, tessili e altre applicazioni industriali.
+        </p>
+
+<section>
+  <h2>Dimensionamento impianti</h2>
+  <p>Il dimensionamento degli impianti ad ozono industriali si basa su portata dell’acqua o dell’aria, concentrazione di ozono richiesta e tempo di contatto necessario per ottenere l’ossidazione completa di batteri, virus e contaminanti organici. Si calcolano anche parametri come ORP e fabbisogno di ozono in grammi/ora, considerando la scala dell’impianto (piccolo, medio, grande). Un corretto dimensionamento garantisce efficienza operativa, riduce i costi energetici e massimizza la prestazione dell’impianto in ogni settore industriale, dall’alimentare al tessile.</p>
+</section>
+
+<section>
+  <h2>Tecnologia generatori</h2>
+  <p>Gli impianti possono utilizzare generatori a scarica corona, UV o elettrolitici, ciascuno con specifiche performance, durata e consumo energetico. La scelta dipende dalla portata richiesta, tipo di fluido trattato e settore industriale. La tecnologia influisce sulla stabilità della concentrazione di ozono, sulla facilità di integrazione con il sistema esistente e sulla manutenzione prevista. L’alimentazione può essere ad aria secca o a ossigeno concentrato, determinando l’efficienza complessiva del generatore.</p>
+</section>
+
+<section>
+  <h2>Componenti impianto</h2>
+  <p>Un impianto ad ozono include reattori di contatto, diffusori, iniettori Venturi, sensori di concentrazione e sistemi di controllo (PLC/HMI). I materiali devono essere resistenti all’ozono, come acciaio inox o PTFE, per garantire lunga durata e sicurezza operativa. Alcuni impianti prevedono anche distruttori di ozono residuo, valvole di sicurezza e allarmi. La scelta e integrazione dei componenti determina la continuità operativa e l’affidabilità complessiva del sistema.</p>
+</section>
+
+<section>
+  <h2>Layout e integrazione</h2>
+  <p>Il layout dell’impianto deve ottimizzare il posizionamento di generatori, reattori e tubazioni, facilitare l’accesso per manutenzione e rispettare la sicurezza degli operatori. È fondamentale prevedere routing corretto dei flussi, integrazione con impianti esistenti e modularità per eventuali ampliamenti futuri. Un buon layout riduce rischi operativi, migliora l’efficienza energetica e permette un monitoraggio efficace dei parametri di processo.</p>
+</section>
+
+<section>
+  <h2>Automazione controllo</h2>
+  <p>La gestione automatizzata dell’impianto utilizza PLC e HMI per controllare dosaggio, portata e concentrazione di ozono. I sistemi monitorano continuamente parametri critici, generano allarmi in caso di anomalie e registrano dati per la compliance normativa. L’automazione consente una regolazione precisa e sicura del processo, riduce errori operativi e migliora la performance complessiva del sistema industriale.</p>
+</section>
+
+<section>
+  <h2>Normativa sicurezza</h2>
+  <p>La progettazione deve rispettare limiti di esposizione OSHA/EU, REACH, norme HACCP per alimentare, certificazioni CE e ISO e linee guida ambientali. Il progetto include procedure di emergenza, ventilazione e sistemi di sicurezza attiva. Il rispetto delle normative garantisce sicurezza operatori, conformità legale e riduzione dei rischi chimici e biologici associati all’uso dell’ozono industriale.</p>
+</section>
+
+<section>
+  <h2>Costi sostenibilità</h2>
+  <p>I costi di progettazione comprendono investimento iniziale, manutenzione, consumi energetici e materiali resistenti all’ozono. La scelta tecnologica e dei componenti influisce su efficienza operativa e ROI. L’impatto ambientale è ridotto grazie alla diminuzione di prodotti chimici tradizionali, rendendo l’impianto più sostenibile e adatto a settori industriali con requisiti ambientali stringenti.</p>
+</section>
+
+<section>
+  <h2>Prestazioni KPI</h2>
+  <p>Le prestazioni progettuali includono la rimozione di contaminanti organici, batteri e virus, la riduzione di COD/BOD e la continuità operativa dell’impianto. Gli indicatori KPI monitorano l’efficienza energetica, il dosaggio corretto di ozono e il rispetto degli standard industriali. Questi dati aiutano a ottimizzare il dimensionamento, la tecnologia e i componenti, garantendo un impianto affidabile e conforme alle specifiche del settore.</p>
+</section>
+
+<section>
+  <h2>Vincoli progettuali</h2>
+  <p>I principali vincoli nella progettazione includono compatibilità dei materiali con l’ozono, sensibilità ai parametri ambientali (temperatura, umidità), complessità di integrazione in impianti esistenti e spazio disponibile. Costi elevati, complessità operativa e necessità di operatori qualificati sono fattori aggiuntivi da considerare. La gestione di questi vincoli assicura un progetto sicuro, efficiente e sostenibile.</p>
+</section>
+    '''
+
+    article_with_ids_html = ''
+    toc = []
+    i = 0
+    for line in article_html.split('\n'):
+        line = line.strip()
+        if '<h2>' in line:
+            line_content = line.replace('<h2>', '').replace('</h2>', '')
+            line = line.replace('<h2>', f'<h2 id="{i}">')
+            toc.append({'href': i, 'anchor': line_content})
+            i += 1
+        article_with_ids_html += f'{line}\n'
+    article_html = article_with_ids_html
+    sidebar_page_html = sidebar_page(toc) 
+
+    html = f'''
+    <!DOCTYPE html>
+    <html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Progettazione Sistemi ad Ozono Industriali: Dimensionamento, Tecnologia e Prestazioni</title>
+        <meta name="description" content="Scopri come progettare sistemi ad ozono industriali ottimali: dimensionamento, scelta della tecnologia, componenti, layout, automazione, sicurezza, costi e prestazioni KPI per applicazioni industriali sicure ed efficienti.">
+        <link rel="canonical" href="https://ozonogroup.it/ozono-industriale/progettazione">
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        {components.header_default()}
+        <div class="hub">
+            {sidebar_core_entity()}
+            <main>
+                <article>
+                    {article_html}
+                </article>
+            </main>
+            {sidebar_page_html}
+        </div>
+        {components.footer_dark()}
+</body>
+</html>
+    '''
+    html_folderpath = f'{g.WEBSITE_FOLDERPATH}/{url_slug}'
+    os.makedirs(html_folderpath, exist_ok=True)
+    html_filepath = f'{html_folderpath}/index.html'
+    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
+        f.write(html)
+
+def ozono_industriale_gestione_gen():
+    url_slug = 'ozono-industriale/gestione'
+    sidebar_page_html = sidebar_page([]) 
+    
+    article_html = f'''
+        <h1>
+Gestione dei Sistemi ad Ozono Industriali
+        </h1>
+        <p>
+La gestione dei sistemi ad ozono industriali comprende tutte le attività necessarie per garantire il funzionamento efficiente e sicuro dell’impianto. Include operatività quotidiana, monitoraggio dei parametri come concentrazione di ozono, portata e temperatura, manutenzione ordinaria e straordinaria, sicurezza operatori e ottimizzazione delle prestazioni. Attraverso registrazione dati, conformità normativa e formazione degli operatori, è possibile ridurre i guasti, migliorare l’efficienza e integrare l’impianto con altri sistemi industriali. Questa guida offre un quadro completo per gestire efficacemente ogni fase operativa del sistema ad ozono.
+        </p>
+
+<section>
+  <h2>Gestione operativa</h2>
+  <p>La gestione operativa dei sistemi ad ozono industriali include tutte le attività quotidiane necessarie per garantire il corretto funzionamento dell’impianto. Comprende avviamento e spegnimento, controllo dei flussi di ozono, regolazione dei dosaggi in base alle portate e concentrazioni richieste, e supervisione delle procedure automatiche e manuali. L’operatore deve seguire check-list operative, verificare la funzionalità dei sensori e assicurare che il sistema lavori in sicurezza, rispettando i parametri ottimali per ogni applicazione industriale.</p>
+</section>
+
+<section>
+  <h2>Monitoraggio impianto</h2>
+  <p>Il monitoraggio dell’impianto consiste nel controllo continuo dei principali parametri operativi: concentrazione di ozono, portata, pressione, temperatura e umidità. I sistemi moderni utilizzano sensori e software di supervisione per registrare i dati in tempo reale, generare report e calcolare indicatori di performance (KPI), come COD, BOD e carica batterica. Questo consente interventi immediati in caso di anomalie e ottimizza la gestione complessiva dell’impianto.</p>
+</section>
+
+<section>
+  <h2>Manutenzione impianto</h2>
+  <p>La manutenzione dei sistemi ad ozono industriali comprende attività ordinarie e straordinarie. La manutenzione ordinaria include pulizia dei diffusori, sostituzione filtri e controllo sensori, mentre quella straordinaria riguarda riparazioni, sostituzione di generatori e componenti critici. È fondamentale implementare un piano di manutenzione preventiva, registrando ogni intervento per ottimizzare la durata dei componenti e ridurre il rischio di guasti.</p>
+</section>
+
+<section>
+  <h2>Sicurezza impianto</h2>
+  <p>La sicurezza operativa prevede misure per proteggere operatori e ambiente. Comprende uso di DPI, sensori di rilevamento ozono, sistemi di allarme e distruzione dell’ozono residuo. Gli operatori seguono procedure di emergenza e formazione continua, mentre il sistema automatico può bloccare il generatore in caso di superamento dei limiti. La sicurezza è essenziale per rispettare normative ambientali e proteggere le risorse dell’impianto.</p>
+</section>
+
+<section>
+  <h2>Ottimizzazione prestazioni</h2>
+  <p>L’ottimizzazione delle prestazioni riguarda la massimizzazione dell’efficienza operativa e la riduzione degli sprechi. Include regolazione della concentrazione di ozono, tempi di contatto, monitoraggio KPI e consumo energetico. L’analisi dei dati storici e in tempo reale consente interventi mirati per migliorare la produttività e ridurre i costi operativi, mantenendo elevata l’efficacia disinfettante e la sicurezza dell’impianto.</p>
+</section>
+
+<section>
+  <h2>Conformità normativa</h2>
+  <p>La conformità normativa implica registrare e archiviare tutti i dati operativi e di manutenzione, generare report per audit interni ed esterni e garantire la tracciabilità dei consumi. Gli impianti devono rispettare normative ambientali, sicurezza sul lavoro e certificazioni CE/ISO, oltre a linee guida specifiche per il settore industriale. La documentazione accurata assicura legalità e trasparenza nella gestione operativa.</p>
+</section>
+
+<section>
+  <h2>Risoluzione guasti</h2>
+  <p>La risoluzione dei guasti include procedure di troubleshooting per identificare anomalie in generatori, sensori, diffusori o sistemi di controllo. Gli operatori seguono protocolli per diagnosi rapide, interventi correttivi e riduzione del downtime. Il monitoraggio dei KPI e la registrazione degli eventi aiutano a prevenire guasti ricorrenti e garantire continuità operativa.</p>
+</section>
+
+<section>
+  <h2>Formazione operatori</h2>
+  <p>La formazione degli operatori comprende addestramento su procedure operative, sicurezza, manutenzione di base e interpretazione dei dati di monitoraggio e KPI. Include aggiornamenti periodici, simulazioni di guasti e procedure d’emergenza, garantendo competenza tecnica e sicurezza. Manuali e linee guida operative supportano l’apprendimento continuo e la corretta gestione dell’impianto.</p>
+</section>
+
+<section>
+  <h2>Integrazione impianti</h2>
+  <p>L’integrazione con altri impianti riguarda il coordinamento tra sistemi ad ozono e impianti di trattamento acqua, aria o automazione industriale (PLC/HMI). Permette la condivisione di dati, il controllo sincronizzato dei flussi e l’ottimizzazione dei processi complessivi. L’integrazione riduce errori operativi, migliora efficienza e assicura compatibilità con i sistemi già esistenti.</p>
+</section>
+    '''
+
+    article_with_ids_html = ''
+    toc = []
+    i = 0
+    for line in article_html.split('\n'):
+        line = line.strip()
+        if '<h2>' in line:
+            line_content = line.replace('<h2>', '').replace('</h2>', '')
+            line = line.replace('<h2>', f'<h2 id="{i}">')
+            toc.append({'href': i, 'anchor': line_content})
+            i += 1
+        article_with_ids_html += f'{line}\n'
+    article_html = article_with_ids_html
+    sidebar_page_html = sidebar_page(toc) 
+
+    html = f'''
+    <!DOCTYPE html>
+    <html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gestione Sistemi ad Ozono Industriali: Procedure e Monitoraggio</title>
+        <meta name="description" content="Scopri come gestire sistemi ad ozono industriali: operatività, monitoraggio, manutenzione, sicurezza e ottimizzazione delle prestazioni.">
+        <link rel="canonical" href="https://ozonogroup.it/ozono-industriale/gestione">
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        {components.header_default()}
+        <div class="hub">
+            {sidebar_core_entity()}
+            <main>
+                <article>
+                    {article_html}
+                </article>
+            </main>
+            {sidebar_page_html}
+        </div>
+        {components.footer_dark()}
+</body>
+</html>
+    '''
+    html_folderpath = f'{g.WEBSITE_FOLDERPATH}/{url_slug}'
+    os.makedirs(html_folderpath, exist_ok=True)
+    html_filepath = f'{html_folderpath}/index.html'
+    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
+        f.write(html)
+
+def ozono_industriale_prestazioni_gen():
+    url_slug = 'ozono-industriale/prestazioni'
+    sidebar_page_html = sidebar_page([]) 
+    
+    article_html = f'''
+        <h1>
+Prestazioni dei sistemi ad ozono industriali
+        </h1>
+        <p>
+I sistemi ad ozono industriali offrono prestazioni elevate in termini di disinfezione, ossidazione e trattamento di acqua e aria. Le loro performance dipendono da parametri chiave come concentrazione di ozono, portata, tempo di contatto, temperatura e affidabilità dei componenti. Questa guida analizza consumi energetici, indicatori di performance, uniformità del trattamento, modularità e limiti operativi, fornendo una panoramica completa per applicazioni industriali alimentari, chimiche e farmaceutiche.
+        </p>
+
+<section>
+  <h2>Efficienza disinfezione</h2>
+  <p>I sistemi ad ozono industriali garantiscono un’elevata efficienza di disinfezione, eliminando batteri, virus, muffe e spore presenti in acqua e aria. Il risultato dipende dalla concentrazione di ozono, dal tempo di contatto e dalla temperatura del fluido trattato. Settori come alimentare, farmaceutico e tessile traggono benefici diretti in termini di sicurezza igienica e riduzione dell’uso di prodotti chimici tradizionali. Sensori e monitoraggio continuo assicurano prestazioni costanti e conformità alle normative.</p>
+</section>
+
+<section>
+  <h2>Efficienza ossidativa</h2>
+  <p>L’ozono industriale è un potente ossidante capace di degradare composti organici e inorganici. La sua efficacia varia con pH, temperatura, durezza dell’acqua e composizione chimica del fluido. Il sistema assicura ossidazione completa di contaminanti, migliorando la qualità di acqua e aria trattate. In applicazioni industriali, questo riduce COD, BOD e odori, offrendo un trattamento più sostenibile e sicuro rispetto ai metodi chimici tradizionali.</p>
+</section>
+
+<section>
+  <h2>Consumo energetico</h2>
+  <p>Il consumo energetico dei sistemi ad ozono industriali dipende dal tipo di generatore (scarica corona, UV, elettrolitico), dalla portata del fluido e dalla concentrazione richiesta. L’ottimizzazione dell’energia è fondamentale per ridurre i costi operativi. Sistemi moderni permettono di monitorare il kWh per grammo di ozono generato, assicurando efficienza e sostenibilità.</p>
+</section>
+
+<section>
+  <h2>Portata trattamento</h2>
+  <p>La portata indica il volume di acqua o aria che il sistema può trattare per unità di tempo. È strettamente correlata alla concentrazione di ozono e al tempo di contatto necessario. Sistemi modulabili consentono di adattare la portata a diversi impianti industriali senza compromettere la qualità del trattamento. La flessibilità è cruciale per applicazioni alimentari, chimiche e farmaceutiche.</p>
+</section>
+
+<section>
+  <h2>Affidabilità componenti</h2>
+  <p>L’affidabilità dei componenti è fondamentale per garantire continuità operativa. I generatori, compressori, diffusori e sensori sono progettati per resistere all’ozono e ridurre il rischio di guasti. La manutenzione regolare e la sostituzione dei consumabili prolungano la durata dell’impianto e assicurano prestazioni costanti, riducendo fermi macchina e costi imprevisti.</p>
+</section>
+
+<section>
+  <h2>Modularità e scalabilità</h2>
+  <p>I sistemi ad ozono industriali offrono modularità e scalabilità, permettendo di aggiungere unità per aumentare portata o concentrazione. Questa flessibilità è utile per adattarsi a nuovi requisiti produttivi o a impianti in espansione. La scalabilità mantiene l’efficienza energetica e la qualità di trattamento senza compromessi, assicurando prestazioni uniformi anche su grandi volumi.</p>
+</section>
+
+<section>
+  <h2>Monitoraggio e controllo</h2>
+  <p>Il monitoraggio e controllo avviene tramite sensori di ozono, PLC e HMI, consentendo regolazioni automatiche di concentrazione, portata e tempo di contatto. I dati registrati aiutano a mantenere performance costanti, identificare eventuali anomalie e garantire conformità normativa. Allarmi e sistemi di sicurezza proteggono operatori e ambiente.</p>
+</section>
+
+<section>
+  <h2>Indicatori performance</h2>
+  <p>Gli indicatori di performance (KPI) valutano l’efficienza del sistema: riduzione COD/BOD, carica batterica, concentrazione residua di ozono, tasso di ossidazione. Questi dati permettono di confrontare diverse configurazioni e tecnologie, ottimizzare i processi e assicurare prestazioni affidabili e conformi alle normative industriali.</p>
+</section>
+
+<section>
+  <h2>Confronto tecnologie</h2>
+  <p>Le prestazioni variano tra generatori a scarica corona, UV ed elettrolitici. La scarica corona offre alta produzione, UV bassa manutenzione e consumo ridotto, l’elettrolitico permette produzione diretta da acqua. Il confronto si basa su efficienza, stabilità, portata, tempo di contatto e costi operativi, aiutando a scegliere la tecnologia più adatta al settore industriale.</p>
+</section>
+
+<section>
+  <h2>Parametri ambientali</h2>
+  <p>Le prestazioni dei sistemi ad ozono sono influenzate da temperatura, umidità, pressione e composizione chimica del fluido. Condizioni estreme possono ridurre l’efficienza di ossidazione o disinfezione. Monitorare e regolare questi parametri è essenziale per mantenere risultati costanti, soprattutto in applicazioni industriali sensibili come alimentare e farmaceutico.</p>
+</section>
+
+<section>
+  <h2>Uniformità trattamento</h2>
+  <p>L’uniformità del trattamento assicura che l’ozono sia distribuito equamente in acqua o aria, evitando zone a bassa concentrazione. La progettazione di diffusori, venturi e reattori garantisce un contatto completo tra ozono e fluido, massimizzando l’efficienza disinfettante e ossidativa in tutti i punti del sistema.</p>
+</section>
+
+<section>
+  <h2>Ottimizzazione costi</h2>
+  <p>L’ottimizzazione dei costi operativi considera consumo energetico, manutenzione, durata componenti e fabbisogno ozono. Sistemi efficienti riducono il costo per unità di trattamento, migliorando il ROI dell’impianto e rendendo sostenibili le applicazioni in settori ad alto volume come alimentare, chimico e zootecnico.</p>
+</section>
+
+<section>
+  <h2>Limiti prestazioni</h2>
+  <p>I limiti dei sistemi includono massima concentrazione raggiungibile, sensibilità ai parametri ambientali, degrado materiali e vincoli normativi. La progettazione e gestione adeguata minimizza questi limiti, garantendo risultati affidabili. Alcuni settori industriali possono richiedere adattamenti specifici per rispettare standard di sicurezza e qualità.</p>
+</section>
+    '''
+
+    article_with_ids_html = ''
+    toc = []
+    i = 0
+    for line in article_html.split('\n'):
+        line = line.strip()
+        if '<h2>' in line:
+            line_content = line.replace('<h2>', '').replace('</h2>', '')
+            line = line.replace('<h2>', f'<h2 id="{i}">')
+            toc.append({'href': i, 'anchor': line_content})
+            i += 1
+        article_with_ids_html += f'{line}\n'
+    article_html = article_with_ids_html
+    sidebar_page_html = sidebar_page(toc) 
+
+    html = f'''
+    <!DOCTYPE html>
+    <html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prestazioni sistemi ad ozono industriali: efficienza, consumo e affidabilità</title>
+        <meta name="description" content="Scopri le prestazioni dei sistemi ad ozono industriali: efficienza di disinfezione, ossidazione, consumo energetico, portata, affidabilità e monitoraggio. Analisi completa per applicazioni industriali alimentari, chimiche e farmaceutiche.">
+        <link rel="canonical" href="https://ozonogroup.it/ozono-industriale/prestazioni">
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        {components.header_default()}
+        <div class="hub">
+            {sidebar_core_entity()}
+            <main>
+                <article>
+                    {article_html}
+                </article>
+            </main>
+            {sidebar_page_html}
+        </div>
+        {components.footer_dark()}
+</body>
+</html>
+    '''
+    html_folderpath = f'{g.WEBSITE_FOLDERPATH}/{url_slug}'
+    os.makedirs(html_folderpath, exist_ok=True)
+    html_filepath = f'{html_folderpath}/index.html'
+    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
+        f.write(html)
+
 
 def ozono_industriale_performance_gen():
     url_slug = 'ozono-industriale/performance'
@@ -1974,7 +2266,7 @@ I sistemi ad ozono industriali generano e distribuiscono ozono per trattare acqu
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Funzionamento Sistemi ad Ozono Industriali</title>
-        <meta name="description" content="Acopri come funzionano i sistemi ad ozono industriali: generazione, distribuzione, dosaggio, efficacia e sicurezza per acqua, aria e superfici industriali.">
+        <meta name="description" content="Scopri come funzionano i sistemi ad ozono industriali: generazione, distribuzione, dosaggio, efficacia e sicurezza per acqua, aria e superfici industriali.">
         <link rel="canonical" href="https://ozonogroup.it/ozono-industriale/funzionamento">
         <link rel="stylesheet" href="/styles.css">
     </head>
@@ -2005,12 +2297,17 @@ def gen():
     ozono_industriale_struttura_gen()
     ozono_industriale_tecnologia_gen()
     ozono_industriale_funzionamento_gen()
-
     ozono_industriale_applicazioni_gen()
+    ozono_industriale_benefici_gen()
     ozono_industriale_sicurezza_gen()
-    ozono_industriale_performance_gen()
-    ozono_industriale_scienza_gen()
-    ozono_industriale_ricerca_gen()
+    ozono_industriale_normativa_gen()
+    ozono_industriale_progettazione_gen()
+    ozono_industriale_gestione_gen()
+    ozono_industriale_prestazioni_gen()
+
+    # ozono_industriale_performance_gen()
+    # ozono_industriale_scienza_gen()
+    # ozono_industriale_ricerca_gen()
 
 '''
 | Tipo        | URL ottimizzato                    | Funzione                          |
