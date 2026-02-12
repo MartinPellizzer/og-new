@@ -849,9 +849,7 @@ def ozono_industriale_applicazioni_gen():
     
     article_html = f'''
         <h1>
-            Applicazioni dei Sistemi ad Ozono Industriali
-        </h1>
-        <p>
+            Applicazioni dei Sistemi ad Ozono Industriali </h1> <p>
 I sistemi ad ozono industriali trovano applicazione in numerosi settori produttivi, tra cui industria alimentare, farmaceutica, chimica e trattamento acque industriali. Grazie al forte potere ossidante dell’ozono, questi impianti vengono impiegati per disinfezione microbiologica, ossidazione di contaminanti organici, deodorizzazione e riduzione di COD e BOD. Possono trattare acqua potabile, reflui industriali, aria di processo e ambienti produttivi, integrandosi in linea o come retrofit su impianti esistenti. La corretta applicazione richiede valutazione di parametri operativi, normative settoriali e obiettivi di trattamento, garantendo sicurezza, conformità ambientale e miglioramento delle performance industriali.
         </p>
 
@@ -898,11 +896,15 @@ I sistemi ad ozono industriali trovano applicazione in numerosi settori produtti
 <section>
   <h2>Processi nel Settore Cartario</h2>
   <p>Nel settore cartario, l’ozono viene utilizzato per lo sbiancamento della pasta di cellulosa e la riduzione dell’uso di cloro. Favorisce l’ossidazione di composti organici residui e migliora la qualità del refluo industriale. L’integrazione con altri trattamenti aumenta l’efficienza ambientale.</p>
+
+<p>Scopri in dettaglio come l’ozono viene applicato nel <a href="/ozono-industriale/applicazioni/cartario">settore cartario</a> per sbiancamento pasta e trattamento dei reflui.</p>
 </section>
 
 <section>
   <h2>Processi nel Settore Chimico</h2>
   <p>Nel settore chimico, l’ozono è applicato per l’ossidazione di intermedi, degradazione di sottoprodotti e trattamento delle emissioni contenenti VOC. Contribuisce alla neutralizzazione degli odori e alla riduzione dell’impatto ambientale degli impianti produttivi.</p>
+
+<p>Approfondisci l’impiego dell’ozono nel settore chimico leggendo <a href="/ozono-industriale/applicazioni/chimico">le applicazioni chimiche avanzate</a>.</p>
 </section>
 
 <section>
@@ -2461,6 +2463,271 @@ L’ozono industriale trova applicazione nell’industria tessile per il trattam
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
         f.write(html)
 
+def ozono_industriale_applicazioni_cartario_gen():
+    url_slug = 'ozono-industriale/applicazioni/cartario'
+    sidebar_page_html = sidebar_page([]) 
+    
+    article_html = f'''
+        <h1>
+Applicazioni dei Sistemi ad Ozono nel Settore Cartario
+        </h1>
+        <p>
+Nel settore cartario, i sistemi ad ozono industriali vengono impiegati per sbiancamento della pasta di cellulosa, trattamento di acqua di processo e reflui industriali, deodorizzazione e riduzione della carica microbica. L’ozonizzazione migliora la qualità della carta finita, riduce l’uso di prodotti chimici tradizionali e ottimizza l’efficienza dei processi industriali. Il corretto dimensionamento degli impianti e il monitoraggio dei parametri operativi garantiscono ossidazione efficace dei contaminanti e sostenibilità ambientale.
+        </p>
+
+<p>Per approfondire tutte le altre applicazioni industriali puoi consultare <a href="/ozono-industriale/applicazioni">applicazioni dei sistemi ad ozono industriali</a>.</p>
+
+<section>
+  <h2>Tipi di Produzione</h2>
+  <p>Le tipologie di produzione cartaria comprendono pasta di cellulosa chimica e kraft, carta da stampa, carta per imballaggi e carta speciale. Ogni processo richiede acqua di lavaggio, sbiancamento e macchinari dedicati, con flussi di reflui controllati. L’ozonizzazione viene applicata in linea o in batch in base al tipo di carta e alla matrice di processo, garantendo ossidazione efficiente dei residui organici e riduzione della colorazione dei reflui.</p>
+</section>
+
+<section>
+  <h2>Obiettivi del Trattamento</h2>
+  <p>Gli obiettivi del trattamento con ozono nel settore cartario includono sbiancamento della pasta, riduzione dell’uso di cloro e altri agenti chimici, deodorizzazione dei reflui, ossidazione dei composti organici residui, riduzione dei coloranti e controllo della carica microbica nei sistemi idrici e tubazioni. Queste applicazioni migliorano la qualità della carta finita e riducono l’impatto ambientale complessivo dell’impianto.</p>
+</section>
+
+<section>
+  <h2>Contaminanti Trattati</h2>
+  <p>I contaminanti trattati comprendono lignina residua, composti fenolici, coloranti industriali, elevati valori di COD e BOD, odori organici persistenti, spore, batteri e biofilm presenti nei circuiti di acqua e nei sistemi di trattamento. L’ozono agisce ossidando queste sostanze, facilitando la depurazione dei reflui e riducendo i rischi microbiologici.</p>
+</section>
+
+<section>
+  <h2>Acqua di Processo e Reflui</h2>
+  <p>L’acqua di processo e i reflui cartari includono acqua di lavaggio impianti, acqua di sbiancamento e reflui industriali. Il trattamento con ozono può essere effettuato pre-biologicamente o post-biologicamente, migliorando la qualità chimico-fisica e riducendo il carico organico. La gestione ottimale dei flussi idrici e la regolazione dei parametri operativi consentono ossidazione efficace e minore produzione di fanghi residui.</p>
+</section>
+
+<section>
+  <h2>Parametri Operativi</h2>
+  <p>I parametri operativi fondamentali comprendono concentrazione di ozono, tempo di contatto, ORP target, portata, pH, temperatura, dose cumulativa e efficienza di trasferimento massa. La corretta regolazione di questi valori assicura ossidazione completa dei contaminanti e protezione dei materiali dell’impianto, garantendo risultati ripetibili e conformità agli standard industriali.</p>
+</section>
+
+<section>
+  <h2>Tecnologie di Applicazione</h2>
+  <p>Le tecnologie di applicazione includono reattori a bolle fini, colonne di contatto, sistemi in linea per pasta e carta, diffusori porosi e sistemi batch. L’integrazione pre-biologica e post-biologica permette di massimizzare l’efficienza di ossidazione e di ridurre l’impatto dei reflui sull’ambiente, ottimizzando consumi di ozono e tempi di trattamento.</p>
+</section>
+
+<section>
+  <h2>Integrazione Tecnologica</h2>
+  <p>L’integrazione tecnologica combina ozono con sistemi UV, carbone attivo, membrane, filtrazione a sabbia e processi biologici. Queste soluzioni combinate aumentano l’efficienza nella rimozione di coloranti, composti organici e contaminanti microbiologici, permettendo un approccio multi-barriera che migliora la qualità dell’acqua e dei reflui industriali.</p>
+</section>
+
+<section>
+  <h2>Sottoprodotti e Rischi</h2>
+  <p>Durante l’ossidazione possono formarsi sottoprodotti come bromati, aldeidi, chetoni e radicali ossidanti. La presenza di bromuri o cloruri può favorire reazioni indesiderate e interferenze organiche. La corretta gestione dei parametri operativi e il monitoraggio dei sottoprodotti regolamentati riducono i rischi per l’ambiente e la sicurezza degli operatori.</p>
+</section>
+
+<section>
+  <h2>Settori Applicativi</h2>
+  <p>I settori applicativi principali includono cartiere integrate, cartiere per packaging e produzione di carta speciale. I benefici comprendono riduzione dell’uso di agenti chimici, miglioramento della qualità della carta, diminuzione dei reflui e minor impatto ambientale. L’ozonizzazione consente di ottimizzare i processi produttivi mantenendo standard qualitativi elevati.</p>
+</section>
+
+<section>
+  <h2>Normative e Sicurezza</h2>
+  <p>Le normative riguardano limiti sui bromati, standard sulle emissioni dei reflui, linee guida per la sicurezza degli operatori, regolamenti sull’acqua industriale e gestione del biofilm. Il rispetto di queste norme garantisce conformità legale, sicurezza dei lavoratori e protezione ambientale, mantenendo l’efficienza dei trattamenti con ozono.</p>
+</section>
+
+<section>
+  <h2>Dimensionamento Impianti</h2>
+  <p>Il dimensionamento degli impianti dipende dalla portata dell’acqua o dei reflui, dal carico organico iniziale, dal tipo di contaminante e dal tempo di contatto necessario. Volume del reattore e produzione di ozono devono essere calibrati per garantire ossidazione completa, efficienza energetica e continuità operativa in linea con i flussi di processo cartario.</p>
+</section>
+
+<section>
+  <h2>Monitoraggio e Controllo</h2>
+  <p>Il monitoraggio comprende sensori ORP, analizzatori di ozono disciolto, sistemi di controllo PID e SCADA, oltre a strumenti per la sicurezza ambientale. Questi sistemi assicurano che i parametri operativi rimangano entro valori ottimali, prevenendo inefficienze e garantendo conformità agli standard di qualità e sicurezza.</p>
+</section>
+
+<section>
+  <h2>Casi Applicativi</h2>
+  <p>I casi applicativi mostrano l’efficacia dell’ozono nello sbiancamento della pasta di cellulosa senza cloro, nel trattamento dei reflui per riduzione di COD/BOD, nell’eliminazione di odori da vasche di lavaggio e nel controllo di biofilm. I risultati includono miglioramento della qualità della carta finita, riduzione dell’uso di prodotti chimici e maggiore sostenibilità dei processi.</p>
+</section>
+    '''
+
+    article_with_ids_html = ''
+    toc = []
+    i = 0
+    for line in article_html.split('\n'):
+        line = line.strip()
+        if '<h2>' in line:
+            line_content = line.replace('<h2>', '').replace('</h2>', '')
+            line = line.replace('<h2>', f'<h2 id="{i}">')
+            toc.append({'href': i, 'anchor': line_content})
+            i += 1
+        article_with_ids_html += f'{line}\n'
+    article_html = article_with_ids_html
+    sidebar_page_html = sidebar_page(toc) 
+
+    meta_title = 'Applicazioni Ozono nel Settore Cartario: Trattamento Acque, Reflui e Sbiancamento'
+    meta_description = 'Scopri come l’ozono ottimizza il settore cartario: sbiancamento pasta, trattamento acqua e reflui, controllo biofilm, riduzione chimici e miglioramento qualità carta in impianti industriali.'
+    meta_canonical = 'https://ozonogroup.it/{url_slug}'
+    html = f'''
+    <!DOCTYPE html>
+    <html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{meta_title}</title>
+        <meta name="description" content="{meta_description}">
+        <link rel="canonical" href="{meta_canonical}">
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        {components.header_default()}
+        <div class="hub">
+            {sidebar_core_entity()}
+            <main>
+                <article>
+                    {article_html}
+                </article>
+            </main>
+            {sidebar_page_html}
+        </div>
+        {components.footer_dark()}
+</body>
+</html>
+    '''
+    html_folderpath = f'{g.WEBSITE_FOLDERPATH}/{url_slug}'
+    os.makedirs(html_folderpath, exist_ok=True)
+    html_filepath = f'{html_folderpath}/index.html'
+    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
+        f.write(html)
+
+def ozono_industriale_applicazioni_chimico_gen():
+    url_slug = 'ozono-industriale/applicazioni/chimico'
+    sidebar_page_html = sidebar_page([]) 
+    
+    article_html = f'''
+        <h1>
+Applicazioni dei Sistemi ad Ozono Industriali nel Settore Chimico
+        </h1>
+        <p>
+Nel settore chimico, i sistemi ad ozono industriali vengono impiegati per ossidare intermedi chimici, degradare sottoprodotti, trattare emissioni e neutralizzare odori industriali. L’ozonizzazione consente anche pretrattamenti di reagenti, pulizia impianti e ossidazione selettiva, garantendo maggiore efficienza dei processi e riduzione dell’impatto ambientale. La tecnologia offre vantaggi significativi in termini di riduzione di contaminanti, gestione sicura dei sottoprodotti, controllo dei parametri operativi e conformità normativa, rendendola una soluzione strategica nei processi chimici industriali avanzati.
+        </p>
+
+<p>Per comprendere tutte le altre applicazioni dei sistemi ad ozono industriali consultare <a href="/ozono-industriale/applicazioni">la guida completa sulle applicazioni industriali dell'ozono</a>.</p>
+
+<section>
+  <h2>Tipologie di Processi</h2>
+  <p>I processi chimici industriali trattati con ozono includono ossidazione di intermedi, degradazione di sottoprodotti, trattamento delle emissioni e neutralizzazione di odori. L’ozono è utilizzato anche per pretrattamento di reagenti, pulizia impianti e ossidazione selettiva di composti specifici, ottimizzando l’efficienza chimica e riducendo l’impatto ambientale dei processi industriali.</p>
+</section>
+
+<section>
+  <h2>Contaminanti Industriali</h2>
+  <p>I contaminanti trattabili con ozono nei processi chimici includono composti aromatici, idrocarburi clorurati, solventi organici, fenoli, alcoli e aldeidi industriali, metalli in forma organica, VOC e oli industriali. L’ozonizzazione permette la loro ossidazione controllata, riducendo carichi organici e rischi per l’ambiente e migliorando la qualità dei reflui industriali.</p>
+</section>
+
+<section>
+  <h2>Obiettivi del Trattamento</h2>
+  <p>Gli obiettivi principali del trattamento con ozono nel settore chimico sono abbattimento del carico organico, riduzione degli odori industriali, pre-ossidazione prima dei processi biologici, eliminazione di tossine residue e miglioramento della qualità dei reflui. L’ozono consente inoltre la riduzione del colore e della torbidità, ottimizzando l’efficienza dei processi downstream.</p>
+</section>
+
+<section>
+  <h2>Tecnologie di Applicazione</h2>
+  <p>Le tecnologie per applicare l’ozono nei processi chimici includono reattori a bolle fini, colonne di contatto, iniettori Venturi, reattori pressurizzati, sistemi di contatto in linea o batch e static mixer. Spesso l’ozonizzazione è integrata con UV o AOP per incrementare l’efficacia ossidativa e adattarsi alle caratteristiche specifiche dei processi industriali.</p>
+</section>
+
+<section>
+  <h2>Parametri Operativi</h2>
+  <p>I parametri operativi fondamentali comprendono concentrazione e dose di ozono, tempo di contatto, CT value, portata, temperatura, pH, pressione e efficienza di trasferimento massa. Il corretto bilanciamento di questi parametri garantisce ossidazione completa dei contaminanti e sicurezza operativa nei processi chimici industriali.</p>
+</section>
+
+<section>
+  <h2>Integrazione Tecnologica</h2>
+  <p>L’ozono può essere integrato con altre tecnologie come UV, perossido, carbone attivo e membrane, oltre a sistemi pre o post-biologici e soluzioni multibarriera. Questa combinazione aumenta l’efficienza dei processi, permette l’ossidazione completa dei contaminanti e riduce il carico chimico complessivo degli impianti.</p>
+</section>
+
+<section>
+  <h2>Sottoprodotti Chimici</h2>
+  <p>Durante l’ossidazione con ozono si possono generare sottoprodotti come bromati, clorati, aldeidi, chetoni e radicali ossidanti residui. Alcune reazioni secondarie indesiderate possono interferire con catalizzatori o reagenti. La gestione di questi sottoprodotti è fondamentale per la sicurezza e la conformità normativa nei processi chimici.</p>
+</section>
+
+<section>
+  <h2>Settori Chimici</h2>
+  <p>I principali settori chimici che utilizzano l’ozono includono petrolchimico, farmaceutico (materie prime), tessile (pretrattamento chimico), cartario (ossidazione residui), produzione di vernici e pitture, solventi e reagenti, e chimica fine o specialty chemicals. L’ozonizzazione apporta vantaggi specifici in ciascun contesto industriale.</p>
+</section>
+
+<section>
+  <h2>Sicurezza e Normativa</h2>
+  <p>La sicurezza e la normativa riguardano limiti di esposizione degli operatori, gestione dei sottoprodotti chimici, standard sulle emissioni di VOC, linee guida per la sicurezza degli impianti chimici e controllo dei rischi di reazioni secondarie. Il rispetto di queste regole è essenziale per operazioni sicure ed efficaci.</p>
+</section>
+
+<section>
+  <h2>Dimensionamento Impianti</h2>
+  <p>Il dimensionamento degli impianti chimici a ozono considera portata, carico dei contaminanti, tempo di contatto necessario, produzione di ozono richiesta, volume del reattore e fattore di sicurezza. Una corretta progettazione garantisce prestazioni ottimali e affidabilità operativa.</p>
+</section>
+
+<section>
+  <h2>Vantaggi Operativi</h2>
+  <p>I principali vantaggi dell’ozono nei processi chimici sono l’eliminazione di residui chimici senza introduzione di nuovi reagenti, elevata capacità ossidante, efficacia come pre-trattamento per processi downstream, miglioramento della qualità delle emissioni e riduzione dell’impatto ambientale complessivo.</p>
+</section>
+
+<section>
+  <h2>Limitazioni Applicative</h2>
+  <p>Le limitazioni dell’ozonizzazione includono elevato consumo energetico, sensibilità a carichi organici elevati, instabilità della molecola di ozono, necessità di monitoraggio continuo e costi iniziali di impianto. Questi fattori devono essere considerati nella progettazione e gestione operativa.</p>
+</section>
+
+<section>
+  <h2>Monitoraggio Processi</h2>
+  <p>Il monitoraggio dei processi chimici con ozono comprende sensori ORP, misurazione dell’ozono disciolto, controllo PID, monitoraggio del CT value, sistemi SCADA, allarmi di sicurezza e verifica dei sottoprodotti. Questi strumenti assicurano efficienza operativa, sicurezza e conformità normativa.</p>
+</section>
+
+<section>
+  <h2>Casi Studio</h2>
+  <p>I casi studio chimici mostrano esempi di ossidazione di solventi organici in impianti petrolchimici, abbattimento di fenoli e idrocarburi aromatici, riduzione di odori in produzione di vernici, pre-ossidazione di intermedi farmaceutici e trattamento di reflui complessi. Ogni scenario evidenzia problema iniziale, soluzione applicata e risultati misurabili.</p>
+</section>
+    '''
+
+    article_with_ids_html = ''
+    toc = []
+    i = 0
+    for line in article_html.split('\n'):
+        line = line.strip()
+        if '<h2>' in line:
+            line_content = line.replace('<h2>', '').replace('</h2>', '')
+            line = line.replace('<h2>', f'<h2 id="{i}">')
+            toc.append({'href': i, 'anchor': line_content})
+            i += 1
+        article_with_ids_html += f'{line}\n'
+    article_html = article_with_ids_html
+    sidebar_page_html = sidebar_page(toc) 
+
+    meta_title = 'Applicazioni dei Sistemi ad Ozono Industriali nel Settore Chimico: Processi, Contaminanti e Vantaggi'
+    meta_description = 'Scopri le applicazioni dei sistemi ad ozono industriali nel settore chimico: ossidazione di intermedi, trattamento di contaminanti, tecnologie, parametri operativi e vantaggi nei processi industriali.'
+    meta_canonical = 'https://ozonogroup.it/{url_slug}'
+    html = f'''
+    <!DOCTYPE html>
+    <html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{meta_title}</title>
+        <meta name="description" content="{meta_description}">
+        <link rel="canonical" href="{meta_canonical}">
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        {components.header_default()}
+        <div class="hub">
+            {sidebar_core_entity()}
+            <main>
+                <article>
+                    {article_html}
+                </article>
+            </main>
+            {sidebar_page_html}
+        </div>
+        {components.footer_dark()}
+</body>
+</html>
+    '''
+    html_folderpath = f'{g.WEBSITE_FOLDERPATH}/{url_slug}'
+    os.makedirs(html_folderpath, exist_ok=True)
+    html_filepath = f'{html_folderpath}/index.html'
+    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
+        f.write(html)
+
 def ozono_industriale_applicazioni_reflui_gen():
     url_slug = 'ozono-industriale/applicazioni/reflui'
     sidebar_page_html = sidebar_page([]) 
@@ -2757,4 +3024,6 @@ def gen():
     ozono_industriale_applicazioni_alimentare_gen()
     ozono_industriale_applicazioni_farmaceutico_gen()
     ozono_industriale_applicazioni_tessile_gen()
+    ozono_industriale_applicazioni_cartario_gen()
+    ozono_industriale_applicazioni_chimico_gen()
 
