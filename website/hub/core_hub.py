@@ -884,11 +884,15 @@ I sistemi ad ozono industriali trovano applicazione in numerosi settori produtti
 <section>
   <h2>Processi nel Settore Farmaceutico</h2>
   <p>Nel settore farmaceutico, l’ozono è utilizzato per la sanitizzazione di camere bianche, trattamento dell’acqua purificata e controllo del bioburden. Garantisce elevati standard di decontaminazione ambientale nel rispetto delle normative GMP. I sistemi sono progettati per mantenere concentrazioni controllate e assicurare sicurezza operativa.</p>
+
+<p>Per approfondire l’uso dell’ozono in farmaceutica, consulta la nostra pagina dedicata alle applicazioni industriali nel settore farmaceutico: <a href="/ozono-industriale/applicazioni/farmaceutico">Applicazioni Ozono Farmaceutico</a>.</p>
 </section>
 
 <section>
   <h2>Processi nel Settore Tessile</h2>
   <p>Nel settore tessile, l’ozono è impiegato per decolorazione dei reflui, ossidazione dei coloranti e sbiancamento delle fibre. Riduce l’uso di agenti chimici e migliora l’efficienza dei trattamenti di depurazione. L’applicazione è particolarmente efficace nella rimozione di composti organici persistenti.</p>
+
+<p>Scopri nel dettaglio come l’ozono migliora trattamenti e gestione dei reflui nell’industria tessile visitando <a href="/ozono-industriale/applicazioni/tessile">Settore Tessile</a></p>
 </section>
 
 <section>
@@ -2187,6 +2191,276 @@ I sistemi ad ozono nell’industria alimentare consentono di sanificare prodotti
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
         f.write(html)
 
+def ozono_industriale_applicazioni_farmaceutico_gen():
+    url_slug = 'ozono-industriale/applicazioni/farmaceutico'
+    sidebar_page_html = sidebar_page([]) 
+    
+    article_html = f'''
+        <h1>
+Applicazioni dei Sistemi ad Ozono Industriali nel Settore Farmaceutico
+        </h1>
+        <p>
+I sistemi ad ozono industriali trovano ampio impiego nel settore farmaceutico per il trattamento di acqua purificata, la sanificazione di camere bianche e la disinfezione di superfici critiche. Queste applicazioni garantiscono riduzione del bioburden, prevenzione dei biofilm, ossidazione di contaminanti chimici e conformità alle normative GMP. Parametri operativi come concentrazione, tempo di contatto e ORP, insieme all’integrazione con tecnologie avanzate come UV e filtri a membrana, rendono l’ozono una soluzione efficace e sicura per i processi produttivi farmaceutici.
+        </p>
+
+<p>Per una panoramica completa, puoi scoprire tutte le applicazioni dei sistemi ad ozono industriali consultando la pagina principale: <a href="/ozono-industriale/applicazioni">Applicazioni dei Sistemi ad Ozono Industriali</a>.</p>
+
+<section>
+  <h2>Trattamento Acqua Purificata</h2>
+  <p>L’ozono viene utilizzato nel trattamento di acqua purificata e WFI per rimuovere contaminanti chimici e microbiologici, ridurre endotossine e prevenire la formazione di biofilm. L’applicazione include sia pre-trattamenti che post-trattamenti per garantire sicurezza e conformità GMP, migliorando la qualità dell’acqua di processo e proteggendo i sistemi produttivi farmaceutici.</p>
+</section>
+
+<section>
+  <h2>Sanificazione Camere Bianche</h2>
+  <p>La sanificazione con ozono nelle camere bianche consente la decontaminazione dell’aria e delle superfici, il trattamento HVAC e il controllo di muffe, funghi e batteri aerodispersi. L’applicazione regolare riduce la carica microbica totale e mantiene gli ambienti produttivi conformi alle norme GMP, garantendo intervalli operativi ottimali per la produzione farmaceutica.</p>
+</section>
+
+<section>
+  <h2>Disinfezione Superfici Critiche</h2>
+  <p>L’ozono permette la disinfezione di superfici critiche come linee di produzione, serbatoi, tubazioni e valvole, riducendo il bioburden e prevenendo la cross-contaminazione. La tecnologia è compatibile con i materiali utilizzati nei processi GMP e assicura un’igiene costante nelle aree a contatto con prodotti farmaceutici.</p>
+</section>
+
+<section>
+  <h2>Controllo Bioburden</h2>
+  <p>Il controllo del bioburden tramite ozono consente di eliminare batteri come E. coli e Bacillus, virus, spore e biofilm presenti su superfici e acqua di processo. L’efficacia viene monitorata tramite test microbiologici periodici e validazioni CT, garantendo processi produttivi sicuri e conformi agli standard farmaceutici.</p>
+</section>
+
+<section>
+  <h2>Ottimizzazione Processi Produttivi</h2>
+  <p>L’ozono ottimizza i processi produttivi farmaceutici trattando acqua di processo, linee di riempimento e sistemi CIP. Riduce l’uso di prodotti chimici, migliora la qualità del prodotto finale e diminuisce il rischio di contaminazioni, integrandosi nei flussi produttivi senza interrompere le operazioni quotidiane.</p>
+</section>
+
+<section>
+  <h2>Parametri Operativi Chiave</h2>
+  <p>I parametri operativi chiave includono concentrazione di ozono, tempo di contatto, portata, ORP, temperatura e pH. Il monitoraggio in-line e gli allarmi di sicurezza garantiscono un’applicazione efficace e sicura, ottimizzando l’ossidazione e la disinfezione in tutti i processi farmaceutici.</p>
+</section>
+
+<section>
+  <h2>Integrazione Tecnologica Avanzata</h2>
+  <p>L’ozono può essere integrato con UV, filtri a membrana, carbone attivo e sistemi multibarriera per potenziare la disinfezione e l’ossidazione dei contaminanti. L’integrazione con l’automazione dei processi e con AOP consente maggiore efficienza e flessibilità nei sistemi di produzione farmaceutica.</p>
+</section>
+
+<section>
+  <h2>Vantaggi del Trattamento</h2>
+  <p>I vantaggi dell’ozono includono assenza di residui chimici, efficacia contro biofilm e microrganismi, riduzione dei prodotti chimici corrosivi e maggiore sicurezza ambientale. L’ozonizzazione supporta la conformità GMP e riduce il rischio di contaminazioni crociate, migliorando la qualità complessiva del processo.</p>
+</section>
+
+<section>
+  <h2>Limitazioni Operative</h2>
+  <p>Le limitazioni operative comprendono la sensibilità dei materiali all’ozono, l’instabilità della molecola, la necessità di monitoraggio costante, i costi impiantistici e le restrizioni di esposizione per gli operatori. Interferenze chimiche con detergenti o altri agenti possono ridurre l’efficacia se non gestite correttamente.</p>
+</section>
+
+<section>
+  <h2>Normative e Compliance</h2>
+  <p>L’applicazione dell’ozono nel settore farmaceutico deve rispettare GMP, FDA cGMP water systems, ISO 14644 per camere bianche e linee guida sulla sicurezza dell’ozono. I limiti di residui e le validazioni documentate assicurano che tutti i processi siano conformi alle normative internazionali.</p>
+</section>
+
+<section>
+  <h2>Dimensionamento Impianti</h2>
+  <p>Il dimensionamento degli impianti considera portata dell’acqua, volume delle camere bianche, produzione necessaria di ozono, ridondanza del sistema, tempo di contatto e scalabilità. Questi parametri garantiscono efficienza, sicurezza e continuità operativa nei processi farmaceutici.</p>
+</section>
+
+<section>
+  <h2>Monitoraggio e Validazione</h2>
+  <p>Il monitoraggio prevede sensori di ozono disciolto, ORP, pH, sistemi SCADA e allarmi automatici. La validazione include test microbiologici periodici, verifica del CT value e documentazione completa, assicurando processi costantemente conformi e sicuri secondo gli standard GMP.</p>
+</section>
+
+<section>
+  <h2>Casi Studio Applicativi</h2>
+  <p>I casi studio mostrano l’efficacia dell’ozono in scenari reali: trattamento di acqua purificata, decontaminazione di camere bianche e linee di riempimento. I risultati evidenziano riduzione del bioburden, miglioramento della qualità del prodotto e piena conformità normativa, dimostrando vantaggi concreti per l’industria farmaceutica.</p>
+</section>
+    '''
+
+    article_with_ids_html = ''
+    toc = []
+    i = 0
+    for line in article_html.split('\n'):
+        line = line.strip()
+        if '<h2>' in line:
+            line_content = line.replace('<h2>', '').replace('</h2>', '')
+            line = line.replace('<h2>', f'<h2 id="{i}">')
+            toc.append({'href': i, 'anchor': line_content})
+            i += 1
+        article_with_ids_html += f'{line}\n'
+    article_html = article_with_ids_html
+    sidebar_page_html = sidebar_page(toc) 
+
+    meta_title = 'Applicazioni Ozono Farmaceutico: Acqua, Camere Bianche e Processi Produttivi'
+    meta_description = 'Scopri come i sistemi ad ozono industriali migliorano acqua purificata, sanificazione camere bianche e processi produttivi farmaceutici. Controllo bioburden, parametri operativi, integrazione tecnologica e conformità GMP.'
+    meta_canonical = 'https://ozonogroup.it/{url_slug}'
+    html = f'''
+    <!DOCTYPE html>
+    <html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{meta_title}</title>
+        <meta name="description" content="{meta_description}">
+        <link rel="canonical" href="{meta_canonical}">
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        {components.header_default()}
+        <div class="hub">
+            {sidebar_core_entity()}
+            <main>
+                <article>
+                    {article_html}
+                </article>
+            </main>
+            {sidebar_page_html}
+        </div>
+        {components.footer_dark()}
+</body>
+</html>
+    '''
+    html_folderpath = f'{g.WEBSITE_FOLDERPATH}/{url_slug}'
+    os.makedirs(html_folderpath, exist_ok=True)
+    html_filepath = f'{html_folderpath}/index.html'
+    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
+        f.write(html)
+
+def ozono_industriale_applicazioni_tessile_gen():
+    url_slug = 'ozono-industriale/applicazioni/tessile'
+    sidebar_page_html = sidebar_page([]) 
+    
+    article_html = f'''
+        <h1>
+Applicazioni dei Sistemi ad Ozono nell’Industria Tessile
+        </h1>
+        <p>
+L’ozono industriale trova applicazione nell’industria tessile per il trattamento di fibre naturali e sintetiche, sbiancamento, decolorazione, riduzione della carica microbica e ossidazione di residui chimici. È utilizzato in processi di lavaggio, tintura, finissaggio e gestione dei reflui, garantendo uniformità del colore, sicurezza operativa e sostenibilità ambientale. Parametri come concentrazione, tempo di contatto e tecnologia di iniezione determinano l’efficacia, mentre l’integrazione con sistemi complementari migliora l’efficienza complessiva degli impianti.
+        </p>
+
+<p>Per approfondire tutte le applicazioni industriali dell’ozono e i processi in altri settori produttivi visita <a href="/ozono-industriale/applicazioni">Applicazioni dei Sistemi ad Ozono Industriali</a></p>
+
+<section>
+  <h2>Materiali e Fibre Trattabili</h2>
+  <p>Le fibre tessili trattabili con ozono includono cotone, lino, lana, seta, fibre sintetiche come poliestere e nylon, fibre miste e tessuti non tessuti (NTF). L’ozonizzazione può essere applicata sia a fibre bianche che colorate, adattando concentrazione e tempo di contatto in base alla sensibilità della fibra, alla densità del tessuto e alla presenza di residui chimici o coloranti preesistenti.</p>
+</section>
+
+<section>
+  <h2>Obiettivi dei Processi</h2>
+  <p>I principali obiettivi dei processi tessili con ozono sono la decolorazione dei coloranti, lo sbiancamento delle fibre, l’ossidazione dei contaminanti residui e la riduzione della carica microbica. Altri scopi includono il miglioramento dell’uniformità del colore, la riduzione degli odori chimici e il pretrattamento delle fibre prima di tintura o finissaggio, garantendo qualità e sicurezza del prodotto finale.</p>
+</section>
+
+<section>
+  <h2>Contaminanti e Residui</h2>
+  <p>I contaminanti trattati includono coloranti reattivi, disperdibili, acidi e basici, metalli residui come ferro e rame, composti organici persistenti, oli, grassi e detergenti residui. L’ozono agisce ossidando questi elementi, riducendo la carica microbica e migliorando la qualità dei tessuti e dei reflui industriali, rendendo i processi più sostenibili ed efficienti.</p>
+</section>
+
+<section>
+  <h2>Processi Tessili Industriali</h2>
+  <p>I processi industriali che utilizzano l’ozono comprendono il lavaggio dei tessuti, il pretrattamento delle fibre, la tintura, lo sbiancamento chimico, la finitura e il trattamento dei reflui tessili. L’ozonizzazione può avvenire in modalità batch o in linea, consentendo l’ossidazione dei coloranti e la riduzione dei contaminanti organici, migliorando efficienza e qualità del prodotto.</p>
+</section>
+
+<section>
+  <h2>Parametri Operativi</h2>
+  <p>I parametri operativi fondamentali includono concentrazione di ozono, tempo di contatto, portata della soluzione, temperatura, pH, ORP target, intensità del flusso e modalità di iniezione. La regolazione accurata di questi valori garantisce ossidazione efficace dei coloranti e contaminanti, protezione delle fibre delicate e ottimizzazione dei consumi energetici negli impianti tessili.</p>
+</section>
+
+<section>
+  <h2>Tecnologie di Applicazione</h2>
+  <p>Le tecnologie principali comprendono reattori a bolle fini, colonne di contatto, iniettori Venturi, static mixer, sistemi batch e continui, nonché combinazioni con UV. Questi sistemi consentono un trasferimento efficiente dell’ozono alle fibre e ai reflui, garantendo uniformità dei trattamenti e riduzione dei tempi di processo senza danneggiare i tessuti.</p>
+</section>
+
+<section>
+  <h2>Integrazione Tecnologica</h2>
+  <p>L’ozono può essere integrato con carbone attivo, perossido (AOP), filtrazione meccanica, pretrattamenti chimici e post-trattamenti biologici. Queste combinazioni aumentano l’efficacia complessiva, consentono la rimozione completa di contaminanti persistenti e ottimizzano l’efficienza operativa degli impianti tessili, migliorando qualità, sicurezza e sostenibilità ambientale.</p>
+</section>
+
+<section>
+  <h2>Sottoprodotti e Reazioni</h2>
+  <p>Durante l’ossidazione dei coloranti e dei residui organici si generano aldeidi, chetoni e radicali ossidanti. Possono verificarsi ossidazioni parziali di composti organici e interferenze chimiche sulle fibre. Il monitoraggio dei sottoprodotti è essenziale per rispettare le normative ambientali e garantire sicurezza dei processi, evitando accumuli dannosi o alterazioni dei tessuti.</p>
+</section>
+
+<section>
+  <h2>Settori Tessili</h2>
+  <p>I principali settori industriali includono cotone e lino, lana e seta, tessuti sintetici e misti, tessuti non tessuti (NTF), tintorie e finissaggi industriali. L’ozono viene impiegato sia per il trattamento dei tessuti che per la gestione dei reflui, adattando parametri e tecnologie in base al tipo di fibra e alla destinazione finale dei prodotti tessili.</p>
+</section>
+
+<section>
+  <h2>Normative e Sicurezza</h2>
+  <p>La sicurezza comprende limiti di esposizione degli operatori all’ozono, standard di scarico dei reflui tessili, normative per gli impianti industriali e linee guida per l’ossidazione dei coloranti. Il rispetto delle regolamentazioni ambientali e dei protocolli di sicurezza garantisce protezione per il personale, conformità normativa e sostenibilità dei processi.</p>
+</section>
+
+<section>
+  <h2>Dimensionamento Impianti</h2>
+  <p>Il dimensionamento degli impianti dipende dalla portata dell’acqua o soluzione tessile, dal carico chimico iniziale, dal tipo di fibra, dal tempo di contatto necessario e dal volume dei reattori. La produzione di ozono deve essere calibrata in base al carico organico e al tipo di trattamento, garantendo efficienza, uniformità e risultati costanti.</p>
+</section>
+
+<section>
+  <h2>Vantaggi Applicativi</h2>
+  <p>L’ozono riduce l’uso di prodotti chimici tradizionali, migliora l’uniformità del colore, elimina odori residui e riduce la carica microbica. Migliora la qualità dell’acqua di processo e riduce fanghi e residui. Questi vantaggi incrementano sostenibilità, sicurezza e resa industriale, rendendo l’ozonizzazione una soluzione strategica per l’industria tessile.</p>
+</section>
+
+<section>
+  <h2>Limitazioni Tecniche</h2>
+  <p>Le limitazioni includono sensibilità di alcune fibre delicate come lana e seta, riduzione dell’efficacia in presenza di carichi chimici elevati, necessità di pretrattamento, instabilità molecolare dell’ozono e costi iniziali degli impianti. Questi fattori devono essere considerati nella progettazione e gestione dei processi tessili industriali.</p>
+</section>
+
+<section>
+  <h2>Monitoraggio e Controllo</h2>
+  <p>Il monitoraggio include sensori ORP, analizzatori di ozono disciolto, sistemi di controllo PID e SCADA. Viene controllato tempo di contatto, concentrazione e sicurezza operatori. L’accurata gestione dei parametri garantisce efficacia, protezione delle fibre e conformità normativa, ottimizzando le performance degli impianti tessili.</p>
+</section>
+
+<section>
+  <h2>Casi Studio Industriali</h2>
+  <p>I casi studio mostrano l’efficacia dell’ozono nella decolorazione di cotone e lino, nello sbiancamento di lana e seta, nel trattamento dei reflui di fibre sintetiche e nel miglioramento dell’uniformità dei tessuti. Essi evidenziano riduzione di odori e residui chimici, confermando risultati misurabili in termini di qualità, sostenibilità e sicurezza dei processi industriali.</p>
+</section>
+    '''
+
+    article_with_ids_html = ''
+    toc = []
+    i = 0
+    for line in article_html.split('\n'):
+        line = line.strip()
+        if '<h2>' in line:
+            line_content = line.replace('<h2>', '').replace('</h2>', '')
+            line = line.replace('<h2>', f'<h2 id="{i}">')
+            toc.append({'href': i, 'anchor': line_content})
+            i += 1
+        article_with_ids_html += f'{line}\n'
+    article_html = article_with_ids_html
+    sidebar_page_html = sidebar_page(toc) 
+
+    meta_title = 'Applicazioni Ozono nell’Industria Tessile: Fibre, Processi e Reflui'
+    meta_description = 'Scopri come i sistemi ad ozono industriali ottimizzano sbiancamento, decolorazione, ossidazione dei contaminanti e trattamento dei reflui nell’industria tessile. Processi, fibre, parametri e casi studio.'
+    meta_canonical = 'https://ozonogroup.it/{url_slug}'
+    html = f'''
+    <!DOCTYPE html>
+    <html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{meta_title}</title>
+        <meta name="description" content="{meta_description}">
+        <link rel="canonical" href="{meta_canonical}">
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        {components.header_default()}
+        <div class="hub">
+            {sidebar_core_entity()}
+            <main>
+                <article>
+                    {article_html}
+                </article>
+            </main>
+            {sidebar_page_html}
+        </div>
+        {components.footer_dark()}
+</body>
+</html>
+    '''
+    html_folderpath = f'{g.WEBSITE_FOLDERPATH}/{url_slug}'
+    os.makedirs(html_folderpath, exist_ok=True)
+    html_filepath = f'{html_folderpath}/index.html'
+    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
+        f.write(html)
+
 def ozono_industriale_applicazioni_reflui_gen():
     url_slug = 'ozono-industriale/applicazioni/reflui'
     sidebar_page_html = sidebar_page([]) 
@@ -2481,4 +2755,6 @@ def gen():
     ozono_industriale_applicazioni_acque_gen()
     ozono_industriale_applicazioni_reflui_gen()
     ozono_industriale_applicazioni_alimentare_gen()
+    ozono_industriale_applicazioni_farmaceutico_gen()
+    ozono_industriale_applicazioni_tessile_gen()
 
