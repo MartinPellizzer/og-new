@@ -2460,7 +2460,7 @@ void nextion_update_page_sd_log_minute(uint8_t component_i, uint8_t line_i)
   {
     if (sd_minute_nextion_lines_buff[line_i][0] == '0')
     {
-      uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x70, 0x63, 0x6F, 0x3D, 0x35, 0x35, 0x35, 0x38, 0x38, 0xff, 0xff, 0xff };
+      uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x70, 0x63, 0x6F, 0x3D, 0x36, 0x35, 0x35, 0x33, 0x35, 0xff, 0xff, 0xff };
       _buffer[1] = (component_i % 10 / 1) + 0x30;
       for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
       {
@@ -2469,7 +2469,7 @@ void nextion_update_page_sd_log_minute(uint8_t component_i, uint8_t line_i)
     }
     else
     {
-      uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x70, 0x63, 0x6F, 0x3D, 0x36, 0x35, 0x35, 0x33, 0x35, 0xff, 0xff, 0xff };
+      uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x70, 0x63, 0x6F, 0x3D, 0x35, 0x35, 0x35, 0x38, 0x38, 0xff, 0xff, 0xff };
       _buffer[1] = (component_i % 10 / 1) + 0x30;
       for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
       {
@@ -2500,6 +2500,13 @@ void nextion_update_page_sd_log_minute(uint8_t component_i, uint8_t line_i)
     _buffer[22] = sd_minute_nextion_lines_buff[line_i][start_i+14];
     _buffer[23] = sd_minute_nextion_lines_buff[line_i][start_i+15];
     _buffer[24] = sd_minute_nextion_lines_buff[line_i][start_i+16];
+
+    _buffer[25] = sd_minute_nextion_lines_buff[line_i][start_i+17];
+    _buffer[26] = sd_minute_nextion_lines_buff[line_i][start_i+18];
+    _buffer[27] = sd_minute_nextion_lines_buff[line_i][start_i+19];
+    _buffer[28] = sd_minute_nextion_lines_buff[line_i][start_i+20];
+    _buffer[29] = sd_minute_nextion_lines_buff[line_i][start_i+21];
+    _buffer[30] = sd_minute_nextion_lines_buff[line_i][start_i+22];
     for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
     {
       Serial2.write(_buffer[i]);

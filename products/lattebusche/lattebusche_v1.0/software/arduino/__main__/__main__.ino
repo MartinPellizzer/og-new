@@ -1,4 +1,7 @@
-// TODO: Avvio esterno?
+// TODO: salvare letture nella giusta cartella (gerarchia di folders anno/mese/...)
+// TODO: fai medie per ora (colonna di destra)
+// TODO: dai un occhiata a sensore (delle volte smette di segnare quando riavvio scheda principale con bottone EN)
+// TODO: completa la homepage, lascia solo dati rilevanti per lattebusche (no potenza generatore, segnale esterno, ecc...)
 
 #include "RTClib.h"
 RTC_DS3231 rtc_lib;
@@ -321,14 +324,21 @@ sd_card_t sd_card = {};
 
 
 #define LINES 10
-#define LINE_SIZE 24+1
+#define LINE_SIZE 30+1
 
 uint16_t sd_hour_buff[60] = {0};
 uint8_t sd_hour_buff_i = 0;
 
-char sd_hour_nextion_lines_buff[LINES][LINE_SIZE] = {0};
+char sd_minute_line_cur_buff[LINE_SIZE] = {0};
 char sd_minute_nextion_lines_buff[LINES][LINE_SIZE] = {0};
+char sd_hour_nextion_lines_buff[LINES][LINE_SIZE] = {0};
 
+#define MAX_LINE_LENGTH 64
+#define MAX_FIELDS 10
+
+char lastRow[MAX_LINE_LENGTH];
+char *fields[MAX_FIELDS];
+int fieldCount = 0;
 
 // ----------------------------------------------------------------------------------------------------------
 // ;sd card
