@@ -877,6 +877,8 @@ I sistemi ad ozono industriali trovano applicazione in numerosi settori produtti
 <section>
   <h2>Processi nel Settore Alimentare</h2>
   <p>Nel settore alimentare, l’ozono viene applicato per sanificazione di linee produttive, lavaggio di frutta e verdura, disinfezione di carni e trattamento dell’acqua di processo. Riduce Listeria, Salmonella e carica batterica totale, contribuendo all’estensione della shelf-life. L’impiego è compatibile con i protocolli HACCP e consente la riduzione dei prodotti chimici tradizionali.</p>
+
+<p>Scopri tutti i dettagli sui trattamenti in ambito alimentare, compresi lavaggio frutta e verdura, sanificazione carni e latticini, nella pagina dedicata alle <a href="/ozono-industriale/applicazioni/alimentare">Applicazioni Alimentari</a>.</p>
 </section>
 
 <section>
@@ -2065,6 +2067,126 @@ I sistemi ad ozono industriali generano e distribuiscono ozono per trattare acqu
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
         f.write(html)
 
+def ozono_industriale_applicazioni_alimentare_gen():
+    url_slug = 'ozono-industriale/applicazioni/alimentare'
+    sidebar_page_html = sidebar_page([]) 
+    
+    article_html = f'''
+        <h1>
+Applicazioni dei Sistemi ad Ozono nell’Industria Alimentare
+        </h1>
+        <p>
+I sistemi ad ozono nell’industria alimentare consentono di sanificare prodotti e linee produttive, ridurre patogeni come Listeria, Salmonella ed E. coli, controllare biofilm e residui chimici e garantire qualità organolettica ottimale. L’ozono viene applicato su frutta, verdura, carni, pollame, latticini e acqua di processo, adattando concentrazione, tempo di contatto e modalità operativa. L’integrazione con tecnologie complementari, il monitoraggio dei parametri e la conformità normativa assicurano sicurezza, efficienza e risultati misurabili, estendendo la shelf-life e riducendo l’uso di prodotti chimici tradizionali.
+        </p>
+
+<p>Per comprendere tutte le altre applicazioni industriali dell’ozono, puoi consultare la pagina principale sulle <a href="/ozono-industriale/applicazioni">Applicazioni dei Sistemi ad Ozono Industriali</a>.</p>
+
+<section>
+  <h2>Tipologie di Prodotti</h2>
+  <p>Le tipologie di prodotti trattabili con sistemi ad ozono nell’industria alimentare includono frutta e verdura fresche, carni rosse e pollame, prodotti lattiero-caseari, pesce e frutti di mare, bevande come succhi e latte, prodotti da forno e alimenti trasformati come conserve e pronti pasto. L’ozono viene adattato a ciascun prodotto in base alla delicatezza, alla superficie e alla sensibilità microbiologica, garantendo sanificazione efficace senza alterare le proprietà organolettiche.</p>
+</section>
+
+<section>
+  <h2>Obiettivi di Trattamento</h2>
+  <p>Gli obiettivi principali del trattamento con ozono in ambito alimentare comprendono la riduzione della carica batterica totale, l’inattivazione di patogeni come Listeria, Salmonella ed E. coli, il controllo di muffe e lieviti, la sanificazione di linee e superfici di contatto, l’estensione della shelf-life e il miglioramento della qualità organolettica dei prodotti, riducendo al contempo l’uso di prodotti chimici tradizionali.</p>
+</section>
+
+<section>
+  <h2>Processi Applicativi</h2>
+  <p>I processi applicativi includono il lavaggio di frutta e verdura, il trattamento di carni, pollame e prodotti lattiero-caseari, la sanificazione di serbatoi e cisterne, i cicli CIP (Clean-in-Place), il trattamento dell’acqua di processo e il controllo microbiologico delle linee produttive. L’ozono viene utilizzato in modo mirato per ogni fase, garantendo efficacia su patogeni, biofilm e residui organici.</p>
+</section>
+
+<section>
+  <h2>Contaminanti e Patogeni</h2>
+  <p>I contaminanti e patogeni target comprendono batteri come Listeria, Salmonella ed E. coli, virus alimentari, spore microbiche, muffe e lieviti, biofilm sulle superfici e residui chimici come pesticidi e detergenti. L’ozono agisce ossidando la struttura microbica o chimica dei contaminanti, garantendo disinfezione efficace senza residui chimici dannosi.</p>
+</section>
+
+<section>
+  <h2>Parametri Operativi</h2>
+  <p>I parametri operativi critici comprendono la concentrazione di ozono, il tempo di contatto, il CT value, la temperatura, il pH, la portata del flusso, la modalità di iniezione e la durata dei cicli CIP. Il corretto dimensionamento e controllo di questi parametri assicura efficacia nella riduzione di patogeni, sicurezza dei prodotti e preservazione delle caratteristiche organolettiche.</p>
+</section>
+
+<section>
+  <h2>Integrazione Tecnologica</h2>
+  <p>L’ozono può essere integrato con altre tecnologie per aumentare l’efficacia del trattamento, come l’uso combinato con lampade UV per sanificazione, carbone attivo per filtrazione, processi AOP con perossido e membrane filtranti. Queste integrazioni consentono maggiore ossidazione dei contaminanti, maggiore uniformità del trattamento e riduzione dei tempi di ciclo.</p>
+</section>
+
+<section>
+  <h2>Normativa e Sicurezza</h2>
+  <p>La normativa e sicurezza comprende l’aderenza ai protocolli HACCP, limiti di residuo massimo, conformità UE e FDA, standard di potabilità dell’acqua di processo e norme di sicurezza per gli operatori. Questi requisiti garantiscono che l’impiego dell’ozono sia sicuro, regolamentato e conforme agli standard di igiene alimentare.</p>
+</section>
+
+<section>
+  <h2>Benefici Applicativi</h2>
+  <p>I principali benefici applicativi includono riduzione di patogeni senza residui chimici, estensione della shelf-life, diminuzione dell’uso di cloro e altri sanitizzanti, miglioramento della qualità organolettica dei prodotti e ridotto impatto ambientale. L’automazione dei cicli di sanificazione aumenta l’efficienza operativa degli impianti alimentari.</p>
+</section>
+
+<section>
+  <h2>Limitazioni Operative</h2>
+  <p>Le limitazioni operative comprendono la sensibilità di alcuni alimenti delicati al trattamento, i costi energetici dei sistemi, la necessità di mantenere parametri rigorosi di concentrazione e tempo di contatto e l’efficacia ridotta su biofilm già consolidati senza pretrattamento. È quindi importante progettare il trattamento considerando questi vincoli.</p>
+</section>
+
+<section>
+  <h2>Monitoraggio e Controllo</h2>
+  <p>Il monitoraggio e controllo del trattamento include sensori di concentrazione di ozono, analizzatori CT, monitoraggio delle linee di lavaggio, controllo microbiologico dell’acqua di processo e sistemi SCADA per gestione cicli CIP. Questi strumenti garantiscono che i parametri operativi siano sempre rispettati e l’efficacia del trattamento sia verificata in tempo reale.</p>
+</section>
+
+<section>
+  <h2>Casi Studio Realistici</h2>
+  <p>I casi studio realistici dimostrano l’efficacia dell’ozono in impianti alimentari, evidenziando la riduzione di Listeria in linee carne, la sanificazione di frutta e verdura, il controllo di Salmonella nel latte pastorizzato, il trattamento dell’acqua di processo per bevande e la riduzione di biofilm in cisterne e serbatoi. Questi esempi confermano risultati misurabili in sicurezza e qualità dei prodotti.</p>
+</section>
+    '''
+
+    article_with_ids_html = ''
+    toc = []
+    i = 0
+    for line in article_html.split('\n'):
+        line = line.strip()
+        if '<h2>' in line:
+            line_content = line.replace('<h2>', '').replace('</h2>', '')
+            line = line.replace('<h2>', f'<h2 id="{i}">')
+            toc.append({'href': i, 'anchor': line_content})
+            i += 1
+        article_with_ids_html += f'{line}\n'
+    article_html = article_with_ids_html
+    sidebar_page_html = sidebar_page(toc) 
+
+    meta_title = 'Applicazioni Sistemi ad Ozono nell’Industria Alimentare: Sicurezza, Processi e Benefici'
+    meta_description = 'Scopri come i sistemi ad ozono migliorano sicurezza, sanificazione e qualità nell’industria alimentare. Riduzione patogeni, controllo microbiologico, trattamenti su frutta, verdura, carne, latte e acqua di processo.'
+    meta_canonical = 'https://ozonogroup.it/{url_slug}'
+    html = f'''
+    <!DOCTYPE html>
+    <html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{meta_title}</title>
+        <meta name="description" content="{meta_description}">
+        <link rel="canonical" href="{meta_canonical}">
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        {components.header_default()}
+        <div class="hub">
+            {sidebar_core_entity()}
+            <main>
+                <article>
+                    {article_html}
+                </article>
+            </main>
+            {sidebar_page_html}
+        </div>
+        {components.footer_dark()}
+</body>
+</html>
+    '''
+    html_folderpath = f'{g.WEBSITE_FOLDERPATH}/{url_slug}'
+    os.makedirs(html_folderpath, exist_ok=True)
+    html_filepath = f'{html_folderpath}/index.html'
+    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
+        f.write(html)
+
 def ozono_industriale_applicazioni_reflui_gen():
     url_slug = 'ozono-industriale/applicazioni/reflui'
     sidebar_page_html = sidebar_page([]) 
@@ -2358,4 +2480,5 @@ def gen():
     # applicazioni
     ozono_industriale_applicazioni_acque_gen()
     ozono_industriale_applicazioni_reflui_gen()
+    ozono_industriale_applicazioni_alimentare_gen()
 
