@@ -2454,6 +2454,17 @@ void nextion_update_page_password(uint8_t force_refresh)
   }
 }
 
+
+void nextion_update_page_sd_log_minute_header(uint8_t component_i)
+{
+  uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x41, 0x41, 0x41, 0x41, 0x2D, 0x4D, 0x4D, 0x2D, 0x47, 0x47, 0x20, 0x48, 0x48, 0x3A, 0x4D, 0x4D, 0x20, 0x50, 0x50, 0x42, 0x20, 0x20, 0x45, 0x52, 0x52, 0x22, 0xff, 0xff, 0xff };
+  _buffer[1] = (component_i % 10 / 1) + 0x30;
+  for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+  {
+    Serial2.write(_buffer[i]);
+  } 
+}
+
 void nextion_update_page_sd_log_minute(uint8_t component_i, uint8_t line_i)
 {
   // color
@@ -2480,33 +2491,59 @@ void nextion_update_page_sd_log_minute(uint8_t component_i, uint8_t line_i)
 
   // text
   {
-    uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x30, 0x30, 0x30, 0x2F, 0x30, 0x30, 0x2F, 0x30, 0x30, 0x2D, 0x30, 0x30, 0x3A, 0x30, 0x30, 0x2D, 0x30, 0x2E, 0x30, 0x30, 0x30, 0x70, 0x70, 0x6D, 0x22, 0xff, 0xff, 0xff };
+    uint8_t _buffer[] = { 
+      0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x30, 
+      0x30, 0x30, 0x2F, 0x30, 0x30, 0x2F, 0x30, 0x30, 0x2D, 0x30, 
+      0x30, 0x3A, 0x30, 0x30, 0x2D, 0x30, 0x30, 0x30, 0x30, 0x70, 
+      0x70, 0x6D, 0x22, 0xff, 0xff, 0xff };
     int start_i = 2;
     _buffer[1] = (component_i % 10 / 1) + 0x30;
+
     _buffer[8] = sd_minute_nextion_lines_buff[line_i][start_i+0];
     _buffer[9] = sd_minute_nextion_lines_buff[line_i][start_i+1];
     _buffer[10] = sd_minute_nextion_lines_buff[line_i][start_i+2];
     _buffer[11] = sd_minute_nextion_lines_buff[line_i][start_i+3];
+
     _buffer[12] = sd_minute_nextion_lines_buff[line_i][start_i+4];
+
     _buffer[13] = sd_minute_nextion_lines_buff[line_i][start_i+5];
     _buffer[14] = sd_minute_nextion_lines_buff[line_i][start_i+6];
+
     _buffer[15] = sd_minute_nextion_lines_buff[line_i][start_i+7];
+
     _buffer[16] = sd_minute_nextion_lines_buff[line_i][start_i+8];
     _buffer[17] = sd_minute_nextion_lines_buff[line_i][start_i+9];
+
     _buffer[18] = sd_minute_nextion_lines_buff[line_i][start_i+10];
+
     _buffer[19] = sd_minute_nextion_lines_buff[line_i][start_i+11];
     _buffer[20] = sd_minute_nextion_lines_buff[line_i][start_i+12];
+
     _buffer[21] = sd_minute_nextion_lines_buff[line_i][start_i+13];
+
     _buffer[22] = sd_minute_nextion_lines_buff[line_i][start_i+14];
     _buffer[23] = sd_minute_nextion_lines_buff[line_i][start_i+15];
+
     _buffer[24] = sd_minute_nextion_lines_buff[line_i][start_i+16];
 
     _buffer[25] = sd_minute_nextion_lines_buff[line_i][start_i+17];
     _buffer[26] = sd_minute_nextion_lines_buff[line_i][start_i+18];
     _buffer[27] = sd_minute_nextion_lines_buff[line_i][start_i+19];
     _buffer[28] = sd_minute_nextion_lines_buff[line_i][start_i+20];
+
     _buffer[29] = sd_minute_nextion_lines_buff[line_i][start_i+21];
-    _buffer[30] = sd_minute_nextion_lines_buff[line_i][start_i+22];
+
+    if (sd_minute_nextion_lines_buff[line_i][0] != '0')
+    {
+      _buffer[30] = 0x45;
+      _buffer[31] = sd_minute_nextion_lines_buff[line_i][0];
+    }
+    else
+    {
+      _buffer[30] = 0x20;
+      _buffer[31] = 0x20;
+    }
+
     for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
     {
       Serial2.write(_buffer[i]);
@@ -2554,16 +2591,16 @@ void nextion_update_page_sd(uint8_t force_refresh)
   {
     sd_card.nextion_update = 0;
 
-    nextion_update_page_sd_log_minute(0, 0);
-    nextion_update_page_sd_log_minute(1, 1);
-    nextion_update_page_sd_log_minute(2, 2);
-    nextion_update_page_sd_log_minute(3, 3);
-    nextion_update_page_sd_log_minute(4, 4);
-    nextion_update_page_sd_log_minute(5, 5);
-    nextion_update_page_sd_log_minute(6, 6);
-    nextion_update_page_sd_log_minute(7, 7);
-    nextion_update_page_sd_log_minute(8, 8);
-    nextion_update_page_sd_log_minute(9, 9);
+    nextion_update_page_sd_log_minute_header(0);
+    nextion_update_page_sd_log_minute(1, 0);
+    nextion_update_page_sd_log_minute(2, 1);
+    nextion_update_page_sd_log_minute(3, 2);
+    nextion_update_page_sd_log_minute(4, 3);
+    nextion_update_page_sd_log_minute(5, 4);
+    nextion_update_page_sd_log_minute(6, 5);
+    nextion_update_page_sd_log_minute(7, 6);
+    nextion_update_page_sd_log_minute(8, 7);
+    nextion_update_page_sd_log_minute(9, 8);
     
     nextion_update_page_sd_log_hour(0, 0);
     nextion_update_page_sd_log_hour(1, 1);

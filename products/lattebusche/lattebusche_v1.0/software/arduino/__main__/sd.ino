@@ -1,3 +1,75 @@
+// 2026-02-13 09:45 Formato standard internazionale (ISO 8601)
+
+int sd_dir_exists(fs::FS &fs, const char * dirname)
+{
+  File root = fs.open(dirname);
+  if (!root)
+  {
+    Serial.println("Directory DOESN'T Exists");
+    return 0;
+  }
+  if (!root.isDirectory())
+  {
+    Serial.println("NOT a Directory");
+    return 0;
+  }
+  Serial.println("Directory Found");
+  return 1;
+}
+
+void listDir(fs::FS &fs, const char * dirname, uint8_t levels)
+{
+  Serial.printf("Listing directory: %s\n", dirname);
+
+  File root = fs.open(dirname);
+  if (!root)
+  {
+    Serial.println("Failed to open directory");
+    return;
+  }
+  if (!root.isDirectory())
+  {
+    Serial.println("Not a directory");
+    return;
+  }
+
+  File file = root.openNextFile();
+  while (file)
+  {
+    if (file.isDirectory())
+    {
+      Serial.print("  DIR : ");
+      Serial.println(file.name());
+      if(levels)
+      {
+        listDir(fs, file.name(), levels -1);
+      }
+    } 
+    else 
+    {
+      Serial.print("  FILE: ");
+      Serial.print(file.name());
+      Serial.print("  SIZE: ");
+      Serial.println(file.size());
+    }
+    file = root.openNextFile();
+  }
+}
+
+void createDir(fs::FS &fs, const char * path)
+{
+  Serial.printf("Creating Dir: %s\n", path);
+
+  if(fs.mkdir(path))
+  {
+    Serial.println("Dir created");
+  } 
+  else 
+  {
+    Serial.println("mkdir failed");
+  }
+}
+
 bool readLastRowAndSplit(fs::FS &fs, const char *path)
 {
   File file = fs.open(path);
@@ -185,7 +257,7 @@ void update_hour_buff(uint16_t year, uint16_t month, uint16_t day, uint16_t hour
     // Write new formatted string in position 0
     snprintf(sd_hour_nextion_lines_buff[0],
              LINE_SIZE,
-             "%04u/%02u/%02u-%02u:%02u",
+             "%04u-%02u-%02u %02u:%02u",
              year, month, day, hour, minute);
 
     // Extra safety (guarantee termination)
@@ -208,7 +280,7 @@ void update_minute_buff(int err)
     if (ppb_cur < 0) ppb_cur = 0;
     snprintf(sd_minute_nextion_lines_buff[0],
             LINE_SIZE,
-            "%01u|%04u/%02u/%02u %02u:%02u %04uppb",
+            "%01u|%04u-%02u-%02u %02u:%02u %04u ",
             err, 
             rtc.year_cur, rtc.month_cur, rtc.day_cur, rtc.hour_cur, rtc.minute_cur,
             ppb_cur
@@ -224,7 +296,7 @@ void sd_minute_line_cur_buff_write()
     if (ppb_cur < 0) ppb_cur = 0;
     snprintf(sd_minute_line_cur_buff,
             LINE_SIZE,
-            "%04u/%02u/%02u %02u:%02u %04uppb",
+            "%04u-%02u-%02u %02u:%02u %04u ",
             rtc.year_cur, rtc.month_cur, rtc.day_cur, rtc.hour_cur, rtc.minute_cur,
             ppb_cur
     );
@@ -247,55 +319,88 @@ void sd_minute_manager()
     
     if (sd_card.tried_to_initialize)
     {
-      sd_card_write();
-      if (readLastRowAndSplit(SD, "/data.csv")) 
+      // create "year" folder (if it doesn't exists already)
       {
-
-        Serial.println("Last row split values:");
-
-        for (int i = 0; i < fieldCount; i++) 
+        char _buff[LINE_SIZE] = {0};
+        snprintf(_buff, LINE_SIZE, "/%04u", rtc.year_cur);
+        int exists = sd_dir_exists(SD, _buff);
+        if (exists == 0)
         {
-          Serial.print("Field ");
-          Serial.print(i);
-          Serial.print(": ");
-          Serial.println(fields[i]);
-        }
-
-        {
-          char _buff[LINE_SIZE] = {0};
-          snprintf(_buff,
-                LINE_SIZE,
-                "%04u/%02u/%02u %02u:%02u %04uppb",
-                atoi(fields[0]),
-                atoi(fields[1]),
-                atoi(fields[2]),
-                atoi(fields[3]),
-                atoi(fields[4]),
-                atoi(fields[5])
-          );
-          Serial.println("OLD BUFFER:");
-          Serial.println(sd_minute_line_cur_buff);
-          Serial.println("NEW BUFFER:");
-          Serial.println(_buff);
-
-          if (strcmp(_buff, sd_minute_line_cur_buff) == 0) 
-          {
-              Serial.println("Buffers are identical");
-              update_minute_buff(0);
-          } else 
-          {
-              Serial.println("Buffers are different");
-              update_minute_buff(3);
-          }
+          createDir(SD, _buff);
         }
       }
-      else
+      // create "month" subfolder (if it doesn't exists already)
       {
-        update_minute_buff(2);
+        char _buff[LINE_SIZE] = {0};
+        snprintf(_buff, LINE_SIZE, "/%04u/%02u", rtc.year_cur, rtc.month_cur);
+        int exists = sd_dir_exists(SD, _buff);
+        if (exists == 0)
+        {
+          createDir(SD, _buff);
+        }
+      }
+      // write line in "day" csv file
+      {
+        char _buff[LINE_SIZE] = {0};
+        snprintf(_buff, LINE_SIZE, "/%04u/%02u/%02u.csv", rtc.year_cur, rtc.month_cur, rtc.day_cur);
+        sd_card_write(_buff);
+      }
+      // read last line in "day" csv file
+      {
+        char _buff[LINE_SIZE] = {0};
+        snprintf(_buff, LINE_SIZE, "/%04u/%02u/%02u.csv", rtc.year_cur, rtc.month_cur, rtc.day_cur);
+        if (readLastRowAndSplit(SD, _buff)) 
+        {
+          Serial.println("Last row split values:");
+
+          for (int i = 0; i < fieldCount; i++) 
+          {
+            Serial.print("Field ");
+            Serial.print(i);
+            Serial.print(": ");
+            Serial.println(fields[i]);
+          }
+
+          {
+            char _buff[LINE_SIZE] = {0};
+            snprintf(_buff,
+                  LINE_SIZE,
+                  "%04u-%02u-%02u %02u:%02u %04u ",
+                  atoi(fields[0]),
+                  atoi(fields[1]),
+                  atoi(fields[2]),
+                  atoi(fields[3]),
+                  atoi(fields[4]),
+                  atoi(fields[5])
+            );
+            Serial.println("OLD BUFFER:");
+            Serial.println(sd_minute_line_cur_buff);
+            Serial.println("NEW BUFFER:");
+            Serial.println(_buff);
+
+            if (strcmp(_buff, sd_minute_line_cur_buff) == 0) 
+            {
+                Serial.println("Buffers are identical");
+                update_minute_buff(0);
+            } 
+            else 
+            {
+              Serial.println("Buffers are different");
+              // err: write/read values don't match?
+              update_minute_buff(3);
+            }
+          }
+        }
+        else
+        {
+          // err: can't read file? (maybe file doesn't exists?)
+          update_minute_buff(2);
+        }
       }
     }
     else
     {
+      // err: sd not inserted?
       update_minute_buff(1);
     }
 
@@ -351,10 +456,10 @@ void sd_card_init()
   }
 }
 
-void sd_card_write() 
+void sd_card_write(const char * dirname) 
 {
-  Serial.printf("Appending to file: %s\n", "/data.csv");
-  file = SD.open("/data.csv", FILE_APPEND);
+  Serial.printf("Appending to file: %s\n", dirname);
+  file = SD.open(dirname, FILE_APPEND);
   if (!file)
   {
     Serial.println("Failed to open file for appending");
