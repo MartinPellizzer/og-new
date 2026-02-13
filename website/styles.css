@@ -1000,6 +1000,38 @@ footer h2 {
   top: calc(82px + var(--space-xl));
 }
 
+.hub .nav-global ul {
+    list-style: none;
+    margin-left: 0rem;
+}
+
+.hub .nav-global li {
+    line-height: 1.5;
+}
+
+.hub .nav-global ul a {
+    display: block;
+    text-decoration: none;
+    color: blue;
+    margin-bottom: 0.75rem;
+}
+
+.hub .nav-page ul {
+    list-style: none;
+    margin-left: 0rem;
+}
+
+.hub .nav-page ul a {
+    display: block;
+    text-decoration: none;
+    color: blue;
+    margin-bottom: 0.75rem;
+}
+
+.hub .nav-page li {
+    line-height: 1.5;
+}
+
 .hub h2 {
   scroll-margin-top: calc(82px + var(--space-xl));
 }
