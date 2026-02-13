@@ -1,4 +1,6 @@
-// TODO: salvare letture nella giusta cartella (gerarchia di folders anno/mese/...)
+// TODO: fai in modo che la lettura di un giorno non possa essere inferiore o uguale come tempistica
+//       dalla ultima lettura del giorno stesso (se succede ce un problema, forse rtc da reimpostare)
+//       aggiungi codice errore: es. E4
 // TODO: fai medie per ora (colonna di destra)
 // TODO: dai un occhiata a sensore (delle volte smette di segnare quando riavvio scheda principale con bottone EN)
 // TODO: completa la homepage, lascia solo dati rilevanti per lattebusche (no potenza generatore, segnale esterno, ecc...)
