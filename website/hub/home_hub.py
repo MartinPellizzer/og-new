@@ -1198,22 +1198,21 @@ def gen():
             <div class="container-xl-raw hero-layout">
                 <div class="hero-content">
                     <h1>
-                        Tecnologie a ozono per aria, acqua e superfici
+                        Ingegneria dell’Ozono Industriale per Soluzioni nei Processi Alimentari e Industriali
                     </h1>
                     <p>
-                        Progettiamo e realizziamo sistemi a ozono sicuri, controllati e affidabili,
-                        adatti a diversi ambiti applicativi, dall’industriale al residenziale.
+Tecnologie a ozono progettate su misura per ottimizzare la sicurezza alimentare, garantire la conformità normativa e migliorare le prestazioni industriali. Dall’analisi di fattibilità e progettazione del sistema alla validazione, installazione e supporto a lungo termine.
                     </p>
                     <nav>
                         <ul>
                             <li>
                                 <a href="/applicazioni.html">
-                                    Esplora le applicazioni
+                                    Richiedi una Consulenza Ingegneristica
                                 </a>
                             </li>
                             <li>
                                 <a href="/ozono.html">
-                                    Guida all’ozono
+                                    Esplora Applicazioni nel Settore Alimentare
                                 </a>
                             </li>
                         </ul>

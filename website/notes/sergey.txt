@@ -1,0 +1,20 @@
+CORE ENTITIES:
+
+Brand:              Ozonogroup
+Products/Services:  Sistemi ad ozono industriali
+Key People:         Mauro Dottori, Elena Ceccato, Martin Pellizzer
+Industries:         Industrial Sanitization
+Locations:          Asolo
+
+BASIC SCHEMAS:
+
+- Organization schema to homepage:              define brand, logo, contact info
+- Person schema on team pages:                  highlight key people
+- Product or service schema to service pages:   define offerings like SEO consulting
+
+TRUST SIGNALS:
+
+- Author Bios:              Showcase expertise (eg. "Martin Pellizzer, 15+ years in digital marketing")
+- Certification & Awards:   Include badges or mentions in industry awards
+- Testimonials & Rewies:    Share real world feedback
+- External Citations:       Links or mentions from reputable sites or directories
