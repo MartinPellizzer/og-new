@@ -1198,21 +1198,27 @@ def gen():
             <div class="container-xl-raw hero-layout">
                 <div class="hero-content">
                     <h1>
-                        Ingegneria dell’Ozono Industriale per Soluzioni nei Processi Alimentari e Industriali
+                        Ingegneria Industriale dell’Ozono per la Sicurezza Alimentare e i Processi Produttivi
                     </h1>
                     <p>
-Tecnologie a ozono progettate su misura per ottimizzare la sicurezza alimentare, garantire la conformità normativa e migliorare le prestazioni industriali. Dall’analisi di fattibilità e progettazione del sistema alla validazione, installazione e supporto a lungo termine.
+Progettiamo e implementiamo soluzioni su misura basate sull’ozono per l’industria alimentare e applicazioni industriali avanzate, dall’analisi tecnica al supporto a lungo termine.
                     </p>
+                    <ul style="display: flex; flex-direction: column;">
+                        <li>✔ Progettazione e consulenza tecnica</li>
+                        <li>✔ Integrazione nei piani HACCP</li>
+                        <li>✔ Installazione e collaudo certificato</li>
+                        <li>✔ Manutenzione e ottimizzazione continua</li>
+                    </ul>
                     <nav>
                         <ul>
                             <li>
                                 <a href="/applicazioni.html">
-                                    Richiedi una Consulenza Ingegneristica
+                                    Richiedi una consulenza tecnica
                                 </a>
                             </li>
                             <li>
                                 <a href="/ozono.html">
-                                    Esplora Applicazioni nel Settore Alimentare
+                                    Esplora applicazioni nel settore alimentare
                                 </a>
                             </li>
                         </ul>
