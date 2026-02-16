@@ -315,12 +315,16 @@ typedef struct sd_card_t
   uint32_t demo_val_millis_cur = 0;
   uint32_t demo_val_millis_tmr = 1000;
   
-  uint8_t second_old = -2;
-  uint8_t second_cur = 0;
+  uint8_t buff_second_old = -2;
+  uint8_t buff_second_cur = 0;
   uint8_t buff_minute_old = -2;
   uint8_t buff_minute_cur = 0;
   uint8_t buff_hour_old = -2;
   uint8_t buff_hour_cur = 0;
+
+  // TODO: remove, used only for debug
+  uint8_t buff_minute_hour_old = -2;
+  uint8_t buff_minute_hour_cur = 0;
 } sd_card_t;
 sd_card_t sd_card = {};
 
@@ -487,27 +491,5 @@ void loop()
 
   // ;valves
   // valves_manager();
-
-  // if (millis() - sd_card.demo_val_millis_cur > sd_card.demo_val_millis_tmr) 
-  // {
-  //   sd_card.demo_val_millis_cur = millis();
-  //   sd_card.demo_val = (sd_card.demo_val + 1) % 10;
-  //   sd_card.nextion_update = 1;
-  // }
-
-  if (millis() - sd_card.demo_val_millis_cur > sd_card.demo_val_millis_tmr) 
-  {
-    sd_card.demo_val_millis_cur = millis();
-
-    if (sd_card.tried_to_initialize)
-    {
-      // readFile(SD, "/data.csv");
-      readLastCSVLinesOrdered(SD, "/data.csv");
-    }
-    Serial.println();
-
-    sd_card.demo_val = (sd_card.demo_val + 1) % 10;
-    // sd_card.nextion_update = 1;
-  }
 
 }

@@ -2551,22 +2551,65 @@ void nextion_update_page_sd_log_minute(uint8_t component_i, uint8_t line_i)
   }
 }
 
+void nextion_update_page_sd_log_hour_header(uint8_t component_i)
+{
+  uint8_t _buffer[] = { 0x74, 0x30, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x41, 0x41, 0x41, 0x41, 0x2D, 0x4D, 0x4D, 0x2D, 0x47, 0x47, 0x20, 0x48, 0x48, 0x3A, 0x4D, 0x4D, 0x20, 0x50, 0x50, 0x42, 0x20, 0x20, 0x20, 0x20, 0x20, 0x22, 0xff, 0xff, 0xff };
+  _buffer[1] = (component_i % 100 / 10) + 0x30;
+  _buffer[2] = (component_i % 10 / 1) + 0x30;
+  for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+  {
+    Serial2.write(_buffer[i]);
+  } 
+}
+
 void nextion_update_page_sd_log_hour(uint8_t component_i, uint8_t line_i)
 {      
-  uint8_t _buffer[] = { 0x74, 0x31, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x30, 0x30, 0x30, 0x2F, 0x30, 0x30, 0x2F, 0x30, 0x30, 0x2D, 0x30, 0x30, 0x3A, 0x30, 0x30, 0x2D, 0x30, 0x2E, 0x30, 0x30, 0x30, 0x70, 0x70, 0x6D, 0x22, 0xff, 0xff, 0xff };
-  _buffer[2] = (component_i % 10 / 1) + 0x30;
-  _buffer[9] = sd_hour_nextion_lines_buff[line_i][0];
-  _buffer[10] = sd_hour_nextion_lines_buff[line_i][1];
-  _buffer[11] = sd_hour_nextion_lines_buff[line_i][2];
-  _buffer[12] = sd_hour_nextion_lines_buff[line_i][3];
-  _buffer[14] = sd_hour_nextion_lines_buff[line_i][5];
-  _buffer[15] = sd_hour_nextion_lines_buff[line_i][6];
-  _buffer[17] = sd_hour_nextion_lines_buff[line_i][8];
-  _buffer[18] = sd_hour_nextion_lines_buff[line_i][9];
-  _buffer[20] = sd_hour_nextion_lines_buff[line_i][11];
-  _buffer[21] = sd_hour_nextion_lines_buff[line_i][12];
-  _buffer[23] = sd_hour_nextion_lines_buff[line_i][14];
-  _buffer[24] = sd_hour_nextion_lines_buff[line_i][15];
+  uint8_t _buffer[] = { 
+      0x74, 0x31, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x30, 
+      0x30, 0x30, 0x2F, 0x30, 0x30, 0x2F, 0x30, 0x30, 0x2D, 0x30, 
+      0x30, 0x3A, 0x30, 0x30, 0x2D, 0x30, 0x30, 0x30, 0x30, 0x70, 
+      0x70, 0x6D, 0x22, 0xff, 0xff, 0xff };
+    int start_i = 2;
+    _buffer[1] = (component_i % 100 / 10) + 0x30;
+    _buffer[2] = (component_i % 10 / 1) + 0x30;
+
+    _buffer[9] = sd_hour_nextion_lines_buff[line_i][start_i+0];
+    _buffer[10] = sd_hour_nextion_lines_buff[line_i][start_i+1];
+    _buffer[11] = sd_hour_nextion_lines_buff[line_i][start_i+2];
+    _buffer[12] = sd_hour_nextion_lines_buff[line_i][start_i+3];
+
+    _buffer[13] = sd_hour_nextion_lines_buff[line_i][start_i+4];
+
+    _buffer[14] = sd_hour_nextion_lines_buff[line_i][start_i+5];
+    _buffer[15] = sd_hour_nextion_lines_buff[line_i][start_i+6];
+
+    _buffer[16] = sd_hour_nextion_lines_buff[line_i][start_i+7];
+
+    _buffer[17] = sd_hour_nextion_lines_buff[line_i][start_i+8];
+    _buffer[18] = sd_hour_nextion_lines_buff[line_i][start_i+9];
+
+    _buffer[19] = sd_hour_nextion_lines_buff[line_i][start_i+10];
+
+    _buffer[20] = sd_hour_nextion_lines_buff[line_i][start_i+11];
+    _buffer[21] = sd_hour_nextion_lines_buff[line_i][start_i+12];
+
+    _buffer[22] = sd_hour_nextion_lines_buff[line_i][start_i+13];
+
+    _buffer[23] = sd_hour_nextion_lines_buff[line_i][start_i+14];
+    _buffer[24] = sd_hour_nextion_lines_buff[line_i][start_i+15];
+
+    _buffer[25] = sd_hour_nextion_lines_buff[line_i][start_i+16];
+
+    _buffer[26] = sd_hour_nextion_lines_buff[line_i][start_i+17];
+    _buffer[27] = sd_hour_nextion_lines_buff[line_i][start_i+18];
+    _buffer[28] = sd_hour_nextion_lines_buff[line_i][start_i+19];
+    _buffer[29] = sd_hour_nextion_lines_buff[line_i][start_i+20];
+
+    _buffer[30] = sd_hour_nextion_lines_buff[line_i][start_i+21];
+    
+    _buffer[31] = 0x20;
+    _buffer[32] = 0x20;
+
   for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
   {
     Serial2.write(_buffer[i]);
@@ -2602,19 +2645,89 @@ void nextion_update_page_sd(uint8_t force_refresh)
     nextion_update_page_sd_log_minute(8, 7);
     nextion_update_page_sd_log_minute(9, 8);
     
-    nextion_update_page_sd_log_hour(0, 0);
-    nextion_update_page_sd_log_hour(1, 1);
-    nextion_update_page_sd_log_hour(2, 2);
-    nextion_update_page_sd_log_hour(3, 3);
-    nextion_update_page_sd_log_hour(4, 4);
-    nextion_update_page_sd_log_hour(5, 5);
-    nextion_update_page_sd_log_hour(6, 6);
-    nextion_update_page_sd_log_hour(7, 7);
-    nextion_update_page_sd_log_hour(8, 8);
-    nextion_update_page_sd_log_hour(9, 9);
+    nextion_update_page_sd_log_hour_header(10);
+    nextion_update_page_sd_log_hour(11, 0);
+    nextion_update_page_sd_log_hour(12, 1);
+    nextion_update_page_sd_log_hour(13, 2);
+    nextion_update_page_sd_log_hour(14, 3);
+    nextion_update_page_sd_log_hour(15, 4);
+    nextion_update_page_sd_log_hour(16, 5);
+    nextion_update_page_sd_log_hour(17, 6);
+    nextion_update_page_sd_log_hour(18, 7);
+    nextion_update_page_sd_log_hour(19, 8);
   }
 
+  // clock
+  if (force_refresh || rtc.second_old != rtc.second_cur) 
+  {
+    rtc.second_old = rtc.second_cur;      
+    uint8_t _buffer[] = { 0x74, 0x32, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4C, 0x55, 0x4E, 0x20, 0x30, 0x37, 0x2F, 0x30, 0x31, 0x2F, 0x32, 0x30, 0x32, 0x30, 0x20, 0x2D, 0x20, 0x31, 0x30, 0x3A, 0x33, 0x30, 0x3A, 0x33, 0x30, 0x22, 0xff, 0xff, 0xff };
+    int start_i = 9;
+    if (rtc.day_week_cur == 0)
+    {
+      _buffer[start_i + 0] = 0x44;
+      _buffer[start_i + 1] = 0x4F;
+      _buffer[start_i + 2] = 0x4D;
+    }
+    else if (rtc.day_week_cur == 1)
+    {
+      _buffer[start_i + 0] = 0x4C;
+      _buffer[start_i + 1] = 0x55;
+      _buffer[start_i + 2] = 0x4E;
+    }
+    else if (rtc.day_week_cur == 2)
+    {
+      _buffer[start_i + 0] = 0x4D;
+      _buffer[start_i + 1] = 0x41;
+      _buffer[start_i + 2] = 0x52;
+    }
+    else if (rtc.day_week_cur == 3)
+    {
+      _buffer[start_i + 0] = 0x4D;
+      _buffer[start_i + 1] = 0x45;
+      _buffer[start_i + 2] = 0x52;
+    }
+    else if (rtc.day_week_cur == 4)
+    {
+      _buffer[start_i + 0] = 0x47;
+      _buffer[start_i + 1] = 0x49;
+      _buffer[start_i + 2] = 0x4F;
+    }
+    else if (rtc.day_week_cur == 5)
+    {
+      _buffer[start_i + 0] = 0x56;
+      _buffer[start_i + 1] = 0x45;
+      _buffer[start_i + 2] = 0x4E;
+    }
+    else if (rtc.day_week_cur == 6)
+    {
+      _buffer[start_i + 0] = 0x53;
+      _buffer[start_i + 1] = 0x41;
+      _buffer[start_i + 2] = 0x42;
+    }
+    
+    _buffer[start_i + 4] = (rtc.day_cur % 100 / 10) + 0x30;
+    _buffer[start_i + 5] = (rtc.day_cur % 10 / 1) + 0x30;
+    _buffer[start_i + 7] = (rtc.month_cur % 100 / 10) + 0x30;
+    _buffer[start_i + 8] = (rtc.month_cur % 10 / 1) + 0x30;
+    _buffer[start_i + 10] = (rtc.year_cur % 10000 / 1000) + 0x30;
+    _buffer[start_i + 11] = (rtc.year_cur % 1000 / 100) + 0x30;
+    _buffer[start_i + 12] = (rtc.year_cur % 100 / 10) + 0x30;
+    _buffer[start_i + 13] = (rtc.year_cur % 10 / 1) + 0x30;
+
+    _buffer[start_i + 17] = (rtc.hour_cur % 100 / 10) + 0x30;
+    _buffer[start_i + 18] = (rtc.hour_cur % 10 / 1) + 0x30;
+    _buffer[start_i + 20] = (rtc.minute_cur % 100 / 10) + 0x30;
+    _buffer[start_i + 21] = (rtc.minute_cur % 10 / 1) + 0x30;
+    _buffer[start_i + 23] = (rtc.second_cur % 100 / 10) + 0x30;
+    _buffer[start_i + 24] = (rtc.second_cur % 10 / 1) + 0x30;
+    for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+    {
+      Serial2.write(_buffer[i]);
+    }
+  }
 }
+
 // void nextion_update_page_sensor_temperature(uint8_t force_refresh) 
 // {
 //   if (force_refresh) 

@@ -17,7 +17,7 @@ int sd_dir_exists(fs::FS &fs, const char * dirname)
   return 1;
 }
 
-void listDir(fs::FS &fs, const char * dirname, uint8_t levels)
+void list_dir(fs::FS &fs, const char * dirname, uint8_t levels)
 {
   Serial.printf("Listing directory: %s\n", dirname);
 
@@ -42,9 +42,9 @@ void listDir(fs::FS &fs, const char * dirname, uint8_t levels)
       Serial.println(file.name());
       if(levels)
       {
-        listDir(fs, file.name(), levels -1);
+        list_dir(fs, file.name(), levels -1);
       }
-    } 
+    }
     else 
     {
       Serial.print("  FILE: ");
@@ -56,7 +56,7 @@ void listDir(fs::FS &fs, const char * dirname, uint8_t levels)
   }
 }
 
-void createDir(fs::FS &fs, const char * path)
+void create_dir(fs::FS &fs, const char * path)
 {
   Serial.printf("Creating Dir: %s\n", path);
 
@@ -115,135 +115,7 @@ bool readLastRowAndSplit(fs::FS &fs, const char *path)
   return true;
 }
 
-void readFile(fs::FS &fs, const char * path){
-  Serial.printf("Reading file: %s\n", path);
-
-  File file = fs.open(path);
-  if(!file){
-    Serial.println("Failed to open file for reading");
-    return;
-  }
-
-  Serial.print("Read from file: ");
-  while(file.available()){
-    Serial.write(file.read());
-  }
-  file.close();
-}
-
-void readLastCSVLines(fs::FS &fs, const char * path, int maxLines) {
-  Serial.printf("Reading last %d lines from: %s\n", maxLines, path);
-
-  File file = fs.open(path);
-  if (!file) {
-    Serial.println("Failed to open CSV file");
-    return;
-  }
-
-  // Clear buffer
-  for (int i = 0; i < maxLines; i++) {
-    lastLines[i][0] = '\0';
-  }
-  lineCount = 0;
-
-  char lineBuffer[MAX_LINE_LENGTH];
-  int index = 0;
-
-  while (file.available()) {
-    char c = file.read();
-
-    if (c == '\n' || index >= MAX_LINE_LENGTH - 1) {
-      lineBuffer[index] = '\0';
-
-      // Store line in rolling buffer
-      strncpy(lastLines[lineCount % maxLines], lineBuffer, MAX_LINE_LENGTH);
-      lastLines[lineCount % maxLines][MAX_LINE_LENGTH - 1] = '\0';
-
-      lineCount++;
-      index = 0;
-    } else if (c != '\r') {
-      lineBuffer[index++] = c;
-    }
-  }
-
-  // Handle last line without newline
-  if (index > 0) {
-    lineBuffer[index] = '\0';
-    strncpy(lastLines[lineCount % maxLines], lineBuffer, MAX_LINE_LENGTH);
-    lastLines[lineCount % maxLines][MAX_LINE_LENGTH - 1] = '\0';
-    lineCount++;
-  }
-
-  file.close();
-
-  // Print last lines in correct order
-  int start = max(0, lineCount - maxLines);
-  Serial.println("---- Last CSV rows ----");
-  for (int i = start; i < lineCount; i++) {
-    Serial.println(lastLines[i % maxLines]);
-  }
-}
-
-void readLastCSVLinesOrdered(fs::FS &fs, const char *path) {
-  File file = fs.open(path);
-  if (!file) {
-    Serial.println("Failed to open CSV file");
-    storedLines = 0;
-    return;
-  }
-
-  storedLines = 0;
-  char lineBuffer[MAX_LINE_LENGTH];
-  int idx = 0;
-
-  while (file.available()) {
-    char c = file.read();
-
-    if (c == '\n') {
-      lineBuffer[idx] = '\0';
-
-      if (storedLines < MAX_LINES) {
-        // Still filling
-        strncpy(lastLines[storedLines], lineBuffer, MAX_LINE_LENGTH);
-        storedLines++;
-      } else {
-        // Shift everything up
-        for (int i = 0; i < MAX_LINES - 1; i++) {
-          strcpy(lastLines[i], lastLines[i + 1]);
-        }
-        strncpy(lastLines[MAX_LINES - 1], lineBuffer, MAX_LINE_LENGTH);
-      }
-      idx = 0;
-    }
-    else if (c != '\r' && idx < MAX_LINE_LENGTH - 1) {
-      lineBuffer[idx++] = c;
-    }
-  }
-
-  // Handle last line (no trailing newline)
-  if (idx > 0) {
-    lineBuffer[idx] = '\0';
-
-    if (storedLines < MAX_LINES) {
-      strncpy(lastLines[storedLines], lineBuffer, MAX_LINE_LENGTH);
-      storedLines++;
-    } else {
-      for (int i = 0; i < MAX_LINES - 1; i++) {
-        strcpy(lastLines[i], lastLines[i + 1]);
-      }
-      strncpy(lastLines[MAX_LINES - 1], lineBuffer, MAX_LINE_LENGTH);
-    }
-  }
-
-  file.close();
-
-  // Serial.println("---- Ordered last lines ----");
-  // for (int i = 0; i < storedLines; i++) {
-  //   Serial.println(lastLines[i]);
-  // }
-}
-
-void update_hour_buff(uint16_t year, uint16_t month, uint16_t day, uint16_t hour, uint16_t minute)
+void update_hour_buff(uint16_t year, uint16_t month, uint16_t day, uint16_t hour, uint16_t minute, int32_t avg)
 {
     // Shift buffers down (start from bottom!)
     for (int i = LINES - 1; i > 0; i--)
@@ -257,8 +129,8 @@ void update_hour_buff(uint16_t year, uint16_t month, uint16_t day, uint16_t hour
     // Write new formatted string in position 0
     snprintf(sd_hour_nextion_lines_buff[0],
              LINE_SIZE,
-             "%04u-%02u-%02u %02u:%02u",
-             year, month, day, hour, minute);
+             "%01u|%04u-%02u-%02u %02u:%02u %04u ",
+             0, year, month, day, hour, minute, avg);
 
     // Extra safety (guarantee termination)
     sd_hour_nextion_lines_buff[0][LINE_SIZE - 1] = '\0';
@@ -312,8 +184,8 @@ void sd_minute_manager()
     sd_card.buff_minute_old = sd_card.buff_minute_cur;
 
     // add sensor reading to hour buff
-    sd_hour_buff[sd_hour_buff_i] = 123;
-    sd_hour_buff_i += 1;
+    // sd_hour_buff[sd_hour_buff_i] = 123;
+    // sd_hour_buff_i += 1;
 
     sd_minute_line_cur_buff_write();
     
@@ -326,7 +198,7 @@ void sd_minute_manager()
         int exists = sd_dir_exists(SD, _buff);
         if (exists == 0)
         {
-          createDir(SD, _buff);
+          create_dir(SD, _buff);
         }
       }
       // create "month" subfolder (if it doesn't exists already)
@@ -336,7 +208,7 @@ void sd_minute_manager()
         int exists = sd_dir_exists(SD, _buff);
         if (exists == 0)
         {
-          createDir(SD, _buff);
+          create_dir(SD, _buff);
         }
       }
       // write line in "day" csv file
@@ -416,11 +288,38 @@ void sd_minute_manager()
 
 void sd_hour_manager() 
 {
-  if (sd_card.buff_hour_old != sd_card.buff_hour_cur)
+  // TODO: remove this and update "sd_hour_buff" in "sd_minute_manager" every minute and not second
+  if (sd_card.buff_second_old != sd_card.buff_second_cur)
   {
-    sd_card.buff_hour_old = sd_card.buff_hour_cur;
+    sd_card.buff_second_old = sd_card.buff_second_cur;
 
-    update_hour_buff(rtc.year_cur, rtc.month_cur, rtc.day_cur, rtc.hour_cur, rtc.minute_cur);
+    // add sensor reading to hour buff
+    sd_hour_buff[sd_hour_buff_i] = 123;
+    sd_hour_buff_i += 1;
+  }
+
+  if (sd_card.buff_minute_hour_old != sd_card.buff_minute_hour_cur)
+  {
+    sd_card.buff_minute_hour_old = sd_card.buff_minute_hour_cur;
+    
+    sd_hour_buff[sd_hour_buff_i] = 123;
+
+    int32_t sum = 0;
+
+    for (int i = 0; i < 60; i++)
+    {
+      Serial.print(sd_hour_buff[i]);
+      Serial.print(", ");
+      sum += (int32_t)sd_hour_buff[i];
+    }
+    Serial.println();
+
+    int32_t avg = (int32_t)(sum / 60);
+    Serial.println(avg);
+    
+    sd_hour_buff_i = 0;
+
+    update_hour_buff(rtc.year_cur, rtc.month_cur, rtc.day_cur, rtc.hour_cur, rtc.minute_cur, avg);
 
     for (int i = 0; i < LINES; i++)
     {
@@ -484,6 +383,6 @@ void sd_manager()
 {
   sd_card_init();
   
-  sd_minute_manager();
+  // sd_minute_manager();
   sd_hour_manager();
 }
