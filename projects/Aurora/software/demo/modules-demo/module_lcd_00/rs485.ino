@@ -61,6 +61,16 @@ void rs485_write_debug()
   Serial.println();
 }
 
+void lcd_read_print()
+{
+  // LCD PRINT
+  lcd.setCursor(0, 0);
+  lcd.print("ID:");
+  lcd.print(MODULE_ID);
+  lcd.print(" MOD:RELE");
+  lcd.setCursor(0, 1);
+  lcd.print(rs485.receiver_buffer[1]);
+}
 
 void rs485_command_execute()
 {
@@ -79,6 +89,7 @@ void rs485_manager()
     if (rs485.receiver_buffer[0] == MODULE_ID)
     {
       // EXECUTE COMMAND ASKED BY CORE
+      lcd_read_print();
       rs485_command_execute();
       
       // SEND ACK TO CORE

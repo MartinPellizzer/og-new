@@ -177,7 +177,7 @@ void sd_minute_line_cur_buff_write()
     sd_minute_line_cur_buff[LINE_SIZE - 1] = '\0';
 }
 
-void sd_minute_manager() 
+void sd_minute_manager()
 {
   if (sd_card.buff_minute_old != sd_card.buff_minute_cur)
   {

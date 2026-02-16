@@ -1,3 +1,4 @@
+
 #define MODULE_ID 0
 #define RELAY_PIN 25
 
@@ -30,10 +31,6 @@ void setup()
 
   pinMode(RELAY_PIN, OUTPUT);
   digitalWrite(RELAY_PIN, LOW);
-
-  rs485.sender_buffer[0] = 0xFF;
-  rs485.sender_buffer[1] = 0xFF;
-  rs485.sender_buffer[2] = 0xFF;
 }
 
 void loop()
