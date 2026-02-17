@@ -11,6 +11,10 @@ shutil.copy2(f'styles.css', f'{g.WEBSITE_FOLDERPATH}/styles.css')
 shutil.copy2(f'styles-topic-hub.css', f'{g.WEBSITE_FOLDERPATH}/styles-topic-hub.css')
 
 if 1:
+    from pillar import ozono_industriale
+    ozono_industriale.main()
+
+if 0:
     from pillar import ozono
     ozono.main()
 
