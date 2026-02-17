@@ -325,6 +325,16 @@ typedef struct sd_card_t
   // TODO: remove, used only for debug
   uint8_t buff_minute_hour_old = -2;
   uint8_t buff_minute_hour_cur = 0;
+
+  uint8_t buff_hour_second_old = -2;
+  uint8_t buff_hour_second_cur = 0;
+  uint8_t buff_hour_minute_old = -2;
+  uint8_t buff_hour_minute_cur = 0;
+  uint8_t buff_hour_hour_old = -2;
+  uint8_t buff_hour_hour_cur = 0;
+
+  
+
 } sd_card_t;
 sd_card_t sd_card = {};
 
@@ -454,6 +464,12 @@ void setup()
   delay(3000);
   nextion.page_cur = 1;
   Serial.println("setup");
+
+  rtc_manager();
+  sd_card.buff_minute_old = sd_card.buff_minute_cur;
+  sd_card.buff_hour_old = sd_card.buff_hour_cur;
+  sd_card.buff_hour_minute_old = sd_card.buff_hour_minute_cur;
+  sd_card.buff_hour_hour_old = sd_card.buff_hour_hour_cur;
 }
 
 

@@ -17,7 +17,7 @@ int sd_dir_exists(fs::FS &fs, const char * dirname)
   return 1;
 }
 
-void list_dir(fs::FS &fs, const char * dirname, uint8_t levels)
+void sd_list_dir(fs::FS &fs, const char * dirname, uint8_t levels)
 {
   Serial.printf("Listing directory: %s\n", dirname);
 
@@ -42,7 +42,7 @@ void list_dir(fs::FS &fs, const char * dirname, uint8_t levels)
       Serial.println(file.name());
       if(levels)
       {
-        list_dir(fs, file.name(), levels -1);
+        sd_list_dir(fs, file.name(), levels -1);
       }
     }
     else 
@@ -56,7 +56,7 @@ void list_dir(fs::FS &fs, const char * dirname, uint8_t levels)
   }
 }
 
-void create_dir(fs::FS &fs, const char * path)
+void sd_create_dir(fs::FS &fs, const char * path)
 {
   Serial.printf("Creating Dir: %s\n", path);
 
@@ -70,7 +70,7 @@ void create_dir(fs::FS &fs, const char * path)
   }
 }
 
-bool readLastRowAndSplit(fs::FS &fs, const char *path)
+bool sd_read_last_row_and_split(fs::FS &fs, const char *path)
 {
   File file = fs.open(path);
   if (!file) {
@@ -115,6 +115,30 @@ bool readLastRowAndSplit(fs::FS &fs, const char *path)
   return true;
 }
 
+void sd_card_write_row(const char * filepath) 
+{
+  Serial.printf("Appending to file: %s\n", filepath);
+  file = SD.open(filepath, FILE_APPEND);
+  if (!file)
+  {
+    Serial.println("Failed to open file for appending");
+  }
+  else
+  {
+    char _buff[LINE_SIZE] = {0};
+    int16_t ppb_cur = sensor.ppb_cur;
+    if (ppb_cur < 0) ppb_cur = 0;
+    snprintf(_buff,
+            LINE_SIZE,
+            "%04u,%02u,%02u,%02u,%02u,%04u\n",
+            rtc.year_cur, rtc.month_cur, rtc.day_cur, rtc.hour_cur, rtc.minute_cur,
+            ppb_cur
+    );
+    file.print(_buff);
+    file.close();
+  }
+}
+
 void update_hour_buff(uint16_t year, uint16_t month, uint16_t day, uint16_t hour, uint16_t minute, int32_t avg)
 {
     // Shift buffers down (start from bottom!)
@@ -127,10 +151,13 @@ void update_hour_buff(uint16_t year, uint16_t month, uint16_t day, uint16_t hour
     }
 
     // Write new formatted string in position 0
+    int hour_prev = hour - 1;
+    if (hour_prev < 0) hour_prev = 23;
+
     snprintf(sd_hour_nextion_lines_buff[0],
              LINE_SIZE,
-             "%01u|%04u-%02u-%02u %02u:%02u %04u ",
-             0, year, month, day, hour, minute, avg);
+             "%01u|%04u-%02u-%02u %02u-%02u %04u ",
+             0, year, month, day, hour_prev, hour, avg);
 
     // Extra safety (guarantee termination)
     sd_hour_nextion_lines_buff[0][LINE_SIZE - 1] = '\0';
@@ -183,10 +210,6 @@ void sd_minute_manager()
   {
     sd_card.buff_minute_old = sd_card.buff_minute_cur;
 
-    // add sensor reading to hour buff
-    // sd_hour_buff[sd_hour_buff_i] = 123;
-    // sd_hour_buff_i += 1;
-
     sd_minute_line_cur_buff_write();
     
     if (sd_card.tried_to_initialize)
@@ -198,7 +221,7 @@ void sd_minute_manager()
         int exists = sd_dir_exists(SD, _buff);
         if (exists == 0)
         {
-          create_dir(SD, _buff);
+          sd_create_dir(SD, _buff);
         }
       }
       // create "month" subfolder (if it doesn't exists already)
@@ -208,20 +231,20 @@ void sd_minute_manager()
         int exists = sd_dir_exists(SD, _buff);
         if (exists == 0)
         {
-          create_dir(SD, _buff);
+          sd_create_dir(SD, _buff);
         }
       }
       // write line in "day" csv file
       {
         char _buff[LINE_SIZE] = {0};
         snprintf(_buff, LINE_SIZE, "/%04u/%02u/%02u.csv", rtc.year_cur, rtc.month_cur, rtc.day_cur);
-        sd_card_write(_buff);
+        sd_card_write_row(_buff);
       }
       // read last line in "day" csv file
       {
         char _buff[LINE_SIZE] = {0};
         snprintf(_buff, LINE_SIZE, "/%04u/%02u/%02u.csv", rtc.year_cur, rtc.month_cur, rtc.day_cur);
-        if (readLastRowAndSplit(SD, _buff)) 
+        if (sd_read_last_row_and_split(SD, _buff)) 
         {
           Serial.println("Last row split values:");
 
@@ -288,22 +311,22 @@ void sd_minute_manager()
 
 void sd_hour_manager() 
 {
-  // TODO: remove this and update "sd_hour_buff" in "sd_minute_manager" every minute and not second
-  if (sd_card.buff_second_old != sd_card.buff_second_cur)
+  
+  if (sd_card.buff_hour_minute_old != sd_card.buff_hour_minute_cur)
   {
-    sd_card.buff_second_old = sd_card.buff_second_cur;
+    sd_card.buff_hour_minute_old = sd_card.buff_hour_minute_cur;
 
     // add sensor reading to hour buff
-    sd_hour_buff[sd_hour_buff_i] = 123;
+    int16_t ppb_cur = sensor.ppb_cur;
+    if (ppb_cur < 0) ppb_cur = 0;
+    sd_hour_buff[sd_hour_buff_i] = ppb_cur;
     sd_hour_buff_i += 1;
   }
 
-  if (sd_card.buff_minute_hour_old != sd_card.buff_minute_hour_cur)
+  if (sd_card.buff_hour_hour_old != sd_card.buff_hour_hour_cur)
   {
-    sd_card.buff_minute_hour_old = sd_card.buff_minute_hour_cur;
+    sd_card.buff_hour_hour_old = sd_card.buff_hour_hour_cur;
     
-    sd_hour_buff[sd_hour_buff_i] = 123;
-
     int32_t sum = 0;
 
     for (int i = 0; i < 60; i++)
@@ -355,34 +378,10 @@ void sd_card_init()
   }
 }
 
-void sd_card_write(const char * dirname) 
-{
-  Serial.printf("Appending to file: %s\n", dirname);
-  file = SD.open(dirname, FILE_APPEND);
-  if (!file)
-  {
-    Serial.println("Failed to open file for appending");
-  }
-  else
-  {
-    char _buff[LINE_SIZE] = {0};
-    int16_t ppb_cur = sensor.ppb_cur;
-    if (ppb_cur < 0) ppb_cur = 0;
-    snprintf(_buff,
-            LINE_SIZE,
-            "%04u,%02u,%02u,%02u,%02u,%04u\n",
-            rtc.year_cur, rtc.month_cur, rtc.day_cur, rtc.hour_cur, rtc.minute_cur,
-            ppb_cur
-    );
-    file.print(_buff);
-    file.close();
-  }
-}
-
 void sd_manager() 
 {
   sd_card_init();
   
-  // sd_minute_manager();
+  sd_minute_manager();
   sd_hour_manager();
 }

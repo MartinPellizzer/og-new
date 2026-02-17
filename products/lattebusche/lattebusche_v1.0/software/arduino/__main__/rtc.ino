@@ -16,4 +16,9 @@ void rtc_manager()
 
   // TODO: remove, used only for debug
   sd_card.buff_minute_hour_cur = now_cur.minute();
+
+  sd_card.buff_hour_second_cur = now_cur.second();
+  sd_card.buff_hour_minute_cur = now_cur.minute();
+  sd_card.buff_hour_hour_cur = now_cur.hour();
+  
 }

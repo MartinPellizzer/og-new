@@ -2553,7 +2553,7 @@ void nextion_update_page_sd_log_minute(uint8_t component_i, uint8_t line_i)
 
 void nextion_update_page_sd_log_hour_header(uint8_t component_i)
 {
-  uint8_t _buffer[] = { 0x74, 0x30, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x41, 0x41, 0x41, 0x41, 0x2D, 0x4D, 0x4D, 0x2D, 0x47, 0x47, 0x20, 0x48, 0x48, 0x3A, 0x4D, 0x4D, 0x20, 0x50, 0x50, 0x42, 0x20, 0x20, 0x20, 0x20, 0x20, 0x22, 0xff, 0xff, 0xff };
+  uint8_t _buffer[] = { 0x74, 0x30, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x41, 0x41, 0x41, 0x41, 0x2D, 0x4D, 0x4D, 0x2D, 0x47, 0x47, 0x20, 0x48, 0x48, 0x2D, 0x48, 0x48, 0x20, 0x50, 0x50, 0x42, 0x20, 0x20, 0x20, 0x20, 0x20, 0x22, 0xff, 0xff, 0xff };
   _buffer[1] = (component_i % 100 / 10) + 0x30;
   _buffer[2] = (component_i % 10 / 1) + 0x30;
   for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
@@ -2628,13 +2628,14 @@ void nextion_update_page_sd(uint8_t force_refresh)
       }
     }
     sd_card.nextion_update = 1;
+    nextion_update_page_sd_log_minute_header(0);
+    nextion_update_page_sd_log_hour_header(10);
   }
 
   if (sd_card.nextion_update == 1)
   {
     sd_card.nextion_update = 0;
 
-    nextion_update_page_sd_log_minute_header(0);
     nextion_update_page_sd_log_minute(1, 0);
     nextion_update_page_sd_log_minute(2, 1);
     nextion_update_page_sd_log_minute(3, 2);
@@ -2645,7 +2646,6 @@ void nextion_update_page_sd(uint8_t force_refresh)
     nextion_update_page_sd_log_minute(8, 7);
     nextion_update_page_sd_log_minute(9, 8);
     
-    nextion_update_page_sd_log_hour_header(10);
     nextion_update_page_sd_log_hour(11, 0);
     nextion_update_page_sd_log_hour(12, 1);
     nextion_update_page_sd_log_hour(13, 2);
