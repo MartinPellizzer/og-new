@@ -332,7 +332,9 @@ typedef struct sd_card_t
   uint8_t buff_hour_minute_cur = 0;
   uint8_t buff_hour_hour_old = -2;
   uint8_t buff_hour_hour_cur = 0;
-
+  
+  int8_t last_state_old = -2;
+  int8_t last_state_cur = -1;
   
 
 } sd_card_t;

@@ -117,11 +117,11 @@ bool sd_read_last_row_and_split(fs::FS &fs, const char *path)
 
 void sd_card_write_row(const char * filepath) 
 {
-  Serial.printf("Appending to file: %s\n", filepath);
+  // Serial.printf("Appending to file: %s\n", filepath);
   file = SD.open(filepath, FILE_APPEND);
   if (!file)
   {
-    Serial.println("Failed to open file for appending");
+    // Serial.println("Failed to open file for appending");
   }
   else
   {
@@ -246,15 +246,15 @@ void sd_minute_manager()
         snprintf(_buff, LINE_SIZE, "/%04u/%02u/%02u.csv", rtc.year_cur, rtc.month_cur, rtc.day_cur);
         if (sd_read_last_row_and_split(SD, _buff)) 
         {
-          Serial.println("Last row split values:");
+          // Serial.println("Last row split values:");
 
-          for (int i = 0; i < fieldCount; i++) 
-          {
-            Serial.print("Field ");
-            Serial.print(i);
-            Serial.print(": ");
-            Serial.println(fields[i]);
-          }
+          // for (int i = 0; i < fieldCount; i++) 
+          // {
+          //   Serial.print("Field ");
+          //   Serial.print(i);
+          //   Serial.print(": ");
+          //   Serial.println(fields[i]);
+          // }
 
           {
             char _buff[LINE_SIZE] = {0};
@@ -268,21 +268,23 @@ void sd_minute_manager()
                   atoi(fields[4]),
                   atoi(fields[5])
             );
-            Serial.println("OLD BUFFER:");
-            Serial.println(sd_minute_line_cur_buff);
-            Serial.println("NEW BUFFER:");
-            Serial.println(_buff);
+            // Serial.println("OLD BUFFER:");
+            // Serial.println(sd_minute_line_cur_buff);
+            // Serial.println("NEW BUFFER:");
+            // Serial.println(_buff);
 
             if (strcmp(_buff, sd_minute_line_cur_buff) == 0) 
             {
-                Serial.println("Buffers are identical");
+                // Serial.println("Buffers are identical");
                 update_minute_buff(0);
+                sd_card.last_state_cur = 0;
             } 
             else 
             {
-              Serial.println("Buffers are different");
+              // Serial.println("Buffers are different");
               // err: write/read values don't match?
               update_minute_buff(3);
+              sd_card.last_state_cur = 3;
             }
           }
         }
@@ -290,6 +292,7 @@ void sd_minute_manager()
         {
           // err: can't read file? (maybe file doesn't exists?)
           update_minute_buff(2);
+          sd_card.last_state_cur = 2;
         }
       }
     }
@@ -297,13 +300,14 @@ void sd_minute_manager()
     {
       // err: sd not inserted?
       update_minute_buff(1);
+      sd_card.last_state_cur = 1;
     }
 
-    for (int i = 0; i < LINES; i++)
-    {
-      Serial.println(sd_minute_nextion_lines_buff[i]);
-    }
-    Serial.println();
+    // for (int i = 0; i < LINES; i++)
+    // {
+    //   Serial.println(sd_minute_nextion_lines_buff[i]);
+    // }
+    // Serial.println();
 
     sd_card.nextion_update = 1;
   }
@@ -331,24 +335,24 @@ void sd_hour_manager()
 
     for (int i = 0; i < 60; i++)
     {
-      Serial.print(sd_hour_buff[i]);
-      Serial.print(", ");
+      // Serial.print(sd_hour_buff[i]);
+      // Serial.print(", ");
       sum += (int32_t)sd_hour_buff[i];
     }
-    Serial.println();
+    // Serial.println();
 
     int32_t avg = (int32_t)(sum / 60);
-    Serial.println(avg);
+    // Serial.println(avg);
     
     sd_hour_buff_i = 0;
 
     update_hour_buff(rtc.year_cur, rtc.month_cur, rtc.day_cur, rtc.hour_cur, rtc.minute_cur, avg);
 
-    for (int i = 0; i < LINES; i++)
-    {
-        Serial.println(sd_hour_nextion_lines_buff[i]);
-    }
-    Serial.println();
+    // for (int i = 0; i < LINES; i++)
+    // {
+    //     Serial.println(sd_hour_nextion_lines_buff[i]);
+    // }
+    // Serial.println();
 
     sd_card.nextion_update = 1;
   }
@@ -363,8 +367,16 @@ void sd_card_init()
     if (!sd_card.tried_to_initialize)
     {
       sd_card.tried_to_initialize = 1;
-      if (!SD.begin()) Serial.println("Card Mount Failed");
-      else Serial.println("Card Mounted");
+      if (!SD.begin()) 
+      {
+        // Serial.println("Card Mount Failed");
+        sd_card.last_state_cur = 1;
+      }
+      else 
+      {
+        // Serial.println("Card Mounted");
+        sd_card.last_state_cur = 0;
+      }
     }
   }
   else
@@ -373,8 +385,9 @@ void sd_card_init()
     {
       SD.end();
       sd_card.tried_to_initialize = 0;
-      Serial.println("Card Unmounted");
+      // Serial.println("Card Unmounted");
     }
+    sd_card.last_state_cur = 1;
   }
 }
 
