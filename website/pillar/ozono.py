@@ -231,13 +231,20 @@ def main():
 <h3>Rischi Occupazionali</h3> <p><strong>L’esposizione professionale all’ozono può causare danni respiratori e oculari.</strong> I lavoratori in impianti di ozonizzazione devono rispettare limiti inferiori a 0,1 ppm su 8 ore, se l’esposizione è continua.</p> <ul> <li>Monitorare concentrazioni con sensori calibrati.</li> <li>Indossare dispositivi di protezione respiratoria certificati.</li> <li>Ventilare ambienti industriali chiusi.</li> </ul>
 </section>
 
-        <h2>Risks of Ozone Exposure</h2>
-        <h3>Respiratory Health</h3>
-        <p><a href="ground-level-ozone-respiratory.html">Respiratory function may be impaired if ground-level ozone exceeds 70 ppb</a>.</p>
-        <h3>Global Climate Impact</h3>
-        <p><a href="ozone-depletion-climate.html">CFCs contribute to ozone depletion</a>, increasing UV penetration and accelerating climate change.</p>
-        <h3>Occupational Hazards</h3>
-        <p><a href="ozone-occupational-hazards.html">Industrial workers must follow safety protocols</a> to prevent respiratory and ocular damage.</p>
+
+<section id="applicazioni-industriali-pratiche">
+  <h2>Applicazioni Industriali e Pratiche</h2>
+
+  <h3>Trattamento dell'Acqua</h3>
+  <p><a href="/come-l-ozono-viene-utilizzato-negli-impianti-di-trattamento-dell-acqua">Scopri come l'ozono viene impiegato negli impianti idrici</a>. <strong>L'O₃ disinfetta l'acqua eliminando efficacemente i patogeni</strong>, garantendo sicurezza e conformità agli standard. Tra gli attributi chiave si includono la rapida azione antimicrobica, la capacità di ridurre residui chimici e la compatibilità con sistemi esistenti. Esempi di patogeni eliminati includono batteri come Escherichia coli e virus come Norovirus. Per approfondimenti sulla gestione dei sottoprodotti e l'ottimizzazione dei livelli, consulta <a href="/trattamento-avanzato-acqua-ozono">trattamento avanzato con ozono</a>.</p>
+
+  <h3>Conservazione degli Alimenti</h3>
+  <p><a href="/ozono-nella-conservazione-degli-alimenti-prolungare-la-freschezza-naturalmente">Approfondisci l'uso dell'ozono nella conservazione alimentare</a>. <strong>L'O₃ riduce il carico microbico, prolungando la freschezza e la sicurezza dei cibi deperibili</strong>. Principali attributi comprendono l'inibizione di patogeni alimentari, la prevenzione della formazione di muffe e la riduzione della necessità di conservanti chimici. Esempi includono frutta come mele e fragole, e prodotti lattiero-caseari come formaggi freschi. Un approccio combinato con imballaggi attivi può ulteriormente migliorare la shelf-life.</p>
+
+  <h3>Purificatori d'Aria e Sicurezza</h3>
+  <p><a href="/selezione-purificatori-aria-ozono-sicurezza-prestazioni">Guida alla scelta di purificatori d'aria a ozono</a>. <strong>Scegli purificatori che generano meno di 0,05 ppm di ozono</strong> per garantire sicurezza negli ambienti interni. Attributi rilevanti includono efficacia contro composti organici volatili (VOC), filtrazione multipla e livelli regolabili di produzione. Ad esempio, dispositivi certificati per uffici e abitazioni riducono particelle fini e allergeni senza superare la soglia di sicurezza. Per ulteriori dettagli su sistemi combinati, vedi <a href="/aria-pulita-ozono-filtrazione-combinata">aria pulita con filtrazione combinata</a>.</p>
+</section>
+
         <h2>Industrial and Practical Applications</h2>
         <h3>Water Treatment</h3>
         <p><a href="ozone-water-treatment.html">O₃ disinfects water</a>, efficiently eliminating pathogens.</p>
