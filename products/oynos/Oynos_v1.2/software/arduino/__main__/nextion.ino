@@ -210,25 +210,56 @@ void nextion_input_p_password()
   {
     // valid password?
     int8_t valid_password = 1;
-    for (int i = 0; i < PASSWORD_DIGITS_NUM; i++)
     {
-      if (password.digits_cur[i] != password.digits_password[i])
-      {
-        valid_password = 0;
-        password.password_errata_cur = 1;
-        break;
-      }
-    }
-    if (valid_password)
-    {
-      nextion.page_cur = P_SET;
-      password.password_errata_cur = 0;
-      // clear password
+      valid_password = 1;
       for (int i = 0; i < PASSWORD_DIGITS_NUM; i++)
       {
-        password.digits_cur[i] = -1;
+        if (password.digits_cur[i] != password.digits_password[i])
+        {
+          valid_password = 0;
+          password.password_errata_cur = 1;
+          break;
+        }
       }
-      password.digit_counter = 0;
+      if (valid_password)
+      {
+        p_set_cur = P_SET_OPERATOR;
+        nextion.page_cur = p_set_cur;
+        password.password_errata_cur = 0;
+        // clear password
+        for (int i = 0; i < PASSWORD_DIGITS_NUM; i++)
+        {
+          password.digits_cur[i] = -1;
+        }
+        password.digit_counter = 0;
+        Serial.println("LOGIN AS OPERATOR");
+      }
+    }
+    if (!valid_password)
+    {
+      valid_password = 1;
+      for (int i = 0; i < PASSWORD_DIGITS_NUM; i++)
+      {
+        if (password.digits_cur[i] != password.digits_password_ozonogroup[i])
+        {
+          valid_password = 0;
+          password.password_errata_cur = 1;
+          break;
+        }
+      }
+      if (valid_password)
+      {
+        p_set_cur = P_SET_OZONOGROUP;
+        nextion.page_cur = p_set_cur;
+        password.password_errata_cur = 0;
+        // clear password
+        for (int i = 0; i < PASSWORD_DIGITS_NUM; i++)
+        {
+          password.digits_cur[i] = -1;
+        }
+        password.digit_counter = 0;
+        Serial.println("LOGIN AS OZONOGROUP");
+      }
     }
   }
   if (nextion_array_compare(cmd_p_password_back, nextion.inputs_buff)) 
@@ -385,12 +416,12 @@ void nextion_input_p_power()
   if (nextion_array_compare(cmd_p_power_back, nextion.inputs_buff)) 
   {
     power.power_tmp = power.power_cur;
-    nextion.page_cur = P_SET;
+    nextion.page_cur = p_set_cur;
   }
   if (nextion_array_compare(cmd_p_power_save, nextion.inputs_buff)) 
   {
     power.power_cur = power.power_tmp;
-    nextion.page_cur = P_SET;
+    nextion.page_cur = p_set_cur;
     EEPROM.write(10, power.power_cur);
     EEPROM.commit();
   }
@@ -410,11 +441,11 @@ void nextion_input_p_cal_en()
 {
   if (nextion_array_compare(cmd_p_set_calendar_onoff_back, nextion.inputs_buff)) 
   {
-    nextion.page_cur = P_SET;
+    nextion.page_cur = p_set_cur;
   }
   else if (nextion_array_compare(cmd_p_set_calendar_onoff_save, nextion.inputs_buff)) 
   {
-    nextion.page_cur = P_SET;
+    nextion.page_cur = p_set_cur;
     calendar_onoff_cur = calendar_onoff_tmp;
     eeprom_write_uint16(CALENDAR_ENABLED, calendar_onoff_cur);
   }
@@ -430,7 +461,7 @@ void nextion_input_p_cal_en()
 
 void nextion_input_p_cal_time()
 {
-  if (nextion_array_compare(cmd_p_calendar_back, nextion.inputs_buff)) nextion.page_cur = P_SET;
+  if (nextion_array_compare(cmd_p_calendar_back, nextion.inputs_buff)) nextion.page_cur = p_set_cur;
   if (nextion_array_compare(cmd_p_calendar_day_prev, nextion.inputs_buff))
   {
     day_of_week_cur -= 1;
@@ -709,7 +740,7 @@ void nextion_input_p_cal_add_err_ovr()
 
 void nextion_input_p_clk()
 {
-  if (nextion_array_compare(cmd_p_clock_back, nextion.inputs_buff)) nextion.page_cur = P_SET;
+  if (nextion_array_compare(cmd_p_clock_back, nextion.inputs_buff)) nextion.page_cur = p_set_cur;
   if (nextion_array_compare(cmd_p_clock_date, nextion.inputs_buff))
   {
     nextion.page_cur = P_CLK_DATE;
@@ -874,11 +905,11 @@ void nextion_input_p_ext()
 {
   if (nextion_array_compare(cmd_p_set_calendar_onoff_back, nextion.inputs_buff)) 
   {
-    nextion.page_cur = P_SET;
+    nextion.page_cur = p_set_cur;
   }
   else if (nextion_array_compare(cmd_p_set_calendar_onoff_save, nextion.inputs_buff)) 
   {
-    nextion.page_cur = P_SET;
+    nextion.page_cur = p_set_cur;
     external_input.is_abilitated_cur = external_input.is_abilitated_tmp;
     eeprom_write_uint16(EXTERNAL_INPUT, external_input.is_abilitated_cur);
   }
@@ -896,11 +927,11 @@ void nextion_input_p_sensor_alarm()
 {
   if (nextion_array_compare(cmd_p_set_list_3_back, nextion.inputs_buff)) 
   {
-    nextion.page_cur = P_SET;
+    nextion.page_cur = p_set_cur;
   }
   else if (nextion_array_compare(cmd_p_set_list_3_save, nextion.inputs_buff)) 
   {
-    nextion.page_cur = P_SET;
+    nextion.page_cur = p_set_cur;
     o3_sensor_alarm.enable_cur = o3_sensor_alarm.enable_tmp;
     o3_sensor_alarm.ppb_alarm_cur = o3_sensor_alarm.ppb_alarm_tmp;
     o3_sensor_alarm.alarm_timer_minutes_cur = o3_sensor_alarm.alarm_timer_minutes_tmp;
@@ -984,11 +1015,11 @@ void nextion_input_p_temperature()
 {
   if (nextion_array_compare(cmd_p_set_list_back, nextion.inputs_buff)) 
   {
-    nextion.page_cur = P_SET;
+    nextion.page_cur = p_set_cur;
   }
   else if (nextion_array_compare(cmd_p_set_list_save, nextion.inputs_buff)) 
   {
-    nextion.page_cur = P_SET;
+    nextion.page_cur = p_set_cur;
     sensor_temperature.enable_cur = sensor_temperature.enable_tmp;
     sensor_temperature.alarm_seconds_cur = sensor_temperature.alarm_seconds_tmp;
     eeprom_write_uint16(SENSOR_TEMPERATURE_ENABLE, sensor_temperature.enable_cur);
@@ -1038,11 +1069,11 @@ void nextion_input_p_cycle_custom()
 {
   if (nextion_array_compare(cmd_p_set_list_4_back, nextion.inputs_buff)) 
   {
-    nextion.page_cur = P_SET;
+    nextion.page_cur = p_set_cur;
   }
   else if (nextion_array_compare(cmd_p_set_list_4_save, nextion.inputs_buff)) 
   {
-    nextion.page_cur = P_SET;
+    nextion.page_cur = p_set_cur;
     cycle.custom_state_cur = cycle.custom_state_tmp;
     cycle.custom_minutes_working_cur = cycle.custom_minutes_working_tmp;
     cycle.custom_minutes_resting_cur = cycle.custom_minutes_resting_tmp;
@@ -1093,7 +1124,7 @@ void nextion_eval_serial()
 {
   /**/ if (nextion.page_cur == P_HOME)              nextion_input_p_home();
   else if (nextion.page_cur == P_PASSWORD)          nextion_input_p_password();
-  else if (nextion.page_cur == P_SET)               nextion_input_p_set();
+  else if (nextion.page_cur == p_set_cur)           nextion_input_p_set();
   else if (nextion.page_cur == P_POWER)             nextion_input_p_power();
   else if (nextion.page_cur == P_CAL_EN)            nextion_input_p_cal_en();
   else if (nextion.page_cur == P_CAL_TIME)          nextion_input_p_cal_time();
@@ -1122,7 +1153,8 @@ void nextion_update()
   }
   /**/ if (nextion.page_cur == P_HOME)              nextion_update_page_home(force_refresh);
   else if (nextion.page_cur == P_PASSWORD)          nextion_update_page_password(force_refresh);
-  else if (nextion.page_cur == P_SET)               nextion_update_page_set(force_refresh);
+  else if (nextion.page_cur == p_set_cur)           nextion_update_page_set(force_refresh);
+  // else if (nextion.page_cur == P_SET_OZONOGROUP)    nextion_update_page_set(force_refresh);
   else if (nextion.page_cur == P_POWER)             nextion_update_page_power(force_refresh);
   else if (nextion.page_cur == P_CAL_EN)            nextion_update_page_calendar_onoff(force_refresh);
   else if (nextion.page_cur == P_CAL_TIME)          nextion_update_page_calendar(force_refresh);

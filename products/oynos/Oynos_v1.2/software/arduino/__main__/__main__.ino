@@ -1,5 +1,3 @@
-// OYNOS V1.1
-
 #include "RTClib.h"
 RTC_DS3231 rtc_lib;
 
@@ -147,7 +145,8 @@ enum Nextion_Pages {
   P_SPLASH,
   P_HOME,
   P_PASSWORD,
-  P_SET,
+  P_SET_OPERATOR,
+  P_SET_OZONOGROUP,
   P_POWER,
   P_CAL_EN,
   P_CAL_TIME,
@@ -165,6 +164,8 @@ enum Nextion_Pages {
   P_TEMPERATURE,
   P_CYCLE_CUSTOM,
 };
+
+int16_t p_set_cur = P_SET_OPERATOR;
 
 ///////////////////////////////////////////////////////////////////////
 // ;O3 sensor internal alarm
@@ -272,6 +273,7 @@ typedef struct password_t {
   int8_t digits_old[PASSWORD_DIGITS_NUM] = {-2, -2, -2, -2, -2, -2, -2, -2};
   int8_t digits_cur[PASSWORD_DIGITS_NUM] = {-1, -1, -1, -1, -1, -1, -1, -1};
   int8_t digits_password[PASSWORD_DIGITS_NUM] = {1, 2, 3, 4, -1, -1, -1, -1};
+  int8_t digits_password_ozonogroup[PASSWORD_DIGITS_NUM] = {0, 2, 0, 1, 7, 0, -1, -1};
   int8_t password_errata_old = -1;
   int8_t password_errata_cur = 0;
   int8_t digit_counter = 0;
