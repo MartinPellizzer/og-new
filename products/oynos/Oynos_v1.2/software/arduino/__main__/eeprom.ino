@@ -1,18 +1,4 @@
-//////////////////////////////////////////////////////////////////////
-// EEPROM address space
-//////////////////////////////////////////////////////////////////////
-#define ALARM_PPB             20
-#define ALARM_TIMER_MINUTES   22
-#define EXTERNAL_INPUT        24
-#define CALENDAR_ENABLED      26
-#define SENSOR_TEMPERATURE_ENABLE   28
-#define SENSOR_TEMPERATURE_SECONDS  30
-#define SENSOR_OZONE_ALARM_ENABLE   32
 
-#define CUSTOM_STATE_CUR            34
-#define CUSTOM_MINUTES_WORKING_CUR  36
-#define CUSTOM_MINUTES_RESTING_CUR  38
-#define CUSTOM_CYCLES_NUM_CUR       40
 
 uint8_t get_eeprom_address_calendar(int day_i, int time_i, int offset)
 {
@@ -83,6 +69,20 @@ void eeprom_init()
   if (eeprom_custom_state_cur != 65535)
   {
     cycle.custom_state_cur = eeprom_custom_state_cur;
+  }
+
+  // custom cycle operation num target
+  uint16_t eeprom_custom_cycle_operation_num_target = eeprom_read_uint16(CUSTOM_CYCLES_OPERATION_NUM_TARGET);
+  if (eeprom_custom_cycle_operation_num_target != 65535)
+  {
+    cycle.custom_cycles_operation_num_target_cur = eeprom_custom_cycle_operation_num_target;
+  }
+
+  // custom cycle operation num done
+  uint16_t eeprom_custom_cycle_operation_num_done = eeprom_read_uint16(CUSTOM_CYCLES_OPERATION_NUM_DONE);
+  if (eeprom_custom_cycle_operation_num_done != 65535)
+  {
+    cycle.custom_cycles_operation_num_done_cur = eeprom_custom_cycle_operation_num_done;
   }
 
   // Serial.println(o3_sensor_alarm.ppb_alarm_cur);

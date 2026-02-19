@@ -188,7 +188,7 @@ void cycle_custom_stop()
   if (millis() - cycle_millis_cur > 5000) 
   {
     cycle_millis_cur = millis();
-    if (cycle_state == OFF_O3) {cycle_state = OFF_OXY;}
+    if (cycle_state == OFF_O3) { cycle_state = OFF_OXY; }
   }
 }
 
@@ -276,6 +276,8 @@ void cycle_custom_run()
       if (++cycle.custom_cycles_num_counter >= cycle.custom_cycles_num_cur*2)
       {
         is_on_cur = 0;
+        cycle.custom_cycles_operation_num_done_cur += 1;
+        eeprom_write_uint16(CUSTOM_CYCLES_OPERATION_NUM_DONE, cycle.custom_cycles_operation_num_done_cur);
         return;
       }
     }

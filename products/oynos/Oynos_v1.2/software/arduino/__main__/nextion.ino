@@ -70,10 +70,23 @@ uint8_t cmd_p_set_goto_ozone_power[BUFFER_SIZE] = { 101, 15, 2, 1, 255, 255, 255
 uint8_t cmd_p_set_goto_calendar_onoff[BUFFER_SIZE] = { 101, 15, 3, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 uint8_t cmd_p_set_goto_calendar[BUFFER_SIZE] = { 101, 15, 4, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 uint8_t cmd_p_set_goto_clock[BUFFER_SIZE] = { 101, 15, 5, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-uint8_t cmd_p_set_goto_power_type[BUFFER_SIZE] = { 101, 15, 6, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-uint8_t cmd_p_set_goto_ozone_sensor_alarm[BUFFER_SIZE] = { 101, 15, 7, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-uint8_t cmd_p_set_goto_sensor_temperature[BUFFER_SIZE] = { 101, 15, 8, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-uint8_t cmd_p_set_goto_cycle_custom[BUFFER_SIZE] = { 101, 15, 9, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+// uint8_t cmd_p_set_goto_power_type[BUFFER_SIZE] = { 101, 15, 6, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+// uint8_t cmd_p_set_goto_ozone_sensor_alarm[BUFFER_SIZE] = { 101, 15, 7, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+// uint8_t cmd_p_set_goto_sensor_temperature[BUFFER_SIZE] = { 101, 15, 8, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+uint8_t cmd_p_set_goto_cycle_custom[BUFFER_SIZE] = { 101, 15, 6, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+uint8_t cmd_p_set_goto_cycle_custom_operation_num[BUFFER_SIZE] = { 101, 15, 7, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+// settings og
+uint8_t cmd_p_set_og_back[BUFFER_SIZE] = { 101, 22, 1, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+uint8_t cmd_p_set_og_goto_ozone_power[BUFFER_SIZE] = { 101, 22, 2, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+uint8_t cmd_p_set_og_goto_calendar_onoff[BUFFER_SIZE] = { 101, 22, 3, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+uint8_t cmd_p_set_og_goto_calendar[BUFFER_SIZE] = { 101, 22, 4, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+uint8_t cmd_p_set_og_goto_clock[BUFFER_SIZE] = { 101, 22, 5, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+uint8_t cmd_p_set_og_goto_power_type[BUFFER_SIZE] = { 101, 22, 6, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+uint8_t cmd_p_set_og_goto_ozone_sensor_alarm[BUFFER_SIZE] = { 101, 22, 7, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+uint8_t cmd_p_set_og_goto_sensor_temperature[BUFFER_SIZE] = { 101, 22, 8, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+uint8_t cmd_p_set_og_goto_cycle_custom[BUFFER_SIZE] = { 101, 22, 9, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+uint8_t cmd_p_set_og_goto_num_op_custom[BUFFER_SIZE] = { 101, 22, 10, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
 // settings list
 uint8_t cmd_p_set_list_back[BUFFER_SIZE] = { 101, 17, 1, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -373,41 +386,79 @@ void nextion_input_p_password()
 
 void nextion_input_p_set()
 {
-  if (nextion_array_compare(cmd_p_set_back, nextion.inputs_buff)) 
+  if (p_set_cur == P_SET_OPERATOR)
   {
-    nextion.page_cur = P_HOME;
+    if (nextion_array_compare(cmd_p_set_back, nextion.inputs_buff)) 
+    {
+      nextion.page_cur = P_HOME;
+    }
+    else if (nextion_array_compare(cmd_p_set_goto_ozone_power, nextion.inputs_buff))
+    {
+      nextion.page_cur = P_POWER;
+    }
+    else if (nextion_array_compare(cmd_p_set_goto_calendar_onoff, nextion.inputs_buff))
+    {
+      nextion.page_cur = P_CAL_EN;
+    }
+    else if (nextion_array_compare(cmd_p_set_goto_calendar, nextion.inputs_buff))
+    {
+      nextion.page_cur = P_CAL_TIME;
+    }
+    else if (nextion_array_compare(cmd_p_set_goto_clock, nextion.inputs_buff))
+    {
+      nextion.page_cur = P_CLK;
+    }
+    // else if (nextion_array_compare(cmd_p_set_goto_power_type, nextion.inputs_buff))
+    // {
+    //   nextion.page_cur = P_EXT;
+    // }
+    else if (nextion_array_compare(cmd_p_set_goto_cycle_custom, nextion.inputs_buff)) 
+    {
+      nextion.page_cur = P_CYCLE_CUSTOM;
+    }
+    else if (nextion_array_compare(cmd_p_set_goto_cycle_custom_operation_num, nextion.inputs_buff)) 
+    {
+      nextion.page_cur = P_CYCLE_CUSTOM_OPERATION_NUM;
+    }
   }
-  else if (nextion_array_compare(cmd_p_set_goto_ozone_power, nextion.inputs_buff))
+  else if (p_set_cur == P_SET_OZONOGROUP)
   {
-    nextion.page_cur = P_POWER;
-  }
-  else if (nextion_array_compare(cmd_p_set_goto_calendar_onoff, nextion.inputs_buff))
-  {
-    nextion.page_cur = P_CAL_EN;
-  }
-  else if (nextion_array_compare(cmd_p_set_goto_calendar, nextion.inputs_buff))
-  {
-    nextion.page_cur = P_CAL_TIME;
-  }
-  else if (nextion_array_compare(cmd_p_set_goto_clock, nextion.inputs_buff))
-  {
-    nextion.page_cur = P_CLK;
-  }
-  else if (nextion_array_compare(cmd_p_set_goto_power_type, nextion.inputs_buff))
-  {
-    nextion.page_cur = P_EXT;
-  }
-  else if (nextion_array_compare(cmd_p_set_goto_ozone_sensor_alarm, nextion.inputs_buff))
-  {
-    nextion.page_cur = P_SENSOR_ALARM;
-  }
-  else if (nextion_array_compare(cmd_p_set_goto_sensor_temperature, nextion.inputs_buff)) 
-  {
-    nextion.page_cur = P_TEMPERATURE;
-  }
-  else if (nextion_array_compare(cmd_p_set_goto_cycle_custom, nextion.inputs_buff)) 
-  {
-    nextion.page_cur = P_CYCLE_CUSTOM;
+    if (nextion_array_compare(cmd_p_set_og_back, nextion.inputs_buff)) 
+    {
+      nextion.page_cur = P_HOME;
+    }
+    else if (nextion_array_compare(cmd_p_set_og_goto_ozone_power, nextion.inputs_buff))
+    {
+      nextion.page_cur = P_POWER;
+    }
+    else if (nextion_array_compare(cmd_p_set_og_goto_calendar_onoff, nextion.inputs_buff))
+    {
+      nextion.page_cur = P_CAL_EN;
+    }
+    else if (nextion_array_compare(cmd_p_set_og_goto_calendar, nextion.inputs_buff))
+    {
+      nextion.page_cur = P_CAL_TIME;
+    }
+    else if (nextion_array_compare(cmd_p_set_og_goto_clock, nextion.inputs_buff))
+    {
+      nextion.page_cur = P_CLK;
+    }
+    else if (nextion_array_compare(cmd_p_set_og_goto_power_type, nextion.inputs_buff))
+    {
+      nextion.page_cur = P_EXT;
+    }
+    else if (nextion_array_compare(cmd_p_set_og_goto_ozone_sensor_alarm, nextion.inputs_buff))
+    {
+      nextion.page_cur = P_SENSOR_ALARM;
+    }
+    else if (nextion_array_compare(cmd_p_set_og_goto_sensor_temperature, nextion.inputs_buff)) 
+    {
+      nextion.page_cur = P_TEMPERATURE;
+    }
+    else if (nextion_array_compare(cmd_p_set_og_goto_cycle_custom, nextion.inputs_buff)) 
+    {
+      nextion.page_cur = P_CYCLE_CUSTOM;
+    }
   }
 }
 
@@ -1120,6 +1171,32 @@ void nextion_input_p_cycle_custom()
   }
 }
 
+void nextion_input_p_cycle_custom_operation_num()
+{
+  if (nextion_array_compare(cmd_p_set_list_4_back, nextion.inputs_buff)) 
+  {
+    nextion.page_cur = p_set_cur;
+  }
+  else if (nextion_array_compare(cmd_p_set_list_4_save, nextion.inputs_buff)) 
+  {
+    nextion.page_cur = p_set_cur;
+    cycle.custom_cycles_operation_num_target_cur = cycle.custom_cycles_operation_num_target_tmp;
+    cycle.custom_cycles_operation_num_done_cur = 0;
+    eeprom_write_uint16(CUSTOM_CYCLES_OPERATION_NUM_TARGET, cycle.custom_cycles_operation_num_target_cur);
+    eeprom_write_uint16(CUSTOM_CYCLES_OPERATION_NUM_DONE, cycle.custom_cycles_operation_num_done_cur);
+  }
+  else if (nextion_array_compare(cmd_p_set_list_4_item1_left, nextion.inputs_buff)) 
+  {
+    cycle.custom_cycles_operation_num_target_tmp -= 1;
+    if (cycle.custom_cycles_operation_num_target_tmp < 1) cycle.custom_cycles_operation_num_target_tmp = 1;
+  }
+  else if (nextion_array_compare(cmd_p_set_list_4_item1_right, nextion.inputs_buff)) 
+  {
+    cycle.custom_cycles_operation_num_target_tmp += 1;
+    if (cycle.custom_cycles_operation_num_target_tmp > 999) cycle.custom_cycles_operation_num_target_tmp = 999;
+  }
+}
+
 void nextion_eval_serial() 
 {
   /**/ if (nextion.page_cur == P_HOME)              nextion_input_p_home();
@@ -1141,6 +1218,7 @@ void nextion_eval_serial()
   else if (nextion.page_cur == P_TEMPERATURE_ALARM) nextion_input_p_temperature_alarm();
   else if (nextion.page_cur == P_TEMPERATURE)       nextion_input_p_temperature();
   else if (nextion.page_cur == P_CYCLE_CUSTOM)      nextion_input_p_cycle_custom();
+  else if (nextion.page_cur == P_CYCLE_CUSTOM_OPERATION_NUM)      nextion_input_p_cycle_custom_operation_num();
 }
 
 void nextion_update() 
@@ -1151,26 +1229,26 @@ void nextion_update()
     nextion.page_old = nextion.page_cur;
     force_refresh = 1;
   }
-  /**/ if (nextion.page_cur == P_HOME)              nextion_update_page_home(force_refresh);
-  else if (nextion.page_cur == P_PASSWORD)          nextion_update_page_password(force_refresh);
-  else if (nextion.page_cur == p_set_cur)           nextion_update_page_set(force_refresh);
-  // else if (nextion.page_cur == P_SET_OZONOGROUP)    nextion_update_page_set(force_refresh);
-  else if (nextion.page_cur == P_POWER)             nextion_update_page_power(force_refresh);
-  else if (nextion.page_cur == P_CAL_EN)            nextion_update_page_calendar_onoff(force_refresh);
-  else if (nextion.page_cur == P_CAL_TIME)          nextion_update_page_calendar(force_refresh);
-  else if (nextion.page_cur == P_CAL_ADD)           nextion_update_page_calendar_add(force_refresh);
-  else if (nextion.page_cur == P_CAL_DEL)           nextion_update_page_calendar_del(force_refresh);
-  else if (nextion.page_cur == P_CAL_ADD_ERR_NEG)   nextion_update_page_calendar_add_err(force_refresh);
-  else if (nextion.page_cur == P_CAL_ADD_ERR_OVR)   nextion_update_page_calendar_add_err2(force_refresh);
-  else if (nextion.page_cur == P_CLK)               nextion_update_page_clock(force_refresh);
-  else if (nextion.page_cur == P_CLK_DATE)          nextion_update_page_clock_date(force_refresh);
-  else if (nextion.page_cur == P_CLK_TIME)          nextion_update_page_clock_time(force_refresh);
-  else if (nextion.page_cur == P_EXT)               nextion_update_page_power_type(force_refresh);
-  else if (nextion.page_cur == P_SENSOR_ALARM)      nextion_update_page_ozone_sensor_alarm(force_refresh);
-  else if (nextion.page_cur == P_OZONE_ALARM)       nextion_update_page_ozone_alarm(force_refresh);
-  else if (nextion.page_cur == P_TEMPERATURE_ALARM) nextion_update_page_temperature_alarm(force_refresh);
-  else if (nextion.page_cur == P_TEMPERATURE)       nextion_update_page_sensor_temperature(force_refresh);
-  else if (nextion.page_cur == P_CYCLE_CUSTOM)      nextion_update_page_cycle_custom(force_refresh);
+  /**/ if (nextion.page_cur == P_HOME)                        nextion_update_page_home(force_refresh);
+  else if (nextion.page_cur == P_PASSWORD)                    nextion_update_page_password(force_refresh);
+  else if (nextion.page_cur == p_set_cur)                     nextion_update_page_set(force_refresh);
+  else if (nextion.page_cur == P_POWER)                       nextion_update_page_power(force_refresh);
+  else if (nextion.page_cur == P_CAL_EN)                      nextion_update_page_calendar_onoff(force_refresh);
+  else if (nextion.page_cur == P_CAL_TIME)                    nextion_update_page_calendar(force_refresh);
+  else if (nextion.page_cur == P_CAL_ADD)                     nextion_update_page_calendar_add(force_refresh);
+  else if (nextion.page_cur == P_CAL_DEL)                     nextion_update_page_calendar_del(force_refresh);
+  else if (nextion.page_cur == P_CAL_ADD_ERR_NEG)             nextion_update_page_calendar_add_err(force_refresh);
+  else if (nextion.page_cur == P_CAL_ADD_ERR_OVR)             nextion_update_page_calendar_add_err2(force_refresh);
+  else if (nextion.page_cur == P_CLK)                         nextion_update_page_clock(force_refresh);
+  else if (nextion.page_cur == P_CLK_DATE)                    nextion_update_page_clock_date(force_refresh);
+  else if (nextion.page_cur == P_CLK_TIME)                    nextion_update_page_clock_time(force_refresh);
+  else if (nextion.page_cur == P_EXT)                         nextion_update_page_power_type(force_refresh);
+  else if (nextion.page_cur == P_SENSOR_ALARM)                nextion_update_page_ozone_sensor_alarm(force_refresh);
+  else if (nextion.page_cur == P_OZONE_ALARM)                 nextion_update_page_ozone_alarm(force_refresh);
+  else if (nextion.page_cur == P_TEMPERATURE_ALARM)           nextion_update_page_temperature_alarm(force_refresh);
+  else if (nextion.page_cur == P_TEMPERATURE)                 nextion_update_page_sensor_temperature(force_refresh);
+  else if (nextion.page_cur == P_CYCLE_CUSTOM)                nextion_update_page_cycle_custom(force_refresh);
+  else if (nextion.page_cur == P_CYCLE_CUSTOM_OPERATION_NUM)  nextion_update_page_cycle_custom_operation_num(force_refresh);
 }
 
 ////////////////////////////////////////////////////////
@@ -1186,6 +1264,8 @@ void nextion_update_page_home(uint8_t force_refresh)
       Serial2.write(_buffer[i]);
     }
     sensor.ppb_old = -2;
+    cycle.custom_cycles_operation_num_done_old = -2;
+    cycle.custom_state_old = -2;
   }
   
   if (force_refresh || is_on_old != is_on_cur) 
@@ -1210,24 +1290,39 @@ void nextion_update_page_home(uint8_t force_refresh)
       }
     }
   }
-  // calendar on off
-  if (force_refresh || calendar_onoff_old != calendar_onoff_cur) 
+  // // calendar on off
+  // if (force_refresh || calendar_onoff_old != calendar_onoff_cur) 
+  // {
+  //   calendar_onoff_old = calendar_onoff_cur;
+  //   if (calendar_onoff_cur == 0)
+  //   {
+  //     {
+  //       uint8_t _buffer[] = { 0x74, 0x33, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4F, 0x46, 0x46, 0x22, 0xff, 0xff, 0xff };
+  //       for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+  //       {
+  //         Serial2.write(_buffer[i]);
+  //       }
+  //     }
+  //   }
+  //   else
+  //   {
+  //     {
+  //       uint8_t _buffer[] = { 0x74, 0x33, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4F, 0x4E, 0x22, 0xff, 0xff, 0xff };
+  //       for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+  //       {
+  //         Serial2.write(_buffer[i]);
+  //       }
+  //     }
+  //   }
+  // }
+  // metodo operazione
+  if (force_refresh || cycle.custom_state_old != cycle.custom_state_cur) 
   {
-    calendar_onoff_old = calendar_onoff_cur;
-    if (calendar_onoff_cur == 0)
+    cycle.custom_state_old = cycle.custom_state_cur;
+    if (cycle.custom_state_cur == 1)
     {
       {
-        uint8_t _buffer[] = { 0x74, 0x33, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4F, 0x46, 0x46, 0x22, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
-        {
-          Serial2.write(_buffer[i]);
-        }
-      }
-    }
-    else
-    {
-      {
-        uint8_t _buffer[] = { 0x74, 0x33, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4F, 0x4E, 0x22, 0xff, 0xff, 0xff };
+        uint8_t _buffer[] = { 0x74, 0x33, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x43, 0x49, 0x43, 0x4C, 0x4F, 0x22, 0xff, 0xff, 0xff };
         for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
         {
           Serial2.write(_buffer[i]);
@@ -1235,28 +1330,22 @@ void nextion_update_page_home(uint8_t force_refresh)
       }
     }
   }
-  // avvio esterno?
-  if (force_refresh || external_input.is_abilitated_tmp != external_input.is_abilitated_cur) 
+  // item 4
+  if (force_refresh || cycle.custom_cycles_operation_num_done_old != cycle.custom_cycles_operation_num_done_cur) 
   {
-    external_input.is_abilitated_tmp = external_input.is_abilitated_cur;
-    if (external_input.is_abilitated_cur == 1)
+    Serial.println("here");
+    cycle.custom_cycles_operation_num_done_old = cycle.custom_cycles_operation_num_done_cur;
     {
+      uint8_t _buffer[] = { 0x74, 0x34, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x30, 0x30, 0x2F, 0x30, 0x30, 0x30, 0x22, 0xff, 0xff, 0xff };
+      _buffer[8] = (cycle.custom_cycles_operation_num_done_cur % 1000 / 100) + 0x30;
+      _buffer[9] = (cycle.custom_cycles_operation_num_done_cur % 100 / 10) + 0x30;
+      _buffer[10] = (cycle.custom_cycles_operation_num_done_cur % 10 / 1) + 0x30;
+      _buffer[12] = (cycle.custom_cycles_operation_num_target_cur % 1000 / 100) + 0x30;
+      _buffer[13] = (cycle.custom_cycles_operation_num_target_cur % 100 / 10) + 0x30;
+      _buffer[14] = (cycle.custom_cycles_operation_num_target_cur % 10 / 1) + 0x30;
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
       {
-        uint8_t _buffer[] = { 0x74, 0x34, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x49, 0x4E, 0x54, 0x45, 0x52, 0x2E, 0x22, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
-        {
-          Serial2.write(_buffer[i]);
-        }
-      }
-    }
-    else
-    {
-      {
-        uint8_t _buffer[] = { 0x74, 0x34, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x45, 0x53, 0x54, 0x45, 0x52, 0x2E, 0x22, 0xff, 0xff, 0xff };
-        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
-        {
-          Serial2.write(_buffer[i]);
-        }
+        Serial2.write(_buffer[i]);
       }
     }
   }
@@ -1970,12 +2059,26 @@ void nextion_update_page_analytics(uint8_t force_refresh)
 
 void nextion_update_page_set(uint8_t force_refresh) 
 {
-  if (force_refresh) 
+  if (p_set_cur == P_SET_OPERATOR)
   {
-    uint8_t _buffer[] = { 0x70, 0x61, 0x67, 0x65, 0x20, 0x70, 0x5F, 0x73, 0x65, 0x74, 0xff, 0xff, 0xff };
-    for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+    if (force_refresh) 
     {
-      Serial2.write(_buffer[i]);
+      uint8_t _buffer[] = { 0x70, 0x61, 0x67, 0x65, 0x20, 0x70, 0x5F, 0x73, 0x65, 0x74, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+  }
+  else if (p_set_cur == P_SET_OZONOGROUP)
+  {
+    if (force_refresh) 
+    {
+      uint8_t _buffer[] = { 0x70, 0x61, 0x67, 0x65, 0x20, 0x70, 0x5F, 0x73, 0x65, 0x74, 0x5F, 0x6F, 0x67, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
+        Serial2.write(_buffer[i]);
+      }
     }
   }
 }
@@ -2718,6 +2821,60 @@ void nextion_update_page_cycle_custom(uint8_t force_refresh)
       uint8_t _buffer[] = { 0x74, 0x37, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x31, 0x30, 0x22, 0xff, 0xff, 0xff };
       _buffer[8] = (cycle.custom_cycles_num_tmp % 100 / 10) + 0x30;
       _buffer[9] = (cycle.custom_cycles_num_tmp % 10 / 1) + 0x30;
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+  }
+}
+// PAGE: cycle custom
+void nextion_update_page_cycle_custom_operation_num(uint8_t force_refresh) 
+{
+  if (force_refresh)
+  {
+    // page
+    {
+      uint8_t _buffer[] = { 0x70, 0x61, 0x67, 0x65, 0x20, 0x70, 0x5F, 0x73, 0x65, 0x74, 0x5F, 0x6C, 0x69, 0x73, 0x74, 0x5F, 0x34, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++)
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+    // options
+    {
+      uint8_t _buffer[] = { 0x74, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x4E, 0x55, 0x4D, 0x45, 0x52, 0x4F, 0x20, 0x4F, 0x50, 0x45, 0x52, 0x41, 0x5A, 0x49, 0x4F, 0x4E, 0x49, 0x22, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++)
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+    // arrows
+    {
+      uint8_t _buffer[] = { 0x70, 0x30, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x32, 0x37, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++)
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+    {
+      uint8_t _buffer[] = { 0x70, 0x31, 0x2E, 0x70, 0x69, 0x63, 0x3D, 0x32, 0x38, 0xff, 0xff, 0xff };
+      for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++)
+      {
+        Serial2.write(_buffer[i]);
+      }
+    }
+    cycle.custom_cycles_operation_num_target_tmp = cycle.custom_cycles_operation_num_target_cur;
+  }
+  if (force_refresh || cycle.custom_cycles_operation_num_target_old != cycle.custom_cycles_operation_num_target_tmp)
+  {
+    cycle.custom_cycles_operation_num_target_old = cycle.custom_cycles_operation_num_target_tmp;
+    {
+      uint8_t _buffer[] = { 0x74, 0x31, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x30, 0x30, 0x30, 0x22, 0xff, 0xff, 0xff };
+      _buffer[8] = (cycle.custom_cycles_operation_num_target_tmp % 10000 / 1000) + 0x30;
+      _buffer[9] = (cycle.custom_cycles_operation_num_target_tmp % 1000 / 100) + 0x30;
+      _buffer[10] = (cycle.custom_cycles_operation_num_target_tmp % 100 / 10) + 0x30;
+      _buffer[11] = (cycle.custom_cycles_operation_num_target_tmp % 10 / 1) + 0x30;
       for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
       {
         Serial2.write(_buffer[i]);

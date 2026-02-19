@@ -25,7 +25,24 @@ typedef struct core_t
 core_t core = {};
 
 
+//////////////////////////////////////////////////////////////////////
+// EEPROM address space
+//////////////////////////////////////////////////////////////////////
+#define ALARM_PPB             20
+#define ALARM_TIMER_MINUTES   22
+#define EXTERNAL_INPUT        24
+#define CALENDAR_ENABLED      26
+#define SENSOR_TEMPERATURE_ENABLE   28
+#define SENSOR_TEMPERATURE_SECONDS  30
+#define SENSOR_OZONE_ALARM_ENABLE   32
 
+#define CUSTOM_STATE_CUR            34
+#define CUSTOM_MINUTES_WORKING_CUR  36
+#define CUSTOM_MINUTES_RESTING_CUR  38
+#define CUSTOM_CYCLES_NUM_CUR       40
+
+#define CUSTOM_CYCLES_OPERATION_NUM_TARGET    42
+#define CUSTOM_CYCLES_OPERATION_NUM_DONE      44
 
 
 
@@ -127,6 +144,15 @@ typedef struct cycle_t {
   int32_t custom_cycles_millis_cur = 0;
   int8_t custom_cycles_init_state = 0;
   int8_t custom_cycles_working_state = 0;
+
+  int16_t custom_cycles_operation_num_target_old = -2;
+  int16_t custom_cycles_operation_num_target_tmp = -1;
+  int16_t custom_cycles_operation_num_target_cur = 1;
+
+  int16_t custom_cycles_operation_num_done_old = -2;
+  int16_t custom_cycles_operation_num_done_tmp = -1;
+  int16_t custom_cycles_operation_num_done_cur = 0;
+
 } cycle_t;
 cycle_t cycle = {};
 
@@ -163,6 +189,7 @@ enum Nextion_Pages {
   P_TEMPERATURE_ALARM,
   P_TEMPERATURE,
   P_CYCLE_CUSTOM,
+  P_CYCLE_CUSTOM_OPERATION_NUM,
 };
 
 int16_t p_set_cur = P_SET_OPERATOR;
