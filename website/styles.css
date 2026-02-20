@@ -1084,6 +1084,15 @@ footer h2 {
     color: #333;
 }
 
+.hub ol {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 2;
+    color: #333;
+}
+
 .hub table {
     font-family: var(--font-body);
     border-collapse: collapse;
