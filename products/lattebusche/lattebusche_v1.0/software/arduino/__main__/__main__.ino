@@ -354,8 +354,8 @@ char sd_hour_nextion_lines_buff[LINES][LINE_SIZE] = {0};
 #define MAX_LINE_LENGTH 64
 #define MAX_FIELDS 10
 
-char lastRow[MAX_LINE_LENGTH];
-char *fields[MAX_FIELDS];
+char lastRow[MAX_LINE_LENGTH] = {0};
+char *fields[MAX_FIELDS] = {0};
 int fieldCount = 0;
 
 // ----------------------------------------------------------------------------------------------------------

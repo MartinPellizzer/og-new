@@ -5,31 +5,31 @@ int sd_dir_exists(fs::FS &fs, const char * dirname)
   File root = fs.open(dirname);
   if (!root)
   {
-    Serial.println("Directory DOESN'T Exists");
+    // Serial.println("Directory DOESN'T Exists");
     return 0;
   }
   if (!root.isDirectory())
   {
-    Serial.println("NOT a Directory");
+    // Serial.println("NOT a Directory");
     return 0;
   }
-  Serial.println("Directory Found");
+  // Serial.println("Directory Found");
   return 1;
 }
 
 void sd_list_dir(fs::FS &fs, const char * dirname, uint8_t levels)
 {
-  Serial.printf("Listing directory: %s\n", dirname);
+  // Serial.printf("Listing directory: %s\n", dirname);
 
   File root = fs.open(dirname);
   if (!root)
   {
-    Serial.println("Failed to open directory");
+    // Serial.println("Failed to open directory");
     return;
   }
   if (!root.isDirectory())
   {
-    Serial.println("Not a directory");
+    // Serial.println("Not a directory");
     return;
   }
 
@@ -38,8 +38,8 @@ void sd_list_dir(fs::FS &fs, const char * dirname, uint8_t levels)
   {
     if (file.isDirectory())
     {
-      Serial.print("  DIR : ");
-      Serial.println(file.name());
+      // Serial.print("  DIR : ");
+      // Serial.println(file.name());
       if(levels)
       {
         sd_list_dir(fs, file.name(), levels -1);
@@ -47,10 +47,10 @@ void sd_list_dir(fs::FS &fs, const char * dirname, uint8_t levels)
     }
     else 
     {
-      Serial.print("  FILE: ");
-      Serial.print(file.name());
-      Serial.print("  SIZE: ");
-      Serial.println(file.size());
+      // Serial.print("  FILE: ");
+      // Serial.print(file.name());
+      // Serial.print("  SIZE: ");
+      // Serial.println(file.size());
     }
     file = root.openNextFile();
   }
@@ -58,47 +58,53 @@ void sd_list_dir(fs::FS &fs, const char * dirname, uint8_t levels)
 
 void sd_create_dir(fs::FS &fs, const char * path)
 {
-  Serial.printf("Creating Dir: %s\n", path);
+  // Serial.printf("Creating Dir: %s\n", path);
 
   if(fs.mkdir(path))
   {
-    Serial.println("Dir created");
+    // Serial.println("Dir created");
   } 
   else 
   {
-    Serial.println("mkdir failed");
+    // Serial.println("mkdir failed");
   }
 }
 
 bool sd_read_last_row_and_split(fs::FS &fs, const char *path)
 {
   File file = fs.open(path);
-  if (!file) {
-    Serial.println("Failed to open CSV file");
+  if (!file) 
+  {
+    // Serial.println("Failed to open CSV file");
     return false;
   }
 
   char lineBuffer[MAX_LINE_LENGTH];
   int idx = 0;
+  
+          
 
   // Read entire file and keep overwriting lastRow
-  while (file.available()) {
+  while (file.available()) 
+  {
     char c = file.read();
-
-    if (c == '\n') {
+    if (c == '\n') 
+    {
       lineBuffer[idx] = '\0';
-      strncpy(lastRow, lineBuffer, MAX_LINE_LENGTH);
+      memcpy(lastRow, lineBuffer, idx + 1);  // include null
       idx = 0;
     }
-    else if (c != '\r' && idx < MAX_LINE_LENGTH - 1) {
+    else if (c != '\r' && idx < MAX_LINE_LENGTH - 1) 
+    {
       lineBuffer[idx++] = c;
     }
   }
 
   // Handle file without trailing newline
-  if (idx > 0) {
+  if (idx > 0) 
+  {
     lineBuffer[idx] = '\0';
-    strncpy(lastRow, lineBuffer, MAX_LINE_LENGTH);
+    memcpy(lastRow, lineBuffer, idx + 1);
   }
 
   file.close();
@@ -107,7 +113,8 @@ bool sd_read_last_row_and_split(fs::FS &fs, const char *path)
   fieldCount = 0;
 
   char *token = strtok(lastRow, ",");
-  while (token != NULL && fieldCount < MAX_FIELDS) {
+  while (token != NULL && fieldCount < MAX_FIELDS)
+  {
     fields[fieldCount++] = token;
     token = strtok(NULL, ",");
   }
@@ -209,7 +216,7 @@ void sd_minute_manager()
   if (sd_card.buff_minute_old != sd_card.buff_minute_cur)
   {
     sd_card.buff_minute_old = sd_card.buff_minute_cur;
-
+    
     sd_minute_line_cur_buff_write();
     
     if (sd_card.tried_to_initialize)
@@ -255,6 +262,7 @@ void sd_minute_manager()
           //   Serial.print(": ");
           //   Serial.println(fields[i]);
           // }
+          
 
           {
             char _buff[LINE_SIZE] = {0};
@@ -327,6 +335,21 @@ void sd_hour_manager()
     sd_hour_buff_i += 1;
   }
 
+  // if (sd_card.buff_hour_second_old != sd_card.buff_hour_second_cur)
+  // {
+  //   sd_card.buff_hour_second_old = sd_card.buff_hour_second_cur;
+
+  //   // add sensor reading to hour buff
+  //   int16_t ppb_cur = sensor.ppb_cur;
+  //   if (ppb_cur < 0) ppb_cur = 0;
+  //   sd_hour_buff[sd_hour_buff_i] = ppb_cur;
+  //   sd_hour_buff_i += 1;
+  // }
+
+  // if (sd_card.buff_hour_minute_old != sd_card.buff_hour_minute_cur)
+  // {
+  //   sd_card.buff_hour_minute_old = sd_card.buff_hour_minute_cur;
+    
   if (sd_card.buff_hour_hour_old != sd_card.buff_hour_hour_cur)
   {
     sd_card.buff_hour_hour_old = sd_card.buff_hour_hour_cur;
