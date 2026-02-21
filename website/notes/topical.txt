@@ -1,3 +1,21 @@
-Source context: Selling industrial ozone systems
-Central entity: Industrial technology / Environmental technology
-Central search intent: Operational efficiency, environmental compliance, industrial process improvement
+--------------------------------------------------------------------------------
+SOURCE CONTEXT
+--------------------------------------------------------------------------------
+i have a business about "ozone". help me define my source context, by giving me a list of the best candidates, give a score to each candidate, and propose the absolute most optimized one for my business. to do that, consider the info below about my business:
+
+- entity type based on business focus: industrial gas
+- purpose: provide ozone solutions for industrial applications
+- target audience: industrial users
+- value proposition: efficient, expertise in ozone technlology and applications
+- content angle: as broad as possible
+- conversion goal: purchase/contract
+
+>> source context: industrial ozone solutions
+
+--------------------------------------------------------------------------------
+CORE ENTITIES
+--------------------------------------------------------------------------------
+
+i have a website where the source context is "soluzioni industriali a ozono", which is the site-wise context. 
+give me a list of the core entities, meaning the entities that must be present to describe this source context, otherwise it will not stand by its own.
+from now on reply in italian.
