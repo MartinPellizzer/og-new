@@ -1422,6 +1422,30 @@ La configurazione elettronica dell'ozono mostra due elettroni di valenza per ogn
 
 </section>
 
+<section>
+
+<h2>Metodi di Generazione dell’Ozono (O₃) nei Sistemi Industriali</h2>
+<p>La generazione industriale dell’Ozono (O₃) è la conversione controllata dell’Ossigeno (O₂) in O₃ tramite apporto energetico. L’energia provoca la dissociazione dell’ossigeno (Oxygen dissociation) in ossigeno atomico (O), seguita da una reazione di ricombinazione che forma O₃ all’interno di una camera di reazione. I metodi industriali differiscono per modalità di fornitura dell’energia, come plasma o processi elettrochimici, e per il controllo dell’O₂, influenzando efficienza di processo e generazione industriale controllata, distinta dai fenomeni atmosferici naturali.</p>
+
+<h3>Dissociazione dell’ossigeno e meccanismo di formazione dell’ozono</h3>
+<p>La dissociazione dell’ossigeno avviene quando un apporto di energia superiore alla soglia energetica rompe O₂ in due atomi, generando ossigeno atomico; questi atomi, tramite collisione molecolare con O₂ intatto, permettono la ricombinazione a O₃ secondo precise cinetiche di reazione. La formazione compete con la decomposizione dell’ozono, influenzando il potenziale di ossidazione e richiedendo controllo del sistema; questo è il percorso universale di corona, UV ed elettrolisi.</p>
+
+<h3>Apporto di Energia Elettrica e Generazione di Plasma</h3>
+<p>Per avviare la dissociazione dell’ossigeno si applica alta tensione in sistemi a scarica corona, dove la corrente alternata (AC) opera in specifici intervalli di frequenza per creare un campo elettrico stabile e favorire la generazione di plasma con densità di potenza controllata. Nei sistemi elettrolitici si utilizza corrente continua (DC), mentre nei sistemi UV la potenza della lampada determina la resa; il tipo di energia impiegata definisce classificazione, efficienza energetica e prestazioni operative.</p>
+
+<h3>Fonte del Gas di Alimentazione di Ossigeno e Requisiti di Purezza</h3>
+<p>Tutti i generatori di ozono richiedono un gas di alimentazione a base di ossigeno come materiale di ingresso, fornito tramite un sistema ad aria o un sistema a ossigeno. Un sistema ad aria utilizza aria ambiente trattata con un sistema di essiccazione e controllo dell’umidità, mentre un sistema a ossigeno impiega ossigeno concentrato con elevata purezza, aumentando la concentrazione di ozono, la stabilità e la durata; la portata del gas, la purezza e l’umidità influenzano direttamente la resa, l’efficienza operativa e la longevità del generatore.</p>
+
+<h3>Sistemi a barriera dielettrica e scarica a corona</h3>
+<p>La scarica a corona è il metodo principale per la produzione industriale di ozono, ottenuta applicando alta tensione tra un elettrodo e un controelettrodo separati da un gap di scarica. La barriera dielettrica, realizzata con materiali isolanti come vetro o ceramica, previene l’arco elettrico e stabilizza il contenimento del plasma, mentre il sistema di raffreddamento controlla la temperatura, influenzando la concentrazione di ozono prodotta, l’efficienza energetica e la durata del sistema.</p>
+
+<h3>Sistemi di Generazione di Ozono con Radiazione UV</h3>
+<p>I sistemi a radiazione UV generano ozono utilizzando radiazione UV a lunghezza d’onda 185 nm, la cui energia fotonica provoca la fotodissociazione delle molecole di ossigeno. Una UV lamp è inserita in una quartz sleeve per trasmettere efficacemente i fotoni e isolare il gas, ma produce ozono a bassa concentrazione rispetto ai sistemi a plasma elettrico. Questa tecnologia è adatta ad applicazioni a bassa capacità o a usi specializzati che richiedono low concentration ozone.</p>
+
+<h3>Sistemi di Generazione Elettrolitica dell’Ozono</h3>
+<p>Nei sistemi con cella elettrolitica, la corrente continua applicata tra anodo e catodo in presenza di un elettrolita induce l’ossidazione elettrochimica dell’acqua all’anodo, generando O₃, mentre una membrana separa i comparti per controllare la densità di corrente e le reazioni secondarie. A differenza dei sistemi a corona o UV che trattano gas, questi operano direttamente in acqua e consentono elevate concentrazioni di ozono disciolto.</p>
+
+</section>
     '''
 
     article_html = article_html.replace("’", "'")
