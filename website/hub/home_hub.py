@@ -1155,7 +1155,7 @@ def gen():
         </html>
     '''
 
-    if 0:
+    if 1:
         hero_html = f'''
             <section class="hero">
                 <div class="container-xl-raw hero-layout">
@@ -1193,47 +1193,73 @@ def gen():
             </section>
         '''
 
-    hero_html = f'''
-        <section class="hero">
-            <div class="container-xl-raw hero-layout">
-                <div class="hero-content">
-                    <h1>
-                        Ingegneria Industriale dell’Ozono per la Sicurezza Alimentare e i Processi Produttivi
-                    </h1>
-                    <p>
-Progettiamo e implementiamo soluzioni su misura basate sull’ozono per l’industria alimentare e applicazioni industriali avanzate, dall’analisi tecnica al supporto a lungo termine.
-                    </p>
-                    <ul style="display: flex; flex-direction: column;">
-                        <li>✔ Progettazione e consulenza tecnica</li>
-                        <li>✔ Integrazione nei piani HACCP</li>
-                        <li>✔ Installazione e collaudo certificato</li>
-                        <li>✔ Manutenzione e ottimizzazione continua</li>
-                    </ul>
-                    <nav>
-                        <ul>
-                            <li>
-                                <a href="/applicazioni.html">
-                                    Richiedi una consulenza tecnica
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/ozono.html">
-                                    Esplora applicazioni nel settore alimentare
-                                </a>
-                            </li>
+    if 0:
+        hero_html = f'''
+            <section class="hero">
+                <div class="container-xl-raw hero-layout">
+                    <div class="hero-content">
+                        <h1>
+                            Ingegneria Industriale dell’Ozono per la Sicurezza Alimentare e i Processi Produttivi
+                        </h1>
+                        <p>
+    Progettiamo e implementiamo soluzioni su misura basate sull’ozono per l’industria alimentare e applicazioni industriali avanzate, dall’analisi tecnica al supporto a lungo termine.
+                        </p>
+                        <ul style="display: flex; flex-direction: column;">
+                            <li>✔ Progettazione e consulenza tecnica</li>
+                            <li>✔ Integrazione nei piani HACCP</li>
+                            <li>✔ Installazione e collaudo certificato</li>
+                            <li>✔ Manutenzione e ottimizzazione continua</li>
                         </ul>
-                    </nav>
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="/applicazioni.html">
+                                        Richiedi una consulenza tecnica
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/ozono.html">
+                                        Esplora applicazioni nel settore alimentare
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="hero-visual">
+                        <figure>
+                            <img
+                                src="/immagini/sistema-ozono-industriale.jpg"
+                                alt="Sistema a ozono per trattamento di aria e acqua in ambiente industriale">
+                        </figure>
+                    </div>
                 </div>
-                <div class="hero-visual">
-                    <figure>
-                        <img
-                            src="/immagini/sistema-ozono-industriale.jpg"
-                            alt="Sistema a ozono per trattamento di aria e acqua in ambiente industriale">
-                    </figure>
+            </section>
+        '''
+
+    if 1:
+        hero_html = f'''
+            <section style="
+                    background: linear-gradient(rgba(0, 30, 60, 0.8), rgba(0, 30, 60, 0.8)), url('/immagini/home/generatore-ozono-industriale-impianto.jpg');
+                    background-size: cover;
+                    background-position: center;
+                    height: 80vh;
+            ">
+                <div class="container-md" style="display: flex; align-items: center; justify-conten: center; height: 100%;">
+                    <div>
+                        <h1 style="color: #ffffff; font-size: 4rem; line-height: 1; text-align: center; margin-bottom: 1rem;">
+                            Soluzioni Industriali a Ozono per la Sicurezza Alimentare e i Processi Produttivi
+                        </h1>
+                        <p style="color: #ffffff; font-size: 1.25rem; line-height: 1.4; text-align: center; margin-bottom: 2rem;">
+    Progettiamo e implementiamo soluzioni su misura basate sull’ozono per l’industria alimentare e applicazioni industriali avanzate, dall’analisi tecnica al supporto a lungo termine.
+                        </p>
+                        <a class="button-square-default-accent"> 
+                            <span>Richiedi una consulenza gratuita</span>
+                        </a>
+                    </div>
                 </div>
-            </div>
-        </section>
-    '''
+            </section>      
+        '''
+
 
     ozone_html = f'''
         <section class="ozone">
