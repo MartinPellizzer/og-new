@@ -1397,6 +1397,31 @@ La configurazione elettronica dell'ozono mostra due elettroni di valenza per ogn
 
 </section>
 
+<section>
+
+<h2>Concentrazione e Dosaggio dell’Ozone (O₃) nelle Applicazioni Industriali</h2>
+<p>La performance delle soluzioni industriali di ozone (O₃) dipende direttamente dalla concentrazione specifica e dal dosaggio preciso, misurati in ppm, mg/L o g/m³. Impostare correttamente questi parametri massimizza l’efficacia del trattamento, garantisce la sicurezza operativa e mantiene la conformità agli standard normativi industriali, prevenendo inefficienze e rischi ambientali.</p>
+
+<h3>Unità di Misura per la Concentrazione di Ozono</h3>
+<p>La concentrazione di ozono viene espressa comunemente in ppm, mg/L o g/m³, a seconda del contesto applicativo: ppm per la disinfezione dell'aria, mg/L per il trattamento dell'acqua e g/m³ nei processi chimici industriali. L'uso di strumenti di misura accurati assicura dosaggi corretti, ottimizzando l'efficacia del trattamento e garantendo la sicurezza durante il dosing industriale.</p>
+
+<h3>Limiti Operativi Sicuri</h3>
+<p>In ambienti industriali, le concentrazioni di ozono devono rimanere entro limiti strettamente regolamentati per garantire la sicurezza umana e prevenire rischi operativi; l'OSHA raccomanda una concentrazione massima di 0,1 ppm su un'esposizione media di 8 ore, mentre la concentrazione minima deve essere mantenuta per assicurare efficacia senza superare le soglie regolamentari. Superare questi valori può causare gravi danni respiratori e incidenti, compromettendo la conformità normativa e la sicurezza complessiva dell'impianto.</p>
+
+<h3>Intervalli di Applicazione Industriale</h3>
+<p>Le concentrazioni di ozono variano a seconda dell'uso industriale: nel trattamento delle acque, dosaggi di 0,3–1,0 mg/L garantiscono efficacia rapida nella disinfezione; per la sanificazione dell'aria, 0,05–0,2 ppm riducono i microrganismi in pochi minuti; nella sterilizzazione alimentare si utilizzano 1–5 mg/L per tempi brevi, mentre nei processi chimici concentrazioni più elevate accelerano le reazioni garantendo efficienza industriale ottimale.</p>
+
+<h3>Soglie di Esposizione</h3>
+<p>Per garantire la sicurezza umana e la protezione ambientale, le autorità regolatorie definiscono limiti di esposizione a breve termine (STEL) e medie ponderate nel tempo (TWA) per l'ozono industriale. Monitorare costantemente i livelli di esposizione umana e rispettare questi valori permette di prevenire rischi acuti e cronici, assicurando conformità alle normative ambientali e di salute sul lavoro.</p>
+
+<h3>Fattori di Calcolo del Dosaggio</h3>
+<p>Il dosaggio corretto di ozono dipende dal flusso, dal tempo di contatto e dal volume del mezzo, oltre che dalla temperatura e dal pH che influenzano la reattività chimica e la cinetica delle reazioni. In trattamento delle acque, un flusso di 2 m³/h in un serbatoio da 10 m³ con contatto di 15 minuti può soddisfare la domanda di ozono stimata, ottimizzando l'efficacia disinfettante.</p>
+
+<h3>Parametri di Monitoraggio e Controllo</h3>
+<p>Gli impianti industriali utilizzano sensori per ozono e sistemi di monitoraggio in tempo reale per rilevare variazioni nella concentrazione di O₃. I sistemi di controllo automatizzati regolano la dosatura, mentre i loop di feedback garantiscono la conformità normativa e prevengono sovradosaggi, come nei setup con PLC integrati e sistemi SCADA per la gestione continua della produzione e sicurezza. </p>
+
+</section>
+
     '''
 
     article_html = article_html.replace("’", "'")
