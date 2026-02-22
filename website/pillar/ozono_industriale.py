@@ -1224,7 +1224,7 @@ def ozono_industriale__gen():
 <section>
 
 <h2>Proprietà Chimiche e Molecolari dell'Ozono</h2>
-<p>L'ozono (O₃) è una molecola triatomica di ossigeno caratterizzata da legami instabili e angoli di legame non lineari, che ne favoriscono la notevole reattività chimica. Le sue strutture di risonanza conferiscono stabilità dinamica, permettendo a O₃ di partecipare facilmente a ossidazioni e reazioni ambientali. Questa configurazione molecolare costituisce la base per comprendere le proprietà fisiche, i meccanismi di reazione e i metodi di rilevamento industriali.</p>
+<p><a href="/ozono/">L'ozono (O₃)</a> è una molecola triatomica di ossigeno caratterizzata da legami instabili e angoli di legame non lineari, che ne favoriscono la notevole reattività chimica. Le sue strutture di risonanza conferiscono stabilità dinamica, permettendo a O₃ di partecipare facilmente a ossidazioni e reazioni ambientali. Questa configurazione molecolare costituisce la base per comprendere le proprietà fisiche, i meccanismi di reazione e i metodi di rilevamento industriali.</p>
 
 <h3>Proprietà Fisiche dell’Ozono</h3>
 <p>L’ozono si presenta come un gas blu pallido con un odore pungente e caratteristico; è moderatamente solubile in acqua e soluzioni organiche, con densità superiore a quella dell’aria, punto di ebollizione a -112°C e punto di fusione a -192,5°C. La sua capacità di assorbire raggi UV lo rende efficace per processi di sterilizzazione, mentre la solubilità supporta applicazioni industriali nel trattamento delle acque.</p>
@@ -1259,7 +1259,7 @@ def ozono_industriale__gen():
 
 <h3>Capacità di Produzione e Metriche di Prestazione</h3>
 <p>
-Le unità di ozono industriali generano tra 10 g/ora e 10 kg/ora con concentrazioni variabili dallo 0,5% al 15% in peso, consumando tipicamente 0,5–2 kWh per chilogrammo prodotto. L'efficienza (g/kWh) e la densità di potenza dipendono dalla qualità del gas alimentato e dalla stabilità del raffreddamento, mentre per i sistemi di trattamento acqua la concentrazione di ozono disciolto raggiunge 5–20 mg/L. Questi parametri guidano le decisioni B2B su ROI e costi operativi.
+Le unità di ozono industriali generano tra 10 g/ora e 10 kg/ora con concentrazioni variabili dallo 0,5% al 15% in peso, consumando tipicamente 10-12 Wh per grammo prodotto. L'efficienza (g/kWh) e la densità di potenza dipendono dalla qualità del gas alimentato e dalla stabilità del raffreddamento, mentre per i sistemi di trattamento acqua la concentrazione di ozono disciolto raggiunge 5–20 mg/L. Questi parametri guidano le decisioni B2B su ROI e costi operativi.
 </p>
 
 <h3>Compatibilità dei Materiali e Vincoli di Ingegneria</h3>
@@ -1270,8 +1270,86 @@ L'ozono è un forte ossidante e richiede l'uso di materiali resistenti all'ossid
 <h3>Sistemi di Controllo e Integrazione nell’Automazione Industriale</h3>
 <p>Gli ozonizzatori industriali si integrano direttamente con PLC e piattaforme SCADA, utilizzando sensori di ozono disciolto, sensori ORP, flussometri e sistemi di monitoraggio remoto con interfaccia HMI. Garantendo fail-safe, sistemi di allarme, interblocchi e procedure di spegnimento automatico, supportano la compatibilità con impianti di trattamento acque reflue, linee alimentari e sistemi municipali, assicurando operatività continua e sicura.</p>
 
+</section>
+
+    '''
+    article_html = article_html.replace("’", "'")
+
+    sidebar_core_entity_html = sidebar_core_entity()
+    sidebar_core_entity_html = '<div></div>'
+    sidebar_page_html = sidebar_page([]) 
+
+    html = f'''
+    <!DOCTYPE html>
+    <html lang="it">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        {components.header_default()}
+        <div class="hub">
+            {sidebar_core_entity_html}
+            <main>
+                <article>
+                    {article_html}
+                </article>
+            </main>
+            {sidebar_page_html}
+        </div>
+        {components.footer_dark()}
+    </body>
+    </html>
+    '''
+
+    html_folderpath = f'{g.WEBSITE_FOLDERPATH}/{url_slug}'
+    os.makedirs(html_folderpath, exist_ok=True)
+    html_filepath = f'{html_folderpath}/index.html'
+    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
+        f.write(html)
+    print(html)
+
+def ozono__gen():
+    url_slug = 'ozono'
+
+    article_html = f'''
+
+<h1>Ozone (O₃) – Chimica, Proprietà e Applicazioni Industriali</h1>
+<p>L'ozono (O₃) è una molecola triatomica di ossigeno caratterizzata da elevata reattività e instabilità chimica. Le sue proprietà ossidanti lo rendono fondamentale nelle <a href="/ozono-industriale/">soluzioni industriali</a> per purificazione, trattamento dell'acqua e sterilizzazione, fornendo un contesto applicativo concreto. Questo articolo esplorerà la sua struttura molecolare, le proprietà chimiche, la generazione, la stabilità, le applicazioni industriali e le considerazioni sulla sicurezza.</p>
+
 <section>
 
+<h2>Struttura Chimica e Composizione dell'Ozono (O₃)</h2>
+<p>L'ozono (O₃) è una molecola triatomica costituita da tre atomi di ossigeno collegati da legami covalenti, con una disposizione elettronica unica che conferisce alta reattività chimica. La sua struttura angolare e la distribuzione degli elettroni rendono l'ozono efficace in applicazioni industriali, come la purificazione dell'acqua, la sterilizzazione dell'aria e il trattamento dei rifiuti, grazie alla sua capacità ossidante selettiva.</p>
+
+<h3>Formula Molecolare (O₃)</h3>
+<p>L'ozono (O₃) è composto da tre atomi di ossigeno legati tra loro, conferendogli un peso molecolare superiore rispetto all'ossigeno diatomico (O₂). Questa diversa stechiometria influenza la sua reattività, rendendolo più efficace nei processi industriali di ossidazione e purificazione, dove la maggiore disponibilità di ossigeno atomico incrementa l'efficienza chimica e la capacità disinfettante.</p>
+
+<h3>Tipi di legami</h3>
+<p>L'ozono (O₃) presenta legami che oscillano tra legame singolo e doppio grazie alla risonanza, creando una delocalizzazione degli elettroni lungo la molecola. Questo equilibrio genera un ordine di legame intermedio, che rende l'ozono instabile e altamente reattivo. In processi industriali, questa struttura spiega il suo forte potenziale ossidante e la chimica reattiva controllata.</p>
+
+<h3>Geometria Molecolare / Forma</h3>
+<p>
+La molecola di ozono presenta una struttura angolare con un angolo di legame di circa 116,8°, derivante dalla repulsione degli elettroni secondo la teoria VSEPR. Questa geometria piegata genera polarità, favorendo interazioni efficaci con altre molecole, un aspetto cruciale nelle applicazioni industriali dell'ozono per ossidazione e trattamento chimico.
+</p>
+
+<h3>Strutture di Risonanza</h3>
+<p>Le strutture di risonanza dell'ozono mostrano come gli elettroni delocalizzati si distribuiscono tra i due legami ossigeno-ossigeno, creando un'alternanza di legami singoli e doppi. Questa delocalizzazione stabilizza la molecola e modula la reattività chimica, rendendo l'ozono un ossidante industriale efficace per trattamenti di purificazione e sanificazione, dove la precisione della reattività è cruciale.</p>
+
+<h3>Polarità</h3>
+<p>Il momento dipolare netto dell'ozono deriva dalla sua struttura asimmetrica e dalla distribuzione non uniforme della densità elettronica, rendendolo una molecola polare. Questa polarità aumenta la solubilità in acqua e amplifica la reattività chimica, migliorando l'efficacia nelle applicazioni industriali di disinfezione e ossidazione.</p>
+
+<h3>Configurazione degli Elettroni</h3>
+<p>
+La configurazione elettronica dell'ozono mostra due elettroni di valenza per ogni atomo di ossigeno e due coppie solitarie nel centro molecolare, distribuiti in orbitali molecolari che favoriscono la risonanza. Questa disposizione crea polarità interna e rende l'ozono altamente reattivo, spiegando le sue proprietà ossidanti e la reattività chimica rispetto ad altri composti ossigenati.
+</p>
+
+<h3>Proprietà Ossidanti</h3>
+<p>Ozone (O₃) agisce come potente agente ossidante grazie alla sua struttura triatomica e all'elevato potenziale redox, che facilita la rimozione di elettroni da contaminanti. Questo lo rende ideale per applicazioni industriali come il trattamento dell'acqua, la purificazione dell'aria e la sterilizzazione delle superfici, garantendo efficacia senza residui chimici. La capacità di ossidare rapidamente microrganismi e composti organici lo distingue tra i principali strumenti di sanificazione industriale.</p>
+
+<section>
     '''
     article_html = article_html.replace("’", "'")
 
@@ -1313,6 +1391,7 @@ L'ozono è un forte ossidante e richiede l'uso di materiali resistenti all'ossid
 
 def main():
     ozono_industriale__gen()
+    ozono__gen()
 
     ozono_industriale__benefici__gen()
     ozono_industriale__casi__gen()
