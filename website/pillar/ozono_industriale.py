@@ -1346,11 +1346,59 @@ La molecola di ozono presenta una struttura angolare con un angolo di legame di 
 La configurazione elettronica dell'ozono mostra due elettroni di valenza per ogni atomo di ossigeno e due coppie solitarie nel centro molecolare, distribuiti in orbitali molecolari che favoriscono la risonanza. Questa disposizione crea polarità interna e rende l'ozono altamente reattivo, spiegando le sue proprietà ossidanti e la reattività chimica rispetto ad altri composti ossigenati.
 </p>
 
-<h3>Proprietà Ossidanti</h3>
-<p>Ozone (O₃) agisce come potente agente ossidante grazie alla sua struttura triatomica e all'elevato potenziale redox, che facilita la rimozione di elettroni da contaminanti. Questo lo rende ideale per applicazioni industriali come il trattamento dell'acqua, la purificazione dell'aria e la sterilizzazione delle superfici, garantendo efficacia senza residui chimici. La capacità di ossidare rapidamente microrganismi e composti organici lo distingue tra i principali strumenti di sanificazione industriale.</p>
+<h2>Proprietà fisiche dell'Ozono (O₃)</h2>
+<p>Ozone (O₃) presenta una struttura molecolare triatomica che ne determina densità, instabilità e alta reattività, influenzando direttamente il modo in cui viene manipolato nelle applicazioni industriali. Comprendere questi attributi è essenziale per garantire la sicurezza e ottimizzare l'efficacia nei processi di trattamento dell'acqua, sanificazione e lavorazioni chimiche.</p>
+
+<h3>Fase</h3>
+<p>L'ozono si presenta come gas a temperatura ambiente e pressione atmosferica standard, il che implica che lo stoccaggio e il trasporto devono essere progettati per contenere e controllare una sostanza altamente diffondibile. Questa fase gassosa favorisce la distribuzione uniforme nelle applicazioni industriali, ma richiede attrezzature specifiche per la manipolazione sicura e per limitare perdite o decomposizione. L'efficienza del gas nella diffusione lo rende versatile, ma ne vincola la gestione e la conservazione.</p>
+
+<h3>Colore</h3>
+<p>Ozone appare di un blu pallido, visibile in alcune condizioni industriali controllate. Questo colore facilita l'identificazione visiva e le verifiche di sicurezza, consentendo di monitorare la presenza tramite metodi di rilevamento specifici. Alte concentrazioni possono intensificare la percezione cromatica, segnalando potenziali rischi per la sicurezza industriale.</p>
+
+<h3>Odore</h3>
+<p>Il caratteristico odore pungente, simile al cloro, dell'ozono permette di rilevare rapidamente perdite o concentrazioni eccessive negli impianti industriali. Questo rilevamento sensoriale è essenziale per il monitoraggio continuo e per garantire il rispetto delle norme di sicurezza sul lavoro, prevenendo esposizioni nocive e incidenti operativi.</p>
+
+<h3>Densità</h3>
+<p>La densità dell'ozono a temperatura e pressione standard (STP) è di circa 2,144 kg/m³, risultando più pesante dell'aria con una densità relativa di 1,66. Questa maggiore densità influisce sulla velocità di diffusione, richiede sistemi di stoccaggio progettati per gas più pesanti e determina precise misure di sicurezza industriale per prevenire accumuli pericolosi in spazi confinati.</p>
+
+<h3>Solubilità</h3>
+<p>L'ozono mostra una solubilità moderata in acqua e in alcuni solventi comuni, che ne determina l'efficacia nei processi industriali come la disinfezione e l'ossidazione. L'efficienza aumenta con temperature più basse e pH leggermente acidi, permettendo una maggiore concentrazione in soluzione e un impiego ottimale nel trattamento delle acque e in altre applicazioni industriali.</p>
+
+<h3>Punto di Ebollizione</h3>
+<p>Il punto di ebollizione dell'ozono è di circa -112 °C, dove avviene la transizione di fase da gas a liquido. Questa informazione guida il design dell'attrezzatura industriale e le procedure di stoccaggio, stabilendo margini di sicurezza termica essenziali per la manipolazione e la protezione del personale e degli impianti.</p>
+
+<h3>Punto di Fusione</h3>
+<p>Il punto di fusione dell’ozono solido è circa −192,5 °C, una soglia critica per lo stoccaggio a temperature estreme. In scenari industriali o di laboratorio, mantenere condizioni sotto questo limite evita la solidificazione accidentale, garantendo sicurezza nella manipolazione e stabilità durante processi altamente specializzati o esperimenti a basse temperature.</p>
+
+</section>
 
 <section>
+
+<h2>Proprietà Chimiche dell'Ozono (O₃)</h2>
+<p>Ozone (O₃) agisce come un potente agente ossidante grazie alla sua struttura di ossigeno triatomico, che ne determina la reattività unica con composti organici e inorganici. Queste caratteristiche lo rendono cruciale nelle applicazioni industriali, come la disinfezione, il trattamento dell'acqua e numerose reazioni chimiche, garantendo efficacia anche in contesti ambientali complessi e con variabili chimiche. La sua stabilità chimica relativa consente un uso controllato nelle catene di produzione senza degradazione immediata.</p>
+
+<h3>Potenziale Ossidante</h3>
+<p>Ozone sfrutta il suo elevato potenziale ossidante trasferendo elettroni durante le reazioni di ossido-riduzione, superando spesso cloro e perossido di idrogeno in forza ossidativa. Questo lo rende fondamentale nei trattamenti industriali dell'acqua, per la disinfezione microbica e la degradazione di inquinanti organici, dove ogni molecola di ossigeno aggiunta accelera le reazioni chimiche critiche.</p>
+
+<h3>Reattività</h3>
+<p>Ozone interagisce rapidamente con composti organici attraverso l’ozonolisi degli alcheni, con composti inorganici come ioni metallici e con microrganismi per ossidazione mirata. La cinetica varia tra aria e acqua, influenzando la velocità delle reazioni, mentre nelle applicazioni industriali queste proprietà permettono decontaminazione, sanificazione e trasformazioni chimiche controllate.</p>
+
+<h3>Potenziale Redox</h3>
+<p>Il potenziale redox standard dell'ozono supera quello di molti ossidanti comuni come il cloro e il perossido di idrogeno, conferendogli una reattività elevata in processi di ossidazione e riduzione. Questa caratteristica permette applicazioni industriali efficaci nella disinfezione di superfici e nel degrado di inquinanti organici, ottimizzando l'efficienza dei trattamenti chimici e ambientali.</p>
+
+<h3>Formazione di Sottoprodotti</h3>
+<p>Durante le reazioni industriali dell'ozono, si generano radicali e altre specie reattive dell'ossigeno (ROS), tra cui perossido di idrogeno e prodotti di decomposizione. Questi sottoprodotti possono influenzare la sicurezza e l'efficienza dei trattamenti, rendendo fondamentale il monitoraggio industriale e l'adozione di strategie per mitigare la formazione indesiderata e ridurre i rischi operativi.</p>
+
+<h3>Condizioni di Reazione</h3>
+<p>La stabilità e la reattività dell’ozono in processi industriali dipendono strettamente da pH, temperatura, pressione e composizione della soluzione. Mantenere un pH neutro o leggermente acido, temperature moderate e pressioni controllate ottimizza la solubilità e la cinetica delle reazioni, migliorando l’efficienza nei trattamenti idrici industriali e nella sterilizzazione dell’aria. Regolare questi parametri riduce la decomposizione prematura dell’ozono e massimizza la sua attività ossidativa.</p>
+
+<h3>Meccanismi di Reazione</h3>
+<p>Le reazioni industriali dell'ozono coinvolgono la scissione degli alcheni tramite ozonolisi (RCH=CHR' + O₃ → RCHO + R'CHO), la propagazione di catene radicaliche e percorsi di decomposizione controllata che generano specie intermedie altamente ossidanti. La comprensione della cinetica chimica e dei pathway di ossidazione permette di ottimizzare i processi, migliorando efficienza e sicurezza nell'applicazione industriale dell'ozono.</p>
+
+</section>
+
     '''
+
     article_html = article_html.replace("’", "'")
 
     sidebar_core_entity_html = sidebar_core_entity()
