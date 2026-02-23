@@ -1246,7 +1246,7 @@ def ozono_industriale__gen():
 <section>
 
 <h2>Tecnologie di Generazione dell’Ozono</h2>
-<p>Le tecnologie di generazione dell’ozono convertono l’ossigeno (O₂) in ozono (O₃) tramite input energetico controllato, determinando capacità, concentrazione e efficienza dei sistemi industriali. I principali metodi industriali includono scarica corona, scarica a barriera dielettrica (DBD), generazione UV e elettrolitica, privilegiando generatori ad alta produzione, funzionamento continuo e integrazione con processi come trattamento acque, alimentare e municipale.</p>
+<p>Le <a href="/generatori-ozono/">tecnologie di generazione dell’ozono</a> convertono l’ossigeno (O₂) in ozono (O₃) tramite input energetico controllato, determinando capacità, concentrazione e efficienza dei sistemi industriali. I principali metodi industriali includono scarica corona, scarica a barriera dielettrica (DBD), generazione UV e elettrolitica, privilegiando generatori ad alta produzione, funzionamento continuo e integrazione con processi come trattamento acque, alimentare e municipale.</p>
 
 <h3>Meccanismi di Produzione: Scarica a Corona, UV e Sistemi Elettrolitici</h3>
 <p>La scarica a corona genera ozono attraverso campi elettrici ad alta tensione tra elettrodi separati da un materiale dielettrico come ceramica o vetro, con DBD dominante per la sua alta concentrazione di ozono e scalabilità industriale. I sistemi UV utilizzano lampade a 185 nm per basse produzioni, mentre le celle elettrolitiche producono ozono ad alta purezza disciolto in acqua, ottimizzando ciascun metodo in base a concentrazione, capacità e applicazione industriale.</p>
@@ -1564,9 +1564,63 @@ La configurazione elettronica dell'ozono mostra due elettroni di valenza per ogn
         f.write(html)
     print(html)
 
+def generatori_ozono__gen():
+    url_slug = 'generatori-ozono'
+
+    article_html = f'''
+
+<section>
+
+<h2>Metodi di Produzione dell’Ozono nelle Soluzioni Industriali</h2>
+<p>I generatori di ozono nelle soluzioni industriali utilizzano metodi specifici che determinano la concentrazione di ozono e l’efficienza operativa. La scelta del metodo di produzione influisce sul design del sistema, sul consumo energetico e sulle considerazioni di sicurezza. Selezionare la tecnica appropriata è fondamentale per applicazioni mirate come trattamento dell’acqua, purificazione dell’aria o sterilizzazione, ottimizzando così le prestazioni complessive.</p>
+
+</section>
+
+    '''
+
+    article_html = article_html.replace("’", "'")
+
+    sidebar_core_entity_html = sidebar_core_entity()
+    sidebar_core_entity_html = '<div></div>'
+    sidebar_page_html = sidebar_page([]) 
+
+    html = f'''
+    <!DOCTYPE html>
+    <html lang="it">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        {components.header_default()}
+        <div class="hub">
+            {sidebar_core_entity_html}
+            <main>
+                <article>
+                    {article_html}
+                </article>
+            </main>
+            {sidebar_page_html}
+        </div>
+        {components.footer_dark()}
+    </body>
+    </html>
+    '''
+
+    html_folderpath = f'{g.WEBSITE_FOLDERPATH}/{url_slug}'
+    os.makedirs(html_folderpath, exist_ok=True)
+    html_filepath = f'{html_folderpath}/index.html'
+    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
+        f.write(html)
+    print(html)
+
 def main():
     ozono_industriale__gen()
+
     ozono__gen()
+    generatori_ozono__gen()
 
     ozono_industriale__benefici__gen()
     ozono_industriale__casi__gen()
