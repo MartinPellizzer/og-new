@@ -10,7 +10,7 @@ uint32_t heartbeat_millis_cur = 0;
 // #define BUFF_LEN 9
 // uint8_t buff[BUFF_LEN] = { 0 };
 
-#define MODULE_ID 0x01
+#define MODULE_ID 0x02
 #define RELAY_PIN 25
 
 
