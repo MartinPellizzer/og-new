@@ -1799,7 +1799,7 @@ def applicazioni__gen():
     article_html = f'''
 
 <h1>Applicazioni Industriali dell’Ozono</h1>
-<p>Le applicazioni industriali dell’ozono sfruttano la sua reattività chimica per processi di ossidazione e sterilizzazione altamente efficaci. I sistemi industriali a ozono consentono di implementare queste funzioni in diversi settori, garantendo trattamenti rapidi e sicuri. La capacità dell’ozono di interagire con contaminanti e microrganismi ne valorizza l’uso nella produzione, depurazione e sanificazione industriale.</p>
+<p>Le applicazioni industriali dell’ozono sfruttano la sua reattività chimica per processi di ossidazione e sterilizzazione altamente efficaci. I <a href="/ozono-industriale/">sistemi industriali a ozono</a> consentono di implementare queste funzioni in diversi settori, garantendo trattamenti rapidi e sicuri. La capacità dell’ozono di interagire con contaminanti e microrganismi ne valorizza l’uso nella produzione, depurazione e sanificazione industriale.</p>
 
 <section>
 
@@ -2004,12 +2004,214 @@ def applicazioni__gen():
         f.write(html)
     print(html)
 
+def safety_and_compliance__gen():
+    url_slug = 'sicurezza'
+
+    article_html = f'''
+
+<h1>Standard di Sicurezza e Conformità per i Sistemi di Ozono Industriale</h1>
+<p>Gli Standard di Sicurezza e Conformità per l’Ozono Industriale definiscono requisiti normativi e misurabili per l’uso dei <a href="/ozono-industriale/">sistemi di ozono industriale</a>, includendo limiti di esposizione professionale all’ozono gassoso (O₃), monitoraggio continuo, controlli ingegneristici, procedure amministrative e dispositivi di protezione individuale. Si applicano agli ambienti industriali attivi nel trattamento delle acque, trasformazione alimentare, produzione manifatturiera e purificazione dell’aria, dove la sicurezza occupazionale e la conformità normativa sono essenziali poiché l’ozono è un potente ossidante e irritante respiratorio.</p>
+
+<section>
+
+<h2>Autorità Regolatorie che Governano Sicurezza e Standard di Conformità negli Ossidatori Industriali</h2>
+<p>Le autorità regolatorie supervisionano la produzione e l’uso dei sistemi di ozono industriale, imponendo limiti di esposizione dei lavoratori, controlli sulle emissioni e certificazioni dei dispositivi. Gli enti governativi attuano la legge, garantendo la sicurezza occupazionale, la protezione ambientale e la salute pubblica, assicurando che i generatori di ozono e le applicazioni industriali rispettino gli standard di sicurezza e conformità tramite strumenti normativi vincolanti.</p>
+
+<h3>Autorità Governative di Regolamentazione nella Sorveglianza dell’Ozono Industriale</h3>
+<p>Le autorità governative operano su più livelli amministrativi, con agenzie federali responsabili dei limiti di esposizione e delle emissioni, enti statali o provinciali che controllano le normative locali, autorità per la sicurezza sul lavoro che supervisionano i protocolli operativi e agenzie di protezione ambientale che regolano la sicurezza degli impianti industriali. Questa gerarchia garantisce che tutte le normative relative all’ozono industriale siano applicate in modo coerente e completo nei luoghi di lavoro.</p>
+
+<h3>Ambito Giurisdizionale della Normativa sull’Ozono Industriale</h3>
+<p>Le autorità regolatorie operano all’interno di giurisdizioni definite, determinando obblighi specifici per gli operatori e i produttori di sistemi a ozono. L’ambito federale stabilisce limiti generali di esposizione e certificazioni, quello statale può introdurre requisiti più stringenti, mentre le autorità sovranazionali e internazionali offrono linee guida complementari. Contesti lavorativi e regolamentazioni ambientali influenzano direttamente la conformità di emissioni, sicurezza sul posto di lavoro e certificazione degli apparecchi.</p>
+
+<h3>Strumenti Normativi Utilizzati per Controllare l’Ozono Industriale</h3>
+<p>Le autorità applicano norme, direttive, codici di condotta, standard tecnici e documenti guida per tradurre il potere legislativo in obblighi concreti. Questi strumenti definiscono limiti di esposizione, requisiti di sicurezza delle attrezzature, procedure di installazione e monitoraggio dei generatori di ozono, assicurando il rispetto dei mandati di conformità e collegando direttamente tutte le azioni agli standard di sicurezza e conformità.</p>
+
+<h3>Meccanismi di Applicazione e Supervisione della Conformità</h3>
+<p>Le autorità di regolamentazione garantiscono la conformità attraverso ispezioni sui luoghi di lavoro e ambientali, audit di conformità e l'emissione di citazioni, sanzioni amministrative e penali. Gli operatori di sistemi a ozono industriale devono mantenere documentazione aggiornata, sistemi di monitoraggio e protocolli di sicurezza per evitare responsabilità legali o ordini di chiusura dell'impianto, rendendo l'applicazione essenziale per mitigare i rischi in ambienti ad alta reattività dell'ozono.</p>
+
+<h3>Categorie di Enti Regolatori dell’Ozono Industriale</h3>
+<p>La sicurezza e la conformità nell’uso dell’ozono industriale sono supervisionate da diverse categorie di enti: autorità nazionali per la sicurezza sul lavoro, agenzie di protezione ambientale, enti di sicurezza chimica, organizzazioni internazionali di standardizzazione e autorità sanitarie pubbliche. Alcuni emanano regolamenti vincolanti, mentre altri pubblicano standard armonizzati o linee guida consultive. In pagine successive verranno approfonditi esempi specifici come OSHA, EPA, ECHA, WHO, ISO e IEC.</p>
+
+</section>
+
+<section>
+
+<h2>Limiti di Esposizione e Valori Soglia nella Sicurezza dell’Ozono Industriale</h2>
+<p>I limiti di esposizione guidano la protezione della salute dei lavoratori nelle soluzioni industriali a ozono, garantendo che le operazioni rispettino le normative degli organi regolatori come OSHA, NIOSH e ACGIH. Questi valori, calcolati sulla base delle linee guida per la salute occupazionale e dei protocolli di mitigazione dei rischi, permettono di prevenire effetti tossici e incidenti, mantenendo la conformità agli standard di sicurezza e di controllo ambientale.</p>
+
+<h3>Metriche di Concentrazione dell’Ozono</h3>
+<p>Le concentrazioni di ozono vengono misurate in ppm e mg/m³ utilizzando metodi di monitoraggio dell’aria supportati da sensori industriali di ozono certificati secondo standard di misura riconosciuti. La precisione dei dati è essenziale per rispettare i limiti normativi, garantire la sicurezza sul luogo di lavoro e proteggere la salute degli operatori esposti.</p>
+
+<h3>Limiti di Esposizione Pesati nel Tempo</h3>
+<p>I limiti di esposizione pesati nel tempo (TWA) regolano la concentrazione media di ozono industriale durante l'intero turno di lavoro, mentre i limiti a breve termine (STEL) definiscono la soglia consentita per periodi più brevi e intensi. I limiti di soffitto indicano la concentrazione massima istantanea da non superare. La durata dell'esposizione e i modelli di turni influenzano direttamente le procedure operative per garantire sicurezza e conformità. L'adeguamento delle concentrazioni secondo la durata protegge i lavoratori da rischi acuti e cronici.</p>
+
+<h3>Limiti di Esposizione Ammissibili (PELs)</h3>
+<p>Le agenzie regolatorie come OSHA stabiliscono PEL specifici per l’ozono industriale, mentre NIOSH fornisce raccomandazioni integrate per l’igiene industriale. Il rispetto dei PEL obbliga i datori di lavoro a implementare controlli operativi, monitoraggi regolari e meccanismi di applicazione legale, garantendo la conformità normativa e la protezione dei lavoratori negli ambienti produttivi.</p>
+
+<h3>Durata dell'Esposizione e Parametri di Frequenza</h3>
+<p>La gestione delle ore di esposizione giornaliere e della frequenza settimanale è fondamentale per ottimizzare la sicurezza negli ambienti con soluzioni ozono industriali. Considerazioni sui cicli ripetitivi aiutano a pianificare turni di lavoro conformi agli standard, riducendo i rischi tramite valutazioni dei pericoli specifici e l'adeguamento dei programmi operativi industriali.</p>
+
+<h3>Tipi di Valori Limite di Soglia</h3>
+<p>I limiti di soglia come il Limite Massimo Consentito, TWA e STEL guidano il monitoraggio costante dei livelli di ozono industriale, indicando quando intervenire con procedure di mitigazione. I Livelli di Azione definiscono trigger operativi specifici, mentre i protocolli di sicurezza stabiliscono misure preventive e piani di risposta rapida per proteggere lavoratori e ambienti. Questi valori assicurano un controllo sistematico e conforme alle normative vigenti.</p>
+
+<h3>Impatti sulla Salute Correlati</h3>
+<p>L'esposizione a ozono industriale può provocare effetti acuti come irritazioni respiratorie, tosse e difficoltà respiratoria, mentre l'esposizione cronica è associata a danni neurologici e cardiovascolari. Studi sulla salute occupazionale evidenziano che il rispetto rigoroso dei limiti di esposizione riduce significativamente il rischio di complicanze a lungo termine, proteggendo la funzionalità polmonare e le capacità cognitive.</p>
+
+</section>
+
+<section>
+
+<h2>Sistemi di Monitoraggio dell'Aria sul Luogo di Lavoro nelle Soluzioni Industriali a Ozono</h2>
+<p>I sistemi di monitoraggio dell'aria sul luogo di lavoro rilevano in tempo reale la concentrazione di ozono, garantendo il rispetto dei limiti di esposizione e migliorando la qualità dell'aria interna. Questi strumenti sono fondamentali per tutelare la sicurezza occupazionale, assicurare la conformità normativa e ottimizzare l'efficienza operativa all'interno degli ambienti industriali. La loro applicazione diretta rafforza l'aderenza agli standard di Sicurezza e Conformità.</p>
+
+<h3>Apparecchi di Rilevamento dell’Ozono</h3>
+<p>I sensori elettrochimici, i monitor ad assorbimento UV e i sensori a ossido metallico vengono impiegati per rilevare l’ozono in ambienti industriali, sia tramite sistemi fissi che dispositivi portatili. La loro precisione, i limiti di rilevazione e il corretto posizionamento nel luogo di lavoro sono fondamentali per garantire sicurezza, conformità agli standard e monitoraggio costante della concentrazione di ozono.</p>
+
+<h3>Monitoraggio di Metriche e Parametri</h3>
+<p>La concentrazione di ozono (ppm) viene tracciata insieme ai livelli di picco e alle medie ponderate nel tempo (TWA) per confrontare le esposizioni con i limiti di esposizione consentiti (PEL) e i valori limite soglia (TLV). La durata dell’esposizione e i picchi momentanei sono critici per la sicurezza dei lavoratori e per garantire la conformità agli standard OSHA e al monitoraggio ambientale continuo.</p>
+
+<h3>Taratura e Manutenzione</h3>
+<p>I sistemi di rilevazione dell'ozono devono essere sottoposti a procedure regolari di taratura secondo gli standard di calibrazione, con verifiche periodiche per garantire l'accuratezza dei sensori e prevenire il drift. I programmi di manutenzione preventiva, supportati da certificazioni, riducono il rischio di malfunzionamenti e garantiscono che eventuali discrepanze vengano individuate tempestivamente, assicurando affidabilità e conformità continua.</p>
+
+<h3>Registrazione e Reportistica dei Dati</h3>
+<p>I data logger catturano automaticamente gli output operativi a intervalli programmati, generando report digitali integrati con sistemi di conformità. Gli alert e le notifiche segnalano tempestivamente anomalie, mentre l'archiviazione digitale garantisce la disponibilità dei record per audit, ispezioni normative e analisi delle tendenze a lungo termine, supportando la documentazione di conformità e la tracciabilità storica.</p>
+
+<h3>Fattori Ambientali che Influenzano il Monitoraggio</h3>
+<p>La precisione del monitoraggio in ambienti industriali con soluzioni di ozono dipende da temperatura, umidità e flusso d'aria, che possono alterare la sensibilità dei sensori. Interferenze chimiche richiedono calibrazione ambientale regolare, mentre la disposizione del luogo di lavoro deve essere ottimizzata per evitare letture distorte e garantire risultati affidabili e coerenti.</p>
+
+<h3>Protocolli di Monitoraggio</h3> 
+<p>I protocolli di monitoraggio stabiliscono le SOP per la rilevazione dell’ozono industriale, definendo la frequenza delle misurazioni e le soglie di emergenza che attivano interventi immediati. Essi assicurano l’aderenza alle regolazioni OSHA e alle linee guida NIOSH, mantenendo i confini operativi e garantendo che le procedure di conformità siano seguite per salvaguardare la sicurezza dei lavoratori e la cultura della sicurezza aziendale.</p>
+
+</section>
+
+<section>
+
+<h2>Controlli Ingegneristici nelle Soluzioni Industriali a Ozono</h2>
+<p>I controlli ingegneristici riducono i rischi di esposizione all’ozono, garantiscono la conformità agli standard di sicurezza e mantengono l’affidabilità operativa delle soluzioni industriali a ozono. Sistemi di mitigazione dell’ozono, barriere fisiche, ventilazione controllata e sensori integrati prevengono incidenti, mentre verifiche periodiche e test di performance assicurano la protezione continua e l’efficienza dei processi industriali.</p>
+
+<h3>Unità di Distruzione dell’Ozono</h3> 
+<p>Le unità di distruzione dell’ozono utilizzano meccanismi catalitici e termici all’interno di camere di reazione progettate per convertire l’ozono residuo in ossigeno, ottimizzando la neutralizzazione. I criteri di progettazione includono l’efficienza di distruzione, la capacità operativa e sistemi di monitoraggio continuo, garantendo il controllo dell’ozono residuo e la conformità alle normative, riducendo i rischi per sicurezza e ambiente.</p>
+
+<h3>Sistemi di Ventilazione</h3>
+<p>I sistemi di ventilazione devono essere progettati con percorsi d’aria ottimizzati e vie di scarico efficienti, integrando tecnologie di filtrazione dell’ozono e gestione di zone a pressione positiva e negativa. Una corretta configurazione del flusso d’aria, allineata alla disposizione degli ambienti industriali, riduce l’esposizione dei lavoratori e garantisce il controllo efficace dei livelli di ozono.</p>
+
+<h3>Meccanismi di Interblocco</h3> 
+<p>I meccanismi di interblocco, inclusi interruttori di sicurezza, interblocchi delle porte, circuiti di spegnimento di emergenza e integrazioni con l’interfaccia LOTO, controllano la sequenza dei processi per prevenire errori umani e garantire la conformità. Essi interrompono automaticamente le operazioni pericolose e coordinano i controlli di processo, riducendo rischi e incidenti nell’uso di soluzioni industriali a ozono.</p>
+
+<h3>Sensori e Integrazione</h3> 
+<p>I sensori di ozono monitorano in tempo reale la concentrazione, il flusso e la pressione, fornendo dati costanti al pannello di controllo e al sistema di automazione. Gli allarmi intervengono immediatamente in caso di anomalie, permettendo risposte rapide e precise per mitigare rischi e garantire report di conformità accurati, integrando perfettamente tutte le funzioni di controllo automatico.</p>
+
+<h3>Considerazioni Strutturali e dei Materiali</h3>
+<p>Per garantire sicurezza e durabilità nei sistemi ad ozono, è essenziale utilizzare materiali resistenti all’ozono e componenti con protezione anticorrosione e resistenza all’ossidazione. Le custodie protettive, guarnizioni e sigilli devono essere selezionati per mantenere integrità strutturale nel tempo, mentre i dispositivi di sicurezza progettuali assicurano che ogni componente operi efficacemente sotto esposizione continua all’ozono.</p>
+
+<h3>Prestazioni del Sistema e Validazione</h3> 
+<p>I protocolli di validazione delle prestazioni prevedono test operativi regolari, monitoraggio dei benchmark di efficienza e manutenzione programmata per garantire continuità e affidabilità. Le misure di ridondanza riducono il rischio di interruzioni, mentre la documentazione dettagliata supporta la verifica della conformità e conferma l’efficacia dei sistemi secondo gli standard di sicurezza industriale. La verifica sistematica assicura che ogni componente rispetti le soglie operative definite.</p>
+
+</section>
+
+<section>
+
+<h2>Controlli Amministrativi nella Sicurezza dell'Ozono Industriale</h2>
+<p>I controlli amministrativi strutturano le procedure operative, la formazione e la documentazione necessaria per garantire la sicurezza dei sistemi di ozono industriale. Attraverso protocolli di sicurezza, monitoraggio dei rischi e governance operativa, questi controlli riducono incidenti e assicurano la conformità normativa. Le procedure organizzative e la registrazione costante dei processi supportano la mitigazione dei pericoli e preparano il terreno per l'implementazione dei controlli dettagliati descritti nei sottotemi.</p>
+
+<h3>Procedure Operative Standard (SOP)</h3>
+<p>Le procedure operative standard guidano la manipolazione sicura dell’ozono industriale, definendo workflow dettagliati per operazioni quotidiane, manutenzione programmata ed emergenze. Questi protocolli standardizzano le pratiche, controllano i rischi, garantiscono l’allineamento normativo e mantengono una documentazione di conformità pronta per audit e verifiche regolatorie.</p>
+
+<h3>Programmi di Formazione per i Dipendenti</h3>
+<p>I moduli di formazione includono onboarding strutturato, corsi di aggiornamento periodici e valutazioni di competenza per rafforzare la consapevolezza sulla sicurezza, l’adozione corretta delle procedure operative e la mitigazione dei rischi. Questi programmi assicurano che il personale sia costantemente aggiornato su pratiche sicure e consolidano una cultura operativa attenta alla sicurezza nell’uso delle soluzioni industriali a ozono.</p>
+
+<h3>Documentazione e Registrazioni</h3>
+<p>I registri degli incidenti, i documenti di conformità normativa e le tracce di audit garantiscono che tutte le operazioni e le procedure SOP siano tracciate con precisione. La conservazione di rapporti di sicurezza e documentazione procedurale supporta controlli interni, ispezioni regolatorie e miglioramento continuo, assicurando trasparenza, responsabilità e conformità nelle soluzioni industriali a ozono.</p>
+
+<h3>Audit e Controlli di Conformità</h3>
+<p>Gli audit interni ed esterni vengono programmati regolarmente per verificare l’aderenza agli standard operativi e la conformità normativa. Le ispezioni documentano le non conformità, mentre i sistemi di tracciamento delle azioni correttive assicurano che ogni lacuna identificata venga risolta tempestivamente. La reportistica di conformità permette di monitorare progressi e garantire miglioramenti continui nel rispetto delle procedure.</p>
+
+<h3>Politiche Operative</h3>
+<p>Le procedure operative stabiliscono regole chiare per le pratiche di lavoro, il controllo degli accessi, la gestione dei turni e la governance quotidiana. Integrano i protocolli industriali di sicurezza dell'ozono con controlli amministrativi, garantendo che ogni attività sia monitorata, i ruoli siano definiti e i turni distribuiti per ridurre rischi, mantenendo conformità e sicurezza costante.</p>
+
+<h3>Protocolli di Comunicazione</h3>
+<p>Le comunicazioni di emergenza seguono catene gerarchiche ben definite, garantendo che ogni segnalazione di incidente raggiunga rapidamente i responsabili. I procedimenti di notifica interna e gli allarmi agli incidenti permettono la diffusione immediata delle informazioni, mentre le sessioni di briefing sulla sicurezza assicurano che tutto il personale comprenda le procedure di escalation e possa intervenire tempestivamente per prevenire o contenere situazioni critiche.</p>
+
+<h3>Segnalazione e Investigazione degli Incidenti</h3>
+<p>Ogni esposizione, quasi incidente o guasto deve essere registrato negli appositi registri e report per garantire tracciabilità completa. Le indagini sulle cause principali identificano le origini degli eventi e guidano l’implementazione di azioni correttive mirate. Le informazioni raccolte vengono integrate nelle procedure operative standard e nei programmi di formazione, favorendo un miglioramento continuo della sicurezza e della conformità.</p>
+
+</section>
+
+<section>
+
+<h2>Dispositivi di Protezione Individuale (DPI) nella Sicurezza Industriale dell’Ozono</h2>
+<p>I DPI sono essenziali per ridurre l’esposizione dei lavoratori all’ozono industriale, integrando le normative OSHA, NIOSH, ANSI e ISO. La selezione e manutenzione di equipaggiamenti specifici per ozono garantisce il rispetto degli standard di sicurezza e promuove la salute occupazionale, mitigando rischi chimici attraverso protocolli di sicurezza precisi e validati.</p>
+
+<h3>Tipi di DPI</h3>
+<p>La protezione respiratoria deve essere sempre utilizzata in ambienti con concentrazioni di ozono elevate, mentre la protezione degli occhi con visiere o occhiali speciali è fondamentale per prevenire irritazioni. La protezione della pelle include guanti e indumenti protettivi resistenti all’ozono, con calzature adeguate per evitare esposizioni prolungate. L’uso combinato di guanti, visiere e abbigliamento protettivo varia secondo la durata e l’intensità dell’esposizione.</p>
+
+<h3>Proprietà dei Materiali</h3>
+<p>La scelta dei materiali resistenti all’ozono è fondamentale per garantire resistenza chimica e durabilità. Gli elastomeri e i polimeri devono mantenere integrità strutturale contro l’ossidazione, mentre i rivestimenti tessili prevengono il degrado rapido. Conformarsi agli standard dei materiali assicura protezione continua e sicurezza a lungo termine per gli operatori. </p>
+
+<h3>Vestibilità e Dimensionamento Corretto</h3>
+<p>Una vestibilità scorretta o dimensioni errate riducono l’efficacia dei DPI, compromettendo l’integrità della protezione e aumentando il rischio di esposizione. È fondamentale seguire tabelle di dimensionamento, verificare il corretto fit facciale per respiratori, sfruttare caratteristiche regolabili e aderire agli standard di conformità del settore, garantendo design ergonomico e sigillatura ottimale per ogni utente.</p>
+
+<h3>Protocolli di Utilizzo</h3>
+<p>Gli operatori devono seguire procedure rigorose di indossare e rimuovere i DPI, rispettando i limiti di esposizione e le linee guida operative. I dispositivi devono essere conservati in ambienti dedicati, puliti secondo protocolli specifici e sottoposti a controlli periodici. La formazione degli utenti e le verifiche di routine assicurano performance protettive costanti e conformità agli standard di sicurezza.</p>
+
+<h3>Progettazione Specifica per Rischio</h3>
+<p>In ambienti ad alto rischio di esposizione all’ozono, i dispositivi di protezione individuale devono mitigare pericoli chimici specifici, come elevate concentrazioni ossidanti e esposizione prolungata. Guanti certificati per ozono, respiratori specializzati e tute protettive integrate offrono barriere efficaci, riducendo reazioni chimiche e danni ai lavoratori durante le operazioni industriali.</p>
+
+<h3>Ispezione, Sostituzione e Ciclo di Vita</h3>
+<p>Le procedure di ispezione regolare individuano difetti e anomalie negli equipaggiamenti, mentre i programmi di sostituzione rispettano i limiti di vita utile del PPE, prevenendo guasti. I registri di manutenzione documentano ogni intervento, garantendo tracciabilità e conformità alle direttive normative, assicurando la continuità della sicurezza operativa. L'aderenza scrupolosa a protocolli, calendari e log contribuisce a mantenere standard costanti e affidabili.</p>
+
+<h3>Etichettatura e Conformità agli Standard</h3>
+<p>Le etichette di certificazione dei DPI garantiscono agli utenti e agli ispettori che i dispositivi rispettano gli standard OSHA, NIOSH, ANSI e ISO, confermando la conformità normativa. Una corretta etichettatura trasmette chiaramente la validazione della sicurezza e la qualità del prodotto, riducendo i rischi operativi e aumentando la fiducia negli interventi industriali con soluzioni a ozono.</p>
+
+</section>
+
+    '''
+
+    article_html = article_html.replace("’", "'")
+
+    sidebar_core_entity_html = sidebar_core_entity()
+    sidebar_core_entity_html = '<div></div>'
+    sidebar_page_html = sidebar_page([]) 
+
+    html = f'''
+    <!DOCTYPE html>
+    <html lang="it">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        {components.header_default()}
+        <div class="hub">
+            {sidebar_core_entity_html}
+            <main>
+                <article>
+                    {article_html}
+                </article>
+            </main>
+            {sidebar_page_html}
+        </div>
+        {components.footer_dark()}
+    </body>
+    </html>
+    '''
+
+    html_folderpath = f'{g.WEBSITE_FOLDERPATH}/{url_slug}'
+    os.makedirs(html_folderpath, exist_ok=True)
+    html_filepath = f'{html_folderpath}/index.html'
+    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
+        f.write(html)
+    print(html)
+
 def main():
     ozono_industriale__gen()
 
     ozono__gen()
     generatori_ozono__gen()
     applicazioni__gen()
+    safety_and_compliance__gen()
 
     ozono_industriale__benefici__gen()
     ozono_industriale__casi__gen()
