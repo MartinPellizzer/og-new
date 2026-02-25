@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OzoneTech | Industrial Ozone Solutions</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --primary-blue: #0056b3;
+            --light-blue: #e6f2ff;
+            --accent-cyan: #00d4ff;
+            --dark-grey: #1a1a1a;
+            --text-grey: #4a4a4a;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-grey);
+            background-color: #f9f9f9;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+
+        /* --- HEADER --- */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i { color: var(--accent-cyan); }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            color: var(--dark-grey);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover { color: var(--primary-blue); }
+
+        .cta-btn {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .cta-btn:hover {
+            background: #004494;
+            transform: translateY(-2px);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(rgba(0, 30, 60, 0.8), rgba(0, 30, 60, 0.8)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary-blue);
+        }
+
+        /* --- FEATURES/STATS --- */
+        .stats {
+            background: var(--white);
+            padding: 60px 0;
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-radius: 8px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item i {
+            font-size: 2.5rem;
+            color: var(--accent-cyan);
+            margin-bottom: 15px;
+        }
+
+        .stat-item h3 { font-size: 1.5rem; color: var(--dark-grey); }
+        .stat-item p { font-size: 0.9rem; color: var(--text-grey); }
+
+        /* --- ABOUT SECTION --- */
+        .section { padding: 80px 0; }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--dark-grey);
+            margin-bottom: 15px;
+        }
+
+        .section-header .line {
+            width: 80px;
+            height: 4px;
+            background: var(--accent-cyan);
+            margin: 0 auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+        }
+
+        .about-text p { margin-bottom: 20px; }
+
+        .about-image img {
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        /* --- APPLICATIONS --- */
+        .applications { background: var(--light-blue); }
+
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .app-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            transition: var(--transition);
+            border-bottom: 4px solid transparent;
+        }
+
+        .app-card:hover {
+            transform: translateY(-10px);
+            border-bottom: 4px solid var(--accent-cyan);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .app-card i {
+            font-size: 3rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .app-card h3 { margin-bottom: 15px; color: var(--dark-grey); }
+
+        /* --- PRODUCTS --- */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .product-card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+        .product-img {
+            height: 200px;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+        }
+
+        .product-info { padding: 25px; }
+        .product-info h4 { font-size: 1.2rem; margin-bottom: 10px; }
+        .product-link { color: var(--primary-blue); font-weight: 600; font-size: 0.9rem; }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--dark-grey);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--accent-cyan);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col ul li a { opacity: 0.7; transition: var(--transition); }
+        .footer-col ul li a:hover { opacity: 1; color: var(--accent-cyan); }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } /* Simplified for demo */
+            .about-grid { grid-template-columns: 1fr; }
+            .hero-buttons { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-atom"></i> OzoneTech
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#applications">Applications</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="cta-btn">Get a Quote</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Advanced Oxidation for a Cleaner Future</h1>
+            <p>Industrial-grade ozone generation systems for water treatment, air purification, and food processing safety.</p>
+            <div class="hero-buttons">
+                <a href="#products" class="cta-btn">View Solutions</a>
+                <a href="#about" class="btn-outline">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <div class="container">
+        <div class="stats">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <i class="fa-solid fa-droplet"></i>
+                    <h3>99.9%</h3>
+                    <p>Pathogen Reduction</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fa-solid fa-leaf"></i>
+                    <h3>Eco-Friendly</h3>
+                    <p>No Chemical Residue</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <h3>24/7</h3>
+                    <p>Continuous Operation</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fa-solid fa-industry"></i>
+                    <h3>3000+</h3>
+                    <p>Installations Worldwide</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Industrial Water Treatment">
+                </div>
+                <div class="about-text">
+                    <h3>Why Industrial Ozone?</h3>
+                    <p>Ozone (O₃) is the world's most powerful natural oxidant. Unlike traditional chemical treatments, ozone leaves no harmful residue, decomposing back into oxygen after use.</p>
+                    <p>At OzoneTech, we engineer robust, high-output ozone generators designed for heavy-duty industrial environments. From cooling towers to wastewater treatment, our solutions reduce chemical costs and environmental impact.</p>
+                    <ul style="margin-top: 20px;">
+                        <li><i class="fa-solid fa-check" style="color:var(--primary-blue)"></i> Eliminates bacteria, viruses, and odors</li>
+                        <li><i class="fa-solid fa-check" style="color:var(--primary-blue)"></i> Reduces COD/BOD in wastewater</li>
+                        <li><i class="fa-solid fa-check" style="color:var(--primary-blue)"></i> Low maintenance, high durability</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications Section -->
+    <section id="applications" class="section applications">
+        <div class="container">
+            <div class="section-header">
+                <h2>Industry Applications</h2>
+                <div class="line"></div>
+            </div>
+            <div class="app-grid">
+                <div class="app-card">
+                    <i class="fa-solid fa-water"></i>
+                    <h3>Water Treatment</h3>
+                    <p>Disinfection for drinking water, wastewater, and cooling towers without harsh chlorine.</p>
+                </div>
+                <div class="app-card">
+                    <i class="fa-solid fa-apple-whole"></i>
+                    <h3>Food & Beverage</h3>
+                    <p>Washing produce, extending shelf life, and sanitizing processing equipment.</p>
+                </div>
+                <div class="app-card">
+                    <i class="fa-solid fa-wind"></i>
+                    <h3>Air Purification</h3>
+                    <p>Eliminating VOCs, mold, and odors in industrial facilities and HVAC systems.</p>
+                </div>
+                <div class="app-card">
+                    <i class="fa-solid fa-flask"></i>
+                    <h3>Pharmaceuticals</h3>
+                    <p>Ultra-pure water generation and sterile environment maintenance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Solutions</h2>
+                <div class="line"></div>
+            </div>
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fa-solid fa-server fa-3x"></i>
+                    </div>
+                    <div class="product-info">
+                        <h4>OT-Series Generators</h4>
+                        <p>High-output corona discharge generators for large scale water treatment.</p>
+                        <br>
+                        <a href="#" class="product-link">View Specs &rarr;</a>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fa-solid fa-gauge-high fa-3x"></i>
+                    </div>
+                    <div class="product-info">
+                        <h4>Monitors & Sensors</h4>
+                        <p>Precision ozone analyzers for gas and liquid phase monitoring.</p>
+                        <br>
+                        <a href="#" class="product-link">View Specs &rarr;</a>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fa-solid fa-pump-medical fa-3x"></i>
+                    </div>
+                    <div class="product-info">
+                        <h4>Venturi Injectors</h4>
+                        <p>High-efficiency mixing systems to maximize ozone dissolution in water.</p>
+                        <br>
+                        <a href="#" class="product-link">View Specs &rarr;</a>
+                    </div>
+                </div>
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fa-solid fa-screwdriver-wrench fa-3x"></i>
+                    </div>
+                    <div class="product-info">
+                        <h4>Custom Engineering</h4>
+                        <p>Bespoke skid-mounted systems designed for your specific facility needs.</p>
+                        <br>
+                        <a href="#" class="product-link">Contact Us &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>OzoneTech</h4>
+                    <p>Leading the industry in sustainable oxidation technologies since 1995.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Technical Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fa-solid fa-envelope"></i> sales@ozonetech.com</li>
+                        <li><i class="fa-solid fa-location-dot"></i> 101 Industrial Pkwy, Tech City</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 OzoneTech Industries. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
