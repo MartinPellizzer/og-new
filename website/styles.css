@@ -70,6 +70,18 @@ img {
     height: auto;
 }
 
+h1 {
+    font-family: var(--font-heading);
+}
+
+p {
+    font-family: var(--font-body);
+}
+
+a {
+    font-family: var(--font-body);
+}
+
 .home {}
 
 .home h2 {

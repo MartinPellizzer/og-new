@@ -1244,17 +1244,22 @@ def gen():
                     background-position: center;
                     height: 80vh;
             ">
-                <div class="container-md" style="display: flex; align-items: center; justify-conten: center; height: 100%;">
-                    <div>
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
+                    <div class="container-md">
                         <h1 style="color: #ffffff; font-size: 4rem; line-height: 1; text-align: center; margin-bottom: 1rem;">
-                            Soluzioni Industriali a Ozono per la Sicurezza Alimentare e i Processi Produttivi
+                            Soluzioni Industriali a Ozono per la Sicurezza Alimentare
                         </h1>
                         <p style="color: #ffffff; font-size: 1.25rem; line-height: 1.4; text-align: center; margin-bottom: 2rem;">
     Progettiamo e implementiamo soluzioni su misura basate sull’ozono per l’industria alimentare e applicazioni industriali avanzate, dall’analisi tecnica al supporto a lungo termine.
                         </p>
-                        <a class="button-square-default-accent"> 
-                            <span>Richiedi una consulenza gratuita</span>
-                        </a>
+                        <div style="display: flex; justify-content: center;">
+                            <a href="/contatti.html" style="background-color: #0056b3; padding: 12px 16px; color: #ffffff; text-decoration: none;"> 
+                                Richiedi una consulenza gratuita
+                            </a>
+                        </div>
+                    </div>
+                    <div class="container-md">
+                        <p>text</p>
                     </div>
                 </div>
             </section>      
