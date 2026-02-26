@@ -209,6 +209,7 @@ void cycle_custom_run_working()
   if (cycle.state_old != cycle.state_cur)
   {
     cycle.state_old = cycle.state_cur;
+    cycle.custom_cycles_operation_num_update = 1;
     cycle_state = OXY_01;
     cycle_millis_cur = millis();
   }

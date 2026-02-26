@@ -153,6 +153,8 @@ typedef struct cycle_t {
   int16_t custom_cycles_operation_num_done_tmp = -1;
   int16_t custom_cycles_operation_num_done_cur = 0;
 
+  int8_t custom_cycles_operation_num_update = 0;
+
 } cycle_t;
 cycle_t cycle = {};
 

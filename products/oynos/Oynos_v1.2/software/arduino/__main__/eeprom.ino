@@ -70,6 +70,24 @@ void eeprom_init()
   {
     cycle.custom_state_cur = eeprom_custom_state_cur;
   }
+  
+  uint16_t eeprom_custom_minites_working_cur = eeprom_read_uint16(CUSTOM_MINUTES_WORKING_CUR);
+  if (eeprom_custom_minites_working_cur != 65535)
+  {
+    cycle.custom_minutes_working_cur = eeprom_custom_minites_working_cur;
+  }
+  
+  uint16_t eeprom_custom_minites_resting_cur = eeprom_read_uint16(CUSTOM_MINUTES_RESTING_CUR);
+  if (eeprom_custom_minites_resting_cur != 65535)
+  {
+    cycle.custom_minutes_resting_cur = eeprom_custom_minites_resting_cur;
+  }
+  
+  uint16_t eeprom_custom_cycles_num_cur = eeprom_read_uint16(CUSTOM_CYCLES_NUM_CUR);
+  if (eeprom_custom_cycles_num_cur != 65535)
+  {
+    cycle.custom_cycles_num_cur = eeprom_custom_cycles_num_cur;
+  }
 
   // custom cycle operation num target
   uint16_t eeprom_custom_cycle_operation_num_target = eeprom_read_uint16(CUSTOM_CYCLES_OPERATION_NUM_TARGET);

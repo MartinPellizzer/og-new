@@ -1,3 +1,7 @@
+// green 5385
+// red 55588
+// blue 11295
+
 // home
 uint8_t cmd_p_home_on[BUFFER_SIZE] = { 101, 1, 6, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 uint8_t cmd_p_home_goto_settings[BUFFER_SIZE] = { 101, 1, 1, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -458,6 +462,10 @@ void nextion_input_p_set()
     else if (nextion_array_compare(cmd_p_set_og_goto_cycle_custom, nextion.inputs_buff)) 
     {
       nextion.page_cur = P_CYCLE_CUSTOM;
+    }
+    else if (nextion_array_compare(cmd_p_set_og_goto_num_op_custom, nextion.inputs_buff)) 
+    {
+      nextion.page_cur = P_CYCLE_CUSTOM_OPERATION_NUM;
     }
   }
 }
@@ -1130,6 +1138,9 @@ void nextion_input_p_cycle_custom()
     cycle.custom_minutes_resting_cur = cycle.custom_minutes_resting_tmp;
     cycle.custom_cycles_num_cur = cycle.custom_cycles_num_tmp;
     eeprom_write_uint16(CUSTOM_STATE_CUR, cycle.custom_state_cur);
+    eeprom_write_uint16(CUSTOM_MINUTES_WORKING_CUR, cycle.custom_minutes_working_cur);
+    eeprom_write_uint16(CUSTOM_MINUTES_RESTING_CUR, cycle.custom_minutes_resting_cur);
+    eeprom_write_uint16(CUSTOM_CYCLES_NUM_CUR, cycle.custom_cycles_num_cur);
   }
   else if (nextion_array_compare(cmd_p_set_list_4_item1_left, nextion.inputs_buff)) 
   {
@@ -1331,10 +1342,46 @@ void nextion_update_page_home(uint8_t force_refresh)
     }
   }
   // item 4
-  if (force_refresh || cycle.custom_cycles_operation_num_done_old != cycle.custom_cycles_operation_num_done_cur) 
+  if (force_refresh || 
+      cycle.custom_cycles_operation_num_done_old != cycle.custom_cycles_operation_num_done_cur ||
+      cycle.custom_cycles_operation_num_update == 1 // used for blue color when cycle start
+  ) 
   {
-    Serial.println("here");
     cycle.custom_cycles_operation_num_done_old = cycle.custom_cycles_operation_num_done_cur;
+    cycle.custom_cycles_operation_num_update = 0;
+    // color
+    {      
+      // blue
+      if (cycle.state_cur == 1)
+      {
+        Serial.println("blue");
+        uint8_t _buffer[] = { 0x74, 0x34, 0x2E, 0x70, 0x63, 0x6F, 0x3D, 0x31, 0x31, 0x32, 0x39, 0x35, 0xff, 0xff, 0xff };
+        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+        {
+          Serial2.write(_buffer[i]);
+        }
+      }
+      // green
+      else if (cycle.custom_cycles_operation_num_done_cur == cycle.custom_cycles_operation_num_target_cur)
+      {
+        Serial.println("green");
+        uint8_t _buffer[] = { 0x74, 0x34, 0x2E, 0x70, 0x63, 0x6F, 0x3D, 0x35, 0x33, 0x38, 0x35, 0xff, 0xff, 0xff };
+        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+        {
+          Serial2.write(_buffer[i]);
+        }
+      }
+      // red
+      else
+      {
+        Serial.println("red");
+        uint8_t _buffer[] = { 0x74, 0x34, 0x2E, 0x70, 0x63, 0x6F, 0x3D, 0x35, 0x35, 0x35, 0x38, 0x38, 0xff, 0xff, 0xff };
+        for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
+        {
+          Serial2.write(_buffer[i]);
+        }
+      }
+    }
     {
       uint8_t _buffer[] = { 0x74, 0x34, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x30, 0x30, 0x2F, 0x30, 0x30, 0x30, 0x22, 0xff, 0xff, 0xff };
       _buffer[8] = (cycle.custom_cycles_operation_num_done_cur % 1000 / 100) + 0x30;
