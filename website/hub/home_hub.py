@@ -1237,6 +1237,8 @@ def gen():
         '''
 
     if 1:
+        h1 = f'Soluzioni Industriali a Ozono per Trattamento Acqua, Aria e Superfici'
+        subordinate = f'Progettiamo e realizziamo impianti a ozono per applicazioni industriali, alimentari e ambientali con soluzioni su misura e automatizzate.'
         hero_html = f'''
             <section style="
                     background: linear-gradient(rgba(0, 30, 60, 0.8), rgba(0, 30, 60, 0.8)), url('/immagini/home/generatore-ozono-industriale-impianto.jpg');
@@ -1247,10 +1249,10 @@ def gen():
                 <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
                     <div class="container-md">
                         <h1 style="color: #ffffff; font-size: 4rem; line-height: 1; text-align: center; margin-bottom: 1rem;">
-                            Soluzioni Industriali a Ozono per la Sicurezza Alimentare
+                            {h1}
                         </h1>
                         <p style="color: #ffffff; font-size: 1.25rem; line-height: 1.4; text-align: center; margin-bottom: 2rem;">
-    Progettiamo e implementiamo soluzioni su misura basate sull’ozono per l’industria alimentare e applicazioni industriali avanzate, dall’analisi tecnica al supporto a lungo termine.
+                            {subordinate}
                         </p>
                         <div style="display: flex; justify-content: center;">
                             <a href="/contatti.html" style="background-color: #0056b3; padding: 12px 16px; color: #ffffff; text-decoration: none;"> 
@@ -1259,11 +1261,150 @@ def gen():
                         </div>
                     </div>
                     <div class="container-md">
-                        <p>text</p>
                     </div>
                 </div>
             </section>      
         '''
+
+    h2 = f'Applicazioni industriali dell’ozono'
+    subordinate = f'L’ozono viene utilizzato in ambito industriale per disinfettare, ossidare, deodorare e trattare fluidi e ambienti produttivi.'
+    img_height = '400px'
+    applications_html = f'''
+        <section class="applications">
+            <div class="applications-content container-xl">
+                <h2>
+                    {h2}
+                </h2>
+                <p style="text-align: center; max-width: 80ch; margin: 0 auto 3rem auto;">
+                    {subordinate}
+                </p>
+                <div class="applications-cards">
+                    <article>
+                        <a href="/trattamento-acque-industriali/" 
+                        title="Trattamento acque industriali con ozono">
+                            <figure>
+                                <img 
+                                    src="/immagini/home-water.jpg" 
+                                    alt="Impianto di trattamento acque industriali con sistema di ozonizzazione"
+                                    loading="lazy"
+                                    width="600"
+                                    height="400"
+                                    style="height: {img_height}; object-fit: cover; object-position: center; margin-bottom: 1rem;"
+                                >
+                            </figure>
+                            <h3>Trattamento acque industriali</h3>
+                        </a>
+                        <p>
+                            Progettiamo impianti di ozonizzazione per ossidare contaminanti, eliminare batteri
+                            e migliorare la qualità delle acque di processo e reflue.
+                        </p>
+                    </article>
+                    <article>
+                        <a href="/sanificazione-ambienti-superfici/" 
+                        title="Sanificazione ambienti e superfici con ozono">
+                            <figure>
+                                <img 
+                                    src="/immagini/home-ambienti.jpg" 
+                                    alt="Sanificazione di ambiente industriale mediante generatore di ozono"
+                                    loading="lazy"
+                                    width="600"
+                                    height="400"
+                                    style="height: {img_height}; object-fit: cover; object-position: center; margin-bottom: 1rem;"
+                                >
+                            </figure>
+                            <h3>Sanificazione ambienti e superfici</h3>
+                        </a>
+                        <p>
+                            Utilizziamo generatori di ozono industriali per eliminare microrganismi,
+                            muffe, virus e biofilm da ambienti produttivi e superfici operative.
+                        </p>
+                    </article>
+                    <article>
+                        <a href="/abbattimento-odori-industriali/" title="Abbattimento odori industriali con ozono">
+                            <figure>
+                                <img 
+                                    src="/immagini/home-odori.jpg" 
+                                    alt="Sistema di abbattimento odori industriali con tecnologia a ozono"
+                                    loading="lazy"
+                                    width="600"
+                                    height="400"
+                                    style="height: {img_height}; object-fit: cover; object-position: center; margin-bottom: 1rem;"
+                                >
+                            </figure>
+                            <h3>Abbattimento odori industriali</h3>
+                        </a>
+                        <p>
+                            Implementiamo soluzioni a ozono per decomporre composti organici volatili (VOC)
+                            e neutralizzare odori persistenti in impianti industriali.
+                        </p>
+                    </article>
+                    <article>
+                        <a href="/settore-alimentare-agroindustriale/" title="Soluzioni a ozono per il settore alimentare e agroindustriale">
+                            <figure>
+                                <img 
+                                    src="/immagini/home-alimenti.jpg" 
+                                    alt="Applicazione di ozono nel settore alimentare e agroindustriale"
+                                    loading="lazy"
+                                    width="600"
+                                    height="400"
+                                    style="height: {img_height}; object-fit: cover; object-position: center; margin-bottom: 1rem;"
+                                >
+                            </figure>
+                            <h3>Settore alimentare e agroindustriale</h3>
+                        </a>
+                        <p>
+                            Progettiamo sistemi a ozono per la sicurezza alimentare,
+                            la sanificazione delle linee produttive e il trattamento delle acque di lavaggio.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    '''
+
+    h2 = f'Perché scegliere l’ozono nei processi industriali?'
+    subordinate = f'L’ozono è un ossidante naturale con elevato potere disinfettante che elimina batteri, virus, muffe e composti organici senza lasciare residui chimici.'
+    img_height = '400px'
+    benefits_html = f'''
+        <section class="benefits" style="
+            background: linear-gradient(rgba(0, 30, 60, 0.8), rgba(0, 30, 60, 0.8)), 
+            url('/immagini/home-benefici.jpg');
+            background-size: cover;
+            background-position: center;
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        ">
+            <div class="container-xl">
+                <h2 style="color: #ffffff;">
+                    {h2}
+                </h2>
+                <p style="color: #ffffff; text-align: center; max-width: 80ch; margin: 0 auto 3rem auto;">
+                    {subordinate}
+                </p>
+            </div>
+            <div class="container-xl">
+                <ul class="benefits-list" style="display: flex; gap: 2rem; list-style: none;">
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#1f1f1f"><path d="M172-120q-42 0-59.5-39t11.5-71l248-280v-270h-52q-13 0-21.5-8.5T290-810q0-13 8.5-21.5T320-840h320q13 0 21.5 8.5T670-810q0 13-8.5 21.5T640-780h-52v270l248 280q29 32 11.5 71T788-120H172Zm70-90h476L558-395H402L242-210Zm-82 30h640L528-488v-292h-96v292L160-180Zm320-300Z"/></svg>
+                        Riduce l’uso di prodotti chimici nei processi industriali
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#1f1f1f"><path d="M600-90q-12 0-21-9t-9-21v-41q-28-3-53-13t-47-27l-39 39q-9 8-21.5 8.5T388-162q-9-9-9-21.5t9-21.5l40-39q-5-7-9.5-14.5T410-274l-31-62-51 51q-9 8-21.5 8.5T285-285q-9-9-9-21t9-21l51-52-62-31q-7-4-13.5-7.5T248-426l-35 35q-9 8-21.5 8.5T170-391q-9-9-9-21t9-21l34-34q-17-22-28.5-48T161-570h-41q-12 0-21-9t-9-21q0-13 9-21.5t21-8.5h43q5-24 14.5-46t23.5-41l-34-34q-9-9-9-21t9-21q9-9 21-9t21 9l34 34q19-14 41-23.5t46-14.5v-43q0-13 9-21.5t21-8.5q13 0 21.5 8.5T390-840v41q29 3 55 14.5t49 29.5l34-34q9-9 21.5-9t21.5 9q9 9 9 21t-9 21l-36 36 8 12q4 6 7 13l30 60 48-49q9-9 21.5-9t21.5 9q9 9 9 21.5t-9 21.5l-50 49 65 33 16 10 16 10 39-39q9-9 21-9t21 9q9 9 9 21.5t-9 21.5l-39 38q16 21 26 46t13 52h41q13 0 21.5 8.5T870-360q0 12-8.5 21t-21.5 9h-43q-5 24-14 46t-23 41l32 32q9 9 9 21.5t-9 21.5q-9 8-21.5 8.5T749-168l-32-33q-19 14-41 23.5T630-163v43q0 12-8.5 21T600-90Zm-6-130q69 0 112-51.5T738-389q-6-35-26.5-63T659-496l-66-34q-20-11-36-27t-27-36l-34-66q-19-38-53.5-59.5T366-740q-69 0-112 51.5T222-571q6 35 26.5 63t52.5 44l66 33q20 11 36.5 27.5T431-367l33 66q19 38 53.5 59.5T594-220ZM380-540q25 0 42.5-17.5T440-600q0-25-17.5-42.5T380-660q-25 0-42.5 17.5T320-600q0 25 17.5 42.5T380-540Zm235.5 235.5Q630-319 630-340t-14.5-35.5Q601-390 580-390t-35.5 14.5Q530-361 530-340t14.5 35.5Q559-290 580-290t35.5-14.5ZM480-480Z"/></svg>
+                        Elimina microrganismi e biofilm da superfici e attrezzature
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#1f1f1f"><path d="M80-200v-100h610v100H80Zm655 0v-100h50v100h-50Zm95 0v-100h50v100h-50Zm-95-145v-56q0-42-24.5-66T651-491h-71q-54 0-90.5-41.5T453-628q0-54 36.5-90.5T580-755v50q-35 0-56 21t-21 56q0 35 21 61t56 26h71q54 0 94 37t40 91v68h-50Zm95 0v-100q0-75-50-123t-125-48v-50q34 0 55.5-24t21.5-58q0-34-21.5-58T655-830v-50q54 0 90.5 39t36.5 93q0 33-12.5 57T737-650q58 20 100.5 75T880-445v100h-50Z"/></svg>
+                        Decompone odori e composti organici volatili (VOC)
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#1f1f1f"><path d="M213-175q-43.59-45-68.3-104Q120-338 120-400q0-73 25.5-133.5T222-645q35-35 87-59t122.5-37.5Q502-755 591-758.5t198 3.5q8 108 5.5 197.5t-16 160.75q-13.5 71.25-38 124.56Q716-218.87 680-183q-51 51-110 77T444-80q-69 0-126.5-23.5T213-175Zm103 0q25 17 58 26t69.92 9Q497-140 547-162t91-64q27-27 46-70.5t31-103Q727-459 731-534t0-165q-94-2-168.5 2.5T431-680q-57 12-98 30.5T266-604q-42 43-64 91t-22 98q0 48 20.5 100.5T251-230q53-98 127-176t157-123q-87 75-141 162.5T316-175Zm0 0Zm0 0Z"/></svg>
+                        Si riconverte in ossigeno senza generare sottoprodotti tossici
+                    </li>
+                </ul>
+            </div>
+        </section>
+    '''
 
 
     ozone_html = f'''
@@ -1311,48 +1452,7 @@ def gen():
         </section>
     '''
 
-    applications_html = f'''
-        <section class="applications">
-            <div class="applications-content container-xl">
-                <h2>
-                    Ambiti di applicazione dell’ozono
-                </h2>
-                <p>
-                    Le applicazioni dell’ozono variano in base al contesto d’uso.
-                    Esplora i principali ambiti applicativi per soluzioni residenziali,
-                    commerciali e industriali.
-                </p>
-                <div class="applications-cards">
-                    <a href="/applicazioni.html#residenziali" class="applicazione-card">
-                        <h3>Applicazioni residenziali</h3>
-                        <p>
-                            Utilizzo dell’ozono in ambienti domestici per il trattamento
-                            di aria, acqua e superfici, nel rispetto della sicurezza.
-                        </p>
-                    </a>
-                    <a href="/applicazioni.html#commerciali" class="applicazione-card">
-                        <h3>Applicazioni commerciali</h3>
-                        <p>
-                            Soluzioni a ozono per attività commerciali, strutture ricettive,
-                            uffici e spazi aperti al pubblico.
-                        </p>
-                    </a>
-                    <a href="/applicazioni.html#industriali" class="applicazione-card">
-                        <h3>Applicazioni industriali</h3>
-                        <p>
-                            Impiego dell’ozono in processi industriali, impianti complessi
-                            e ambienti produttivi regolamentati.
-                        </p>
-                    </a>
-                </div>
-                <nav>
-                    <a href="/applicazioni.html">
-                        Vai alla pagina Applicazioni
-                    </a>
-                </nav>
-            </div>
-        </section>
-    '''
+    
 
     products_html = f'''
         <section class="products">
@@ -1830,9 +1930,10 @@ def gen():
             {components.header_default()}
             <main class="home" id="contenuto-principale">
                 {hero_html}
+                {applications_html}
+                {benefits_html}
                 {ozone_html}
                 {problems_html}
-                {applications_html}
                 {design_html}
                 {technologies_html}
                 {services_html}
