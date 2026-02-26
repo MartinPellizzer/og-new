@@ -1406,6 +1406,140 @@ def gen():
         </section>
     '''
 
+    h2 = f'Settori industriali in cui operiamo'
+    subordinate = f'Progettiamo e realizziamo impianti a ozono per applicazioni industriali specifiche, adattando ogni soluzione ai processi produttivi del settore di riferimento.'
+    img_height = '240px'
+    sectors_html = f'''
+        <section class="sectors" style="
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        ">
+            <div class="container-xl">
+                <h2 style="">
+                    {h2}
+                </h2>
+                <p style="text-align: center; max-width: 80ch; margin: 0 auto 3rem auto;">
+                    {subordinate}
+                </p>
+                <div class="sectors-cards">
+
+                    <article>
+                        <a href="#" title="Impianti a ozono per industria alimentare">
+                            <figure>
+                                <img 
+                                    src="/immagini/home-settori-industria-alimentare.jpg" 
+                                    alt=""
+                                    loading="lazy"
+                                    width="600"
+                                    height="400"
+                                    style="height: {img_height}; object-fit: cover; object-position: center; margin-bottom: 1rem;"
+                                >
+                            </figure>
+                            <h3>Industria alimentare</h3>
+                        </a>
+                        <p>
+                            Sistemi di ozonizzazione per sanificazione ambienti, trattamento acque di processo e controllo microbiologico nelle linee produttive alimentari.
+                        </p>
+                    </article>
+
+                    <article>
+          <a href="#" title="Ozono per impianti di depurazione">
+                            <figure>
+                                <img 
+                                    src="/immagini/home-settori-acque-reflue.jpg" 
+                                    alt=""
+                                    loading="lazy"
+                                    width="600"
+                                    height="400"
+                                    style="height: {img_height}; object-fit: cover; object-position: center; margin-bottom: 1rem;"
+                                >
+                            </figure>
+                            <h3>Impianti di depurazione</h3>
+                        </a>
+                        <p>
+Impianti a ozono per ossidazione avanzata, riduzione COD e abbattimento 
+          odori negli impianti di trattamento acque reflue.                        </p>
+                    </article>
+
+                    <article>
+          <a href="#" title="Ozono per caseifici">
+                            <figure>
+                                <img 
+                                    src="/immagini/home-settori-caseifici.jpg" 
+                                    alt=""
+                                    loading="lazy"
+                                    width="600"
+                                    height="400"
+                                    style="height: {img_height}; object-fit: cover; object-position: center; margin-bottom: 1rem;"
+                                >
+                            </figure>
+                            <h3>Caseifici</h3>
+                        </a>
+                        <p>
+Soluzioni a ozono per sanificazione celle di stagionatura, ambienti produttivi 
+          e trattamento acque nei processi lattiero-caseari.                      </p>
+                    </article>
+
+                    <article>
+<a href="#" title="Ozono per macelli industriali">                            <figure>
+                                <img 
+                                    src="/immagini/home-settori-macelli.jpg" 
+                                    alt=""
+                                    loading="lazy"
+                                    width="600"
+                                    height="400"
+                                    style="height: {img_height}; object-fit: cover; object-position: center; margin-bottom: 1rem;"
+                                >
+                            </figure>
+                            <h3>Macelli</h3>
+                        </a>
+                        <p>
+Sistemi di ozonizzazione per controllo carica batterica, eliminazione odori 
+          e igienizzazione ambienti di lavorazione carni.     
+                        </p>
+                    </article>
+
+                    <article>
+<a href="#" title="Ozono per aziende agricole">                                <img 
+                                    src="/immagini/home-settori-agricoltura.jpg" 
+                                    alt=""
+                                    loading="lazy"
+                                    width="600"
+                                    height="400"
+                                    style="height: {img_height}; object-fit: cover; object-position: center; margin-bottom: 1rem;"
+                                >
+                            </figure>
+                            <h3>Aziende agricole</h3>
+                        </a>
+                        <p>
+Impianti a ozono per trattamento acqua irrigazione, sanificazione serre 
+          e riduzione patogeni nelle coltivazioni.
+                        </p>
+                    </article>
+
+                    <article>
+<a href="#" title="Ozono per impianti chimici">                                <img 
+                                    src="/immagini/home-settori-chimica.jpg" 
+                                    alt=""
+                                    loading="lazy"
+                                    width="600"
+                                    height="400"
+                                    style="height: {img_height}; object-fit: cover; object-position: center; margin-bottom: 1rem;"
+                                >
+                            </figure>
+                            <h3>Aziende agricole</h3>
+                        </a>
+                        <p>
+Soluzioni di ossidazione con ozono per processi chimici industriali, 
+          abbattimento composti organici volatili e trattamento reflui.                  </p>
+                    </article>
+
+
+                </div>
+            </div>
+        </section>
+    '''
+
 
     ozone_html = f'''
         <section class="ozone">
@@ -1932,6 +2066,7 @@ def gen():
                 {hero_html}
                 {applications_html}
                 {benefits_html}
+                {sectors_html}
                 {ozone_html}
                 {problems_html}
                 {design_html}

@@ -356,6 +356,19 @@ a {
 
 /* ------------------------------------------------- */
 
+.sectors a {
+    text-decoration: none;
+}
+
+.sectors-cards {
+    display: grid;
+    grid-template-columns: 1.0fr 1.0fr 1.0fr;
+    gap: 2rem;
+    list-style: none;
+}
+
+/* ------------------------------------------------- */
+
 .design {
     padding-top: 3rem;
     padding-bottom: 3rem;
