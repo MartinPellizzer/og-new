@@ -115,7 +115,7 @@ void loop()
       buildModbusWriteCoil();
       rs485_write(&rs485, serial_rs485);
       rs485_sender_buffer_debug(&rs485);
-      rs485_sender_buffer_clear(&rs485);
+      // rs485_sender_buffer_clear(&rs485);
       
       rs485.state_transmission = 0;
       rs485.state_transmission_timer_millis = millis();
@@ -127,8 +127,37 @@ void loop()
     rs485_read(&rs485, serial_rs485);
     if (rs485.receiver_buffer_ready == 1)
     {
+      Serial.println("***********************************");
+      Serial.println("OK: ACK RECEIVED...");
+      Serial.println("***********************************");
+      
+      // TODO: calculate crc
+      // TODO: if write command:
+      //        check if message echoed back from the module match the one sent
+      //        if so, good - if not, check error message
+
       rs485_receiver_buffer_debug(&rs485);
-      int ack = rs485_receiver_buffer_ack(&rs485);
+      
+      int ack = 0;
+      if (
+        rs485.sender_buffer[0] == rs485.receiver_buffer[0] &&
+        rs485.sender_buffer[1] == rs485.receiver_buffer[1] &&
+        rs485.sender_buffer[2] == rs485.receiver_buffer[2] &&
+        rs485.sender_buffer[3] == rs485.receiver_buffer[3] &&
+        rs485.sender_buffer[4] == rs485.receiver_buffer[4] &&
+        rs485.sender_buffer[5] == rs485.receiver_buffer[5] &&
+        rs485.sender_buffer[6] == rs485.receiver_buffer[6] &&
+        rs485.sender_buffer[7] == rs485.receiver_buffer[7] 
+      )
+      {
+        ack = 1;
+      }
+      else
+      {
+        ack = 0;
+      }
+
+      // int ack = rs485_receiver_buffer_ack(&rs485);
       if (ack == 1)
       {
         Serial.println("***********************************");
@@ -139,6 +168,12 @@ void loop()
         // {
         //   modules[modules_i].value_cur = rs485.receiver_buffer[3];
         // }
+      }
+      else
+      {
+        Serial.println("***********************************");
+        Serial.println("OK: ACK NOT VALID");
+        Serial.println("***********************************");
       }
       rs485_receiver_buffer_clear(&rs485);
       rs485.receiver_buffer_ready = 0;

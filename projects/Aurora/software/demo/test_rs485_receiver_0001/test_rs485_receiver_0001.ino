@@ -101,11 +101,39 @@ void loop()
             {
               Serial.println("VALUE: VALID ON");
               digitalWrite(RELAY_PIN, HIGH);
+
+              // reply
+              rs485.sender_buffer[0] = rs485.receiver_buffer[0];   // Slave Address
+              rs485.sender_buffer[1] = rs485.receiver_buffer[1];   // Function Code (Write Single Coil)
+              rs485.sender_buffer[2] = rs485.receiver_buffer[2];   // Coil Address High
+              rs485.sender_buffer[3] = rs485.receiver_buffer[3];   // Coil Address Low (Coil 0)
+              rs485.sender_buffer[4] = rs485.receiver_buffer[4];   // Value High (ON)
+              rs485.sender_buffer[5] = rs485.receiver_buffer[5];   // Value Low  (ON)
+              rs485.sender_buffer[6] = rs485.receiver_buffer[6];   // CRC Low
+              rs485.sender_buffer[7] = rs485.receiver_buffer[7];   // CRC High
+              
+              rs485_write(&rs485, serial_rs485);
+              rs485_sender_buffer_debug(&rs485);
+              rs485_sender_buffer_clear(&rs485);
             }
             else if (value_high == 0x00 && value_low == 0x00)
             {
               Serial.println("VALUE: VALID OFF");
               digitalWrite(RELAY_PIN, LOW);
+
+              // reply
+              rs485.sender_buffer[0] = rs485.receiver_buffer[0];   // Slave Address
+              rs485.sender_buffer[1] = rs485.receiver_buffer[1];   // Function Code (Write Single Coil)
+              rs485.sender_buffer[2] = rs485.receiver_buffer[2];   // Coil Address High
+              rs485.sender_buffer[3] = rs485.receiver_buffer[3];   // Coil Address Low (Coil 0)
+              rs485.sender_buffer[4] = rs485.receiver_buffer[4];   // Value High (ON)
+              rs485.sender_buffer[5] = rs485.receiver_buffer[5];   // Value Low  (ON)
+              rs485.sender_buffer[6] = rs485.receiver_buffer[6];   // CRC Low
+              rs485.sender_buffer[7] = rs485.receiver_buffer[7];   // CRC High
+              
+              rs485_write(&rs485, serial_rs485);
+              rs485_sender_buffer_debug(&rs485);
+              rs485_sender_buffer_clear(&rs485);
             }
             else
             {
