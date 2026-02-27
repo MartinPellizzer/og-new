@@ -1240,7 +1240,7 @@ def gen():
         h1 = f'Tecnologia di Ozonizzazione Industriale per Trattamento Acqua, Aria e Superfici'
         subordinate = f'Progettiamo e realizziamo impianti a ozono per applicazioni industriali, alimentari e ambientali con soluzioni su misura e automatizzate.'
         hero_html = f'''
-            <section style="
+            <section class="hero" style="
                     background: linear-gradient(rgba(0, 30, 60, 0.8), rgba(0, 30, 60, 0.8)), url('/immagini/home/generatore-ozono-industriale-impianto.jpg');
                     background-size: cover;
                     background-position: center;
@@ -1248,7 +1248,7 @@ def gen():
             ">
                 <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
                     <div class="container-lg">
-                        <h1 style="color: #ffffff; font-size: 4rem; line-height: 1; text-align: center; margin-bottom: 1rem;">
+                        <h1>
                             {h1}
                         </h1>
                         <p class="container-md" style="color: #ffffff; font-size: 1.25rem; line-height: 1.4; text-align: center; margin-bottom: 2rem;">
@@ -1278,9 +1278,9 @@ def gen():
                 <p style="text-align: center; max-width: 80ch; margin: 0 auto 3rem auto;">
                     {subordinate}
                 </p>
-                <div class="applications-cards">
+                <div class="applications-cards grid-3">
                     <article>
-                        <a href="/trattamento-acque-industriali/" 
+                        <a href="#" 
                         title="Trattamento acque industriali con ozono">
                             <figure>
                                 <img 
@@ -1300,7 +1300,7 @@ def gen():
                         </p>
                     </article>
                     <article>
-                        <a href="/sanificazione-ambienti-superfici/" 
+                        <a href="#" 
                         title="Sanificazione ambienti e superfici con ozono">
                             <figure>
                                 <img 
@@ -1320,7 +1320,7 @@ def gen():
                         </p>
                     </article>
                     <article>
-                        <a href="/abbattimento-odori-industriali/" title="Abbattimento odori industriali con ozono">
+                        <a href="#" title="Abbattimento odori industriali con ozono">
                             <figure>
                                 <img 
                                     src="/immagini/home-odori.jpg" 
@@ -1339,7 +1339,7 @@ def gen():
                         </p>
                     </article>
                     <article>
-                        <a href="/settore-alimentare-agroindustriale/" title="Soluzioni a ozono per il settore alimentare e agroindustriale">
+                        <a href="#" title="Soluzioni a ozono per il settore alimentare e agroindustriale">
                             <figure>
                                 <img 
                                     src="/immagini/home-alimenti.jpg" 
@@ -1384,7 +1384,7 @@ def gen():
                 </p>
             </div>
             <div class="container-xl">
-                <ul class="benefits-list" style="display: flex; gap: 2rem; list-style: none;">
+                <ul class="grid-4" style="list-style: none; gap: 2rem;">
                     <li>
                         <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#1f1f1f"><path d="M172-120q-42 0-59.5-39t11.5-71l248-280v-270h-52q-13 0-21.5-8.5T290-810q0-13 8.5-21.5T320-840h320q13 0 21.5 8.5T670-810q0 13-8.5 21.5T640-780h-52v270l248 280q29 32 11.5 71T788-120H172Zm70-90h476L558-395H402L242-210Zm-82 30h640L528-488v-292h-96v292L160-180Zm320-300Z"/></svg>
                         Riduce l’uso di prodotti chimici nei processi industriali
@@ -1421,8 +1421,7 @@ def gen():
                 <p style="text-align: center; max-width: 80ch; margin: 0 auto 3rem auto;">
                     {subordinate}
                 </p>
-                <div class="sectors-cards">
-
+                <div class="sectors-cards grid-3" style="gap: 2rem;">
                     <article>
                         <a href="#" title="Impianti a ozono per industria alimentare">
                             <figure>

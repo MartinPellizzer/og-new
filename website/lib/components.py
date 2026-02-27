@@ -109,7 +109,6 @@ def header_default():
                 <li><a href="/applicazioni.html">Applicazioni</a></li>
                 <li><a href="/prodotti.html">Prodotti</a></li>
                 <li><a href="/servizi.html">Servizi</a></li>
-                <li><a href="/ozono.html">Guida all'Ozono</a></li>
                 <li><a href="/contatti.html">Contatti</a></li>
                 </ul>
             </nav>
@@ -122,4 +121,6 @@ def header_default():
             </label>
         </header>
     '''
+                    # <li><a href="/ozono.html">Guida all'Ozono</a></li>
+
     return html
