@@ -53,6 +53,12 @@
     padding: 0 1rem;
 }
 
+.container-lg {
+    max-width: 992px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
 .container-md {
     max-width: 768px;
     margin: 0 auto;
@@ -97,6 +103,11 @@ li {
 
 a {
     font-family: var(--font-body);
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .home {}
@@ -349,10 +360,19 @@ a {
     border-radius: 5px;
 }
 
+.benefits li span {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
 .benefits svg {
     display: block;
     margin-bottom: 1rem;
 }
+
+/* ------------------------------------------------- */
+
 
 /* ------------------------------------------------- */
 
@@ -690,6 +710,34 @@ a {
 
 /* ------------------------------------------------- */
 
+
+.faq {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+
+.trust p {
+    font-family: var(--font-body);
+    line-height: 1.5;
+    color: #333;
+    text-align: center;
+    max-width: 80ch;
+    margin: 0 auto 3rem auto;
+}
+
+.faq .card {
+    text-decoration: none;
+    line-height: 1.5;
+    color: #333;
+    padding: 2rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-top: 3px solid var(--color-primary-dark);
+    /* border-radius: 5px; */
+}
+
+/* ------------------------------------------------- */
+
 .trust {
     padding-top: 6rem;
     padding-bottom: 6rem;
@@ -973,6 +1021,11 @@ header .logo img {
 
     .hero h1 {
         font-size: 2.5rem;
+    }
+
+    .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
     }
 
 }

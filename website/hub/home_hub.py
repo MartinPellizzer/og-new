@@ -1237,7 +1237,7 @@ def gen():
         '''
 
     if 1:
-        h1 = f'Soluzioni Industriali a Ozono per Trattamento Acqua, Aria e Superfici'
+        h1 = f'Tecnologia di Ozonizzazione Industriale per Trattamento Acqua, Aria e Superfici'
         subordinate = f'Progettiamo e realizziamo impianti a ozono per applicazioni industriali, alimentari e ambientali con soluzioni su misura e automatizzate.'
         hero_html = f'''
             <section style="
@@ -1247,11 +1247,11 @@ def gen():
                     height: 80vh;
             ">
                 <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
-                    <div class="container-md">
+                    <div class="container-lg">
                         <h1 style="color: #ffffff; font-size: 4rem; line-height: 1; text-align: center; margin-bottom: 1rem;">
                             {h1}
                         </h1>
-                        <p style="color: #ffffff; font-size: 1.25rem; line-height: 1.4; text-align: center; margin-bottom: 2rem;">
+                        <p class="container-md" style="color: #ffffff; font-size: 1.25rem; line-height: 1.4; text-align: center; margin-bottom: 2rem;">
                             {subordinate}
                         </p>
                         <div style="display: flex; justify-content: center;">
@@ -1540,6 +1540,36 @@ Soluzioni di ossidazione con ozono per processi chimici industriali,
         </section>
     '''
 
+    h2 = f'Dati tecnici misurabili dei nostri impianti a ozono industriali'
+    subordinate = f'I nostri generatori di ozono industriali sono progettati con parametri tecnici verificabili e prestazioni misurabili in contesti produttivi reali.'
+    img_height = '400px'
+    authority_html = f'''
+        <section class="benefits" style="
+            background: linear-gradient(rgba(0, 30, 60, 0.8), rgba(0, 30, 60, 0.8)), 
+            url('/immagini/home-dati-tecnici.jpg');
+            background-size: cover;
+            background-position: center;
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        ">
+            <div class="container-xl">
+                <h2 style="color: #ffffff;">
+                    {h2}
+                </h2>
+                <p style="color: #ffffff; text-align: center; max-width: 80ch; margin: 0 auto 3rem auto;">
+                    {subordinate}
+                </p>
+            </div>
+            <div class="container-xl">
+                <ul class="benefits grid-3" style="gap: 2rem; list-style: none;">
+                    <li><span>0 - 100 g/h</span>Produzione ozono nominale</li>
+                    <li><span>0,1 ppm</span>Sensori ozono ambientale di sicurezza<strong></strong></li>                    </li>
+                    <li><span>0 - 10 ppm</span>Monitoraggio continuo concentrazione</li>
+                </ul>
+            </div>
+        </section>
+    '''
+
 
     ozone_html = f'''
         <section class="ozone">
@@ -1563,28 +1593,28 @@ Soluzioni di ossidazione con ozono per processi chimici industriali,
     icon_color = '#1558B0'
     icon_width = '64px'
     icon_height = icon_width
-    authority_html = f'''
-        <section class="authority">
-            <div class="container-xl authority-content">
-                <h2>Competenza tecnica sull'ozono</h2>
-                <p>I nostri sistemi a ozono sono sviluppati secondo rigorosi standard tecnici e di sicurezza, garantendo prestazioni affidabili e conformità alle normative di settore.</p>
-                <ul>
-                    <li>
-<svg xmlns="http://www.w3.org/2000/svg" height="{icon_height}" viewBox="0 -960 960 960" width="{icon_width}" fill="{icon_color}"><path d="M80-570v-170q0-24 18-42t42-18h680q24 0 42 18t18 42v170h-60v-170H140v170H80Zm60 410q-24 0-42-18t-18-42v-170h60v170h680v-170h60v170q0 24-18 42t-42 18H140Zm259.81-130q8.19 0 15.79-4t11.4-12l133-266 53 106q3.75 8 11.25 12t15.75 4h240v-60H659l-72-143q-3.72-8.25-11.17-11.63-7.45-3.37-15.64-3.37-8.19 0-15.79 3.37-7.6 3.38-11.4 11.63L400-388l-53-106q-3.75-8-11.25-12T320-510H80v60h221l72 144q3.72 8 11.17 12 7.45 4 15.64 4ZM480-480Z"/></svg>
-                        Monitoraggio e controllo continuo dei sistemi in funzione
-                    </li>
-                    <li>
-<svg xmlns="http://www.w3.org/2000/svg" height="{icon_height}" viewBox="0 -960 960 960" width="{icon_width}" fill="{icon_color}"><path d="M705-128 447-388q-23 8-46 13t-47 5q-97.08 0-165.04-67.67Q121-505.33 121-602q0-31 8.16-60.39T152-718l145 145 92-86-149-149q25.91-15.16 54.96-23.58Q324-840 354-840q99.17 0 168.58 69.42Q592-701.17 592-602q0 24-5 47t-13 46l259 258q11 10.96 11 26.48T833-198l-76 70q-10.7 11-25.85 11Q716-117 705-128Zm28-57 40-40-273-273q16-21 24-49.5t8-54.5q0-75-55.5-127T350-782l102 104q9 9 8.5 21.5T451-635L318-510q-9.27 8-21.64 8-12.36 0-20.36-8l-98-97q3 77 54.67 127T354-430q25 0 53-8t49-24l277 277ZM476-484Z"/></svg>
-                        Soluzioni progettate su misura per specifiche esigenze applicative
-                    </li>
-                    <li>
-<svg xmlns="http://www.w3.org/2000/svg" height="{icon_height}" viewBox="0 -960 960 960" width="{icon_width}" fill="{icon_color}"><path d="m296-334 122-122 80 80 152-151v77h60v-180H530v60h77L498-461l-80-80-164 165 42 42ZM180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm0-600v600-600Z"/></svg>
-                        Supporto tecnico specializzato per ogni fase operativa
-                    </li>
-                </ul>
-            </div>
-        </section>
-    '''
+#     authority_html = f'''
+#         <section class="authority">
+#             <div class="container-xl authority-content">
+#                 <h2>Competenza tecnica sull'ozono</h2>
+#                 <p>I nostri sistemi a ozono sono sviluppati secondo rigorosi standard tecnici e di sicurezza, garantendo prestazioni affidabili e conformità alle normative di settore.</p>
+#                 <ul>
+#                     <li>
+# <svg xmlns="http://www.w3.org/2000/svg" height="{icon_height}" viewBox="0 -960 960 960" width="{icon_width}" fill="{icon_color}"><path d="M80-570v-170q0-24 18-42t42-18h680q24 0 42 18t18 42v170h-60v-170H140v170H80Zm60 410q-24 0-42-18t-18-42v-170h60v170h680v-170h60v170q0 24-18 42t-42 18H140Zm259.81-130q8.19 0 15.79-4t11.4-12l133-266 53 106q3.75 8 11.25 12t15.75 4h240v-60H659l-72-143q-3.72-8.25-11.17-11.63-7.45-3.37-15.64-3.37-8.19 0-15.79 3.37-7.6 3.38-11.4 11.63L400-388l-53-106q-3.75-8-11.25-12T320-510H80v60h221l72 144q3.72 8 11.17 12 7.45 4 15.64 4ZM480-480Z"/></svg>
+#                         Monitoraggio e controllo continuo dei sistemi in funzione
+#                     </li>
+#                     <li>
+# <svg xmlns="http://www.w3.org/2000/svg" height="{icon_height}" viewBox="0 -960 960 960" width="{icon_width}" fill="{icon_color}"><path d="M705-128 447-388q-23 8-46 13t-47 5q-97.08 0-165.04-67.67Q121-505.33 121-602q0-31 8.16-60.39T152-718l145 145 92-86-149-149q25.91-15.16 54.96-23.58Q324-840 354-840q99.17 0 168.58 69.42Q592-701.17 592-602q0 24-5 47t-13 46l259 258q11 10.96 11 26.48T833-198l-76 70q-10.7 11-25.85 11Q716-117 705-128Zm28-57 40-40-273-273q16-21 24-49.5t8-54.5q0-75-55.5-127T350-782l102 104q9 9 8.5 21.5T451-635L318-510q-9.27 8-21.64 8-12.36 0-20.36-8l-98-97q3 77 54.67 127T354-430q25 0 53-8t49-24l277 277ZM476-484Z"/></svg>
+#                         Soluzioni progettate su misura per specifiche esigenze applicative
+#                     </li>
+#                     <li>
+# <svg xmlns="http://www.w3.org/2000/svg" height="{icon_height}" viewBox="0 -960 960 960" width="{icon_width}" fill="{icon_color}"><path d="m296-334 122-122 80 80 152-151v77h60v-180H530v60h77L498-461l-80-80-164 165 42 42ZM180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm0-600v600-600Z"/></svg>
+#                         Supporto tecnico specializzato per ogni fase operativa
+#                     </li>
+#                 </ul>
+#             </div>
+#         </section>
+#     '''
 
     
 
@@ -2050,6 +2080,62 @@ Soluzioni di ossidazione con ozono per processi chimici industriali,
           </nav>
     '''
 
+    margin_bottom = f'2rem;'
+    faq_html = f'''
+        <section class="faq" itemscope itemtype="https://schema.org/FAQPage">
+            <div class="container-xl"">
+                <h2>
+                    Domande frequenti sugli impianti a ozono industriali
+                </h2>
+                <p style="text-align: center; max-width: 80ch; margin: 0 auto 3rem auto;">
+                    Risposte tecniche e rapide sulle applicazioni industriali dell’ozono.
+                </p>
+            </div>
+            <div class="container-md"">
+                <!-- FAQ 1 -->
+                <div class="card" style="margin-bottom: {margin_bottom}" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <h3 itemprop="name">Cos’è un generatore di ozono industriale?</h3>
+                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">
+                        Un generatore di ozono industriale è un dispositivo che produce ozono (O₃) a concentrazioni controllate per sanificare ambienti, trattare acque e ossidare contaminanti in ambito produttivo. Funziona tramite scarica a corona o tecnologia UV.
+                    </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="card" style="margin-bottom: {margin_bottom}" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <h3 itemprop="name">L’ozono è sicuro negli ambienti di lavoro?</h3>
+                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">
+                        L’ozono è sicuro se utilizzato con sistemi di controllo, sensori ambientali e nel rispetto dei limiti di esposizione previsti dalle normative vigenti. Gli impianti industriali prevedono monitoraggio automatico e gestione dei livelli residui.
+                    </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="card" style="margin-bottom: {margin_bottom}" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <h3 itemprop="name">Qual è la differenza tra ozono e cloro?</h3>
+                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">
+                        L’ozono è un ossidante più potente del cloro e non lascia residui chimici, poiché si riconverte in ossigeno. Il cloro, invece, può generare sottoprodotti chimici e richiede gestione dei residui.
+                    </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="card" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <h3 itemprop="name">Quanto costa un impianto a ozono?</h3>
+                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">
+                        Il costo di un impianto a ozono varia in base a portata, concentrazione richiesta, automazione e settore applicativo. Gli impianti industriali partono da alcune migliaia di euro fino a sistemi su misura di fascia superiore.
+                    </p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    '''
+
     html = f'''
         <!DOCTYPE html>
         <html lang="it">
@@ -2067,14 +2153,8 @@ Soluzioni di ossidazione con ozono per processi chimici industriali,
                 {applications_html}
                 {benefits_html}
                 {sectors_html}
-                {ozone_html}
-                {problems_html}
-                {design_html}
-                {technologies_html}
-                {services_html}
-                {guide_html}
-                {trust_html}
-                {contacts_html}
+                {authority_html}
+                {faq_html}
             </main>
             <!-- =======================================
                  FOOTER
