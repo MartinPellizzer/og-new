@@ -1829,6 +1829,7 @@ def applicazioni__gen():
 
 <h1>Applicazioni Industriali dell’Ozono</h1>
 <p>Le applicazioni industriali dell’ozono sfruttano la sua reattività chimica per processi di ossidazione e sterilizzazione altamente efficaci. I <a href="/ozono-industriale/">sistemi industriali a ozono</a> consentono di implementare queste funzioni in diversi settori, garantendo trattamenti rapidi e sicuri. La capacità dell’ozono di interagire con contaminanti e microrganismi ne valorizza l’uso nella produzione, depurazione e sanificazione industriale.</p>
+<img src="/immagini/home/generatore-ozono-industriale-impianto.jpg">
 
 <section>
 
