@@ -1157,7 +1157,11 @@ def gen():
 
     if 1:
         h1 = f'Tecnologia di Ozonizzazione Industriale per Trattamento Acqua, Aria e Superfici'
+        h1 = f'Sistemi industriali a ozono su misura per processi produttivi'
         subordinate = f'Progettiamo e realizziamo impianti a ozono per applicazioni industriali, alimentari e ambientali con soluzioni su misura e automatizzate.'
+        subordinate = f'Progettiamo e integriamo sistemi industriali a ozono su misura per la risoluzione di problematiche tecniche nei processi produttivi.'
+        subordinate = f'Progettiamo, realizziamo e integriamo impianti a ozono personalizzati per risolvere problematiche tecniche in ambito industriale.'
+
         hero_html = f'''
             <section class="hero" style="
                     background: linear-gradient(rgba(0, 30, 60, 0.8), rgba(0, 30, 60, 0.8)), url('/immagini/home/generatore-ozono-industriale-impianto.jpg');
@@ -1203,7 +1207,7 @@ def gen():
                         title="Trattamento acque industriali con ozono">
                             <figure>
                                 <img 
-                                    src="/immagini/home-water.jpg" 
+                                    src="/immagini/home-acqua.jpg" 
                                     alt="Impianto di trattamento acque industriali con sistema di ozonizzazione"
                                     loading="lazy"
                                     width="600"
@@ -2053,7 +2057,7 @@ Soluzioni di ossidazione con ozono per processi chimici industriali,
 
         </section>
     '''
-
+    
     html = f'''
         <!DOCTYPE html>
         <html lang="it">
