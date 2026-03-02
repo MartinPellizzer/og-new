@@ -42,8 +42,8 @@ def header_dark():
 
             <ul class="menu">
                 <li><a href="/servizi.html">Servizi</a></li>
-                <li><a href="/prodotti.html">Prodotti</a></li>
                 <li><a href="/settori.html">Settori</a></li>
+                <li><a href="/prodotti.html">Prodotti</a></li>
                 <li><a href="/ozono.html">Guida all'Ozono</a></li>
                 <li><a href="/chi-siamo.html">Chi Siamo</a></li>
             </ul>
@@ -106,7 +106,8 @@ def header_default():
             <!-- Navigation -->
             <nav class="main-nav" aria-label="Main Navigation">
                 <ul class="nav-links">
-                <li><a href="/applicazioni/">Applicazioni</a></li>
+                <li><a href="/soluzioni/">Soluzioni</a></li>
+                <li><a href="/settori/">Settori</a></li>
                 <li><a href="/prodotti.html">Prodotti</a></li>
                 <li><a href="/servizi.html">Servizi</a></li>
                 <li><a href="/contatti.html">Contatti</a></li>
@@ -121,6 +122,6 @@ def header_default():
             </label>
         </header>
     '''
-                    # <li><a href="/ozono.html">Guida all'Ozono</a></li>
+    # <li><a href="/ozono.html">Guida all'Ozono</a></li>
 
     return html

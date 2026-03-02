@@ -1449,7 +1449,7 @@ Impianti a ozono per trattamento acqua irrigazione, sanificazione serre
                                     style="height: {img_height}; object-fit: cover; object-position: center; margin-bottom: 1rem;"
                                 >
                             </figure>
-                            <h3>Aziende agricole</h3>
+                            <h3>Impianti chimici</h3>
                         </a>
                         <p>
 Soluzioni di ossidazione con ozono per processi chimici industriali, 
@@ -2065,7 +2065,7 @@ Soluzioni di ossidazione con ozono per processi chimici industriali,
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" href="/styles.css">
-            <title>Tecnologie a ozono per aria, acqua e superfici</title>
+            <title>Tecnologia di Ozonizzazione Industriale | Ozonogroup</title>
             <meta name="description" content="Tecnologie e sistemi a ozono per applicazioni industriali, commerciali e civili. Progettazione, applicazioni e guida tecnica sull'ozono.">
         </head>
         <body>

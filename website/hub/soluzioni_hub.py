@@ -21,7 +21,7 @@ def main():
         ">
             <div class="container-lg" style="text-align: center;">
                 <h1 style="font-size: 2.5rem; color: {color}; margin-bottom: 2rem;">
-                    Soluzioni per problematiche industriali legate ad aria, acqua e impianti
+                    Soluzioni a ozono per problematiche industriali legate ad aria, acqua e impianti
                 </h1>
                 <p class="container-md" style="font-size: 1.1rem; color: {color}; margin-bottom: 2rem;">
                     Analizziamo criticità operative nei processi produttivi e progettiamo sistemi a ozono su misura per la loro risoluzione.
@@ -195,7 +195,6 @@ def main():
         </section>
     '''
 
-
     html = f'''
         <!DOCTYPE html>
         <html lang="it">
@@ -203,7 +202,7 @@ def main():
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" href="/styles.css">
-            <title></title>
+            <title>Soluzioni a ozono per problematiche industriali | Ozonogroup</title>
             <meta name="description" content="">
         </head>
         <body>
