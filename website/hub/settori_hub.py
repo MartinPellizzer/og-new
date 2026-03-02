@@ -60,7 +60,7 @@ def main():
                             </div>
                         </div>
                         <div class="flex-1">
-                            <img src="/immagini/home-settori-industria-alimentare.jpg" style="height: {img_height}; object-fit: cover;">
+                            <img src="/immagini/settori-alimentare.jpg" style="height: {img_height}; object-fit: cover;">
                         </div>
                     </article>
                     <article class="container-xl m-flex m-row-reverse" style="align-items: center; gap: {gap}; margin-bottom: {margin_bottom};">
@@ -82,7 +82,7 @@ def main():
                             </div>
                         </div>
                         <div class="flex-1">
-                            <img src="/immagini/home-settori-chimica.jpg" style="height: {img_height}; object-fit: cover;">
+                            <img src="/immagini/settori-chimica.jpg" style="height: {img_height}; object-fit: cover;">
                         </div>
                     </article>
                     <article class="container-xl m-flex" style="align-items: center; gap: {gap}; margin-bottom: {margin_bottom};">
@@ -103,7 +103,7 @@ def main():
                             </div>
                         </div>
                         <div class="flex-1">
-                            <img src="/immagini/settori-farmaceutico.jpg" style="height: {img_height}; object-fit: cover;">
+                            <img src="/immagini/settori-farmaceutica.jpg" style="height: {img_height}; object-fit: cover;">
                         </div>
                     </article>
                     <article class="container-xl m-flex m-row-reverse" style="align-items: center; gap: {gap}; margin-bottom: {margin_bottom};">
@@ -124,7 +124,7 @@ def main():
                             </div>
                         </div>
                         <div class="flex-1">
-                            <img src="/immagini/soluzioni-acqua.jpg" style="height: {img_height}; object-fit: cover;">
+                            <img src="/immagini/settori-rifiuti.jpg" style="height: {img_height}; object-fit: cover;">
                         </div>
                     </article>
                     <article class="container-xl m-flex" style="align-items: center; gap: {gap}; margin-bottom: 8.0rem;">
@@ -145,7 +145,7 @@ def main():
                             </div>
                         </div>
                         <div class="flex-1">
-                            <img src="/immagini/home-ambienti.jpg" style="height: {img_height}; object-fit: cover;">
+                            <img src="/immagini/settori-logistica.jpg" style="height: {img_height}; object-fit: cover;">
                         </div>
                     </article>
                 </div>
