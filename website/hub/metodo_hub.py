@@ -114,11 +114,6 @@ Costruzione e assemblaggio
                                 <li style="margin-bottom: 0.8rem;">Test preliminari di banco</li>
                                 <li style="margin-bottom: 0.8rem;">Controllo qualità rigoroso</li>
                             </ul>
-                            <div style="background-color: #f0f4f8; padding: 1rem; color: #555; font-size: 0.9rem;">
-                                <p>
-                                <strong>Contesto:</strong> Necessità di ricambio e sanificazione dell'aria in spazi molto ampi con costi energetici contenuti. 
-                                </p>
-                            </div>
                         </div>
                         <div class="flex-1">
                             <img src="/immagini/settori-logistica.jpg" style="height: {img_height}; object-fit: cover;">

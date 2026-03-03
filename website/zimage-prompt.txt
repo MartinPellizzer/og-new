@@ -1,1 +1,1 @@
-chemicals, industry, factory, indoor
+blueprint, analysis, blue background, white drawings
