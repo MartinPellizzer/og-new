@@ -39,7 +39,7 @@ def main():
     img_height = '500px'
     settori_html = f'''
         <section class="problems-section">
-            <div class="container">
+            <div class="container-xl">
                 <div>
                     <article class="container-xl m-flex" style="align-items: center; gap: {gap}; margin-bottom: {margin_bottom}; margin-top: 8.0rem;">
                         <div class="flex-1">

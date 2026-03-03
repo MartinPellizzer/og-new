@@ -108,6 +108,7 @@ def header_default():
                 <ul class="nav-links">
                 <li><a href="/soluzioni/">Soluzioni</a></li>
                 <li><a href="/settori/">Settori</a></li>
+                <li><a href="/metodo/">Metodo</a></li>
                 <li><a href="/prodotti.html">Prodotti</a></li>
                 <li><a href="/servizi.html">Servizi</a></li>
                 <li><a href="/contatti.html">Contatti</a></li>

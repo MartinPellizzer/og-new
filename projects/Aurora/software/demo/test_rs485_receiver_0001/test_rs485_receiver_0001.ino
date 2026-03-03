@@ -12,6 +12,7 @@ uint32_t heartbeat_millis_cur = 0;
 
 #define MODULE_ID 0x01
 #define RELAY_PIN 25
+#define RI_PIN 26
 
 
 uint16_t modbusCRC(uint8_t *buffer, uint8_t length)
@@ -45,6 +46,8 @@ void setup()
   
   pinMode(HEARTBEAT_PIN, OUTPUT);
   digitalWrite(HEARTBEAT_PIN, LOW);
+
+  pinMode(RI_PIN, INPUT);
 
   // Serial2.begin(9600, SERIAL_8N1, 27, 14);
   // Sensor1.begin(9600, SERIAL_8N1, 17, 4);  // RO, DI
@@ -175,4 +178,6 @@ void loop()
     heartbeat_millis_cur = millis();
     digitalWrite(HEARTBEAT_PIN, !(digitalRead(HEARTBEAT_PIN)));
   }
+
+  // Serial.println(digitalRead(RI_PIN));
 }

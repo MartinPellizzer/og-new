@@ -4,100 +4,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Settori Industriali | Sistemi a Ozono</title>
+    <title>Metodo di Progettazione | Sistemi Industriali a Ozono</title>
     <style>
-        /* --- RESET E STILI BASE --- */
         :root {
-            --primary-blue: #004e92;
-            --secondary-blue: #000428;
-            --accent-cyan: #00b4db;
-            --text-dark: #333333;
-            --text-light: #666666;
-            --bg-light: #f9f9f9;
-            --white: #ffffff;
-            --danger-red: #d9534f;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+            --primary-color: #0056b3;
+            /* Industrial Blue */
+            --secondary-color: #2c3e50;
+            /* Dark Slate */
+            --accent-color: #00a8e8;
+            /* Ozone Blue */
+            --bg-light: #f8f9fa;
+            --text-color: #333;
+            --border-color: #e9ecef;
         }
 
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            color: var(--text-dark);
-            background-color: var(--white);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
         }
 
-        h1,
-        h2,
-        h3,
-        h4 {
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--secondary-blue);
-        }
-
-        p {
-            margin-bottom: 1rem;
-            color: var(--text-light);
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--primary-blue);
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        a:hover {
-            color: var(--accent-cyan);
-        }
-
+        /* --- UTILITIES --- */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
+        h1,
+        h2,
+        h3 {
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+
         .btn {
             display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
             padding: 12px 24px;
-            background-color: var(--primary-blue);
-            color: var(--white);
+            text-decoration: none;
             border-radius: 4px;
             font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.9rem;
             transition: background 0.3s;
-            border: none;
-            cursor: pointer;
         }
 
         .btn:hover {
-            background-color: var(--secondary-blue);
-            color: var(--white);
+            background-color: var(--secondary-color);
         }
 
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary-blue);
-            color: var(--primary-blue);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--primary-blue);
-            color: var(--white);
-        }
-
-        /* --- 1. HERO SECTION (10%) --- */
-        .hero {
+        .section-padding {
             padding: 80px 0;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            display: flex;
-            align-items: center;
+        }
+
+        /* --- 1. HERO SECTION --- */
+        .hero {
+            background-color: var(--bg-light);
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .hero-grid {
@@ -109,215 +76,317 @@
 
         .hero-content h1 {
             font-size: 2.5rem;
-            line-height: 1.2;
             margin-bottom: 20px;
+            line-height: 1.2;
         }
 
         .hero-sub {
             font-size: 1.1rem;
+            color: #555;
             margin-bottom: 30px;
+        }
+
+        .hero-image {
+            background-color: #ddd;
+            /* Placeholder for image */
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
         }
 
         .hero-image img {
             width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            height: 100%;
             object-fit: cover;
         }
 
-        /* --- 2. PROBLEMI PER SETTORE (50%) --- */
-        .sectors-problems {
-            padding: 80px 0;
-            background-color: var(--white);
+        /* --- 2. PROCESS SECTION (Timeline) --- */
+        .process-section {
+            background-color: #fff;
         }
 
         .section-header {
             text-align: center;
+            margin-bottom: 60px;
             max-width: 800px;
-            margin: 0 auto 60px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .sector-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-        }
-
-        .sector-card {
-            background: var(--white);
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 30px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .sector-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            border-color: var(--accent-cyan);
-        }
-
-        .sector-icon {
+        .section-header h2 {
             font-size: 2rem;
             margin-bottom: 15px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Vertical Line */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--accent-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .step-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .step-container.left {
+            left: 0;
+            text-align: right;
+        }
+
+        .step-container.right {
+            left: 50%;
+            text-align: left;
+        }
+
+        /* Circles on the line */
+        .step-container::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            right: -12px;
+            background-color: white;
+            border: 4px solid var(--primary-color);
+            top: 20px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .step-container.right::after {
+            left: -12px;
+        }
+
+        .step-content {
+            padding: 20px 30px;
+            background-color: white;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+        }
+
+        .step-content:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .step-number {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
             display: block;
         }
 
-        .problem-list {
-            list-style: none;
-            margin: 20px 0;
+        .step-content h3 {
+            margin-top: 0;
+            font-size: 1.3rem;
         }
 
-        .problem-list li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 10px;
-            color: var(--text-dark);
+        .step-content ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            color: #555;
+        }
+
+        .step-content ul li {
+            margin-bottom: 5px;
             font-size: 0.95rem;
         }
 
-        .problem-list li::before {
+        .step-content ul li::before {
             content: "•";
-            color: var(--danger-red);
-            /* Evidenzia il problema */
+            color: var(--primary-color);
             font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        .technical-note {
-            background-color: #f0f4f8;
-            padding: 15px;
-            border-left: 4px solid var(--primary-blue);
-            font-size: 0.9rem;
-            margin-top: 20px;
-            font-style: italic;
-        }
-
-        .card-link {
             display: inline-block;
-            margin-top: 15px;
-            font-weight: 700;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        /* --- 3. CONTROL SECTION --- */
+        .control-section {
+            background-color: var(--bg-light);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .control-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .control-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .control-card h3 {
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+
+        .control-links {
+            margin-top: 20px;
             font-size: 0.9rem;
         }
 
-        /* --- 3. APPLICAZIONI SINTETICHE (20%) --- */
-        .applications-bridge {
-            padding: 60px 0;
-            background-color: var(--bg-light);
-            text-align: center;
+        .control-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            margin-right: 15px;
         }
 
-        .app-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
+        /* --- 4. POST-SALES SECTION --- */
+        .post-sales-section {
+            background-color: #fff;
         }
 
-        .app-item {
-            background: var(--white);
-            padding: 20px;
-            border-radius: 6px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        .post-sales-box {
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 40px;
             display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
         }
 
-        .app-item h4 {
-            margin-bottom: 5px;
-            font-size: 1rem;
+        .post-sales-content {
+            flex: 1;
+            min-width: 300px;
         }
 
-        /* --- 4. NORMATIVE (10%) --- */
-        .regulations {
-            padding: 60px 0;
-            background-color: var(--secondary-blue);
-            color: var(--white);
-        }
-
-        .regulations h2 {
-            color: var(--white);
-        }
-
-        .regulations p {
-            color: #d1d1d1;
-        }
-
-        .reg-grid {
+        .post-sales-list {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
         }
 
-        .reg-list {
-            list-style: none;
-        }
-
-        .reg-list li {
-            margin-bottom: 15px;
+        .check-item {
             display: flex;
             align-items: center;
         }
 
-        .reg-list li::before {
-            content: "✓";
-            color: var(--accent-cyan);
+        .check-item span {
+            color: green;
             margin-right: 10px;
             font-weight: bold;
         }
 
-        /* --- 5. BRIDGE METODO (5%) --- */
-        .method-bridge {
-            padding: 50px 0;
+        /* --- 5. DIFFERENTIATION --- */
+        .diff-section {
+            background-color: #f1f4f8;
             text-align: center;
-            background-color: var(--white);
-            border-bottom: 1px solid #eee;
         }
 
-        .method-box {
+        .comparison-table {
+            width: 100%;
             max-width: 800px;
-            margin: 0 auto;
-            padding: 30px;
-            border: 2px dashed var(--primary-blue);
-            border-radius: 8px;
+            margin: 30px auto;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
 
-        /* --- 6. CTA FINALE (5%) --- */
-        .final-cta {
-            padding: 80px 0;
+        .comparison-table th,
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .comparison-table td:last-child {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* --- 6. FINAL CTA --- */
+        .cta-section {
+            background-color: var(--secondary-color);
+            color: white;
             text-align: center;
-            background: linear-gradient(rgba(0, 78, 146, 0.9), rgba(0, 4, 40, 0.9)), url('https://via.placeholder.com/1920x600?text=Impianto+Industriale') no-repeat center center/cover;
-            color: var(--white);
+            padding: 80px 20px;
         }
 
-        .final-cta h2 {
-            color: var(--white);
-            font-size: 2rem;
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 30px;
         }
 
-        /* --- RESPONSIVE --- */
-        @media (max-width: 768px) {
+        .btn-light {
+            background-color: white;
+            color: var(--secondary-color);
+            padding: 15px 30px;
+            font-size: 1.1rem;
+        }
 
-            .hero-grid,
-            .reg-grid {
+        .btn-light:hover {
+            background-color: #eee;
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            .hero-grid {
                 grid-template-columns: 1fr;
             }
 
             .hero-image {
                 order: -1;
-                /* Immagine sopra su mobile */
+                height: 250px;
             }
 
-            .hero-content h1 {
-                font-size: 2rem;
+            .timeline::after {
+                left: 31px;
+            }
+
+            .step-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .step-container::after {
+                left: 19px;
+            }
+
+            .step-container.left {
+                text-align: left;
+            }
+
+            .step-container.right {
+                left: 0%;
             }
         }
     </style>
@@ -325,204 +394,225 @@
 
 <body>
 
-    <!-- 1️⃣ HERO SECTION -->
+    <!-- 1. HERO SECTION -->
     <section class="hero">
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
-                    <h1>Applicazioni dei sistemi a ozono nei principali settori industriali</h1>
-                    <p class="hero-sub">Progettiamo e integriamo sistemi a ozono su misura per risolvere criticità
-                        specifiche in diversi ambiti produttivi.</p>
-                    <a href="#contatti" class="btn">Richiedi consulenza tecnica per il tuo settore</a>
+                    <h1>Metodo di progettazione e integrazione dei sistemi industriali a ozono</h1>
+                    <p class="hero-sub">Ogni impianto viene sviluppato su misura attraverso analisi tecnica preliminare,
+                        studio di fattibilità e integrazione impiantistica controllata.</p>
+                    <a href="#contact" class="btn">Richiedi una consulenza tecnica</a>
                 </div>
                 <div class="hero-image">
-                    <!-- Placeholder immagine reale impianto -->
-                    <img src="https://via.placeholder.com/600x400?text=Impianto+Industriale+Reale"
-                        alt="Impianto industriale a ozono">
+                    <!-- Placeholder for image: Suggest using a photo of a technician with a tablet in front of a generator or a CAD drawing overlay -->
+                    <img src="https://placehold.co/600x400/EEE/31343C?text=Immagine+Sopralluogo+o+Schema+Impianto"
+                        alt="Analisi tecnica industriale">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 2️⃣ SEZIONE CENTRALE — PROBLEMI PER SETTORE -->
-    <section class="sectors-problems">
+    <!-- 2. MAIN PROCESS SECTION -->
+    <section class="section-padding process-section">
         <div class="container">
             <div class="section-header">
-                <h2>Criticità e sfide operative per settore</h2>
-                <p>Ogni ambiente produttivo presenta dinamiche uniche. Analizziamo le problematiche prima di proporre la
-                    soluzione.</p>
+                <h2>Il nostro processo operativo</h2>
+                <p>Dall'analisi dei dati alla messa in funzione: un percorso ingegneristico strutturato per garantire
+                    affidabilità e performance.</p>
             </div>
 
-            <div class="sector-grid">
+            <div class="timeline">
 
-                <!-- 🔵 Industria Alimentare -->
-                <article class="sector-card">
-                    <span class="sector-icon">🍎</span>
-                    <h3>Industria Alimentare</h3>
-                    <ul class="problem-list">
-                        <li>Contaminazione microbiologica ambientale</li>
-                        <li>Odori nei reparti produttivi</li>
-                        <li>Sanificazione linee e serbatoi</li>
-                        <li>Rischi per sicurezza alimentare</li>
-                        <li>Gestione acque di processo</li>
-                    </ul>
-                    <div class="technical-note">
-                        <strong>Contesto:</strong> Gestione complessa di umidità elevata, carichi organici variabili e
-                        necessità di operare in ambienti chiusi senza interrompere la produzione.
+                <!-- Step 1 -->
+                <div class="step-container left">
+                    <div class="step-content">
+                        <span class="step-number">Step 01</span>
+                        <h3>Analisi tecnica preliminare</h3>
+                        <ul>
+                            <li>Raccolta dati di processo</li>
+                            <li>Identificazione criticità</li>
+                            <li>Definizione parametri operativi</li>
+                            <li>Analisi vincoli impiantistici</li>
+                        </ul>
                     </div>
-                    <a href="/settori/industria-alimentare/" class="card-link">Analisi settore alimentare →</a>
-                </article>
-
-                <!-- 🔵 Industria Chimica -->
-                <article class="sector-card">
-                    <span class="sector-icon">🧪</span>
-                    <h3>Industria Chimica</h3>
-                    <ul class="problem-list">
-                        <li>Emissioni VOC (Composti Organici Volatili)</li>
-                        <li>Trattamento gas ossidabili</li>
-                        <li>Odori persistenti e complessi</li>
-                        <li>Normative ambientali stringenti</li>
-                        <li>Trattamento aria di processo</li>
-                    </ul>
-                    <div class="technical-note">
-                        <strong>Contesto:</strong> Necessità di abbattimento chimico preciso e conformità ai limiti di
-                        emissione in atmosfera sempre più severi.
-                    </div>
-                    <a href="/settori/industria-chimica/" class="card-link">Analisi settore chimico →</a>
-                </article>
-
-                <!-- 🔵 Industria Farmaceutica -->
-                <article class="sector-card">
-                    <span class="sector-icon">💊</span>
-                    <h3>Industria Farmaceutica</h3>
-                    <ul class="problem-list">
-                        <li>Controllo rigoroso carica microbica</li>
-                        <li>Gestione ambienti controllati (Clean Rooms)</li>
-                        <li>Disinfezione impianti e superfici</li>
-                        <li>Rischio contaminazione crociata</li>
-                    </ul>
-                    <div class="technical-note">
-                        <strong>Contesto:</strong> Priorità assoluta alla sterilità e alla validazione dei processi di
-                        disinfezione secondo standard GMP.
-                    </div>
-                    <a href="/settori/industria-farmaceutica/" class="card-link">Analisi settore farmaceutico →</a>
-                </article>
-
-                <!-- 🔵 Settore Rifiuti -->
-                <article class="sector-card">
-                    <span class="sector-icon">♻️</span>
-                    <h3>Settore Rifiuti</h3>
-                    <ul class="problem-list">
-                        <li>Emissioni odorigene intense</li>
-                        <li>Presenza di bioaerosol pericolosi</li>
-                        <li>Trattamento aria capannoni</li>
-                        <li>Impatto ambientale sul territorio</li>
-                    </ul>
-                    <div class="technical-note">
-                        <strong>Contesto:</strong> Gestione di flussi d'aria massivi con carichi inquinanti
-                        intermittenti e variabili.
-                    </div>
-                    <a href="/settori/trattamento-rifiuti/" class="card-link">Analisi settore rifiuti →</a>
-                </article>
-
-                <!-- 🔵 Manifatturiero / Logistica -->
-                <article class="sector-card">
-                    <span class="sector-icon">🏭</span>
-                    <h3>Manifatturiero & Logistica</h3>
-                    <ul class="problem-list">
-                        <li>Aria stagnante in grandi volumi</li>
-                        <li>Odori da materiali stoccati</li>
-                        <li>Contaminazioni in ambienti chiusi</li>
-                        <li>Benessere operatori</li>
-                    </ul>
-                    <div class="technical-note">
-                        <strong>Contesto:</strong> Necessità di ricambio e sanificazione dell'aria in spazi molto ampi
-                        con costi energetici contenuti.
-                    </div>
-                    <a href="/settori/manifatturiero/" class="card-link">Analisi settore manifatturiero →</a>
-                </article>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- 3️⃣ APPLICAZIONI PER SETTORE (BRIDGE) -->
-    <section class="applications-bridge">
-        <div class="container">
-            <h2>Applicazioni dei sistemi a ozono nei diversi contesti</h2>
-            <p>Dalle problematiche analizzate derivano soluzioni mirate.</p>
-
-            <div class="app-grid">
-                <a href="/soluzioni/trattamento-aria/" class="app-item">
-                    <h4>Trattamento aria ambienti produttivi</h4>
-                    <span class="btn-outline" style="font-size:0.8rem; padding: 5px 10px; margin-top:5px;">Scopri di
-                        più</span>
-                </a>
-                <a href="/soluzioni/disinfezione-acqua/" class="app-item">
-                    <h4>Disinfezione acqua di processo</h4>
-                    <span class="btn-outline" style="font-size:0.8rem; padding: 5px 10px; margin-top:5px;">Scopri di
-                        più</span>
-                </a>
-                <a href="/soluzioni/sanificazione-impianti/" class="app-item">
-                    <h4>Sanificazione impianti e linee</h4>
-                    <span class="btn-outline" style="font-size:0.8rem; padding: 5px 10px; margin-top:5px;">Scopri di
-                        più</span>
-                </a>
-                <a href="/soluzioni/ossidazione/" class="app-item">
-                    <h4>Ossidazione contaminanti</h4>
-                    <span class="btn-outline" style="font-size:0.8rem; padding: 5px 10px; margin-top:5px;">Scopri di
-                        più</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4️⃣ NORMATIVE E CONFORMITÀ -->
-    <section class="regulations">
-        <div class="container">
-            <div class="reg-grid">
-                <div>
-                    <h2>Normative e requisiti operativi</h2>
-                    <p>La nostra tecnologia è progettata per garantire la piena conformità ai requisiti legali e di
-                        sicurezza specifici per ogni industria.</p>
-                    <br>
-                    <a href="/normative/" class="btn"
-                        style="background-color: var(--white); color: var(--primary-blue);">Consulta le normative →</a>
                 </div>
-                <div>
-                    <ul class="reg-list">
-                        <li>Sicurezza e salute dei lavoratori (D.Lgs 81/08)</li>
-                        <li>Limiti emissivi in atmosfera</li>
-                        <li>Requisiti HACCP (settore alimentare)</li>
-                        <li>Conformità ambientale e sostenibilità</li>
-                        <li>Standard di controllo qualità</li>
-                    </ul>
+
+                <!-- Step 2 -->
+                <div class="step-container right">
+                    <div class="step-content">
+                        <span class="step-number">Step 02</span>
+                        <h3>Sopralluogo industriale</h3>
+                        <ul>
+                            <li>Verifica condizioni reali</li>
+                            <li>Misurazioni ambientali in loco</li>
+                            <li>Analisi spazi e layout impianto</li>
+                            <li>Valutazione integrazione fisica</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-container left">
+                    <div class="step-content">
+                        <span class="step-number">Step 03</span>
+                        <h3>Studio di fattibilità</h3>
+                        <ul>
+                            <li>Calcolo concentrazione necessaria</li>
+                            <li>Dimensionamento generatore</li>
+                            <li>Analisi sicurezza (HSE)</li>
+                            <li>Valutazione ROI preliminare</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="step-container right">
+                    <div class="step-content">
+                        <span class="step-number">Step 04</span>
+                        <h3>Progettazione su misura</h3>
+                        <ul>
+                            <li>Definizione configurazione impiantistica</li>
+                            <li>Integrazione con linee esistenti</li>
+                            <li>Automazione e gestione PLC</li>
+                            <li>Ingegnerizzazione sistemi di sicurezza</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="step-container left">
+                    <div class="step-content">
+                        <span class="step-number">Step 05</span>
+                        <h3>Costruzione e assemblaggio</h3>
+                        <ul>
+                            <li>Produzione sistema in stabilimento</li>
+                            <li>Test preliminari di banco</li>
+                            <li>Controllo qualità rigoroso</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="step-container right">
+                    <div class="step-content">
+                        <span class="step-number">Step 06</span>
+                        <h3>Installazione e collaudo</h3>
+                        <ul>
+                            <li>Messa in funzione in sito</li>
+                            <li>Taratura parametri operativi</li>
+                            <li>Verifica performance finali</li>
+                            <li>Formazione tecnica del personale</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. CONTROL & SAFETY SECTION -->
+    <section class="section-padding control-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Controllo dei parametri e sicurezza operativa</h2>
+            </div>
+            <div class="control-grid">
+                <div class="control-card">
+                    <h3>Monitoraggio Continuo</h3>
+                    <p>Controllo costante della concentrazione di ozono tramite sensori ambientali di precisione per
+                        garantire l'efficacia del trattamento.</p>
+                </div>
+                <div class="control-card">
+                    <h3>Sicurezza e Interblocchi</h3>
+                    <p>Sistemi di interblocco automatici che fermano la produzione in caso di anomalie o presenza di
+                        personale in aree non protette.</p>
+                </div>
+                <div class="control-card">
+                    <h3>Conformità Normativa</h3>
+                    <p>Rispetto rigoroso delle normative vigenti per la tutela degli operatori e la sicurezza
+                        dell'impianto.</p>
+                    <div class="control-links">
+                        <a href="/normative/">Consulta Normative &rarr;</a>
+                        <a href="/tecnologia/">Approfondisci Tecnologia &rarr;</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 5️⃣ BRIDGE A METODO -->
-    <section class="method-bridge">
+    <!-- 4. POST-SALES SECTION -->
+    <section class="section-padding post-sales-section">
         <div class="container">
-            <div class="method-box">
-                <h3>Perché l'analisi preliminare è fondamentale</h3>
-                <p>Ogni settore richiede un'analisi preliminare specifica per valutare fattibilità, dimensionamento
-                    corretto e integrazione sicura del sistema a ozono nel tuo ciclo produttivo esistente.</p>
-                <a href="/metodo/" class="btn-outline">Scopri il nostro metodo di lavoro →</a>
+            <div class="post-sales-box">
+                <div class="post-sales-content">
+                    <h2>Assistenza tecnica e manutenzione programmata</h2>
+                    <p>Il nostro impegno non termina con l'installazione. Garantiamo continuità operativa attraverso un
+                        servizio strutturato.</p>
+
+                    <div class="post-sales-list">
+                        <div class="check-item"><span>✔</span> Monitoraggio prestazioni</div>
+                        <div class="check-item"><span>✔</span> Interventi programmati</div>
+                        <div class="check-item"><span>✔</span> Sostituzione componenti</div>
+                        <div class="check-item"><span>✔</span> Supporto remoto</div>
+                        <div class="check-item"><span>✔</span> Aggiornamento impianto</div>
+                    </div>
+                </div>
+                <div style="margin-top: 20px;">
+                    <!-- Icon placeholder -->
+                    <img src="https://placehold.co/150x150/EEE/31343C?text=Supporto" alt="Icona Supporto">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 6️⃣ CTA FINALE -->
-    <section class="final-cta" id="contatti">
+    <!-- 5. DIFFERENTIATION SECTION -->
+    <section class="section-padding diff-section">
         <div class="container">
-            <h2>Richiedi un'analisi tecnica per il tuo settore industriale</h2>
-            <p style="color: #e0e0e0; margin-bottom: 30px;">Il nostro team di ingegneri è pronto a valutare le tue
-                specifiche criticità.</p>
-            <button class="btn"
-                style="background-color: var(--accent-cyan); color: var(--secondary-blue); font-size: 1.1rem; padding: 15px 30px;">Contatta
-                il nostro team tecnico</button>
+            <h2>Perché un sistema su misura è diverso da una soluzione standard?</h2>
+            <p>Non vendiamo semplici generatori, ma sistemi integrati nel tuo processo produttivo.</p>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Caratteristica</th>
+                        <th>Soluzione Standard</th>
+                        <th>Il Nostro Metodo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Progettazione</td>
+                        <td>Configurazione fissa</td>
+                        <td>Adattata al layout e processo</td>
+                    </tr>
+                    <tr>
+                        <td>Integrazione</td>
+                        <td>Limitata o assente</td>
+                        <td>Completa con PLC e linee esistenti</td>
+                    </tr>
+                    <tr>
+                        <td>Sicurezza</td>
+                        <td>Generica</td>
+                        <td>Specifiche per il sito</td>
+                    </tr>
+                    <tr>
+                        <td>Efficienza</td>
+                        <td>Stimata</td>
+                        <td>Calcolata e verificata</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- 6. FINAL CTA -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2>Ogni progetto parte da un'analisi tecnica.</h2>
+            <p style="margin-bottom: 30px; font-size: 1.2rem; opacity: 0.9;">Verifica la fattibilità del tuo impianto
+                con i nostri ingegneri.</p>
+            <a href="/contatti" class="btn btn-light">Richiedi sopralluogo industriale</a>
         </div>
     </section>
 

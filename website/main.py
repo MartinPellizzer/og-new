@@ -11,6 +11,10 @@ shutil.copy2(f'styles.css', f'{g.WEBSITE_FOLDERPATH}/styles.css')
 shutil.copy2(f'styles-topic-hub.css', f'{g.WEBSITE_FOLDERPATH}/styles-topic-hub.css')
 
 if 1:
+    from hub import metodo_hub
+    metodo_hub.main()
+
+if 1:
     from hub import settori_hub
     settori_hub.main()
 
