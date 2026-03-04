@@ -1390,3 +1390,16 @@ th {
     margin-left: 2rem;
     margin-right: 2rem;
 }
+
+
+/* **************************************** */
+/* /TECNOLOGIA/                             */
+/* **************************************** */
+
+.tecnologia-parametri th {
+    padding: 1rem;
+}
+
+.tecnologia-parametri td {
+    padding: 1rem;
+}
