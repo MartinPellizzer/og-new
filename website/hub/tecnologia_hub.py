@@ -124,6 +124,105 @@ def main():
         </section>
     '''
 
+    componenti_html = f'''
+        <section style="padding-top: 5rem; padding-bottom: 5rem;">
+            <div class="container-xl m-flex" style="gap: 3rem;">
+                <div style="flex: 1;">
+                    <h2 style="margin-bottom: 1rem;
+                        font-size: 2rem; line-height: 1.3;
+                    ">
+                        Componenti di un sistema a ozono integrato
+                    </h2>
+                    <p style="margin-bottom: 3rem;">
+                        Un generatore di ozono non è una macchina isolata, ma il cuore di un sistema complesso. La nostra competenza risiede nell'integrazione di tutti i sottosistemi per garantire continuità operativa. 
+                    </p>
+                    <h3 style="margin-bottom: 1rem;
+                        font-size: 1.25rem; line-height: 1.5;
+                    ">
+                        Architettura del Sistema
+                    </h3>
+                    <p style="margin-bottom: 1rem;">
+                        Progettiamo impianti modulari dove ogni componente è dimensionato in funzione del carico di ozono richiesto.
+                    </p>
+                    <ul style="margin-left: 1.5rem;
+                        display: flex; flex-direction: column; gap: 1rem;
+                    ">
+                        <li>
+                            <strong>Pre-trattamento Gas:</strong> Compressori, essiccatori a adsorbimento (Twin Tower) e filtri coalescenti per garantire aria/ossigeno ISO 8573-1.
+                        </li>
+                        <li>
+                            <strong>Generatore (Cella DBD):</strong> Costruito in acciaio inox 316L o vetro borosilicato, raffreddato ad acqua.
+                        </li>
+                        <li>
+                            <strong>Iniezione/Diffusione:</strong> Venturi, microporosi o torri di contatto in acciaio/FRP per massimizzare il trasferimento di massa.
+                        </li>
+                        <li>
+                            <strong>Distruttore Catalitico:</strong> Unità di sicurezza per abbattere l'ozono residuo prima dello scarico in atmosfera.
+                        </li>
+                    </ul>
+                </div>
+                <div style="flex: 1;">
+                    <div style="
+                        margin-bottom: 3rem;
+                        background-color: #f9f9f9; 
+                        display: flex; flex-direction: column; justify-content: center; align-items: center; 
+                        padding: 2rem; border: 1px solid #333; text-align: center;
+                    ">
+                        <p>
+                            <strong>PRE-TRATTAMENTO GAS</strong>
+                            <br>
+                            <span style="font-size: 0.8rem;">
+                                (Filtrazione & Essiccazione)
+                            </span>
+                        </p>
+                    </div>
+                    <div style="
+                        margin-bottom: 3rem;
+                        background-color: #f9f9f9; 
+                        display: flex; flex-direction: column; justify-content: center; align-items: center; 
+                        padding: 2rem; border: 1px solid #333; text-align: center;
+                    ">
+                        <p>
+                            <strong>GENERATORE OZONO</strong>
+                            <br>
+                            <span style="font-size: 0.8rem;">
+                                (Scarica Corona)
+                            </span>
+                        </p>
+                    </div>
+                    <div style="
+                        margin-bottom: 3rem;
+                        background-color: #f9f9f9; 
+                        display: flex; flex-direction: column; justify-content: center; align-items: center; 
+                        padding: 2rem; border: 1px solid #333; text-align: center;
+                    ">
+                        <p>
+                            <strong>PUNTO DI INIEZIONE</strong>
+                            <br>
+                            <span style="font-size: 0.8rem;">
+                                (Venturi / Diffusori)
+                            </span>
+                        </p>
+                    </div>
+                    <div style="
+                        margin-bottom: 3rem;
+                        background-color: #f9f9f9; 
+                        display: flex; flex-direction: column; justify-content: center; align-items: center; 
+                        padding: 2rem; border: 1px solid #333; text-align: center;
+                    ">
+                        <p>
+                            <strong>MONITORAGGIO & SICUREZZA</strong>
+                            <br>
+                            <span style="font-size: 0.8rem;">
+                                (Analizzatori & PLC)
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    '''
+
     html = f'''
         <!DOCTYPE html>
         <html lang="it">
@@ -140,6 +239,7 @@ def main():
                 {hero_html}
                 {generazione_html}
                 {parametri_html}
+                {componenti_html}
             </main>
             {components.footer_dark()}
         </body>
