@@ -1377,3 +1377,16 @@ th {
     font-size: 1rem;
     color: #111;
 }
+
+
+/* **************************************** */
+/* /METODO/                                 */
+/* **************************************** */
+
+.method-step-card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e9ecef;
+    padding: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}

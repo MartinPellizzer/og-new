@@ -31,110 +31,201 @@ def main():
     margin_bottom = gap
     # <a href="#">Analisi settore alimentare →</a>
     img_height = '500px'
+    step_1_html = f'''
+        <div class="container-xl m-flex" style="">
+            <div class="flex-1" style="border-right: 4px solid #00a8e8;">
+                <div class="method-step-card">
+                    <span style="
+                        font-size: 0.9rem;
+                        font-weight: 700;
+                        color: #00a8e8;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        margin-bottom: 0.5rem;
+                        display: block;
+                    ">
+                        Passo 1
+                    </span>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1.5rem;">
+                        Analisi tecnica preliminare
+                    </h3>
+                    <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+                        <li style="margin-bottom: 0.8rem;">Raccolta dati di processo</li>
+                        <li style="margin-bottom: 0.8rem;">Identificazione criticità</li>
+                        <li style="margin-bottom: 0.8rem;">Definizione parametri operativi</li>
+                        <li style="margin-bottom: 0.8rem;">Analisi vincoli impiantistici</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex-1">
+            </div>
+        </div>
+    '''
+    step_2_html = f'''
+        <div class="container-xl m-flex" style="">
+            <div class="flex-1">
+            </div>
+            <div class="flex-1" style="border-left: 4px solid #00a8e8;">
+                <div class="method-step-card">
+                    <span style="
+                        font-size: 0.9rem;
+                        font-weight: 700;
+                        color: #00a8e8;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        margin-bottom: 0.5rem;
+                        display: block;
+                    ">
+                        Passo 2
+                    </span>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">
+                        Sopralluogo industriale
+                    </h3>
+                    <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
+                        <li style="margin-bottom: 0.8rem;">Verifica condizioni reali</li>
+                        <li style="margin-bottom: 0.8rem;">Misurazioni ambientali in loco</li>
+                        <li style="margin-bottom: 0.8rem;">Odori persistenti e complessi</li>
+                        <li style="margin-bottom: 0.8rem;">Analisi spazi e layout impianto</li>
+                        <li style="margin-bottom: 0.8rem;">Valutazione integrazione fisica</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    '''
+    step_3_html = f'''
+        <div class="container-xl m-flex" style="">
+            <div class="flex-1" style="border-right: 4px solid #00a8e8;">
+                <div class="method-step-card">
+                    <span style="
+                        font-size: 0.9rem;
+                        font-weight: 700;
+                        color: #00a8e8;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        margin-bottom: 0.5rem;
+                        display: block;
+                    ">
+                        Passo 3
+                    </span>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">
+                        Studio di fattibilità
+                    </h3>
+                    <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
+                        <li style="margin-bottom: 0.8rem;">Calcolo concentrazione necessaria</li>
+                        <li style="margin-bottom: 0.8rem;">Dimensionamento generatore</li>
+                        <li style="margin-bottom: 0.8rem;">Analisi sicurezza (HSE)</li>
+                        <li style="margin-bottom: 0.8rem;">Valutazione ROI preliminare</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex-1">
+            </div>
+        </div>
+    '''
+    step_4_html = f'''
+        <div class="container-xl m-flex" style="">
+            <div class="flex-1">
+            </div>
+            <div class="flex-1" style="border-left: 4px solid #00a8e8;">
+                <div class="method-step-card">
+                    <span style="
+                        font-size: 0.9rem;
+                        font-weight: 700;
+                        color: #00a8e8;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        margin-bottom: 0.5rem;
+                        display: block;
+                    ">
+                        Passo 4
+                    </span>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">
+                        Progettazione su misura
+                    </h3>
+                    <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
+                        <li style="margin-bottom: 0.8rem;">Definizione configurazione impiantistica</li>
+                        <li style="margin-bottom: 0.8rem;">Integrazione con linee esistenti</li>
+                        <li style="margin-bottom: 0.8rem;">Automazione e gestione PLC</li>
+                        <li style="margin-bottom: 0.8rem;">Ingegnerizzazione sistemi di sicurezza</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    '''
+    step_5_html = f'''
+        <div class="container-xl m-flex" style="">
+            <div class="flex-1" style="border-right: 4px solid #00a8e8;">
+                <div class="method-step-card">
+                    <span style="
+                        font-size: 0.9rem;
+                        font-weight: 700;
+                        color: #00a8e8;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        margin-bottom: 0.5rem;
+                        display: block;
+                    ">
+                        Passo 5
+                    </span>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">
+                        Costruzione e assemblaggio
+                    </h3>
+                    <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
+                        <li style="margin-bottom: 0.8rem;">Produzione sistema in stabilimento</li>
+                        <li style="margin-bottom: 0.8rem;">Test preliminari di banco</li>
+                        <li style="margin-bottom: 0.8rem;">Controllo qualità rigoroso</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex-1">
+            </div>
+        </div>
+    '''
+    step_6_html = f'''
+        <div class="container-xl m-flex" style="">
+            <div class="flex-1">
+            </div>
+            <div class="flex-1" style="border-left: 4px solid #00a8e8;">
+                <div class="method-step-card">
+                    <span style="
+                        font-size: 0.9rem;
+                        font-weight: 700;
+                        color: #00a8e8;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        margin-bottom: 0.5rem;
+                        display: block;
+                    ">
+                        Passo 6
+                    </span>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">
+                        Installazione e collaudo
+                    </h3>
+                    <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
+                        <li style="margin-bottom: 0.8rem;">Messa in funzione in sito</li>
+                        <li style="margin-bottom: 0.8rem;">Taratura parametri operativi</li>
+                        <li style="margin-bottom: 0.8rem;">Verifica performance finali</li>
+                        <li style="margin-bottom: 0.8rem;">Formazione tecnica del personale</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    '''
+
     metodo_html = f'''
-        <section class="problems-section" style="margin-top: 5rem;">
+        <section class="problems-section" style="margin-top: 5rem; margin-bottom: 5rem;">
             <div class="container-xl">
                 <h2 style="font-size: 2rem; margin-bottom: 1rem; text-align: center;">Richiedi analisi tecnica personalizzata</h2>
                 <p style="margin-bottom: 20px; text-align: center;">
                 Valutiamo insieme la fattibilità dell'intervento sul tuo impianto.</p>
                 
                 <div>
-                    <article class="container-xl m-flex" style="align-items: center; gap: {gap}; margin-bottom: {margin_bottom}; margin-top: 8.0rem;">
-                        <div class="flex-1">
-                            <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">
-                                Analisi tecnica preliminare
-                            </h2>
-                            <ul style="margin-left: 2rem; margin-bottom: 1rem;">
-                                <li style="margin-bottom: 0.8rem;">Raccolta dati di processo</li>
-                                <li style="margin-bottom: 0.8rem;">Identificazione criticità</li>
-                                <li style="margin-bottom: 0.8rem;">Definizione parametri operativi</li>
-                                <li style="margin-bottom: 0.8rem;">Analisi vincoli impiantistici</li>
-                            </ul>
-                        </div>
-                        <div class="flex-1">
-                            <img src="/immagini/settori-alimentare.jpg" style="height: {img_height}; object-fit: cover;">
-                        </div>
-                    </article>
-                    <article class="container-xl m-flex m-row-reverse" style="align-items: center; gap: {gap}; margin-bottom: {margin_bottom};">
-                        <div class="flex-1">
-                            <h2 style="font-size: 2rem; margin-bottom: 1rem;">
-Sopralluogo industriale
-                            </h2>
-                            <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
-                                <li style="margin-bottom: 0.8rem;">Verifica condizioni reali</li>
-                                <li style="margin-bottom: 0.8rem;">Misurazioni ambientali in loco</li>
-                                <li style="margin-bottom: 0.8rem;">Odori persistenti e complessi</li>
-                                <li style="margin-bottom: 0.8rem;">Analisi spazi e layout impianto</li>
-                                <li style="margin-bottom: 0.8rem;">Valutazione integrazione fisica</li>
-                            </ul>
-                        </div>
-                        <div class="flex-1">
-                            <img src="/immagini/settori-chimica.jpg" style="height: {img_height}; object-fit: cover;">
-                        </div>
-                    </article>
-                    <article class="container-xl m-flex" style="align-items: center; gap: {gap}; margin-bottom: {margin_bottom};">
-                        <div class="flex-1">
-                            <h2 style="font-size: 2rem; margin-bottom: 1rem;">
-Studio di fattibilità
-                            </h2>
-                            <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
-                                <li style="margin-bottom: 0.8rem;">Calcolo concentrazione necessaria</li>
-                                <li style="margin-bottom: 0.8rem;">Dimensionamento generatore</li>
-                                <li style="margin-bottom: 0.8rem;">Analisi sicurezza (HSE)</li>
-                                <li style="margin-bottom: 0.8rem;">Valutazione ROI preliminare</li>
-                            </ul>
-                        </div>
-                        <div class="flex-1">
-                            <img src="/immagini/settori-farmaceutica.jpg" style="height: {img_height}; object-fit: cover;">
-                        </div>
-                    </article>
-                    <article class="container-xl m-flex m-row-reverse" style="align-items: center; gap: {gap}; margin-bottom: {margin_bottom};">
-                        <div class="flex-1">
-                            <h2 style="font-size: 2rem; margin-bottom: 1rem;">
-Progettazione su misura
-                            </h2>
-                            <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
-                                <li style="margin-bottom: 0.8rem;">Definizione configurazione impiantistica</li>
-                                <li style="margin-bottom: 0.8rem;">Integrazione con linee esistenti</li>
-                                <li style="margin-bottom: 0.8rem;">Automazione e gestione PLC</li>
-                                <li style="margin-bottom: 0.8rem;">Ingegnerizzazione sistemi di sicurezza</li>
-                            </ul>
-                        </div>
-                        <div class="flex-1">
-                            <img src="/immagini/settori-rifiuti.jpg" style="height: {img_height}; object-fit: cover;">
-                        </div>
-                    </article>
-                    <article class="container-xl m-flex" style="align-items: center; gap: {gap}; margin-bottom: {margin_bottom};">
-                        <div class="flex-1">
-                            <h2 style="font-size: 2rem; margin-bottom: 1rem;">
-Costruzione e assemblaggio
-                            </h2>
-                            <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
-                                <li style="margin-bottom: 0.8rem;">Produzione sistema in stabilimento</li>
-                                <li style="margin-bottom: 0.8rem;">Test preliminari di banco</li>
-                                <li style="margin-bottom: 0.8rem;">Controllo qualità rigoroso</li>
-                            </ul>
-                        </div>
-                        <div class="flex-1">
-                            <img src="/immagini/settori-logistica.jpg" style="height: {img_height}; object-fit: cover;">
-                        </div>
-                    </article>
-                    <article class="container-xl m-flex m-row-reverse" style="align-items: center; gap: {gap}; margin-bottom: 8.0rem;">
-                        <div class="flex-1">
-                            <h2 style="font-size: 2rem; margin-bottom: 1rem;">
-Installazione e collaudo
-                            </h2>
-                            <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
-                                <li style="margin-bottom: 0.8rem;">Messa in funzione in sito</li>
-                                <li style="margin-bottom: 0.8rem;">Taratura parametri operativi</li>
-                                <li style="margin-bottom: 0.8rem;">Verifica performance finali</li>
-                                <li style="margin-bottom: 0.8rem;">Formazione tecnica del personale</li>
-                            </ul>
-                        </div>
-                        <div class="flex-1">
-                            <img src="/immagini/settori-rifiuti.jpg" style="height: {img_height}; object-fit: cover;">
-                        </div>
-                    </article>
+                    {step_1_html}
+                    {step_2_html}
+                    {step_3_html}
+                    {step_4_html}
+                    {step_5_html}
+                    {step_6_html}
                 </div>
             </div>
         </section>
