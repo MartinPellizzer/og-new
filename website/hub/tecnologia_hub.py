@@ -5,7 +5,7 @@ from lib import components
 
 def main():
     hero_html = f'''
-        <section style="padding-top: 5rem; padding-bottom: 5rem;">
+        <section style="padding-top: 4rem; padding-bottom: 8rem;">
             <div class="container-xl m-flex" style="gap: 3rem; align-items: center;">
                 <div class="flex-1">
                     <h1 style="margin-bottom: 1rem;
@@ -28,7 +28,7 @@ def main():
     '''
 
     generazione_html = f'''
-        <section style="padding-top: 5rem; padding-bottom: 5rem;">
+        <section style="padding-bottom: 8rem;">
             <div class="container-xl m-flex" style="gap: 3rem;">
                 <div style="flex: 2;">
                     <h2 style="margin-bottom: 1rem;
@@ -72,7 +72,7 @@ def main():
     '''
     
     parametri_html = f'''
-        <section class="tecnologia-parametri" style="padding-top: 5rem; padding-bottom: 5rem;">
+        <section class="tecnologia-parametri" style="padding-bottom: 8rem;">
             <div class="container-xl">
                 <h2 style="margin-bottom: 1rem;
                     font-size: 2rem; line-height: 1.3;
@@ -125,7 +125,7 @@ def main():
     '''
 
     componenti_html = f'''
-        <section style="padding-top: 5rem; padding-bottom: 5rem;">
+        <section style="padding-bottom: 8rem;">
             <div class="container-xl m-flex" style="gap: 3rem;">
                 <div style="flex: 1;">
                     <h2 style="margin-bottom: 1rem;
@@ -223,6 +223,83 @@ def main():
         </section>
     '''
 
+    controllo_html = f'''
+        <section style="padding-bottom: 8rem;">
+            <div class="container-xl m-flex" style="gap: 3rem;">
+                <div style="flex: 1;">
+                    <h2 style="margin-bottom: 1rem;
+                        font-size: 2rem; line-height: 1.3;
+                    ">
+                        Controllo e automazione dei sistemi a ozono
+                    </h2>
+                    <p style="margin-bottom: 3rem;">
+                        La gestione moderna dell'ozono industriale si basa sulla tracciabilità dei dati e sul controllo in retroazione (feedback loop). I nostri sistemi integrano PLC industriali capaci di dialogare con le linee di produzione esistenti. 
+                    </p>
+                    <h3 style="margin-bottom: 1rem;
+                        font-size: 1.25rem; line-height: 1.5;
+                    ">
+                        Funzionalità di Controllo
+                    </h3>
+                    <ul style="margin-left: 1.5rem;
+                        display: flex; flex-direction: column; gap: 1rem;
+                    ">
+                        <li>
+                            <strong>Feedback Loop Concentrazione:</strong> Regolazione automatica della potenza in base alla lettura dell'analizzatore in linea. 
+                        </li>
+                        <li>
+                            <strong>Gestione Allarmi:</strong> Spegnimento immediato in caso di perdita gas, surriscaldamento o anomalia elettrica.
+                        </li>
+                        <li>
+                            <strong>Logging Dati:</strong> Registrazione storica di produzione (kg O₃), consumo energetico e ore di esercizio per manutenzione predittiva.
+                        </li>
+                        <li>
+                            <strong>Interfaccia HMI:</strong>  Pannello touch screen locale per visualizzazione parametri in tempo reale.
+                        </li>
+                    </ul>
+                </div>
+                <div style="flex: 1;">
+                    <img src="/immagini/tecnologia-featured.jpg">
+                </div>
+            </div>
+        </section>
+    '''
+
+    sicurezza_html = f'''
+        <section class="" style="padding-bottom: 8rem;">
+            <div class="container-xl">
+                <h2 style="margin-bottom: 1rem;
+                    font-size: 2rem; line-height: 1.3;
+                ">
+                    Sicurezza operativa e controllo del rischio
+                </h2>
+                <p style="margin-bottom: 3rem;">
+                    L'ozono è un gas potente e la sua gestione richiede protocolli di sicurezza rigorosi. La progettazione dei nostri impianti segue le normative vigenti per la tutela degli operatori e dell'ambiente. 
+                </p>
+                <h3 style="margin-bottom: 1rem;
+                    font-size: 1.25rem; line-height: 1.5;
+                ">
+                    Protocolli di Sicurezza Implementati
+                </h3>
+                <ul style="margin-left: 1.5rem;
+                    display: flex; flex-direction: column; gap: 1rem;
+                ">
+                    <li>
+                        <strong>Limiti di Esposizione:</strong> Sensori ambientali fissi tarati per allarmare a 0.1 ppm (TLV-TWA). 
+                    </li>
+                    <li>
+                        <strong>Sistemi di Interblocco:</strong> Il generatore non può avviarsi se i sistemi di ventilazione di sicurezza non sono attivi.
+                    </li>
+                    <li>
+                        <strong>Contenimento:</strong> Tubazioni e giunzioni certificate per alta pressione e resistenza chimica all'ozono.
+                    </li>
+                    <li>
+                        <strong>Procedure di Emergency Stop:</strong> Pulsanti di arresto di emergenza posizionati strategicamente nell'area tecnica.
+                    </li>
+                </ul>
+            </div>
+        </section>
+    '''
+
     html = f'''
         <!DOCTYPE html>
         <html lang="it">
@@ -240,6 +317,8 @@ def main():
                 {generazione_html}
                 {parametri_html}
                 {componenti_html}
+                {controllo_html}
+                {sicurezza_html}
             </main>
             {components.footer_dark()}
         </body>
