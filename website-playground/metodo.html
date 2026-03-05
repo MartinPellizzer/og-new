@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodo di Progettazione | Sistemi Industriali a Ozono</title>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            /* Industrial Blue */
+            --secondary-color: #2c3e50;
+            /* Dark Slate */
+            --accent-color: #00a8e8;
+            /* Ozone Blue */
+            --bg-light: #f8f9fa;
+            --text-color: #333;
+            --border-color: #e9ecef;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+
+        /* --- UTILITIES --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        /* --- 1. HERO SECTION --- */
+        .hero {
+            background-color: var(--bg-light);
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-sub {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .hero-image {
+            background-color: #ddd;
+            /* Placeholder for image */
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- 2. PROCESS SECTION (Timeline) --- */
+        .process-section {
+            background-color: #fff;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Vertical Line */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--accent-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .step-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .step-container.left {
+            left: 0;
+            text-align: right;
+        }
+
+        .step-container.right {
+            left: 50%;
+            text-align: left;
+        }
+
+        /* Circles on the line */
+        .step-container::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            right: -12px;
+            background-color: white;
+            border: 4px solid var(--primary-color);
+            top: 20px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .step-container.right::after {
+            left: -12px;
+        }
+
+        .step-content {
+            padding: 20px 30px;
+            background-color: white;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+        }
+
+        .step-content:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .step-number {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .step-content h3 {
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+
+        .step-content ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            color: #555;
+        }
+
+        .step-content ul li {
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+        }
+
+        .step-content ul li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        /* --- 3. CONTROL SECTION --- */
+        .control-section {
+            background-color: var(--bg-light);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .control-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .control-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .control-card h3 {
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+
+        .control-links {
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        .control-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            margin-right: 15px;
+        }
+
+        /* --- 4. POST-SALES SECTION --- */
+        .post-sales-section {
+            background-color: #fff;
+        }
+
+        .post-sales-box {
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .post-sales-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .post-sales-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .check-item span {
+            color: green;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        /* --- 5. DIFFERENTIATION --- */
+        .diff-section {
+            background-color: #f1f4f8;
+            text-align: center;
+        }
+
+        .comparison-table {
+            width: 100%;
+            max-width: 800px;
+            margin: 30px auto;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .comparison-table td:last-child {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* --- 6. FINAL CTA --- */
+        .cta-section {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .btn-light {
+            background-color: white;
+            color: var(--secondary-color);
+            padding: 15px 30px;
+            font-size: 1.1rem;
+        }
+
+        .btn-light:hover {
+            background-color: #eee;
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-image {
+                order: -1;
+                height: 250px;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .step-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .step-container::after {
+                left: 19px;
+            }
+
+            .step-container.left {
+                text-align: left;
+            }
+
+            .step-container.right {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 1. HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1>Metodo di progettazione e integrazione dei sistemi industriali a ozono</h1>
+                    <p class="hero-sub">Ogni impianto viene sviluppato su misura attraverso analisi tecnica preliminare,
+                        studio di fattibilità e integrazione impiantistica controllata.</p>
+                    <a href="#contact" class="btn">Richiedi una consulenza tecnica</a>
+                </div>
+                <div class="hero-image">
+                    <!-- Placeholder for image: Suggest using a photo of a technician with a tablet in front of a generator or a CAD drawing overlay -->
+                    <img src="https://placehold.co/600x400/EEE/31343C?text=Immagine+Sopralluogo+o+Schema+Impianto"
+                        alt="Analisi tecnica industriale">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. MAIN PROCESS SECTION -->
+    <section class="section-padding process-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Il nostro processo operativo</h2>
+                <p>Dall'analisi dei dati alla messa in funzione: un percorso ingegneristico strutturato per garantire
+                    affidabilità e performance.</p>
+            </div>
+
+            <div class="timeline">
+
+                <!-- Step 1 -->
+                <div class="step-container left">
+                    <div class="step-content">
+                        <span class="step-number">Step 01</span>
+                        <h3>Analisi tecnica preliminare</h3>
+                        <ul>
+                            <li>Raccolta dati di processo</li>
+                            <li>Identificazione criticità</li>
+                            <li>Definizione parametri operativi</li>
+                            <li>Analisi vincoli impiantistici</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-container right">
+                    <div class="step-content">
+                        <span class="step-number">Step 02</span>
+                        <h3>Sopralluogo industriale</h3>
+                        <ul>
+                            <li>Verifica condizioni reali</li>
+                            <li>Misurazioni ambientali in loco</li>
+                            <li>Analisi spazi e layout impianto</li>
+                            <li>Valutazione integrazione fisica</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-container left">
+                    <div class="step-content">
+                        <span class="step-number">Step 03</span>
+                        <h3>Studio di fattibilità</h3>
+                        <ul>
+                            <li>Calcolo concentrazione necessaria</li>
+                            <li>Dimensionamento generatore</li>
+                            <li>Analisi sicurezza (HSE)</li>
+                            <li>Valutazione ROI preliminare</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="step-container right">
+                    <div class="step-content">
+                        <span class="step-number">Step 04</span>
+                        <h3>Progettazione su misura</h3>
+                        <ul>
+                            <li>Definizione configurazione impiantistica</li>
+                            <li>Integrazione con linee esistenti</li>
+                            <li>Automazione e gestione PLC</li>
+                            <li>Ingegnerizzazione sistemi di sicurezza</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="step-container left">
+                    <div class="step-content">
+                        <span class="step-number">Step 05</span>
+                        <h3>Costruzione e assemblaggio</h3>
+                        <ul>
+                            <li>Produzione sistema in stabilimento</li>
+                            <li>Test preliminari di banco</li>
+                            <li>Controllo qualità rigoroso</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="step-container right">
+                    <div class="step-content">
+                        <span class="step-number">Step 06</span>
+                        <h3>Installazione e collaudo</h3>
+                        <ul>
+                            <li>Messa in funzione in sito</li>
+                            <li>Taratura parametri operativi</li>
+                            <li>Verifica performance finali</li>
+                            <li>Formazione tecnica del personale</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. CONTROL & SAFETY SECTION -->
+    <section class="section-padding control-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Controllo dei parametri e sicurezza operativa</h2>
+            </div>
+            <div class="control-grid">
+                <div class="control-card">
+                    <h3>Monitoraggio Continuo</h3>
+                    <p>Controllo costante della concentrazione di ozono tramite sensori ambientali di precisione per
+                        garantire l'efficacia del trattamento.</p>
+                </div>
+                <div class="control-card">
+                    <h3>Sicurezza e Interblocchi</h3>
+                    <p>Sistemi di interblocco automatici che fermano la produzione in caso di anomalie o presenza di
+                        personale in aree non protette.</p>
+                </div>
+                <div class="control-card">
+                    <h3>Conformità Normativa</h3>
+                    <p>Rispetto rigoroso delle normative vigenti per la tutela degli operatori e la sicurezza
+                        dell'impianto.</p>
+                    <div class="control-links">
+                        <a href="/normative/">Consulta Normative &rarr;</a>
+                        <a href="/tecnologia/">Approfondisci Tecnologia &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. POST-SALES SECTION -->
+    <section class="section-padding post-sales-section">
+        <div class="container">
+            <div class="post-sales-box">
+                <div class="post-sales-content">
+                    <h2>Assistenza tecnica e manutenzione programmata</h2>
+                    <p>Il nostro impegno non termina con l'installazione. Garantiamo continuità operativa attraverso un
+                        servizio strutturato.</p>
+
+                    <div class="post-sales-list">
+                        <div class="check-item"><span>✔</span> Monitoraggio prestazioni</div>
+                        <div class="check-item"><span>✔</span> Interventi programmati</div>
+                        <div class="check-item"><span>✔</span> Sostituzione componenti</div>
+                        <div class="check-item"><span>✔</span> Supporto remoto</div>
+                        <div class="check-item"><span>✔</span> Aggiornamento impianto</div>
+                    </div>
+                </div>
+                <div style="margin-top: 20px;">
+                    <!-- Icon placeholder -->
+                    <img src="https://placehold.co/150x150/EEE/31343C?text=Supporto" alt="Icona Supporto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. DIFFERENTIATION SECTION -->
+    <section class="section-padding diff-section">
+        <div class="container">
+            <h2>Perché un sistema su misura è diverso da una soluzione standard?</h2>
+            <p>Non vendiamo semplici generatori, ma sistemi integrati nel tuo processo produttivo.</p>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Caratteristica</th>
+                        <th>Soluzione Standard</th>
+                        <th>Il Nostro Metodo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Progettazione</td>
+                        <td>Configurazione fissa</td>
+                        <td>Adattata al layout e processo</td>
+                    </tr>
+                    <tr>
+                        <td>Integrazione</td>
+                        <td>Limitata o assente</td>
+                        <td>Completa con PLC e linee esistenti</td>
+                    </tr>
+                    <tr>
+                        <td>Sicurezza</td>
+                        <td>Generica</td>
+                        <td>Specifiche per il sito</td>
+                    </tr>
+                    <tr>
+                        <td>Efficienza</td>
+                        <td>Stimata</td>
+                        <td>Calcolata e verificata</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- 6. FINAL CTA -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2>Ogni progetto parte da un'analisi tecnica.</h2>
+            <p style="margin-bottom: 30px; font-size: 1.2rem; opacity: 0.9;">Verifica la fattibilità del tuo impianto
+                con i nostri ingegneri.</p>
+            <a href="/contatti" class="btn btn-light">Richiedi sopralluogo industriale</a>
+        </div>
+    </section>
+
+</body>
+
+</html>

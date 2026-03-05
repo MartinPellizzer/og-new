@@ -110,6 +110,7 @@ def header_default():
                 <li><a href="/settori/">Settori</a></li>
                 <li><a href="/metodo/">Metodo</a></li>
                 <li><a href="/tecnologia/">Tecnologia</a></li>
+                <li><a href="/confronti/">Confronti</a></li>
                 <li><a href="/prodotti.html">Prodotti</a></li>
                 <li><a href="/contatti.html">Contatti</a></li>
                 </ul>

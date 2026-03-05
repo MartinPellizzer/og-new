@@ -4,278 +4,319 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tecnologia a Ozono Industriale | Principi e Automazione</title>
-    <style>
-        /* --- RESET & BASE STYLES --- */
-        :root {
-            --primary-color: #004e92;
-            /* Blu tecnico industriale */
-            --secondary-color: #333333;
-            /* Grigio scuro per testo */
-            --accent-color: #007acc;
-            /* Azzurro per link/azioni */
-            --bg-light: #f9f9f9;
-            /* Grigio chiarissimo per sfondi sezioni */
-            --border-color: #e0e0e0;
-            --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            --font-mono: 'Courier New', Courier, monospace;
-        }
+    <title>Confronto Tecnologie Industriali | Ozono vs Altri Metodi</title>
+    <meta name="description"
+        content="Analisi comparativa tra ozono, cloro, UV e biofiltri per il trattamento industriale. Scopri quando conviene usare l'ozono.">
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+    <!-- Font Awesome per le icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            /* Blu industriale */
+            --secondary-color: #00a8cc;
+            /* Ciano Ozono */
+            --dark-bg: #1a1a1a;
+            --light-bg: #f4f7f6;
+            --text-color: #333;
+            --border-color: #ddd;
+            --accent-green: #28a745;
+            --accent-red: #dc3545;
         }
 
         body {
-            font-family: var(--font-main);
-            color: var(--secondary-color);
+            font-family: 'Roboto', sans-serif;
             line-height: 1.6;
-            background-color: #ffffff;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
         }
 
-        /* --- LAYOUT UTILITIES --- */
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 1rem;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        section {
+        /* 1. HERO SECTION */
+        .hero-tech {
+            background: linear-gradient(135deg, #f9f9f9 0%, #eef2f5 100%);
             padding: 80px 0;
             border-bottom: 1px solid var(--border-color);
         }
 
-        h1,
-        h2,
-        h3 {
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: #111;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            letter-spacing: -0.5px;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            margin-top: 40px;
-            border-left: 5px solid var(--primary-color);
-            padding-left: 15px;
-        }
-
-        h3 {
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            margin-top: 30px;
-        }
-
-        p {
-            margin-bottom: 20px;
-            text-align: justify;
-        }
-
-        /* --- HERO SECTION (10%) --- */
-        .hero {
+        .hero-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 40px;
             align-items: center;
-            padding: 100px 0;
-            border-bottom: 2px solid var(--secondary-color);
         }
 
         .hero-content h1 {
-            margin-bottom: 20px;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            line-height: 1.2;
         }
 
-        .hero-sub {
-            font-size: 1.2rem;
+        .hero-content p {
+            font-size: 1.1rem;
             color: #555;
             margin-bottom: 30px;
-            border-left: 3px solid var(--accent-color);
-            padding-left: 20px;
+        }
+
+        .hero-visual {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .hero-visual i {
+            font-size: 4rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
         }
 
         .btn-secondary {
             display: inline-block;
-            padding: 12px 24px;
-            border: 1px solid var(--secondary-color);
-            color: var(--secondary-color);
+            padding: 12px 25px;
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
+            border-radius: 4px;
             transition: all 0.3s ease;
         }
 
         .btn-secondary:hover {
-            background-color: var(--secondary-color);
+            background-color: var(--primary-color);
             color: #fff;
         }
 
-        /* Placeholder grafico tecnico */
-        .hero-visual {
-            background-color: var(--bg-light);
-            height: 400px;
-            border: 1px dashed #ccc;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
+        /* 2. PERCHÉ CONFRONTARE */
+        .why-compare {
+            padding: 60px 0;
+            background-color: #fff;
+            text-align: center;
         }
 
-        .tech-label {
-            position: absolute;
-            font-family: var(--font-mono);
-            font-size: 0.8rem;
-            color: #888;
-            background: #fff;
-            padding: 5px;
-            border: 1px solid #ddd;
-        }
-
-        /* --- PRINCIPLES (20%) --- */
-        .principles-grid {
+        .why-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
         }
 
-        .tech-card {
-            background: var(--bg-light);
+        .why-item {
             padding: 20px;
+            background: var(--light-bg);
+            border-radius: 6px;
+        }
+
+        .why-item i {
+            color: var(--secondary-color);
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        /* 3. CONFRONTI PRINCIPALI (CORE) */
+        .main-comparisons {
+            padding: 60px 0;
+            background-color: var(--light-bg);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+        }
+
+        .comp-card {
+            background: #fff;
             border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .tech-card h4 {
-            font-family: var(--font-mono);
-            text-transform: uppercase;
+        .comp-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .comp-header {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .comp-header h3 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+
+        .comp-body {
+            padding: 25px;
+        }
+
+        .comp-apps {
             font-size: 0.9rem;
-            margin-bottom: 10px;
-            color: var(--primary-color);
+            color: #666;
+            margin-bottom: 20px;
+            display: block;
+            font-style: italic;
         }
 
-        /* --- PARAMETERS (20%) --- */
-        table {
+        .tech-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 30px 0;
-            font-size: 0.95rem;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
         }
 
-        th,
-        td {
-            border: 1px solid var(--border-color);
-            padding: 15px;
+        .tech-table th,
+        .tech-table td {
             text-align: left;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
         }
 
-        th {
-            background-color: var(--bg-light);
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 0.5px;
-        }
-
-        /* --- COMPONENTS (20%) --- */
-        .components-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .block-diagram {
-            background: #fff;
-            border: 2px solid #333;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .block {
-            border: 1px solid #333;
-            padding: 15px;
-            text-align: center;
-            font-weight: bold;
-            background: #f4f4f4;
-            position: relative;
-        }
-
-        .arrow-down {
-            height: 20px;
-            border-left: 2px solid #333;
-            margin: 0 auto;
-            width: 2px;
-            position: relative;
-        }
-
-        .arrow-down::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: -4px;
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
-            border-top: 8px solid #333;
-        }
-
-        /* --- CONTROL & SAFETY (15% & 10%) --- */
-        .grid-2-col {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .list-technical {
-            list-style: none;
-        }
-
-        .list-technical li {
-            padding: 10px 0;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .list-technical li::before {
-            content: "•";
+        .tech-table th {
             color: var(--primary-color);
-            font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
+            width: 40%;
         }
 
-        /* --- BRIDGE (5%) --- */
+        .badge-good {
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        .badge-bad {
+            color: var(--accent-red);
+            font-weight: bold;
+        }
+
+        .btn-link {
+            display: inline-block;
+            color: var(--secondary-color);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .btn-link:hover {
+            border-color: var(--secondary-color);
+        }
+
+        /* 4. PARAMETRI DI SCELTA */
+        .selection-params {
+            padding: 60px 0;
+            background: #fff;
+        }
+
+        .param-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .param-item {
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 20px;
+        }
+
+        .param-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        /* 5. QUANDO NON USARE OZONO */
+        .not-ozono {
+            background-color: #fff8f8;
+            border: 1px solid #ffcccc;
+            padding: 40px;
+            border-radius: 8px;
+            margin: 60px auto;
+            max-width: 1000px;
+        }
+
+        .not-ozono h3 {
+            color: #c0392b;
+        }
+
+        /* 6. BRIDGE & 7. CTA */
         .bridge-section {
-            background-color: #f0f4f8;
             text-align: center;
             padding: 60px 0;
+            background: var(--primary-color);
+            color: #fff;
         }
 
-        .bridge-link {
-            color: var(--primary-color);
-            font-weight: 600;
+        .bridge-section a {
+            color: #fff;
             text-decoration: underline;
+            font-weight: bold;
         }
 
-        /* --- RESPONSIVE --- */
-        @media (max-width: 768px) {
+        .final-cta {
+            padding: 80px 0;
+            text-align: center;
+            background: #fff;
+        }
 
-            .hero,
-            .principles-grid,
-            .components-layout,
-            .grid-2-col {
+        .btn-primary {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: var(--secondary-color);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #008ba8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-grid {
                 grid-template-columns: 1fr;
             }
 
-            .hero-visual {
-                order: -1;
-                /* Immagine sopra su mobile */
-                height: 250px;
+            .comparison-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -284,246 +325,264 @@
 <body>
 
     <!-- 1️⃣ HERO TECNICO -->
-    <header class="container hero">
-        <div class="hero-content">
-            <h1>Tecnologia a ozono per applicazioni industriali</h1>
-            <div class="hero-sub">
-                La generazione e l'integrazione dell'ozono in ambito industriale richiedono controllo preciso di
-                concentrazione, portata, sicurezza e automazione.
-            </div>
-            <a href="/soluzioni/" class="btn-secondary">Scopri le applicazioni industriali →</a>
-        </div>
-
-        <div class="hero-visual">
-            <!-- Placeholder per schema generatore -->
-            <div style="text-align:center;">
-                <svg width="200" height="150" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="50" y="40" width="100" height="70" stroke="#333" stroke-width="2" />
-                    <path d="M70 60 L130 60" stroke="#004e92" stroke-width="2" />
-                    <path d="M70 80 L130 80" stroke="#004e92" stroke-width="2" />
-                    <path d="M70 100 L130 100" stroke="#004e92" stroke-width="2" />
-                    <text x="100" y="130" font-family="monospace" font-size="12" text-anchor="middle"
-                        fill="#555">DIELECTRIC BARRIER DISCHARGE</text>
-                </svg>
-                <span class="tech-label" style="top: 10px; right: 10px;">FIG 1.1 - CELLULA GENERATRICE</span>
-            </div>
-        </div>
-    </header>
-
-    <!-- 2️⃣ PRINCIPI DI GENERAZIONE -->
-    <section class="container">
-        <h2>Generazione dell'ozono in ambito industriale</h2>
-        <div class="principles-grid">
-            <div class="text-col">
-                <p>
-                    Il principio fisico alla base della generazione industriale di ozono è la <strong>Scarica a Corona
-                        (Corona Discharge)</strong> o, più specificamente, la Scarica Dielettrica a Barriera (DBD).
-                    Questo processo comporta l'applicazione di un campo elettrico ad alta tensione tra due elettrodi
-                    separati da un dielettrico e un gap dove scorre il gas da trattare (ossigeno o aria secca).
-                </p>
-                <p>
-                    L'energia elettrica ad alta frequenza dissocia le molecole di ossigeno (O₂) in atomi singoli (O),
-                    che si ricombinano immediatamente formando ozono (O₃). La stabilità di questo processo dipende
-                    criticamente dalla purezza del gas di alimentazione e dalla gestione termica della cella.
-                </p>
-                <h3>Fattori Critici di Processo</h3>
-                <ul class="list-technical">
-                    <li><strong>Alta Tensione & Frequenza:</strong> Determinano l'efficienza di conversione energetica.
-                    </li>
-                    <li><strong>Umidità Residua:</strong> Deve essere mantenuta sotto -60°C punto di rugiada per evitare
-                        la formazione di acido nitrico e corrosione.</li>
-                    <li><strong>Temperatura del Gas:</strong> Il raffreddamento è essenziale; temperature elevate
-                        favoriscono la decomposizione dell'ozono.</li>
-                </ul>
-            </div>
-
-            <div class="visual-col">
-                <div class="tech-card">
-                    <h4>PARAMETRI FISICI</h4>
-                    <p style="font-size: 0.9rem; margin-bottom: 5px;">Gas Feed: O₂ (90-93%) o Aria</p>
-                    <p style="font-size: 0.9rem; margin-bottom: 5px;">Tensione: 5kV - 20kV AC</p>
-                    <p style="font-size: 0.9rem; margin-bottom: 5px;">Frequenza: 50Hz - 2000Hz</p>
-                    <p style="font-size: 0.9rem;">Gap Dielettrico: 1.5mm - 3.0mm</p>
+    <section class="hero-tech">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1>Confronto tra tecnologie per il trattamento industriale di aria, acqua e superfici</h1>
+                    <p>La scelta della tecnologia di trattamento dipende da parametri operativi, contaminanti presenti e
+                        integrazione nel processo produttivo. Non esiste una soluzione universale, ma la scelta più
+                        efficiente.</p>
+                    <a href="/soluzioni/" class="btn-secondary">Scopri le applicazioni industriali</a>
                 </div>
-                <div
-                    style="margin-top:20px; height: 150px; background: #eee; border: 1px solid #ccc; display:flex; align-items:center; justify-content:center; color:#888; font-family:monospace;">
-                    [Schema Flusso Elettrico]
+                <div class="hero-visual">
+                    <!-- Placeholder per schema comparativo -->
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <h3>Analisi Tecnica Comparativa</h3>
+                    <p style="font-size: 0.9rem; color: #666;">Ozono vs Cloro | Ozono vs UV | Ozono vs Biofiltri</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3️⃣ PARAMETRI TECNICI OPERATIVI -->
-    <section class="container" style="background-color: #fff;">
-        <h2>Parametri critici per il corretto funzionamento</h2>
-        <p>
-            L'efficienza di un impianto a ozono non è definita solo dalla potenza installata (kW), ma dall'interazione
-            tra concentrazione prodotta e portata di gas. La seguente tabella illustra le variabili operative
-            fondamentali per la progettazione.
-        </p>
+    <!-- 2️⃣ PERCHÉ CONFRONTARE -->
+    <section class="why-compare">
+        <div class="container">
+            <h2>Come scegliere la tecnologia di trattamento più adatta</h2>
+            <p>La selezione di un impianto di sanificazione o ossidazione richiede un'analisi ingegneristica. Ecco i
+                fattori critici che determinano la scelta:</p>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Parametro</th>
-                    <th>Unità di Misura</th>
-                    <th>Impatto su Efficienza e Processo</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Concentrazione</strong></td>
-                    <td>g/Nm³ (o % in peso)</td>
-                    <td>Determina la velocità di ossidazione. Concentrazioni elevate (>10% da O₂) riducono i volumi di
-                        gas da trattare.</td>
-                </tr>
-                <tr>
-                    <td><strong>Portata (Flow Rate)</strong></td>
-                    <td>Nm³/h</td>
-                    <td>Definisce la capacità di distribuzione dell'ozono nel fluido o nell'ambiente target.</td>
-                </tr>
-                <tr>
-                    <td><strong>Tempo di Contatto</strong></td>
-                    <td>minuti (Ct Value)</td>
-                    <td>Prodotto tra Concentrazione (C) e Tempo (t). Cruciale per garantire l'inattivazione
-                        microbiologica o l'ossidazione chimica.</td>
-                </tr>
-                <tr>
-                    <td><strong>Umidità Relativa</strong></td>
-                    <td>% RH / Punto di Rugiada</td>
-                    <td>L'umidità nel gas di alimentazione riduce drasticamente la produzione di ozono e genera
-                        sottoprodotti acidi corrosivi.</td>
-                </tr>
-                <tr>
-                    <td><strong>Temperatura Gas</strong></td>
-                    <td>°C</td>
-                    <td>Ogni aumento di temperatura riduce la stabilità dell'ozono. Il raffreddamento dell'acqua di
-                        scambio è mandatorio.</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <!-- 4️⃣ COMPONENTI DI UN SISTEMA INDUSTRIALE -->
-    <section class="container">
-        <h2>Componenti di un sistema a ozono integrato</h2>
-        <p>
-            Un generatore di ozono non è una macchina isolata, ma il cuore di un sistema complesso. La nostra competenza
-            risiede nell'integrazione di tutti i sottosistemi per garantire continuità operativa.
-        </p>
-
-        <div class="components-layout">
-            <div class="text-col">
-                <h3>Architettura del Sistema</h3>
-                <p>Progettiamo impianti modulari dove ogni componente è dimensionato in funzione del carico di ozono
-                    richiesto.</p>
-                <ul class="list-technical">
-                    <li><strong>Pre-trattamento Gas:</strong> Compressori, essiccatori a adsorbimento (Twin Tower) e
-                        filtri coalescenti per garantire aria/ossigeno ISO 8573-1.</li>
-                    <li><strong>Generatore (Cella DBD):</strong> Costruito in acciaio inox 316L o vetro borosilicato,
-                        raffreddato ad acqua.</li>
-                    <li><strong>Iniezione/Diffusione:</strong> Venturi, microporosi o torri di contatto in acciaio/FRP
-                        per massimizzare il trasferimento di massa.</li>
-                    <li><strong>Distruttore Catalitico:</strong> Unità di sicurezza per abbattere l'ozono residuo prima
-                        dello scarico in atmosfera.</li>
-                </ul>
-            </div>
-
-            <div class="visual-col">
-                <div class="block-diagram">
-                    <div class="block">PRE-TRATTAMENTO GAS<br><span
-                            style="font-size:0.8em; font-weight:normal;">(Filtrazione & Essiccazione)</span></div>
-                    <div class="arrow-down"></div>
-                    <div class="block" style="border: 2px solid var(--primary-color); background: #eef6ff;">GENERATORE
-                        OZONO<br><span style="font-size:0.8em; font-weight:normal;">(Scarica Corona)</span></div>
-                    <div class="arrow-down"></div>
-                    <div class="block">PUNTO DI INIEZIONE<br><span style="font-size:0.8em; font-weight:normal;">(Venturi
-                            / Diffusori)</span></div>
-                    <div class="arrow-down"></div>
-                    <div class="block">MONITORAGGIO & SICUREZZA<br><span
-                            style="font-size:0.8em; font-weight:normal;">(Analizzatori & PLC)</span></div>
+            <div class="why-grid">
+                <div class="why-item">
+                    <i class="fa-solid fa-flask"></i>
+                    <h4>Natura dei contaminanti</h4>
+                </div>
+                <div class="why-item">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h4>Concentrazione</h4>
+                </div>
+                <div class="why-item">
+                    <i class="fa-solid fa-wind"></i>
+                    <h4>Portata del processo</h4>
+                </div>
+                <div class="why-item">
+                    <i class="fa-solid fa-industry"></i>
+                    <h4>Vincoli impiantistici</h4>
+                </div>
+                <div class="why-item">
+                    <i class="fa-solid fa-coins"></i>
+                    <h4>Costi operativi (OPEX)</h4>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 5️⃣ CONTROLLO E AUTOMAZIONE -->
-    <section class="container" style="background-color: var(--bg-light);">
-        <h2>Controllo e automazione dei sistemi a ozono</h2>
-        <div class="grid-2-col">
-            <div>
-                <p>
-                    La gestione moderna dell'ozono industriale si basa sulla tracciabilità dei dati e sul controllo in
-                    retroazione (feedback loop). I nostri sistemi integrano PLC industriali capaci di dialogare con le
-                    linee di produzione esistenti.
-                </p>
-                <h3>Funzionalità di Controllo</h3>
-                <ul class="list-technical">
-                    <li><strong>Feedback Loop Concentrazione:</strong> Regolazione automatica della potenza in base alla
-                        lettura dell'analizzatore in linea.</li>
-                    <li><strong>Gestione Allarmi:</strong> Spegnimento immediato in caso di perdita gas,
-                        surriscaldamento o anomalia elettrica.</li>
-                    <li><strong>Logging Dati:</strong> Registrazione storica di produzione (kg O₃), consumo energetico e
-                        ore di esercizio per manutenzione predittiva.</li>
-                    <li><strong>Interfaccia HMI:</strong> Pannello touch screen locale per visualizzazione parametri in
-                        tempo reale.</li>
-                </ul>
+    <!-- 3️⃣ CONFRONTI PRINCIPALI -->
+    <section class="main-comparisons">
+        <div class="container">
+            <div class="section-title">
+                <h2>Analisi Comparativa delle Tecnologie</h2>
+                <p>Schede tecniche di confronto per supportare la decisione d'acquisto.</p>
             </div>
-            <div
-                style="display:flex; align-items:center; justify-content:center; background:#ddd; border:1px solid #ccc; min-height: 200px;">
-                <span style="font-family:monospace; color:#555;">[INTERFACCIA PLC / HMI MOCKUP]</span>
+
+            <div class="comparison-grid">
+
+                <!-- CARD 1: Ozono vs Cloro -->
+                <article class="comp-card">
+                    <div class="comp-header">
+                        <h3><i class="fa-solid fa-droplet"></i> Ozono vs Cloro</h3>
+                    </div>
+                    <div class="comp-body">
+                        <span class="comp-apps">Applicazioni: Trattamento acqua, disinfezione potabile, piscine.</span>
+                        <table class="tech-table">
+                            <tr>
+                                <th>Residui chimici</th>
+                                <td><span class="badge-good">Nessuno</span></td>
+                                <td>Presenti (Trialometani)</td>
+                            </tr>
+                            <tr>
+                                <th>Velocità ossidazione</th>
+                                <td><span class="badge-good">Molto Alta</span></td>
+                                <td>Media</td>
+                            </tr>
+                            <tr>
+                                <th>Sicurezza stoccaggio</th>
+                                <td><span class="badge-good">Alta (On-site)</span></td>
+                                <td><span class="badge-bad">Critica</span></td>
+                            </tr>
+                        </table>
+                        <a href="/confronti/ozono-vs-cloro/" class="btn-link">Vedi analisi dettagliata →</a>
+                    </div>
+                </article>
+
+                <!-- CARD 2: Ozono vs UV -->
+                <article class="comp-card">
+                    <div class="comp-header">
+                        <h3><i class="fa-solid fa-sun"></i> Ozono vs UV</h3>
+                    </div>
+                    <div class="comp-body">
+                        <span class="comp-apps">Applicazioni: Disinfezione acqua, trattamento aria, superfici.</span>
+                        <table class="tech-table">
+                            <tr>
+                                <th>Efficacia microbiologica</th>
+                                <td>Azione residua</td>
+                                <td>Istantanea (senza residuo)</td>
+                            </tr>
+                            <tr>
+                                <th>Costi operativi</th>
+                                <td>Medio-Bassi (Elettricità)</td>
+                                <td>Medio-Alti (Sostituzione lampade)</td>
+                            </tr>
+                            <tr>
+                                <th>Integrazione</th>
+                                <td>Flessibile (Gas/Liq)</td>
+                                <td>Richiede trasparenza mezzo</td>
+                            </tr>
+                        </table>
+                        <a href="/confronti/ozono-vs-uv/" class="btn-link">Vedi analisi dettagliata →</a>
+                    </div>
+                </article>
+
+                <!-- CARD 3: Ozono vs Biofiltri -->
+                <article class="comp-card">
+                    <div class="comp-header">
+                        <h3><i class="fa-solid fa-wind"></i> Ozono vs Biofiltri</h3>
+                    </div>
+                    <div class="comp-body">
+                        <span class="comp-apps">Applicazioni: Abbattimento odori, trattamento VOC, depurazione
+                            aria.</span>
+                        <table class="tech-table">
+                            <tr>
+                                <th>Spazio impianto</th>
+                                <td><span class="badge-good">Compatto</span></td>
+                                <td>Elevato</td>
+                            </tr>
+                            <tr>
+                                <th>Manutenzione</th>
+                                <td>Minima</td>
+                                <td>Complessa (controllo umidità/batteri)</td>
+                            </tr>
+                            <tr>
+                                <th>Efficienza picchi</th>
+                                <td><span class="badge-good">Immediata</span></td>
+                                <td>Lenta (shock tossici)</td>
+                            </tr>
+                        </table>
+                        <a href="/confronti/ozono-vs-biofiltri/" class="btn-link">Vedi analisi dettagliata →</a>
+                    </div>
+                </article>
+
+                <!-- CARD 4: Ozono vs Perossido -->
+                <article class="comp-card">
+                    <div class="comp-header">
+                        <h3><i class="fa-solid fa-flask-vial"></i> Ozono vs Perossido (H2O2)</h3>
+                    </div>
+                    <div class="comp-body">
+                        <span class="comp-apps">Applicazioni: Ossidazione avanzata (AOP), contaminanti organici.</span>
+                        <table class="tech-table">
+                            <tr>
+                                <th>Residui finali</th>
+                                <td>Ossigeno</td>
+                                <td>Acqua + Ossigeno</td>
+                            </tr>
+                            <tr>
+                                <th>Sicurezza</th>
+                                <td><span class="badge-good">Alta</span></td>
+                                <td>Manipolazione chimica</td>
+                            </tr>
+                            <tr>
+                                <th>Velocità reazione</th>
+                                <td><span class="badge-good">Alta</span></td>
+                                <td>Media (dipende da catalizzatore)</td>
+                            </tr>
+                        </table>
+                        <a href="/confronti/ozono-vs-perossido/" class="btn-link">Vedi analisi dettagliata →</a>
+                    </div>
+                </article>
+
             </div>
         </div>
     </section>
 
-    <!-- 6️⃣ SICUREZZA TECNICA -->
-    <section class="container">
-        <h2>Sicurezza operativa e controllo del rischio</h2>
-        <p>
-            L'ozono è un gas potente e la sua gestione richiede protocolli di sicurezza rigorosi. La progettazione dei
-            nostri impianti segue le normative vigenti per la tutela degli operatori e dell'ambiente.
-        </p>
+    <!-- 4️⃣ PARAMETRI DI SCELTA -->
+    <section class="selection-params">
+        <div class="container">
+            <div class="section-title">
+                <h2>Fattori che determinano la scelta della tecnologia</h2>
+                <p>Un approccio ingegneristico per massimizzare il ROI dell'impianto.</p>
+            </div>
 
-        <div style="border-left: 4px solid #d9534f; padding-left: 20px; margin-top: 20px;">
-            <h3 style="color:#d9534f; margin-top:0;">Protocolli di Sicurezza Implementati</h3>
-            <ul class="list-technical">
-                <li><strong>Limiti di Esposizione:</strong> Sensori ambientali fissi tarati per allarmare a 0.1 ppm
-                    (TLV-TWA).</li>
-                <li><strong>Sistemi di Interblocco:</strong> Il generatore non può avviarsi se i sistemi di ventilazione
-                    di sicurezza non sono attivi.</li>
-                <li><strong>Contenimento:</strong> Tubazioni e giunzioni certificate per alta pressione e resistenza
-                    chimica all'ozono.</li>
-                <li><strong>Procedure di Emergency Stop:</strong> Pulsanti di arresto di emergenza posizionati
-                    strategicamente nell'area tecnica.</li>
+            <ul class="param-list">
+                <li class="param-item">
+                    <h4>Tipo di contaminante</h4>
+                    <p>Identificare se il target è organico, inorganico o microbiologico è il primo passo. L'ozono
+                        eccelle nell'ossidazione organica e nella disinfezione.</p>
+                </li>
+                <li class="param-item">
+                    <h4>Concentrazione del carico</h4>
+                    <p>Alti carichi inquinanti potrebbero richiedere pre-trattamenti o dosaggi specifici di ozono per
+                        evitare saturazione.</p>
+                </li>
+                <li class="param-item">
+                    <h4>Portata del processo</h4>
+                    <p>Il dimensionamento del generatore di ozono o dell'unità UV deve essere proporzionale al flusso
+                        (m³/h o m³/giorno).</p>
+                </li>
+                <li class="param-item">
+                    <h4>Integrazione impiantistica</h4>
+                    <p>Valutare lo spazio disponibile, la presenza di aria compressa e la facilità di automazione nel
+                        PLC di bordo macchina.</p>
+                </li>
+                <li class="param-item">
+                    <h4>Costi operativi (OPEX)</h4>
+                    <p>Confrontare il costo dell'elettricità per produrre ozono rispetto all'acquisto continuo di
+                        reagenti chimici o sostituzione filtri.</p>
+                </li>
             </ul>
-            <p style="margin-top: 20px; font-size: 0.9rem;">
-                Per approfondimenti sulle normative di riferimento, consultare la sezione <a href="/normative/"
-                    style="color:var(--primary-color);">Normative e Compliance</a>.
-            </p>
         </div>
     </section>
 
-    <!-- 7️⃣ CONFRONTO TECNOLOGICO (BRIDGE) -->
+    <!-- 5️⃣ QUANDO NON USARE L'OZONO -->
+    <div class="container">
+        <div class="not-ozono">
+            <h3><i class="fa-solid fa-triangle-exclamation"></i> Quando altre tecnologie possono essere più adatte</h3>
+            <p>Per garantire la massima trasparenza tecnica, segnaliamo i casi in cui l'ozono non è la prima scelta:</p>
+            <ul>
+                <li><strong>Contaminanti non ossidabili:</strong> Alcuni metalli pesanti o sali inorganici specifici
+                    richiedono precipitazione o scambio ionico.</li>
+                <li><strong>Processi con umidità critica non controllabile:</strong> In ambienti dove l'umidità relativa
+                    supera costantemente l'85% senza deumidificazione, l'efficacia dell'ozono gassoso può variare.</li>
+                <li><strong>Esigenze di trattamento continuo specifico:</strong> In alcuni casi di filtrazione meccanica
+                    pura, l'ozono non sostituisce la rimozione fisica dei solidi sospesi.</li>
+            </ul>
+            <p style="margin-top: 15px;"><a href="/contatti/" style="color: #c0392b; font-weight: bold;">Richiedi
+                    un'analisi di fattibilità gratuita per il tuo caso specifico.</a></p>
+        </div>
+    </div>
+
+    <!-- 6️⃣ BRIDGE A SOLUZIONI -->
     <section class="bridge-section">
         <div class="container">
-            <h3 style="margin-top:0;">Analisi Comparativa</h3>
-            <p>
-                La tecnologia a ozono offre vantaggi specifici rispetto ai trattamenti chimici tradizionali (es. cloro)
-                o termici in termini di residui e impatto ambientale.
+            <h2>Applicazioni dei sistemi a ozono nei processi industriali</h2>
+            <p>Una volta definita la tecnologia, scopri come integriamo i generatori di ozono nelle linee di produzione.
             </p>
-            <p style="margin-top: 20px;">
-                <a href="/confronti/" class="bridge-link">Vedi confronto tecnico Ozono vs Altri Metodi →</a>
-            </p>
+            <br>
+            <a href="/soluzioni/" class="btn-secondary" style="border-color: #fff; color: #fff;">Vai alle Soluzioni
+                Industriali</a>
         </div>
     </section>
 
-    <footer style="background:#222; color:#fff; padding: 40px 0; text-align:center; font-size:0.8rem;">
+    <!-- 7️⃣ CTA FINALE -->
+    <section class="final-cta">
         <div class="container">
-            <p>&copy; 2023 Industrial Ozone Technologies. Tutti i diritti riservati.</p>
-            <p style="color:#666; margin-top:10px;">Dati tecnici soggetti a variazioni in base alle condizioni
-                operative.</p>
+            <h2>Valutazione tecnica della soluzione più adatta</h2>
+            <p style="max-width: 700px; margin: 0 auto 30px auto;">
+                La scelta della tecnologia richiede un'analisi preliminare delle condizioni operative e dei parametri di
+                processo. I nostri ingegneri sono a disposizione per confrontare le opzioni per il tuo impianto.
+            </p>
+            <a href="/contatti/" class="btn-primary">Richiedi consulenza tecnica</a>
         </div>
-    </footer>
+    </section>
 
 </body>
 
