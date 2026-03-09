@@ -1,0 +1,217 @@
+@font-face {
+    font-family: 'inter-regular';
+    src: url('/fonts/Inter/static/Inter_18pt-Regular.ttf');
+}
+
+:root {}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: inter-regular;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+.container-xxl {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.container-xl {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.container-lg {
+    max-width: 992px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.container-md {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* ========================================
+===========================================
+===========================================
+HEROs
+===========================================
+===========================================
+======================================== */
+
+.hero-0000 {
+    background: linear-gradient(rgba(0, 30, 60, 0.8), rgba(0, 30, 60, 0.8)),
+        url('/immagini/placeholder.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+}
+
+.hero-0000-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.hero-0000 h1 {
+    color: #fff;
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.hero-0000 p {
+    color: #fff;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.hero-0000 a {
+    color: #fff;
+    font-size: 0.9rem;
+    background-color: #0056b3;
+    padding: 12px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.hero-0000-link {
+    display: flex;
+    justify-content: center;
+}
+
+/* ----------------------------------------
+HERO 0001
+---------------------------------------- */
+
+.hero-0001 {
+    background: linear-gradient(rgba(0, 30, 60, 0.8), rgba(0, 30, 60, 0.8)),
+        url('/immagini/placeholder.jpg');
+    background-size: cover;
+    background-position: center;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+}
+
+.hero-0001-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.hero-0001 h1 {
+    color: #fff;
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.hero-0001 p {
+    color: #fff;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.hero-0001 a {
+    color: #fff;
+    font-size: 0.9rem;
+    background-color: #0056b3;
+    padding: 12px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.hero-0001-link {
+    display: flex;
+    justify-content: center;
+}
+
+/* ========================================
+===========================================
+===========================================
+GRIDs
+===========================================
+===========================================
+======================================== */
+
+.grid-0000 {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+}
+
+.grid-0000-content-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.grid-0000 h2 {
+    color: #111;
+    font-size: 2rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.grid-0000 h3 {
+    color: #111;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+
+.grid-0000-supplementary {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 80ch;
+    margin: 0 auto 3rem auto;
+
+}
+
+.grid-0000 p {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.grid-0000-cards {
+    display: grid;
+    grid-template-columns: 1.0fr 1.0fr 1.0fr 1.0fr;
+    gap: 2rem;
+    list-style: none;
+    margin-bottom: 3rem;
+}
+
+.grid-0000-cards img {
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 1rem;
+}

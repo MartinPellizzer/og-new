@@ -1188,103 +1188,160 @@ def gen():
                 </div>
             </section>      
         '''
-
-    h2 = f'Applicazioni industriali dell’ozono'
-    subordinate = f'L’ozono viene utilizzato in ambito industriale per disinfettare, ossidare, deodorare e trattare fluidi e ambienti produttivi.'
-    img_height = '400px'
-    applications_html = f'''
-        <section class="applications">
-            <div class="applications-content container-xl">
-                <h2>
-                    {h2}
-                </h2>
-                <p style="text-align: center; max-width: 80ch; margin: 0 auto 3rem auto;">
-                    {subordinate}
-                </p>
-                <div class="applications-cards grid-3">
-                    <article>
-                        <a href="#" 
-                        title="Trattamento acque industriali con ozono">
-                            <figure>
-                                <img 
-                                    src="/immagini/home-acqua.jpg" 
-                                    alt="Impianto di trattamento acque industriali con sistema di ozonizzazione"
-                                    loading="lazy"
-                                    width="600"
-                                    height="400"
-                                    style="height: {img_height}; object-fit: cover; object-position: center; margin-bottom: 1rem;"
-                                >
-                            </figure>
-                            <h3>Trattamento acque industriali</h3>
-                        </a>
-                        <p>
-                            Progettiamo impianti di ozonizzazione per ossidare contaminanti, eliminare batteri
-                            e migliorare la qualità delle acque di processo e reflue.
-                        </p>
-                    </article>
-                    <article>
-                        <a href="#" 
-                        title="Sanificazione ambienti e superfici con ozono">
-                            <figure>
-                                <img 
-                                    src="/immagini/home-ambienti.jpg" 
-                                    alt="Sanificazione di ambiente industriale mediante generatore di ozono"
-                                    loading="lazy"
-                                    width="600"
-                                    height="400"
-                                    style="height: {img_height}; object-fit: cover; object-position: center; margin-bottom: 1rem;"
-                                >
-                            </figure>
-                            <h3>Sanificazione ambienti e superfici</h3>
-                        </a>
-                        <p>
-                            Utilizziamo generatori di ozono industriali per eliminare microrganismi,
-                            muffe, virus e biofilm da ambienti produttivi e superfici operative.
-                        </p>
-                    </article>
-                    <article>
-                        <a href="#" title="Abbattimento odori industriali con ozono">
-                            <figure>
-                                <img 
-                                    src="/immagini/home-odori.jpg" 
-                                    alt="Sistema di abbattimento odori industriali con tecnologia a ozono"
-                                    loading="lazy"
-                                    width="600"
-                                    height="400"
-                                    style="height: {img_height}; object-fit: cover; object-position: center; margin-bottom: 1rem;"
-                                >
-                            </figure>
-                            <h3>Abbattimento odori industriali</h3>
-                        </a>
-                        <p>
-                            Implementiamo soluzioni a ozono per decomporre composti organici volatili (VOC)
-                            e neutralizzare odori persistenti in impianti industriali.
-                        </p>
-                    </article>
-                    <article>
-                        <a href="#" title="Soluzioni a ozono per il settore alimentare e agroindustriale">
-                            <figure>
-                                <img 
-                                    src="/immagini/home-alimenti.jpg" 
-                                    alt="Applicazione di ozono nel settore alimentare e agroindustriale"
-                                    loading="lazy"
-                                    width="600"
-                                    height="400"
-                                    style="height: {img_height}; object-fit: cover; object-position: center; margin-bottom: 1rem;"
-                                >
-                            </figure>
-                            <h3>Settore alimentare e agroindustriale</h3>
-                        </a>
-                        <p>
-                            Progettiamo sistemi a ozono per la sicurezza alimentare,
-                            la sanificazione delle linee produttive e il trattamento delle acque di lavaggio.
-                        </p>
-                    </article>
-
+    
+    ########################################
+    # HERO 0001
+    ########################################
+    h1 = f'Sistemi industriali a ozono su misura per processi produttivi'
+    subordinate = f'Progettiamo, realizziamo e integriamo impianti a ozono personalizzati per risolvere problematiche tecniche in ambito industriale.'
+    href = '#'
+    anchor = 'Richiedi una consulenza gratuita'
+    hero_0001_html = f'''
+        <section class="hero-0001">
+            <div class="hero-0001-content-container">
+                <h1 class="container-lg">{h1}</h1>
+                <p class="container-md">{subordinate}</p>
+                <div class="hero-0001-link">
+                    <a href="{href}">{anchor}</a>
                 </div>
             </div>
         </section>
     '''
+
+    ########################################
+    # GRID 0000
+    ########################################
+    h2 = f'''Applicazioni industriali dell'ozono'''
+    subordinate = f'''L'ozono viene utilizzato in ambito industriale per disinfettare, ossidare, deodorare e trattare fluidi e ambienti produttivi.'''
+    img_height = '400px'
+    grid_0000_html = f'''
+        <section class="grid-0000 ">
+            <div class="grid-0000-content-container">
+                <h2>{h2}</h2>
+                <p class="grid-0000-supplementary">{subordinate}</p>
+                <div class="grid-0000-cards">
+                    <article>
+                        <img src="/immagini/home-acqua.jpg" alt="" width="200" height="400">
+                        <h3>Trattamento acque industriali</h3>
+                        <p>Progettiamo impianti di ozonizzazione per ossidare contaminanti, eliminare batteri e migliorare la qualità delle acque di processo e reflue.</p>
+                    </article>
+                    <article>
+                        <img src="/immagini/home-ambienti.jpg" alt="" width="200" height="400">
+                        <h3>Sanificazione ambienti e superfici</h3>
+                        <p>Utilizziamo generatori di ozono industriali per eliminare microrganismi, muffe, virus e biofilm da ambienti produttivi e superfici operative.</p>
+                    </article>
+                    <article>
+                        <img src="/immagini/home-odori.jpg" alt="" width="200" height="400">
+                        <h3>Abbattimento odori industriali</h3>
+                        <p>Implementiamo soluzioni a ozono per decomporre composti organici volatili (VOC) e neutralizzare odori persistenti in impianti industriali.</p>
+                    </article>
+                    <article>
+                        <img src="/immagini/home-alimenti.jpg" alt="" width="200" height="400">
+                        <h3>Settore alimentare e agroindustriale</h3>
+                        <p>Progettiamo sistemi a ozono per la sicurezza alimentare, la sanificazione delle linee produttive e il trattamento delle acque di lavaggio.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    '''
+
+    if 0:
+        h2 = f'Applicazioni industriali dell’ozono'
+        subordinate = f'L’ozono viene utilizzato in ambito industriale per disinfettare, ossidare, deodorare e trattare fluidi e ambienti produttivi.'
+        img_height = '400px'
+        applications_html = f'''
+            <section class="applications">
+                <div class="applications-content container-xl">
+                    <h2>
+                        {h2}
+                    </h2>
+                    <p style="text-align: center; max-width: 80ch; margin: 0 auto 3rem auto;">
+                        {subordinate}
+                    </p>
+                    <div class="applications-cards grid-3">
+                        <article>
+                            <a href="#" 
+                            title="Trattamento acque industriali con ozono">
+                                <figure>
+                                    <img 
+                                        src="/immagini/home-acqua.jpg" 
+                                        alt="Impianto di trattamento acque industriali con sistema di ozonizzazione"
+                                        loading="lazy"
+                                        width="600"
+                                        height="400"
+                                        style="height: {img_height}; object-fit: cover; object-position: center; margin-bottom: 1rem;"
+                                    >
+                                </figure>
+                                <h3>Trattamento acque industriali</h3>
+                            </a>
+                            <p>
+                                Progettiamo impianti di ozonizzazione per ossidare contaminanti, eliminare batteri
+                                e migliorare la qualità delle acque di processo e reflue.
+                            </p>
+                        </article>
+                        <article>
+                            <a href="#" 
+                            title="Sanificazione ambienti e superfici con ozono">
+                                <figure>
+                                    <img 
+                                        src="/immagini/home-ambienti.jpg" 
+                                        alt="Sanificazione di ambiente industriale mediante generatore di ozono"
+                                        loading="lazy"
+                                        width="600"
+                                        height="400"
+                                        style="height: {img_height}; object-fit: cover; object-position: center; margin-bottom: 1rem;"
+                                    >
+                                </figure>
+                                <h3>Sanificazione ambienti e superfici</h3>
+                            </a>
+                            <p>
+                                Utilizziamo generatori di ozono industriali per eliminare microrganismi,
+                                muffe, virus e biofilm da ambienti produttivi e superfici operative.
+                            </p>
+                        </article>
+                        <article>
+                            <a href="#" title="Abbattimento odori industriali con ozono">
+                                <figure>
+                                    <img 
+                                        src="/immagini/home-odori.jpg" 
+                                        alt="Sistema di abbattimento odori industriali con tecnologia a ozono"
+                                        loading="lazy"
+                                        width="600"
+                                        height="400"
+                                        style="height: {img_height}; object-fit: cover; object-position: center; margin-bottom: 1rem;"
+                                    >
+                                </figure>
+                                <h3>Abbattimento odori industriali</h3>
+                            </a>
+                            <p>
+                                Implementiamo soluzioni a ozono per decomporre composti organici volatili (VOC)
+                                e neutralizzare odori persistenti in impianti industriali.
+                            </p>
+                        </article>
+                        <article>
+                            <a href="#" title="Soluzioni a ozono per il settore alimentare e agroindustriale">
+                                <figure>
+                                    <img 
+                                        src="/immagini/home-alimenti.jpg" 
+                                        alt="Applicazione di ozono nel settore alimentare e agroindustriale"
+                                        loading="lazy"
+                                        width="600"
+                                        height="400"
+                                        style="height: {img_height}; object-fit: cover; object-position: center; margin-bottom: 1rem;"
+                                    >
+                                </figure>
+                                <h3>Settore alimentare e agroindustriale</h3>
+                            </a>
+                            <p>
+                                Progettiamo sistemi a ozono per la sicurezza alimentare,
+                                la sanificazione delle linee produttive e il trattamento delle acque di lavaggio.
+                            </p>
+                        </article>
+
+                    </div>
+                </div>
+            </section>
+        '''
 
     h2 = f'Perché scegliere l’ozono nei processi industriali?'
     subordinate = f'L’ozono è un ossidante naturale con elevato potere disinfettante che elimina batteri, virus, muffe e composti organici senza lasciare residui chimici.'
@@ -2071,8 +2128,8 @@ Soluzioni di ossidazione con ozono per processi chimici industriali,
         <body>
             {components.header_default()}
             <main class="home" id="contenuto-principale">
-                {hero_html}
-                {applications_html}
+                {hero_0001_html}
+                {grid_0000_html}
                 {benefits_html}
                 {sectors_html}
                 {authority_html}
