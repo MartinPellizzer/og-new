@@ -63,7 +63,7 @@ def main():
             <div class="grid-0000-content-container">
                 <h2>{h2}</h2>
                 <p class="grid-0000-supplementary">{subordinate}</p>
-                <div class="grid-0000-cards grid-3">
+                <div class="grid-0000-cards grid-4">
                     <article>
                         <img src="/immagini/placeholder.jpg" alt="" width="200" height="400">
                         <h3>Trattamento acque industriali</h3>
@@ -194,6 +194,80 @@ def main():
             </div>
         </section>
     '''
+    
+
+   ########################################
+    # GRID 0004
+    ########################################
+    row_0_h2 = f'''Purificazione dell'aria con ozono per eliminare odori, batteri e contaminanti'''
+    row_0_subordinate = f'''Per purificare l'aria, i sistemi ad ozono ossidano odori, microrganismi e composti organici volatili presenti negli ambienti o nei condotti HVAC.'''
+    row_0_img_src = f'''/immagini/placeholder.jpg'''
+    row_1_h2 = f'''Trattamento dell'acqua con ozono per disinfezione e ossidazione avanzata'''
+    row_1_subordinate = f'''Per trattare l'acqua, l'ozono viene dissolto nel flusso idrico per ossidare contaminanti organici, eliminare microrganismi e migliorare qualità, colore e odore dell'acqua.'''
+    row_1_img_src = f'''/immagini/placeholder.jpg'''
+    row_2_h2 = f'''Sanificazione delle superfici con ozono per eliminare microrganismi e residui biologici'''
+    row_2_subordinate = f'''Per sanificare le superfici, l'ozono viene diffuso negli ambienti o in camere di trattamento per inattivare batteri, virus, muffe e biofilm su materiali e attrezzature.'''
+    row_2_img_src = f'''/immagini/placeholder.jpg'''
+    # subordinate = f'''Progettiamo e realizziamo impianti a ozono per applicazioni industriali specifiche, adattando ogni soluzione ai processi produttivi del settore di riferimento.'''
+    img_height = '400px'
+    grid_0004_html = f'''
+        <section class="grid-0004">
+            <div class="container-xl grid-0004-content-container">
+                <article class="grid-0004-row m-flex">
+                    <div class="flex-1">
+                        <h2>{row_0_h2}</h2>
+                        <p>{row_0_subordinate}</p>
+                        <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+                            <li style="margin-bottom: 0.8rem;">Odori persistenti in ambienti produttivi</li>
+                            <li style="margin-bottom: 0.8rem;">Emissioni VOC non controllate</li>
+                            <li style="margin-bottom: 0.8rem;">Non conformità alle normative ambientali</li>
+                            <li style="margin-bottom: 0.8rem;">Accumulo contaminanti nei condotti</li>
+                            <li style="margin-bottom: 0.8rem;">Carica microbica in ambienti chiusi</li>
+                        </ul>
+                    </div>
+                    <div class="flex-1">
+                        <img src="{row_0_img_src}">
+                    </div>
+                </article>
+                <article class="grid-0004-row m-flex m-row-reverse">
+                    <div class="flex-1">
+                        <h2>{row_1_h2}</h2>
+                        <p>{row_1_subordinate}</p>
+                        <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
+                            <li style="margin-bottom: 0.8rem;">Elevato COD/BOD negli scarichi</li>
+                            <li style="margin-bottom: 0.8rem;">Presenza di contaminanti ossidabili</li>
+                            <li style="margin-bottom: 0.8rem;">Biofilm in circuiti chiusi</li>
+                            <li style="margin-bottom: 0.8rem;">Non conformità allo scarico</li>
+                            <li style="margin-bottom: 0.8rem;">Disinfezione inefficace post-trattamento</li>
+                        </ul>
+                    </div>
+                    <div class="flex-1">
+                        <img src="{row_1_img_src}">
+                    </div>
+                </article>
+                <article class="grid-0004-row m-flex">
+                    <div class="flex-1">
+                        <h2>{row_2_h2}</h2>
+                        <p>{row_2_subordinate}</p>
+                        <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
+                            <li style="margin-bottom: 0.8rem;">Biofilm persistente sulle superfici</li>
+                            <li style="margin-bottom: 0.8rem;">Contaminazione microbiologica ricorrente</li>
+                            <li style="margin-bottom: 0.8rem;">Serbatoi e tubazioni difficili da trattare</li>
+                            <li style="margin-bottom: 0.8rem;">Linee produttive complesse</li>
+                            <li style="margin-bottom: 0.8rem;">Rischi per sicurezza alimentare (HACCP)</li>
+                        </ul>
+                    </div>
+                    <div class="flex-1">
+                        <img src="{row_2_img_src}">
+                    </div>
+                </article>
+            </div>
+        </section>
+    '''
+
+    '''
+   
+    '''
 
     ########################################
     # FAQ 0000
@@ -248,6 +322,7 @@ def main():
             {grid_0002_html}
             {grid_0003_html}
             {faq_0000_html}
+            {grid_0004_html}
             </main>
         </body>
         </html>

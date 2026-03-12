@@ -1431,8 +1431,8 @@ HERO 0001
 ---------------------------------------- */
 
 .hero-0001 {
-    background: linear-gradient(rgba(0, 30, 60, 0.8), rgba(0, 30, 60, 0.8)),
-        url('/immagini/home/generatore-ozono-industriale-impianto.jpg');
+    background-image: linear-gradient(rgba(0, 30, 60, 0.8), rgba(0, 30, 60, 0.8)),
+        url('/immagini/placeholder.jpg');
     background-size: cover;
     background-position: center;
     padding-top: 8rem;
@@ -1547,7 +1547,7 @@ GRID 0001
 .grid-0001 {
     padding-top: 8rem;
     padding-bottom: 8rem;
-    background: linear-gradient(rgba(0, 30, 60, 0.8), rgba(0, 30, 60, 0.8)),
+    background-image: linear-gradient(rgba(0, 30, 60, 0.8), rgba(0, 30, 60, 0.8)),
         url('/immagini/home-benefici.jpg');
     background-size: cover;
     background-position: center;
@@ -1665,7 +1665,7 @@ GRID 0003
 .grid-0003 {
     padding-top: 8rem;
     padding-bottom: 8rem;
-    background: linear-gradient(rgba(0, 30, 60, 0.8), rgba(0, 30, 60, 0.8)),
+    background-image: linear-gradient(rgba(0, 30, 60, 0.8), rgba(0, 30, 60, 0.8)),
         url('/immagini/home-dati-tecnici.jpg');
     background-size: cover;
     background-position: center;
@@ -1715,6 +1715,43 @@ GRID 0003
     margin-bottom: 1rem;
 }
 
+/* ----------------------------------------
+GRID 0004
+---------------------------------------- */
+
+.grid-0004 {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+}
+
+.grid-0004-content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.grid-0004-row {
+    align-items: center;
+    gap: 5rem;
+}
+
+.grid-0004 h2 {
+    color: #111;
+    font-size: 2.0rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.grid-0004 p {
+    margin-bottom: 2rem;
+}
+
+.grid-0004 img {
+    height: 480px;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 1rem;
+}
 
 /* ========================================
 ===========================================

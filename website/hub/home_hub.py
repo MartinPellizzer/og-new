@@ -1194,10 +1194,13 @@ def gen():
     ########################################
     h1 = f'Sistemi industriali a ozono su misura per processi produttivi'
     subordinate = f'Progettiamo, realizziamo e integriamo impianti a ozono personalizzati per risolvere problematiche tecniche in ambito industriale.'
-    href = '#'
+    href = '/contatti.html'
     anchor = 'Richiedi una consulenza gratuita'
     hero_0001_html = f'''
-        <section class="hero-0001">
+        <section class="hero-0001"
+            style="background-image: linear-gradient(rgba(0, 30, 60, 0.8), rgba(0, 30, 60, 0.8)), 
+            url('/immagini/home/generatore-ozono-industriale-impianto.jpg');        
+        ">
             <div class="hero-0001-content-container">
                 <h1 class="container-lg">{h1}</h1>
                 <p class="container-md">{subordinate}</p>
@@ -1219,7 +1222,7 @@ def gen():
             <div class="grid-0000-content-container">
                 <h2>{h2}</h2>
                 <p class="grid-0000-supplementary">{subordinate}</p>
-                <div class="grid-0000-cards grid-3">
+                <div class="grid-0000-cards grid-4">
                     <article>
                         <img src="/immagini/home-acqua.jpg" alt="" width="200" height="400">
                         <h3>Trattamento acque industriali</h3>

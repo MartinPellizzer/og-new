@@ -30,23 +30,50 @@ def main():
             </div>
         </div>
     '''
+    
+    ########################################
+    # HERO 0001
+    ########################################
+    h1 = f'Sistemi industriali a ozono su misura per processi produttivi'
+    subordinate = f'Progettiamo, realizziamo e integriamo impianti a ozono personalizzati per risolvere problematiche tecniche in ambito industriale.'
+    href = '/contatti.html'
+    anchor = 'Richiedi una consulenza gratuita'
+    hero_0001_html = f'''
+        <section class="hero-0001"
+            style="background-image: linear-gradient(rgba(0, 30, 60, 0.8), rgba(0, 30, 60, 0.8)), 
+            url('/immagini/soluzioni.jpg');
+        ">
+            <div class="hero-0001-content-container">
+                <h1 class="container-lg">{h1}</h1>
+                <p class="container-md">{subordinate}</p>
+                <div class="hero-0001-link">
+                    <a href="{href}">{anchor}</a>
+                </div>
+            </div>
+        </section>
+    '''
 
-    gap = f'4rem'
-    margin_bottom = gap
-    # <a href="#">→ Approfondisci le soluzioni per il trattamento aria</a>
-    # <a href="#">→ Approfondisci trattamento acque industriali</a>
-    # <a href="#">→ Approfondisci sanificazione impianti</a>
+    ########################################
+    # GRID 0004
+    ########################################
+    row_0_h2 = f'''Purificazione dell'aria con ozono per eliminare odori, batteri e contaminanti'''
+    row_0_subordinate = f'''Per purificare l'aria, i sistemi ad ozono ossidano odori, microrganismi e composti organici volatili presenti negli ambienti o nei condotti HVAC.'''
+    row_0_img_src = f'''/immagini/soluzioni-aria.jpg'''
+    row_1_h2 = f'''Trattamento dell'acqua con ozono per disinfezione e ossidazione avanzata'''
+    row_1_subordinate = f'''Per trattare l'acqua, l'ozono viene dissolto nel flusso idrico per ossidare contaminanti organici, eliminare microrganismi e migliorare qualità, colore e odore dell'acqua.'''
+    row_1_img_src = f'''/immagini/soluzioni-acqua.jpg'''
+    row_2_h2 = f'''Sanificazione delle superfici con ozono per eliminare microrganismi e residui biologici'''
+    row_2_subordinate = f'''Per sanificare le superfici, l'ozono viene diffuso negli ambienti o in camere di trattamento per inattivare batteri, virus, muffe e biofilm su materiali e attrezzature.'''
+    row_2_img_src = f'''/immagini/soluzioni-superfici.jpg'''
+    # subordinate = f'''Progettiamo e realizziamo impianti a ozono per applicazioni industriali specifiche, adattando ogni soluzione ai processi produttivi del settore di riferimento.'''
+    img_height = '400px'
     problemi_html = f'''
-    <section class="problems-section">
-        <div class="container">
-            <div class="problems-grid">
-                
-                <!-- A. ARIA -->
-                <article class="container-xl m-flex" style="align-items: center; gap: {gap}; margin-bottom: {margin_bottom}; margin-top: 8.0rem;">
+        <section class="grid-0004">
+            <div class="container-xl grid-0004-content-container">
+                <article class="grid-0004-row m-flex">
                     <div class="flex-1">
-                        <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">
-                            Criticità nella gestione dell'aria di processo
-                        </h2>
+                        <h2>{row_0_h2}</h2>
+                        <p>{row_0_subordinate}</p>
                         <ul style="margin-left: 2rem; margin-bottom: 1rem;">
                             <li style="margin-bottom: 0.8rem;">Odori persistenti in ambienti produttivi</li>
                             <li style="margin-bottom: 0.8rem;">Emissioni VOC non controllate</li>
@@ -54,23 +81,15 @@ def main():
                             <li style="margin-bottom: 0.8rem;">Accumulo contaminanti nei condotti</li>
                             <li style="margin-bottom: 0.8rem;">Carica microbica in ambienti chiusi</li>
                         </ul>
-                        <div style="background-color: #f0f4f8; padding: 1rem; color: #555; font-size: 0.9rem;">
-                            <p>
-                            <strong>Causa Tecnica:</strong> L'inefficienza dei sistemi di ricirbo e filtrazione standard permette la persistenza di composti organici volatili e la proliferazione batterica, saturando rapidamente i filtri a carboni attivi.
-                            </p>
-                        </div>
                     </div>
                     <div class="flex-1">
-                        <img src="/immagini/soluzioni-aria.jpg">
+                        <img src="{row_0_img_src}">
                     </div>
                 </article>
-
-                <!-- B. ACQUA -->
-                <article class="container-xl m-flex m-row-reverse" style="align-items: center; gap: {gap}; margin-bottom: {margin_bottom};">
+                <article class="grid-0004-row m-flex m-row-reverse">
                     <div class="flex-1">
-                        <h2 style="font-size: 2rem; margin-bottom: 1rem;">
-                            Criticità nel trattamento delle acque industriali
-                        </h2>
+                        <h2>{row_1_h2}</h2>
+                        <p>{row_1_subordinate}</p>
                         <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
                             <li style="margin-bottom: 0.8rem;">Elevato COD/BOD negli scarichi</li>
                             <li style="margin-bottom: 0.8rem;">Presenza di contaminanti ossidabili</li>
@@ -78,23 +97,15 @@ def main():
                             <li style="margin-bottom: 0.8rem;">Non conformità allo scarico</li>
                             <li style="margin-bottom: 0.8rem;">Disinfezione inefficace post-trattamento</li>
                         </ul>
-                        <div style="background-color: #f0f4f8; padding: 1rem; color: #555; font-size: 0.9rem;">
-                            <p>
-                            <strong>Causa Tecnica:</strong> L'uso di ossidanti chimici tradizionali (cloro) spesso non abbatte completamente il carico organico e favorisce la formazione di sottoprodotti tossici, senza rimuovere efficacemente il biofilm.
-                            </p>
-                        </div>
                     </div>
                     <div class="flex-1">
-                        <img src="/immagini/soluzioni-acqua.jpg">
+                        <img src="{row_1_img_src}">
                     </div>
                 </article>
-
-                <!-- C. IMPIANTI -->
-                <article class="container-xl m-flex" style="align-items: center; gap: {gap}; margin-bottom: 8.0rem;">
+                <article class="grid-0004-row m-flex">
                     <div class="flex-1">
-                        <h2 style="font-size: 2rem; margin-bottom: 1rem;">
-                            Criticità nella sanificazione di impianti industriali
-                        </h2>
+                        <h2>{row_2_h2}</h2>
+                        <p>{row_2_subordinate}</p>
                         <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
                             <li style="margin-bottom: 0.8rem;">Biofilm persistente sulle superfici</li>
                             <li style="margin-bottom: 0.8rem;">Contaminazione microbiologica ricorrente</li>
@@ -102,21 +113,102 @@ def main():
                             <li style="margin-bottom: 0.8rem;">Linee produttive complesse</li>
                             <li style="margin-bottom: 0.8rem;">Rischi per sicurezza alimentare (HACCP)</li>
                         </ul>
-                        <div style="background-color: #f0f4f8; padding: 1rem; color: #555; font-size: 0.9rem;">
-                            <p>
-                            <strong>Causa Tecnica:</strong> Le procedure di CIP (Cleaning In Place) standard spesso lasciano residui organici che agiscono da substrato per la rigenerazione batterica, rendendo necessari fermi macchina frequenti.
-                            </p>
-                        </div>
                     </div>
                     <div class="flex-1">
-                        <img src="/immagini/soluzioni-superfici.jpg">
+                        <img src="{row_2_img_src}">
                     </div>
                 </article>
-
             </div>
-        </div>
-    </section>
+        </section>
     '''
+
+    if 0:
+        gap = f'4rem'
+        margin_bottom = gap
+        # <a href="#">→ Approfondisci le soluzioni per il trattamento aria</a>
+        # <a href="#">→ Approfondisci trattamento acque industriali</a>
+        # <a href="#">→ Approfondisci sanificazione impianti</a>
+        problemi_html = f'''
+        <section class="problems-section">
+            <div class="container">
+                <div class="problems-grid">
+                    
+                    <!-- A. ARIA -->
+                    <article class="container-xl m-flex" style="align-items: center; gap: {gap}; margin-bottom: {margin_bottom}; margin-top: 8.0rem;">
+                        <div class="flex-1">
+                            <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">
+                                Criticità nella gestione dell'aria di processo
+                            </h2>
+                            <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+                                <li style="margin-bottom: 0.8rem;">Odori persistenti in ambienti produttivi</li>
+                                <li style="margin-bottom: 0.8rem;">Emissioni VOC non controllate</li>
+                                <li style="margin-bottom: 0.8rem;">Non conformità alle normative ambientali</li>
+                                <li style="margin-bottom: 0.8rem;">Accumulo contaminanti nei condotti</li>
+                                <li style="margin-bottom: 0.8rem;">Carica microbica in ambienti chiusi</li>
+                            </ul>
+                            <div style="background-color: #f0f4f8; padding: 1rem; color: #555; font-size: 0.9rem;">
+                                <p>
+                                <strong>Causa Tecnica:</strong> L'inefficienza dei sistemi di ricirbo e filtrazione standard permette la persistenza di composti organici volatili e la proliferazione batterica, saturando rapidamente i filtri a carboni attivi.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <img src="/immagini/soluzioni-aria.jpg">
+                        </div>
+                    </article>
+
+                    <!-- B. ACQUA -->
+                    <article class="container-xl m-flex m-row-reverse" style="align-items: center; gap: {gap}; margin-bottom: {margin_bottom};">
+                        <div class="flex-1">
+                            <h2 style="font-size: 2rem; margin-bottom: 1rem;">
+                                Criticità nel trattamento delle acque industriali
+                            </h2>
+                            <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
+                                <li style="margin-bottom: 0.8rem;">Elevato COD/BOD negli scarichi</li>
+                                <li style="margin-bottom: 0.8rem;">Presenza di contaminanti ossidabili</li>
+                                <li style="margin-bottom: 0.8rem;">Biofilm in circuiti chiusi</li>
+                                <li style="margin-bottom: 0.8rem;">Non conformità allo scarico</li>
+                                <li style="margin-bottom: 0.8rem;">Disinfezione inefficace post-trattamento</li>
+                            </ul>
+                            <div style="background-color: #f0f4f8; padding: 1rem; color: #555; font-size: 0.9rem;">
+                                <p>
+                                <strong>Causa Tecnica:</strong> L'uso di ossidanti chimici tradizionali (cloro) spesso non abbatte completamente il carico organico e favorisce la formazione di sottoprodotti tossici, senza rimuovere efficacemente il biofilm.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <img src="/immagini/soluzioni-acqua.jpg">
+                        </div>
+                    </article>
+
+                    <!-- C. IMPIANTI -->
+                    <article class="container-xl m-flex" style="align-items: center; gap: {gap}; margin-bottom: 8.0rem;">
+                        <div class="flex-1">
+                            <h2 style="font-size: 2rem; margin-bottom: 1rem;">
+                                Criticità nella sanificazione di impianti industriali
+                            </h2>
+                            <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
+                                <li style="margin-bottom: 0.8rem;">Biofilm persistente sulle superfici</li>
+                                <li style="margin-bottom: 0.8rem;">Contaminazione microbiologica ricorrente</li>
+                                <li style="margin-bottom: 0.8rem;">Serbatoi e tubazioni difficili da trattare</li>
+                                <li style="margin-bottom: 0.8rem;">Linee produttive complesse</li>
+                                <li style="margin-bottom: 0.8rem;">Rischi per sicurezza alimentare (HACCP)</li>
+                            </ul>
+                            <div style="background-color: #f0f4f8; padding: 1rem; color: #555; font-size: 0.9rem;">
+                                <p>
+                                <strong>Causa Tecnica:</strong> Le procedure di CIP (Cleaning In Place) standard spesso lasciano residui organici che agiscono da substrato per la rigenerazione batterica, rendendo necessari fermi macchina frequenti.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <img src="/immagini/soluzioni-superfici.jpg">
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+        '''
 
     conseguenze_html = '''
         <section class="impact-section">
@@ -208,7 +300,7 @@ def main():
         <body>
             {components.header_default()}
             <main>
-                {hero_html}
+                {hero_0001_html}
                 {problemi_html}
                 {conseguenze_html}
                 {soluzioni_html}
