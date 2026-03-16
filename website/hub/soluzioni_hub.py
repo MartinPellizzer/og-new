@@ -160,6 +160,40 @@ def main():
             </div>
         </section>
     '''
+    
+    ########################################
+    # GRID 0007
+    ########################################
+    h2 = f'''Come interveniamo per risolvere queste problematiche'''
+    subordinate = f'''Progettiamo sistemi a ozono su misura integrati nei processi produttivi, dimensionati in base a concentrazione, portata e parametri operativi specifici. Non vendiamo macchine standard, ma risolviamo problemi di processo.'''
+    card_0000_h3 = f'01. Analisi Tecnica'
+    card_0000_subordinate = f'Rilevamento dati in sito e valutazione delle criticità attuali.'
+    card_0001_h3 = f'02. Studio di Fattibilità'
+    card_0001_subordinate = f'Calcolo del dosaggio necessario e verifica della compatibilità impiantistica.'
+    card_0002_h3 = f'03. Integrazione'
+    card_0002_subordinate = f'Installazione del generatore e automazione del processo di ossidazione.'
+    soluzioni_html = f'''
+        <section class="grid-0006">
+            <div class="container-xl grid-0006-content-container">
+                <h2>{h2}</h2>
+                <p class="grid-0006-subordinate">{subordinate}</p>
+                <div class="grid-3 grid-0006-cards">
+                    <div class="grid-0006-card">
+                        <h3>{card_0000_h3}</h3>
+                        <p>{card_0000_subordinate}</p>
+                    </div>
+                    <div class="grid-0006-card">
+                        <h3>{card_0001_h3}</h3>
+                        <p>{card_0001_subordinate}</p>
+                    </div>
+                    <div class="grid-0006-card">
+                        <h3>{card_0002_h3}</h3>
+                        <p>{card_0002_subordinate}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    '''
 
     if 0:
         gap = f'4rem'
@@ -286,36 +320,32 @@ def main():
             </section>
         '''
 
-    '''
-                <div style="text-align: center; margin-top: 30px;">
-                    <a href="#">→ Scopri il nostro metodo</a>
-                </div>
-    '''
-    soluzioni_html = f'''
-        <section class="solution-section">
-            <div class="container-xl">
-                <div class="solution-intro">
-                    <h2 style="font-size: 2rem; margin-bottom: 1rem;">Come interveniamo per risolvere queste problematiche</h2>
-                    <p>Progettiamo sistemi a ozono su misura integrati nei processi produttivi, dimensionati in base a concentrazione, portata e parametri operativi specifici. Non vendiamo macchine standard, ma risolviamo problemi di processo.</p>
-                </div>
+    if 0:
+        soluzioni_html = f'''
+            <section class="solution-section">
+                <div class="container-xl">
+                    <div class="solution-intro">
+                        <h2 style="font-size: 2rem; margin-bottom: 1rem;">Come interveniamo per risolvere queste problematiche</h2>
+                        <p>Progettiamo sistemi a ozono su misura integrati nei processi produttivi, dimensionati in base a concentrazione, portata e parametri operativi specifici. Non vendiamo macchine standard, ma risolviamo problemi di processo.</p>
+                    </div>
 
-                <div class="solution-steps">
-                    <div class="step">
-                        <h3>01. Analisi Tecnica</h3>
-                        <p>Rilevamento dati in sito e valutazione delle criticità attuali.</p>
-                    </div>
-                    <div class="step">
-                        <h3>02. Studio di Fattibilità</h3>
-                        <p>Calcolo del dosaggio necessario e verifica della compatibilità impiantistica.</p>
-                    </div>
-                    <div class="step">
-                        <h3>03. Integrazione</h3>
-                        <p>Installazione del generatore e automazione del processo di ossidazione.</p>
+                    <div class="solution-steps">
+                        <div class="step">
+                            <h3>01. Analisi Tecnica</h3>
+                            <p>Rilevamento dati in sito e valutazione delle criticità attuali.</p>
+                        </div>
+                        <div class="step">
+                            <h3>02. Studio di Fattibilità</h3>
+                            <p>Calcolo del dosaggio necessario e verifica della compatibilità impiantistica.</p>
+                        </div>
+                        <div class="step">
+                            <h3>03. Integrazione</h3>
+                            <p>Installazione del generatore e automazione del processo di ossidazione.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    '''
+            </section>
+        '''
 
     cta_html = f'''
         <section class="final-cta">

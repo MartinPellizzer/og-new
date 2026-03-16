@@ -306,6 +306,42 @@ def main():
             </div>
         </section>
     '''
+    
+    ########################################
+    # GRID 0006
+    ########################################
+    _id = f'GRID 0006'
+    h2 = f'''Come interveniamo per risolvere queste problematiche'''
+    subordinate = f'''Progettiamo sistemi a ozono su misura integrati nei processi produttivi, dimensionati in base a concentrazione, portata e parametri operativi specifici. Non vendiamo macchine standard, ma risolviamo problemi di processo.'''
+    card_0000_h3 = f'01. Analisi Tecnica'
+    card_0000_subordinate = f'Rilevamento dati in sito e valutazione delle criticità attuali.'
+    card_0001_h3 = f'02. Studio di Fattibilità'
+    card_0001_subordinate = f'Calcolo del dosaggio necessario e verifica della compatibilità impiantistica.'
+    card_0002_h3 = f'03. Integrazione'
+    card_0002_subordinate = f'Installazione del generatore e automazione del processo di ossidazione.'
+    grid_0006_html = f'''
+        <span style="color: #111; background-color: #ffff00;">{_id}</span>
+        <section class="grid-0006">
+            <div class="container-xl grid-0006-content-container">
+                <h2>{h2}</h2>
+                <p class="grid-0006-subordinate">{subordinate}</p>
+                <div class="grid-3 grid-0006-cards">
+                    <div class="grid-0006-card">
+                        <h3>{card_0000_h3}</h3>
+                        <p>{card_0000_subordinate}</p>
+                    </div>
+                    <div class="grid-0006-card">
+                        <h3>{card_0001_h3}</h3>
+                        <p>{card_0001_subordinate}</p>
+                    </div>
+                    <div class="grid-0006-card">
+                        <h3>{card_0002_h3}</h3>
+                        <p>{card_0002_subordinate}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    '''
 
     ########################################
     # FAQ 0000
@@ -362,6 +398,7 @@ def main():
             {faq_0000_html}
             {grid_0004_html}
             {grid_0005_html}
+            {grid_0006_html}
             </main>
         </body>
         </html>
