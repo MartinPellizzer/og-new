@@ -378,6 +378,27 @@ def main():
         </section>
     '''
 
+    ########################################
+    # CTA 0000
+    ########################################
+    _id = f'CTA 0000'
+    h2 = f'''Richiedi analisi tecnica personalizzata'''
+    subordinate = f'''Valutiamo con te la fattibilità dell'intervento sul tuo impianto.'''
+    href = '/contatti.html'
+    anchor = 'Richiedi analisi tecnica'
+    cta_0000_html = f'''
+        <span style="color: #111; background-color: #ffff00;">{_id}</span>
+        <section class="cta-0000">
+            <div class="container-xl">
+                <h2>{h2}</h2>
+                <p class="cta-0000-subordinate">{subordinate}</p>
+                <div>
+                    <a class="cta-0000-link" href="{href}">{anchor}</a>
+                </div>
+            </div>
+        </section>
+    '''
+
     html = f'''
         <!DOCTYPE html>
         <html lang="it">
@@ -399,6 +420,7 @@ def main():
             {grid_0004_html}
             {grid_0005_html}
             {grid_0006_html}
+            {cta_0000_html}
             </main>
         </body>
         </html>

@@ -346,16 +346,36 @@ def main():
                 </div>
             </section>
         '''
-
+    
+    ########################################
+    # CTA 0000
+    ########################################
+    h2 = f'''Richiedi analisi tecnica personalizzata'''
+    subordinate = f'''Valutiamo con te la fattibilità dell'intervento sul tuo impianto.'''
+    href = '/contatti.html'
+    anchor = 'Richiedi analisi tecnica'
     cta_html = f'''
-        <section class="final-cta">
+        <section class="cta-0000">
             <div class="container-xl">
-                <h2 style="font-size: 2rem; margin-bottom: 1rem;">Richiedi analisi tecnica personalizzata</h2>
-                <p style="margin-bottom: 20px;">Valutiamo insieme la fattibilità dell'intervento sul tuo impianto.</p>
-                <a href="#" class="btn1" style="text-decoration: none;">Richiedi analisi tecnica</a>
+                <h2>{h2}</h2>
+                <p class="cta-0000-subordinate">{subordinate}</p>
+                <div>
+                    <a class="cta-0000-link" href="{href}">{anchor}</a>
+                </div>
             </div>
         </section>
     '''
+
+    if 0:
+        cta_html = f'''
+            <section class="final-cta">
+                <div class="container-xl">
+                    <h2 style="font-size: 2rem; margin-bottom: 1rem;">Richiedi analisi tecnica personalizzata</h2>
+                    <p style="margin-bottom: 20px;">Valutiamo insieme la fattibilità dell'intervento sul tuo impianto.</p>
+                    <a href="#" class="btn1" style="text-decoration: none;">Richiedi analisi tecnica</a>
+                </div>
+            </section>
+        '''
 
     html = f'''
         <!DOCTYPE html>
