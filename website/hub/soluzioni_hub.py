@@ -122,6 +122,45 @@ def main():
         </section>
     '''
 
+    ########################################
+    # GRID 0005
+    ########################################
+    h2 = f'''Impatto delle criticità sui processi produttivi'''
+    subordinate = f'''Il mancato controllo delle variabili sopra descritte genera costi occulti significativi.'''
+    card_0000_h3 = f''
+    card_0000_subordinate = f''
+    conseguenze_html = f'''
+        <section class="grid-0005">
+            <div class="container-xl grid-0005-content-container">
+                <h2>{h2}</h2>
+                <p class="grid-0005-subordinate">{subordinate}</p>
+                
+                <div class="grid-5 grid-0005-cards">
+                    <div class="grid-0005-card">
+                        <h3>Fermi Impianto</h3>
+                        <p>Per manutenzione straordinaria e sanificazioni d'emergenza</p>
+                    </div>
+                    <div class="grid-0005-card">
+                        <h3>Costi Chimici</h3>
+                        <p>Elevato consumo di reagenti per tentativi di bonifica</p>
+                    </div>
+                    <div class="grid-0005-card">
+                        <h3>Rischi Normativi</h3>
+                        <p>Sanzioni per sforamento limiti emissivi o scarichi</p>
+                    </div>
+                    <div class="grid-0005-card">
+                        <h3>Qualità Prodotto</h3>
+                        <p>Riduzione della shelf-life e contaminazione crociata</p>
+                    </div>
+                    <div class="grid-0005-card">
+                        <h3>Reputazione</h3>
+                        <p>Impatto negativo su clienti e audit di qualità</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    '''
+
     if 0:
         gap = f'4rem'
         margin_bottom = gap
@@ -210,41 +249,42 @@ def main():
         </section>
         '''
 
-    conseguenze_html = '''
-        <section class="impact-section">
-            <div class="container-xl">
-                <h2 style="font-size: 2rem; margin-bottom: 1rem;">
-                    Impatto delle criticità sui processi produttivi
-                </h2>
-                <p style="color: #fff;">
-                    Il mancato controllo delle variabili sopra descritte genera costi occulti significativi.
-                </p>
-                
-                <div class="impact-grid">
-                    <div class="impact-item">
-                        <strong>Fermi Impianto</strong>
-                        <span>Per manutenzione straordinaria e sanificazioni d'emergenza</span>
-                    </div>
-                    <div class="impact-item">
-                        <strong>Costi Chimici</strong>
-                        <span>Elevato consumo di reagenti per tentativi di bonifica</span>
-                    </div>
-                    <div class="impact-item">
-                        <strong>Rischi Normativi</strong>
-                        <span>Sanzioni per sforamento limiti emissivi o scarichi</span>
-                    </div>
-                    <div class="impact-item">
-                        <strong>Qualità Prodotto</strong>
-                        <span>Riduzione della shelf-life e contaminazione crociata</span>
-                    </div>
-                    <div class="impact-item">
-                        <strong>Reputazione</strong>
-                        <span>Impatto negativo su clienti e audit di qualità</span>
+    if 0:
+        conseguenze_html = '''
+            <section class="impact-section">
+                <div class="container-xl">
+                    <h2 style="font-size: 2rem; margin-bottom: 1rem;">
+                        Impatto delle criticità sui processi produttivi
+                    </h2>
+                    <p style="color: #fff;">
+                        Il mancato controllo delle variabili sopra descritte genera costi occulti significativi.
+                    </p>
+                    
+                    <div class="impact-grid">
+                        <div class="impact-item">
+                            <h3>Fermi Impianto</h3>
+                            <p>Per manutenzione straordinaria e sanificazioni d'emergenza</p>
+                        </div>
+                        <div class="impact-item">
+                            <h3>Costi Chimici</h3>
+                            <p>Elevato consumo di reagenti per tentativi di bonifica</p>
+                        </div>
+                        <div class="impact-item">
+                            <h3>Rischi Normativi</h3>
+                            <p>Sanzioni per sforamento limiti emissivi o scarichi</p>
+                        </div>
+                        <div class="impact-item">
+                            <h3>Qualità Prodotto</h3>
+                            <p>Riduzione della shelf-life e contaminazione crociata</p>
+                        </div>
+                        <div class="impact-item">
+                            <h3>Reputazione</h3>
+                            <p>Impatto negativo su clienti e audit di qualità</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    '''
+            </section>
+        '''
 
     '''
                 <div style="text-align: center; margin-top: 30px;">

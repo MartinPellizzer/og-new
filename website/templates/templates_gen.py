@@ -194,11 +194,11 @@ def main():
             </div>
         </section>
     '''
-    
 
-   ########################################
+    ########################################
     # GRID 0004
     ########################################
+    _id = f'GRID 0004'
     row_0_h2 = f'''Purificazione dell'aria con ozono per eliminare odori, batteri e contaminanti'''
     row_0_subordinate = f'''Per purificare l'aria, i sistemi ad ozono ossidano odori, microrganismi e composti organici volatili presenti negli ambienti o nei condotti HVAC.'''
     row_0_img_src = f'''/immagini/placeholder.jpg'''
@@ -211,6 +211,7 @@ def main():
     # subordinate = f'''Progettiamo e realizziamo impianti a ozono per applicazioni industriali specifiche, adattando ogni soluzione ai processi produttivi del settore di riferimento.'''
     img_height = '400px'
     grid_0004_html = f'''
+        <span style="color: #111; background-color: #ffff00;">{_id}</span>
         <section class="grid-0004">
             <div class="container-xl grid-0004-content-container">
                 <article class="grid-0004-row m-flex">
@@ -265,8 +266,45 @@ def main():
         </section>
     '''
 
-    '''
-   
+    ########################################
+    # GRID 0005
+    ########################################
+    _id = f'GRID 0005'
+    h2 = f'''Impatto delle criticità sui processi produttivi'''
+    subordinate = f'''Il mancato controllo delle variabili sopra descritte genera costi occulti significativi.'''
+    card_0000_h3 = f''
+    card_0000_subordinate = f''
+    grid_0005_html = f'''
+        <span style="color: #111; background-color: #ffff00;">{_id}</span>
+        <section class="grid-0005">
+            <div class="container-xl grid-0005-content-container">
+                <h2>{h2}</h2>
+                <p class="grid-0005-subordinate">{subordinate}</p>
+                
+                <div class="grid-5 grid-0005-cards">
+                    <div class="grid-0005-card">
+                        <h3>Fermi Impianto</h3>
+                        <p>Per manutenzione straordinaria e sanificazioni d'emergenza</p>
+                    </div>
+                    <div class="grid-0005-card">
+                        <h3>Costi Chimici</h3>
+                        <p>Elevato consumo di reagenti per tentativi di bonifica</p>
+                    </div>
+                    <div class="grid-0005-card">
+                        <h3>Rischi Normativi</h3>
+                        <p>Sanzioni per sforamento limiti emissivi o scarichi</p>
+                    </div>
+                    <div class="grid-0005-card">
+                        <h3>Qualità Prodotto</h3>
+                        <p>Riduzione della shelf-life e contaminazione crociata</p>
+                    </div>
+                    <div class="grid-0005-card">
+                        <h3>Reputazione</h3>
+                        <p>Impatto negativo su clienti e audit di qualità</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     '''
 
     ########################################
@@ -323,6 +361,7 @@ def main():
             {grid_0003_html}
             {faq_0000_html}
             {grid_0004_html}
+            {grid_0005_html}
             </main>
         </body>
         </html>
