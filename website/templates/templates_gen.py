@@ -399,6 +399,31 @@ def main():
         </section>
     '''
 
+    ########################################
+    # COL 0000
+    ########################################
+    _id = f'GRID 0000'
+    row_0_h2 = f'''Proprietà Chimico-Fisiche dell’Ozono'''
+    row_0_subordinate = f'''L’ozono (O₃) è una molecola triatomica altamente instabile con un elevato potenziale ossidante, caratterizzata da solubilità limitata in acqua, rapida decomposizione in funzione di pH e temperatura, e capacità di generare specie reattive come i radicali ossidrilici che ne determinano l’efficacia nei processi di trattamento.'''
+    row_0_img_src = f'''/immagini/placeholder.jpg'''
+    img_height = '400px'
+    col_0000_html = f'''
+        <span style="color: #111; background-color: #ffff00;">{_id}</span>
+        <section class="col-0000">
+            <div class="container-xl col-0000-content-container">
+                <div class="col-0000-row m-flex">
+                    <div class="flex-1">
+                        <h2>{row_0_h2}</h2>
+                        <p>{row_0_subordinate}</p>
+                    </div>
+                    <div class="flex-1">
+                        <img src="{row_0_img_src}">
+                    </div>
+                <div>
+            </div>
+        </section>
+    '''
+
     html = f'''
         <!DOCTYPE html>
         <html lang="it">
@@ -421,6 +446,7 @@ def main():
             {grid_0005_html}
             {grid_0006_html}
             {cta_0000_html}
+            {col_0000_html}
             </main>
         </body>
         </html>
