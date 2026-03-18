@@ -419,6 +419,36 @@ def soluzioni__acqua__gen():
                 <p>
                     L’ozonizzazione dell’acqua è un processo di trattamento che utilizza l’ozono (O₃), generato in situ tramite sistemi industriali, come agente ossidante e disinfettante per eliminare microrganismi, degradare contaminanti organici e inorganici e migliorare le caratteristiche chimico-fisiche dell’acqua senza lasciare residui persistenti.
                 </p>
+                <svg width="100%" height="200" viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg">
+
+                    <!-- Box -->
+                    <rect x="20" y="80" width="140" height="60" rx="10" fill="#e3f2fd"/>
+                    <rect x="190" y="80" width="160" height="60" rx="10" fill="#e8f5e9"/>
+                    <rect x="380" y="80" width="160" height="60" rx="10" fill="#fff3e0"/>
+                    <rect x="570" y="80" width="160" height="60" rx="10" fill="#e0f2f1"/>
+
+                    <!-- Text -->
+                    <text x="90" y="115" text-anchor="middle" font-size="14">Aria / O₂</text>
+                    <text x="270" y="105" text-anchor="middle" font-size="14">Generatore</text>
+                    <text x="270" y="125" text-anchor="middle" font-size="14">di Ozono (O₃)</text>
+                    <text x="460" y="105" text-anchor="middle" font-size="14">Iniezione</text>
+                    <text x="460" y="125" text-anchor="middle" font-size="14">in Acqua</text>
+                    <text x="650" y="105" text-anchor="middle" font-size="14">Reazione</text>
+                    <text x="650" y="125" text-anchor="middle" font-size="14">Ossidazione</text>
+
+                    <!-- Arrows -->
+                    <line x1="160" y1="110" x2="190" y2="110" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+                    <line x1="350" y1="110" x2="380" y2="110" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+                    <line x1="540" y1="110" x2="570" y2="110" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+
+                    <!-- Arrowhead -->
+                    <defs>
+                        <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+                        <path d="M0,0 L0,6 L9,3 z" fill="#333"/>
+                        </marker>
+                    </defs>
+
+                </svg>
             </div>
         </section>
     '''
