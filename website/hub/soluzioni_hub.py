@@ -411,14 +411,20 @@ def soluzioni__acqua__gen():
     '''
     ########################################
     definizione_html = f'''
-        <section class="article-section" style="text-align: center;">
+        <section class="article-section">
             <div class="container-md">
                 <h2>
                     Cos'è l'Ozonizzazione dell'Acqua?
                 </h2>
-                <p>
+                <p style="margin-bottom: 2rem;">
                     L’ozonizzazione dell’acqua è un processo di trattamento che utilizza l’ozono (O₃), generato in situ tramite sistemi industriali, come agente ossidante e disinfettante per eliminare microrganismi, degradare contaminanti organici e inorganici e migliorare le caratteristiche chimico-fisiche dell’acqua senza lasciare residui persistenti.
                 </p>
+                <img class="img-original" src="/immagini/diagramma-ozono-acqua.png">
+            </div>
+        </section>
+    '''
+    '''
+    
                 <svg width="100%" height="200" viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg">
 
                     <!-- Box -->
@@ -449,8 +455,6 @@ def soluzioni__acqua__gen():
                     </defs>
 
                 </svg>
-            </div>
-        </section>
     '''
     ########################################
     row_0_h2 = f'''Proprietà Chimico-Fisiche dell’Ozono'''

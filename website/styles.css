@@ -86,6 +86,13 @@ img {
     height: auto;
 }
 
+.img-original {
+    display: inline-block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}
+
 h1 {
     font-family: var(--font-heading);
     line-height: 1;
@@ -2020,6 +2027,11 @@ ARTICLEs
 
 .article-section h2 {
     font-size: 2rem;
+    margin-bottom: 1rem;
+
+}
+
+.article-section p {
     margin-bottom: 1rem;
 
 }
