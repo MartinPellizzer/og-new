@@ -516,8 +516,15 @@ def soluzioni__acqua__gen():
                 Principi di Funzionamento nei Sistemi di Trattamento
             </h2>
             <p>
-                Nei sistemi di trattamento delle acque, l’ozonizzazione funziona attraverso la generazione in situ di ozono, la sua efficace dissoluzione nel fluido e il successivo contatto controllato con i contaminanti, dove agisce come potente ossidante sia direttamente sia tramite la formazione di radicali ossidrilici, permettendo la disinfezione e la degradazione chimica delle sostanze indesiderate.
+Nei sistemi di trattamento delle acque, l’ozono agisce principalmente attraverso meccanismi di ossidazione diretta e indiretta, che consentono sia la disinfezione sia la trasformazione chimica dei contaminanti. 
+</p>
+<p>
+L’ossidazione diretta avviene quando la molecola di ozono reagisce selettivamente con doppi legami e gruppi funzionali di composti organici, mentre l’ossidazione indiretta deriva dalla sua decomposizione in acqua con formazione di radicali ossidrilici (•OH), caratterizzati da un potenziale ossidante superiore (circa 2,8 V rispetto a 2,07 V dell’ozono). Questi radicali reagiscono in modo non selettivo, permettendo la degradazione di molecole complesse come pesticidi o microinquinanti emergenti fino a composti più semplici o biodegradabili. Nei microrganismi, l’ozono provoca la rottura delle membrane cellulari e l’ossidazione di proteine e acidi nucleici, portando rapidamente all’inattivazione batterica e virale. 
+</p>
+<p style="margin-bottom: 2rem;">
+Ad esempio, in acque contenenti sostanze organiche disciolte, l’azione combinata di ossidazione diretta e radicalica consente sia la riduzione della carica microbica sia la frammentazione di composti refrattari difficilmente eliminabili con trattamenti convenzionali.
             </p>
+            <img class="img-original" src="/immagini/diagramma-principio-trattamento-acqua-ozono.png">
             </div>
         </section>
     '''
