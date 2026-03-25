@@ -515,28 +515,34 @@ def soluzioni__acqua__gen():
             <h2>
                 Principi di Funzionamento nei Sistemi di Trattamento
             </h2>
-            <p>
-Nei sistemi di trattamento delle acque, l’ozono agisce principalmente attraverso meccanismi di ossidazione diretta e indiretta, che consentono sia la disinfezione sia la trasformazione chimica dei contaminanti. 
+<p>
+Nei sistemi industriali di trattamento, l’ozonizzazione funziona generando ozono in loco e trasferendolo efficacemente dall’aria o dall’ossigeno all’acqua tramite dispositivi progettati per massimizzare il contatto tra le due fasi. 
 </p>
 <p>
-L’ossidazione diretta avviene quando la molecola di ozono reagisce selettivamente con doppi legami e gruppi funzionali di composti organici, mentre l’ossidazione indiretta deriva dalla sua decomposizione in acqua con formazione di radicali ossidrilici (•OH), caratterizzati da un potenziale ossidante superiore (circa 2,8 V rispetto a 2,07 V dell’ozono). Questi radicali reagiscono in modo non selettivo, permettendo la degradazione di molecole complesse come pesticidi o microinquinanti emergenti fino a composti più semplici o biodegradabili. Nei microrganismi, l’ozono provoca la rottura delle membrane cellulari e l’ossidazione di proteine e acidi nucleici, portando rapidamente all’inattivazione batterica e virale. 
+L’ozono viene prodotto principalmente tramite scarica a corona, dove un campo elettrico ad alta tensione (tipicamente 5–20 kV) dissocia le molecole di ossigeno (O₂) permettendo la formazione di O₃; l’efficienza del processo dipende fortemente dalla qualità del gas di alimentazione, che può essere aria essiccata o ossigeno puro, con quest’ultimo che consente concentrazioni di ozono più elevate e maggiore resa energetica. Il gas ozonizzato viene poi iniettato nell’acqua tramite iniettori Venturi o diffusori, creando microbolle che aumentano la superficie di scambio e migliorano il trasferimento di massa gas-liquido. La miscelazione e il contatto avvengono in appositi contattori (colonne o vasche), dimensionati per garantire un tempo di permanenza sufficiente affinché l’ozono si dissolva e reagisca. 
 </p>
 <p style="margin-bottom: 2rem;">
-Ad esempio, in acque contenenti sostanze organiche disciolte, l’azione combinata di ossidazione diretta e radicalica consente sia la riduzione della carica microbica sia la frammentazione di composti refrattari difficilmente eliminabili con trattamenti convenzionali.
-            </p>
-            <img class="img-original" src="/immagini/diagramma-principio-trattamento-acqua-ozono.png">
+Infine, il gas residuo non disciolto viene separato e convogliato verso sistemi di distruzione, evitando dispersioni e garantendo la sicurezza operativa.
+</p>
             </div>
         </section>
     '''
     meccanismi_html = f'''
         <section class="article-section" style="background-color: {light_gray};">
             <div class="container-md">
-            <h2>
-                Meccanismi di Ossidazione e Disinfezione
-            </h2>
-            <p>
-                I meccanismi di ossidazione e disinfezione dell’ozono si basano sulla sua elevata capacità ossidante, che agisce sia direttamente reagendo con composti organici e membrane cellulari dei microrganismi, sia indirettamente attraverso la formazione di radicali ossidrilici altamente reattivi, portando alla degradazione dei contaminanti e all’inattivazione efficace di batteri, virus e protozoi.
-            </p>
+                <h2>
+                    Meccanismi di Ossidazione e Disinfezione
+                </h2>
+                <p>
+L’ozonizzazione dell’acqua funziona grazie a due meccanismi principali: l’ossidazione diretta operata dall’ozono molecolare (O₃) e l’ossidazione indiretta mediata dai radicali ossidrilici (•OH), entrambi responsabili della degradazione chimica dei contaminanti e della disinfezione microbiologica. 
+                </p>
+                <p>
+L’ozono molecolare reagisce in modo selettivo con doppi legami, gruppi aromatici e composti contenenti zolfo o azoto, ossidando sostanze organiche complesse e trasformandole in molecole più semplici o biodegradabili, mentre nei sistemi acquosi può decomporsi generando radicali •OH, caratterizzati da un potenziale ossidante superiore e da una reattività non selettiva. Nei confronti dei composti inorganici, l’ozono ossida specie come Fe²⁺ e Mn²⁺ a forme insolubili (Fe³⁺, Mn⁴⁺), facilitandone la successiva rimozione, mentre sul piano microbiologico inattiva batteri, virus e protozoi attraverso l’ossidazione delle membrane cellulari e dei componenti intracellulari, causando perdita di integrità e morte cellulare. La velocità e l’efficacia di queste reazioni dipendono dalla cinetica chimica, influenzata da parametri come concentrazione di ozono, natura dei contaminanti e condizioni del mezzo, con reazioni dirette generalmente più lente ma selettive e reazioni radicaliche estremamente rapide ma meno specifiche. 
+                </p>
+                <p>
+Ad esempio, composti organici come fenoli vengono rapidamente degradati tramite attacco radicalico, mentre microrganismi vengono inattivati in pochi secondi grazie alla distruzione delle membrane e all’ossidazione di proteine ed enzimi vitali.
+                </p>
+                <img class="img-original" src="/immagini/diagramma-principio-trattamento-acqua-ozono.png">
             </div>
         </section>
     '''
@@ -547,7 +553,13 @@ Ad esempio, in acque contenenti sostanze organiche disciolte, l’azione combina
                 Tipologie di Sistemi Industriali a Ozono
             </h2>
             <p>
-                Le tipologie di sistemi industriali a ozono si distinguono in base alla modalità di generazione, configurazione impiantistica, metodo di contatto gas-liquido e scala operativa, includendo impianti batch o continui, sistemi a iniezione diretta o con contattori dedicati, e soluzioni modulari o centralizzate progettate per specifiche applicazioni nel trattamento delle acque.
+Le tipologie di sistemi industriali a ozono si distinguono principalmente in base alla modalità di trattamento del flusso idrico e alla configurazione impiantistica, includendo sistemi a flusso continuo, batch, modulari, centralizzati e skid-mounted, oltre a diverse soluzioni di contatto come inline o in vasca. 
+            </p>
+            <p>
+Nei sistemi a flusso continuo l’acqua viene trattata senza interruzioni con portate costanti, tipicamente da pochi m³/h fino a oltre 10.000 m³/h negli impianti municipali, mentre nei sistemi batch il trattamento avviene in volumi definiti, utile per processi discontinui o serbatoi di accumulo. Gli impianti modulari sono costituiti da unità scalabili installate in parallelo, permettendo un aumento graduale della capacità senza modifiche strutturali rilevanti, mentre gli impianti centralizzati su larga scala concentrano la produzione di ozono in un’unica infrastruttura per servire grandi portate con elevata efficienza operativa. I sistemi skid-mounted integrano tutti i componenti su una piattaforma prefabbricata, riducendo tempi di installazione e complessità in sito, e sono tipicamente utilizzati per portate medio-basse o applicazioni industriali specifiche. 
+            </p>
+            <p>
+Infine, nelle configurazioni inline l’ozono viene iniettato direttamente in linea con tempi di contatto ridotti e controllo dinamico, mentre nei sistemi con vasca di contatto si utilizzano reattori dedicati per garantire tempi di permanenza più lunghi e maggiore uniformità di trattamento.
             </p>
             </div>
         </section>
@@ -559,7 +571,13 @@ Ad esempio, in acque contenenti sostanze organiche disciolte, l’azione combina
                 Componenti degli Impianti di Ozonizzazione
             </h2>
             <p>
-                I componenti degli impianti di ozonizzazione sono l’insieme di dispositivi che permettono la produzione, il trasferimento, il contatto e il controllo dell’ozono nell’acqua, includendo tipicamente il generatore di ozono, i sistemi di alimentazione del gas (aria o ossigeno), gli iniettori o diffusori, i reattori di contatto, i sistemi di distruzione dell’ozono residuo e gli strumenti di monitoraggio e automazione del processo.
+Un impianto di ozonizzazione è costituito da una catena di componenti progettati per generare, trasferire e gestire in sicurezza l’ozono fino al suo completo utilizzo e abbattimento. 
+            </p>
+            <p>
+Il generatore di ozono, basato tipicamente su scarica a corona, produce O₃ a partire da ossigeno fornito da sistemi di alimentazione gas (compressori o concentratori di O₂), mentre gli essiccatori d’aria riducono l’umidità sotto valori critici (generalmente < -40 °C punto di rugiada) per garantire efficienza e stabilità del processo. L’ozono viene poi iniettato nell’acqua tramite iniettori Venturi o diffusori, che permettono un trasferimento efficace gas-liquido creando microbolle e aumentando la superficie di contatto. Il contatto tra ozono e acqua avviene in appositi reattori, come colonne o vasche di contatto, progettati per massimizzare la dissoluzione e limitare le perdite di gas. 
+            </p>
+            <p>
+L’ozono non disciolto viene trattato tramite distruttori catalitici o termici prima del rilascio, mentre tutte le tubazioni e i componenti sono realizzati in materiali compatibili (come acciaio inox, PTFE o PVDF) per resistere all’elevato potere ossidante dell’ozono.
             </p>
             </div>
         </section>
@@ -571,7 +589,13 @@ Ad esempio, in acque contenenti sostanze organiche disciolte, l’azione combina
                 Parametri Operativi e di Processo
             </h2>
             <p>
-                I parametri operativi e di processo nell’ozonizzazione dell’acqua comprendono la concentrazione di ozono, il tempo di contatto con l’acqua, la portata del flusso, la temperatura e il pH, oltre all’efficienza di trasferimento del gas e alla gestione della domanda chimica dell’acqua, tutti fattori determinanti per garantire una disinfezione efficace e la degradazione dei contaminanti.
+I parametri operativi definiscono quanta quantità di ozono viene effettivamente trasferita all’acqua e per quanto tempo rimane disponibile per reagire, determinando direttamente l’efficacia del trattamento. 
+            </p>
+            <p>
+La dose di ozono applicata dipende dalla domanda di ozono dell’acqua, cioè dalla quantità di sostanze ossidabili presenti, e tipicamente varia da 0,5 a 5 mg/L per acque potabili fino a oltre 10 mg/L in acque industriali più contaminate; questa dose è legata alla concentrazione di ozono in ingresso (generalmente 1–10% in peso nel gas) e alla portata dell’acqua, che influisce sul tempo disponibile per il contatto. Il parametro chiave è il valore CT (concentrazione × tempo), che rappresenta l’esposizione complessiva all’ozono e che, ad esempio, per la disinfezione può richiedere valori nell’ordine di 0,5–5 mg·min/L a seconda del microrganismo target. L’efficienza di trasferimento gas-liquido, spesso compresa tra il 70% e il 95% nei sistemi ben progettati, è influenzata da pressione operativa, dimensione delle bolle e qualità dell’acqua in ingresso, inclusi torbidità e presenza di sostanze organiche che consumano ozono. 
+            </p>
+            <p>
+Ad esempio, un’acqua con alta domanda di ozono e alta portata richiederà una dose maggiore e un sistema di contatto più efficiente per mantenere lo stesso livello di trattamento rispetto a un’acqua già parzialmente trattata.
             </p>
             </div>
         </section>
@@ -583,7 +607,13 @@ Ad esempio, in acque contenenti sostanze organiche disciolte, l’azione combina
                 Applicazioni nel Trattamento delle Acque
             </h2>
             <p>
-                L’ozonizzazione dell’acqua viene impiegata per la disinfezione di acqua potabile, la depurazione di acque reflue industriali e civili, la rimozione di composti organici, pesticidi e microinquinanti, il controllo di odori e sapori, la prevenzione della proliferazione di microrganismi in torri di raffreddamento, piscine e impianti di acquacoltura, e come trattamento preliminare o integrativo nei processi di purificazione avanzata.
+L’ozonizzazione dell’acqua viene applicata in diversi ambiti per migliorare la qualità dell’acqua attraverso disinfezione e ossidazione selettiva dei contaminanti, adattandosi sia a usi civili che industriali. 
+            </p>
+            <p>
+Nel trattamento dell’acqua potabile è impiegata per eliminare microrganismi e composti responsabili di odori e sapori, mentre nelle acque reflue civili consente di ridurre il carico organico residuo e migliorare la qualità dell’effluente prima dello scarico o del riuso. Nelle acque reflue industriali trova applicazione nella degradazione di composti complessi e difficilmente biodegradabili, come coloranti, fenoli o residui farmaceutici, con concentrazioni di ozono tipicamente più elevate rispetto al settore civile. In ambito alimentare e delle bevande viene utilizzata per sanificare acqua di processo e superfici senza lasciare residui, mentre in acquacoltura, piscine e torri di raffreddamento garantisce il controllo microbiologico continuo e la riduzione dei biofilm. 
+            </p>
+            <p>
+Infine, nei sistemi di riutilizzo delle acque, l’ozono rappresenta uno stadio chiave per ottenere standard qualitativi elevati, rendendo l’acqua idonea a impieghi agricoli, industriali o civili non potabili.
             </p>
             </div>
         </section>
@@ -595,7 +625,13 @@ Ad esempio, in acque contenenti sostanze organiche disciolte, l’azione combina
                 Rimozione dei Contaminanti
             </h2>
             <p>
-                L’ozono rimuove efficacemente batteri, virus, protozoi, composti organici, pesticidi, farmaci, metalli e sostanze responsabili di odore, sapore e colore attraverso reazioni di ossidazione diretta e indiretta che degradano i contaminanti in composti meno dannosi o facilmente filtrabili.
+L’ozonizzazione rimuove i contaminanti dall’acqua attraverso un’azione combinata di disinfezione e ossidazione chimica ad alto potenziale, capace di inattivare microrganismi e trasformare sostanze indesiderate in composti più semplici o filtrabili. 
+            </p>
+            <p>
+In termini microbiologici, l’ozono garantisce una rapida disinfezione batterica (log removal elevati anche a basse concentrazioni), inattiva virus mediante danneggiamento del materiale genetico ed elimina protozoi resistenti come Giardia e Cryptosporidium grazie all’ossidazione delle membrane cellulari. Dal punto di vista chimico, ossida composti organici complessi (come pesticidi e residui farmaceutici), contribuendo alla rimozione dei microinquinanti emergenti e alla riduzione del carico organico disciolto. Parallelamente, degrada le sostanze responsabili di colore, odori e sapori (ad esempio composti fenolici o geosmina), migliorando le caratteristiche organolettiche dell’acqua. 
+            </p>
+            <p>
+Infine, ossida metalli come ferro e manganese trasformandoli in forme insolubili facilmente separabili tramite filtrazione, rendendo il processo particolarmente efficace nei trattamenti di affinamento delle acque potabili e industriali.
             </p>
             </div>
         </section>
