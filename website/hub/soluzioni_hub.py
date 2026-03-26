@@ -643,7 +643,13 @@ Infine, ossida metalli come ferro e manganese trasformandoli in forme insolubili
                 Integrazione con Altri Processi di Trattamento
             </h2>
             <p>
-                L’ozonizzazione dell’acqua si integra con altri processi di trattamento come filtrazione, carbone attivo, raggi UV e clorazione per aumentare l’efficacia complessiva nella rimozione di microrganismi, composti organici, odori e colori, e può essere combinata con processi di ossidazione avanzata (AOP) per degradare contaminanti refrattari e micropollutanti.
+L’ozonizzazione non è normalmente utilizzata come processo isolato, ma viene integrata in sequenze multi-stadio per massimizzare l’efficacia complessiva del trattamento dell’acqua. 
+            </p>
+            <p>
+In pre-ozonizzazione, l’ozono viene applicato a monte per ossidare composti organici complessi, migliorare la biodegradabilità e facilitare le fasi successive come filtrazione su sabbia o membrane, riducendo il fouling e aumentando l’efficienza di rimozione. In post-ozonizzazione, invece, viene utilizzato come fase finale per affinare la qualità dell’acqua, eliminare microinquinanti residui e migliorare le caratteristiche organolettiche prima della distribuzione o riutilizzo. L’integrazione con carbone attivo (GAC o biologico BAC) è particolarmente efficace: l’ozono trasforma composti refrattari in sostanze più facilmente adsorbibili o biodegradabili, creando una sinergia che aumenta la rimozione complessiva dei contaminanti. 
+            </p>
+            <p>
+L’accoppiamento con UV consente di generare radicali ossidrilici altamente reattivi nei processi AOP, mentre le configurazioni multi-stadio combinano queste tecnologie in sequenze ottimizzate in funzione della qualità dell’acqua e degli obiettivi di trattamento.
             </p>
             </div>
         </section>
@@ -655,7 +661,13 @@ Infine, ossida metalli come ferro e manganese trasformandoli in forme insolubili
                 Vantaggi e Limiti della Tecnologia
             </h2>
             <p>
-                L’ozonizzazione dell’acqua offre vantaggi come un’elevata efficacia nella disinfezione, la rimozione di microinquinanti e composti organici, l’assenza di residui chimici persistenti e il miglioramento delle caratteristiche organolettiche, ma presenta limiti legati all’instabilità dell’ozono, ai costi energetici elevati, alla complessità impiantistica e alla possibile formazione di sottoprodotti come i bromati.
+L’ozonizzazione dell’acqua è una tecnologia altamente efficace perché combina una forte capacità ossidante e un ampio spettro di disinfezione, ma presenta limiti legati alla gestione dell’ozono e alla complessità impiantistica. 
+            </p>
+            <p>
+L’ozono ha un potenziale redox di circa 2,07 V, superiore al cloro, e permette quindi di ossidare rapidamente composti organici e inattivare batteri, virus e protozoi in tempi ridotti, contribuendo anche alla rimozione di odori, sapori e colore migliorando le caratteristiche organolettiche dell’acqua. A differenza dei disinfettanti tradizionali, non lascia residui persistenti perché si decompone in ossigeno, riducendo l’impatto chimico sul sistema trattato. Tuttavia, questa stessa instabilità impone la produzione in loco tramite generatori dedicati, aumentando la complessità e i costi tecnici rispetto a soluzioni più semplici. 
+            </p>
+            <p>
+Inoltre, in presenza di specifici precursori come il bromo, possono formarsi sottoprodotti indesiderati (ad esempio bromati), rendendo necessario un controllo accurato delle condizioni operative e della qualità dell’acqua in ingresso.
             </p>
             </div>
         </section>
@@ -664,10 +676,16 @@ Infine, ossida metalli come ferro e manganese trasformandoli in forme insolubili
         <section class="article-section" style="background-color: {light_gray};">
             <div class="container-md">
             <h2>
-                Vantaggi e Limiti della Tecnologia
+                Sicurezza e Gestione dell’Ozono
             </h2>
             <p>
-                La gestione dell’ozono nei sistemi industriali richiede procedure rigorose per prevenire esposizioni pericolose, comprendendo l’uso di sensori di rilevamento, sistemi di ventilazione, abbattitori di ozono residuo e formazione specifica del personale per garantire livelli di sicurezza conformi agli standard normativi.
+La sicurezza nella gestione dell’ozono nei sistemi di trattamento acqua si basa sul controllo rigoroso dell’esposizione, sulla prevenzione delle perdite e sull’adozione di sistemi tecnici e procedure operative adeguate, poiché l’ozono è un gas altamente ossidante e tossico per l’uomo. 
+            </p>
+            <p>
+A concentrazioni superiori a 0,1 ppm può causare irritazione delle vie respiratorie, mentre i limiti di esposizione professionale tipicamente accettati sono di circa 0,1 ppm per esposizioni prolungate (8 ore) e fino a 0,3 ppm per esposizioni brevi, rendendo necessario un monitoraggio continuo negli ambienti chiusi. Il rischio principale è legato a eventuali perdite dai generatori o dalle linee di iniezione, con possibile accumulo in locali poco ventilati, motivo per cui è essenziale progettare sistemi di ventilazione forzata e installare distruttori di ozono residuo per convertire l’O₃ in ossigeno prima del rilascio in atmosfera. Dal punto di vista operativo, sono indispensabili procedure standard che includano rilevamento automatico delle fughe, allarmi, evacuazione controllata e manutenzione programmata delle apparecchiature. 
+            </p>
+            <p>
+Infine, la formazione degli operatori è critica: il personale deve essere in grado di riconoscere i rischi, interpretare i dati dei sensori e intervenire correttamente in caso di anomalie o emergenze.
             </p>
             </div>
         </section>
@@ -679,7 +697,13 @@ Infine, ossida metalli come ferro e manganese trasformandoli in forme insolubili
                 Controllo, Monitoraggio e Automazione
             </h2>
             <p>
-                Il controllo, il monitoraggio e l’automazione nei sistemi di trattamento dell’acqua con ozono consistono nell’utilizzo di sensori per rilevare la concentrazione di ozono disciolto, il potenziale ossidante (ORP) e i parametri operativi come flusso e pressione, integrati con sistemi di regolazione automatica e PLC per garantire dosaggi precisi, tempi di contatto ottimali e sicurezza operativa continua.
+Il controllo, monitoraggio e automazione nei sistemi di ozonizzazione servono a garantire che la concentrazione di ozono sia sempre efficace per il trattamento ma senza superare limiti operativi e di sicurezza, attraverso una gestione continua e in tempo reale del processo. 
+            </p>
+            <p>
+Questo si realizza utilizzando sensori di ozono in aria per rilevare eventuali fughe e proteggere gli operatori, sensori di ozono disciolto per misurare la quantità effettivamente disponibile in acqua e strumenti di misurazione ORP per valutare indirettamente il potenziale ossidante del sistema. I dati raccolti vengono elaborati da sistemi PLC e supervisionati tramite interfacce SCADA, che permettono il controllo automatico della dose di ozono in funzione della qualità dell’acqua e della domanda istantanea. Ad esempio, un aumento del carico organico rilevato dai sensori può attivare automaticamente un incremento della produzione di ozono, mantenendo stabile l’efficienza del trattamento. 
+            </p>
+            <p>
+Inoltre, sistemi di allarme segnalano anomalie o superamenti di soglia, mentre la registrazione continua dei dati consente analisi storiche, ottimizzazione operativa e manutenzione predittiva.
             </p>
             </div>
         </section>
@@ -691,7 +715,13 @@ Infine, ossida metalli come ferro e manganese trasformandoli in forme insolubili
                 Normative e Standard di Qualità
             </h2>
             <p>
-                Le normative e gli standard di qualità per l’ozonizzazione dell’acqua stabiliscono i limiti massimi di concentrazione di ozono residuo, i valori consentiti di sottoprodotti come i bromati, le linee guida per la sicurezza degli operatori e i requisiti di efficacia nella disinfezione, seguendo le direttive europee, le norme nazionali sull’acqua potabile e le raccomandazioni dell’Organizzazione Mondiale della Sanità.
+Le normative e gli standard di qualità per l’ozonizzazione dell’acqua stabiliscono limiti precisi sia per la concentrazione di ozono residuo sia per i sottoprodotti derivati dal processo, come i bromati, che devono rimanere al di sotto di 10 µg/L secondo le linee guida europee e dell’OMS. 
+            </p>
+            <p>
+In Europa, la Direttiva 98/83/CE sull’acqua potabile definisce requisiti di sicurezza chimica e microbiologica che gli impianti a ozono devono rispettare, mentre le linee guida dell’Organizzazione Mondiale della Sanità forniscono indicazioni aggiuntive sui limiti di esposizione e sui criteri di efficacia. Gli impianti industriali e alimentari devono inoltre ottenere certificazioni specifiche, come ISO 9001 per la gestione della qualità e certificazioni HACCP per il trattamento dell’acqua destinata al contatto con alimenti. I sistemi devono essere progettati per garantire un dosaggio controllato e un monitoraggio continuo, assicurando che l’acqua trattata soddisfi i requisiti chimici e microbiologici richiesti. 
+            </p>
+            <p>
+Ad esempio, un impianto di ozonizzazione per acqua potabile in un comune europeo deve documentare la concentrazione di ozono e i livelli di sottoprodotti almeno quotidianamente per dimostrare la conformità normativa.
             </p>
             </div>
         </section>
