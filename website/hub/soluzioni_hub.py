@@ -416,65 +416,58 @@ def soluzioni__acqua__gen():
                 <h2>
                     Cos'è l'Ozonizzazione dell'Acqua?
                 </h2>
-                <p style="margin-bottom: 2rem;">
-                    L’ozonizzazione dell’acqua è un processo di trattamento che utilizza l’ozono (O₃), generato in situ tramite sistemi industriali, come agente ossidante e disinfettante per eliminare microrganismi, degradare contaminanti organici e inorganici e migliorare le caratteristiche chimico-fisiche dell’acqua senza lasciare residui persistenti.
+                <p>
+L’ozonizzazione dell’acqua è un processo di trattamento che utilizza l’ozono (O₃), un gas altamente ossidante composto da tre atomi di ossigeno, per migliorare la qualità dell’acqua attraverso reazioni chimiche di ossidazione e l’inattivazione di microrganismi. 
                 </p>
-                <img class="img-original" src="/immagini/diagramma-ozono-acqua.png">
+                <p>
+Grazie al suo elevato potenziale di ossidazione (circa 2,07 V), l’ozono è in grado di distruggere batteri, virus e altri patogeni e di ossidare numerosi composti organici e inorganici presenti nell’acqua. A differenza della clorazione, che lascia un residuo chimico persistente nell’acqua trattata, l’ozono si decompone rapidamente tornando a ossigeno molecolare, mentre rispetto alla disinfezione con radiazione UV offre anche un’azione chimica di ossidazione dei contaminanti oltre alla sola inattivazione microbiologica. Nei sistemi di trattamento delle acque, l’ozonizzazione viene generalmente impiegata come fase intermedia o avanzata del processo per migliorare la qualità chimica e microbiologica dell’acqua prima delle fasi finali di trattamento. 
+                </p>
+                <p>
+Questa tecnologia può essere applicata a diverse tipologie di acqua, tra cui acqua potabile, acque reflue civili e industriali e acque di processo, con l’obiettivo di ottenere disinfezione efficace, ossidazione dei contaminanti e miglioramento delle caratteristiche sensoriali come odore, colore e sapore.
+                </p>
+                <dl>
+<dt>Ozonizzazione</dt>
+<dd>Processo di trattamento dell’acqua che utilizza ozono disciolto come agente ossidante e disinfettante.</dd>
+
+<dt>Ozono (O3)</dt>
+<dd>Molecola triatomica di ossigeno con elevato potenziale di ossidazione.</dd>
+
+<dt>Trattamento acqua</dt>
+<dd>Applicazione dell’ozono per migliorare qualità microbiologica e chimica dell’acqua.</dd>
+</dl>
             </div>
         </section>
     '''
-    '''
-    
-                <svg width="100%" height="200" viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg">
 
-                    <!-- Box -->
-                    <rect x="20" y="80" width="140" height="60" rx="10" fill="#e3f2fd"/>
-                    <rect x="190" y="80" width="160" height="60" rx="10" fill="#e8f5e9"/>
-                    <rect x="380" y="80" width="160" height="60" rx="10" fill="#fff3e0"/>
-                    <rect x="570" y="80" width="160" height="60" rx="10" fill="#e0f2f1"/>
-
-                    <!-- Text -->
-                    <text x="90" y="115" text-anchor="middle" font-size="14">Aria / O₂</text>
-                    <text x="270" y="105" text-anchor="middle" font-size="14">Generatore</text>
-                    <text x="270" y="125" text-anchor="middle" font-size="14">di Ozono (O₃)</text>
-                    <text x="460" y="105" text-anchor="middle" font-size="14">Iniezione</text>
-                    <text x="460" y="125" text-anchor="middle" font-size="14">in Acqua</text>
-                    <text x="650" y="105" text-anchor="middle" font-size="14">Reazione</text>
-                    <text x="650" y="125" text-anchor="middle" font-size="14">Ossidazione</text>
-
-                    <!-- Arrows -->
-                    <line x1="160" y1="110" x2="190" y2="110" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
-                    <line x1="350" y1="110" x2="380" y2="110" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
-                    <line x1="540" y1="110" x2="570" y2="110" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
-
-                    <!-- Arrowhead -->
-                    <defs>
-                        <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
-                        <path d="M0,0 L0,6 L9,3 z" fill="#333"/>
-                        </marker>
-                    </defs>
-
-                </svg>
-    '''
     ########################################
     row_0_h2 = f'''Proprietà Chimico-Fisiche dell’Ozono'''
-    row_0_subordinate = f'''L’ozono (O₃) è una molecola triatomica altamente instabile con un elevato potenziale ossidante, caratterizzata da solubilità limitata in acqua, rapida decomposizione in funzione di pH e temperatura, e capacità di generare specie reattive come i radicali ossidrilici che ne determinano l’efficacia nei processi di trattamento.'''
+    row_0_subordinate = f'''
+        L’ozono (O₃) è una molecola triatomica altamente instabile con un elevato potenziale ossidante, caratterizzata da solubilità limitata in acqua, rapida decomposizione in funzione di pH e temperatura, e capacità di generare specie reattive come i radicali ossidrilici che ne determinano l’efficacia nei processi di trattamento.
+    '''
     row_0_img_src = f'''/immagini/placeholder.jpg'''
     img_height = '400px'
     proprieta_html = f'''
         <section class="col-0000" style="background-color: {light_gray};">
-            <div class="container-xl col-0000-content-container">
-                <div class="col-0000-row m-flex">
-                    <div class="flex-1">
+            <div class="container-md">
                         <h2>{row_0_h2}</h2>
-                        <p>{row_0_subordinate}</p>
-                    </div>
-                    <div class="flex-1">
+                        <p>
+L’ozono (O₃) è una molecola triatomica costituita da tre atomi di ossigeno disposti in una struttura angolare instabile, caratterizzata da un elevato potenziale di ossidazione pari a circa 2,07 V, superiore a quello del cloro e quindi particolarmente efficace nei processi di ossidazione chimica in acqua. 
+                    </p>
+                        <p>
+In condizioni standard è un gas di colore blu pallido con una solubilità in acqua moderata ma superiore a quella dell’ossigeno molecolare, con valori tipici di circa 10–13 mg/L a 0 °C e pressione atmosferica, solubilità che diminuisce rapidamente con l’aumento della temperatura. Dal punto di vista della stabilità chimica l’ozono è una specie fortemente instabile e tende a decomporsi spontaneamente tornando a ossigeno molecolare (O₂), con una velocità di decomposizione influenzata da fattori come temperatura, pH e presenza di sostanze catalitiche nell’acqua. In acqua pura a 20 °C il tempo di emivita è generalmente compreso tra 10 e 20 minuti, mentre in aria è molto più breve, spesso inferiore ai 30 minuti, e si riduce ulteriormente all’aumentare della temperatura o in condizioni alcaline, dove la decomposizione è accelerata. 
+                    </p>
+                        <p>
+In fase gassosa l’ozono è relativamente più stabile ma reagisce rapidamente con superfici e contaminanti atmosferici, mentre in fase liquida è più reattivo e soggetto a trasformazioni chimiche rapide dovute alle interazioni con le specie disciolte presenti nell’acqua.
+                    </p>
                         <table>
+                        <thead>
                             <tr>
                                 <th>Proprietà</th>
                                 <th>Valore / Caratteristica</th>
                             </tr>
+                        </thead>
+                        <tbody>
+
                             <tr>
                                 <td>Potenziale Ossidante</td>
                                 <td>2,07 V (molto alto, superiore al cloro)</td>
@@ -503,9 +496,8 @@ def soluzioni__acqua__gen():
                                 <td>Temperatura di Influenza</td>
                                 <td>La stabilità diminuisce con l’aumento della temperatura</td>
                             </tr>
+                        </tbody>
                         </table>
-                    </div>
-                <div>
             </div>
         </section>
     '''
@@ -521,9 +513,20 @@ Nei sistemi industriali di trattamento, l’ozonizzazione funziona generando ozo
 <p>
 L’ozono viene prodotto principalmente tramite scarica a corona, dove un campo elettrico ad alta tensione (tipicamente 5–20 kV) dissocia le molecole di ossigeno (O₂) permettendo la formazione di O₃; l’efficienza del processo dipende fortemente dalla qualità del gas di alimentazione, che può essere aria essiccata o ossigeno puro, con quest’ultimo che consente concentrazioni di ozono più elevate e maggiore resa energetica. Il gas ozonizzato viene poi iniettato nell’acqua tramite iniettori Venturi o diffusori, creando microbolle che aumentano la superficie di scambio e migliorano il trasferimento di massa gas-liquido. La miscelazione e il contatto avvengono in appositi contattori (colonne o vasche), dimensionati per garantire un tempo di permanenza sufficiente affinché l’ozono si dissolva e reagisca. 
 </p>
-<p style="margin-bottom: 2rem;">
+<p>
 Infine, il gas residuo non disciolto viene separato e convogliato verso sistemi di distruzione, evitando dispersioni e garantendo la sicurezza operativa.
 </p>
+<p>
+La seguente lista elenca le fasi del principio di funzionamento:
+</p>
+<ol>
+<li>Produzione dell’ozono tramite scarica a corona</li>
+<li>Preparazione del gas di alimentazione (aria o ossigeno)</li>
+<li>Iniezione dell’ozono nel flusso d’acqua</li>
+<li>Miscelazione gas-liquido</li>
+<li>Contatto nel reattore di ozonizzazione</li>
+<li>Separazione del gas residuo</li>
+</ol>
             </div>
         </section>
     '''
@@ -542,10 +545,20 @@ L’ozono molecolare reagisce in modo selettivo con doppi legami, gruppi aromati
                 <p>
 Ad esempio, composti organici come fenoli vengono rapidamente degradati tramite attacco radicalico, mentre microrganismi vengono inattivati in pochi secondi grazie alla distruzione delle membrane e all’ossidazione di proteine ed enzimi vitali.
                 </p>
-                <img class="img-original" src="/immagini/diagramma-principio-trattamento-acqua-ozono.png">
+                <p>
+                Lista di reazioni chimiche:
+                </p>
+                <ul>
+<li>Ossidazione diretta tramite molecola O3</li>
+<li>Formazione di radicali ossidrilici (•OH)</li>
+<li>Ossidazione di composti organici</li>
+<li>Ossidazione di composti inorganici</li>
+<li>Distruzione delle membrane cellulari dei microrganismi</li>
+</ul>
             </div>
         </section>
     '''
+                # <img class="img-original" src="/immagini/diagramma-principio-trattamento-acqua-ozono.png">
     tipologie_html = f'''
         <section class="article-section">
             <div class="container-md">
@@ -561,6 +574,32 @@ Nei sistemi a flusso continuo l’acqua viene trattata senza interruzioni con po
             <p>
 Infine, nelle configurazioni inline l’ozono viene iniettato direttamente in linea con tempi di contatto ridotti e controllo dinamico, mentre nei sistemi con vasca di contatto si utilizzano reattori dedicati per garantire tempi di permanenza più lunghi e maggiore uniformità di trattamento.
             </p>
+            <table>
+<thead>
+<tr>
+<th>Tipo di sistema</th>
+<th>Descrizione</th>
+<th>Applicazione tipica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Batch</td>
+<td>Trattamento in serbatoio</td>
+<td>Processi discontinui</td>
+</tr>
+<tr>
+<td>Flusso continuo</td>
+<td>Ozonizzazione inline</td>
+<td>Impianti municipali</td>
+</tr>
+<tr>
+<td>Modulare</td>
+<td>Unità prefabbricate</td>
+<td>Industria</td>
+</tr>
+</tbody>
+</table>
             </div>
         </section>
     '''
@@ -579,6 +618,14 @@ Il generatore di ozono, basato tipicamente su scarica a corona, produce O₃ a p
             <p>
 L’ozono non disciolto viene trattato tramite distruttori catalitici o termici prima del rilascio, mentre tutte le tubazioni e i componenti sono realizzati in materiali compatibili (come acciaio inox, PTFE o PVDF) per resistere all’elevato potere ossidante dell’ozono.
             </p>
+            <ul>
+<li>Generatore di ozono</li>
+<li>Compressore o alimentazione gas</li>
+<li>Essiccatore dell’aria</li>
+<li>Iniettore Venturi</li>
+<li>Reattore di contatto</li>
+<li>Distruttore di ozono residuo</li>
+</ul>
             </div>
         </section>
     '''
@@ -597,6 +644,37 @@ La dose di ozono applicata dipende dalla domanda di ozono dell’acqua, cioè da
             <p>
 Ad esempio, un’acqua con alta domanda di ozono e alta portata richiederà una dose maggiore e un sistema di contatto più efficiente per mantenere lo stesso livello di trattamento rispetto a un’acqua già parzialmente trattata.
             </p>
+            <table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Unità</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dose di ozono</td>
+<td>mg/L</td>
+<td>Quantità di ozono applicata</td>
+</tr>
+<tr>
+<td>Tempo di contatto</td>
+<td>min</td>
+<td>Durata reazione ozono-acqua</td>
+</tr>
+<tr>
+<td>Portata</td>
+<td>m³/h</td>
+<td>Flusso acqua trattata</td>
+</tr>
+<tr>
+<td>Concentrazione ozono</td>
+<td>g/Nm³</td>
+<td>Concentrazione nel gas</td>
+</tr>
+</tbody>
+</table>
             </div>
         </section>
     '''
@@ -615,6 +693,14 @@ Nel trattamento dell’acqua potabile è impiegata per eliminare microrganismi e
             <p>
 Infine, nei sistemi di riutilizzo delle acque, l’ozono rappresenta uno stadio chiave per ottenere standard qualitativi elevati, rendendo l’acqua idonea a impieghi agricoli, industriali o civili non potabili.
             </p>
+            <ul>
+<li>Acqua potabile</li>
+<li>Acque reflue civili</li>
+<li>Acque reflue industriali</li>
+<li>Industria alimentare</li>
+<li>Piscine e centri benessere</li>
+<li>Acquacoltura</li>
+</ul>
             </div>
         </section>
     '''
@@ -633,6 +719,32 @@ In termini microbiologici, l’ozono garantisce una rapida disinfezione batteric
             <p>
 Infine, ossida metalli come ferro e manganese trasformandoli in forme insolubili facilmente separabili tramite filtrazione, rendendo il processo particolarmente efficace nei trattamenti di affinamento delle acque potabili e industriali.
             </p>
+            <table>
+<thead>
+<tr>
+<th>Categoria</th>
+<th>Esempi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Microrganismi</td>
+<td>Batteri, virus, protozoi</td>
+</tr>
+<tr>
+<td>Composti organici</td>
+<td>Pesticidi, farmaci</td>
+</tr>
+<tr>
+<td>Metalli</td>
+<td>Ferro, manganese</td>
+</tr>
+<tr>
+<td>Parametri estetici</td>
+<td>Colore, odori</td>
+</tr>
+</tbody>
+</table>
             </div>
         </section>
     '''
@@ -651,6 +763,13 @@ In pre-ozonizzazione, l’ozono viene applicato a monte per ossidare composti or
             <p>
 L’accoppiamento con UV consente di generare radicali ossidrilici altamente reattivi nei processi AOP, mentre le configurazioni multi-stadio combinano queste tecnologie in sequenze ottimizzate in funzione della qualità dell’acqua e degli obiettivi di trattamento.
             </p>
+            <ol>
+<li>Pre-filtrazione</li>
+<li>Ozonizzazione</li>
+<li>Filtrazione su carbone attivo</li>
+<li>Filtrazione finale</li>
+<li>Disinfezione finale</li>
+</ol>
             </div>
         </section>
     '''
@@ -669,6 +788,28 @@ L’ozono ha un potenziale redox di circa 2,07 V, superiore al cloro, e permette
             <p>
 Inoltre, in presenza di specifici precursori come il bromo, possono formarsi sottoprodotti indesiderati (ad esempio bromati), rendendo necessario un controllo accurato delle condizioni operative e della qualità dell’acqua in ingresso.
             </p>
+            <table>
+<thead>
+<tr>
+<th>Vantaggi</th>
+<th>Limiti</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Elevato potere ossidante</td>
+<td>Instabilità dell’ozono</td>
+</tr>
+<tr>
+<td>Nessun residuo chimico</td>
+<td>Produzione in loco necessaria</td>
+</tr>
+<tr>
+<td>Ampio spettro di disinfezione</td>
+<td>Consumo energetico</td>
+</tr>
+</tbody>
+</table>
             </div>
         </section>
     '''
@@ -687,6 +828,13 @@ A concentrazioni superiori a 0,1 ppm può causare irritazione delle vie respirat
             <p>
 Infine, la formazione degli operatori è critica: il personale deve essere in grado di riconoscere i rischi, interpretare i dati dei sensori e intervenire correttamente in caso di anomalie o emergenze.
             </p>
+            <ul>
+<li>Monitoraggio delle concentrazioni di ozono</li>
+<li>Sistemi di ventilazione</li>
+<li>Distruzione dell’ozono residuo</li>
+<li>Procedure di emergenza</li>
+<li>Formazione degli operatori</li>
+</ul>
             </div>
         </section>
     '''
@@ -705,6 +853,32 @@ Questo si realizza utilizzando sensori di ozono in aria per rilevare eventuali f
             <p>
 Inoltre, sistemi di allarme segnalano anomalie o superamenti di soglia, mentre la registrazione continua dei dati consente analisi storiche, ottimizzazione operativa e manutenzione predittiva.
             </p>
+            <table>
+<thead>
+<tr>
+<th>Strumento</th>
+<th>Funzione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sensore ozono</td>
+<td>Misura concentrazione ozono</td>
+</tr>
+<tr>
+<td>ORP meter</td>
+<td>Misura potenziale redox</td>
+</tr>
+<tr>
+<td>PLC</td>
+<td>Controllo automatico impianto</td>
+</tr>
+<tr>
+<td>SCADA</td>
+<td>Supervisione del sistema</td>
+</tr>
+</tbody>
+</table>
             </div>
         </section>
     '''
@@ -723,6 +897,12 @@ In Europa, la Direttiva 98/83/CE sull’acqua potabile definisce requisiti di si
             <p>
 Ad esempio, un impianto di ozonizzazione per acqua potabile in un comune europeo deve documentare la concentrazione di ozono e i livelli di sottoprodotti almeno quotidianamente per dimostrare la conformità normativa.
             </p>
+            <ul>
+<li>Direttiva europea acqua potabile</li>
+<li>Linee guida OMS</li>
+<li>Standard EPA per disinfezione</li>
+<li>Limiti per bromati</li>
+</ul>
             </div>
         </section>
     '''
@@ -733,8 +913,36 @@ Ad esempio, un impianto di ozonizzazione per acqua potabile in un comune europeo
                 Efficienza Energetica e Costi Operativi
             </h2>
             <p>
-                L’efficienza energetica e i costi operativi di un sistema di ozonizzazione dipendono dalla potenza del generatore di ozono, dalla concentrazione e dalla portata dell’acqua trattata, dal tempo di contatto richiesto, dall’efficienza del trasferimento gas-liquido e dalla manutenzione dei componenti, e rappresentano il principale fattore di valutazione economica per l’adozione industriale della tecnologia.
+L’efficienza energetica e i costi operativi di un sistema di ozonizzazione dipendono principalmente dal consumo elettrico dei generatori di ozono e dall’efficienza con cui l’energia viene convertita in ozono utile per il trattamento dell’acqua.
             </p>
+            <p>
+Nei generatori industriali a scarica corona moderni il consumo specifico varia tipicamente tra 8 e 15 kWh per kg di ozono prodotto quando si utilizza ossigeno puro come gas di alimentazione, mentre l’efficienza di conversione energetica si colloca generalmente tra il 10% e il 18%, valori che incidono direttamente sui costi operativi (OPEX), costituiti soprattutto da energia elettrica, fornitura di ossigeno e manutenzione ordinaria dei componenti. I costi di investimento iniziale (CAPEX) includono generatori, sistemi di alimentazione gas e apparecchiature di contatto e possono rappresentare una quota significativa del progetto, ma nel ciclo di vita dell’impianto il costo energetico rimane spesso la voce dominante. La manutenzione riguarda principalmente elettrodi, sistemi di raffreddamento, essiccatori e componenti soggetti a usura, con costi annuali generalmente stimati tra il 3% e il 6% del valore dell’impianto. 
+            </p>
+            <p>
+L’ottimizzazione energetica si ottiene migliorando la concentrazione di ozono prodotta, utilizzando ossigeno ad alta purezza e riducendo le perdite di processo, e una corretta analisi costo-beneficio mostra che, nonostante l’investimento iniziale, l’ozono può risultare economicamente competitivo quando consente di ridurre l’uso di reagenti chimici e migliorare l’efficacia complessiva del trattamento.
+            </p>
+            <table>
+<thead>
+<tr>
+<th>Voce</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Consumo energetico</td>
+<td>Energia richiesta dai generatori</td>
+</tr>
+<tr>
+<td>Manutenzione</td>
+<td>Sostituzione componenti</td>
+</tr>
+<tr>
+<td>Costi operativi</td>
+<td>Gestione quotidiana</td>
+</tr>
+</tbody>
+</table>
             </div>
         </section>
     '''
@@ -745,8 +953,20 @@ Ad esempio, un impianto di ozonizzazione per acqua potabile in un comune europeo
                 Impatti Ambientali e Sostenibilità
             </h2>
             <p>
-                L’ozonizzazione dell’acqua riduce significativamente l’uso di prodotti chimici tradizionali come cloro e biossido di cloro, non produce residui persistenti nell’ambiente e consente una disinfezione efficace con un minore impatto energetico, contribuendo a processi industriali più sostenibili e al miglioramento della qualità ambientale delle acque trattate.
+L’ozonizzazione dell’acqua è considerata una tecnologia relativamente sostenibile perché utilizza un ossidante che si decompone rapidamente senza lasciare residui chimici persistenti nell’ambiente. 
             </p>
+            <p>
+L’ozono (O₃), dopo aver reagito con i contaminanti, si riconverte in ossigeno molecolare (O₂), evitando l’accumulo di sottoprodotti stabili tipici di altri trattamenti e riducendo la necessità di aggiungere ulteriori reagenti chimici per la disinfezione o l’ossidazione. Tuttavia il processo richiede energia elettrica per la generazione dell’ozono, con consumi tipici nell’ordine di 8–15 kWh per kg di ozono prodotto nei generatori industriali a scarica corona, il che implica emissioni indirette di CO₂ legate al mix energetico utilizzato per alimentare l’impianto. Dal punto di vista ambientale, l’efficacia dell’ozono nella degradazione di composti organici complessi e microinquinanti consente di migliorare significativamente la qualità dell’acqua trattata, rendendola più idonea al riutilizzo in applicazioni industriali, agricole o civili. 
+            </p>
+            <p>
+Per questo motivo la tecnologia è spesso adottata nei sistemi avanzati di trattamento e riciclo delle acque, contribuendo alla riduzione dei prelievi da fonti naturali e supportando una gestione più sostenibile delle risorse idriche.
+            </p>
+            <ul>
+<li>Riduzione uso di reagenti chimici</li>
+<li>Assenza di residui persistenti</li>
+<li>Miglioramento qualità dell’acqua</li>
+<li>Supporto al riutilizzo delle acque</li>
+</ul>
             </div>
         </section>
     '''
@@ -757,8 +977,20 @@ Ad esempio, un impianto di ozonizzazione per acqua potabile in un comune europeo
                 Innovazioni Tecnologiche e Ricerca
             </h2>
             <p>
-                Le innovazioni tecnologiche nel trattamento dell’acqua con ozono includono generatori a corona migliorati, sistemi di dosaggio automatizzati basati su sensori in tempo reale, integrazione con processi di ossidazione avanzata (AOP) e ottimizzazione energetica, mentre la ricerca si concentra sull’efficacia nella rimozione di microinquinanti emergenti, sulla riduzione dei sottoprodotti indesiderati e sull’implementazione di soluzioni intelligenti per il monitoraggio e il controllo industriale.
+Le innovazioni tecnologiche nel trattamento dell’acqua con ozono si concentrano sull’aumento dell’efficienza di generazione, sul miglioramento del trasferimento gas-liquido e sull’integrazione con sistemi digitali avanzati, con l’obiettivo di ottenere prestazioni più elevate e maggiore affidabilità nei sistemi industriali. 
             </p>
+            <p>
+Negli ultimi anni sono stati sviluppati generatori a scarica a corona ad alta frequenza con alimentazione elettronica ottimizzata, capaci di produrre concentrazioni di ozono superiori a 12–16% in peso quando alimentati con ossigeno puro, riducendo il consumo energetico specifico fino a circa 7–10 kWh per kg di ozono prodotto rispetto ai sistemi più tradizionali. Parallelamente, la ricerca si è concentrata sull’ottimizzazione del trasferimento dell’ozono in acqua tramite diffusori micro-nanobubble, iniettori ad alta efficienza e contattori progettati con modellazione CFD, che permettono di aumentare la superficie di contatto e quindi la dissoluzione dell’ozono nel liquido. Un altro ambito di sviluppo è l’integrazione con tecnologie digitali come sensori intelligenti, piattaforme IoT e analisi dati in tempo reale, che consentono il monitoraggio continuo delle prestazioni dell’impianto e la regolazione automatica dei parametri operativi per massimizzare l’efficienza del processo. 
+            </p>
+            <p>
+Inoltre, la ricerca sta espandendo l’uso dell’ozono nei processi di ossidazione avanzata (AOP) combinandolo con UV o perossido di idrogeno per generare radicali ossidrilici altamente reattivi, mentre nuovi materiali resistenti all’ozono, come polimeri fluorurati e acciai speciali, stanno migliorando la durata dei componenti e rendendo possibile l’applicazione della tecnologia in settori emergenti come la rimozione di microinquinanti farmaceutici e il trattamento avanzato delle acque industriali.
+            </p>
+            <ul>
+<li>Generatori ad alta efficienza</li>
+<li>Sistemi AOP avanzati</li>
+<li>Integrazione IoT negli impianti</li>
+<li>Materiali resistenti all’ozono</li>
+</ul>
             </div>
         </section>
     '''
@@ -769,8 +1001,21 @@ Ad esempio, un impianto di ozonizzazione per acqua potabile in un comune europeo
                 Progettazione e Dimensionamento degli Impianti
             </h2>
             <p>
-                La progettazione e il dimensionamento degli impianti di ozonizzazione richiedono la valutazione precisa della portata d’acqua, del carico inquinante, della concentrazione richiesta di ozono, del tempo di contatto necessario per garantire la disinfezione e l’ossidazione dei contaminanti, nonché la scelta dei componenti adeguati come generatori di ozono, iniettori e contattori, in modo da ottimizzare l’efficienza del trasferimento gas-liquido, ridurre i consumi energetici e garantire sicurezza operativa e conformità normativa.
+La progettazione e il dimensionamento di un impianto di ozonizzazione consistono nel definire la capacità del sistema in modo che la quantità di ozono prodotta e trasferita all’acqua sia sufficiente a raggiungere gli obiettivi di trattamento richiesti dalle condizioni operative reali. 
             </p>
+            <p>
+Il processo inizia con l’analisi delle esigenze di trattamento e con la caratterizzazione dell’acqua in ingresso, valutando parametri come carico organico, presenza di composti ossidabili, torbidità, ferro, manganese e concentrazione di microinquinanti, dati che permettono di stimare la domanda di ozono espressa tipicamente in mg O₃/L; ad esempio, acque potabili superficiali possono richiedere 0,5–2 mg/L, mentre acque industriali o reflue possono superare 5–10 mg/L. Sulla base della portata idraulica e della domanda di ozono si dimensionano i generatori, che nei sistemi industriali producono normalmente da poche decine di grammi fino a diversi chilogrammi di ozono all’ora tramite scarica a corona alimentata da aria essiccata o ossigeno puro, e si dimensionano i contattori gas-liquido affinché garantiscano un tempo di contatto adeguato e un’elevata efficienza di trasferimento. La scelta dei materiali e dei componenti deve considerare la forte capacità ossidante dell’ozono, utilizzando acciai inox specifici, PTFE, PVDF o vetro per evitare degradazioni e perdite di prestazioni nel tempo. 
+            </p>
+            <p>
+Infine si definiscono il layout impiantistico e l’integrazione nel sistema esistente, prevedendo configurazioni modulari e scalabili che permettano di aumentare la capacità del trattamento o adattarlo a variazioni di portata senza modifiche strutturali rilevanti all’impianto.
+            </p>
+            <ul>
+<li>Analisi della qualità dell’acqua</li>
+<li>Calcolo della domanda di ozono</li>
+<li>Dimensionamento generatori</li>
+<li>Progettazione del reattore di contatto</li>
+<li>Definizione layout impiantistico</li>
+</ul>
             </div>
         </section>
     '''

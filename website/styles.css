@@ -118,7 +118,6 @@ p {
     color: #333;
 }
 
-
 li {
     font-family: var(--font-body);
     font-size: 1rem;
@@ -128,6 +127,20 @@ li {
 
 a {
     font-family: var(--font-body);
+}
+
+table {
+    font-family: var(--font-body);
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+table,
+td,
+th {
+    border: 1px solid #333;
+    padding: 0.5rem 0.75rem;
 }
 
 .grid-2 {
@@ -2034,4 +2047,19 @@ ARTICLEs
 .article-section p {
     margin-bottom: 1rem;
 
+}
+
+
+.article-section ol {
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.article-section ul {
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
