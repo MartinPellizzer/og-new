@@ -4,7 +4,7 @@ from lib import g
 from lib import components
 
 def main():
-    
+
     ########################################
     # HERO 0001
     ########################################

@@ -2034,7 +2034,7 @@ ARTICLEs
 */
 
 .article-section {
-    padding-top: 5rem;
+    /* padding-top: 5rem; */
     padding-bottom: 5rem;
 }
 
@@ -2049,7 +2049,6 @@ ARTICLEs
 
 }
 
-
 .article-section ol {
     margin-left: 2rem;
     display: flex;
@@ -2058,6 +2057,59 @@ ARTICLEs
 }
 
 .article-section ul {
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+
+
+
+/* 
+===========================================
+===========================================
+===========================================
+BREADCRUMBS
+===========================================
+===========================================
+===========================================
+*/
+
+.breadcrumbs {
+    padding: 1rem;
+}
+
+.breadcrumbs a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* 
+===========================================
+===========================================
+===========================================
+TOC
+===========================================
+===========================================
+===========================================
+*/
+
+.toc {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.toc-heading {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.toc ul {
     margin-left: 2rem;
     display: flex;
     flex-direction: column;

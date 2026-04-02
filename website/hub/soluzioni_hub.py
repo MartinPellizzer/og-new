@@ -384,6 +384,32 @@ def soluzioni__gen():
 def soluzioni__acqua__gen():
     
     light_gray = '#f8f8f8'
+    light_gray = '#ffffff'
+    ########################################
+    # HERO 0001
+    ########################################
+    # h1 = f'''
+    #     Ozonizzazione dell’Acqua: Principi, Applicazioni e Sistemi Industriali
+    # '''
+    # subordinate = f'''
+    #     L’ozonizzazione dell’acqua è un processo di trattamento avanzato che utilizza l’ozono (O₃), un potente agente ossidante, per la disinfezione e la rimozione di contaminanti organici e inorganici. Impiegata nei sistemi industriali a ozono, questa tecnologia consente di eliminare microrganismi, degradare microinquinanti e migliorare le caratteristiche organolettiche dell’acqua attraverso reazioni di ossidazione diretta e indiretta, senza lasciare residui chimici persistenti.
+    # '''
+    # href = '/contatti.html'
+    # anchor = 'Richiedi una consulenza gratuita'
+    # hero_html = f'''
+    #     <section class="hero-0001"
+    #         style="background-image: linear-gradient(rgba(0, 30, 60, 0.8), rgba(0, 30, 60, 0.8)), 
+    #         url('/immagini/soluzioni.jpg');
+    #     ">
+    #         <div class="hero-0001-content-container">
+    #             <h1 class="container-lg">{h1}</h1>
+    #             <p class="container-md">{subordinate}</p>
+    #             <div class="hero-0001-link">
+    #                 <a href="{href}">{anchor}</a>
+    #             </div>
+    #         </div>
+    #     </section>
+    # '''
     ########################################
     # HERO 0001
     ########################################
@@ -396,19 +422,21 @@ def soluzioni__acqua__gen():
     href = '/contatti.html'
     anchor = 'Richiedi una consulenza gratuita'
     hero_html = f'''
-        <section class="hero-0001"
-            style="background-image: linear-gradient(rgba(0, 30, 60, 0.8), rgba(0, 30, 60, 0.8)), 
-            url('/immagini/soluzioni.jpg');
-        ">
-            <div class="hero-0001-content-container">
-                <h1 class="container-lg">{h1}</h1>
-                <p class="container-md">{subordinate}</p>
-                <div class="hero-0001-link">
-                    <a href="{href}">{anchor}</a>
-                </div>
+        <section style="margin-top: 5rem; margin-bottom: 5rem;">
+            <h1 class="container-md" style="margin-bottom: 1.6rem; font-size: 3rem;">{h1}</h1>
+            <div class="container-lg" style="margin-bottom: 1.6rem;">
+                <img src="/immagini/soluzioni-acqua.jpg" 
+                    style="height: 30rem; object-fit: cover; border-radius: 16px;
+                ">
             </div>
+            <p class="container-md" style="margin-bottom: 1.6rem;">{subordinate}</p>
+            [toc]
         </section>
     '''
+            # <div class="hero-0001-link">
+            #     <a href="{href}">{anchor}</a>
+            # </div>
+
     ########################################
     definizione_html = f'''
         <section class="article-section">
@@ -447,7 +475,7 @@ Questa tecnologia può essere applicata a diverse tipologie di acqua, tra cui ac
     row_0_img_src = f'''/immagini/placeholder.jpg'''
     img_height = '400px'
     proprieta_html = f'''
-        <section class="col-0000" style="background-color: {light_gray};">
+        <section class="article-section" style="background-color: {light_gray};">
             <div class="container-md">
                         <h2>{row_0_h2}</h2>
                         <p>
@@ -1065,6 +1093,9 @@ Infine si definiscono il layout impiantistico e l’integrazione nel sistema esi
     17. Innovazioni Tecnologiche e Ricerca
     18. Progettazione e Dimensionamento degli Impianti
     '''
+    
+    html_breadcrumbs = components.breadcrumbs('soluzioni/acqua')
+    main_html = components.toc(main_html)
 
     meta_title = f'''Ozonizzazione dell'Acqua: Principi, Applicazioni e Sistemi Industriali'''
     html = f'''
@@ -1079,6 +1110,7 @@ Infine si definiscono il layout impiantistico e l’integrazione nel sistema esi
         </head>
         <body>
             {components.header_default()}
+            {html_breadcrumbs}
             <main>
                 {main_html}
             </main>
