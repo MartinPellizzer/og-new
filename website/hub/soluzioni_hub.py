@@ -1126,8 +1126,349 @@ Infine si definiscono il layout impiantistico e l’integrazione nel sistema esi
         f.write(html)
     print(html_filepath)
 
+def soluzioni__acqua__potabile__gen():
+    url_slug = f'soluzioni/acqua/potabile'
+
+    html_sections = ''
+    
+    h1 = f'''
+Ozonizzazione dell’acqua potabile: funzionamento, applicazioni e vantaggi
+    '''
+    subordinate = f'''
+<p>
+L’ozonizzazione dell’acqua potabile è un processo di trattamento avanzato che utilizza l’ozono, un potente ossidante, per migliorare la qualità dell’acqua destinata al consumo umano. 
+</p>
+<p>
+Questa tecnologia di trattamento acqua con ozono sfrutta le proprietà ossidanti dell’ozono per eliminare batteri, virus e composti organici che possono compromettere la sicurezza e la potabilità dell’acqua. La disinfezione acqua con ozono è particolarmente efficace rispetto ai metodi tradizionali, poiché l’ozono agisce rapidamente senza lasciare residui chimici persistenti, e può ossidare sostanze come ferro e manganese, migliorando anche gusto e odore. L’ozonizzazione trova applicazioni sia a livello municipale che industriale, con impianti che trattano volumi fino a milioni di litri al giorno, garantendo standard di qualità conformi alle normative internazionali. L’obiettivo principale di questo trattamento è garantire un’acqua sicura e stabile, prevenendo la formazione di biofilm e riducendo la necessità di cloro aggiuntivo. 
+</p>
+<p>
+Per comprendere davvero il valore di questa tecnologia, è necessario prima capire in che modo l’ozono viene applicato nel trattamento di questo tipo di acqua.
+</p>
+    '''
+    html_sections += f'''
+        <section style="margin-top: 5rem; margin-bottom: 5rem;">
+            <h1>{h1}</h1>
+            <img src="/immagini/soluzioni-acqua.jpg">
+            {subordinate}
+        </section>
+    '''
+            # [toc]
+
+    heading = f'''
+Cos’è l’ozonizzazione dell’acqua potabile
+    '''
+    subordinate = f'''
+<p>
+L’ozonizzazione dell’acqua potabile è un processo di trattamento in cui l’ozono, un gas naturale costituito da tre atomi di ossigeno (O₃), viene dissolto nell’acqua per eliminare microrganismi e composti organici indesiderati. 
+</p>
+<p>
+Questo trattamento sfrutta le proprietà ossidanti dell’ozono, che reagisce rapidamente con batteri, virus, protozoi e sostanze chimiche, garantendo una disinfezione efficace senza lasciare residui chimici persistenti. L’applicazione dell’ozono nell’acqua potabile è particolarmente indicata per reti urbane e impianti di trattamento municipali, dove può completare o sostituire il cloro tradizionale, riducendo la formazione di sottoprodotti tossici come trialometani. Il ruolo principale del trattamento consiste nel migliorare la qualità microbiologica e organolettica dell’acqua, ossia sapore, colore e odore, assicurando al contempo la sicurezza del consumo umano. L’efficacia dell’ozonizzazione dipende dalla concentrazione di ozono utilizzata, generalmente tra 0,3 e 1,0 mg/L, e dal tempo di contatto, che varia da pochi secondi a pochi minuti a seconda della qualità iniziale dell’acqua. 
+</p>
+<p>
+Una volta chiarito cosa significa ozonizzare questo tipo di acqua, è importante capire perché proprio l’ozono viene utilizzato in questo contesto.
+</p>
+    '''
+    html_sections += f'''
+        <section style="margin-top: 5rem; margin-bottom: 5rem;">
+            <h2>{heading}</h2>
+            {subordinate}
+        </section>
+    '''
+
+    heading = f'''
+Perché l’ozono viene utilizzato nel trattamento di questa acqua
+    '''
+    subordinate = f'''
+<p>
+L’ozono viene impiegato nel trattamento dell’acqua potabile principalmente grazie al suo elevato potere ossidante, che permette di degradare rapidamente materia organica, microinquinanti e composti che possono alterare colore e odore. 
+</p>
+<p>
+La sua capacità disinfettante è superiore a quella del cloro tradizionale: dosi di 0,5–1,0 mg/L di ozono garantiscono l’eliminazione di batteri, virus e protozoi in tempi molto brevi, spesso inferiori a 10 minuti di contatto. Inoltre, l’ozono non lascia residui chimici persistenti nell’acqua, riducendo la formazione di sottoprodotti indesiderati come trialometani o clorammine. La compatibilità con i sistemi di distribuzione esistenti è un ulteriore vantaggio, perché l’ozono può essere integrato in impianti di potabilizzazione senza necessità di modifiche strutturali complesse. La combinazione di ossidazione dell’ozono e disinfezione rapida rende questa tecnologia particolarmente adatta a garantire un’acqua più sicura, chiara e dal gusto neutro. 
+</p>
+<p>
+Capito perché questa tecnologia è efficace, il passo successivo è analizzare come funziona concretamente il processo di ozonizzazione nell’acqua potabile.
+</p>
+    '''
+    html_sections += f'''
+        <section style="margin-top: 5rem; margin-bottom: 5rem;">
+            <h3>{heading}</h3>
+            {subordinate}
+        </section>
+    '''
+
+    heading = f'''
+Come funziona il processo di ozonizzazione nell’acqua potabile
+    '''
+    subordinate = f'''
+<p>
+Il processo di ozonizzazione dell’acqua potabile inizia con la generazione dell’ozono tramite un generatore ozono acqua, che normalmente produce gas contenente 1–5% di O₃ miscelato con ossigeno puro o aria secca. 
+</p>
+<p>
+Successivamente, l’ozono viene trasferito nell’acqua mediante sistemi di diffusione o iniezione sotto pressione, garantendo una solubilità efficace fino a 10–15 mg/L a temperatura ambiente. Una volta disciolto, l’ozono reagisce rapidamente con i contaminanti organici e inorganici presenti, ossidando batteri, virus, pesticidi e composti organici complessi attraverso la reazione ozono acqua, formando sostanze più semplici o completamente mineralizzate. La durata della reazione è breve, spesso tra i 5 e i 20 minuti, a seconda della concentrazione di ozono e della turbidità dell’acqua, permettendo la distruzione fino al 99,9% dei microrganismi target. Al termine del trattamento, l’ozono residuo si decompone naturalmente in ossigeno senza lasciare sottoprodotti nocivi, conferendo all’acqua potabile caratteristiche organolettiche più gradevoli e una maggiore sicurezza microbiologica. 
+</p>
+<p>
+Dopo aver compreso il funzionamento del processo, è utile analizzare quali fattori influenzano l’efficacia del trattamento.
+</p>
+    '''
+    html_sections += f'''
+        <section style="margin-top: 5rem; margin-bottom: 5rem;">
+            <h2>{heading}</h2>
+            {subordinate}
+        </section>
+    '''
+
+    heading = f'''
+Produzione e introduzione dell’ozono nel sistema
+    '''
+    subordinate = f'''
+<p>
+La generazione dell’ozono negli impianti di trattamento dell’acqua avviene principalmente tramite tecnologia a scarica a corona, in cui un campo elettrico ad alta tensione trasforma l’ossigeno in ozono con efficienze di conversione tipiche del 5-10% quando si utilizza aria e fino al 15% con ossigeno puro. 
+</p>
+<p>
+L’aria o l’ossigeno alimentano il generatore ozono industriale, passando attraverso celle in cui la scarica elettrica produce il gas ad alta concentrazione, generalmente compresa tra 1 e 10 g/Nm³ per aria e fino a 15–20 g/Nm³ per ossigeno. Una volta prodotto, l’ozono viene trasferito nell’acqua mediante sistemi di diffusione che sfruttano iniettori venturi o diffusori a bolle fini, garantendo un’efficiente dissoluzione gas-liquido con tempi di contatto dell’ordine di pochi minuti per concentrazioni fino a 5 mg/L. Il trasferimento è ottimizzato regolando la pressione e il flusso del gas, spesso con ricircolo parziale dell’acqua per aumentare l’assorbimento, riducendo al minimo la perdita di ozono in atmosfera. Questi sistemi permettono di distribuire uniformemente l’ozono nel volume trattato, preparando l’acqua ai successivi processi di ossidazione e disinfezione, che iniziano immediatamente dopo l’introduzione del gas. 
+</p>
+<p>
+L’efficienza complessiva dipende quindi dalla qualità della generazione, dal tipo di alimentazione e dalla geometria del sistema di diffusione adottato.
+</p>
+    '''
+    html_sections += f'''
+        <section style="margin-top: 5rem; margin-bottom: 5rem;">
+            <h3>{heading}</h3>
+            {subordinate}
+        </section>
+    '''
+
+    heading = f'''
+Reazione dell’ozono con contaminanti e microrganismi
+    '''
+    subordinate = f'''
+<p>
+L’ozono agisce nell’acqua potabile principalmente attraverso processi di ossidazione chimica ad alta efficienza, grazie al suo potenziale redox elevato di circa 2,07 V, che gli consente di reagire rapidamente con una vasta gamma di contaminanti organici come pesticidi, residui farmaceutici e composti fenolici. 
+</p>
+<p>
+Durante la disinfezione, l’ozono ossida la membrana cellulare dei microrganismi, provocando la rottura delle pareti batteriche e l’inattivazione di virus e protozoi; studi indicano che concentrazioni di 0,5–1,0 mg/L di ozono possono ridurre la carica batterica di oltre il 99,9% in pochi minuti. Parallelamente, l’ozono si decompone spontaneamente in acqua formando radicali ossidanti come l’idrossilico (·OH), che amplificano ulteriormente la degradazione dei contaminanti più resistenti e contribuiscono alla mineralizzazione completa di molecole complesse. La combinazione tra ossidazione diretta e attacco dei radicali ossidanti permette non solo la distruzione di sostanze organiche, ma anche la rimozione di colore, odori e composti responsabili di sapori sgradevoli. 
+</p>
+<p>
+La velocità e l’efficacia di queste reazioni dipendono dalla temperatura, dal pH e dalla concentrazione di sostanze organiche presenti, poiché questi fattori influenzano sia la decomposizione dell’ozono sia la generazione dei radicali ossidanti necessari per la completa disinfezione e ossidazione dei contaminanti.
+</p>
+    '''
+    html_sections += f'''
+        <section style="margin-top: 5rem; margin-bottom: 5rem;">
+            <h3>{heading}</h3>
+            {subordinate}
+        </section>
+    '''
+
+    heading = f'''
+Fattori che influenzano l’efficacia del trattamento
+    '''
+    subordinate = f'''
+<p>
+L’efficacia dell’ozonizzazione dell’acqua dipende principalmente dalla concentrazione di ozono applicata, che deve essere calibrata in base alla carica microbica e alla presenza di sostanze organiche: generalmente, dosi comprese tra 0,5 e 5 mg/L garantiscono una disinfezione efficace senza generare residui indesiderati. 
+</p>
+<p>
+La qualità dell’acqua è un altro fattore critico; acque torbide o ricche di materia organica richiedono tempi di contatto più lunghi per raggiungere lo stesso livello di ossidazione rispetto ad acque limpide, poiché le particelle sospese possono proteggere microrganismi e consumare ozono. Il tempo di contatto, ovvero il periodo durante il quale l’acqua rimane a contatto con l’ozono, incide direttamente sulla riduzione dei patogeni: valori tipici oscillano tra 5 e 20 minuti in funzione della temperatura e della concentrazione di ozono. Anche le condizioni operative, come la temperatura e il pH, influenzano la stabilità e l’attività dell’ozono; ad esempio, temperature più elevate accelerano la decomposizione dell’ozono, mentre un pH acido ne aumenta l’efficacia ossidativa. 
+</p>
+<p>
+Comprendere questi fattori è fondamentale per dimensionare correttamente il sistema e garantire che il trattamento sia sufficiente a risolvere criticità specifiche come la presenza di batteri resistenti o composti organici persistenti.
+</p>
+    '''
+    html_sections += f'''
+        <section style="margin-top: 5rem; margin-bottom: 5rem;">
+            <h3>{heading}</h3>
+            {subordinate}
+        </section>
+    '''
+
+    heading = f'''
+Problemi comuni nel trattamento dell’acqua potabile
+    '''
+    subordinate = f'''
+<p>
+L’acqua potabile, pur provenendo da fonti controllate, presenta frequentemente criticità che ne compromettono la qualità e rendono necessario un trattamento approfondito. 
+</p>
+<p>
+Tra i problemi più comuni si riscontrano contaminazioni microbiologiche, come batteri coliformi, Escherichia coli e enterococchi, che possono raggiungere concentrazioni di 10–100 ufc/100 mL in acque superficiali non trattate. Parallelamente, la contaminazione chimica è altrettanto rilevante: residui di pesticidi, nitrati superiori ai 50 mg/L e metalli pesanti come piombo e arsenico possono accumularsi oltre i limiti di legge, mettendo a rischio la salute dei consumatori. La presenza di questi contaminanti influisce direttamente sulla qualità dell’acqua, causando odori sgradevoli, torbidità e alterazioni del gusto che ne rendono il consumo meno sicuro e meno gradevole. Inoltre, composti organici disciolti, come i sottoprodotti della clorazione o i microinquinanti emergenti, possono reagire durante la distribuzione, formando sostanze potenzialmente tossiche. 
+</p>
+<p>
+Queste criticità richiedono sistemi di trattamento in grado di garantire la rimozione simultanea di microrganismi patogeni e contaminanti chimici, assicurando il rispetto dei parametri di sicurezza previsti dalla normativa vigente.
+</p>
+    '''
+    html_sections += f'''
+        <section style="margin-top: 5rem; margin-bottom: 5rem;">
+            <h2>{heading}</h2>
+            {subordinate}
+        </section>
+    '''
+
+    heading = f'''
+Contaminanti microbiologici
+    '''
+    subordinate = f'''
+<p>
+L’acqua potabile può essere contaminata da diversi microrganismi, tra cui batteri acqua come Escherichia coli e Legionella pneumophila, virus come il norovirus e l’adenovirus, e alghe acqua che possono proliferare in presenza di nutrienti come fosfati e nitrati. 
+</p>
+<p>
+Questi organismi spesso si accumulano formando biofilm tubazioni, strutture complesse che proteggono i microrganismi e ne facilitano la persistenza nei sistemi idrici. La loro presenza può causare problemi sanitari significativi: infezioni gastrointestinali, legionellosi o reazioni allergiche, oltre a influire sul gusto, odore e colore dell’acqua. Le principali fonti di contaminazione includono acque di superficie, infiltrazioni nelle condutture e residui organici che favoriscono la crescita microbica. In sistemi non trattati correttamente, la densità di batteri acqua può superare 10^5 unità formanti colonia per litro, mentre la formazione di biofilm aumenta il rischio di contaminazioni ricorrenti. 
+</p>
+<p>
+Oltre ai contaminanti biologici, anche alcune sostanze chimiche o organiche possono compromettere la qualità dell’acqua.
+</p>
+    '''
+    html_sections += f'''
+        <section style="margin-top: 5rem; margin-bottom: 5rem;">
+            <h3>{heading}</h3>
+            {subordinate}
+        </section>
+    '''
+
+    heading = f'''
+Contaminanti chimici o organici
+    '''
+    subordinate = f'''
+<p>
+L’acqua potabile può contenere una varietà di composti chimici e organici, tra cui pesticidi, solventi industriali, residui farmaceutici e prodotti della degradazione di sostanze naturali. 
+</p>
+<p>
+Tra i pesticidi più comuni rilevati nelle acque superficiali e sotterranee vi sono atrazina, simazina e clorpirifos, spesso presenti in concentrazioni che variano da 0,01 a 0,5 μg/L, valori che superano i limiti raccomandati dall’OMS per la sicurezza. Questi contaminanti derivano principalmente dall’agricoltura intensiva, dalle attività industriali e dal deflusso urbano, compromettendo non solo il sapore e l’odore dell’acqua, ma anche la sua sicurezza microbiologica e chimica. La presenza di composti organici nell’acqua, come idrocarburi policiclici aromatici e fenoli, può portare a effetti tossici cronici e aumentare il rischio di malattie a lungo termine. Per questo motivo, è fondamentale rimuovere questi contaminanti, non solo per rispettare i limiti normativi, ma anche per garantire la qualità organolettica e la salute pubblica. 
+</p>
+<p>
+Per affrontare queste problematiche, l’ozonizzazione offre diversi vantaggi rispetto ad altre tecnologie di trattamento, degradando efficacemente pesticidi acqua e composti organici acqua senza introdurre sottoprodotti chimici persistenti.
+</p>
+    '''
+    html_sections += f'''
+        <section style="margin-top: 5rem; margin-bottom: 5rem;">
+            <h3>{heading}</h3>
+            {subordinate}
+        </section>
+    '''
+
+    heading = f'''
+Vantaggi dell’utilizzo dell’ozono nel trattamento dell’acqua potabile
+    '''
+    subordinate = f'''
+<p>
+L’ozonizzazione si distingue per la sua elevata efficacia nella disinfezione dell’acqua, con capacità di inattivare fino al 99,99% di batteri, virus e protozoi in pochi minuti, superando spesso l’efficacia del cloro tradizionale. 
+</p>
+<p>
+Grazie alla sua potente azione ossidante, l’ozono è in grado di degradare materia organica, composti fenolici e residui chimici, migliorando notevolmente il gusto e l’odore dell’acqua senza introdurre sostanze residue tossiche, a differenza del cloro che può generare trialometani e altri sottoprodotti nocivi. L’assenza di residui chimici rende l’ozono ideale per acquedotti e sistemi di distribuzione complessi, dove la sicurezza a lungo termine è prioritaria. Studi operativi indicano che tempi di contatto di 5–10 minuti a concentrazioni di 0,5–1 mg/L garantiscono un’ossidazione efficace senza necessità di ulteriori trattamenti chimici. Inoltre, l’ozono facilita la rimozione di metalli come ferro e manganese e favorisce la precipitazione di solidi sospesi, ottimizzando la qualità dell’acqua trattata. 
+</p>
+<p>
+Oltre ai benefici operativi, è importante considerare i parametri tecnici che regolano il funzionamento del trattamento, come la concentrazione di ozono, il tempo di contatto e la temperatura, che determinano direttamente l’efficacia complessiva della disinfezione e dell’ossidazione.
+</p>
+    '''
+    html_sections += f'''
+        <section style="margin-top: 5rem; margin-bottom: 5rem;">
+            <h2>{heading}</h2>
+            {subordinate}
+        </section>
+    '''
+
+    heading = f'''
+Parametri operativi dell’ozonizzazione
+    '''
+    subordinate = f'''
+<p>
+I parametri principali che determinano l’efficacia dell’ozonizzazione dell’acqua potabile includono la dose di ozono, il tempo di contatto e la concentrazione dell’ozono stesso. 
+</p>
+<p>
+La dose di ozono viene solitamente espressa in mg/L e per garantire una corretta disinfezione e ossidazione dei contaminanti organici si consiglia una gamma tra 0,3 e 1,0 mg/L, variando in funzione della qualità dell’acqua in ingresso. Il tempo di contatto dell’ozono con l’acqua è un altro fattore critico: per ottenere una rimozione efficace di batteri e virus, è necessario un tempo di contatto compreso tra 5 e 20 minuti, a seconda della temperatura e del pH dell’acqua. La concentrazione dell’ozono deve essere mantenuta stabile durante il trattamento, poiché fluttuazioni possono ridurre significativamente i risultati del trattamento, compromettendo la capacità ossidante del processo. Esiste una relazione diretta tra questi parametri: una maggiore dose può ridurre il tempo di contatto necessario, mentre acque con elevata torbidità o presenza di sostanze organiche richiedono dosi più alte e tempi più lunghi. 
+</p>
+<p>
+Per applicare correttamente questi parametri nella pratica sono necessari specifici sistemi di ozonizzazione che consentano il controllo preciso della generazione di ozono, della miscelazione e della distribuzione nell’acqua.
+</p>
+    '''
+    html_sections += f'''
+        <section style="margin-top: 5rem; margin-bottom: 5rem;">
+            <h2>{heading}</h2>
+            {subordinate}
+        </section>
+    '''
+    
+    heading = f'''
+Tecnologie e impianti per l’ozonizzazione dell’acqua
+    '''
+    subordinate = f'''
+<p>
+Gli impianti di ozonizzazione dell’acqua potabile si basano su tre componenti principali: il generatore di ozono, il sistema di contatto e il controllo impianto. 
+</p>
+<p>
+Il generatore di ozono produce gas ozono mediante scariche elettriche in aria o ossigeno puro, con concentrazioni tipiche tra 1 e 10 g/Nm³, a seconda del fabbisogno di ossidazione dell’acqua. Il sistema di contatto, costituito da colonne o reattori a venturi e diffusori, garantisce l’omogenea dissoluzione dell’ozono nell’acqua, con tempi di contatto generalmente tra 5 e 20 minuti per assicurare una completa disinfezione e ossidazione di composti organici e metalli. Il controllo impianto monitora parametri chiave come la concentrazione residua di ozono, il flusso d’acqua e la temperatura, regolando automaticamente la produzione per ottimizzare l’efficacia e ridurre gli sprechi. L’integrazione del sistema ozono acqua con altre tecnologie, come filtri a sabbia o sistemi UV, consente di ottenere una qualità finale stabile e conforme alle normative di potabilità. 
+</p>
+<p>
+Poiché l’ozono è un gas altamente reattivo, tutti gli impianti includono dispositivi di sicurezza per la decomposizione dei residui e il contenimento delle perdite, minimizzando i rischi operativi.
+</p>
+    '''
+    html_sections += f'''
+        <section style="margin-top: 5rem; margin-bottom: 5rem;">
+            <h2>{heading}</h2>
+            {subordinate}
+        </section>
+    '''
+    
+    heading = f'''
+Sicurezza nell’utilizzo dell’ozono
+    '''
+    subordinate = f'''
+<p>
+La sicurezza nell’uso dell’ozono è un aspetto cruciale nell’ozonizzazione dell’acqua potabile, poiché l’ozono è un forte ossidante e può risultare irritante per vie respiratorie e occhi se inalato in concentrazioni elevate. 
+</p>
+<p>
+I livelli di esposizione in ambiente lavorativo sono regolamentati: l’Organizzazione Internazionale del Lavoro indica un limite di 0,1 ppm (parti per milione) per un’esposizione media ponderata su 8 ore. Per garantire la sicurezza operativa, gli impianti di ozonizzazione sono dotati di sistemi di monitoraggio continuo dell’ozono, con sensori in grado di rilevare concentrazioni nell’aria e attivare automaticamente ventilazione o arresto dell’immissione di ozono in caso di superamento dei limiti. La gestione della sicurezza prevede inoltre la manutenzione periodica dei generatori e delle linee di dosaggio, la formazione del personale e procedure di emergenza specifiche per perdite accidentali. 
+</p>
+<p>
+Tenendo conto di questi aspetti tecnici e operativi, l’ozonizzazione rappresenta una soluzione efficace per migliorare la qualità dell’acqua in questo specifico contesto.
+</p>
+    '''
+    html_sections += f'''
+        <section style="margin-top: 5rem; margin-bottom: 5rem;">
+            <h2>{heading}</h2>
+            {subordinate}
+        </section>
+    '''
+
+    main_html = f'''
+        {html_sections}
+    '''
+    main_html = main_html.replace('’', "'")
+    
+    html_breadcrumbs = components.breadcrumbs(url_slug)
+    main_html = components.toc(main_html)
+
+    meta_title = f'''{h1}'''
+    html = f'''
+        <!DOCTYPE html>
+        <html lang="it">
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="/styles.css">
+            <title>{meta_title}</title>
+            <meta name="description" content="">
+        </head>
+        <body>
+            {components.header_default()}
+            {html_breadcrumbs}
+            <main>
+                <article class="article-section container-md">
+                    {main_html}
+                </article>
+            </main>
+            {components.footer_dark()}
+        </body>
+        </html>
+    '''
+
+    html_folderpath = f'{g.WEBSITE_FOLDERPATH}/{url_slug}'
+    os.makedirs(html_folderpath, exist_ok=True)
+    html_filepath = f'{html_folderpath}/index.html'
+    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
+        f.write(html)
+    print(html_filepath)
+
 def main():
     soluzioni__gen()
     soluzioni__acqua__gen()
+    soluzioni__acqua__potabile__gen()
     
     

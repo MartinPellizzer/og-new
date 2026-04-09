@@ -2038,6 +2038,13 @@ ARTICLEs
     padding-bottom: 5rem;
 }
 
+.article-section h1 {
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+
+}
+
 .article-section h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
@@ -2063,6 +2070,20 @@ ARTICLEs
     gap: 0.5rem;
 }
 
+.article-section ul {
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.article-section img {
+    height: 30rem;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 1rem;
+}
+
 
 
 
@@ -2085,7 +2106,7 @@ BREADCRUMBS
     color: #333;
 }
 
-/* 
+/*
 ===========================================
 ===========================================
 ===========================================
