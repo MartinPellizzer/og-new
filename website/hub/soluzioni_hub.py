@@ -1466,9 +1466,265 @@ Tenendo conto di questi aspetti tecnici e operativi, l’ozonizzazione rappresen
         f.write(html)
     print(html_filepath)
 
+def soluzioni__acqua__di_processo__gen():
+    url_slug = f'soluzioni/acqua/processo'
+
+    html_sections = ''
+    
+    h1 = f'''
+Ozonizzazione dell’acqua di processo: funzionamento, applicazioni e vantaggi    '''
+    subordinate = f'''
+<p>
+L’ozonizzazione dell’acqua di processo è una tecnologia di trattamento che utilizza l’ozono (O₃), un potente agente ossidante con un potenziale redox di circa 2,07 V, per migliorare la qualità dell’acqua impiegata nei cicli produttivi industriali. Nel trattamento acqua con ozono, il gas viene generato in loco e disciolto nell’acqua di processo per avviare reazioni di ossidazione rapide che degradano composti organici, riducono colore e odori e inattivano batteri, virus e altri microrganismi. Questo approccio è particolarmente diffuso in settori come l’industria alimentare, chimica e cartaria, dove la disinfezione acqua con ozono contribuisce a mantenere standard igienici elevati senza lasciare residui chimici persistenti. L’ozonizzazione acqua di processo viene quindi utilizzata per ottimizzare l’efficienza operativa, limitare la formazione di biofilm negli impianti e ridurre l’uso di disinfettanti tradizionali come il cloro. Per comprendere davvero il valore di questa tecnologia, è necessario prima capire in che modo l’ozono viene applicato nel trattamento di questo tipo di acqua.
+</p>
+    '''
+    html_sections += f'''
+        <section style="margin-top: 5rem; margin-bottom: 5rem;">
+            <h1>{h1}</h1>
+            <img src="/immagini/soluzioni-acqua.jpg">
+            {subordinate}
+        </section>
+    '''
+            # [toc]
+
+    heading = f'''
+Cos’è l’ozonizzazione dell’acqua di processo
+    '''
+    subordinate = f'''
+<p>
+L’ozonizzazione dell’acqua di processo è un trattamento che utilizza ozono (O₃), un gas ossidante formato da tre atomi di ossigeno, per migliorare la qualità dell’acqua impiegata nelle attività industriali. Durante il trattamento, l’ozono viene generato in loco tramite generatori a scarica corona e disciolto nell’acqua, dove reagisce rapidamente con microrganismi, composti organici e sostanze ossidabili. Grazie al suo elevato potenziale di ossidazione (2,07 V), l’ozono è in grado di inattivare batteri, virus e biofilm e di degradare contaminanti come fenoli, coloranti o residui organici presenti nelle acque di processo. Per questo motivo il trattamento con ozono è utilizzato in numerosi settori industriali, tra cui alimentare, chimico, tessile e farmaceutico, sia per la disinfezione dell’acqua sia per migliorare caratteristiche come colore, odore e carico organico. Una volta chiarito cosa significa ozonizzare l’acqua di processo, è importante capire perché proprio l’ozono viene utilizzato in questo contesto.
+</p>
+    '''
+    html_sections += f'''
+        <section style="margin-top: 5rem; margin-bottom: 5rem;">
+            <h2>{heading}</h2>
+            {subordinate}
+        </section>
+    '''
+
+    heading = f'''
+Perché l’ozono viene utilizzato nel trattamento di questa acqua
+    '''
+    subordinate = f'''
+<p>
+L’ozono viene impiegato nel trattamento dell’acqua di processo principalmente per il suo elevato potere ossidante, pari a 2,07 V di potenziale redox, superiore a quello del cloro e di molti altri ossidanti comunemente utilizzati. Questa caratteristica consente di degradare rapidamente composti organici, sottoprodotti di lavorazione, colore e odori, migliorando la qualità chimica dell’acqua attraverso reazioni di ossidazione mirate. Parallelamente, l’ozono possiede una forte capacità disinfettante: è in grado di inattivare batteri, virus e microrganismi resistenti in tempi molto brevi, spesso nell’ordine di pochi secondi o minuti, riducendo in modo significativo la carica microbiologica dell’acqua trattata. Un ulteriore vantaggio operativo è la sua compatibilità con molti sistemi di trattamento esistenti, poiché l’ozono viene generato in situ e si decompone rapidamente in ossigeno senza lasciare residui chimici persistenti. Grazie a queste proprietà, il trattamento acqua con ozono consente di combinare ossidazione e disinfezione in un unico stadio di processo, migliorando l’efficienza complessiva dell’impianto e riducendo l’uso di reagenti chimici. Capito perché questa tecnologia è efficace, il passo successivo è analizzare come funziona concretamente il processo di ozonizzazione nell’acqua di processo.
+</p>
+    '''
+    html_sections += f'''
+        <section style="margin-top: 5rem; margin-bottom: 5rem;">
+            <h3>{heading}</h3>
+            {subordinate}
+        </section>
+    '''
+
+    heading = f'''
+Come funziona il processo di ozonizzazione nell’acqua di processo
+    '''
+    subordinate = f'''
+<p>
+Il processo di ozonizzazione dell’acqua di processo inizia con la generazione di ozono tramite un generatore di ozono per acqua, che produce O₃ a partire da ossigeno o aria secca mediante scarica a corona, con concentrazioni tipiche comprese tra 10 e 100 g/Nm³ di gas. L’ozono generato viene quindi trasferito nel liquido attraverso sistemi di dissoluzione come diffusori a microbolle, venturi o colonne di contatto, che aumentano l’efficienza di trasferimento gas-liquido e consentono di raggiungere concentrazioni disciolte generalmente comprese tra 0,1 e 5 mg/L. Una volta disciolto, l’ozono avvia una serie di reazioni chimiche di ossidazione diretta e indiretta con i contaminanti presenti nell’acqua, inclusi composti organici, microrganismi e sostanze riducenti, grazie al suo elevato potenziale di ossidazione pari a 2,07 V. Durante questa fase si verifica la distruzione dei contaminanti attraverso la rottura dei doppi legami molecolari, l’ossidazione di composti aromatici e la formazione di radicali ossidanti secondari come •OH, che amplificano l’efficacia del trattamento. Il risultato del processo di ozonizzazione è la riduzione significativa della carica microbica, l’abbattimento di colore, odori e sostanze organiche disciolte e il miglioramento complessivo della qualità dell’acqua di processo senza residui chimici persistenti. Dopo aver compreso il funzionamento del processo, è utile analizzare quali fattori influenzano l’efficacia del trattamento.
+</p>
+    '''
+    html_sections += f'''
+        <section style="margin-top: 5rem; margin-bottom: 5rem;">
+            <h2>{heading}</h2>
+            {subordinate}
+        </section>
+    '''
+
+    heading = f'''
+Produzione e introduzione dell’ozono nel sistema
+    '''
+    subordinate = f'''
+<p>
+Negli impianti di trattamento dell’acqua di processo l’ozono viene prodotto in loco mediante un generatore ozono industriale basato sul principio della scarica a corona (corona discharge), in cui una differenza di potenziale elettrico elevata, generalmente tra 5 e 20 kV, dissocia le molecole di ossigeno (O₂) formando ozono (O₃). Il sistema è alimentato con aria essiccata o, più frequentemente negli impianti industriali, con ossigeno concentrato per aumentare l’efficienza di generazione e ottenere concentrazioni di ozono nel gas tipicamente comprese tra 6 e 14% in peso. Il gas prodotto viene quindi trasferito nell’acqua attraverso dispositivi di dissoluzione gas-liquido progettati per massimizzare il trasferimento di massa, come iniettori venturi ozono o diffusori ozono acqua a microbolle installati in linee pressurizzate o in reattori di contatto. L’iniettore venturi sfrutta la depressione creata dal flusso idraulico per aspirare e miscelare il gas, mentre i diffusori producono bolle di diametro ridotto che aumentano la superficie di contatto e l’efficienza di dissoluzione. Una volta introdotto nel sistema idrico, l’ozono disciolto entra rapidamente in reazione con i composti presenti nell’acqua, avviando i processi di ossidazione e disinfezione che caratterizzano il trattamento.
+</p>
+    '''
+    html_sections += f'''
+        <section style="margin-top: 5rem; margin-bottom: 5rem;">
+            <h3>{heading}</h3>
+            {subordinate}
+        </section>
+    '''
+
+    heading = f'''
+Reazione dell’ozono con contaminanti e microrganismi
+    '''
+    subordinate = f'''
+<p>
+L’ozono (O₃) è uno degli ossidanti più potenti utilizzati nel trattamento dell’acqua, con un potenziale di ossidazione pari a circa 2,07 V, superiore a quello del cloro, e reagisce rapidamente con numerosi contaminanti presenti nell’acqua di processo. Durante l’ossidazione chimica, l’ozono attacca doppi legami, composti aromatici e altre strutture organiche, trasformando molecole complesse in sottoprodotti più semplici, spesso più biodegradabili. Parallelamente, nella disinfezione dell’acqua l’ozono danneggia le membrane cellulari dei microrganismi e ossida componenti fondamentali come proteine ed enzimi, provocando l’inattivazione di batteri, virus e protozoi in tempi molto rapidi, spesso nell’ordine di pochi secondi o minuti a concentrazioni di pochi mg/L. Parte dell’efficacia del processo deriva anche dalla formazione di radicali ossidanti altamente reattivi, in particolare radicali idrossilici (•OH), generati durante la decomposizione dell’ozono in acqua, che amplificano la capacità di degradare contaminanti organici e microinquinanti. Al termine delle reazioni l’ozono si decompone spontaneamente in ossigeno (O₂), senza lasciare residui chimici persistenti nell’acqua trattata. L’efficacia di queste reazioni dipende però da diversi fattori operativi che determinano quanto il trattamento riesce a funzionare correttamente.
+</p>
+    '''
+    html_sections += f'''
+        <section style="margin-top: 5rem; margin-bottom: 5rem;">
+            <h3>{heading}</h3>
+            {subordinate}
+        </section>
+    '''
+
+    heading = f'''
+Fattori che influenzano l’efficacia del trattamento
+    '''
+    subordinate = f'''
+<p>
+L’efficacia dell’ozonizzazione nel trattamento dell’acqua dipende innanzitutto dalla concentrazione e dalla dose di ozono disciolto, generalmente compresa tra 0,5 e 5 mg/L nei sistemi industriali, che deve essere calibrata in funzione del carico organico e dei contaminanti presenti. Anche le caratteristiche chimico-fisiche dell’acqua influenzano in modo significativo il processo: parametri come torbidità, presenza di sostanze organiche disciolte, pH e alcalinità possono consumare parte dell’ozono disponibile riducendone l’azione ossidante. Un altro fattore determinante è il tempo di contatto tra ozono e acqua, che nei reattori di trattamento varia tipicamente da 5 a 20 minuti per garantire un’adeguata ossidazione e inattivazione microbiologica. Le condizioni operative, in particolare la temperatura, incidono sulla solubilità e sulla stabilità dell’ozono: a temperature più elevate la decomposizione del gas è più rapida e l’efficienza del trasferimento in acqua diminuisce. Comprendere e controllare questi parametri consente di ottimizzare il rendimento del processo e adattare il trattamento alle specifiche criticità presenti nelle acque di processo industriali.
+</p>
+    '''
+    html_sections += f'''
+        <section style="margin-top: 5rem; margin-bottom: 5rem;">
+            <h3>{heading}</h3>
+            {subordinate}
+        </section>
+    '''
+
+    heading = f'''
+Problemi comuni nel trattamento dell’acqua di processo
+    '''
+    subordinate = f'''
+<p>
+Nei sistemi industriali l’acqua di processo è utilizzata in numerose fasi produttive, dal lavaggio delle superfici alla trasformazione delle materie prime, e la sua qualità influisce direttamente sull’efficienza degli impianti e sulla sicurezza del prodotto finale. Una delle criticità più diffuse è la contaminazione microbiologica: batteri, lieviti e muffe possono proliferare nelle linee di distribuzione, nei serbatoi e negli scambiatori di calore, formando biofilm che compromettono l’igiene del sistema e favoriscono cariche microbiche anche superiori a 10⁴–10⁶ UFC/mL se non adeguatamente controllate. A queste problematiche si aggiunge la contaminazione chimica, che può derivare dalla presenza di composti organici disciolti, residui di detergenti, metalli come ferro e manganese o sottoprodotti di processo che alterano i parametri chimico-fisici dell’acqua. Tali fattori incidono sulla qualità dell’acqua di processo modificandone caratteristiche fondamentali come torbidità, odore, carica organica e stabilità microbiologica, con possibili effetti negativi sia sulle prestazioni degli impianti sia sulla qualità del prodotto lavorato. Per questo motivo il trattamento dell’acqua diventa una fase essenziale nella gestione dei processi industriali. Queste criticità possono essere suddivise principalmente in due categorie: contaminanti biologici e contaminanti chimici.
+</p>
+    '''
+    html_sections += f'''
+        <section style="margin-top: 5rem; margin-bottom: 5rem;">
+            <h2>{heading}</h2>
+            {subordinate}
+        </section>
+    '''
+
+    heading = f'''
+Contaminanti microbiologici
+    '''
+    subordinate = f'''
+<p>
+L’acqua di processo può essere contaminata da diversi microrganismi, tra cui batteri, virus e alghe, che si sviluppano soprattutto in presenza di nutrienti organici e condizioni di temperatura favorevoli. Tra i batteri più comuni si riscontrano specie come Pseudomonas ed Escherichia coli, che possono proliferare rapidamente in sistemi non adeguatamente disinfettati, mentre i virus, con dimensioni dell’ordine di 20–100 nm, possono persistere anche in concentrazioni molto basse ma comunque rilevanti dal punto di vista igienico. Le alghe tendono invece a svilupparsi in circuiti esposti alla luce o in bacini di stoccaggio non completamente protetti, contribuendo all’aumento della torbidità e della carica organica. Un problema particolarmente critico è la formazione di biofilm nelle tubazioni, strutture complesse che possono ridurre la portata fino al 30–50% e aumentare la resistenza ai disinfettanti. Questi contaminanti possono derivare sia dall’acqua grezza di alimentazione sia da fenomeni di ricircolo interno, compromettendo la qualità dell’acqua e l’efficienza degli impianti.
+</p>
+    '''
+    html_sections += f'''
+        <section style="margin-top: 5rem; margin-bottom: 5rem;">
+            <h3>{heading}</h3>
+            {subordinate}
+        </section>
+    '''
+    
+    heading = f'''
+Contaminanti chimici o organici
+    '''
+    subordinate = f'''
+<p>
+Le acque di processo possono contenere una vasta gamma di contaminanti chimici e composti organici, tra cui pesticidi, solventi industriali, idrocarburi e residui farmaceutici, generalmente presenti in concentrazioni che variano da pochi µg/L fino a diversi mg/L a seconda della matrice. Questi contaminanti derivano principalmente da scarichi industriali, attività agricole e acque reflue urbane non completamente depurate, che contribuiscono al carico organico e chimico complessivo. Tra le sostanze più critiche si trovano i pesticidi come atrazina e glifosato, per i quali la normativa europea sulle acque potabili impone un limite di 0,1 µg/L per singolo composto. La presenza di tali sostanze può compromettere la qualità dell’acqua, causando tossicità acuta o cronica, interferenze endocrine, alterazioni organolettiche e la possibile formazione di sottoprodotti indesiderati durante i trattamenti convenzionali. Per affrontare queste problematiche, l’ozonizzazione offre diversi vantaggi rispetto ad altre tecnologie di trattamento.
+</p>
+    '''
+    html_sections += f'''
+        <section style="margin-top: 5rem; margin-bottom: 5rem;">
+            <h3>{heading}</h3>
+            {subordinate}
+        </section>
+    '''
+
+    heading = f'''
+Vantaggi dell’utilizzo dell’ozono nel trattamento dell’acqua di processo
+    '''
+    subordinate = f'''
+<p>
+L’ozonizzazione dell’acqua di processo offre vantaggi significativi in termini di efficacia di disinfezione, grazie al forte potere ossidante dell’ozono, con un potenziale di ossidazione pari a circa 2,07 V rispetto a 1,36 V del cloro. Questo si traduce in una rapidità d’azione elevata e in una riduzione efficace della carica microbica, spesso con abbattimenti superiori a 3–5 log in tempi di contatto molto brevi. Dal punto di vista dell’ossidazione, l’ozono è in grado di degradare composti organici complessi e microinquinanti che altre tecnologie trattano solo parzialmente, migliorando la qualità complessiva dell’acqua. Un ulteriore vantaggio rispetto a sistemi come la clorazione è l’assenza di residui chimici persistenti, poiché l’ozono si decompone rapidamente in ossigeno senza generare sottoprodotti come clorammine. Oltre ai benefici operativi, è importante considerare anche i parametri tecnici che regolano il funzionamento del trattamento.
+</p>
+    '''
+    html_sections += f'''
+        <section style="margin-top: 5rem; margin-bottom: 5rem;">
+            <h2>{heading}</h2>
+            {subordinate}
+        </section>
+    '''
+
+    heading = f'''
+Parametri operativi dell’ozonizzazione    
+    '''
+    subordinate = f'''
+<p>
+I principali parametri operativi dell’ozonizzazione dell’acqua di processo sono la dose di ozono, il tempo di contatto e la concentrazione del gas in fase di erogazione. La dose di ozono viene generalmente espressa in mg/L e varia indicativamente tra 0,1 e 5 mg/L a seconda del livello di contaminazione organica e microbiologica dell’acqua da trattare. Il tempo di contatto tipico si colloca tra 5 e 30 minuti e deve essere sufficiente a garantire una completa dissoluzione e reazione dell’ozono con i contaminanti presenti. La relazione tra questi parametri è diretta, poiché a carichi più elevati di COD o TOC corrispondono dosi maggiori e tempi di contatto più lunghi per mantenere l’efficacia del processo. Il corretto bilanciamento tra dose e tempo determina i risultati del trattamento, che includono disinfezione, ossidazione dei composti organici e riduzione di odori e microinquinanti. Per applicare in modo stabile questi parametri nella pratica sono necessari sistemi di ozonizzazione progettati per controllare con precisione la produzione e la miscelazione dell’ozono in acqua.
+</p>
+    '''
+    html_sections += f'''
+        <section style="margin-top: 5rem; margin-bottom: 5rem;">
+            <h2>{heading}</h2>
+            {subordinate}
+        </section>
+    '''
+
+    heading = f'''
+Tecnologie e impianti per l’ozonizzazione dell’acqua
+    '''
+    subordinate = f'''
+<p>
+Un impianto di ozonizzazione dell’acqua si basa principalmente su tre componenti integrati: il generatore di ozono, il sistema di contatto e il sistema di controllo dell’impianto. Il generatore di ozono produce il gas tramite scarica a corona, con capacità tipiche industriali comprese tra 10 e oltre 100 g/h, utilizzando ossigeno o aria secca come gas di alimentazione per massimizzare l’efficienza. Il sistema di contatto, spesso costituito da miscelatori statici, colonne a bolle fini o reattori in pressione, garantisce la dissoluzione dell’ozono nell’acqua di processo fino a concentrazioni operative generalmente tra 0,5 e 5 mg/L, con tempi di contatto variabili tra 5 e 20 minuti a seconda dell’applicazione. Il controllo dell’impianto regola in continuo la produzione e la dose di ozono attraverso sensori di ORP e misuratori di ozono residuo disciolto, assicurando stabilità del trattamento e riducendo sprechi energetici. Poiché l’ozono è un gas altamente reattivo, è fondamentale integrare sistemi di degasaggio e distruzione dell’ozono residuo per garantire la sicurezza operativa e prevenire emissioni incontrollate nell’ambiente.
+</p>
+    '''
+    html_sections += f'''
+        <section style="margin-top: 5rem; margin-bottom: 5rem;">
+            <h2>{heading}</h2>
+            {subordinate}
+        </section>
+    '''
+
+    heading = f'''
+Sicurezza nell’utilizzo dell’ozono
+    '''
+    subordinate = f'''
+<p>
+L’ozono è un agente ossidante estremamente reattivo e, se inalato, può risultare pericoloso già a concentrazioni superiori a circa 0,1 ppm (≈0,2 mg/m³ come media ponderata su 8 ore), con limiti di esposizione a breve termine generalmente intorno a 0,3 ppm per 15 minuti, a causa dei suoi effetti irritanti sulle vie respiratorie. I principali rischi nell’ozonizzazione dell’acqua di processo derivano da eventuali fughe di gas, dal degasaggio durante il trattamento e dall’inalazione accidentale in aree non adeguatamente ventilate, oltre che dalla sua natura altamente ossidante che può accelerare fenomeni di corrosione su materiali non compatibili. Per questo motivo il monitoraggio dell’ozono è continuo e si basa su sensori a UV o celle elettrochimiche, spesso integrati con misurazioni del potenziale redox (ORP) per controllare indirettamente la concentrazione in fase liquida. La sicurezza operativa prevede inoltre sistemi di abbattimento dell’ozono residuo mediante catalizzatori distruttori, ventilazione forzata e interblocchi automatici che interrompono la produzione in caso di superamento delle soglie impostate. Tenendo conto di questi aspetti tecnici e operativi, l’ozonizzazione rappresenta una soluzione efficace per migliorare la qualità dell’acqua in questo specifico contesto.
+</p>
+    '''
+    html_sections += f'''
+        <section style="margin-top: 5rem; margin-bottom: 5rem;">
+            <h2>{heading}</h2>
+            {subordinate}
+        </section>
+    '''
+
+    main_html = f'''
+        {html_sections}
+    '''
+    main_html = main_html.replace('’', "'")
+    
+    html_breadcrumbs = components.breadcrumbs(url_slug)
+    main_html = components.toc(main_html)
+
+    meta_title = f'''{h1}'''
+    html = f'''
+        <!DOCTYPE html>
+        <html lang="it">
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="/styles.css">
+            <title>{meta_title}</title>
+            <meta name="description" content="">
+        </head>
+        <body>
+            {components.header_default()}
+            {html_breadcrumbs}
+            <main>
+                <article class="article-section container-md">
+                    {main_html}
+                </article>
+            </main>
+            {components.footer_dark()}
+        </body>
+        </html>
+    '''
+
+    html_folderpath = f'{g.WEBSITE_FOLDERPATH}/{url_slug}'
+    os.makedirs(html_folderpath, exist_ok=True)
+    html_filepath = f'{html_folderpath}/index.html'
+    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
+        f.write(html)
+    print(html_filepath)
+
 def main():
     soluzioni__gen()
     soluzioni__acqua__gen()
     soluzioni__acqua__potabile__gen()
+    soluzioni__acqua__di_processo__gen()
     
     
