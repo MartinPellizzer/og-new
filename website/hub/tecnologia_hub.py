@@ -27,6 +27,49 @@ def main():
         </section>
     '''
 
+    html_breadcrumbs = components.breadcrumbs_new('')
+    hero_html = f'''
+        <section style="background-color: #000; padding-top: 5rem; padding-bottom: 5rem;">
+            <div class="container-xl">
+                <div class="m-flex" style="align-items: center;">
+                    <div style="flex: 2;">
+                        {html_breadcrumbs}
+                        <h1 style="color: #fff; margin-bottom: 1rem;
+                            font-size: 4rem; font-weight: 400; line-height: 1.3;
+                        ">
+                            Tecnologia dell'ozono nei sistemi industriali
+                        </h1>
+                        <p style="color: #fff;">
+                            Aprile 14, 2026 <span>•</span> Staff Tecnico Ozonogroup
+                        </p>
+                    </div>
+                    <div style="flex: 1;">
+                        <img 
+                            style="height: 14rem; object-fit: cover;"
+                            src="/immagini/tecnologia/ozono.jpg"
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+    '''
+
+    html_article = f'''
+        <section style="padding-top: 5rem; padding-bottom: 5rem;">
+            <div class="container-xl">
+                <div class="m-flex" style="align-items: center;">
+                    <div style="flex: 3;">
+                        <p style="font-size: 1.75rem; line-height: 1.3; color: #202124;">
+                            We introduce a set of advanced theoretically grounded quantization algorithms that enable massive compression for large language models and vector search engines.
+                        </p>
+                    </div>
+                    <div style="flex: 1;">
+                    </div>
+                </div>
+            </div>
+        </section>
+    '''
+
     generazione_html = f'''
         <section style="padding-bottom: 8rem;">
             <div class="container-xl m-flex" style="gap: 3rem;">
@@ -314,6 +357,7 @@ def main():
             {components.header_default()}
             <main>
                 {hero_html}
+                {html_article}
                 {generazione_html}
                 {parametri_html}
                 {componenti_html}
