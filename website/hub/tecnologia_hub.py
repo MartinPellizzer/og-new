@@ -29,7 +29,7 @@ def main():
 
     html_breadcrumbs = components.breadcrumbs_new('')
     hero_html = f'''
-        <section style="background-color: #000; padding-top: 5rem; padding-bottom: 5rem;">
+        <section style="background-color: #000; padding-top: 5rem; padding-bottom: 5rem; margin-bottom: 5rem;">
             <div class="container-xl">
                 <div class="m-flex" style="align-items: center;">
                     <div style="flex: 2;">
@@ -55,293 +55,100 @@ def main():
     '''
 
     html_article = f'''
-        <section style="padding-top: 5rem; padding-bottom: 5rem;">
-            <div class="container-xl">
-                <div class="m-flex" style="align-items: center;">
-                    <div style="flex: 3;">
-                        <p style="font-size: 1.75rem; line-height: 1.3; color: #202124;">
-                            We introduce a set of advanced theoretically grounded quantization algorithms that enable massive compression for large language models and vector search engines.
-                        </p>
-                    </div>
-                    <div style="flex: 1;">
-                    </div>
-                </div>
-            </div>
-        </section>
-    '''
 
-    generazione_html = f'''
-        <section style="padding-bottom: 8rem;">
-            <div class="container-xl m-flex" style="gap: 3rem;">
-                <div style="flex: 2;">
-                    <h2 style="margin-bottom: 1rem;
-                        font-size: 2rem; line-height: 1.3;
-                    ">
-                        Generazione dell'ozono in ambito industriale
-                    </h2>
-                    <p style="margin-bottom: 1rem;">
-                        Il principio fisico alla base della generazione industriale di ozono è la <strong>Scarica a Corona (Corona Discharge)</strong> o, più specificamente, la Scarica Dielettrica a Barriera (DBD). Questo processo comporta l'applicazione di un campo elettrico ad alta tensione tra due elettrodi separati da un dielettrico e un gap dove scorre il gas da trattare (ossigeno o aria secca). 
-                    </p>
-                    <p style="margin-bottom: 3rem;">
-                        L'energia elettrica ad alta frequenza dissocia le molecole di ossigeno (O₂) in atomi singoli (O), che si ricombinano immediatamente formando ozono (O₃). La stabilità di questo processo dipende criticamente dalla purezza del gas di alimentazione e dalla gestione termica della cella. 
-                    </p>
-                    <h3 style="margin-bottom: 1rem;
-                        font-size: 1.25rem; line-height: 1.5;
-                    ">
-                        Fattori Critici di Processo
-                    </h3>
-                    <ul style="margin-left: 1.5rem;
-                        display: flex; flex-direction: column; gap: 1rem;
-                    ">
-                        <li><strong>Alta Tensione & Frequenza:</strong> Determinano l'efficienza di conversione energetica. 
-                        </li>
-                        <li><strong>Umidità Residua:</strong> Deve essere mantenuta sotto -60°C punto di rugiada per evitare la formazione di acido nitrico e corrosione.
-                        </li>
-                        <li><strong>Temperatura del Gas:</strong> Il raffreddamento è essenziale; temperature elevate favoriscono la decomposizione dell'ozono.
-                        </li>
-                    </ul>
-                </div>
-                <div style="flex: 1;">
-                    <div style="background: #f9f9f9; padding: 1rem; border: 1px solid #e0e0e0;">
-                        <h4 style="font-size: 0.8rem; margin-bottom: 0.5rem;">PARAMETRI FISICI</h4>
-                        <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Gas Feed: O₂ (90-93%) o Aria</p>
-                        <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Tensione: 5kV - 20kV AC</p>
-                        <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Frequenza: 50Hz - 2000Hz</p>
-                        <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Gap Dielettrico: 1.5mm - 3.0mm</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    '''
-    
-    parametri_html = f'''
-        <section class="tecnologia-parametri" style="padding-bottom: 8rem;">
-            <div class="container-xl">
-                <h2 style="margin-bottom: 1rem;
-                    font-size: 2rem; line-height: 1.3;
-                ">
-                    Parametri critici per il corretto funzionamento
-                </h2>
-                <p style="margin-bottom: 1rem;">
-                    L'efficienza di un impianto a ozono non è definita solo dalla potenza installata (kW), ma dall'interazione tra concentrazione prodotta e portata di gas. La seguente tabella illustra le variabili operative fondamentali per la progettazione. 
-                </p>
-                <table style="width: 100%; border-collapse: collapse; 
-                    text-align: left; font-size: 0.9rem; color: #333;
-                ">
-                    <thead>
-                        <tr>
-                            <th style="background-color: #f9f9f9; text-transform: uppercase; font-size: 0.9rem; font-weight: 400;">Parametro</th>
-                            <th style="background-color: #f9f9f9; text-transform: uppercase; font-size: 0.9rem; font-weight: 400;">Unità di Misura</th>
-                            <th style="background-color: #f9f9f9; text-transform: uppercase; font-size: 0.9rem; font-weight: 400;">Impatto su Efficienza e Processo</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Concentrazione</strong></td>
-                            <td>g/Nm³ (o % in peso)</td>
-                            <td>Determina la velocità di ossidazione. Concentrazioni elevate (>10% da O₂) riducono i volumi di gas da trattare.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Portata (Flow Rate)</strong></td>
-                            <td>Nm³/h</td>
-                            <td>Definisce la capacità di distribuzione dell'ozono nel fluido o nell'ambiente target.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Tempo di Contatto</strong></td>
-                            <td>minuti (Ct Value)</td>
-                            <td>Prodotto tra Concentrazione (C) e Tempo (t). Cruciale per garantire l'inattivazione microbiologica o l'ossidazione chimica.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Umidità Relativa</strong></td>
-                            <td>% RH / Punto di Rugiada</td>
-                            <td>L'umidità nel gas di alimentazione riduce drasticamente la produzione di ozono e genera sottoprodotti acidi corrosivi.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Temperatura Gas</strong></td>
-                            <td>°C</td>
-                            <td>Ogni aumento di temperatura riduce la stabilità dell'ozono. Il raffreddamento dell'acqua di scambio è mandatorio.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-    '''
-
-    componenti_html = f'''
-        <section style="padding-bottom: 8rem;">
-            <div class="container-xl m-flex" style="gap: 3rem;">
-                <div style="flex: 1;">
-                    <h2 style="margin-bottom: 1rem;
-                        font-size: 2rem; line-height: 1.3;
-                    ">
-                        Componenti di un sistema a ozono integrato
-                    </h2>
-                    <p style="margin-bottom: 3rem;">
-                        Un generatore di ozono non è una macchina isolata, ma il cuore di un sistema complesso. La nostra competenza risiede nell'integrazione di tutti i sottosistemi per garantire continuità operativa. 
-                    </p>
-                    <h3 style="margin-bottom: 1rem;
-                        font-size: 1.25rem; line-height: 1.5;
-                    ">
-                        Architettura del Sistema
-                    </h3>
-                    <p style="margin-bottom: 1rem;">
-                        Progettiamo impianti modulari dove ogni componente è dimensionato in funzione del carico di ozono richiesto.
-                    </p>
-                    <ul style="margin-left: 1.5rem;
-                        display: flex; flex-direction: column; gap: 1rem;
-                    ">
-                        <li>
-                            <strong>Pre-trattamento Gas:</strong> Compressori, essiccatori a adsorbimento (Twin Tower) e filtri coalescenti per garantire aria/ossigeno ISO 8573-1.
-                        </li>
-                        <li>
-                            <strong>Generatore (Cella DBD):</strong> Costruito in acciaio inox 316L o vetro borosilicato, raffreddato ad acqua.
-                        </li>
-                        <li>
-                            <strong>Iniezione/Diffusione:</strong> Venturi, microporosi o torri di contatto in acciaio/FRP per massimizzare il trasferimento di massa.
-                        </li>
-                        <li>
-                            <strong>Distruttore Catalitico:</strong> Unità di sicurezza per abbattere l'ozono residuo prima dello scarico in atmosfera.
-                        </li>
-                    </ul>
-                </div>
-                <div style="flex: 1;">
-                    <div style="
-                        margin-bottom: 3rem;
-                        background-color: #f9f9f9; 
-                        display: flex; flex-direction: column; justify-content: center; align-items: center; 
-                        padding: 2rem; border: 1px solid #333; text-align: center;
-                    ">
-                        <p>
-                            <strong>PRE-TRATTAMENTO GAS</strong>
-                            <br>
-                            <span style="font-size: 0.8rem;">
-                                (Filtrazione & Essiccazione)
-                            </span>
+        <div class="container-xl">
+            <div class="m-flex" style="align-items: center;">
+                <div style="flex: 3;">
+                    <section style="padding-bottom: 3rem;">
+                        <p style="font-size: 1.75rem; line-height: 1.3; color: #202124; margin-bottom: 2rem;">
+La tecnologia dell'ozono è alla base dei moderni sistemi industriali a ozono, utilizzati per processi di ossidazione, disinfezione e trattamento di acqua, aria e superfici. 
                         </p>
-                    </div>
-                    <div style="
-                        margin-bottom: 3rem;
-                        background-color: #f9f9f9; 
-                        display: flex; flex-direction: column; justify-content: center; align-items: center; 
-                        padding: 2rem; border: 1px solid #333; text-align: center;
-                    ">
-                        <p>
-                            <strong>GENERATORE OZONO</strong>
-                            <br>
-                            <span style="font-size: 0.8rem;">
-                                (Scarica Corona)
-                            </span>
+                        <p style="color: #5f6368;">
+L'ozono (O₃) è un gas altamente reattivo con uno dei più elevati potenziali ossidativi tra gli agenti utilizzati nei processi industriali, capace di degradare contaminanti organici, inattivare microrganismi e neutralizzare composti indesiderati senza lasciare residui chimici persistenti. Nei contesti industriali, l'ozono viene generato in loco tramite generatori di ozono, integrato nei processi produttivi e trasferito nei fluidi attraverso sistemi progettati per massimizzare efficienza di dissoluzione e tempo di contatto. Comprendere i principi tecnologici dell'ozono è quindi fondamentale per progettare, dimensionare e gestire impianti industriali a ozono efficienti e sicuri.
                         </p>
-                    </div>
-                    <div style="
-                        margin-bottom: 3rem;
-                        background-color: #f9f9f9; 
-                        display: flex; flex-direction: column; justify-content: center; align-items: center; 
-                        padding: 2rem; border: 1px solid #333; text-align: center;
-                    ">
-                        <p>
-                            <strong>PUNTO DI INIEZIONE</strong>
-                            <br>
-                            <span style="font-size: 0.8rem;">
-                                (Venturi / Diffusori)
-                            </span>
+                    </section>
+                    <section style="padding-bottom: 3rem;">
+                        <h2 style="font-size: 3rem; font-weight: 400; line-height: 1.1; color: #202124; margin-bottom: 1rem;">
+Cos'è l'ozono e perché è rilevante nei processi industriali
+                        </h2>
+                        <p style="color: #5f6368;">
+L’ozono (O₃) è una molecola composta da tre atomi di ossigeno caratterizzata da un elevato potenziale di ossidazione, superiore a molti disinfettanti chimici tradizionali. Grazie a questa proprietà, l’ozono reagisce rapidamente con composti organici, microrganismi e contaminanti attraverso meccanismi di ossidazione diretta e tramite la formazione di specie reattive dell’ossigeno (Reactive Oxygen Species). Queste reazioni chimiche permettono di inattivare batteri, virus e altri patogeni, rendendo l’ozono particolarmente efficace nei processi di disinfezione e trattamento industriale. Nei sistemi più avanzati, l’ozono può inoltre partecipare a processi di ossidazione avanzata (Advanced Oxidation Process), nei quali la generazione di radicali altamente reattivi consente la degradazione di contaminanti complessi e difficili da rimuovere con metodi convenzionali.
                         </p>
-                    </div>
-                    <div style="
-                        margin-bottom: 3rem;
-                        background-color: #f9f9f9; 
-                        display: flex; flex-direction: column; justify-content: center; align-items: center; 
-                        padding: 2rem; border: 1px solid #333; text-align: center;
-                    ">
-                        <p>
-                            <strong>MONITORAGGIO & SICUREZZA</strong>
-                            <br>
-                            <span style="font-size: 0.8rem;">
-                                (Analizzatori & PLC)
-                            </span>
+                    </section>
+                    <section style="padding-bottom: 3rem;">
+                        <h2 style="font-size: 3rem; font-weight: 400; line-height: 1.1; color: #202124; margin-bottom: 1rem;">
+Come si produce l’ozono nei sistemi industriali
+                        </h2>
+                        <p style="color: #5f6368;">
+Nei sistemi industriali, l’ozono viene prodotto mediante generatori di ozono che utilizzano energia elettrica per convertire l’ossigeno (O₂) in ozono (O₃). La tecnologia più diffusa è la scarica corona (corona discharge), in cui un trasformatore ad alta tensione genera un campo elettrico che dissocia le molecole di ossigeno, permettendo la formazione dell’ozono; una variante tecnologica è la dielectric barrier discharge, che utilizza materiali dielettrici per stabilizzare il processo e migliorare l’efficienza operativa. Il gas di alimentazione del generatore può essere aria secca (air feed gas) oppure ossigeno puro (oxygen feed gas), spesso fornito tramite un oxygen concentrator, che aumenta la concentrazione di ossigeno disponibile e consente di ottenere livelli di ozono più elevati e stabili. Questa combinazione di generazione elettrica, controllo del gas di alimentazione e gestione delle condizioni operative permette ai sistemi industriali di produrre ozono in modo continuo e controllato per applicazioni di trattamento, sanificazione e ossidazione.
                         </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    '''
-
-    controllo_html = f'''
-        <section style="padding-bottom: 8rem;">
-            <div class="container-xl m-flex" style="gap: 3rem;">
-                <div style="flex: 1;">
-                    <h2 style="margin-bottom: 1rem;
-                        font-size: 2rem; line-height: 1.3;
-                    ">
-                        Controllo e automazione dei sistemi a ozono
-                    </h2>
-                    <p style="margin-bottom: 3rem;">
-                        La gestione moderna dell'ozono industriale si basa sulla tracciabilità dei dati e sul controllo in retroazione (feedback loop). I nostri sistemi integrano PLC industriali capaci di dialogare con le linee di produzione esistenti. 
-                    </p>
-                    <h3 style="margin-bottom: 1rem;
-                        font-size: 1.25rem; line-height: 1.5;
-                    ">
-                        Funzionalità di Controllo
-                    </h3>
-                    <ul style="margin-left: 1.5rem;
-                        display: flex; flex-direction: column; gap: 1rem;
-                    ">
-                        <li>
-                            <strong>Feedback Loop Concentrazione:</strong> Regolazione automatica della potenza in base alla lettura dell'analizzatore in linea. 
-                        </li>
-                        <li>
-                            <strong>Gestione Allarmi:</strong> Spegnimento immediato in caso di perdita gas, surriscaldamento o anomalia elettrica.
-                        </li>
-                        <li>
-                            <strong>Logging Dati:</strong> Registrazione storica di produzione (kg O₃), consumo energetico e ore di esercizio per manutenzione predittiva.
-                        </li>
-                        <li>
-                            <strong>Interfaccia HMI:</strong>  Pannello touch screen locale per visualizzazione parametri in tempo reale.
-                        </li>
-                    </ul>
+                    </section>
+                    <section style="padding-bottom: 3rem;">
+                        <h2 style="font-size: 3rem; font-weight: 400; line-height: 1.1; color: #202124; margin-bottom: 1rem;">
+Fattori che influenzano la produzione di ozono
+                        </h2>
+                        <p style="color: #5f6368;">
+La produzione di ozono nei sistemi industriali è influenzata da diverse variabili operative che determinano sia la quantità di ozono generato sia l’efficienza complessiva del processo. La purezza del gas di alimentazione e la concentrazione di ossigeno sono fattori fondamentali: l’utilizzo di ossigeno ad alta purezza consente di ottenere concentrazioni di ozono più elevate e una maggiore efficienza di generazione rispetto all’aria. Anche le condizioni ambientali, come temperatura e umidità, incidono significativamente: l’umidità in particolare può ridurre l’efficienza della scarica elettrica e accelerare la decomposizione dell’ozono. Infine, il livello e la stabilità dell’energia elettrica applicata nel generatore influenzano direttamente la formazione delle molecole di ozono, rendendo essenziale un controllo preciso dei parametri elettrici per mantenere prestazioni costanti del sistema.
+                        </p>
+                    </section>
+                    <section style="padding-bottom: 3rem;">
+                        <h2 style="font-size: 3rem; font-weight: 400; line-height: 1.1; color: #202124; margin-bottom: 1rem;">
+Proprietà chimico-fisiche dell’ozono
+                        </h2>
+                        <p style="color: #5f6368;">
+L’ozono (O₃) possiede proprietà chimico-fisiche che ne determinano l’efficacia nei processi industriali di ossidazione e disinfezione. Il suo potenziale di ossidazione elevato lo rende uno degli agenti ossidanti più potenti utilizzati nel trattamento di acqua e aria, permettendo la degradazione di contaminanti organici, microrganismi e composti responsabili di odori. Allo stesso tempo, l’ozono è un gas termodinamicamente instabile: presenta una emivita limitata e una velocità di decomposizione che dipende da fattori come temperatura, pH e presenza di catalizzatori, influenzando quindi la cinetica delle reazioni di ossidazione. La sua solubilità in acqua consente un trasferimento efficace nei sistemi gas-liquido, ma richiede una progettazione adeguata dei processi per ottimizzare stabilità del gas, tempo di contatto e rendimento delle reazioni chimiche.
+                        </p>
+                    </section>
+                    <section style="padding-bottom: 3rem;">
+                        <h2 style="font-size: 3rem; font-weight: 400; line-height: 1.1; color: #202124; margin-bottom: 1rem;">
+Trasferimento dell’ozono nei sistemi acqua-gas
+                        </h2>
+                        <p style="color: #5f6368;">
+Nei sistemi industriali a ozono, l’efficacia del trattamento dipende in modo determinante dal trasferimento di massa gas-liquido, ovvero dalla capacità di dissolvere l’ozono gassoso nell’acqua in modo rapido e uniforme. Per aumentare l’efficienza di dissoluzione dell’ozono, vengono utilizzate tecnologie di iniezione e miscelazione come venturi injector, static mixer e diffuser, che favoriscono la dispersione delle microbolle di gas nel flusso liquido. Il processo di trasferimento è spesso completato all’interno di un contact tank, dove l’ozono rimane in soluzione per un determinato contact time, consentendo alle reazioni di ossidazione e disinfezione di avvenire in modo efficace. Ottimizzare il contatto tra ozono e acqua attraverso adeguati sistemi di miscelazione e tempi di reazione è quindi essenziale per massimizzare le prestazioni dei sistemi industriali a ozono.
+                        </p>
+                    </section>
+                    <section style="padding-bottom: 3rem;">
+                        <h2 style="font-size: 3rem; font-weight: 400; line-height: 1.1; color: #202124; margin-bottom: 1rem;">
+Parametri tecnici dei sistemi a ozono
+                        </h2>
+                        <p style="color: #5f6368; margin-bottom: 1rem;">
+Il funzionamento dei sistemi industriali a ozono è regolato da una serie di parametri ingegneristici che determinano l’efficacia del processo di ossidazione e disinfezione. Tra questi, il dosaggio di ozono (ozone dosage) indica la quantità di ozono introdotta nel sistema in relazione al volume del fluido trattato, mentre la concentrazione di ozono (ozone concentration) definisce la quantità di ozono presente nel flusso gassoso generato. Parallelamente, la portata del gas (gas flow rate) e la portata dell’acqua (water flow rate) influenzano direttamente la dinamica di trasferimento tra fase gassosa e liquida, determinando la capacità del sistema di distribuire uniformemente l’ozono nel processo.
+                        </p>
+                        <p style="color: #5f6368;">
+Un ulteriore parametro fondamentale è l’efficienza di trasferimento di massa (mass transfer efficiency), che misura quanto efficacemente l’ozono passa dalla fase gassosa alla fase liquida attraverso dispositivi di iniezione e miscelazione. Questo parametro è strettamente legato al tempo di contatto (contact time), ovvero il periodo durante il quale l’ozono rimane in contatto con il fluido da trattare per completare le reazioni di ossidazione. L’ottimizzazione combinata di questi fattori consente di progettare sistemi a ozono più efficienti, capaci di massimizzare l’abbattimento di contaminanti e garantire prestazioni stabili nei processi industriali di trattamento.
+                        </p>
+                    </section>
+                    <section style="padding-bottom: 3rem;">
+                        <h2 style="font-size: 3rem; font-weight: 400; line-height: 1.1; color: #202124; margin-bottom: 1rem;">
+Applicazioni tecnologiche dell’ozono nei processi industriali
+                        </h2>
+                        <p style="color: #5f6368;">
+La tecnologia dell’ozono trova applicazione in diversi processi industriali grazie alla sua elevata capacità di ossidazione e disinfezione. Nei sistemi di water treatment e wastewater treatment, l’ozono viene utilizzato per eliminare microrganismi patogeni, ossidare composti organici e migliorare la qualità dell’acqua senza generare sottoprodotti chimici persistenti. Nel settore della food sanitation, l’ozono contribuisce alla riduzione della carica microbica su superfici, acqua di lavaggio e ambienti di produzione, mentre nei sistemi di cooling tower treatment aiuta a controllare biofilm, batteri e accumuli organici che compromettono l’efficienza degli impianti. Applicazioni aggiuntive includono la industrial deodorization, dove l’ozono ossida composti responsabili degli odori industriali, e l’aquaculture, in cui viene impiegato per migliorare la qualità dell’acqua e mantenere condizioni sanitarie ottimali per gli organismi acquatici.
+                        </p>
+                    </section>
+                    <section style="padding-bottom: 3rem;">
+                        <h2 style="font-size: 3rem; font-weight: 400; line-height: 1.1; color: #202124; margin-bottom: 1rem;">
+Vantaggi tecnologici dell’ozono rispetto ad altri metodi
+                        </h2>
+                        <p style="color: #5f6368;">
+L’ozono offre vantaggi tecnologici significativi rispetto a metodi come clorazione, disinfezione UV e ossidazione chimica con perossido di idrogeno, principalmente grazie al suo elevato potenziale ossidativo e alla capacità di reagire rapidamente con microorganismi e contaminanti organici. A differenza della chlorination, che può generare sottoprodotti indesiderati come composti clorurati e altri residual byproducts, l’ozono si decompone naturalmente in ossigeno, riducendo l’impatto ambientale del processo. Rispetto alla UV disinfection, che agisce solo durante l’esposizione alla radiazione, l’ozono può continuare a reagire chimicamente con sostanze disciolte nell’acqua o nell’aria, migliorando l’efficacia complessiva del trattamento. Inoltre, nei processi di chemical oxidation, l’ozono consente spesso di ottenere prestazioni elevate con minori residui chimici, contribuendo a un minore environmental impact nei sistemi industriali di trattamento.
+                        </p>
+                    </section>
+                    <section style="padding-bottom: 5rem;">
+                        <h2 style="font-size: 3rem; font-weight: 400; line-height: 1.1; color: #202124; margin-bottom: 1rem;">
+Limiti tecnologici e considerazioni operative
+                        </h2>
+                        <p style="color: #5f6368;">
+L’uso dell’ozono nei sistemi industriali presenta alcune limitazioni tecnologiche legate alle sue proprietà fisiche e alle condizioni operative necessarie per gestirlo in sicurezza. L’ozono è una molecola instabile che tende a decomporsi rapidamente in ossigeno, rendendo necessaria la generazione in loco tramite generatori di ozono, poiché il gas non può essere immagazzinato o trasportato come altri reagenti chimici. Inoltre, la produzione di ozono richiede energia elettrica ad alta tensione, e l’efficienza del sistema dipende da fattori come purezza del gas di alimentazione, temperatura e umidità. Dal punto di vista operativo, è fondamentale utilizzare materiali compatibili con l’ozono (come acciaio inox o specifici polimeri resistenti all’ossidazione) e integrare sistemi di sicurezza e monitoraggio per controllare eventuali perdite di gas e rispettare i limiti di esposizione negli ambienti di lavoro.
+                        </p>
+                    </section>
                 </div>
                 <div style="flex: 1;">
-                    <img src="/immagini/tecnologia-featured.jpg">
                 </div>
             </div>
-        </section>
+        </div>
     '''
-
-    sicurezza_html = f'''
-        <section class="" style="padding-bottom: 8rem;">
-            <div class="container-xl">
-                <h2 style="margin-bottom: 1rem;
-                    font-size: 2rem; line-height: 1.3;
-                ">
-                    Sicurezza operativa e controllo del rischio
-                </h2>
-                <p style="margin-bottom: 3rem;">
-                    L'ozono è un gas potente e la sua gestione richiede protocolli di sicurezza rigorosi. La progettazione dei nostri impianti segue le normative vigenti per la tutela degli operatori e dell'ambiente. 
-                </p>
-                <h3 style="margin-bottom: 1rem;
-                    font-size: 1.25rem; line-height: 1.5;
-                ">
-                    Protocolli di Sicurezza Implementati
-                </h3>
-                <ul style="margin-left: 1.5rem;
-                    display: flex; flex-direction: column; gap: 1rem;
-                ">
-                    <li>
-                        <strong>Limiti di Esposizione:</strong> Sensori ambientali fissi tarati per allarmare a 0.1 ppm (TLV-TWA). 
-                    </li>
-                    <li>
-                        <strong>Sistemi di Interblocco:</strong> Il generatore non può avviarsi se i sistemi di ventilazione di sicurezza non sono attivi.
-                    </li>
-                    <li>
-                        <strong>Contenimento:</strong> Tubazioni e giunzioni certificate per alta pressione e resistenza chimica all'ozono.
-                    </li>
-                    <li>
-                        <strong>Procedure di Emergency Stop:</strong> Pulsanti di arresto di emergenza posizionati strategicamente nell'area tecnica.
-                    </li>
-                </ul>
-            </div>
-        </section>
-    '''
+    html_article = html_article.replace('’', "'")
 
     html = f'''
         <!DOCTYPE html>
@@ -350,7 +157,7 @@ def main():
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" href="/styles.css">
-            <title>Tecnologia a Ozono Industriale: Principi e Automazione</title>
+            <title>Tecnologia dell'ozono nei sistemi industriali </title>
             <meta name="description" content="">
         </head>
         <body>
@@ -358,11 +165,6 @@ def main():
             <main>
                 {hero_html}
                 {html_article}
-                {generazione_html}
-                {parametri_html}
-                {componenti_html}
-                {controllo_html}
-                {sicurezza_html}
             </main>
             {components.footer_dark()}
         </body>
