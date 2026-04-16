@@ -55,7 +55,6 @@ def main():
     '''
 
     html_article = f'''
-
         <div class="container-xl">
             <div class="m-flex" style="align-items: center;">
                 <div style="flex: 3;">

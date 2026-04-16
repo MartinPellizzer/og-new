@@ -105,10 +105,10 @@ def header_default():
             <!-- Navigation -->
             <nav class="main-nav" aria-label="Main Navigation">
                 <ul class="nav-links">
-                <li><a href="/soluzioni/">Soluzioni</a></li>
+                <li><a href="/tecnologia/">Tecnologia</a></li>
+                <li><a href="/applicazioni/">Applicazioni</a></li>
                 <li><a href="/settori/">Settori</a></li>
                 <li><a href="/metodo/">Metodo</a></li>
-                <li><a href="/tecnologia/">Tecnologia</a></li>
                 <li><a href="/confronti/">Confronti</a></li>
                 <li><a href="/azienda/">Azienda</a></li>
                 <li><a href="/prodotti.html">Prodotti</a></li>
