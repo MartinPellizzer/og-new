@@ -1,0 +1,159 @@
+
+You are an information extraction system.
+
+Your task is to extract ONLY relationships between ozone (O₃) and industrial sectors from scientific or technical text.
+
+Do NOT extract anything else.
+
+---
+
+## OBJECTIVE
+
+Identify all industries where ozone is used or applied.
+
+Return simple binary relationships:
+(Ozone → Industry)
+
+---
+
+## ENTITY TYPES (ONLY THESE TWO)
+
+* Substance
+* Industry
+
+---
+
+## RELATIONSHIP (ONLY ONE)
+
+* used_in_industry
+
+---
+
+## RULES
+
+1. Always include ozone as Entity 1.
+2. Entity 1 must ALWAYS be:
+
+   * name: "ozone"
+   * type: "Substance"
+3. Extract industries ONLY if explicitly stated or clearly implied.
+4. Normalize industry names (e.g. "wastewater treatment", not full facility descriptions).
+5. Do not extract processes, problems, mechanisms, or conditions.
+6. Do not infer industries not present in the text.
+7. Deduplicate industries within the same input.
+
+---
+
+## OUTPUT FORMAT (STRICT JSON ONLY)
+
+{
+"triples": [
+{
+"entity1_name": "ozone",
+"entity1_type": "Substance",
+"relationship": "used_in_industry",
+"entity2_name": "industry name",
+"entity2_type": "Industry"
+}
+]
+}
+
+---
+
+## EXAMPLES
+
+Input:
+"Ozone is widely used in water treatment and food processing for disinfection."
+
+Output:
+{
+"triples": [
+{
+"entity1_name": "ozone",
+"entity1_type": "Substance",
+"relationship": "used_in_industry",
+"entity2_name": "water treatment",
+"entity2_type": "Industry"
+},
+{
+"entity1_name": "ozone",
+"entity1_type": "Substance",
+"relationship": "used_in_industry",
+"entity2_name": "food processing",
+"entity2_type": "Industry"
+}
+]
+}
+
+---
+
+## INPUT TEXT
+
+[input_text]
+
+---
+
+## OUTPUT
+
+Return ONLY valid JSON. No commentary. No extra fields.
+
+///
+
+You are an expert on constructing Knowledge Graphs from texts using named entity recognition and relation extraction. 
+Given a scientifi study ABSTRACT, identify as many entities and relations among them as possible and output a list of relations in the format [ENTITY 1, ENTITY 1 TYPE, RELATION, ENTITY 2, ENTITY 2 TYPE]. 
+The relations are directed, so the order matters. 
+
+ABSTRACT:
+[abstract]
+---
+
+You are an expert on constructing Knowledge Graphs from texts using named entity recognition.
+
+Given a sentence, identify as many entities as possible and output a list in the format from the TEXT below. 
+
+Each element of the list is in this format: ENTITY 1, ENTITY 1 TYPE
+
+I'm only interested in the problems that ozone can solve (entities of type PROBLEM).
+
+If there are not entities of this type, reply with NA. 
+
+Reply only with the asked content.
+
+SENTENCE:
+[sentence]
+
+---
+
+You are an expert on constructing Knowledge Graphs from texts using named entity recognition.
+
+Given a prompt, identify as many entities as possible and output a list in the format from the TEXT below. 
+
+Each element of the list is in this format: ENTITY 1, ENTITY 1 TYPE
+
+I'm only interested in the problems that ozone can solve (entities of type PROBLEM).
+
+If there are not entities of this type, reply with NA. 
+
+Reply only with the asked content.
+
+TEXT:
+
+Ozone is a strong oxidant and potent disinfecting agent. Even though it is new for the US, it has been utilized in European countries for a long time. Ultraviolet radiation (188 nm wavelength) and corona discharge methods can be used to generate ozone. The bactericidal effects of ozone have been documented on a wide variety of organisms, including Gram positive and Gram negative bacteria as well as spores and vegetative cells. In this review, chemical and physical properties of ozone, its generation, and antimicrobial power of ozone with two suggested mechanisms were explained as well as many advantages of ozone use in the food industry. There are numerous application areas of ozone in the industry such as food surface hygiene, sanitation of food plant equipment, reuse of waste water, treatment and lowering biological oxygen demand (BOD) and chemical oxygen demand (COD) of food plant waste. Treating fruits and vegetables with ozone has been found to increase shelf-life of the products. Notably, when ozone is applied to food, it leaves no residues since it decomposes quickly. In this review, use of ozone in food industry was discussed.
+
+---
+
+
+You are an expert on constructing Knowledge Graphs from texts using named entity recognition.
+Given a TEXT, identify as many entities as possible and output a list in the format: [ENTITY, ENTITY TYPE]
+TEXT:
+[sentence]
+
+---
+
+You are an expert on constructing Knowledge Graphs from texts using named entity recognition and relation extraction.
+Given a TEXT, identify as many entities and relations among them as possible and output a list of relations in the format: [ENTITY 1, ENTITY 1 TYPE, RELATION, ENTITY 2, ENTITY 2 TYPE]
+RULES:
+The relations are directed, so the order matters.
+TEXT:
+[sentence]
+

@@ -1,0 +1,206 @@
+def header_light():
+    html = f'''
+        <nav class="navbar-light">
+            <div class="logo"><a style="color: #222222;" href="/">Ozonogroup</a></div>
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+
+            <label for="menu-toggle" class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <ul class="menu">
+                <li><a href="/servizi.html">Servizi</a></li>
+                <li><a href="/prodotti.html">Prodotti</a></li>
+                <li><a href="/settori.html">Settori</a></li>
+                <li><a href="/ozono.html">Guida all'Ozono</a></li>
+                <li><a href="/chi-siamo.html">Chi Siamo</a></li>
+            </ul>
+            
+            <a class="header-button" href="/contatti.html">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M680-80v-120H560v-80h120v-120h80v120h120v80H760v120h-80Zm-480-80q-33 0-56.5-23.5T120-240v-480q0-33 23.5-56.5T200-800h40v-80h80v80h240v-80h80v80h40q33 0 56.5 23.5T760-720v244q-20-3-40-3t-40 3v-84H200v320h280q0 20 3 40t11 40H200Zm0-480h480v-80H200v80Zm0 0v-80 80Z"/></svg>
+                <span>Prenota Consulenza</span>
+            </a>
+        </nav>
+    '''
+    return html
+
+def header_dark():
+    html = f'''
+        <nav class="navbar">
+            <div class="logo">Ozonogroup</div>
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+
+            <label for="menu-toggle" class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <ul class="menu">
+                <li><a href="/servizi.html">Servizi</a></li>
+                <li><a href="/settori.html">Settori</a></li>
+                <li><a href="/prodotti.html">Prodotti</a></li>
+                <li><a href="/ozono.html">Guida all'Ozono</a></li>
+                <li><a href="/chi-siamo.html">Chi Siamo</a></li>
+            </ul>
+        </nav>
+    '''
+    return html
+
+def footer_dark():
+    html = f'''
+        <footer class="home-footer-container">
+            <div class="container-xl">
+                <div class="home-footer-intro-container">
+                    <div>
+                        <h2>Contatti</h2>
+                        <p style="margin-bottom: 1rem;">Via dell'Artigianato, 23, 31011 Asolo TV</p>
+                        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 8px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#ffffff">
+                                <path d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z" />
+                            </svg>
+                            <p>+39 0423 952833</p>
+                        </div>
+                        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 8px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#ffffff">
+                                <path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z" />
+                            </svg>
+                            <p>info@ozonogroup.it</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h2>Risorse</h2>
+                        <div class="home-footer-nav">
+                            <a href="/chi-siamo.html">Chi Siamo</a>
+                            <a href="/contatti.html">Contatti</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="home-footer-copyright-container">
+                    <a style="font-size: 24px; color: #ffffff; text-decoration-line: none;" href="#">Ozonogroup</a>
+                    <p>Copyright © Ozonogroup | Tutti i diritti riservati</p>
+                </div>
+            </div>
+        </footer>
+    '''
+    return html
+
+def header_default():
+    html = f'''
+        <header>
+            <!-- Logo -->
+            <div class="logo">
+                <a href="/index.html">
+                <img src="/immagini/logo.png" alt="Ozonogroup" />
+                </a>
+            </div>
+
+            <!-- Hidden checkbox for mobile toggle -->
+            <input type="checkbox" id="nav-toggle" />
+
+            <!-- Navigation -->
+            <nav class="main-nav" aria-label="Main Navigation">
+                <ul class="nav-links">
+                <li><a href="/tecnologia/">Tecnologia</a></li>
+                <li><a href="/applicazioni/">Applicazioni</a></li>
+                <li><a href="/settori/">Settori</a></li>
+                <li><a href="/metodo/">Metodo</a></li>
+                <li><a href="/confronti/">Confronti</a></li>
+                <li><a href="/azienda/">Azienda</a></li>
+                <li><a href="/prodotti.html">Prodotti</a></li>
+                <li><a href="/contatti.html">Contatti</a></li>
+                </ul>
+            </nav>
+
+            <!-- Hamburger button -->
+            <label for="nav-toggle" class="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </header>
+    '''
+    # <li><a href="/ozono.html">Guida all'Ozono</a></li>
+                # <li><a href="/servizi.html">Servizi</a></li>
+
+    return html
+
+
+def breadcrumbs(url):
+    breadcrumb_list = url.split('/')
+    breadcrumb_href = f'/'
+    breadcrumb_html = f'<a href="{breadcrumb_href}">Home</a>'
+    for breadcrumb_i, breadcrumb_text in enumerate(breadcrumb_list):
+        breadcrumb_href += '/' + breadcrumb_text
+        breadcrumb_href = breadcrumb_href.replace('//', '/')
+        breadcrumb_text = breadcrumb_text.strip().replace('-', ' ').title()
+        if breadcrumb_i == len(breadcrumb_list)-1:
+            breadcrumb_html += f' > {breadcrumb_text}'
+        else:
+            breadcrumb_html += f' > <a href="{breadcrumb_href}">{breadcrumb_text}</a>'
+
+    html = f'''
+        <section class="breadcrumbs">
+            {breadcrumb_html}
+        </section>
+    '''
+    return html
+
+def breadcrumbs_new(url):
+    breadcrumb_list = url.split('/')
+    breadcrumb_href = f'/'
+    breadcrumb_html = f'<a style="color: #8ab4f8;" href="{breadcrumb_href}">Home</a>'
+    for breadcrumb_i, breadcrumb_text in enumerate(breadcrumb_list):
+        breadcrumb_href += '/' + breadcrumb_text
+        breadcrumb_href = breadcrumb_href.replace('//', '/')
+        breadcrumb_text = breadcrumb_text.strip().replace('-', ' ').title()
+        if breadcrumb_i == len(breadcrumb_list)-1:
+            breadcrumb_html += f' > {breadcrumb_text}'
+        else:
+            breadcrumb_html += f' > <a href="{breadcrumb_href}">{breadcrumb_text}</a>'
+
+    html = f'''
+        <section style="color: #fff; font-size: 0.75rem; margin-bottom: 1rem;">
+            {breadcrumb_html}
+        </section>
+    '''
+    return html
+
+def toc(html_article):
+    from bs4 import BeautifulSoup
+    ### get headers
+    soup = BeautifulSoup(html_article, 'html.parser')
+    headings = soup.find_all([f'h{i}' for i in range(1,7)])
+    ### add ids to headings
+    for idx, heading in enumerate(headings):
+        heading['id'] = f'{idx}'
+    html_article = str(soup)
+    ### gen toc data
+    toc_items = []
+    for i, heading in enumerate(headings):
+        level = int(heading.name[1])
+        level -= 1 # start from h2
+        if level == 0: continue
+        toc_items.append((level, heading.get_text(), heading['id']))
+    ### build nested toc as <ul>
+    toc_html = ''
+    toc_html += '<div class="toc">\n'
+    toc_html += f'''<p class="toc-heading">Table of Contents</p>\n'''
+    toc_html += '<ul>\n'
+    prev_level = 1
+    for level, text, id_attr in toc_items:
+        if level > prev_level:
+            toc_html += '<ul>\n' * (level - prev_level)
+        elif level < prev_level:
+            toc_html += '<ul>\n' * (prev_level - level)
+        toc_html += f'<li><a href="#{id_attr}">{text}</a></li>\n'
+        prev_level = level
+    toc_html += '</ul>\n'
+    toc_html += '</div>\n'
+    ### insert toc in html article
+    html_article = html_article.replace('[toc]', toc_html)
+    return html_article

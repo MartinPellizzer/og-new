@@ -1,0 +1,538 @@
+import os
+import json
+import textwrap
+
+from lib import g
+from lib import io
+from lib import llm
+
+# model_filepath = '/home/ubuntu/vault-tmp/llm/Qwen3.6-27B-Q4_K_M.gguf'
+model_filepath = '/home/ubuntu/vault-tmp/llm/gemma-4-26B-A4B-it-UD-Q4_K_XL.gguf'
+###
+studies_folderpath = f'/home/ubuntu/vault/ozonogroup/studies/pubmed/ozone/json'
+studies_filepaths = [f'{studies_folderpath}/{filename}' for filename in os.listdir(studies_folderpath)]
+studies_outputs_folderpath = f'/home/ubuntu/vault/ozonogroup/studies/pubmed/ozone/extracted-entities-relationships'
+###
+studies_filepaths = [f'{studies_folderpath}/{filename}' for filename in os.listdir(studies_folderpath)]
+DATABASE_FOLDERPATH = f'/home/ubuntu/vault/ozonogroup/database'
+
+def study_triples_extract_from_prompt(abstract_text):
+    content = io.file_read('prompt-triples-extract.txt')
+    content = content.split('///')[0].strip()
+    content = content.replace('[input_text]', abstract_text)
+    prompt = textwrap.dedent(f'''
+    {content}
+    ''').strip()
+    print(prompt)
+    reply = llm.reply(prompt, model_filepath=model_filepath)
+    return reply
+
+def nace__lvl_1_classification():
+    ### get nace codes
+    nace_filepath = f'{DATABASE_FOLDERPATH}/nace/codes.txt'
+    nace_lines = io.file_read(nace_filepath).split('\n')
+    nace_lines_lvl_1 = []
+    for nace_line in nace_lines[:]:
+        if len(nace_line.split('-')[0].strip()) == 1:
+            print(nace_line)
+            nace_lines_lvl_1.append(nace_line)
+
+    ### get llm studies industries
+    industries_folderpath = f'{DATABASE_FOLDERPATH}/studies/0004-industries'
+    industries_filenames = sorted(os.listdir(industries_folderpath))
+    triples = []
+    for i, industry_filename in enumerate(industries_filenames):
+        print(f'{i}/{len(industries_filenames)}')
+        industry_filepath = f'{industries_folderpath}/{industry_filename}'
+        industry_text = io.file_read(industry_filepath)
+        industry_data = json.loads(industry_text)
+        # print(industry_data)
+        # print(industry_data['extracted_text'])
+        extracted_text = industry_data['extracted_text']
+        extracted_text_lines = []
+        for line in extracted_text.split('\n'):
+            line = line.strip()
+            if line == '': continue
+            if line[0] == '`': continue
+            extracted_text_lines.append(line)
+        extracted_text_cleaned = '\n'.join(extracted_text_lines)
+        try: triples_data = json.loads(extracted_text_cleaned)
+        except: continue
+        if triples_data == {}: continue
+        for triple in triples_data['triples']:
+            # print(triple)
+            triples.append(triple)
+    industries = []
+    for triple in triples:
+        print(triple)
+        industries.append(triple['entity2_name'])
+    industries = sorted(list(set(industries)))
+    print(len(industries))
+
+    ### match industries to nace
+    categories = []
+    for industry in industries[:]:
+        print(industry)
+        prompt = textwrap.dedent(f'''
+            Classify the following term in the appropriate NACE code industry: "{industry}".
+            To classify it, choose the most semantically relevant category from the following ones:
+            {nace_lines_lvl_1}
+            Reply ONLY with the category.
+        ''').strip()
+        print(prompt)
+        reply = llm.reply(prompt, model_filepath=model_filepath)
+        print(reply)
+        category = {
+            'industry_llm': industry,
+            'industry_nace': reply,
+        }
+        categories.append(category)
+    categories_filepath = f'{DATABASE_FOLDERPATH}/studies/categories.json'
+    io.json_write(categories_filepath, categories)
+
+def nace__lvl_2_classification():
+    ### get nace codes
+    nace_filepath = f'{DATABASE_FOLDERPATH}/nace/codes.txt'
+    nace_lines = io.file_read(nace_filepath).split('\n')
+    nace_lines_lvl_2 = []
+    for nace_line in nace_lines[:]:
+        nace_line = nace_line.strip()
+        if nace_line == '': continue
+        parts = nace_line.split('-', 1)
+        nace_code, nace_desc = parts[0].strip(), parts[1].strip()
+        nace_code_parts = nace_code.split('.')
+        if len(nace_code_parts) == 1:
+            if len(nace_code_parts[0]) > 1:
+                nace_lines_lvl_2.append(nace_line)
+
+    input_filepath = f'{DATABASE_FOLDERPATH}/studies/categories.json'
+    input_data = io.json_read(input_filepath)
+    categories = []
+    for i, input_item in enumerate(input_data):
+        print(input_item)
+        industry_llm = input_item['industry_llm']
+        industry_nace_lvl_1 = input_item['industry_nace']
+        nace_lines_lvl_2_selected = []
+        for nace_line_lvl_2 in nace_lines_lvl_2:
+            if nace_line_lvl_2[0] == industry_nace_lvl_1[0]:
+                nace_lines_lvl_2_selected.append(nace_line_lvl_2)
+
+        ### match industries to nace
+        prompt = textwrap.dedent(f'''
+            Classify the following term in the appropriate NACE code industry: "{industry_llm}".
+            To classify it, choose the most semantically relevant category from the following ones:
+            {nace_lines_lvl_2_selected}
+            Reply ONLY with the category.
+        ''').strip()
+        print(prompt)
+        reply = llm.reply(prompt, model_filepath=model_filepath)
+        print(reply)
+        category = {
+            'industry_llm': industry_llm,
+            'industry_nace_lvl_1': industry_nace_lvl_1,
+            'industry_nace_lvl_2': reply,
+        }
+        categories.append(category)
+        # if i > 5:
+            # break
+    categories_filepath = f'{DATABASE_FOLDERPATH}/studies/categories-lvl-2.json'
+    io.json_write(categories_filepath, categories)
+
+def nace__lvl_2_group():
+    input_filepath = f'{DATABASE_FOLDERPATH}/studies/categories-lvl-2.json'
+    input_data = io.json_read(input_filepath)
+    categories_lvl_2 = []
+    for i, input_item in enumerate(input_data):
+        # print(input_item)
+        # quit()
+        industry_nace_lvl_2 = input_item['industry_nace_lvl_2']
+        found = False
+        for category_i, category in enumerate(categories_lvl_2):
+            if category['industry'] == industry_nace_lvl_2:
+                category_industry = category['industry']
+                category_occurence = category['occurence']
+                category_occurence += 1
+                print(category_occurence)
+                categories_lvl_2[category_i] = {
+                    'industry': industry_nace_lvl_2,
+                    'occurence': category_occurence,
+                }
+                print(category_occurence)
+                # quit()
+                found = True
+                break
+        if not found:
+            categories_lvl_2.append({
+                'industry': industry_nace_lvl_2,
+                'occurence': 1,
+            })
+    categories_lvl_2 = sorted(categories_lvl_2, key=lambda x: x["occurence"], reverse=True)
+    ###
+    categories_lvl_1 = []
+    for i, input_item in enumerate(input_data):
+        # print(input_item)
+        # quit()
+        industry_nace_lvl_1 = input_item['industry_nace_lvl_1']
+        found = False
+        for category_i, category in enumerate(categories_lvl_1):
+            if category['industry'] == industry_nace_lvl_1:
+                category_industry = category['industry']
+                category_occurence = category['occurence']
+                category_occurence += 1
+                print(category_occurence)
+                categories_lvl_1[category_i] = {
+                    'industry': industry_nace_lvl_1,
+                    'occurence': category_occurence,
+                }
+                print(category_occurence)
+                # quit()
+                found = True
+                break
+        if not found:
+            categories_lvl_1.append({
+                'industry': industry_nace_lvl_1,
+                'occurence': 1,
+            })
+    categories_lvl_1 = sorted(categories_lvl_1, key=lambda x: x["occurence"], reverse=True)
+    print('########################################')
+    for category in categories_lvl_2:
+        print(category)
+    print('########################################')
+    for category in categories_lvl_1:
+        print(category)
+
+# nace__lvl_2_classification()
+# nace__lvl_2_group()
+# quit()
+
+
+def nace_llms_full_taxonomies():
+    input_data = io.json_read(f'{DATABASE_FOLDERPATH}/studies/categories-lvl-2.json')
+    groups = []
+    for i, input_item in enumerate(input_data):
+        found = False
+        for group in groups:
+            if group['industry_nace_lvl_1'] == input_item['industry_nace_lvl_1']:
+                group['industry_nace_lvl_2'].append({
+                    'industry_nace_lvl_2': input_item['industry_nace_lvl_2'],
+                    'industry_llm': input_item['industry_llm'],
+                })
+                found = True
+                break
+        if not found:
+            groups.append({
+                'industry_nace_lvl_1': input_item['industry_nace_lvl_1'],
+                'industry_nace_lvl_2': [{
+                    'industry_nace_lvl_2': input_item['industry_nace_lvl_2'],
+                    'industry_llm': input_item['industry_llm'],
+                }]
+            })
+        print(input_item)
+    groups_sorted = []
+    for group in groups[:]:
+        categories_lvl_2 = sorted(group['industry_nace_lvl_2'], key=lambda x: x["industry_nace_lvl_2"], reverse=False)
+        group_sorted = {
+            'industry_nace_lvl_1': group['industry_nace_lvl_1'],
+            'industries_nace_lvl_2': categories_lvl_2,
+        }
+        groups_sorted.append(group_sorted)
+
+    for group in groups_sorted[:]:
+        print(json.dumps(group, indent=4))
+
+nace_llms_full_taxonomies()
+quit()
+
+abstracts_folderpath = f'{DATABASE_FOLDERPATH}/studies/0000-abstracts'
+abstracts_filenames = sorted(os.listdir(abstracts_folderpath))
+for i, abstract_filename in enumerate(abstracts_filenames):
+    print(f'{i}/{len(abstracts_filenames)}')
+    output_folderpath = f'{DATABASE_FOLDERPATH}/studies/0004-industries'
+    output_filepath = f'{output_folderpath}/{abstract_filename}'
+    if os.path.exists(output_filepath): continue
+    abstract_filepath = f'{abstracts_folderpath}/{abstract_filename}'
+    abstract_text = io.file_read(abstract_filepath)
+    print(abstract_filepath)
+    print()
+    reply = study_triples_extract_from_prompt(abstract_text)
+    reply = {
+        'abstract_text': abstract_text,
+        'extracted_text': reply,
+    }
+    io.json_write(output_filepath, reply)
+    # quit()
+    print(reply)
+
+quit()
+
+def studies_abstracts_extract():
+    for study_filepath in studies_filepaths[:]:
+        study_filename_raw = study_filepath.split('/')[-1].split('.')[0].strip()
+        study_output_filepath = f'{DATABASE_FOLDERPATH}/studies/0000-abstracts/{study_filename_raw}.txt'
+        if os.path.exists(study_output_filepath): continue
+        ###
+        study_data = io.json_read(study_filepath)
+        try: article_title = study_data['PubmedArticle'][0]['MedlineCitation']['Article']['ArticleTitle']
+        except: continue
+        try: abstract_text = ' '.join(study_data['PubmedArticle'][0]['MedlineCitation']['Article']['Abstract']['AbstractText']).strip()
+        except: continue
+        output_text = article_title + '' + abstract_text
+        io.file_write(study_output_filepath, output_text)
+
+def studies_abstracts_to_sentences_format():
+    import spacy
+    nlp = spacy.load("en_core_web_sm")
+    ###
+    abstracts_folderpath = f'{DATABASE_FOLDERPATH}/studies/0000-abstracts'
+    abstracts_sentences_folderpath = f'{DATABASE_FOLDERPATH}/studies/0001-abstracts-sentences'
+    abstracts_filenames = os.listdir(abstracts_folderpath)
+    for i, abstract_filename in enumerate(abstracts_filenames):
+        print(f'{i}/{len(abstracts_filenames)}')
+        abstract_filepath = f'{abstracts_folderpath}/{abstract_filename}'
+        abstract_sentences_filepath = f'{abstracts_sentences_folderpath}/{abstract_filename}'
+        if os.path.exists(abstract_sentences_filepath): continue
+        # print(abstract_filepath)
+        # print(abstract_sentences_filepath)
+        abstract_text = io.file_read(abstract_filepath)
+        doc = nlp(abstract_text)
+        sentences = [sent.text for sent in doc.sents]
+        # print(sentences)
+        sentences_text = '\n'.join(sentences)
+        # print(sentences_text)
+        io.file_write(abstract_sentences_filepath, sentences_text)
+        # quit()
+    quit()
+
+# studies_abstracts_to_sentences_format()
+
+def studies_triples_extract():
+    sentences_folderpath = f'{DATABASE_FOLDERPATH}/studies/0001-abstracts-sentences'
+    sentences_filenames = os.listdir(sentences_folderpath)
+    for i, sentences_filename in enumerate(sentences_filenames):
+        print(f'{i}/{len(sentences_filenames)}')
+        sentences_filepath = f'{sentences_folderpath}/{sentences_filename}'
+        sentences_text = io.file_read(sentences_filepath)
+        sentences_list = sentences_text.split('\n')
+        print(sentences_list)
+        while True:
+            input('>>')
+            outputs = []
+            for sentence in sentences_list:
+                prompt = textwrap.dedent(f'''
+                You are an expert on constructing Knowledge Graphs from texts using named entity recognition and relation extraction.
+                Given a TEXT, identify as many entities and relations among them as possible and output a list of relations in the format: [ENTITY 1, ENTITY 1 TYPE, RELATION, ENTITY 2, ENTITY 2 TYPE]
+                RULES:
+                The relations are directed, so the order matters.
+                TEXT:
+                {sentences_list[0]}
+                ''').strip()
+                ###
+                content = io.file_read('prompt-triples-extract.txt')
+                content = content.split('---')[0].strip()
+                content = content.replace('[sentence]', sentence)
+                prompt = textwrap.dedent(f'''
+                {content}
+                ''').strip()
+                print(prompt)
+                reply = llm.reply(prompt, model_filepath=model_filepath)
+                print(reply)
+                output = {
+                    'sentence': sentence,
+                    'triples': reply.split('\n'),
+                }
+                outputs.append(output)
+                # io.file_write(study_output_filepath, reply)
+            print('########################################')
+            print('########################################')
+            print('########################################')
+            print(sentences_text)
+            for output in outputs:
+                print(json.dumps(output, indent=4))
+            print('########################################')
+            print('########################################')
+            print('########################################')
+        quit()
+
+# studies_triples_extract()
+
+def entity_relationships_extraction_raw():
+    studies_outputs_folderpath = f'/home/ubuntu/vault/ozonogroup/database/studies/0003-abstracts-triples-raw'
+    for study_filepath_i, study_filepath in enumerate(studies_filepaths[:]):
+        print(f'{study_filepath_i}/{len(studies_filepaths)}')
+        study_filename_raw = study_filepath.split('/')[-1].split('.')[0].strip()
+        study_output_filepath = f'{studies_outputs_folderpath}/{study_filename_raw}.txt'
+        if os.path.exists(study_output_filepath): continue
+        ###
+        study_data = io.json_read(study_filepath)
+        # print(study_data)
+        try: article_title = study_data['PubmedArticle'][0]['MedlineCitation']['Article']['ArticleTitle']
+        except: continue
+        try: abstract_text = ' '.join(study_data['PubmedArticle'][0]['MedlineCitation']['Article']['Abstract']['AbstractText']).strip()
+        except: continue
+        print(abstract_text)
+        prompt = textwrap.dedent(f'''
+        You are an expert on constructing Knowledge Graphs from texts using named entity recognition and relation extraction. 
+        Given a scientifi study ABSTRACT, identify as many entities and relations among them as possible and output a list of relations in the format [ENTITY 1, ENTITY 1 TYPE, RELATION, ENTITY 2, ENTITY 2 TYPE]. 
+        The relations are directed, so the order matters. 
+        ABSTRACT:
+        {abstract_text}
+        ''').strip()
+        reply = llm.reply(prompt, model_filepath=model_filepath)
+        io.file_write(study_output_filepath, reply)
+
+entity_relationships_extraction_raw()
+quit()
+
+
+def entity_relationships_extraction_group():
+    groups = []
+    studies_outputs_filepaths = [f'{studies_outputs_folderpath}/{filename}' for filename in os.listdir(studies_outputs_folderpath)]
+    for study_i, study_output_filepath in enumerate(studies_outputs_filepaths[:]):
+        study_data = io.file_read(study_output_filepath)
+        # print(study_data)
+        print(f'{study_i}/{len(studies_outputs_filepaths)}')
+        for line in study_data.split('\n'):
+            # print(line)
+            line = line.strip()
+            if line == '': continue
+            if not line.startswith('['): continue
+            line = line.replace('[', '').replace(']', '').strip()
+            row_values = [item.strip() for item in line.split(',') if item.strip() != '']
+            if len(row_values) == 5:
+                # print(row_values)
+                ###
+                found = False
+                for group in groups:
+                    if group['entity_name'].lower() == row_values[0].lower() and group['entity_type'].lower() == row_values[1].lower():
+                        group['entity_count'] += 1
+                        found = True
+                        break
+                if not found:
+                    group = {
+                        'entity_name': row_values[0],
+                        'entity_type': row_values[1],
+                        'entity_count': 1,
+                    }
+                    groups.append(group)
+                ###
+                found = False
+                for group in groups:
+                    if group['entity_name'].lower() == row_values[3].lower() and group['entity_type'].lower() == row_values[4].lower():
+                        group['entity_count'] += 1
+                        found = True
+                        break
+                if not found:
+                    group = {
+                        'entity_name': row_values[3],
+                        'entity_type': row_values[4],
+                        'entity_count': 1,
+                    }
+                    groups.append(group)
+            else:
+                # print('!!!!!', line)
+                pass
+            # print(line)
+            # print()
+        # quit()
+        # if study_i >= 100:
+            # break
+    groups = sorted(groups, key=lambda x: x["entity_count"], reverse=True)
+    io.json_write(f'/home/ubuntu/vault/ozonogroup/database/kg/entity-extraction/groups-raw.json', groups)
+    for group in groups[:1000]:
+        print(group)
+
+print()
+print()
+print()
+print('########################################')
+print('########################################')
+print('########################################')
+print()
+print()
+print()
+
+# entity_relationships_extraction_group()
+def groups_get():
+    groups = io.json_read(f'/home/ubuntu/vault/ozonogroup/database/kg/entity-extraction/groups-raw.json')
+    return groups
+
+def groups_print():
+    groups = io.json_read(f'/home/ubuntu/vault/ozonogroup/database/kg/entity-extraction/groups-raw.json')
+    for group in groups[:1000]:
+        print(group)
+
+print()
+print()
+print()
+print('########################################')
+print('########################################')
+print('########################################')
+print()
+print()
+print()
+
+def entity_type_get():
+    results = []
+    for group in groups[:1000]:
+        entity_type = group['entity_type']
+        entity_count = group['entity_count']
+        entity_type = entity_type.upper()
+        if entity_type not in results:
+            results.append(entity_type)
+        # print(group)
+    for result in results:
+        print(result)
+
+def entity_type_cluster():
+    entities = []
+    for group in groups[:]:
+        _entity_type = group['entity_type']
+        _entity_count = group['entity_count']
+        _entity_type = _entity_type.upper()
+        found = False
+        for entity in entities[:1000]:
+            if entity['entity_type'] == _entity_type:
+                entity['entity_count'] += _entity_count
+                found = True
+                break
+        if not found:
+            entity = {
+                'entity_type': _entity_type,
+                'entity_count': _entity_count,
+            }
+            entities.append(entity)
+    entities = sorted(entities, key=lambda x: x["entity_count"], reverse=True)
+    for entity in entities:
+        print(entity)
+
+def entity_type_filter(kind):
+    results = []
+    groups = groups_get()
+    for group in groups[:]:
+        _entity_type = group['entity_type']
+        if _entity_type.lower() == kind.lower():
+            results.append(group)
+    for result in results:
+        print(result)
+    return results
+
+# groups_get()
+# entity_type_get()
+# entity_type_cluster()
+entity_type_filter(kind='chemical')
+
+'''
+ENTITY TYPES:
+    CHEMICAL: ozone
+    PROCESS: ozonation
+    LOCATION: 
+    MATERIAL:
+    PROPERTY:
+
+    DISEASE:
+    CONDITION:
+
+ENTITY NORMALIZATION:
+    ozone, o3, ozone (o3)
+'''
+
