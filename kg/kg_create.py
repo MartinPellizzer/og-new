@@ -205,7 +205,6 @@ def nace__lvl_2_group():
 # nace__lvl_2_group()
 # quit()
 
-
 def nace_llms_full_taxonomies():
     input_data = io.json_read(f'{DATABASE_FOLDERPATH}/studies/categories-lvl-2.json')
     groups = []
@@ -231,15 +230,17 @@ def nace_llms_full_taxonomies():
     groups_sorted = []
     for group in groups[:]:
         categories_lvl_2 = sorted(group['industry_nace_lvl_2'], key=lambda x: x["industry_nace_lvl_2"], reverse=False)
+        categories_lvl_2_count = len(group['industry_nace_lvl_2'])
         group_sorted = {
             'industry_nace_lvl_1': group['industry_nace_lvl_1'],
             'industries_nace_lvl_2': categories_lvl_2,
+            'count': categories_lvl_2_count,
         }
         groups_sorted.append(group_sorted)
-
+    groups_sorted = sorted(groups_sorted, key=lambda x: x["count"], reverse=True)
     for group in groups_sorted[:]:
         print(json.dumps(group, indent=4))
-
+    io.json_write(f'{DATABASE_FOLDERPATH}/studies/industries-grouped.json', groups_sorted)
 nace_llms_full_taxonomies()
 quit()
 
