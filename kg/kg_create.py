@@ -15,6 +15,60 @@ studies_outputs_folderpath = f'/home/ubuntu/vault/ozonogroup/studies/pubmed/ozon
 ###
 studies_filepaths = [f'{studies_folderpath}/{filename}' for filename in os.listdir(studies_folderpath)]
 DATABASE_FOLDERPATH = f'/home/ubuntu/vault/ozonogroup/database'
+PROJECT_FOLDERPATH = f'/home/ubuntu/vault/ozonogroup'
+
+def studies__read_one_by_one(studies_folderpath):
+    filepaths = [f'{studies_folderpath}/{filename}' for filename in os.listdir(studies_folderpath)]
+    for filepath in filepaths:
+        json_data = io.json_read(filepath)
+        abstract_title = json_data['PubmedArticle'][0]['MedlineCitation']['Article']['ArticleTitle']
+        abstract_text = ' '.join(json_data['PubmedArticle'][0]['MedlineCitation']['Article']['Abstract']['AbstractText'])
+        # print(json.dumps(json_data, indent=4))
+        print()
+        print()
+        print()
+        print(abstract_title)
+        print('---')
+        print(abstract_text)
+        print()
+        print()
+        print()
+        input('>> ')
+        # quit()
+
+studies__read_one_by_one(f'{PROJECT_FOLDERPATH}/studies/pubmed/ozone-wine/json')
+
+quit()
+
+### TODO: why doesn't give me a single YES?
+def filter_studies_by_industry(industry_name):
+    abstracts_folderpath = f'{DATABASE_FOLDERPATH}/studies/0000-abstracts'
+    abstracts_filenames = sorted(os.listdir(abstracts_folderpath))
+    for i, abstract_filename in enumerate(abstracts_filenames):
+        print(f'{i}/{len(abstracts_filenames)}')
+        abstract_filepath = f'{abstracts_folderpath}/{abstract_filename}'
+        abstract_text = io.file_read(abstract_filepath)
+        print(abstract_filepath)
+        print(abstract_text)
+        prompt = textwrap.dedent(f'''
+            Tell me if the ABSTRACT below mention the following industry: {industry_name}.
+            Reply only with a YES or NO.
+            ABSTRACT:
+            {abstract_text}
+        ''').strip()
+        print(prompt)
+        reply = llm.reply(prompt, model_filepath=model_filepath)
+        if 'yes' in reply:
+            output_folderpath = f'{DATABASE_FOLDERPATH}/studies/industry-{industry_name}'
+            output_filepath = f'{output_folderpath}/{abstract_filename}'
+            # if os.path.exists(output_filepath): continue
+            io.file_write(output_filepath, abstract_text)
+
+            quit()
+
+filter_studies_by_industry('wine')
+
+quit()
 
 def study_triples_extract_from_prompt(abstract_text):
     content = io.file_read('prompt-triples-extract.txt')
@@ -246,9 +300,9 @@ def nace_groups_print():
     groups_data = io.json_read(f'{DATABASE_FOLDERPATH}/studies/industries-grouped.json')
     print(groups_data)
     
-nace_groups_print()
+# nace_groups_print()
 # nace_llms_full_taxonomies()
-# quit()
+quit()
 
 abstracts_folderpath = f'{DATABASE_FOLDERPATH}/studies/0000-abstracts'
 abstracts_filenames = sorted(os.listdir(abstracts_folderpath))
