@@ -1,0 +1,20 @@
+import json
+
+from lib import io
+
+DATABASE_FOLDERPATH = f'/home/ubuntu/vault/ozonogroup/database'
+DATABASE_FOLDERPATH = f'C:/vault/ozonogroup/database'
+
+def nace_groups_print():
+    groups_data = io.json_read(f'{DATABASE_FOLDERPATH}/studies/industries-grouped.json')
+    # print(json.dumps(groups_data, indent=4))
+    for group_lvl_1 in groups_data:
+        # print(group_lvl_1['industry_nace_lvl_1'])
+        for group_lvl_2 in group_lvl_1['industries_nace_lvl_2']:
+            print(
+                group_lvl_1['industry_nace_lvl_1'], '---',
+                group_lvl_2['industry_nace_lvl_2'], '---',
+                group_lvl_2['industry_llm'],'',
+            )
+    
+nace_groups_print()

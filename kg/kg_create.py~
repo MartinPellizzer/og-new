@@ -246,7 +246,6 @@ def nace_groups_print():
     groups_data = io.json_read(f'{DATABASE_FOLDERPATH}/studies/industries-grouped.json')
     print(groups_data)
     
-nace_groups_print()
 # nace_llms_full_taxonomies()
 # quit()
 
