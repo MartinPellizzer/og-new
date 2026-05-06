@@ -98,24 +98,21 @@ def header_default():
                 <img src="/immagini/logo.png" alt="Ozonogroup" />
                 </a>
             </div>
-
             <!-- Hidden checkbox for mobile toggle -->
             <input type="checkbox" id="nav-toggle" />
-
             <!-- Navigation -->
             <nav class="main-nav" aria-label="Main Navigation">
                 <ul class="nav-links">
                 <li><a href="/tecnologia/">Tecnologia</a></li>
                 <li><a href="/applicazioni/">Applicazioni</a></li>
                 <li><a href="/settori/">Settori</a></li>
-                <li><a href="/metodo/">Metodo</a></li>
-                <li><a href="/confronti/">Confronti</a></li>
+                <li><a href="/progettazione/">Progettazione</a></li>
+                <li><a href="/componenti/">Componenti</a></li>
                 <li><a href="/azienda/">Azienda</a></li>
                 <li><a href="/prodotti.html">Prodotti</a></li>
                 <li><a href="/contatti.html">Contatti</a></li>
                 </ul>
             </nav>
-
             <!-- Hamburger button -->
             <label for="nav-toggle" class="hamburger" aria-label="Toggle navigation menu">
                 <span></span>
@@ -125,10 +122,11 @@ def header_default():
         </header>
     '''
     # <li><a href="/ozono.html">Guida all'Ozono</a></li>
-                # <li><a href="/servizi.html">Servizi</a></li>
-
+        # <li><a href="/servizi.html">Servizi</a></li>
+                # <li><a href="/settori/">Settori</a></li>
+                # <li><a href="/metodo/">Metodo</a></li>
+                # <li><a href="/confronti/">Confronti</a></li>
     return html
-
 
 def breadcrumbs(url):
     breadcrumb_list = url.split('/')

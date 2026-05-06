@@ -21,11 +21,11 @@ def main():
                     </a>
                 </div>
                 <div class="flex-1">
-                    <img src="/immagini/tecnologia-featured.jpg">
                 </div>
             </div>
         </section>
     '''
+                    # <img src="/immagini/tecnologia-featured.jpg">
 
     html_breadcrumbs = components.breadcrumbs_new('')
     hero_html = f'''
