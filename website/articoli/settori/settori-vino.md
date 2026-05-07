@@ -38,4 +38,25 @@ Per ottenere queste riduzioni di lieviti, sono stati usati i seguenti trattament
 - ozono gassoso (32 ± 1 μL/L, per 12 e 24 ore)
 - ozono acquoso (5 ± 0,25 mg/L, per 6 e 12 minuti)
 
-Questi trattameti mostrano come sia possibli ottenere riduzioni di lieviti vantaggiose con concentrazioni relativamente basse di ozono (specialmente in forma acquosa). Di conseguenza, è possibili utilizzare questo trattamento per ridurre i lieviti indesiderati e fare posto a lieviti più efficienti (come il Saccharomyces cerevisiae), i quali possoso essere inoculati per completare la fermentazione alcolica e ottenere composti volatili gradevoli invece che acido acetico.
+Questi trattameti mostrano come sia possibli ottenere riduzioni di lieviti vantaggiose con concentrazioni relativamente basse di ozono (specialmente in forma acquosa). Di conseguenza, è possibili utilizzare questo trattamento per ridurre i lieviti indesiderati e fare posto a lieviti più efficienti (come il Saccharomyces cerevisiae), i quali possoso essere inoculati post-trattamento per completare la fermentazione alcolica e ottenere composti volatili gradevoli invece che acido acetico.
+
+## Riduce l'uso di anidride solforosa nella produzione di vino 
+
+L'ozono viene usato come fumigante post-raccolta per produrre vino senza anidride solforosa (SO₂), così da ridurre significativamente la formazione di solfiti (ioni solfito, bisolfito, e altri), i quali incidono negativamente sulla salute delle persone causando effetti come reazioni allergiche, intolleranze e problemi respiratori. Infatti, se viene applicato l'ozono come agente sanitizzante nelle uve prima della vinificazione, si riduce significativamente la carica microbica e si aumentano le sostanze fenoliche e l'aroma del vino.
+
+Come dimostrato in uno studio pubblicato nella rivista "Australian Journal of Grape and Wine Research" condotto da A. Bellincontro et al. nel Gennaio 2017, nel caso delle uve Petit Verdot, il trattamento di fumigazione con ozono dopo la raccolta ha incrementato significativo la concentrazione di antociani, pari al 19% rispetto al 9% osservato nelle uve non trattate durante la fase di fermentazione e macerazione. I vini ottenuti da uve trattate hanno inoltre mostrato una fermentazione più rapida, completata in 16 giorni contro i 21 giorni del controllo, con una più efficiente estrazione di composti fenolici e pigmenti.
+
+Dal punto di vista microbiologico, l’ozono ha ridotto in modo marcato sia i lieviti Saccharomyces cerevisiae e non-Saccharomyces, sia i batteri responsabili della formazione di acido acetico. Il vino finale ha mantenuto una bassa acidità volatile, comparabile al controllo, ma con una riduzione significativa dell’anidride solforosa, pari a 17 mg/L di SO₂ totale e 8 mg/L di SO₂ libera. L’analisi sensoriale ha infine evidenziato un profilo aromatico più intenso, caratterizzato da note fruttate più pronunciate rispetto al vino non trattato.
+
+Questa tabella mostra la composizione dei mosti di Petit Verdot al momento della vendemmia e dopo il trattamento delle uve con ozono, confrontata con quella delle uve di controllo.
+
+| Attributo                         | Vendemmia      | Trattato con ozono | Controllo      |
+|-----------------------------------|----------------|--------------------|----------------|
+| Zuccheri totali (g/L)            | 238±10a        | 240±5a             | 235±8a         |
+| Acidità titolabile (g/L)         | 6.4±0.4a       | 6.3±0.4a           | 6.2±0.2a       |
+| pH                                | 3.4±0.1a       | 3.5±0.0a           | 3.5±0.1a       |
+| Antociani pH 3.2 (mg/L)          | 589±11c        | 702±15a            | 643±18b        |
+| Antociani pH 1.0 (mg/L)          | 708±18b        | 821±17a            | 754±16b        |
+| Estrattibilità (%)                | 16.8a          | 14.5b              | 14.7b          |
+| Tannini della buccia (mg/L)      | 24.3±0.8b      | 28.1±0.8a          | 25.8±1.0b      |
+| Tannini dei semi (mg/L)          | 35.8±0.9a      | 35.2±1.0a          | 36.5±1.4a      |
