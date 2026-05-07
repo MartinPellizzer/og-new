@@ -2054,6 +2054,10 @@ ARTICLEs
     margin-bottom: 1rem;
 }
 
+.article table {
+    margin-top: 2rem;
+}
+
 .article-section {
     /* padding-top: 5rem; */
     padding-bottom: 5rem;

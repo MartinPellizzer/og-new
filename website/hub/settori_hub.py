@@ -9,7 +9,7 @@ from lib import components
 def settori_vino():
     with open(f'./articoli/settori/settori-vino.md', encoding='utf-8') as f: markdown_text = f.read()
 
-    article_html = markdown.markdown(markdown_text)
+    article_html = markdown.markdown(markdown_text, extensions=["tables", "fenced_code"])
     
     article_title_html = ''
     article_first_paragraph_html = ''
