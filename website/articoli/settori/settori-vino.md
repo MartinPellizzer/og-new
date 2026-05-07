@@ -26,3 +26,16 @@ La seguente tabella mostra alcuni esempi di trattamenti con ozono su diverse var
 | Romanesco | Gas | Post-raccolta pre-appassimento, 12 h, 20 g/h | + polifenoli | Modesti et al., 2018 [29] |
 | Moscato bianco | Gas | Pre-appassimento, 24–48 h, 60 mL/L | + VOCs glicosilati<br>+ linalolo libero<br>+ ossido cis-furano del linalolo<br>+ terpineolo | Rìo Segade et al., 2018 [14] |
 | Merlot | Gas | Post-raccolta, 12–24 h, 1–3 mg/L | + polifenoli totali | Modesti et al., 2021 [32] |
+
+## Riduce i lieviti indesiderati dell'uva da vino dopo la raccolta 
+
+Il trattamento ad ozono dell'uva post-raccola riduce il numero di lieviti indesiderati, come quelli apiculati, permettendo di avere vini con migliore aroma e contenuti inferiori di acido acetico (causa del sapore di "aceto" nel vino). Questo trattamento viene fatto prima della fase di fermentazione e può essere eseguito usando ozono sia in forma acquosa che gassosa.
+
+Uno studio di Francesco Cravero et al. pubblicato sulla rivista "Food Research International" nel Settembre 2016 ha evidenziato una riduzione di > 0,5 Log UFC/mL dei lieviti presenti sulla superficie degli acini dopo i trattamenti con ozono (principalmente lieviti apiculati). Da analisi chimiche, la riduzione di questi lieviti ha portato a una conseguente riduzione di acido acetico nelle fermentazioni spontanee del 30-60% nel vino prodotto da uva trattata. Infatti, il contenuto di acido acetico nell'vino con uva trattata era 0,16-0,38 g/L, mentre in quello con uva non trattata era 0,52 g/L. Inoltre, tutti i vini ottenuti da fermentazioni inoculate post-trattamento contenevano quantità maggiori di composti volatili gradevoli.
+
+Per ottenere queste riduzioni di lieviti, sono stati usati i seguenti trattamenti sanitizzanti:
+
+- ozono gassoso (32 ± 1 μL/L, per 12 e 24 ore)
+- ozono acquoso (5 ± 0,25 mg/L, per 6 e 12 minuti)
+
+Questi trattameti mostrano come sia possibli ottenere riduzioni di lieviti vantaggiose con concentrazioni relativamente basse di ozono (specialmente in forma acquosa). Di conseguenza, è possibili utilizzare questo trattamento per ridurre i lieviti indesiderati e fare posto a lieviti più efficienti (come il Saccharomyces cerevisiae), i quali possoso essere inoculati per completare la fermentazione alcolica e ottenere composti volatili gradevoli invece che acido acetico.

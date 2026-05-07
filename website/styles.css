@@ -2054,6 +2054,11 @@ ARTICLEs
     margin-bottom: 1rem;
 }
 
+.article ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
 .article table {
     margin-top: 2rem;
 }
