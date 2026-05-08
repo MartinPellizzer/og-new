@@ -60,3 +60,15 @@ Questa tabella mostra la composizione dei mosti di Petit Verdot al momento della
 | Estrattibilità (%)                | 16.8a          | 14.5b              | 14.7b          |
 | Tannini della buccia (mg/L)      | 24.3±0.8b      | 28.1±0.8a          | 25.8±1.0b      |
 | Tannini dei semi (mg/L)          | 35.8±0.9a      | 35.2±1.0a          | 36.5±1.4a      |
+
+## Depura le acque reflue delle cantine vinicole
+
+Il trattamento a ozono depura le acque reflue delle cantine vinicole, in particolare quando combinato con radiazione UV e perossido di idrogeno (O3/UV/H2O2). Questo accade poiché questa configurazione aumenta significativamente la rimozione di COD e TOC, soprattutto a pH neutro o alcalino. Inoltre, queste condizioni portano a elevate percentuali di consumo dell’ozono, cinetiche di degradazione rapide e i migliori risultati anche dal punto di vista economico rispetto agli altri processi di ossidazione avanzata testati.
+
+In uno studio pubblicato da Marco S. Lucas et al. nella rivista "Separation and Purification Technology", l’efficacia dei processi di ossidazione avanzata a base di ozono nel trattamento delle acque reflue delle cantine è stata valutata in un reattore a colonna (su scala pilota), confrontando i sistemi O3, O3/UV e O3/UV/H2O2. I risultati hanno mostrato che, al pH naturale delle acque reflue (pH 4), il processo O3/UV/H2O2 è stato il più efficiente, seguito da O3/UV e dal solo ozono, con una maggiore capacità di rimozione della domanda chimica di ossigeno (COD) e del carbonio organico totale (TOC). Lo studio ha inoltre evidenziato che l’aumento del pH fino a valori neutri e alcalini ha incrementato ulteriormente la velocità di degradazione degli inquinanti organici. Durante gli esperimenti, il consumo di ozono nei processi combinati ha raggiunto valori compresi tra il 70% e il 95%, indicando un utilizzo molto efficiente dell’ossidante nel sistema di trattamento. La costante cinetica più elevata osservata è stata pari a 6,5 × 10−3 min−1 nel processo O3/UV/H2O2 con rapporto ottimizzato COD/H2O2 = 2, mentre l’analisi economica ha identificato questo stesso processo come il più conveniente, con un costo operativo di 1,31 Euro m−3 g−1 di TOC mineralizzato.
+
+- Trattamento: O3/UV/H2O2, processo di ossidazione avanzata (AOP)
+- Problema trattato: domanda chimica di ossigeno (COD), carbonio organico totale (TOC)
+- pH: a pH 4 è già efficace, mentre a pH neutro o alcalino è ancora più efficace
+- Costante cinetica: 6,5 × 10−3 min−1
+- Costo operativo: 1,31 Euro m−3 g−1 di TOC mineralizzato
