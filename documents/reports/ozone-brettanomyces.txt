@@ -1,0 +1,297 @@
+================================================================================
+P001 - OZONE VS BRETTANOMYCES IN POSTHARVESTED WINEGRAPES
+================================================================================
+
+@url:   https://www.ajevonline.org/content/early/2019/01/10/ajev.2019.18058.abstract
+@free:  no
+
+[KILL TEST]
+--------------------------------------------------------------------------------
+
+Target: B. bruxellensis
+Medium: uva (Barbera)
+Ozone: [acqua, gas]
+Dose:
+Time: [6-12 minutes, 12-24 hours]
+Humidity:
+Temp:
+
+[RESULT]
+--------------------------------------------------------------------------------
+
+Reduction: 2,2 Log CFU/mL (gas)
+
+[LIMITS]
+--------------------------------------------------------------------------------
+
+- trattamento acqua meno efficace (fine fermentazione Brett arriva a 5.0 Log)
+
+[USEFUL]
+--------------------------------------------------------------------------------
+
+se ozono gassoso, forte riduzione, ma non eliminazione
+
+
+
+
+
+================================================================================
+P002 - OZONE VS BRETTANOMYCES IN POSTHARVESTED WINEGRAPES
+================================================================================
+
+@url:   https://www.sciencedirect.com/science/article/abs/pii/S1466856417310068
+@free:  preview
+
+[KILL TEST]
+--------------------------------------------------------------------------------
+
+Target: B. bruxellensis
+Medium: uva
+Ozone: gas
+Dose:
+Time: [24 h]
+Humidity:
+Temp:
+
+[RESULT]
+--------------------------------------------------------------------------------
+
+Reduction: 2.1 LOG
+
+[LIMITS]
+--------------------------------------------------------------------------------
+
+
+[USEFUL]
+--------------------------------------------------------------------------------
+
+ozono gas forte riduzione, ma non eliminazione
+
+
+
+
+
+================================================================================
+P003 - OZONE VS BRETTANOMYCES IN OAK
+================================================================================
+
+@url:   https://www.proquest.com/openview/f79e1387396df510a0c7bfd17039f20b/1?pq-origsite=gscholar&cbl=18750&diss=y
+@free:  yes
+
+[KILL TEST]
+--------------------------------------------------------------------------------
+
+Target: B. bruxellensis
+Medium: botti
+Ozone: [gas, acqua]
+Dose: [1300 e 600 uL/L, 1.3 e 5 mg/L]
+Time: [2 h e 30 m e 15 m, 3 m]
+Humidity:
+Temp:
+
+[RESULT]
+--------------------------------------------------------------------------------
+
+Reduction: significativa
+
+[LIMITS]
+--------------------------------------------------------------------------------
+
+
+[USEFUL]
+--------------------------------------------------------------------------------
+
+ozono gas trattamento piu efficace, specialmente se usato dopo acqua calda
+
+
+
+
+
+================================================================================
+P004 - OZONE VS BRETTANOMYCES IN OAK
+================================================================================
+
+@url:   https://repositorio.uchile.cl/handle/2250/112206
+@free:  yes
+
+[KILL TEST]
+--------------------------------------------------------------------------------
+
+Target:   B. bruxellensis
+Medium:   oak barrel
+Ozone:    gas
+Dose:     
+Time:     20 m
+Pressure: 1.8 bar
+Humidity:
+Temp:
+
+[RESULT]
+--------------------------------------------------------------------------------
+
+Reduction: significativa, o 100%
+
+[LIMITS]
+--------------------------------------------------------------------------------
+
+
+[USEFUL]
+--------------------------------------------------------------------------------
+
+elimina significativamente / 100% lieviti superficiali e subsuperficiali
+
+
+
+
+
+================================================================================
+P005 - OZONE VS BRETTANOMYCES
+================================================================================
+
+@url:   https://www.mdpi.com/2311-5637/12/4/190
+@free:  yes
+
+[KILL TEST]
+--------------------------------------------------------------------------------
+
+Target:   B. bruxellensis
+Medium:   
+Ozone:    
+Dose:     
+Time:     
+Pressure: 
+Humidity:
+Temp:
+
+[RESULT]
+--------------------------------------------------------------------------------
+
+Reduction: 3-4 log
+
+[LIMITS]
+--------------------------------------------------------------------------------
+
+
+[USEFUL]
+--------------------------------------------------------------------------------
+
+elimina significativamente / 100% lieviti
+
+
+
+
+
+================================================================================
+P006 - OZONE VS BRETTANOMYCES IN OAK
+================================================================================
+
+@url:   https://o3brett.com/wp-content/uploads/2023/01/Universidad-de-Chile-Efectos-del-uso-de-ozono-en-barricas.pdf
+@free:  yes
+
+[KILL TEST]
+--------------------------------------------------------------------------------
+
+Target:   B. bruxellensis
+Medium:   oak barrel
+Ozone:    acqua
+Dose:     3-4 ppm
+Time:     [5m, 1h]
+Pressure: 
+Humidity:
+Temp:
+
+[RESULT]
+--------------------------------------------------------------------------------
+
+Reduction: significativa
+
+[LIMITS]
+--------------------------------------------------------------------------------
+
+- ha funzionato solo in congunzione con lavaggio tradizionale e 5g di zolfo
+
+[USEFUL]
+--------------------------------------------------------------------------------
+
+elimina significativamente / inibisce lieviti
+
+
+
+
+
+================================================================================
+P007 - OZONE VS BRETTANOMYCES
+================================================================================
+
+@url:   https://openpub.fmach.it/handle/10449/21384
+@free:  yes
+
+[KILL TEST]
+--------------------------------------------------------------------------------
+
+Target:   B. bruxellensis
+Medium:   barrel
+Ozone:    [gas, acqua]
+Dose:     2,5 mg/L
+Time:     30 m
+Pressure: 
+Humidity:
+Temp:
+
+[RESULT]
+--------------------------------------------------------------------------------
+
+Reduction: 72%
+
+[LIMITS]
+--------------------------------------------------------------------------------
+
+- funziona male se troppo sporco organico
+
+[USEFUL]
+--------------------------------------------------------------------------------
+
+L'ozono riduce significativamente i Brett ma è necessario pulire le botti prima
+altrimeni se c'è troppo materiale organico funziona male
+
+
+
+
+
+================================================================================
+P008 - OZONE VS BRETTANOMYCES
+================================================================================
+
+@url:   https://www.assoenologi.it/wp-content/uploads/2023/11/ozono_contaminazione_brettanomyces_maggio2005.pdf
+@free:  yes
+
+[KILL TEST]
+--------------------------------------------------------------------------------
+
+Target:   B. bruxellensis
+Medium:   barrel
+Ozone:    acqua
+Dose:     
+Time:     
+Pressure: 
+Humidity:
+Temp:
+
+[RESULT]
+--------------------------------------------------------------------------------
+
+Reduction:
+
+[LIMITS]
+--------------------------------------------------------------------------------
+
+
+[USEFUL]
+--------------------------------------------------------------------------------
+
+riduce ma non elimina
+
+
+
+
+
