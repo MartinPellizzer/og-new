@@ -217,6 +217,7 @@ void nextion_input_p_home()
         is_on_cur = 1;
         cycle.custom_cycles_init_state = 1;
       }
+      cycle.state_old = -1;
     }
   }
 } 

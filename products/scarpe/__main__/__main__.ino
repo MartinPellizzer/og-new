@@ -4,7 +4,8 @@ LiquidCrystal_I2C lcd(0x27,20,4);
 #define COMPRESSOR_GPIO 5
 #define OZONE_GENERATOR_GPIO 18
 #define BUTTON_GPIO 19
-#define SWITCH_GPIO 23
+// #define SWITCH_GPIO 23
+#define SWITCH_GPIO 15
 #define LIGHT_GPIO 12
 
 int32_t cycle_millis = 0;
@@ -85,8 +86,8 @@ void loop()
 
   // button read
   button_state_tmp = digitalRead(BUTTON_GPIO);
-  // Serial.print("BUTTON: ");
-  // Serial.println(button_state_tmp);
+  Serial.print("BUTTON: ");
+  Serial.println(button_state_tmp);
   if (button_state_old != button_state_tmp)
   {
     button_state_old = button_state_tmp;
@@ -101,8 +102,8 @@ void loop()
   // switch read
   switch_state_tmp = digitalRead(SWITCH_GPIO);
   // switch_state_tmp = 1;
-  // Serial.print("SWITCH: ");
-  // Serial.println(switch_state_tmp);
+  Serial.print("SWITCH: ");
+  Serial.println(switch_state_tmp);
   if (switch_state_old != switch_state_tmp)
   {
     switch_state_old = switch_state_tmp;

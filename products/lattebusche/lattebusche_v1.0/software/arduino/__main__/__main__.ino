@@ -394,7 +394,7 @@ void setup()
   int eeprom_power = EEPROM.read(address);
   if (eeprom_power == 255)
   {
-    power.power_cur = 1;
+    power.power_cur = 10;
   }
   else
   {
@@ -489,7 +489,7 @@ void loop()
 {
   // external_input.state_cur = digitalRead(RI_1);
   
-  debug_manager();
+  // debug_manager();
 
   sensor_ozone_manager();
   // sensor_ozone_alarm_manager();

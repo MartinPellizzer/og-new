@@ -166,31 +166,6 @@ void cycle_manager_default()
 // CUSTOM CYCLE
 ////////////////////////////////////////////////////////////////////////////////
 
-void cycle_custom_stop()
-{
-  cycle.state_cur = 0;
-  if (cycle.state_old != cycle.state_cur)
-  {
-    cycle.state_old = cycle.state_cur;
-    cycle_state = OFF_O3;
-    cycle_millis_cur = millis();
-  }
-  if (cycle_state == OFF_O3)
-  {
-    digitalWrite(RO_2, 0);
-    digitalWrite(RO_6, 0);
-  }
-  else if (cycle_state == OFF_OXY)
-  {
-    digitalWrite(RO_1, 0);
-    digitalWrite(RO_3, 0);
-  }
-  if (millis() - cycle_millis_cur > 5000) 
-  {
-    cycle_millis_cur = millis();
-    if (cycle_state == OFF_O3) { cycle_state = OFF_OXY; }
-  }
-}
 
 void cycle_custom_start()
 {
@@ -199,6 +174,7 @@ void cycle_custom_start()
     cycle.custom_cycles_init_state = 0;
     cycle.custom_cycles_num_counter = 0;
     cycle.custom_cycles_working_state = 1;
+    cycle.custom_cycles_operation_num_update = 1;
     cycle.custom_cycles_millis_cur = millis();
   }
 }
@@ -209,7 +185,6 @@ void cycle_custom_run_working()
   if (cycle.state_old != cycle.state_cur)
   {
     cycle.state_old = cycle.state_cur;
-    cycle.custom_cycles_operation_num_update = 1;
     cycle_state = OXY_01;
     cycle_millis_cur = millis();
   }
@@ -270,6 +245,7 @@ void cycle_custom_run()
   if (cycle.custom_cycles_working_state == 0)
   {
     int32_t timer = (int32_t)cycle.custom_minutes_resting_cur * 60 * 1000;
+    // int32_t timer = (int32_t)10 * 1000;
     if (millis() - cycle.custom_cycles_millis_cur > timer)
     {
       cycle.custom_cycles_millis_cur = millis();
@@ -279,6 +255,7 @@ void cycle_custom_run()
         is_on_cur = 0;
         cycle.custom_cycles_operation_num_done_cur += 1;
         eeprom_write_uint16(CUSTOM_CYCLES_OPERATION_NUM_DONE, cycle.custom_cycles_operation_num_done_cur);
+        // Serial.println(cycle.custom_cycles_operation_num_done_cur);
         return;
       }
     }
@@ -286,6 +263,7 @@ void cycle_custom_run()
   else
   {
     int32_t timer = (int32_t)cycle.custom_minutes_working_cur * 60 * 1000;
+    // int32_t timer = (int32_t)10 * 1000;
     if (millis() - cycle.custom_cycles_millis_cur > timer)
     {
       cycle.custom_cycles_millis_cur = millis();
@@ -299,6 +277,33 @@ void cycle_custom_run()
   }
   if (cycle.custom_cycles_working_state == 1) cycle_custom_run_working();
   else cycle_custom_run_resting();
+}
+
+void cycle_custom_stop()
+{
+  cycle.state_cur = 0;
+  if (cycle.state_old != cycle.state_cur)
+  {
+    cycle.state_old = cycle.state_cur;
+    cycle.custom_cycles_operation_num_update = 1;
+    cycle_state = OFF_O3;
+    cycle_millis_cur = millis();
+  }
+  if (cycle_state == OFF_O3)
+  {
+    digitalWrite(RO_2, 0);
+    digitalWrite(RO_6, 0);
+  }
+  else if (cycle_state == OFF_OXY)
+  {
+    digitalWrite(RO_1, 0);
+    digitalWrite(RO_3, 0);
+  }
+  if (millis() - cycle_millis_cur > 5000) 
+  {
+    cycle_millis_cur = millis();
+    if (cycle_state == OFF_O3) { cycle_state = OFF_OXY; }
+  }
 }
 
 // TODO: run play/pause x num cycles (add counter)
