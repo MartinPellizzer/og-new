@@ -1,4 +1,4 @@
-# Ozono nel settore vino
+# Ozono nel settore del vino: usi, benefici e limiti
 
 L'ozono viene utilizzato nel settore del vino in diverse applicazioni, come la fermentazione, l'inattivazione microbica, i sistemi Clean-in-Place (CIP) e il trattamento post-raccolta.
 
@@ -72,3 +72,33 @@ In uno studio pubblicato da Marco S. Lucas et al. nella rivista "Separation and 
 - pH: a pH 4 è già efficace, mentre a pH neutro o alcalino è ancora più efficace
 - Costante cinetica: 6,5 × 10−3 min−1
 - Costo operativo: 1,31 Euro m−3 g−1 di TOC mineralizzato
+
+## Migliora la sanificazione CIP nelle cantine vinicole
+
+L’utilizzo dell’ozono nei sistemi CIP dell’industria vinicola consente di ottenere una sanificazione più efficace riducendo tempi di trattamento, consumo energetico e impiego di prodotti chimici aggressivi. L’acqua ozonizzata agisce rapidamente contro batteri, lieviti, muffe e biofilm presenti nelle linee di processo, migliorando il livello igienico degli impianti senza lasciare residui chimici persistenti. A differenza dei detergenti tradizionali, l’ozono si decompone naturalmente in ossigeno, contribuendo a una gestione più sostenibile delle operazioni di pulizia industriale. Questo approccio permette inoltre di limitare l’utilizzo di sostanze corrosive come soda caustica e disinfettanti ossidanti, riducendo l’impatto sulle attrezzature e i costi legati ai risciacqui e allo smaltimento chimico.
+
+L’efficacia dell’ozono nei sistemi CIP è stata confermata da uno studio condotto nel settore enologico condotto da Aline Cristina Guillen et al. (2010) e pubblicato dalla rivista "Ozone: Science & Engineering", nel quale un tubo utilizzato per il trasporto del vino è stato sottoposto a diversi trattamenti di sanificazione. I ricercatori hanno confrontato acqua ozonizzata a 28 ± 1 °C, in concentrazioni di 0,38 e 1,03 ppm e con tempi di contatto da uno a nove minuti, con metodi convenzionali basati su acqua calda a 85 °C, acido peracetico allo 0,3% e una combinazione di soda caustica al 2% con acido peracetico allo 0,3%. I risultati hanno dimostrato che l’acqua ozonizzata ha garantito prestazioni superiori rispetto sia all’uso del solo acido peracetico sia al trattamento combinato con soda caustica e peracetico. Lo studio evidenzia quindi come l’ozono rappresenti una soluzione tecnologicamente avanzata per la sanificazione delle linee produttive nel settore alimentare e vinicolo.
+
+Nella seguente lista si trovano i dati principali dello studio in forma sintetica.
+
+* Sistema: CIP su tubo per trasporto vino
+* Ozono: 0,38–1,03 ppm | 28 ± 1 °C | 1–9 min
+* Confronti: acqua 85 °C (15 min), acido peracetico 0,3% (15 min), soda 2% + peracetico 0,3% (15 min)
+* Risultato: ozono più efficace di acido peracetico singolo e combinazione soda + peracetico
+
+## Sanifica il legno delle botti senza compromettere i composti fenolici
+
+L’ozono è una soluzione efficace per la sanificazione delle botti e delle superfici enologiche senza compromettere il profilo aromatico del legno. Questo risultato si traduce in una riduzione significativa dei microrganismi responsabili del deterioramento del vino durante le fasi di affinamento e stoccaggio. In ambito industriale, questo significa poter intervenire in cantina con un metodo ossidativo potente che non lascia residui chimici. L’efficacia è particolarmente elevata quando la contaminazione microbica è bassa o moderata, condizione tipica delle cantine gestite correttamente. Tuttavia, la presenza di biofilm microbici può ridurre parzialmente la sensibilità dei microrganismi al trattamento, richiedendo protocolli di applicazione ottimizzati.
+
+Uno studio pubblicato nella rivista "Australian Journal of Grape and Wine Research" e condotto da R. Guzzon et al. (2013) ha analizzato l’efficacia dell’ozono su 50 microrganismi di interesse enologico e sul loro comportamento in condizioni simulate di cantina. I ricercatori hanno valutato resistenza all’etanolo, capacità di formare biofilm e produzione di fenoli volatili, evidenziando una correlazione tra biofilm e maggiore resistenza al trattamento con ozono. Nei test in soluzione acquosa, l’ozono è risultato altamente efficace nell’eliminare i microrganismi quando la carica microbica era inferiore a 10³ CFU/mL, mentre la presenza di materia organica ne riduceva l’efficacia a concentrazioni più elevate. Inoltre, il trattamento di chips di quercia ha mostrato che non vi erano differenze significative nel profilo fenolico, salvo una riduzione del 33% dell’acido gentisico solo in condizioni di esposizione intensa. Questi risultati supportano l’uso industriale dell’ozono come sistema di sanificazione efficace e compatibile con le caratteristiche enologiche del legno.
+
+La seguente tabella mostra alcuni risultati dello studio relativi ad un trattamento con ozono in soluzione acquosa per 30 minuti. Include microrganismi, concentrazione dei microrganismi iniziale in CFU/mL, e la concentrazione di ozono in mg/L per una eliminazione totale delle colonie iniziali. La tabella completa è consultabile nello studio originale.
+
+| Microrganismo                  | 10^6 | 10^5 | 10^4 | 10^3 | 10^2 |
+|-------------------------------|------|------|------|------|------|
+| Brettanomyces bruxellensis    | 5   | 1    | 1    | 1    | 1    |
+| Acetobacter aceti             | VC   | 5    | 5    | 2.5  | 1    |
+| Candida ishiwadae             | 7    | 5    | 2.5  | 1    | 1    |
+| Candida vini                  | 5    | 2.5  | 1    | 1    | 1    |
+| Cryptococcus rajasthanensis   | 7    | 5    | 5    | 1    | 1    |
+| Gluconobacter oxidans        | 7    | 2.5  | 2.5  | 1    | 1    |

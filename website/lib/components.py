@@ -151,7 +151,8 @@ def breadcrumbs(url):
 def breadcrumbs_new(url):
     breadcrumb_list = url.split('/')
     breadcrumb_href = f'/'
-    breadcrumb_html = f'<a style="color: #8ab4f8;" href="{breadcrumb_href}">Home</a>'
+    # breadcrumb_html = f'<a style="color: #8ab4f8;" href="{breadcrumb_href}">Home</a>'
+    breadcrumb_html = f'<a style="color: #333;" href="{breadcrumb_href}">Home</a>'
     for breadcrumb_i, breadcrumb_text in enumerate(breadcrumb_list):
         breadcrumb_href += '/' + breadcrumb_text
         breadcrumb_href = breadcrumb_href.replace('//', '/')
@@ -162,10 +163,11 @@ def breadcrumbs_new(url):
             breadcrumb_html += f' > <a href="{breadcrumb_href}">{breadcrumb_text}</a>'
 
     html = f'''
-        <section style="color: #fff; font-size: 0.75rem; margin-bottom: 1rem;">
+        <section class="breadcrumbs" style="font-size: 0.75rem; margin-bottom: 1rem;">
             {breadcrumb_html}
         </section>
     '''
+        # <section style="color: #fff; font-size: 0.75rem; margin-bottom: 1rem;">
     return html
 
 def toc(html_article):
