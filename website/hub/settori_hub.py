@@ -7,11 +7,11 @@ from lib import io
 from lib import components
 
 
-def settori_vino():
-    with open(f'./articoli/settori/settori-vino.md', encoding='utf-8') as f: markdown_text = f.read()
+def settori_settore(settore):
+    with open(f'./articoli/settori/settori-{settore}.md', encoding='utf-8') as f: markdown_text = f.read()
 
     article_html = markdown.markdown(markdown_text, extensions=["tables", "fenced_code"])
-    html_breadcrumbs = components.breadcrumbs_new('settori/vino')
+    html_breadcrumbs = components.breadcrumbs_new(f'settori/{settore}')
 
     title = ''
     for line in markdown_text.split('\n'):
@@ -51,7 +51,7 @@ def settori_vino():
         </html>
     '''
 
-    html_folderpath = f'{g.WEBSITE_FOLDERPATH}/settori/vino'
+    html_folderpath = f'{g.WEBSITE_FOLDERPATH}/settori/{settore}'
     os.makedirs(html_folderpath, exist_ok=True)
     html_filepath = f'{html_folderpath}/index.html'
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
@@ -111,4 +111,5 @@ def settori():
 
 def main():
     settori()
-    settori_vino()
+    settori_settore('vino')
+    settori_settore('lattiero-caseario')
