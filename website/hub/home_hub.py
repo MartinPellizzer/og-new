@@ -1210,6 +1210,21 @@ def gen():
             </div>
         </section>
     '''
+    
+    hero_0001_html = f'''
+        <section>
+            <div class="m-flex">
+                <div style="flex: 1;">
+                </div>
+                <div style="
+                    flex: 1; 
+                    background-image: url('/immagini/home/generatore-ozono-industriale-impianto.jpg');
+                ">
+                test
+                </div>
+            </div>
+        </section>
+    '''
 
     ########################################
     # GRID 0000
