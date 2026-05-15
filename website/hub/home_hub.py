@@ -1212,15 +1212,23 @@ def gen():
     '''
     
     hero_0001_html = f'''
-        <section>
-            <div class="m-flex">
+        <section style="background-color: #000;">
+            <div class="m-flex" style="align-items: center; gap: 0rem;">
                 <div style="flex: 1;">
+                    <div class="container-md" style="margin: 0 0 0 auto;">
+                        <h1 style="color: #fff; font-size: 4rem; font-weight: 400; margin-bottom: 1rem;">{h1}</h1>
+                        <p style="color: #fff;">{subordinate}</p>
+                    </div>
                 </div>
-                <div style="
-                    flex: 1; 
-                    background-image: url('/immagini/home/generatore-ozono-industriale-impianto.jpg');
-                ">
-                test
+                <div style="flex: 1;">
+                    <img
+                        src="/immagini/unsplash/industria.jpg"
+                        style="
+                            height: 600px; 
+                            width: 100%;
+                            object-fit: cover;
+                        "
+                    >
                 </div>
             </div>
         </section>
