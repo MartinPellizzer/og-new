@@ -1188,7 +1188,7 @@ def gen():
                 </div>
             </section>      
         '''
-    
+
     ########################################
     # HERO 0001
     ########################################
@@ -1210,7 +1210,7 @@ def gen():
             </div>
         </section>
     '''
-    
+
     hero_0001_html = f'''
         <section style="background-color: #000;">
             <div class="m-flex" style="align-items: center; gap: 0rem;">
@@ -1222,7 +1222,7 @@ def gen():
                 </div>
                 <div style="flex: 1;">
                     <img
-                        src="/immagini/unsplash/industria.jpg"
+                        src="/immagini/home/virus-0000.png"
                         style="
                             height: 600px; 
                             width: 100%;
