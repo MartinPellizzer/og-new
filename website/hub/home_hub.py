@@ -1192,14 +1192,16 @@ def gen():
     ########################################
     # HERO 0001
     ########################################
-    h1 = f'Sistemi industriali a ozono su misura per processi produttivi'
+    h1 = f'Sistemi industriali a ozono per migliorare la tua produzione alimentare'
     subordinate = f'Progettiamo, realizziamo e integriamo impianti a ozono personalizzati per risolvere problematiche tecniche in ambito industriale.'
     href = '/contatti.html'
     anchor = 'Richiedi una consulenza gratuita'
+            # style="background-image: linear-gradient(rgba(0, 30, 60, 0.8), rgba(0, 30, 60, 0.8)), 
+    opacity = 0.5
     hero_0001_html = f'''
         <section class="hero-0001"
-            style="background-image: linear-gradient(rgba(0, 30, 60, 0.8), rgba(0, 30, 60, 0.8)), 
-            url('/immagini/home/generatore-ozono-industriale-impianto.jpg');        
+            style="background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), 
+            url('/immagini/unsplash/agri-0000.jpg');        
         ">
             <div class="hero-0001-content-container">
                 <h1 class="container-lg">{h1}</h1>
@@ -1212,27 +1214,30 @@ def gen():
     '''
 
     hero_0001_html = f'''
-        <section style="background-color: #000;">
-            <div class="m-flex" style="align-items: center; gap: 0rem;">
-                <div style="flex: 1;">
-                    <div class="container-md" style="margin: 0 0 0 auto;">
-                        <h1 style="color: #fff; font-size: 4rem; font-weight: 400; margin-bottom: 1rem;">{h1}</h1>
+        <section 
+            style="background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), 
+            url('/immagini/unsplash/agri-0000.jpg');   
+            # image-postition: center; 
+            # background-fit: cover;
+        ">
+            <div class="m-flex container-xl" style="align-items: center; gap: 0rem; height: 80vh;">
+                <div style="flex: 5;">
+                        <h1 style="color: #fff; font-size: 5rem; font-weight: 400; margin-bottom: 1rem;">{h1}</h1>
                         <p style="color: #fff;">{subordinate}</p>
-                    </div>
                 </div>
                 <div style="flex: 1;">
-                    <img
-                        src="/immagini/home/virus-0000.png"
-                        style="
-                            height: 600px; 
-                            width: 100%;
-                            object-fit: cover;
-                        "
-                    >
                 </div>
             </div>
         </section>
     '''
+                    # <img
+                    #     src="/immagini/home/virus-0000.png"
+                    #     style="
+                    #         height: 600px; 
+                    #         width: 100%;
+                    #         object-fit: cover;
+                    #     "
+                    # >
 
     ########################################
     # GRID 0000
