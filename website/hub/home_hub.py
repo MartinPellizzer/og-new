@@ -1192,7 +1192,7 @@ def gen():
     ########################################
     # HERO 0001
     ########################################
-    h1 = f'Sistemi industriali a ozono per migliorare la tua produzione alimentare'
+    h1 = f'Sistemi industriali a ozono per migliorare la tua produzione agroalimentare'
     subordinate = f'Progettiamo, realizziamo e integriamo impianti a ozono personalizzati per risolvere problematiche tecniche in ambito industriale.'
     href = '/contatti.html'
     anchor = 'Richiedi una consulenza gratuita'
@@ -1215,10 +1215,13 @@ def gen():
 
     hero_0001_html = f'''
         <section 
-            style="background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), 
-            url('/immagini/unsplash/agri-0000.jpg');   
-            # image-postition: center; 
-            # background-fit: cover;
+            style="
+            background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('/immagini/unsplash/agri-0000.jpg');   
+            background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg');   
+            background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('https://images.unsplash.com/photo-1483871788521-4f224a86e166?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg');   
+            background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('https://images.unsplash.com/photo-1525286102393-8bf945cd0649?q=80&w=1174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg');   
+            background-position: center; 
+            background-size: cover;
         ">
             <div class="m-flex container-xl" style="align-items: center; gap: 0rem; height: 80vh;">
                 <div style="flex: 5;">
@@ -1238,6 +1241,107 @@ def gen():
                     #         object-fit: cover;
                     #     "
                     # >
+
+    hero_0001_html = f'''
+        <section 
+            style="
+            background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('/immagini/unsplash/agri-0000.jpg');   
+            background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg');   
+            background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('https://images.unsplash.com/photo-1483871788521-4f224a86e166?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg');   
+            background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('https://images.unsplash.com/photo-1525286102393-8bf945cd0649?q=80&w=1174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg');   
+            background-position: center; 
+            background-size: cover;
+        ">
+            <div class="m-flex container-xl" style="align-items: center; gap: 0rem; height: 80vh;">
+                <div style="flex: 5;">
+                        <h1 style="font-family: 'Cormorant Garamond', serif; color: #fff; font-size: 5rem; font-weight: 400; margin-bottom: 1rem;">
+                            {h1}
+                        </h1>
+                        <p style="color: #fff;">{subordinate}</p>
+                </div>
+                <div style="flex: 1;">
+                </div>
+            </div>
+        </section>
+    '''
+    
+    hero_0001_html = f'''
+        <section 
+            style="
+            background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('/immagini/unsplash/agri-0000.jpg');   
+            background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg');   
+            background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('https://images.unsplash.com/photo-1483871788521-4f224a86e166?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg');   
+            background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('https://images.unsplash.com/photo-1525286102393-8bf945cd0649?q=80&w=1174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg');   
+            background-position: center; 
+            background-size: cover;
+        ">
+            <nav style="display: flex; justify-content: space-between; padding: 1rem 2rem;">
+                <a style="font-family: 'Manrope', sans-serif; color: #fff; text-decoration: none;" href="/">Ozonogroup</a></div>
+                <ul>
+                    <li><a style="font-family: 'Manrope', sans-serif; color: #fff; text-decoration: none;" href="/contatti.html">Contatti</a></li>
+                </ul>
+            </nav>
+            <div class="m-flex container-xl" style="flex-direction: column; justify-content: center; gap: 0rem; height: 95vh;">
+                <h1 style="font-family: 'Cormorant Garamond', serif; 
+                    letter-spacing: -0.02em;
+                    font-weight: 500;
+                    color: #fff; font-size: 5rem; margin-bottom: 1rem;
+                    text-align: center;
+                    margin-bottom: 3rem;
+                ">
+                    <span style="
+                        font-family: 'Cormorant Garamond', sans-serif;
+                        font-size: 2rem; 
+                        font-weight: 400;
+                        letter-spacing: 3px;
+                        margin-bottom: 1rem;
+                    ">sistemi industriali a ozono,</span><br>
+                    MIGLIORA la tua PRODUZIONE AGROALIMENTARE
+                </h1>
+                <div style="text-align: center;">
+                    <a href="/" class="button-white-ghost-2">
+                    Prenota Appuntamento
+                </a>
+                </div>
+            </div>
+        </section>
+    '''
+
+    why_0000_html = f'''
+        <section style="margin-top: 8rem;">
+            <div class="container-xl">
+                <h1 style="font-family: 'Cormorant Garamond', serif; 
+                    letter-spacing: -0.02em;
+                    font-weight: 500;
+                    color: #1a1a1a; 
+                    font-size: 5rem; 
+                    text-align: center;
+                    margin-bottom: 3rem;
+                ">
+                    PERCHÉ l'OZONO
+                </h1>
+                <p class="container-lg"
+                    style="
+                    font-family: 'Manrope', sans-serif;
+                    text-align: center;
+                    font-size: 1.25rem;
+                    color: #1a1a1a;
+                ">
+                    L'ozono viene usato nel settore agroalimentare
+                    per ridurre la carica microbica (batteri, virus, muffe) 
+                    su alimenti, superfici e ambienti,
+                    grazie alle sue proprietà ossidanti e disinfettanti.
+                    Questo rallenta il deterioramento dei prodotti, prolunga la shelf-life e 
+                    mantiene più a lungo la qualità, riducendo gli scarti alimentari lungo la filiera e 
+                    aumentando la quantità di prodotto idonea alla vendita e al consumo. 
+                    Inoltre l'ozono è una soluzione ecologica perché si decompone rapidamente in ossigeno 
+                    senza lasciare residui chimici sui prodotti.
+                </p>
+                </div>
+            </div>
+        </section>
+    '''
+                        # <p style="color: #fff;">{subordinate}</p>
 
     ########################################
     # GRID 0000
@@ -2114,11 +2218,14 @@ def gen():
             <link rel="stylesheet" href="/styles.css">
             <title>Tecnologia di Ozonizzazione Industriale | Ozonogroup</title>
             <meta name="description" content="Tecnologie e sistemi a ozono per applicazioni industriali, commerciali e civili. Progettazione, applicazioni e guida tecnica sull'ozono.">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
         </head>
         <body>
-            {components.header_default()}
             <main class="home" id="contenuto-principale">
                 {hero_0001_html}
+                {why_0000_html}
                 {grid_0000_html}
                 {grid_0001_html}
                 {grid_0002_html}
@@ -2133,6 +2240,8 @@ def gen():
         </body>
         </html>
     '''
+    
+            # {components.header_default()}
     
     html_filepath = f'{g.WEBSITE_FOLDERPATH}/index.html'
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 

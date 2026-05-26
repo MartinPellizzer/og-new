@@ -243,6 +243,23 @@ th {
     font-size: 0.9rem;
 }
 
+.button-white-ghost-2 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.25rem;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #fff;
+    padding: 0.5rem 2rem;
+    display: inline-block;
+    text-transform: capitalize;
+    transition: all 0.2s ease;
+}
+
+.button-white-ghost-2:hover {
+    background-color: #fff;
+    color: #1a1a1a;
+}
+
 /* =========================================
    HOME
 ========================================= */
