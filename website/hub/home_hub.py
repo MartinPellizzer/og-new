@@ -1326,6 +1326,7 @@ def gen():
                     text-align: center;
                     font-size: 1.25rem;
                     color: #1a1a1a;
+                    margin-bottom: 8rem;
                 ">
                     L'ozono viene usato nel settore agroalimentare
                     per ridurre la carica microbica (batteri, virus, muffe) 
@@ -1339,9 +1340,96 @@ def gen():
                 </p>
                 </div>
             </div>
+
+            <div class="container-xl">
+                <div class="grid-3" style="gap: 1rem;">
+                    <div>
+                        <img 
+                            src="https://images.unsplash.com/photo-1578829779691-99b60bd8c7be?q=80&w=1067&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg"
+                            style="
+                                height: 600px;
+                                object-fit: cover;
+                                object-position: center;
+                            "
+                        ">
+                        <p style="
+                            font-family: 'Manrope', sans-serif;
+                            font-family: 'Cormorant Garamond', sans-serif;
+                            font-size: 2rem;
+                            font-weight: 700;
+                            font-weight: 500;
+                            margin-top: 1rem;
+                            color: #1a1a1a;
+                            text-transform: uppercase;
+                        ">
+                            Alimenti
+                        </p>
+                    </div>
+                    <div>
+                        <img 
+                            src="https://images.unsplash.com/photo-1562601579-599dec564e06?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg"
+                            style="
+                                height: 600px;
+                                object-fit: cover;
+                                object-position: center;
+                            "
+                        ">
+                        <p style="
+                            font-family: 'Manrope', sans-serif;
+                            font-family: 'Cormorant Garamond', sans-serif;
+                            font-size: 1.5rem;
+                            font-size: 2rem;
+                            font-weight: 700;
+                            font-weight: 500;
+                            margin-top: 1rem;
+                            color: #1a1a1a;
+                            text-transform: uppercase;
+                        ">
+                            Superfici
+                        </p>
+                    </div>
+                    <div>
+                        <img 
+                            src="https://images.unsplash.com/photo-1558565851-10a41b286adb?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg"
+                            style="
+                                height: 600px;
+                                object-fit: cover;
+                                object-position: center;
+                            "
+                        ">
+                        <p style="
+                            font-family: 'Manrope', sans-serif;
+                            font-family: 'Cormorant Garamond', sans-serif;
+                            font-size: 1.5rem;
+                            font-size: 2rem;
+                            font-weight: 700;
+                            font-weight: 500;
+                            margin-top: 1rem;
+                            color: #1a1a1a;
+                            text-transform: uppercase;
+                        ">
+                            Ambienti
+                        </p>
+                    </div>
+                </div>
+            </div>
         </section>
     '''
                         # <p style="color: #fff;">{subordinate}</p>
+
+    emo_0000_html = f'''
+        <section style="
+                height: 100vh;
+                margin-top: 8rem;
+                background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('/immagini/unsplash/agri-0000.jpg');   
+                background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg');   
+                background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('https://images.unsplash.com/photo-1483871788521-4f224a86e166?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg');   
+                background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('                        https://images.unsplash.com/photo-1637181156153-bedd1098f8c1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg');   
+                background-position: center; 
+                background-size: cover;
+            ">
+        </section>
+    '''
 
     ########################################
     # GRID 0000
@@ -2226,6 +2314,7 @@ def gen():
             <main class="home" id="contenuto-principale">
                 {hero_0001_html}
                 {why_0000_html}
+                {emo_0000_html}
                 {grid_0000_html}
                 {grid_0001_html}
                 {grid_0002_html}
