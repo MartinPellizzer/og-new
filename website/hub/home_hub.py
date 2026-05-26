@@ -1431,6 +1431,105 @@ def gen():
         </section>
     '''
 
+    who_0000_html = f'''
+        <section style="margin-top: 8rem;">
+            <div class="container-xl">
+                <h1 style="font-family: 'Cormorant Garamond', serif; 
+                    letter-spacing: -0.02em;
+                    font-weight: 500;
+                    color: #1a1a1a; 
+                    font-size: 5rem; 
+                    text-align: center;
+                    margin-bottom: 3rem;
+                ">
+                    CHI USA l'OZONO
+                </h1>
+                <p class="container-lg"
+                    style="
+                    font-family: 'Manrope', sans-serif;
+                    text-align: center;
+                    font-size: 1.25rem;
+                    color: #1a1a1a;
+                    margin-bottom: 8rem;
+                ">
+                </p>
+                </div>
+            </div>
+            <div class="container-xl">
+                <div class="grid-3" style="gap: 1rem;">
+                    <div>
+                        <img 
+                            src="https://images.unsplash.com/photo-1629313472434-cbbfdc2e1a5f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg"
+                            style="
+                                height: 600px;
+                                object-fit: cover;
+                                object-position: center;
+                            "
+                        ">
+                        <p style="
+                            font-family: 'Manrope', sans-serif;
+                            font-family: 'Cormorant Garamond', sans-serif;
+                            font-size: 2rem;
+                            font-weight: 700;
+                            font-weight: 500;
+                            margin-top: 1rem;
+                            color: #1a1a1a;
+                            text-transform: uppercase;
+                        ">
+                            Lattiero-Caseario
+                        </p>
+                    </div>
+                    <div>
+                        <img 
+                            src="https://images.unsplash.com/photo-1738544475553-4475fb29b9a4?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg"
+                            style="
+                                height: 600px;
+                                object-fit: cover;
+                                object-position: center;
+                            "
+                        ">
+                        <p style="
+                            font-family: 'Manrope', sans-serif;
+                            font-family: 'Cormorant Garamond', sans-serif;
+                            font-size: 1.5rem;
+                            font-size: 2rem;
+                            font-weight: 700;
+                            font-weight: 500;
+                            margin-top: 1rem;
+                            color: #1a1a1a;
+                            text-transform: uppercase;
+                        ">
+                            Vitivinicolo
+                        </p>
+                    </div>
+                    <div>
+                        <img 
+                            src="https://images.unsplash.com/photo-1483871788521-4f224a86e166?q=80&w=1631&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg"
+                            style="
+                                height: 600px;
+                                object-fit: cover;
+                                object-position: center;
+                            "
+                        ">
+                        <p style="
+                            font-family: 'Manrope', sans-serif;
+                            font-family: 'Cormorant Garamond', sans-serif;
+                            font-size: 1.5rem;
+                            font-size: 2rem;
+                            font-weight: 700;
+                            font-weight: 500;
+                            margin-top: 1rem;
+                            color: #1a1a1a;
+                            text-transform: uppercase;
+                        ">
+                            Cerealicolo
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    '''
+
     ########################################
     # GRID 0000
     ########################################
@@ -2315,6 +2414,7 @@ def gen():
                 {hero_0001_html}
                 {why_0000_html}
                 {emo_0000_html}
+                {who_0000_html}
                 {grid_0000_html}
                 {grid_0001_html}
                 {grid_0002_html}
