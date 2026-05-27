@@ -169,15 +169,6 @@ th {
 
 .home {}
 
-.home h2 {
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    line-height: 1.3;
-    color: var(--color-primary-dark);
-    color: #111;
-    margin-bottom: 1rem;
-    text-align: center;
-}
 
 
 .btn {

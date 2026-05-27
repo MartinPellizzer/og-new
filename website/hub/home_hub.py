@@ -1300,7 +1300,7 @@ def gen():
                 </h1>
                 <div style="text-align: center;">
                     <a href="/" class="button-white-ghost-2">
-                    Prenota Appuntamento
+                    Prenota Consulenza
                 </a>
                 </div>
             </div>
@@ -1310,7 +1310,7 @@ def gen():
     why_0000_html = f'''
         <section style="margin-top: 8rem;">
             <div class="container-xl">
-                <h1 style="font-family: 'Cormorant Garamond', serif; 
+                <h2 style="font-family: 'Cormorant Garamond', serif; 
                     letter-spacing: -0.02em;
                     font-weight: 500;
                     color: #1a1a1a; 
@@ -1319,7 +1319,7 @@ def gen():
                     margin-bottom: 3rem;
                 ">
                     PERCHÉ l'OZONO
-                </h1>
+                </h2>
                 <p class="container-lg"
                     style="
                     font-family: 'Manrope', sans-serif;
@@ -1345,24 +1345,33 @@ def gen():
                 <div class="grid-3" style="gap: 1rem;">
                     <div>
                         <img 
-                            src="https://images.unsplash.com/photo-1578829779691-99b60bd8c7be?q=80&w=1067&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg"
+                            src="https://images.unsplash.com/photo-1602928333621-949abc1ec6f5?q=80&w=1685&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg"
                             style="
                                 height: 600px;
                                 object-fit: cover;
                                 object-position: center;
                             "
                         ">
-                        <p style="
+                        <h2 style="
                             font-family: 'Manrope', sans-serif;
                             font-family: 'Cormorant Garamond', sans-serif;
                             font-size: 2rem;
                             font-weight: 700;
                             font-weight: 500;
                             margin-top: 1rem;
+                            margin-bottom: 1rem;
                             color: #1a1a1a;
-                            text-transform: uppercase;
+                            text-transform: none;
                         ">
-                            Alimenti
+                            RIDUCI l'uso di PRODOTTI CHIMICI
+                        </h2>
+                        <p
+                            style="
+                            font-family: 'Manrope', sans-serif;
+                            font-size: 1.25rem;
+                            color: #1a1a1a;
+                        ">
+                            Riduci il consumo di prodotti chimici e le spese legate ai processi di sanificazione.
                         </p>
                     </div>
                     <div>
@@ -1374,7 +1383,7 @@ def gen():
                                 object-position: center;
                             "
                         ">
-                        <p style="
+                        <h2 style="
                             font-family: 'Manrope', sans-serif;
                             font-family: 'Cormorant Garamond', sans-serif;
                             font-size: 1.5rem;
@@ -1382,10 +1391,19 @@ def gen():
                             font-weight: 700;
                             font-weight: 500;
                             margin-top: 1rem;
+                            margin-bottom: 1rem;
                             color: #1a1a1a;
-                            text-transform: uppercase;
+                            text-transform: none;
                         ">
-                            Superfici
+                            RIDUCI il CONSUMO di ACQUA
+                        </h2>
+                        <p
+                            style="
+                            font-family: 'Manrope', sans-serif;
+                            font-size: 1.25rem;
+                            color: #1a1a1a;
+                        ">
+                            Migliora l'efficienza dei processi e riduci i volumi di acque reflue.
                         </p>
                     </div>
                     <div>
@@ -1397,7 +1415,7 @@ def gen():
                                 object-position: center;
                             "
                         ">
-                        <p style="
+                        <h2 style="
                             font-family: 'Manrope', sans-serif;
                             font-family: 'Cormorant Garamond', sans-serif;
                             font-size: 1.5rem;
@@ -1405,10 +1423,19 @@ def gen():
                             font-weight: 700;
                             font-weight: 500;
                             margin-top: 1rem;
+                            margin-bottom: 1rem;
                             color: #1a1a1a;
-                            text-transform: uppercase;
+                            text-transform: none;
                         ">
-                            Ambienti
+                            AUMENTA la SICUREZZA ALIMENTARE
+                        </h2>
+                        <p
+                            style="
+                            font-family: 'Manrope', sans-serif;
+                            font-size: 1.25rem;
+                            color: #1a1a1a;
+                        ">
+                            Aumenta il controllo microbiologico lungo tutta la catena produttiva.
                         </p>
                     </div>
                 </div>
@@ -1434,7 +1461,7 @@ def gen():
     who_0000_html = f'''
         <section style="margin-top: 8rem;">
             <div class="container-xl">
-                <h1 style="font-family: 'Cormorant Garamond', serif; 
+                <h2 style="font-family: 'Cormorant Garamond', serif; 
                     letter-spacing: -0.02em;
                     font-weight: 500;
                     color: #1a1a1a; 
@@ -1443,7 +1470,7 @@ def gen():
                     margin-bottom: 3rem;
                 ">
                     CHI USA l'OZONO
-                </h1>
+                </h2>
                 <p class="container-lg"
                     style="
                     font-family: 'Manrope', sans-serif;
