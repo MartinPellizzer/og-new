@@ -1307,8 +1307,8 @@ def gen():
         </section>
     '''
 
-    why_0000_html = f'''
-        <section style="margin-top: 8rem;">
+    what_0000_html = f'''
+        <section style="margin-top: 8rem; border-bottom: 1px solid #E2E2E2;">
             <div class="container-xl">
                 <h2 style="font-family: 'Cormorant Garamond', serif; 
                     letter-spacing: -0.02em;
@@ -1318,7 +1318,7 @@ def gen():
                     text-align: center;
                     margin-bottom: 3rem;
                 ">
-                    PERCHÉ l'OZONO
+                    COSA È l'OZONO
                 </h2>
                 <p class="container-lg"
                     style="
@@ -1340,8 +1340,72 @@ def gen():
                 </p>
                 </div>
             </div>
+        </section>
+    '''
+    what_0000_html = f'''
+    '''
+    
+    what_0000_html = f'''
+        <section style="padding-top: 8rem;">
+            <div class="container-xl" style="padding-bottom: 8rem; border-bottom: 1px solid #E2E2E2;">
+                <div class="m-flex" style="gap: 2rem;">
+                    <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                        <h2 style="font-family: 'Cormorant Garamond', serif; 
+                            letter-spacing: -0.02em;
+                            font-weight: 500;
+                            color: #1a1a1a; 
+                            font-size: 5rem; 
+                            padding: 0 1rem;
+                        ">
+                            SANIFICAZIONE ECOLOGICA
+                        </h2>
+                        <p class="container-lg"
+                            style="
+                            font-family: 'Manrope', sans-serif;
+                            font-size: 1.125rem;
+                            color: #1a1a1a;
+                        ">
+                            L'ozono viene usato nel settore agroalimentare
+                            per ridurre la carica microbica (batteri, virus, muffe) 
+                            su alimenti, superfici e ambienti,
+                            grazie alle sue proprietà ossidanti e disinfettanti.
+                            Questo rallenta il deterioramento dei prodotti, prolunga la shelf-life e 
+                            mantiene più a lungo la qualità, riducendo gli scarti alimentari lungo la filiera e 
+                            aumentando la quantità di prodotto idonea alla vendita e al consumo. 
+                            Inoltre l'ozono è una soluzione ecologica perché si decompone rapidamente in ossigeno 
+                            senza lasciare residui chimici sui prodotti.
+                        </p>
+                    </div>
+                    <div style="flex: 1;">
+                        <img 
+                            src="https://images.unsplash.com/photo-1602928333621-949abc1ec6f5?q=80&w=1685&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg"
+                            style="
+                                height: 80vh;
+                                object-fit: cover;
+                                object-position: center;
+                            "
+                        ">
+                    </div>
+                </div>
+            </div>
+        </section>
+    '''
 
+    # BENEFICI dell'OZONO
+    # PERCHÉ
+    why_0000_html = f'''
+        <section style="margin-top: 8rem;">
             <div class="container-xl">
+                <h2 style="font-family: 'Cormorant Garamond', serif; 
+                    letter-spacing: -0.02em;
+                    font-weight: 500;
+                    color: #1a1a1a; 
+                    font-size: 5rem; 
+                    text-align: center;
+                    margin-bottom: 3rem;
+                ">
+                    BENEFICI dell'OZONO
+                </h2>
                 <div class="grid-3" style="gap: 1rem;">
                     <div>
                         <img 
@@ -1363,7 +1427,7 @@ def gen():
                             color: #1a1a1a;
                             text-transform: none;
                         ">
-                            RIDUCI l'uso di PRODOTTI CHIMICI
+                            RIDUCI l'uso di DISINFETTANTI CHIMICI
                         </h2>
                         <p
                             style="
@@ -1371,7 +1435,7 @@ def gen():
                             font-size: 1.25rem;
                             color: #1a1a1a;
                         ">
-                            Riduci il consumo di prodotti chimici e le spese legate ai processi di sanificazione.
+                            L'ozono disinfetta in modo più effecacie e veloce 
                         </p>
                     </div>
                     <div>
@@ -2439,6 +2503,7 @@ def gen():
         <body>
             <main class="home" id="contenuto-principale">
                 {hero_0001_html}
+                {what_0000_html}
                 {why_0000_html}
                 {emo_0000_html}
                 {who_0000_html}
