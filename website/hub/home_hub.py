@@ -1,3 +1,4 @@
+
 from lib import g
 from lib import components
 
@@ -1265,13 +1266,14 @@ def gen():
         </section>
     '''
     
+    opacity = 0.3
     hero_0001_html = f'''
         <section 
             style="
             background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('/immagini/unsplash/agri-0000.jpg');   
             background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg');   
             background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('https://images.unsplash.com/photo-1483871788521-4f224a86e166?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg');   
-            background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('https://images.unsplash.com/photo-1525286102393-8bf945cd0649?q=80&w=1174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg');   
+            background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('/immagini/home/uva-0000.png');   
             background-position: center; 
             background-size: cover;
         ">
@@ -1295,49 +1297,15 @@ def gen():
                         font-weight: 400;
                         letter-spacing: 3px;
                         margin-bottom: 1rem;
-                    ">sistemi industriali a ozono,</span><br>
+                    ">
+                    sistemi industriali a ozono,</span>
+                    <br>
                     MIGLIORA la tua PRODUZIONE AGROALIMENTARE
                 </h1>
                 <div style="text-align: center;">
                     <a href="/" class="button-white-ghost-2">
                     Prenota Consulenza
                 </a>
-                </div>
-            </div>
-        </section>
-    '''
-
-    what_0000_html = f'''
-        <section style="margin-top: 8rem; border-bottom: 1px solid #E2E2E2;">
-            <div class="container-xl">
-                <h2 style="font-family: 'Cormorant Garamond', serif; 
-                    letter-spacing: -0.02em;
-                    font-weight: 500;
-                    color: #1a1a1a; 
-                    font-size: 5rem; 
-                    text-align: center;
-                    margin-bottom: 3rem;
-                ">
-                    COSA È l'OZONO
-                </h2>
-                <p class="container-lg"
-                    style="
-                    font-family: 'Manrope', sans-serif;
-                    text-align: center;
-                    font-size: 1.25rem;
-                    color: #1a1a1a;
-                    margin-bottom: 8rem;
-                ">
-                    L'ozono viene usato nel settore agroalimentare
-                    per ridurre la carica microbica (batteri, virus, muffe) 
-                    su alimenti, superfici e ambienti,
-                    grazie alle sue proprietà ossidanti e disinfettanti.
-                    Questo rallenta il deterioramento dei prodotti, prolunga la shelf-life e 
-                    mantiene più a lungo la qualità, riducendo gli scarti alimentari lungo la filiera e 
-                    aumentando la quantità di prodotto idonea alla vendita e al consumo. 
-                    Inoltre l'ozono è una soluzione ecologica perché si decompone rapidamente in ossigeno 
-                    senza lasciare residui chimici sui prodotti.
-                </p>
                 </div>
             </div>
         </section>
@@ -1391,6 +1359,38 @@ def gen():
         </section>
     '''
 
+                    # IL VALORE dell'OZONO per la TUA AZIENDA 
+                    # I VANTAGGI dell'OZONO per l'INDUSTRIA AGROALIMENTARE
+                    # I VANTAGGI dell'OZONO per la TUA AZIENDA
+                    # TRASFORMA il tuo PROCESSO PRODUTTIVO
+    what_0000_html = f'''
+        <section style="margin-top: 8rem; border-bottom: 1px solid #E2E2E2;">
+            <div class="container-xl">
+                <h2 style="font-family: 'Cormorant Garamond', serif; 
+                    letter-spacing: -0.02em;
+                    font-weight: 500;
+                    color: #1a1a1a; 
+                    font-size: 5rem; 
+                    text-align: center;
+                    margin-bottom: 3rem;
+                ">
+                    COME l'OZONO MIGLIORA la PRODUZIONE AGROALIMENTARE
+                </h2>
+                <p class="container-lg"
+                    style="
+                    font-family: 'Manrope', sans-serif;
+                    text-align: center;
+                    font-size: 1.5rem;
+                    color: #1a1a1a;
+                    margin-bottom: 8rem;
+                ">
+                    L'ozono viene usato nei processi industriali per la sanificazione di acqua, ambienti e superfici, in quanto agisce come potente agente ossidante. Grazie alla sua capacità di eliminare rapidamente batteri, virus e microrganismi senza lasciare residui chimici, si integra facilmente nelle linee produttive esistenti. Questo consente di ottimizzare le fasi di lavaggio, trattamento e conservazione lungo tutta la filiera agroalimentare, migliorando l’efficienza operativa complessiva e la gestione dei processi.
+                </p>
+                </div>
+            </div>
+        </section>
+    '''
+
     # BENEFICI dell'OZONO
     # PERCHÉ
     why_0000_html = f'''
@@ -1404,12 +1404,12 @@ def gen():
                     text-align: center;
                     margin-bottom: 3rem;
                 ">
-                    BENEFICI dell'OZONO
+                    I BENEFICI dell'OZONO nei PROCESSI INDUSTRIALI
                 </h2>
                 <div class="grid-3" style="gap: 1rem;">
                     <div>
                         <img 
-                            src="https://images.unsplash.com/photo-1602928333621-949abc1ec6f5?q=80&w=1685&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg"
+                            src="/immagini/home/mele-0000.png"
                             style="
                                 height: 600px;
                                 object-fit: cover;
@@ -1427,7 +1427,7 @@ def gen():
                             color: #1a1a1a;
                             text-transform: none;
                         ">
-                            RIDUCI l'uso di DISINFETTANTI CHIMICI
+                            RIDUCI gli SCARTI ALIMENTARI
                         </h2>
                         <p
                             style="
@@ -1435,12 +1435,12 @@ def gen():
                             font-size: 1.25rem;
                             color: #1a1a1a;
                         ">
-                            L'ozono disinfetta in modo più effecacie e veloce 
+                            Ottieni una maggiore resa produttiva limitando le perdite lungo le fasi di lavorazione e conservazione.
                         </p>
                     </div>
                     <div>
                         <img 
-                            src="https://images.unsplash.com/photo-1562601579-599dec564e06?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg"
+                            src="/immagini/home/card-2-0000.png"
                             style="
                                 height: 600px;
                                 object-fit: cover;
@@ -1459,7 +1459,7 @@ def gen():
                             color: #1a1a1a;
                             text-transform: none;
                         ">
-                            RIDUCI il CONSUMO di ACQUA
+                            PROLUNGA la SHELF-LIFE dei PODOTTI
                         </h2>
                         <p
                             style="
@@ -1467,12 +1467,12 @@ def gen():
                             font-size: 1.25rem;
                             color: #1a1a1a;
                         ">
-                            Migliora l'efficienza dei processi e riduci i volumi di acque reflue.
+                            Mantieni più a lungo le caratteristiche qualitative dei prodotti durante stoccaggio e distribuzione.
                         </p>
                     </div>
                     <div>
                         <img 
-                            src="https://images.unsplash.com/photo-1558565851-10a41b286adb?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg"
+                            src="/immagini/home/card-3-0000.png"
                             style="
                                 height: 600px;
                                 object-fit: cover;
@@ -1491,7 +1491,7 @@ def gen():
                             color: #1a1a1a;
                             text-transform: none;
                         ">
-                            AUMENTA la SICUREZZA ALIMENTARE
+                            MIGLIORA la SICUREZZA degli ALIMENTI
                         </h2>
                         <p
                             style="
@@ -1499,7 +1499,7 @@ def gen():
                             font-size: 1.25rem;
                             color: #1a1a1a;
                         ">
-                            Aumenta il controllo microbiologico lungo tutta la catena produttiva.
+                            Rafforza i processi di igienizzazione riducendo la presenza di contaminanti microbiologici.
                         </p>
                     </div>
                 </div>
