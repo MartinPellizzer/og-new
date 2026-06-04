@@ -10,35 +10,35 @@ shutil.copy2(f'styles-components.css', f'{g.WEBSITE_FOLDERPATH}/styles-component
 shutil.copy2(f'styles.css', f'{g.WEBSITE_FOLDERPATH}/styles.css')
 shutil.copy2(f'styles-topic-hub.css', f'{g.WEBSITE_FOLDERPATH}/styles-topic-hub.css')
 
-if 1:
+if 0:
     from hub import settori_hub
     settori_hub.main()
 
-if 1:
+if 0:
     from hub import layer1_hub
     layer1_hub.main()
 
-if 1:
+if 0:
     from templates import templates_gen
     templates_gen.main()
 
-if 1:
+if 0:
     from hub import azienda_hub
     azienda_hub.main()
 
-if 1:
+if 0:
     from hub import confronti_hub
     confronti_hub.main()
     
-if 1:
+if 0:
     from hub import tecnologia_hub
     tecnologia_hub.main()
     
-if 1:
+if 0:
     from hub import metodo_hub
     metodo_hub.main()
 
-if 1:
+if 0:
     from hub import soluzioni_hub
     soluzioni_hub.main()
 

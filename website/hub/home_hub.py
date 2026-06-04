@@ -2507,11 +2507,6 @@ def gen():
                 {why_0000_html}
                 {emo_0000_html}
                 {who_0000_html}
-                {grid_0000_html}
-                {grid_0001_html}
-                {grid_0002_html}
-                {grid_0003_html}
-                {faq_0000_html}
             </main>
             <!-- =======================================
                  FOOTER
@@ -2520,6 +2515,13 @@ def gen():
             {components.footer_dark()}
         </body>
         </html>
+    '''
+    '''
+                {grid_0000_html}
+                {grid_0001_html}
+                {grid_0002_html}
+                {grid_0003_html}
+                {faq_0000_html}
     '''
     
             # {components.header_default()}
