@@ -2556,8 +2556,6 @@ def gen():
                 {why_0000_html}
                 {emo_0000_html}
                 {who_0000_html}
-                {divider_html}
-                {applications_0000_html}
                 {separator_html}
             </main>
             <!-- =======================================
@@ -2574,6 +2572,9 @@ def gen():
                 {grid_0002_html}
                 {grid_0003_html}
                 {faq_0000_html}
+                
+                {divider_html}
+                {applications_0000_html}
     '''
     
             # {components.header_default()}
