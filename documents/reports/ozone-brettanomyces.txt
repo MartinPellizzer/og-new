@@ -295,3 +295,41 @@ riduce ma non elimina
 
 
 
+================================================================================
+P009 - OZONE VS BRETTANOMYCES
+================================================================================
+
+@url:   https://www.assoenologi.it/wp-content/uploads/2023/11/ozono_contaminazione_brettanomyces_maggio2005.pdf
+@free:  yes
+
+[KILL TEST]
+--------------------------------------------------------------------------------
+
+Target:   B. bruxellensis
+Medium:   barrel
+Ozone:    acqua
+Dose:     
+Time:     
+Pressure: 
+Humidity:
+Temp:
+
+[RESULT]
+--------------------------------------------------------------------------------
+
+Reduction: significativa
+
+[LIMITS]
+--------------------------------------------------------------------------------
+
+- se rimane troppa contaminazione dopo il trattamento, la contaminazione cresce
+e il vino viene contaminato, probabilmente centra la temperatura
+
+[USEFUL]
+--------------------------------------------------------------------------------
+
+sanifica parzialmente
+
+
+
+

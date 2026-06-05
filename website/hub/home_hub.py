@@ -1522,100 +1522,149 @@ def gen():
         </section>
     '''
 
-    who_0000_html = f'''
-        <section style="margin-top: 8rem;">
-            <div class="container-xl">
-                <h2 style="font-family: 'Cormorant Garamond', serif; 
-                    letter-spacing: -0.02em;
-                    font-weight: 500;
-                    color: #1a1a1a; 
-                    font-size: 5rem; 
-                    text-align: center;
-                    margin-bottom: 3rem;
-                ">
-                    CHI USA l'OZONO
-                </h2>
-                <p class="container-lg"
+    ########################################
+    # SETTORI
+    ########################################
+    who_cards_data = [
+        {
+            'img_src': f'''
+                https://images.unsplash.com/photo-1629313472434-cbbfdc2e1a5f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg
+            ''',
+            'title': f'''
+                Lattiero-Caseario
+            '''
+        },
+        {
+            'img_src': f'''
+                https://images.unsplash.com/photo-1738544475553-4475fb29b9a4?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg
+            ''',
+            'title': f'''
+                Vitivinicolo
+            '''
+        },
+        {
+            'img_src': f'''
+                https://images.unsplash.com/photo-1483871788521-4f224a86e166?q=80&w=1631&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg
+            ''',
+            'title': f'''
+                Cerealicolo
+            '''
+        },
+    ]
+    who_cards_html = ''
+    for who_card_item in who_cards_data:
+        who_cards_html += f'''
+            <div>
+                <img 
+                    src="{who_card_item['img_src']}"
                     style="
-                    font-family: 'Manrope', sans-serif;
-                    text-align: center;
-                    font-size: 1.25rem;
-                    color: #1a1a1a;
-                    margin-bottom: 8rem;
+                        height: 600px;
+                        object-fit: cover;
+                        object-position: center;
+                    "
                 ">
+                <p style="
+                    font-family: 'Manrope', sans-serif;
+                    font-family: 'Cormorant Garamond', sans-serif;
+                    font-size: 2rem;
+                    font-weight: 700;
+                    font-weight: 500;
+                    margin-top: 1rem;
+                    color: #1a1a1a;
+                    text-transform: uppercase;
+                ">
+                    {who_card_item['title']}
                 </p>
+            </div>
+        '''
+    who_heading_html_0000 = f'''
+        <div class="container-xl">
+            <h2 style="font-family: 'Cormorant Garamond', serif; 
+                letter-spacing: -0.02em;
+                font-weight: 500;
+                color: #1a1a1a;
+                font-size: 5rem;
+                text-align: center;
+                margin-bottom: 3rem;
+            ">
+                CHI USA l'OZONO
+            </h2>
+        </div>
+    '''
+    who_heading_html_0001 = f'''
+        <div class="container-xl" style="margin-bottom: 3rem;">
+            <div class="m-flex" style="align-items: center; justify-content: space-between;">
+                <div>
+                    <h2 style="font-family: 'Cormorant Garamond', serif; 
+                        letter-spacing: -0.02em;
+                        font-weight: 500;
+                        color: #1a1a1a;
+                        font-size: 5rem;
+                    ">
+                        CHI USA l'OZONO
+                    </h2>
+                </div>
+                <div>
+                    <a href="/" class="button-black-ghost-2">
+                    Tutti i Settori
+                    </a>
                 </div>
             </div>
+        </div>
+    '''
+    who_0000_html = f'''
+        <section style="margin-top: 8rem;">
+            {who_heading_html_0001}
             <div class="container-xl">
                 <div class="grid-3" style="gap: 1rem;">
-                    <div>
-                        <img 
-                            src="https://images.unsplash.com/photo-1629313472434-cbbfdc2e1a5f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg"
-                            style="
-                                height: 600px;
-                                object-fit: cover;
-                                object-position: center;
-                            "
-                        ">
-                        <p style="
-                            font-family: 'Manrope', sans-serif;
-                            font-family: 'Cormorant Garamond', sans-serif;
-                            font-size: 2rem;
-                            font-weight: 700;
+                    {who_cards_html}
+                </div>
+            </div>
+        </section>
+    '''
+
+    divider_html = f'''
+        <div style="margin-top: 8rem; border-bottom: 1px solid #E2E2E2;">
+        </div>
+    '''
+
+    separator_html = f'''
+        <div style="margin-top: 8rem;">
+        </div>
+    '''
+    
+    ########################################
+    # APPLICATIONS
+    ########################################
+    applications_0000_html = f'''
+        <section style="margin-top: 8rem;">
+            <div class="m-flex">
+                <div style="flex: 1">
+                    <div style="max-width: 640px; margin-left: auto; padding: 0 1rem;"> 
+                        <h2 style="font-family: 'Cormorant Garamond', serif; 
+                            letter-spacing: -0.02em;
                             font-weight: 500;
-                            margin-top: 1rem;
                             color: #1a1a1a;
-                            text-transform: uppercase;
+                            font-size: 5rem;
+                            margin-bottom: 3rem;
                         ">
-                            Lattiero-Caseario
-                        </p>
+                            APPLICAZIONI
+                        </h2>
                     </div>
-                    <div>
-                        <img 
-                            src="https://images.unsplash.com/photo-1738544475553-4475fb29b9a4?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg"
-                            style="
-                                height: 600px;
-                                object-fit: cover;
-                                object-position: center;
-                            "
-                        ">
-                        <p style="
-                            font-family: 'Manrope', sans-serif;
-                            font-family: 'Cormorant Garamond', sans-serif;
-                            font-size: 1.5rem;
-                            font-size: 2rem;
-                            font-weight: 700;
-                            font-weight: 500;
-                            margin-top: 1rem;
-                            color: #1a1a1a;
-                            text-transform: uppercase;
-                        ">
-                            Vitivinicolo
-                        </p>
-                    </div>
-                    <div>
-                        <img 
-                            src="https://images.unsplash.com/photo-1483871788521-4f224a86e166?q=80&w=1631&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg"
-                            style="
-                                height: 600px;
-                                object-fit: cover;
-                                object-position: center;
-                            "
-                        ">
-                        <p style="
-                            font-family: 'Manrope', sans-serif;
-                            font-family: 'Cormorant Garamond', sans-serif;
-                            font-size: 1.5rem;
-                            font-size: 2rem;
-                            font-weight: 700;
-                            font-weight: 500;
-                            margin-top: 1rem;
-                            color: #1a1a1a;
-                            text-transform: uppercase;
-                        ">
-                            Cerealicolo
-                        </p>
-                    </div>
+                </div>
+                <div style="flex: 1">
+                
+                <img 
+                    src="
+                        https://images.unsplash.com/photo-1483871788521-4f224a86e166?q=80&w=1631&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg
+                    "
+                    style="
+                        height: 90vh;
+                        object-fit: cover;
+                        object-position: center;
+                    "
+                ">
+
                 </div>
             </div>
         </section>
@@ -2494,7 +2543,7 @@ def gen():
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" href="/styles.css">
-            <title>Tecnologia di Ozonizzazione Industriale | Ozonogroup</title>
+            <title>Sistemi Industriali a Ozono | Ozonogroup</title>
             <meta name="description" content="Tecnologie e sistemi a ozono per applicazioni industriali, commerciali e civili. Progettazione, applicazioni e guida tecnica sull'ozono.">
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2507,6 +2556,9 @@ def gen():
                 {why_0000_html}
                 {emo_0000_html}
                 {who_0000_html}
+                {divider_html}
+                {applications_0000_html}
+                {separator_html}
             </main>
             <!-- =======================================
                  FOOTER

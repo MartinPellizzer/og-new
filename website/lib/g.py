@@ -1,17 +1,17 @@
-PROJECT_FOLDERPATH = r'C:\og-new'
 PROJECT_FOLDERPATH = r'/home/ubuntu/proj/og-new'
+PROJECT_FOLDERPATH = r'C:\og-new'
 
 SSOT_FOLDERPATH = f'{PROJECT_FOLDERPATH}/ssot'
 
-DATABASE_FOLDERPATH = r'C:\og-new/website/database'
 DATABASE_FOLDERPATH = r'/home/ubuntu/proj/og-new/website/database'
+DATABASE_FOLDERPATH = r'C:\og-new/website/database'
 
-WEBSITE_FOLDERPATH = r'C:\ozonogroup'
 WEBSITE_FOLDERPATH = r'/home/ubuntu/vault/ozonogroup'
+WEBSITE_FOLDERPATH = r'C:\ozonogroup'
 website_folderpath = WEBSITE_FOLDERPATH
 
-TEMPLATES_FOLDERPATH = r'C:\ozonogroup-templates'
 TEMPLATES_FOLDERPATH = r'/home/ubuntu/vault/ozonogroup-templates'
+TEMPLATES_FOLDERPATH = r'C:\ozonogroup-templates'
 
 color_black_pearl = '#08162C'
 
