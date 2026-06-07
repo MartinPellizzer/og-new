@@ -236,13 +236,14 @@ th {
 
 .button-white-ghost-2 {
     font-family: 'Manrope', sans-serif;
-    font-size: 1.25rem;
+    font-size: 0.850rem;
     color: #fff;
     text-decoration: none;
     border: 1px solid #fff;
-    padding: 0.5rem 2rem;
+    padding: 0.75rem 3rem;
     display: inline-block;
-    text-transform: capitalize;
+    text-transform: uppercase;
+    letter-spacing: 3px;
     transition: all 0.2s ease;
 }
 
@@ -259,7 +260,6 @@ th {
     border: 1px solid #1a1a1a;
     padding: 0.5rem 2rem;
     display: inline-block;
-    text-transform: capitalize;
     text-transform: uppercase;
     letter-spacing: 3px;
     transition: all 0.2s ease;
