@@ -1436,6 +1436,15 @@ def gen():
             <div class="container-xl">
                 <div class="m-flex" style="gap: 5rem;">
                     <div style="flex: 1;">
+                        <p class="container-lg"
+                            style="
+                            font-family: 'Manrope', sans-serif;
+                            font-size: 1rem;
+                            color: #1a1a1a;
+                            margin-bottom: 8rem;
+                        ">
+                            meno sprechi, maggior profitto
+                        </p>
                         <h2 style="font-family: 'Cormorant Garamond', serif; 
                             letter-spacing: -0.02em;
                             font-weight: 500;
