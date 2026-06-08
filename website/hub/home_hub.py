@@ -1395,7 +1395,7 @@ def gen():
                             color: #1a1a1a;
                             margin-bottom: 1rem;
                         ">
-Se batteri, muffe, lieviti o altre contaminazioni microbiologiche rischiano di rovinare il tuo prodotto...
+Se batteri, muffe, lieviti o altre contaminazioni microbiologiche rischiano di rovinare il tuo prodotto, prova l'ozono.
                         </p>
                         <p class="container-lg"
                             style="
