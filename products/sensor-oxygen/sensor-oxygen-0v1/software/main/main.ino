@@ -1,4 +1,16 @@
+/*
+OXYGEN SENSOR -> ESP32: PINOUT
+VIN -> 5V
+RX0 -> 17
+TX0 -> 4
+GND -> GND
+*/
+
 #define SENSOR_OXYGEN_BUFF_LEN 12
+
+#include <LiquidCrystal_I2C.h>
+LiquidCrystal_I2C lcd(0x27,20,4);
+
 typedef struct sensor_oxygen_t {
   uint8_t buff[SENSOR_OXYGEN_BUFF_LEN] = { 0 };
   int8_t buff_i = 0;
@@ -7,7 +19,6 @@ typedef struct sensor_oxygen_t {
   float temperature = -1;
 } sensor_oxygen_t;
 sensor_oxygen_t sensor_oxygen = {};
-
 
 uint8_t new_data = 0;
 
@@ -20,10 +31,13 @@ uint32_t timer_test = 0;
 void setup() 
 {
   Serial.begin(9600);
-  // Serial2.begin(9600, SERIAL_8N1, 27, 14);
-  Serial2.begin(9600, SERIAL_8N1, 17, 4);
+  Serial2.begin(9600, SERIAL_8N1, 27, 14);
+  // Serial2.begin(9600, SERIAL_8N1, 17, 4);
   // Serial2.begin(9600);
   pinMode(RE_DE_PIN, OUTPUT);
+  
+  lcd.init();
+  lcd.backlight();
 }
 
 unsigned char FucCheckSum(unsigned char *i, unsigned char ln)
@@ -57,6 +71,29 @@ void loop()
     Serial.print(" °C");
     Serial.println();
     Serial.println();
+    
+
+    lcd.setCursor(0, 0);
+    lcd.print("                ");
+    lcd.setCursor(0, 1);
+    lcd.print("                ");
+    lcd.setCursor(0, 0);
+    lcd.print("O:");
+    lcd.print(sensor_oxygen.concentration, 1);
+    lcd.print("%");
+    lcd.print(" ");
+    // lcd.setCursor(0, 0);
+    lcd.print("T:");
+    lcd.print(sensor_oxygen.temperature, 1);
+    lcd.print("C");
+    lcd.setCursor(0, 1);
+    lcd.print("F:");
+    lcd.print(sensor_oxygen.flow, 1);
+    lcd.print("L/min");
+    // lcd.setCursor(0, 1);
+    // lcd.print("                ");
+    // lcd.setCursor(0, 1);
+    // lcd.print("PER SANIFICARE");
   }
 
   if (new_data)
