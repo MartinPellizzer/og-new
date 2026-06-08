@@ -1193,29 +1193,6 @@ def gen():
     ########################################
     # HERO 0001
     ########################################
-    hero_0001_html = f'''
-        <section 
-            style="
-            background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('/immagini/unsplash/agri-0000.jpg');   
-            background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg');   
-            background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('https://images.unsplash.com/photo-1483871788521-4f224a86e166?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg');   
-            background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('https://images.unsplash.com/photo-1525286102393-8bf945cd0649?q=80&w=1174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg');   
-            background-position: center; 
-            background-size: cover;
-        ">
-            <div class="m-flex container-xl" style="align-items: center; gap: 0rem; height: 80vh;">
-                <div style="flex: 5;">
-                        <h1 style="font-family: 'Cormorant Garamond', serif; color: #fff; font-size: 5rem; font-weight: 400; margin-bottom: 1rem;">
-                            {h1}
-                        </h1>
-                        <p style="color: #fff;">{subordinate}</p>
-                </div>
-                <div style="flex: 1;">
-                </div>
-            </div>
-        </section>
-    '''
-    
     opacity = 0.3
     hero_0001_html = f'''
         <section 
@@ -1230,51 +1207,7 @@ def gen():
                     <li><a style="font-family: 'Manrope', sans-serif; color: #fff; text-decoration: none;" href="/contatti.html">Contatti</a></li>
                 </ul>
             </nav>
-            <div class="m-flex container-xl" style="flex-direction: column; justify-content: center; gap: 0rem; height: 95vh;">
-                <h1 style="
-                    font-family: 'Cormorant Garamond', sans-serif;
-                    font-weight: 400;
-                    letter-spacing: 3px;
-                    margin-bottom: 1rem;
-                    color: #fff; 
-                    font-size: 2rem; 
-                    text-align: center;
-                ">
-                    sistemi industriali a ozono
-                </h1>
-
-                <p style="font-family: 'Cormorant Garamond', serif; 
-                    letter-spacing: -0.02em;
-                    font-weight: 500;
-                    color: #fff; font-size: 5rem; margin-bottom: 1rem;
-                    text-align: center;
-                    margin-bottom: 3rem;
-                    line-height: 1.2;
-                ">
-                    MIGLIORA la tua PRODUZIONE AGROALIMENTARE
-                </p>
-                <div style="text-align: center;">
-                    <a href="/" class="button-white-ghost-2">
-                    Prenota Consulenza
-                </a>
-                </div>
-            </div>
-        </section>
-    '''
-    hero_0001_html = f'''
-        <section 
-            style="
-            background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('/immagini/home/uva-0000.png');   
-            background-position: center; 
-            background-size: cover;
-        ">
-            <nav style="display: flex; justify-content: space-between; padding: 1rem 2rem;">
-                <a style="font-family: 'Manrope', sans-serif; color: #fff; text-decoration: none;" href="/">Ozonogroup</a></div>
-                <ul>
-                    <li><a style="font-family: 'Manrope', sans-serif; color: #fff; text-decoration: none;" href="/contatti.html">Contatti</a></li>
-                </ul>
-            </nav>
-            <div class="m-flex container-xl" style="flex-direction: column; justify-content: center; gap: 0rem; height: 95vh;">
+            <div class="m-flex container-xl" style="flex-direction: column; justify-content: center; gap: 0rem; height: 96vh;">
                 <h1 style="font-family: 'Cormorant Garamond', serif; 
                     letter-spacing: -0.02em;
                     font-weight: 500;
@@ -1301,9 +1234,7 @@ def gen():
             </div>
         </section>
     '''
-    what_0000_html = f'''
-    '''
-    
+
     what_0000_html = f'''
         <section style="padding-top: 8rem;">
             <div class="container-xl" style="padding-bottom: 8rem; border-bottom: 1px solid #E2E2E2;">
@@ -1423,7 +1354,6 @@ def gen():
                 ">
                     L'ozono viene usato nei processi industriali per la sanificazione di acqua, ambienti e superfici, in quanto agisce come potente agente ossidante. Grazie alla sua capacità di eliminare rapidamente batteri, virus e microrganismi senza lasciare residui chimici, si integra facilmente nelle linee produttive esistenti. Questo consente di ottimizzare le fasi di lavaggio, trattamento e conservazione lungo tutta la filiera agroalimentare, migliorando l’efficienza operativa complessiva e la gestione dei processi.
                 </p>
-                </div>
             </div>
         </section>
     '''
@@ -1436,16 +1366,19 @@ def gen():
             <div class="container-xl">
                 <div class="m-flex" style="gap: 5rem;">
                     <div style="flex: 1;">
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 8rem;
+                        <p style="
+                            font-family: 'Cormorant Garamond', serif; 
+                            letter-spacing: 3px;
+                            font-weight: 400;
+                            color: #1a1a1a; 
+                            margin-bottom: 1rem;
+                            font-size: 1.5rem; 
+                            padding: 0 1rem;
                         ">
                             meno sprechi, maggior profitto
                         </p>
-                        <h2 style="font-family: 'Cormorant Garamond', serif; 
+                        <h2 style="
+                            font-family: 'Cormorant Garamond', serif; 
                             letter-spacing: -0.02em;
                             font-weight: 500;
                             color: #1a1a1a; 
@@ -1460,9 +1393,18 @@ def gen():
                             font-family: 'Manrope', sans-serif;
                             font-size: 1rem;
                             color: #1a1a1a;
-                            margin-bottom: 8rem;
+                            margin-bottom: 1rem;
                         ">
-                            L'ozono viene usato nei processi industriali per la sanificazione di prodotti, ambienti e superfici, in quanto agisce come potente agente ossidante. Grazie alla sua capacità di eliminare rapidamente batteri, virus e microrganismi senza lasciare residui chimici, si integra facilmente nelle linee produttive esistenti. Questo consente di ottimizzare le fasi di lavaggio, trattamento e conservazione lungo tutta la filiera agroalimentare, migliorando l’efficienza operativa complessiva e la gestione dei processi.
+Se batteri, muffe, lieviti o altre contaminazioni microbiologiche rischiano di rovinare il tuo prodotto...
+                        </p>
+                        <p class="container-lg"
+                            style="
+                            font-family: 'Manrope', sans-serif;
+                            font-size: 1rem;
+                            color: #1a1a1a;
+                            margin-bottom: 1rem;
+                        ">
+I sistemi industriali a ozono sanificano i tuo prodotti agroalimentari riducendo la carica microbica responsabile del deterioramento. Queste contaminazioni microbiologiche si trovano nell'aria, sulle superfici e nell'acqua di lavaggio che usi per il tuo processo produttivo. Sono la causa principale di perdita di qualità, riduzione di shelf life o addirittura di costosi scarti alimentari.
                         </p>
                     </div>
                     <div style="flex: 1;">
@@ -1472,7 +1414,16 @@ def gen():
             </div>
         </section>
     '''
-    
+                            # L'ozono viene usato nei processi industriali per la sanificazione di prodotti, ambienti e superfici, in quanto agisce come potente agente ossidante. Grazie alla sua capacità di eliminare rapidamente batteri, virus e microrganismi senza lasciare residui chimici, si integra facilmente nelle linee produttive esistenti. Questo consente di ottimizzare le fasi di lavaggio, trattamento e conservazione lungo tutta la filiera agroalimentare, migliorando l’efficienza operativa complessiva e la gestione dei processi.
+    '''
+Se nel tuo processo produttivo stai registrando perdite di prodotto dovute a contaminazioni microbiologiche che riducono la qualità prima della vendita, allora l’integrazione di sistemi a ozono può rappresentare una soluzione concreta per aumentare la shelf life e ridurre gli scarti.
+        celle frigorifere, serbatoi, e altri ambienti di lavorazione.
+        riduczione uso sostanze chimiche come disinfettanti clorati, composti quaternari d'ammonio, altri biocidi chimici.
+        Maggiore shelf life dei prodotti frutta e verdura fresca, formaggi, carni, riducendo la carica microbica superficiale, rallentare lo sviluppo di muffe, diminuire il deterioramento post-raccolta.
+        Trattamento dell'acqua di processo, lavaggio di ortaggi e frutta, trattamento delle acque reflue, ricircolo delle acque di processo
+        Controllo degli odori, composti solforati, odori derivanti da lavorazioni di carne e pesce, odori nelle aree di stoccaggio rifiuti
+        Miglioramento della sicurezza alimentare HACCP, qualità e sicurezza alimentare, riduzione del rischio di contaminazioni crociate
+    '''
 
     # BENEFICI dell'OZONO
     # PERCHÉ
