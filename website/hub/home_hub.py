@@ -1404,7 +1404,7 @@ Se batteri, muffe, lieviti o altre contaminazioni microbiologiche rischiano di r
                             color: #1a1a1a;
                             margin-bottom: 1rem;
                         ">
-I sistemi industriali a ozono sanificano i tuo prodotti agroalimentari riducendo la carica microbica responsabile del deterioramento. Queste contaminazioni microbiologiche si trovano nell'aria, sulle superfici e nell'acqua di lavaggio che usi per il tuo processo produttivo. Sono la causa principale di perdita di qualità, riduzione di shelf life o addirittura di costosi scarti alimentari.
+I sistemi industriali a ozono sanificano i tuo prodotti agroalimentari e riducono la carica microbica responsabile del deterioramento. Queste contaminazioni microbiologiche si trovano nell'aria, sulle superfici e nell'acqua di lavaggio che usi per il tuo processo produttivo. Sono la causa principale di perdita di qualità, riduzione di shelf life o addirittura di costosi scarti alimentari.
                         </p>
                     </div>
                     <div style="flex: 1;">
