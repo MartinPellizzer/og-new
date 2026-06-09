@@ -1201,12 +1201,7 @@ def gen():
             background-position: center; 
             background-size: cover;
         ">
-            <nav style="display: flex; justify-content: space-between; padding: 1rem 2rem;">
-                <a style="font-family: 'Manrope', sans-serif; color: #fff; text-decoration: none;" href="/">Ozonogroup</a></div>
-                <ul>
-                    <li><a style="font-family: 'Manrope', sans-serif; color: #fff; text-decoration: none;" href="/contatti.html">Contatti</a></li>
-                </ul>
-            </nav>
+            {components.header_light_new()}
             <div class="m-flex container-xl" style="flex-direction: column; justify-content: center; gap: 0rem; height: 96vh;">
                 <h1 style="font-family: 'Cormorant Garamond', serif; 
                     letter-spacing: -0.02em;
@@ -2591,12 +2586,8 @@ Se nel tuo processo produttivo stai registrando perdite di prodotto dovute a con
                 {emo_0000_html}
                 {who_0000_html}
                 {separator_html}
+                {components.footer_dark()}
             </main>
-            <!-- =======================================
-                 FOOTER
-                 Include company info, legal, sitemap, social links
-            ======================================== -->
-            {components.footer_dark()}
         </body>
         </html>
     '''

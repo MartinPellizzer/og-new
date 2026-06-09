@@ -265,6 +265,20 @@ th {
     transition: all 0.2s ease;
 }
 
+.button-black-2 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.850rem;
+    color: #ffffff;
+    background-color: #1a1a1a;
+    text-decoration: none;
+    border: 1px solid #1a1a1a;
+    padding: 0.5rem 2rem;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: all 0.2s ease;
+}
+
 /* =========================================
    HOME
 ========================================= */

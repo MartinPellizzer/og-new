@@ -75,7 +75,6 @@ def footer_dark():
                     <div>
                         <h2>Risorse</h2>
                         <div class="home-footer-nav">
-                            <a href="/chi-siamo.html">Chi Siamo</a>
                             <a href="/contatti.html">Contatti</a>
                         </div>
                     </div>
@@ -88,6 +87,7 @@ def footer_dark():
         </footer>
     '''
     return html
+                            # <a href="/chi-siamo.html">Chi Siamo</a>
 
 def header_default():
     html = f'''
@@ -126,6 +126,68 @@ def header_default():
                 # <li><a href="/settori/">Settori</a></li>
                 # <li><a href="/metodo/">Metodo</a></li>
                 # <li><a href="/confronti/">Confronti</a></li>
+    return html
+
+def header_light_new():
+    html = f'''
+        <nav style="
+            display: flex; 
+            justify-content: space-between; 
+            padding: 1rem 2rem;
+        ">
+            <a style="
+                font-family: 'Manrope', sans-serif; 
+                color: #fff; 
+                text-decoration: none;
+            " href="/">
+                Ozonogroup
+            </a>
+            <ul style="
+                list-style: none;
+            ">
+                <li>
+                    <a style="
+                        font-family: 'Manrope', sans-serif; 
+                        color: #fff; 
+                        text-decoration: none;
+                    " href="/contatti.html">
+                        Contatti
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    '''
+    return html
+
+def header_dark_new():
+    html = f'''
+        <nav style="
+            display: flex; 
+            justify-content: space-between; 
+            padding: 1rem 2rem;
+        ">
+            <a style="
+                font-family: 'Manrope', sans-serif; 
+                color: #1a1a1a; 
+                text-decoration: none;
+            " href="/">
+                Ozonogroup
+            </a>
+            <ul style="
+                list-style: none;
+            ">
+                <li>
+                    <a style="
+                        font-family: 'Manrope', sans-serif; 
+                        color: #1a1a1a; 
+                        text-decoration: none;
+                    " href="/contatti.html">
+                        Contatti
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    '''
     return html
 
 def breadcrumbs(url):
