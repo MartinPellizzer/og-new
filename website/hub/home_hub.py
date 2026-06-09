@@ -1,3 +1,4 @@
+from lorem_text import lorem
 
 from lib import g
 from lib import components
@@ -1230,134 +1231,11 @@ def gen():
         </section>
     '''
 
-    what_0000_html = f'''
-        <section style="padding-top: 8rem;">
-            <div class="container-xl" style="padding-bottom: 8rem; border-bottom: 1px solid #E2E2E2;">
-                <div class="m-flex" style="gap: 2rem;">
-                    <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                        <h2 style="font-family: 'Cormorant Garamond', serif; 
-                            letter-spacing: -0.02em;
-                            font-weight: 500;
-                            color: #1a1a1a; 
-                            font-size: 5rem; 
-                            padding: 0 1rem;
-                        ">
-                            SANIFICAZIONE ECOLOGICA
-                        </h2>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1.125rem;
-                            color: #1a1a1a;
-                        ">
-                            L'ozono viene usato nel settore agroalimentare
-                            per ridurre la carica microbica (batteri, virus, muffe) 
-                            su alimenti, superfici e ambienti,
-                            grazie alle sue proprietà ossidanti e disinfettanti.
-                            Questo rallenta il deterioramento dei prodotti, prolunga la shelf-life e 
-                            mantiene più a lungo la qualità, riducendo gli scarti alimentari lungo la filiera e 
-                            aumentando la quantità di prodotto idonea alla vendita e al consumo. 
-                            Inoltre l'ozono è una soluzione ecologica perché si decompone rapidamente in ossigeno 
-                            senza lasciare residui chimici sui prodotti.
-                        </p>
-                    </div>
-                    <div style="flex: 1;">
-                        <img 
-                            src="https://images.unsplash.com/photo-1602928333621-949abc1ec6f5?q=80&w=1685&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg"
-                            style="
-                                height: 80vh;
-                                object-fit: cover;
-                                object-position: center;
-                            "
-                        ">
-                    </div>
-                </div>
-            </div>
-        </section>
-    '''
-
-    what_0000_html = f'''
-        <section style="padding-top: 8rem;">
-            <div class="container-xl" style="padding-bottom: 8rem; border-bottom: 1px solid #E2E2E2;">
-                <div class="m-flex" style="gap: 2rem;">
-                    <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                        <h2 style="font-family: 'Cormorant Garamond', serif; 
-                            letter-spacing: -0.02em;
-                            font-weight: 500;
-                            color: #1a1a1a; 
-                            font-size: 5rem; 
-                            padding: 0 1rem;
-                        ">
-                            SANIFICAZIONE ECOLOGICA
-                        </h2>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1.125rem;
-                            color: #1a1a1a;
-                        ">
-                            L'ozono viene usato nel settore agroalimentare
-                            per ridurre la carica microbica (batteri, virus, muffe) 
-                            su alimenti, superfici e ambienti,
-                            grazie alle sue proprietà ossidanti e disinfettanti.
-                            Questo rallenta il deterioramento dei prodotti, prolunga la shelf-life e 
-                            mantiene più a lungo la qualità, riducendo gli scarti alimentari lungo la filiera e 
-                            aumentando la quantità di prodotto idonea alla vendita e al consumo. 
-                            Inoltre l'ozono è una soluzione ecologica perché si decompone rapidamente in ossigeno 
-                            senza lasciare residui chimici sui prodotti.
-                        </p>
-                    </div>
-                    <div style="flex: 1;">
-                        <img 
-                            src="https://images.unsplash.com/photo-1602928333621-949abc1ec6f5?q=80&w=1685&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg"
-                            style="
-                                height: 80vh;
-                                object-fit: cover;
-                                object-position: center;
-                            "
-                        ">
-                    </div>
-                </div>
-            </div>
-        </section>
-    '''
-
-                    # IL VALORE dell'OZONO per la TUA AZIENDA 
-                    # I VANTAGGI dell'OZONO per l'INDUSTRIA AGROALIMENTARE
-                    # I VANTAGGI dell'OZONO per la TUA AZIENDA
-                    # TRASFORMA il tuo PROCESSO PRODUTTIVO
-    what_0000_html = f'''
-        <section style="margin-top: 8rem; border-bottom: 1px solid #E2E2E2;">
-            <div class="container-xl">
-                <h2 style="font-family: 'Cormorant Garamond', serif; 
-                    letter-spacing: -0.02em;
-                    font-weight: 500;
-                    color: #1a1a1a; 
-                    font-size: 5rem; 
-                    text-align: center;
-                    margin-bottom: 3rem;
-                ">
-                    COME l'OZONO MIGLIORA la PRODUZIONE AGROALIMENTARE
-                </h2>
-                <p class="container-lg"
-                    style="
-                    font-family: 'Manrope', sans-serif;
-                    text-align: center;
-                    font-size: 1.5rem;
-                    color: #1a1a1a;
-                    margin-bottom: 8rem;
-                ">
-                    L'ozono viene usato nei processi industriali per la sanificazione di acqua, ambienti e superfici, in quanto agisce come potente agente ossidante. Grazie alla sua capacità di eliminare rapidamente batteri, virus e microrganismi senza lasciare residui chimici, si integra facilmente nelle linee produttive esistenti. Questo consente di ottimizzare le fasi di lavaggio, trattamento e conservazione lungo tutta la filiera agroalimentare, migliorando l’efficienza operativa complessiva e la gestione dei processi.
-                </p>
-            </div>
-        </section>
-    '''
-
     img_src = f'https://images.unsplash.com/photo-1515150144380-bca9f1650ed9?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     img_src = 'https://images.unsplash.com/photo-1591268315196-2c9b815d71cd?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     img_src = 'https://images.unsplash.com/photo-1518994603110-1912b3272afd?q=80&w=848&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     what_0000_html = f'''
-        <section style="margin-top: 8rem; padding-bottom: 8rem; border-bottom: 1px solid #E2E2E2;">
+        <section style="margin-top: 8rem; padding-bottom: 8rem;">
             <div class="container-xl">
                 <div class="m-flex" style="gap: 5rem;">
                     <div style="flex: 1;">
@@ -2592,6 +2470,7 @@ Se nel tuo processo produttivo stai registrando perdite di prodotto dovute a con
         </html>
     '''
     '''
+                {about_0000_html}
                 {grid_0000_html}
                 {grid_0001_html}
                 {grid_0002_html}
