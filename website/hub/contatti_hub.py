@@ -174,70 +174,7 @@ def gen():
     '''
     '''
 
-    about_0000_html = f'''
-        <section 
-            style="
-                min-height: 50vh;
-                padding-top: 8rem; 
-                padding-bottom: 8rem; 
-                background-color: #f8f9fa;
-            "
-        >
-            <div class="container-xl">
-                <div class="m-flex" style="gap: 5rem;">
-                    <div style="flex: 1; padding: 0 1rem;">
-                        <h2 style="
-                            font-family: 'Cormorant Garamond', serif; 
-                            letter-spacing: -0.02em;
-                            font-weight: 500;
-                            color: #1a1a1a; 
-                            font-size: 3em; 
-                            margin-bottom: 1rem;
-                        ">
-                            LA NOSTRA AZIENDA
-                        </h2>
-                        <p style="
-                            font-family: 'Cormorant Garamond', serif; 
-                            letter-spacing: -0.02em;
-                            color: #1a1a1a; 
-                            font-size: 1.5rem; 
-                            font-weight: 400;
-                            letter-spacing: 3px;
-                            margin-bottom: 3rem;
-                            line-height: 1.4;
-                        ">
-                            sviluppiamo tecnologia a ozono per l'industria agroalimentare
-                        </p>
-                        <div>
-                            <a href="/" class="button-black-ghost-2">
-                                CONTATTACI
-                            </a>
-                        </div>
-                    </div>
-                    <div style="flex: 1;">
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 1rem;
-                        ">
-                            Ozonogroup progetta sistemi industiali a ozono da oltre 20 anni, concentrandosi sul settore agroalimentare. Per questo motivo conosciamo bene i problemi di contaminazione che aziende come caseifici, salumifici e birrifici (per citarne alcuni) sono costrette ad affrontare giorno per giorno durante le fasi di lavorazione dei prodotti alimentari.
-                        </p>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 1rem;
-                        ">
-                            Infatti, ci siamo specializzati nella realizzazione di attrezzature in grado di risolvere questi tuoi problemi in modo preciso e automatizzato. Puoi usare i nostri sistemi per produrre ozono ad alta purezza e a basso consumo energetico. nonche' di monitorare l'andamento del trattamento. In questo modo, con pochi test, sarai in grato di trovare la formula esatta per risolvere queste tue problematiche (o prevenirle). Perche siamo convinti che debba essere il sistema a ozono ad addattarsi al cliente, non viceversa.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    '''
+    
 
     ########################################
     # html
@@ -257,12 +194,12 @@ def gen():
         <body>
             <main>
                 {hero_html}
-                {about_0000_html}
             </main>
             {components.footer_dark()}
         </body>
         </html>
     '''
+                # {about_0000_html}
                 # {cta()}
     html_filepath = f'{g.website_folderpath}/contatti.html'
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)

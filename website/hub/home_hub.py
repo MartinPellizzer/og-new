@@ -1,4 +1,3 @@
-from lorem_text import lorem
 
 from lib import g
 from lib import components
@@ -1202,7 +1201,12 @@ def gen():
             background-position: center; 
             background-size: cover;
         ">
-            {components.header_light_new()}
+            <nav style="display: flex; justify-content: space-between; padding: 1rem 2rem;">
+                <a style="font-family: 'Manrope', sans-serif; color: #fff; text-decoration: none;" href="/">Ozonogroup</a></div>
+                <ul>
+                    <li><a style="font-family: 'Manrope', sans-serif; color: #fff; text-decoration: none;" href="/contatti.html">Contatti</a></li>
+                </ul>
+            </nav>
             <div class="m-flex container-xl" style="flex-direction: column; justify-content: center; gap: 0rem; height: 96vh;">
                 <h1 style="font-family: 'Cormorant Garamond', serif; 
                     letter-spacing: -0.02em;
@@ -1230,6 +1234,7 @@ def gen():
             </div>
         </section>
     '''
+
 
     img_src = f'https://images.unsplash.com/photo-1515150144380-bca9f1650ed9?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     img_src = 'https://images.unsplash.com/photo-1591268315196-2c9b815d71cd?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
@@ -1268,7 +1273,7 @@ def gen():
                             color: #1a1a1a;
                             margin-bottom: 1rem;
                         ">
-Se batteri, muffe, lieviti o altre contaminazioni microbiologiche rischiano di rovinare il tuo prodotto, prova l'ozono.
+Se la tua produzione è a rischio a causa di contaminazioni microbiologiche (come batteri, muffe o lieviti), devi sapere che non sei il solo. Purtroppo, questo è un problema fin troppo diffuso nel settore agroalimentare.
                         </p>
                         <p class="container-lg"
                             style="
@@ -1277,7 +1282,27 @@ Se batteri, muffe, lieviti o altre contaminazioni microbiologiche rischiano di r
                             color: #1a1a1a;
                             margin-bottom: 1rem;
                         ">
-I sistemi industriali a ozono sanificano i tuo prodotti agroalimentari e riducono la carica microbica responsabile del deterioramento. Questa carica microbica si trova nell'aria, sulle superfici e nell'acqua di lavaggio che usi per il tuo processo produttivo ed è la causa principale di perdita di qualità, riduzione della shelf life o addirittura di costosi scarti alimentari.
+Infatti, queste contaminazioni si trovano in gran numero nell'aria dei locali di stoccaggio dei prodotti, sulle superfici di lavorazione e persino nell'acqua di lavaggio che usi durante il tuo processo produttivo. 
+Da qui deriva la perdita di qualità del tuo prodotto, la riduzione della sua shelf life o addirittura l'obbligo di scartare il prodotto stesso prima di poterlo immettere nel mercato.
+                        </p>
+                        <p class="container-lg"
+                            style="
+                            font-family: 'Manrope', sans-serif;
+                            font-size: 1rem;
+                            color: #1a1a1a;
+                            margin-bottom: 1rem;
+                        ">
+Se ti trovi in questa situazione, un rimedio pratico è l'ozono.
+                        </p>
+                        <p class="container-lg"
+                            style="
+                            font-family: 'Manrope', sans-serif;
+                            font-size: 1rem;
+                            color: #1a1a1a;
+                            margin-bottom: 1rem;
+                        ">
+I sistemi industriali a ozono ti permettono di ridurre microbi e altri agenti patogeni in modo rapido ed ecologico.
+Come noto, l'ozono è una delle molecole con il più alto potere ossidante esistente (maggiore del cloro) e per questo disinfetta velocemente. In aggiunta, non lascia residui chimici sui prodotti, quindi aiuta a ridurre (o eliminare completamente) l'uso di sostanze chimiche come disinfettanti clorati, composti quaternari d'ammonio, altri biocidi chimici.
                         </p>
                     </div>
                     <div style="flex: 1;">
@@ -1287,6 +1312,7 @@ I sistemi industriali a ozono sanificano i tuo prodotti agroalimentari e riducon
             </div>
         </section>
     '''
+# I sistemi industriali a ozono sanificano i tuo prodotti agroalimentari e riducono la carica microbica responsabile del deterioramento. Questa carica microbica si trova nell'aria, sulle superfici e nell'acqua di lavaggio che usi per il tuo processo produttivo ed è la causa principale di perdita di qualità, riduzione della shelf life o addirittura di costosi scarti alimentari.
                             # L'ozono viene usato nei processi industriali per la sanificazione di prodotti, ambienti e superfici, in quanto agisce come potente agente ossidante. Grazie alla sua capacità di eliminare rapidamente batteri, virus e microrganismi senza lasciare residui chimici, si integra facilmente nelle linee produttive esistenti. Questo consente di ottimizzare le fasi di lavaggio, trattamento e conservazione lungo tutta la filiera agroalimentare, migliorando l’efficienza operativa complessiva e la gestione dei processi.
     '''
 Se nel tuo processo produttivo stai registrando perdite di prodotto dovute a contaminazioni microbiologiche che riducono la qualità prima della vendita, allora l’integrazione di sistemi a ozono può rappresentare una soluzione concreta per aumentare la shelf life e ridurre gli scarti.
@@ -1296,6 +1322,71 @@ Se nel tuo processo produttivo stai registrando perdite di prodotto dovute a con
         Trattamento dell'acqua di processo, lavaggio di ortaggi e frutta, trattamento delle acque reflue, ricircolo delle acque di processo
         Controllo degli odori, composti solforati, odori derivanti da lavorazioni di carne e pesce, odori nelle aree di stoccaggio rifiuti
         Miglioramento della sicurezza alimentare HACCP, qualità e sicurezza alimentare, riduzione del rischio di contaminazioni crociate
+    '''
+
+    about_0000_html = f'''
+        <section 
+            style="
+                min-height: 50vh;
+                padding-top: 8rem; 
+                padding-bottom: 8rem; 
+                background-color: #f8f9fa;
+            "
+        >
+            <div class="container-xl">
+                <div class="m-flex" style="gap: 5rem;">
+                    <div style="flex: 1; padding: 0 1rem;">
+                        <h2 style="
+                            font-family: 'Cormorant Garamond', serif; 
+                            letter-spacing: -0.02em;
+                            font-weight: 500;
+                            color: #1a1a1a; 
+                            font-size: 3em; 
+                            margin-bottom: 1rem;
+                        ">
+                            LA NOSTRA AZIENDA
+                        </h2>
+                        <p style="
+                            font-family: 'Cormorant Garamond', serif; 
+                            letter-spacing: -0.02em;
+                            color: #1a1a1a; 
+                            font-size: 1.5rem; 
+                            font-weight: 400;
+                            letter-spacing: 3px;
+                            margin-bottom: 3rem;
+                            line-height: 1.4;
+                        ">
+                            sviluppiamo tecnologia a ozono per l'industria agroalimentare
+                        </p>
+                        <div>
+                            <a href="/contatti.html" class="button-black-ghost-2">
+                                CONTATTACI
+                            </a>
+                        </div>
+                    </div>
+                    <div style="flex: 1;">
+                        <p class="container-lg"
+                            style="
+                            font-family: 'Manrope', sans-serif;
+                            font-size: 1rem;
+                            color: #1a1a1a;
+                            margin-bottom: 1rem;
+                        ">
+Ozonogroup progetta sistemi industriali a ozono da oltre 20 anni, concentrandosi sul settore agroalimentare. Per questo motivo conosciamo bene i problemi di contaminazione che aziende come caseifici, salumifici e birrifici (per citarne alcuni) sono costrette ad affrontare giorno per giorno durante le fasi di lavorazione dei prodotti alimentari.
+                        </p>
+                        <p class="container-lg"
+                            style="
+                            font-family: 'Manrope', sans-serif;
+                            font-size: 1rem;
+                            color: #1a1a1a;
+                            margin-bottom: 1rem;
+                        ">
+                            Infatti, ci siamo specializzati nella realizzazione di attrezzature in grado di risolvere questi tuoi problemi in modo preciso e automatizzato. Puoi usare i nostri sistemi per produrre ozono ad alta purezza e a basso consumo energetico. nonche' di monitorare l'andamento del trattamento. In questo modo, con pochi test, sarai in grato di trovare la formula esatta per risolvere queste tue problematiche (o prevenirle). Perche siamo convinti che debba essere il sistema a ozono ad addattarsi al cliente, non viceversa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
     '''
 
     # BENEFICI dell'OZONO
@@ -1415,19 +1506,67 @@ Se nel tuo processo produttivo stai registrando perdite di prodotto dovute a con
     '''
                         # <p style="color: #fff;">{subordinate}</p>
 
-    emo_0000_html = f'''
+    cta_0000_html = f'''
         <section style="
                 height: 100vh;
-                margin-top: 8rem;
                 background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('/immagini/unsplash/agri-0000.jpg');   
                 background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg');   
                 background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('https://images.unsplash.com/photo-1483871788521-4f224a86e166?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg');   
                 background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('                        https://images.unsplash.com/photo-1637181156153-bedd1098f8c1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg');   
                 background-position: center; 
                 background-size: cover;
+                display: flex;
+                align-items: center;
             ">
+            <div class="
+                m-flex container-xl
+            " 
+                style="
+                    flex-direction: column; 
+                    justify-content: center; 
+                    gap: 0rem; 
+                    background-color: #ffffff;
+                    padding: 3rem;
+                ">
+                <h2 style="
+                    font-family: 'Cormorant Garamond', serif; 
+                    font-family: 'Manrope', sans-serif;
+                    font-weight: 500;
+                    color: #1a1a1a; font-size: 5rem; margin-bottom: 1rem;
+                    text-align: center;
+                    margin-bottom: 3rem;
+                    font-size: 1.125rem; 
+                    font-weight: 400;
+                    letter-spacing: 4px;
+                    margin-bottom: 1rem;
+                    line-height: 1.3;
+                ">
+                    COMINCIA A MIGLIORARE LA TUA PRODUZIONE AGROALIMENTARE
+                </h2>
+                <p style="font-family: 'Cormorant Garamond', serif; 
+                    letter-spacing: -0.02em;
+                    font-weight: 500;
+                    color: #1a1a1a; 
+                    font-size: 5rem; 
+                    font-size: 3em; 
+                    margin-bottom: 1rem;
+                    line-height: 1.1;
+                    text-align: center;
+                    margin-bottom: 3rem;
+                ">
+                    CONTATTACI E DESCRIVICI LA TUA SITUAZIONE. VALUTEREMO CON TE SE L'OZONO È LA SOLUZIONE MIGLIORE.
+                </p>
+                <div class="m-flex" style="gap: 1rem; margin: 0 auto;">
+                    <div style="text-align: center;">
+                        <a href="/contatti.html" class="button-black-2" style="display: flex; align-items: center; gap: 0.5rem;">
+                            LAVORIAMO ASSIEME
+                        </a>
+                    </div>
+                </div>
+            </div>
         </section>
     '''
+                # margin-top: 8rem;
 
     ########################################
     # SETTORI
@@ -2460,17 +2599,20 @@ Se nel tuo processo produttivo stai registrando perdite di prodotto dovute a con
             <main class="home" id="contenuto-principale">
                 {hero_0001_html}
                 {what_0000_html}
-                {why_0000_html}
-                {emo_0000_html}
-                {who_0000_html}
-                {separator_html}
-                {components.footer_dark()}
+                {about_0000_html}
+                {cta_0000_html}
             </main>
+            <!-- =======================================
+                 FOOTER
+                 Include company info, legal, sitemap, social links
+            ======================================== -->
+            {components.footer_dark()}
         </body>
         </html>
     '''
     '''
-                {about_0000_html}
+                {why_0000_html}
+                {who_0000_html}
                 {grid_0000_html}
                 {grid_0001_html}
                 {grid_0002_html}
