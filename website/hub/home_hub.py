@@ -1389,6 +1389,124 @@ Ozonogroup progetta sistemi industriali a ozono da oltre 20 anni, concentrandosi
         </section>
     '''
 
+    offer_0000_html = f'''
+        <section 
+            style="
+                min-height: 50vh;
+                padding-top: 8rem; 
+                padding-bottom: 8rem; 
+            "
+        >
+            <div class="container-xl">
+                <div class="m-flex" style="gap: 5rem;">
+                    <div style="flex: 1; padding: 0 1rem;">
+                        <h2 style="
+                            font-family: 'Cormorant Garamond', serif; 
+                            letter-spacing: 3px;
+                            font-weight: 400;
+                            color: #1a1a1a; 
+                            margin-bottom: 1rem;
+                            font-size: 1.5rem; 
+                            padding: 0 1rem;
+                        ">
+                            cosa facciamo
+                        </h2>
+                        <h3 style="
+                            font-family: 'Cormorant Garamond', serif; 
+                            letter-spacing: -0.02em;
+                            font-weight: 500;
+                            color: #1a1a1a; 
+                            font-size: 3em; 
+                            margin-bottom: 1rem;
+                            padding: 0 1rem;
+                        ">
+                            ANALISI FATTIBILITA'
+                        </h3>
+                        <p class="container-lg"
+                            style="
+                            font-family: 'Manrope', sans-serif;
+                            font-size: 1rem;
+                            color: #1a1a1a;
+                            margin-bottom: 3rem;
+                        ">
+Non sai se l'ozono è la soluzione migliore per te? Abbiamo lavorato nel campo dell'ozono per 20+ anni e ci siamo imbattuti in molte situazioni in cui l'ozono non era la soluzione migliore, quindi siamo in grado di stimare se questa tecnologia fa al caso tuo o no. In questo modo, puoi evitare che la tua azienda faccia investimenti non vantaggiosi.
+                        </p>
+                        <h3 style="
+                            font-family: 'Cormorant Garamond', serif; 
+                            letter-spacing: -0.02em;
+                            font-weight: 500;
+                            color: #1a1a1a; 
+                            font-size: 3em; 
+                            margin-bottom: 1rem;
+                            padding: 0 1rem;
+                        ">
+                            SISTEMI AD-HOC
+                        </h3>
+                        <p class="container-lg"
+                            style="
+                            font-family: 'Manrope', sans-serif;
+                            font-size: 1rem;
+                            color: #1a1a1a;
+                            margin-bottom: 3rem;
+                        ">
+Se dopo una prima analisi di fattibilità riteniamo che l'ozono è la soluzione ottimale per te, svilupperemo il sistema a ozono ideale per la tua specifica applicazione. Questo sistema verrà progettato per essere facilmente integrato nel tuo processo produttivo e per darti un ritorno di investimento positivo nel modo più immediato possiblile.
+                        </p>
+                        <h3 style="
+                            font-family: 'Cormorant Garamond', serif; 
+                            letter-spacing: -0.02em;
+                            font-weight: 500;
+                            color: #1a1a1a; 
+                            font-size: 3em; 
+                            margin-bottom: 3rem;
+                            padding: 0 1rem;
+                        ">
+                            INSTALLAZIONI E MANUTENZIONI
+                        </h3>
+                        <p class="container-lg"
+                            style="
+                            font-family: 'Manrope', sans-serif;
+                            font-size: 1rem;
+                            color: #1a1a1a;
+                            margin-bottom: 1rem;
+                        ">
+Se ti trovi in questa situazione, un rimedio pratico è l'ozono.
+                        </p>
+                        <p class="container-lg"
+                            style="
+                            font-family: 'Manrope', sans-serif;
+                            font-size: 1rem;
+                            color: #1a1a1a;
+                            margin-bottom: 1rem;
+                        ">
+I sistemi industriali a ozono ti permettono di ridurre microbi e altri agenti patogeni in modo rapido ed ecologico.
+Come noto, l'ozono è una delle molecole con il più alto potere ossidante esistente (maggiore del cloro) e per questo disinfetta velocemente. In aggiunta, non lascia residui chimici sui prodotti, quindi aiuta a ridurre (o eliminare completamente) l'uso di sostanze chimiche come disinfettanti clorati, composti quaternari d'ammonio, altri biocidi chimici.
+                        </p>
+                    </div>
+                    <div style="flex: 1;">
+                        <p class="container-lg"
+                            style="
+                            font-family: 'Manrope', sans-serif;
+                            font-size: 1rem;
+                            color: #1a1a1a;
+                            margin-bottom: 1rem;
+                        ">
+Ozonogroup progetta sistemi industriali a ozono da oltre 20 anni, concentrandosi sul settore agroalimentare. Per questo motivo conosciamo bene i problemi di contaminazione che aziende come caseifici, salumifici e birrifici (per citarne alcuni) sono costrette ad affrontare giorno per giorno durante le fasi di lavorazione dei prodotti alimentari.
+                        </p>
+                        <p class="container-lg"
+                            style="
+                            font-family: 'Manrope', sans-serif;
+                            font-size: 1rem;
+                            color: #1a1a1a;
+                            margin-bottom: 1rem;
+                        ">
+                            Infatti, ci siamo specializzati nella realizzazione di attrezzature in grado di risolvere questi tuoi problemi in modo preciso e automatizzato. Puoi usare i nostri sistemi per produrre ozono ad alta purezza e a basso consumo energetico. nonche' di monitorare l'andamento del trattamento. In questo modo, con pochi test, sarai in grato di trovare la formula esatta per risolvere queste tue problematiche (o prevenirle). Perche siamo convinti che debba essere il sistema a ozono ad addattarsi al cliente, non viceversa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    '''
+
     # BENEFICI dell'OZONO
     # PERCHÉ
     why_0000_html = f'''
@@ -2600,6 +2718,7 @@ Ozonogroup progetta sistemi industriali a ozono da oltre 20 anni, concentrandosi
                 {hero_0001_html}
                 {what_0000_html}
                 {about_0000_html}
+                {offer_0000_html}
                 {cta_0000_html}
             </main>
             <!-- =======================================
