@@ -1,4 +1,4 @@
-def header_light():
+def header_light_old():
     html = f'''
         <nav class="navbar-light">
             <div class="logo"><a style="color: #222222;" href="/">Ozonogroup</a></div>
@@ -23,6 +23,30 @@ def header_light():
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M680-80v-120H560v-80h120v-120h80v120h120v80H760v120h-80Zm-480-80q-33 0-56.5-23.5T120-240v-480q0-33 23.5-56.5T200-800h40v-80h80v80h240v-80h80v80h40q33 0 56.5 23.5T760-720v244q-20-3-40-3t-40 3v-84H200v320h280q0 20 3 40t11 40H200Zm0-480h480v-80H200v80Zm0 0v-80 80Z"/></svg>
                 <span>Prenota Consulenza</span>
             </a>
+        </nav>
+    '''
+    return html
+
+def header_transparent():
+    html = f'''
+        <nav style="display: flex; justify-content: space-between; padding: 1rem 2rem;">
+            <a style="font-family: 'Manrope', sans-serif; color: #fff; text-decoration: none;" href="/">Ozonogroup</a></div>
+            <ul style="display: flex; gap: 1rem; list-style: none;">
+                <li><a style="font-family: 'Manrope', sans-serif; color: #fff; text-decoration: none;" href="/servizi.html">Servizi</a></li>
+                <li><a style="font-family: 'Manrope', sans-serif; color: #fff; text-decoration: none;" href="/contatti.html">Contatti</a></li>
+            </ul>
+        </nav>
+    '''
+    return html
+    
+def header_light():
+    html = f'''
+        <nav style="display: flex; justify-content: space-between; padding: 1rem 2rem;">
+            <a style="font-family: 'Manrope', sans-serif; color: #111; text-decoration: none;" href="/">Ozonogroup</a></div>
+            <ul style="display: flex; gap: 1rem; list-style: none;">
+                <li><a style="font-family: 'Manrope', sans-serif; color: #111; text-decoration: none;" href="/servizi.html">Servizi</a></li>
+                <li><a style="font-family: 'Manrope', sans-serif; color: #111; text-decoration: none;" href="/contatti.html">Contatti</a></li>
+            </ul>
         </nav>
     '''
     return html
@@ -154,6 +178,15 @@ def header_light_new():
                         Contatti
                     </a>
                 </li>
+                <li>
+                    <a style="
+                        font-family: 'Manrope', sans-serif; 
+                        color: #1a1a1a; 
+                        text-decoration: none;
+                    " href="/servizi.html">
+                        Servizi
+                    </a>
+                </li>
             </ul>
         </nav>
     '''
@@ -183,6 +216,15 @@ def header_dark_new():
                         text-decoration: none;
                     " href="/contatti.html">
                         Contatti
+                    </a>
+                </li>
+                <li>
+                    <a style="
+                        font-family: 'Manrope', sans-serif; 
+                        color: #1a1a1a; 
+                        text-decoration: none;
+                    " href="/servizi.html">
+                        Servizi
                     </a>
                 </li>
             </ul>

@@ -71,3 +71,6 @@ contatti_hub.gen()
 
 from hub import home_hub
 home_hub.gen()
+
+from hub import servizi_hub
+servizi_hub.gen()

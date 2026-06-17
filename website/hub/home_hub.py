@@ -241,7 +241,6 @@ def gen():
         </ection>
     '''
 
-
     ########################################
     # servizi
     ########################################
@@ -1201,12 +1200,7 @@ def gen():
             background-position: center; 
             background-size: cover;
         ">
-            <nav style="display: flex; justify-content: space-between; padding: 1rem 2rem;">
-                <a style="font-family: 'Manrope', sans-serif; color: #fff; text-decoration: none;" href="/">Ozonogroup</a></div>
-                <ul>
-                    <li><a style="font-family: 'Manrope', sans-serif; color: #fff; text-decoration: none;" href="/contatti.html">Contatti</a></li>
-                </ul>
-            </nav>
+            {components.header_transparent()}
             <div class="m-flex container-xl" style="flex-direction: column; justify-content: center; gap: 0rem; height: 96vh;">
                 <h1 style="font-family: 'Cormorant Garamond', serif; 
                     letter-spacing: -0.02em;
