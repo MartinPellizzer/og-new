@@ -538,6 +538,157 @@ Manteniamo il sistema efficiente nel tempo attraverso interventi programmati, co
             </div>
         </section>
     '''
+    img_src = f'https://images.unsplash.com/photo-1581091226507-ca552def2daf?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    processo_0000_html = f'''
+        <section style="padding-top: 8rem; padding-bottom: 8rem; background-color: #f4f6f8;">
+            <div class="container-xl">
+                <div class="m-flex" style="gap: 5rem;">
+                    <div style="flex: 1;">
+                        <img src="{img_src}">
+                    </div>
+                    <div style="flex: 1;">
+                        <h2 style="
+                            font-family: 'Cormorant Garamond', serif; 
+                            letter-spacing: 3px;
+                            font-weight: 400;
+                            color: #1a1a1a; 
+                            margin-bottom: 1rem;
+                            font-size: 1.5rem; 
+                            padding: 0 1rem;
+                        ">
+come funziona il processo
+                        </h2>
+                        <h3 style="
+                            font-family: 'Cormorant Garamond', serif; 
+                            letter-spacing: -0.02em;
+                            font-weight: 500;
+                            color: #1a1a1a; 
+                            font-size: 2rem; 
+                            margin-bottom: 1rem;
+                            padding: 0 1rem;
+                            text-transform: uppercase;
+                        ">
+1. Chiamata Conoscitiva
+                        </h3>
+                        <p class="container-lg"
+                            style="
+                            font-family: 'Manrope', sans-serif;
+                            font-size: 1rem;
+                            color: #1a1a1a;
+                            margin-bottom: 2rem;
+                        ">
+Analizziamo le esigenze della tua azienda e gli obiettivi che desideri raggiungere.
+                        </p>
+                        <h3 style="
+                            font-family: 'Cormorant Garamond', serif; 
+                            letter-spacing: -0.02em;
+                            font-weight: 500;
+                            color: #1a1a1a; 
+                            font-size: 2rem; 
+                            margin-bottom: 1rem;
+                            padding: 0 1rem;
+                            text-transform: uppercase;
+                        ">
+2. Sopralluogo Tecnico
+                        </h3>
+                        <p class="container-lg"
+                            style="
+                            font-family: 'Manrope', sans-serif;
+                            font-size: 1rem;
+                            color: #1a1a1a;
+                            margin-bottom: 2rem;
+                        ">
+Raccogliamo tutte le informazioni necessarie sul processo produttivo, sugli impianti esistenti e sulle criticità da risolvere.
+                        </p>
+                        <h3 style="
+                            font-family: 'Cormorant Garamond', serif; 
+                            letter-spacing: -0.02em;
+                            font-weight: 500;
+                            color: #1a1a1a; 
+                            font-size: 2rem; 
+                            margin-bottom: 1rem;
+                            padding: 0 1rem;
+                            text-transform: uppercase;
+                        ">
+3. Valutazione di Fattibilità
+                        </h3>
+                        <p class="container-lg"
+                            style="
+                            font-family: 'Manrope', sans-serif;
+                            font-size: 1rem;
+                            color: #1a1a1a;
+                            margin-bottom: 2rem;
+                        ">
+Verifichiamo la compatibilità della tecnologia a ozono con la tua applicazione e definiamo il potenziale beneficio operativo.
+                        </p>
+                        <h3 style="
+                            font-family: 'Cormorant Garamond', serif; 
+                            letter-spacing: -0.02em;
+                            font-weight: 500;
+                            color: #1a1a1a; 
+                            font-size: 2rem; 
+                            margin-bottom: 1rem;
+                            padding: 0 1rem;
+                            text-transform: uppercase;
+                        ">
+4. Progettazione del Sistema
+                        </h3>
+                        <p class="container-lg"
+                            style="
+                            font-family: 'Manrope', sans-serif;
+                            font-size: 1rem;
+                            color: #1a1a1a;
+                            margin-bottom: 2rem;
+                        ">
+Sviluppiamo una soluzione su misura ottimizzata per la tua realtà produttiva.
+                        </p>
+                        <h3 style="
+                            font-family: 'Cormorant Garamond', serif; 
+                            letter-spacing: -0.02em;
+                            font-weight: 500;
+                            color: #1a1a1a; 
+                            font-size: 2rem; 
+                            margin-bottom: 1rem;
+                            padding: 0 1rem;
+                            text-transform: uppercase;
+                        ">
+5. Installazione e Collaudo
+                        </h3>
+                        <p class="container-lg"
+                            style="
+                            font-family: 'Manrope', sans-serif;
+                            font-size: 1rem;
+                            color: #1a1a1a;
+                            margin-bottom: 2rem;
+                        ">
+Installiamo il sistema e ne verifichiamo le prestazioni attraverso test e controlli operativi.
+                        </p>
+                        <h3 style="
+                            font-family: 'Cormorant Garamond', serif; 
+                            letter-spacing: -0.02em;
+                            font-weight: 500;
+                            color: #1a1a1a; 
+                            font-size: 2rem; 
+                            margin-bottom: 1rem;
+                            padding: 0 1rem;
+                            text-transform: uppercase;
+                        ">
+6. Supporto Continuativo
+                        </h3>
+                        <p class="container-lg"
+                            style="
+                            font-family: 'Manrope', sans-serif;
+                            font-size: 1rem;
+                            color: #1a1a1a;
+                            margin-bottom: 2rem;
+                        ">
+Forniamo assistenza tecnica e manutenzione programmata per garantire risultati costanti nel tempo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    '''
     ########################################
     # html
     ########################################
@@ -558,6 +709,7 @@ Manteniamo il sistema efficiente nel tempo attraverso interventi programmati, co
                 {hero_html}
                 {intro_html}
                 {servizi_0000_html}
+                {processo_0000_html}
             </main>
             {components.footer_dark()}
         </body>
