@@ -331,6 +331,27 @@ def gen():
             </div>
         </section>
     '''
+    opacity = 0.4
+    hero_0001_html = f'''
+        <section 
+            style="
+            background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('/immagini/home/uva-0000.png');   
+            background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('https://images.unsplash.com/photo-1543257580-7269da773bf5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');   
+            background-position: center; 
+            background-size: cover;
+        ">
+            {components.header_transparent()}
+            <div class="m-flex container-xl" style="flex-direction: column; justify-content: center; gap: 0rem; height: 96vh;">
+                <h1 style="{style_big} color: #fff;">
+                    SISTEMI INDUSTRIALI A OZONO PERSONALIZZATI</br>
+                    <span style="{style_small} color: #fff;">
+                        PER AZIENDE AGROALIMENTARI CHE VOGLIONO MIGLIORARE IL LORO PROCESSO PRODUTTIVO
+                    </span>
+                </h1>
+            </div>
+        </section>
+    '''
+
     intro_html = f'''
         <section 
             style="
@@ -701,7 +722,8 @@ Forniamo assistenza tecnica e manutenzione programmata per garantire risultati c
     for_who_0000_html = f'''
         <section style="
                 height: 100vh;
-                background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('                        https://images.unsplash.com/photo-1637181156153-bedd1098f8c1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg');   
+                background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('https://images.unsplash.com/photo-1637181156153-bedd1098f8c1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg');   
+                background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('https://images.unsplash.com/photo-1533077162801-86490c593afb?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');   
                 background-position: center; 
                 background-size: cover;
                 display: flex;
@@ -752,22 +774,22 @@ Forniamo assistenza tecnica e manutenzione programmata per garantire risultati c
                             "
                         >
                             <li {style_text}>
-                                Ridurre il rischio di contaminazioni microbiologiche.
+                                Ridurre il rischio di contaminazioni
                             </li>
                             <li {style_text}>
-                                Migliorare la sicurezza alimentare.
+                                Migliorare la sicurezza alimentare
                             </li>
                             <li {style_text}>
-                                Aumentare la shelf life dei prodotti.
+                                Aumentare la shelf life dei prodotti
                             </li>
                             <li {style_text}>
-                                Ottimizzare i processi di sanificazione.
+                                Ottimizzare i processi produttivi
                             </li>
                             <li {style_text}>
-                                Integrare tecnologie innovative nei processi produttivi.
+                                Integrare tecnologie innovative nei processi
                             </li>
                             <li {style_text}>
-                                Affidarsi a un partner specializzato nel settore agroalimentare.
+                                Affidarsi a un partner specializzato nel settore agroalimentare
                             </li>
                         </ul>
                 </div>
@@ -786,7 +808,7 @@ Forniamo assistenza tecnica e manutenzione programmata per garantire risultati c
                         line-height: 1.1;
                         text-transform: uppercase;
                     ">
-                        Non è il servizio giusto per te se
+                        Non è il servizio ottimale per te se
                     </h2>
                         <ul 
                             style="
@@ -797,16 +819,16 @@ Forniamo assistenza tecnica e manutenzione programmata per garantire risultati c
                             "
                         >
                             <li {style_text}>
-                                Sei un privato.
+                                Sei un privato
                             </li>
                             <li {style_text}>
-                                Cerchi soluzioni standard non personalizzate.
+                                Cerchi soluzioni standard, quindi non idonee per l'utilizzo industriale
                             </li>
                             <li {style_text}>
-                                Non hai la possibilità di integrare nuove tecnologie nei tuoi processi produttivi.
+                                Non hai la possibilità di integrare nuove tecnologie nei tuoi processi produttivi
                             </li>
                             <li {style_text}>
-                                Stai cercando semplicemente un fornitore di apparecchiature senza supporto tecnico e consulenziale.
+                                Stai cercando semplicemente un fornitore di apparecchiature senza supporto tecnico e consulenziale
                             </li>
                         </ul>
                 </div>
@@ -830,7 +852,7 @@ Forniamo assistenza tecnica e manutenzione programmata per garantire risultati c
         </head>
         <body>
             <main>
-                {hero_html}
+                {hero_0001_html}
                 {intro_html}
                 {servizi_0000_html}
                 {processo_0000_html}
