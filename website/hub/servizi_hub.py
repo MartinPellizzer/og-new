@@ -689,6 +689,130 @@ Forniamo assistenza tecnica e manutenzione programmata per garantire risultati c
             </div>
         </section>
     '''
+
+    style_text = f'''
+        style="
+            font-family: 'Manrope', sans-serif;
+            font-size: 1rem;
+            color: #1a1a1a;
+        "
+    '''
+    opacity = 0.3
+    for_who_0000_html = f'''
+        <section style="
+                height: 100vh;
+                background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('                        https://images.unsplash.com/photo-1637181156153-bedd1098f8c1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg');   
+                background-position: center; 
+                background-size: cover;
+                display: flex;
+                align-items: center;
+            ">
+            <div 
+                class="
+                    grid-2
+                    container-xl
+                " 
+                style="
+                    gap: 5rem;
+                "
+            >
+                <div 
+                    style="
+                        background-color: #ffffff;
+                        padding: 3rem;
+                    "
+                >
+                    <h2 style="font-family: 'Cormorant Garamond', serif; 
+                        letter-spacing: -0.02em;
+                        font-weight: 500;
+                        color: #1a1a1a; 
+                        font-size: 3rem; 
+                        margin-bottom: 1rem;
+                        line-height: 1.1;
+                        text-transform: uppercase;
+                    ">
+                        Per Chi è Indicato
+                    </h2>
+                        <p
+                            style="
+                                font-family: 'Manrope', sans-serif;
+                                font-size: 1rem;
+                                color: #1a1a1a;
+                                margin-bottom: 1rem;
+                            "
+                        >
+                            I nostri sistemi industriali a ozono sono particolarmente adatti per aziende agroalimentari che desiderano:
+                        </p>
+                        <ul 
+                            style="
+                                margin-left: 1.5rem;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 0.5rem;
+                            "
+                        >
+                            <li {style_text}>
+                                Ridurre il rischio di contaminazioni microbiologiche.
+                            </li>
+                            <li {style_text}>
+                                Migliorare la sicurezza alimentare.
+                            </li>
+                            <li {style_text}>
+                                Aumentare la shelf life dei prodotti.
+                            </li>
+                            <li {style_text}>
+                                Ottimizzare i processi di sanificazione.
+                            </li>
+                            <li {style_text}>
+                                Integrare tecnologie innovative nei processi produttivi.
+                            </li>
+                            <li {style_text}>
+                                Affidarsi a un partner specializzato nel settore agroalimentare.
+                            </li>
+                        </ul>
+                </div>
+                <div 
+                    style="
+                        background-color: #ffffff;
+                        padding: 3rem;
+                    "
+                >
+                    <h2 style="font-family: 'Cormorant Garamond', serif; 
+                        letter-spacing: -0.02em;
+                        font-weight: 500;
+                        color: #1a1a1a; 
+                        font-size: 3rem; 
+                        margin-bottom: 1rem;
+                        line-height: 1.1;
+                        text-transform: uppercase;
+                    ">
+                        Non è il servizio giusto per te se
+                    </h2>
+                        <ul 
+                            style="
+                                margin-left: 1.5rem;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 0.5rem;
+                            "
+                        >
+                            <li {style_text}>
+                                Sei un privato.
+                            </li>
+                            <li {style_text}>
+                                Cerchi soluzioni standard non personalizzate.
+                            </li>
+                            <li {style_text}>
+                                Non hai la possibilità di integrare nuove tecnologie nei tuoi processi produttivi.
+                            </li>
+                            <li {style_text}>
+                                Stai cercando semplicemente un fornitore di apparecchiature senza supporto tecnico e consulenziale.
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        </section>
+    '''
     ########################################
     # html
     ########################################
@@ -710,6 +834,7 @@ Forniamo assistenza tecnica e manutenzione programmata per garantire risultati c
                 {intro_html}
                 {servizi_0000_html}
                 {processo_0000_html}
+                {for_who_0000_html}
             </main>
             {components.footer_dark()}
         </body>
