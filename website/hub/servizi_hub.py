@@ -835,6 +835,180 @@ Forniamo assistenza tecnica e manutenzione programmata per garantire risultati c
             </div>
         </section>
     '''
+    why_us_0000_html = f'''
+        <section 
+            style="
+                min-height: 50vh;
+                padding-top: 8rem; 
+                padding-bottom: 8rem; 
+            "
+        >
+            <div class="container-xl">
+                <h2 style="
+                    font-family: 'Cormorant Garamond', serif; 
+                    letter-spacing: 3px;
+                    font-weight: 400;
+                    color: #1a1a1a; 
+                    margin-bottom: 1rem;
+                    font-size: 1.5rem; 
+                    padding: 0 1rem;
+                ">
+                    perché scegliere noi
+                </h2>
+                <div class="grid-2" style="gap: 5rem;">
+                    <div>
+                        <h3 style="
+                            font-family: 'Cormorant Garamond', serif; 
+                            letter-spacing: -0.02em;
+                            font-weight: 500;
+                            color: #1a1a1a; 
+                            font-size: 3em; 
+                            margin-bottom: 1rem;
+                            padding: 0 1rem;
+                            text-transform: uppercase;
+                        ">
+                            Oltre 20 Anni di Esperienza
+                        </h3>
+                        <p class="container-lg"
+                            style="
+                            font-family: 'Manrope', sans-serif;
+                            font-size: 1rem;
+                            color: #1a1a1a;
+                        ">
+Da oltre due decenni supportiamo aziende agroalimentari nell'implementazione di soluzioni basate sull'ozono.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 style="
+                            font-family: 'Cormorant Garamond', serif; 
+                            letter-spacing: -0.02em;
+                            font-weight: 500;
+                            color: #1a1a1a; 
+                            font-size: 3em; 
+                            margin-bottom: 1rem;
+                            padding: 0 1rem;
+                            text-transform: uppercase;
+                        ">
+                            Specializzazione nel Settore Alimentare
+                        </h3>
+                        <p class="container-lg"
+                            style="
+                            font-family: 'Manrope', sans-serif;
+                            font-size: 1rem;
+                            color: #1a1a1a;
+                        ">
+Conosciamo le problematiche specifiche dell'industria alimentare e progettiamo soluzioni pensate per rispondere alle sue esigenze operative.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 style="
+                            font-family: 'Cormorant Garamond', serif; 
+                            letter-spacing: -0.02em;
+                            font-weight: 500;
+                            color: #1a1a1a; 
+                            font-size: 3em; 
+                            margin-bottom: 1rem;
+                            padding: 0 1rem;
+                            text-transform: uppercase;
+                        ">
+                            Soluzioni Su Misura
+                        </h3>
+                        <p class="container-lg"
+                            style="
+                            font-family: 'Manrope', sans-serif;
+                            font-size: 1rem;
+                            color: #1a1a1a;
+                        ">
+Ogni sistema viene progettato sulla base della tua applicazione, dei tuoi processi e dei risultati che desideri ottenere.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 style="
+                            font-family: 'Cormorant Garamond', serif; 
+                            letter-spacing: -0.02em;
+                            font-weight: 500;
+                            color: #1a1a1a; 
+                            font-size: 3em; 
+                            margin-bottom: 1rem;
+                            padding: 0 1rem;
+                            text-transform: uppercase;
+                        ">
+                            Supporto Completo
+                        </h3>
+                        <p class="container-lg"
+                            style="
+                            font-family: 'Manrope', sans-serif;
+                            font-size: 1rem;
+                            color: #1a1a1a;
+                        ">
+Ti accompagniamo dalla valutazione iniziale fino alla manutenzione programmata dell'impianto.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    '''
+    cta_0000_html = f'''
+        <section 
+            style="
+                min-height: 50vh;
+                padding-top: 8rem; 
+                padding-bottom: 8rem; 
+                background-color: #f8f9fa;
+            "
+        >
+            <div class="container-xl">
+                <div class="m-flex" style="gap: 5rem;">
+                    <div style="flex: 1; padding: 0 1rem;">
+                        <h2 style="
+                            font-family: 'Cormorant Garamond', serif; 
+                            letter-spacing: -0.02em;
+                            font-weight: 500;
+                            color: #1a1a1a; 
+                            font-size: 3em; 
+                            margin-bottom: 1rem;
+                            text-transform: uppercase;
+                        ">
+                            Prenota una Chiamata Conoscitiva
+                        </h2>
+                        <div>
+                            <a href="/contatti.html" class="button-black-ghost-2">
+                                PRENOTA
+                            </a>
+                        </div>
+                    </div>
+                    <div style="flex: 1;">
+                        <p class="container-lg"
+                            style="
+                            font-family: 'Manrope', sans-serif;
+                            font-size: 1rem;
+                            color: #1a1a1a;
+                            margin-bottom: 1rem;
+                        ">
+Scopri se un sistema industriale a ozono può aiutare la tua azienda a ridurre le contaminazioni, migliorare la sicurezza alimentare e aumentare la shelf life dei tuoi prodotti.                        </p>
+                        <p class="container-lg"
+                            style="
+                            font-family: 'Manrope', sans-serif;
+                            font-size: 1rem;
+                            color: #1a1a1a;
+                            margin-bottom: 1rem;
+                        ">
+Durante la chiamata analizzeremo la tua applicazione, valuteremo le opportunità di integrazione della tecnologia e ti forniremo un primo orientamento tecnico senza impegno.
+                        </p>
+                        <p class="container-lg"
+                            style="
+                            font-family: 'Manrope', sans-serif;
+                            font-size: 1rem;
+                            color: #1a1a1a;
+                            margin-bottom: 1rem;
+                        ">
+Prenota ora una chiamata conoscitiva e scopri la soluzione più adatta alla tua realtà produttiva.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    '''
     ########################################
     # html
     ########################################
@@ -857,6 +1031,8 @@ Forniamo assistenza tecnica e manutenzione programmata per garantire risultati c
                 {servizi_0000_html}
                 {processo_0000_html}
                 {for_who_0000_html}
+                {why_us_0000_html}
+                {cta_0000_html}
             </main>
             {components.footer_dark()}
         </body>
