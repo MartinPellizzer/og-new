@@ -66,11 +66,15 @@ if 0:
     from hub import prodotti_hub
     prodotti_hub.gen()
 
-from hub import contatti_hub
-contatti_hub.gen()
 
 from hub import home_hub
 home_hub.gen()
 
 from hub import servizi_hub
 servizi_hub.gen()
+
+from hub import chi_siamo_hub
+chi_siamo_hub.gen()
+
+from hub import contatti_hub
+contatti_hub.gen()

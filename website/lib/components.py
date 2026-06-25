@@ -33,6 +33,7 @@ def header_transparent():
             <a style="font-family: 'Manrope', sans-serif; color: #fff; text-decoration: none;" href="/">Ozonogroup</a></div>
             <ul style="display: flex; gap: 1rem; list-style: none;">
                 <li><a style="font-family: 'Manrope', sans-serif; color: #fff; text-decoration: none;" href="/servizi.html">Servizi</a></li>
+                <li><a style="font-family: 'Manrope', sans-serif; color: #fff; text-decoration: none;" href="/chi-siamo.html">Chi Siamo</a></li>
                 <li><a style="font-family: 'Manrope', sans-serif; color: #fff; text-decoration: none;" href="/contatti.html">Contatti</a></li>
             </ul>
         </nav>
