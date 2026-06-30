@@ -1,0 +1,194 @@
+{
+    "x": 0,
+    "y": 0,
+    "things": [
+        {
+            "id": "2",
+            "kind": "node",
+            "text": "",
+            "text_lines": [
+                "Sensore Ossigeno US1010"
+            ],
+            "x": 600,
+            "y": 256,
+            "w": 0,
+            "h": 0,
+            "w_min": 32,
+            "h_min": 8,
+            "focus": false,
+            "node_start": null,
+            "node_end": null,
+            "edge_direction": 0
+        },
+        {
+            "id": "4",
+            "kind": "node",
+            "text": "",
+            "text_lines": [
+                "Modulo Monitoraggio Ossigeno"
+            ],
+            "x": 584,
+            "y": 296,
+            "w": 0,
+            "h": 0,
+            "w_min": 32,
+            "h_min": 8,
+            "focus": false,
+            "node_start": null,
+            "node_end": null,
+            "edge_direction": 0
+        },
+        {
+            "id": "5",
+            "kind": "node",
+            "text": "",
+            "text_lines": [
+                "Display"
+            ],
+            "x": 528,
+            "y": 336,
+            "w": 0,
+            "h": 0,
+            "w_min": 32,
+            "h_min": 8,
+            "focus": false,
+            "node_start": null,
+            "node_end": null,
+            "edge_direction": 0
+        },
+        {
+            "id": "6",
+            "kind": "node",
+            "text": "",
+            "text_lines": [
+                "RS485"
+            ],
+            "x": 640,
+            "y": 336,
+            "w": 0,
+            "h": 0,
+            "w_min": 32,
+            "h_min": 8,
+            "focus": false,
+            "node_start": null,
+            "node_end": null,
+            "edge_direction": 0
+        },
+        {
+            "id": "7",
+            "kind": "node",
+            "text": "",
+            "text_lines": [
+                "Uscita 0-10 V (x3)"
+            ],
+            "x": 712,
+            "y": 336,
+            "w": 0,
+            "h": 0,
+            "w_min": 32,
+            "h_min": 8,
+            "focus": false,
+            "node_start": null,
+            "node_end": null,
+            "edge_direction": 0
+        },
+        {
+            "id": "8",
+            "kind": "node",
+            "text": "",
+            "text_lines": [
+                "Sistema Controllo Principale"
+            ],
+            "x": 584,
+            "y": 376,
+            "w": 0,
+            "h": 0,
+            "w_min": 32,
+            "h_min": 8,
+            "focus": false,
+            "node_start": null,
+            "node_end": null,
+            "edge_direction": 0
+        },
+        {
+            "id": "9",
+            "kind": "edge",
+            "text": "",
+            "text_lines": [],
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "w_min": 0,
+            "h_min": 0,
+            "focus": false,
+            "node_start": "2",
+            "node_end": "4",
+            "edge_direction": 0
+        },
+        {
+            "id": "10",
+            "kind": "edge",
+            "text": "",
+            "text_lines": [],
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "w_min": 0,
+            "h_min": 0,
+            "focus": false,
+            "node_start": "4",
+            "node_end": "6",
+            "edge_direction": 0
+        },
+        {
+            "id": "11",
+            "kind": "edge",
+            "text": "",
+            "text_lines": [],
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "w_min": 0,
+            "h_min": 0,
+            "focus": false,
+            "node_start": "4",
+            "node_end": "5",
+            "edge_direction": 0
+        },
+        {
+            "id": "12",
+            "kind": "edge",
+            "text": "",
+            "text_lines": [],
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "w_min": 0,
+            "h_min": 0,
+            "focus": false,
+            "node_start": "4",
+            "node_end": "7",
+            "edge_direction": 0
+        },
+        {
+            "id": "13",
+            "kind": "edge",
+            "text": "",
+            "text_lines": [],
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "w_min": 0,
+            "h_min": 0,
+            "focus": false,
+            "node_start": "6",
+            "node_end": "8",
+            "edge_direction": 0
+        }
+    ]
+}
