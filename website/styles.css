@@ -85,8 +85,22 @@ img {
     height: auto;
 }
 
-h1 {
-    color: #1a1a1a;
+/* *************************************************** */
+/* ELEMENTS */
+/* *************************************************** */
+
+.s {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+}
+
+.s-bg {
+    background-color: #f2f4f6;
+}
+
+h1,
+.t-h-lg {
+    color: #111;
     font-family: 'Cormorant Garamond', serif;
     font-size: 5rem;
     font-weight: 500;
@@ -100,17 +114,18 @@ h2,
     font-family: 'Cormorant Garamond', serif;
     letter-spacing: -0.02em;
     font-weight: 500;
-    color: #1a1a1a;
+    color: #111;
     font-size: 3em;
     margin-bottom: 3rem;
     line-height: 1.2;
 }
 
-h3 {
+h3,
+.t-h-sm {
     font-family: 'Cormorant Garamond', serif;
     letter-spacing: -0.02em;
     font-weight: 400;
-    color: #1a1a1a;
+    color: #111;
     font-size: 2.5em;
     line-height: 1.2;
     margin-bottom: 1rem;
@@ -118,7 +133,8 @@ h3 {
 
 
 .sup-h {
-    color: #1a1a1a;
+    display: inline-block;
+    color: #111;
     margin-bottom: 1rem;
     font-size: 1.5rem;
 
@@ -181,6 +197,12 @@ th {
 .grid-5 {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+}
+
+.grid-3-0000 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
 }
 
 .rtl {
@@ -1102,9 +1124,42 @@ header .logo img {
         margin-bottom: 1rem;
     }
 
+    .grid-3-0000 {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 3rem;
+    }
+
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
+
+    .s {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    h1,
+    .t-h-lg {
+        font-size: 2.5rem;
+    }
+
+    h2,
+    .t-h-md {
+        font-size: 2.0rem;
+        margin-bottom: 1rem;
+    }
+
+    h3,
+    .t-h-sm {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .sup-h {
+        font-size: 1.5rem;
+    }
+
     .grid-2 {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
@@ -1125,7 +1180,8 @@ header .logo img {
         grid-template-columns: repeat(1, 1fr);
     }
 
-    .flex {
+    .m-flex {
+        display: flex;
         flex-direction: column;
     }
 }

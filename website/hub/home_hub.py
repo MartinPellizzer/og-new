@@ -20,7 +20,7 @@ def gen():
             {components.header_transparent()}
             <div class="m-flex container-xl" style="flex-direction: column; justify-content: center; gap: 0rem; height: 96vh;">
                 <h1 style="color: #fff; text-align: center;">
-                    <span class="sup-h" style="color: #ffffff; font-size: 2rem;">
+                    <span class="sup-h" style="color: #ffffff;">
                     sistemi industriali a ozono:</span>
                     <br>
                     MIGLIORA LA TUA PRODUZIONE AGROALIMENTARE
@@ -39,7 +39,7 @@ def gen():
     img_src = 'https://images.unsplash.com/photo-1591268315196-2c9b815d71cd?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     img_src = 'https://images.unsplash.com/photo-1518994603110-1912b3272afd?q=80&w=848&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     what_0000_html = f'''
-        <section style="margin-top: 8rem; padding-bottom: 8rem;">
+        <section class="s">
             <div class="container-xl">
                 <div class="m-flex" style="gap: 5rem;">
                     <div style="flex: 1;">
@@ -73,14 +73,7 @@ Come noto, l'ozono è una delle molecole con il più alto potere ossidante esist
     '''
 
     about_0000_html = f'''
-        <section 
-            style="
-                min-height: 50vh;
-                padding-top: 8rem; 
-                padding-bottom: 8rem; 
-                background-color: #f8f9fa;
-            "
-        >
+        <section class="s s-bg">
             <div class="container-xl">
                 <div class="m-flex" style="gap: 5rem;">
                     <div style="flex: 1;">
@@ -110,17 +103,12 @@ Infatti, ci siamo specializzati nella realizzazione di attrezzature in grado di 
     '''
 
     offer_0000_html = f'''
-        <section 
-            style="
-                padding-top: 8rem; 
-                padding-bottom: 8rem; 
-            "
-        >
+        <section class="s">
             <div class="container-xl">
                 <h2 class="sup-h">
 cosa facciamo
                 </h2>
-                <div class="m-flex" style="gap: 5rem;">
+                <div class="grid-3-0000">
                     <div style="flex: 1;">
                         <h3>
 ANALISI FATTIBILITÀ
