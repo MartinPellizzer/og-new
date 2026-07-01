@@ -342,26 +342,12 @@ def gen():
         ">
             {components.header_transparent()}
             <div class="m-flex container-xl" style="flex-direction: column; justify-content: center; gap: 0rem; height: 96vh;">
-                <h1 style="{style_big} color: #fff;">
-                    SISTEMI INDUSTRIALI A OZONO PERSONALIZZATI</br>
-                    <span style="{style_small} color: #fff;">
-                        PER AZIENDE AGROALIMENTARI CHE VOGLIONO MIGLIORARE IL LORO PROCESSO PRODUTTIVO
-                    </span>
-                </h1>
-            </div>
-        </section>
-    '''
-
-    intro_html = f'''
-        <section 
-            style="
-        ">
-            {components.header_dark_new()}
-            <div class="m-flex container-xl" style="flex-direction: column; justify-content: center; gap: 0rem; height: 96vh;">
-                <h1 style="{style_big}">
-                    SISTEMI INDUSTRIALI A OZONO PERSONALIZZATI</br>
-                    <span style="{style_small}">
-                        PER AZIENDE AGROALIMENTARI CHE VOGLIONO MIGLIORARE IL LORO PROCESSO PRODUTTIVO
+                <h1 style="color: #fff; text-align: center;">
+                    <span style="display: inline-block; margin-bottom: 1rem;">
+SISTEMI INDUSTRIALI A OZONO PERSONALIZZATI
+                    <span>
+                    <span class="sup-h" style="display: inline-block; color: #fff;">
+per aziende agroalimentari che vogliono migliorare il loro processo produttivo
                     </span>
                 </h1>
             </div>
@@ -372,47 +358,20 @@ def gen():
         https://images.unsplash.com/photo-1584056866693-1f9d42e9feb6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
     '''
     intro_html = f'''
-        <section style="padding-top: 8rem; padding-bottom: 8rem; background-color: #f4f6f8;">
+        <section class="s s-bg">
             <div class="container-xl">
                 <div class="m-flex" style="gap: 5rem;">
                     <div style="flex: 1;">
-                        <h2 style="
-                            font-family: 'Cormorant Garamond', serif; 
-                            letter-spacing: -0.02em;
-                            font-weight: 500;
-                            color: #1a1a1a; 
-                            font-size: 2.5em; 
-                            margin-bottom: 3rem;
-                            padding: 0 1rem;
-                            text-transform: uppercase;
-                        ">
+                        <h2 style="text-transform: uppercase;">
 Riduci le contaminazioni e aumenta la sicurezza alimentare con sistemi industriali a ozono progettati per la tua produzione
                         </h2>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 1rem;
-                        ">
+                        <p>
 Le contaminazioni microbiologiche rappresentano una delle principali minacce per le aziende agroalimentari. Un singolo problema lungo il processo produttivo può compromettere la qualità del prodotto, ridurne la shelf life e generare costi significativi legati a scarti, richiami o fermi produttivi.
                         </p>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 1rem;
-                        ">
+                        <p>
 I sistemi industriali a ozono offrono una soluzione efficace per migliorare l'igiene dei processi, ridurre la carica microbiologica e contribuire a elevare gli standard di sicurezza alimentare.
                         </p>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 1rem;
-                        ">
+                        <p>
 Con oltre 20 anni di esperienza nel settore agroalimentare, progettiamo e realizziamo impianti a ozono personalizzati in base alle esigenze operative, produttive e normative della tua azienda.
                         </p>
                     </div>
@@ -423,135 +382,43 @@ Con oltre 20 anni di esperienza nel settore agroalimentare, progettiamo e realiz
             </div>
         </section>
     '''
-                    # <div class="m-flex" style="gap: 1rem; margin: 0 auto;">
-                    #     <div style="text-align: center;">
-                    #         <span class="button-black-2" style="display: flex; align-items: center; gap: 0.5rem;">
-                    #             <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20" fill="#ffffff">
-                    #                 <path
-                    #                     d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z" />
-                    #             </svg>
-                    #             <span style="text-transform: capitalize;">Email: </span>
-                    #             <span style="text-transform: lowercase;">info@ozonogroup.it</span>
-                    #         </span>
-                    #     </div>
-                    # </div>
-                    # <div style="text-align: center;">
-                    #     <span class="button-black-ghost-2" style="display: flex; align-items: center; gap: 0.5rem;">
-                    #         <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20" fill="#1a1a1a">
-                    #             <path
-                    #                 d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z" />
-                    #         </svg>
-                    #         <span style="text-transform: capitalize;">Telefono: </span>
-                    #         <span style="text-transform: lowercase;">+39 0423 952833</span>
-                    #     </span>
-                    # </div>
 
     servizi_0000_html = f'''
-        <section 
-            style="
-                min-height: 50vh;
-                padding-top: 8rem; 
-                padding-bottom: 8rem; 
-            "
-        >
+        <section class="s">
             <div class="container-xl">
-                <h2 style="
-                    font-family: 'Cormorant Garamond', serif; 
-                    letter-spacing: 3px;
-                    font-weight: 400;
-                    color: #1a1a1a; 
-                    margin-bottom: 1rem;
-                    font-size: 1.5rem; 
-                    padding: 0 1rem;
-                ">
-                    i nostri sevizi
+                <h2 class="sup-h">
+i nostri sevizi
                 </h2>
-                <div class="grid-2" style="gap: 5rem;">
+                <div class="grid-2-0000">
                     <div>
-                        <h3 style="
-                            font-family: 'Cormorant Garamond', serif; 
-                            letter-spacing: -0.02em;
-                            font-weight: 500;
-                            color: #1a1a1a; 
-                            font-size: 3em; 
-                            margin-bottom: 1rem;
-                            padding: 0 1rem;
-                            text-transform: uppercase;
-                        ">
+                        <h3 style="text-transform: uppercase;">
                             Analisi
                         </h3>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                        ">
+                        <p>
 Valutiamo il tuo processo produttivo, le criticità esistenti e le opportunità di integrazione della tecnologia a ozono. L'obiettivo è determinare se l'applicazione è tecnicamente ed economicamente vantaggiosa e individuare la soluzione più efficace per il tuo contesto produttivo.
                         </p>
                     </div>
                     <div>
-                        <h3 style="
-                            font-family: 'Cormorant Garamond', serif; 
-                            letter-spacing: -0.02em;
-                            font-weight: 500;
-                            color: #1a1a1a; 
-                            font-size: 3em; 
-                            margin-bottom: 1rem;
-                            padding: 0 1rem;
-                            text-transform: uppercase;
-                        ">
-                            Progettazione
+                        <h3 style="text-transform: uppercase;">
+Progettazione
                         </h3>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                        ">
+                        <p>
 Ogni impianto viene progettato sulla base delle caratteristiche specifiche della tua produzione. Dimensioniamo il sistema in funzione dei volumi, delle modalità operative, degli obiettivi di sanificazione e delle esigenze di integrazione con gli impianti esistenti.
                         </p>
                     </div>
                     <div>
-                        <h3 style="
-                            font-family: 'Cormorant Garamond', serif; 
-                            letter-spacing: -0.02em;
-                            font-weight: 500;
-                            color: #1a1a1a; 
-                            font-size: 3em; 
-                            margin-bottom: 1rem;
-                            padding: 0 1rem;
-                            text-transform: uppercase;
-                        ">
-                            Installazione
+                        <h3 style="text-transform: uppercase;">
+Installazione
                         </h3>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                        ">
+                        <p>
 Seguiamo tutte le fasi di installazione e collaudo per garantire il corretto funzionamento del sistema e la piena integrazione nei processi produttivi.
                         </p>
                     </div>
                     <div>
-                        <h3 style="
-                            font-family: 'Cormorant Garamond', serif; 
-                            letter-spacing: -0.02em;
-                            font-weight: 500;
-                            color: #1a1a1a; 
-                            font-size: 3em; 
-                            margin-bottom: 1rem;
-                            padding: 0 1rem;
-                            text-transform: uppercase;
-                        ">
-                            Assistenza
+                        <h3 style="text-transform: uppercase;">
+Assistenza
                         </h3>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                        ">
+                        <p>
 Manteniamo il sistema efficiente nel tempo attraverso interventi programmati, controlli periodici e supporto tecnico specializzato.
                         </p>
                     </div>
@@ -561,148 +428,50 @@ Manteniamo il sistema efficiente nel tempo attraverso interventi programmati, co
     '''
     img_src = f'https://images.unsplash.com/photo-1581091226507-ca552def2daf?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     processo_0000_html = f'''
-        <section style="padding-top: 8rem; padding-bottom: 8rem; background-color: #f4f6f8;">
+        <section class="s s-bg">
             <div class="container-xl">
                 <div class="m-flex" style="gap: 5rem;">
                     <div style="flex: 1;">
                         <img src="{img_src}">
                     </div>
                     <div style="flex: 1;">
-                        <h2 style="
-                            font-family: 'Cormorant Garamond', serif; 
-                            letter-spacing: 3px;
-                            font-weight: 400;
-                            color: #1a1a1a; 
-                            margin-bottom: 1rem;
-                            font-size: 1.5rem; 
-                            padding: 0 1rem;
-                        ">
+                        <h2 class="sup-h">
 come funziona il processo
                         </h2>
-                        <h3 style="
-                            font-family: 'Cormorant Garamond', serif; 
-                            letter-spacing: -0.02em;
-                            font-weight: 500;
-                            color: #1a1a1a; 
-                            font-size: 2rem; 
-                            margin-bottom: 1rem;
-                            padding: 0 1rem;
-                            text-transform: uppercase;
-                        ">
+                        <h3 style="text-transform: uppercase;">
 1. Chiamata Conoscitiva
                         </h3>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 2rem;
-                        ">
+                        <p>
 Analizziamo le esigenze della tua azienda e gli obiettivi che desideri raggiungere.
                         </p>
-                        <h3 style="
-                            font-family: 'Cormorant Garamond', serif; 
-                            letter-spacing: -0.02em;
-                            font-weight: 500;
-                            color: #1a1a1a; 
-                            font-size: 2rem; 
-                            margin-bottom: 1rem;
-                            padding: 0 1rem;
-                            text-transform: uppercase;
-                        ">
+                        <h3 style="text-transform: uppercase;">
 2. Sopralluogo Tecnico
                         </h3>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 2rem;
-                        ">
+                        <p>
 Raccogliamo tutte le informazioni necessarie sul processo produttivo, sugli impianti esistenti e sulle criticità da risolvere.
                         </p>
-                        <h3 style="
-                            font-family: 'Cormorant Garamond', serif; 
-                            letter-spacing: -0.02em;
-                            font-weight: 500;
-                            color: #1a1a1a; 
-                            font-size: 2rem; 
-                            margin-bottom: 1rem;
-                            padding: 0 1rem;
-                            text-transform: uppercase;
-                        ">
+                        <h3 style="text-transform: uppercase;">
 3. Valutazione di Fattibilità
                         </h3>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 2rem;
-                        ">
+                        <p>
 Verifichiamo la compatibilità della tecnologia a ozono con la tua applicazione e definiamo il potenziale beneficio operativo.
                         </p>
-                        <h3 style="
-                            font-family: 'Cormorant Garamond', serif; 
-                            letter-spacing: -0.02em;
-                            font-weight: 500;
-                            color: #1a1a1a; 
-                            font-size: 2rem; 
-                            margin-bottom: 1rem;
-                            padding: 0 1rem;
-                            text-transform: uppercase;
-                        ">
+                        <h3 style="text-transform: uppercase;">
 4. Progettazione del Sistema
                         </h3>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 2rem;
-                        ">
+                        <p>
 Sviluppiamo una soluzione su misura ottimizzata per la tua realtà produttiva.
                         </p>
-                        <h3 style="
-                            font-family: 'Cormorant Garamond', serif; 
-                            letter-spacing: -0.02em;
-                            font-weight: 500;
-                            color: #1a1a1a; 
-                            font-size: 2rem; 
-                            margin-bottom: 1rem;
-                            padding: 0 1rem;
-                            text-transform: uppercase;
-                        ">
+                        <h3 style="text-transform: uppercase;">
 5. Installazione e Collaudo
                         </h3>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 2rem;
-                        ">
+                        <p>
 Installiamo il sistema e ne verifichiamo le prestazioni attraverso test e controlli operativi.
                         </p>
-                        <h3 style="
-                            font-family: 'Cormorant Garamond', serif; 
-                            letter-spacing: -0.02em;
-                            font-weight: 500;
-                            color: #1a1a1a; 
-                            font-size: 2rem; 
-                            margin-bottom: 1rem;
-                            padding: 0 1rem;
-                            text-transform: uppercase;
-                        ">
+                        <h3 style="text-transform: uppercase;">
 6. Supporto Continuativo
                         </h3>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 2rem;
-                        ">
+                        <p>
 Forniamo assistenza tecnica e manutenzione programmata per garantire risultati costanti nel tempo.
                         </p>
                     </div>
@@ -720,9 +489,9 @@ Forniamo assistenza tecnica e manutenzione programmata per garantire risultati c
     '''
     opacity = 0.3
     for_who_0000_html = f'''
-        <section style="
-                height: 100vh;
-                background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('https://images.unsplash.com/photo-1637181156153-bedd1098f8c1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg');   
+        <section 
+            class="s"
+            style="
                 background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('https://images.unsplash.com/photo-1533077162801-86490c593afb?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');   
                 background-position: center; 
                 background-size: cover;
@@ -744,16 +513,8 @@ Forniamo assistenza tecnica e manutenzione programmata per garantire risultati c
                         padding: 3rem;
                     "
                 >
-                    <h2 style="font-family: 'Cormorant Garamond', serif; 
-                        letter-spacing: -0.02em;
-                        font-weight: 500;
-                        color: #1a1a1a; 
-                        font-size: 3rem; 
-                        margin-bottom: 1rem;
-                        line-height: 1.1;
-                        text-transform: uppercase;
-                    ">
-                        Per Chi è Indicato
+                    <h2 style="text-transform: uppercase;">
+Per Chi è Indicato
                     </h2>
                         <p
                             style="
@@ -799,15 +560,7 @@ Forniamo assistenza tecnica e manutenzione programmata per garantire risultati c
                         padding: 3rem;
                     "
                 >
-                    <h2 style="font-family: 'Cormorant Garamond', serif; 
-                        letter-spacing: -0.02em;
-                        font-weight: 500;
-                        color: #1a1a1a; 
-                        font-size: 3rem; 
-                        margin-bottom: 1rem;
-                        line-height: 1.1;
-                        text-transform: uppercase;
-                    ">
+                    <h2 style="text-transform: uppercase;">
                         Non è il servizio ottimale per te se
                     </h2>
                         <ul 
@@ -836,111 +589,41 @@ Forniamo assistenza tecnica e manutenzione programmata per garantire risultati c
         </section>
     '''
     why_us_0000_html = f'''
-        <section 
-            style="
-                min-height: 50vh;
-                padding-top: 8rem; 
-                padding-bottom: 8rem; 
-            "
-        >
+        <section class="s">
             <div class="container-xl">
-                <h2 style="
-                    font-family: 'Cormorant Garamond', serif; 
-                    letter-spacing: 3px;
-                    font-weight: 400;
-                    color: #1a1a1a; 
-                    margin-bottom: 1rem;
-                    font-size: 1.5rem; 
-                    padding: 0 1rem;
-                ">
-                    perché scegliere noi
+                <h2 class="sup-h">
+perché scegliere noi
                 </h2>
-                <div class="grid-2" style="gap: 5rem;">
+                <div class="grid-2-0000">
                     <div>
-                        <h3 style="
-                            font-family: 'Cormorant Garamond', serif; 
-                            letter-spacing: -0.02em;
-                            font-weight: 500;
-                            color: #1a1a1a; 
-                            font-size: 3em; 
-                            margin-bottom: 1rem;
-                            padding: 0 1rem;
-                            text-transform: uppercase;
-                        ">
+                        <h3 style="text-transform: uppercase;">
                             Oltre 20 Anni di Esperienza
                         </h3>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                        ">
+                        <p>
 Da oltre due decenni supportiamo aziende agroalimentari nell'implementazione di soluzioni basate sull'ozono.
                         </p>
                     </div>
                     <div>
-                        <h3 style="
-                            font-family: 'Cormorant Garamond', serif; 
-                            letter-spacing: -0.02em;
-                            font-weight: 500;
-                            color: #1a1a1a; 
-                            font-size: 3em; 
-                            margin-bottom: 1rem;
-                            padding: 0 1rem;
-                            text-transform: uppercase;
-                        ">
-                            Specializzazione nel Settore Alimentare
+                        <h3 style="text-transform: uppercase;">
+Specializzazione nel Settore Alimentare
                         </h3>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                        ">
+                        <p>
 Conosciamo le problematiche specifiche dell'industria alimentare e progettiamo soluzioni pensate per rispondere alle sue esigenze operative.
                         </p>
                     </div>
                     <div>
-                        <h3 style="
-                            font-family: 'Cormorant Garamond', serif; 
-                            letter-spacing: -0.02em;
-                            font-weight: 500;
-                            color: #1a1a1a; 
-                            font-size: 3em; 
-                            margin-bottom: 1rem;
-                            padding: 0 1rem;
-                            text-transform: uppercase;
-                        ">
+                        <h3 style="text-transform: uppercase;">
                             Soluzioni Su Misura
                         </h3>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                        ">
+                        <p>
 Ogni sistema viene progettato sulla base della tua applicazione, dei tuoi processi e dei risultati che desideri ottenere.
                         </p>
                     </div>
                     <div>
-                        <h3 style="
-                            font-family: 'Cormorant Garamond', serif; 
-                            letter-spacing: -0.02em;
-                            font-weight: 500;
-                            color: #1a1a1a; 
-                            font-size: 3em; 
-                            margin-bottom: 1rem;
-                            padding: 0 1rem;
-                            text-transform: uppercase;
-                        ">
+                        <h3 style="text-transform: uppercase;">
                             Supporto Completo
                         </h3>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                        ">
+                        <p>
 Ti accompagniamo dalla valutazione iniziale fino alla manutenzione programmata dell'impianto.
                         </p>
                     </div>
@@ -949,26 +632,11 @@ Ti accompagniamo dalla valutazione iniziale fino alla manutenzione programmata d
         </section>
     '''
     cta_0000_html = f'''
-        <section 
-            style="
-                min-height: 50vh;
-                padding-top: 8rem; 
-                padding-bottom: 8rem; 
-                background-color: #f8f9fa;
-            "
-        >
+        <section class="s s-bg">
             <div class="container-xl">
-                <div class="m-flex" style="gap: 5rem;">
-                    <div style="flex: 1; padding: 0 1rem;">
-                        <h2 style="
-                            font-family: 'Cormorant Garamond', serif; 
-                            letter-spacing: -0.02em;
-                            font-weight: 500;
-                            color: #1a1a1a; 
-                            font-size: 3em; 
-                            margin-bottom: 1rem;
-                            text-transform: uppercase;
-                        ">
+                <div class="grid-2-0000">
+                    <div style="flex: 1;">
+                        <h2 style="text-transform: uppercase;">
                             Prenota una Chiamata Conoscitiva
                         </h2>
                         <div>
@@ -978,30 +646,12 @@ Ti accompagniamo dalla valutazione iniziale fino alla manutenzione programmata d
                         </div>
                     </div>
                     <div style="flex: 1;">
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 1rem;
-                        ">
+                        <p>
 Scopri se un sistema industriale a ozono può aiutare la tua azienda a ridurre le contaminazioni, migliorare la sicurezza alimentare e aumentare la shelf life dei tuoi prodotti.                        </p>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 1rem;
-                        ">
+                        <p>
 Durante la chiamata analizzeremo la tua applicazione, valuteremo le opportunità di integrazione della tecnologia e ti forniremo un primo orientamento tecnico senza impegno.
                         </p>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 1rem;
-                        ">
+                        <p>
 Prenota ora una chiamata conoscitiva e scopri la soluzione più adatta alla tua realtà produttiva.
                         </p>
                     </div>
