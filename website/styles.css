@@ -1,12 +1,4 @@
-@font-face {
-    font-family: 'inter-regular';
-    src: url('/assets/Inter/static/Inter_18pt-Regular.ttf');
-}
-
-@font-face {
-    font-family: 'roboto-regular';
-    src: url('/assets/Roboto/static/Roboto-Regular.ttf');
-}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Manrope:wght@200..800&display=swap');
 
 :root {
 
@@ -22,12 +14,12 @@
     --color-text-muted: #B0B0B0;
     --color-text-muted: #B0B0B0;
 
-    --color-blue-light: #edf1f6;
+    --color-blue-light: #152942;
     --color-primary-dark-light: #F3F7FB;
 
     /* Typography */
     --font-heading: inter-regular, sans-serif;
-    --font-body: inter-regular, sans-serif;
+    --font-p: manrope-regular, sans-serif;
 
     /* Spacing */
     --space-xs: 4px;
@@ -94,43 +86,68 @@ img {
 }
 
 h1 {
-    font-family: var(--font-heading);
-    line-height: 1;
+    color: #1a1a1a;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    font-weight: 500;
     line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 3rem;
 }
 
-h2 {
-    font-family: var(--font-heading);
+h2,
+.t-h-md {
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+    color: #1a1a1a;
+    font-size: 3em;
+    margin-bottom: 3rem;
     line-height: 1.2;
 }
 
 h3 {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    color: #1a1a1a;
+    font-size: 2.5em;
     line-height: 1.2;
     margin-bottom: 1rem;
-    color: #222;
+}
+
+
+.sup-h {
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: 3px;
 }
 
 p {
-    font-family: var(--font-body);
-    line-height: 1.6;
     color: #333;
+    font-family: 'Manrope', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 1rem;
 }
 
 li {
-    font-family: var(--font-body);
+    font-family: 'Manrope', sans-serif;
     font-size: 1rem;
     line-height: 1.5;
     color: #333;
 }
 
 a {
-    font-family: var(--font-body);
+    font-family: 'Manrope', sans-serif;
 }
 
 table {
-    font-family: var(--font-body);
+    font-family: 'Manrope', sans-serif;
     border-collapse: collapse;
     margin-bottom: 1rem;
     width: 100%;
@@ -143,6 +160,9 @@ th {
     padding: 0.5rem 0.75rem;
 }
 
+/* *************************************************** */
+/* LAYOUT */
+/* *************************************************** */
 .grid-2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
