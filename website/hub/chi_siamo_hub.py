@@ -43,11 +43,13 @@ def gen():
         ">
             {components.header_transparent()}
             <div class="m-flex container-xl" style="flex-direction: column; justify-content: center; gap: 0rem; height: 96vh;">
-                <h1 style="{style_big} color: #fff;">
+                <h1 style="color: #fff; text-transform: uppercase; text-align: center;">
                     <span class="sup-h-0000" style="color: #fff;">
 Chi cerca una soluzione a ozono non ha bisogno di una macchina...
-                    </span></br>
+                    </span><br>
+                    <span>
 Ha bisogno di un risultato.
+                    </span>
                 </h1>
             </div>
         </section>

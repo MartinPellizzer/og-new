@@ -119,34 +119,11 @@ def gen():
         ">
             {components.header_light()}
             <div class="m-flex container-xl" style="flex-direction: column; justify-content: center; gap: 0rem; height: 96vh;">
-                <h1 style="
-                    font-family: 'Cormorant Garamond', serif; 
-                    font-family: 'Manrope', sans-serif;
-                    font-weight: 500;
-                    color: #1a1a1a; 
-                    font-size: 5rem; 
-                    margin-bottom: 1rem;
-                    text-align: center;
-                    margin-bottom: 3rem;
-                    font-size: 1.125rem; 
-                    font-weight: 400;
-                    letter-spacing: 4px;
-                    margin-bottom: 2rem;
-                    line-height: 1.3;
-                ">
-                    ACQUISTA UN SISTEMA INDUSTRIALE A OZONO E MIGLIORA LA TUA PRODUZIONE
+                <h1 class="sup-h-0000" style="text-align: center;">
+ACQUISTA UN SISTEMA INDUSTRIALE A OZONO E MIGLIORA LA TUA PRODUZIONE
                 </h1>
-                <p style="font-family: 'Cormorant Garamond', serif; 
-                    letter-spacing: -0.02em;
-                    font-weight: 500;
-                    color: #1a1a1a; 
-                    font-size: 5rem; 
-                    margin-bottom: 1rem;
-                    line-height: 1.1;
-                    text-align: center;
-                    margin-bottom: 3rem;
-                ">
-                    MIGLIORARE IL TUO PROCESSO PRODUTTIVO AGROALIMENTARE NON E' MAI STATO COSI' FACILE.
+                <p class="t-h-lg" style="text-align: center;">
+MIGLIORARE IL TUO PROCESSO PRODUTTIVO AGROALIMENTARE NON E' MAI STATO COSI' FACILE.
                 </p>
                 <div class="m-flex" style="gap: 1rem; margin: 0 auto;">
                     <div style="text-align: center;">
