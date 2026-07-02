@@ -44,23 +44,17 @@ def gen():
             {components.header_transparent()}
             <div class="m-flex container-xl" style="flex-direction: column; justify-content: center; gap: 0rem; height: 96vh;">
                 <h1 style="{style_big} color: #fff;">
-                    <span style="{style_small} color: #fff;">
-                        Chi cerca una soluzione a ozono non ha bisogno di una macchina...
+                    <span class="sup-h-0000" style="color: #fff;">
+Chi cerca una soluzione a ozono non ha bisogno di una macchina...
                     </span></br>
-                    Ha bisogno di un risultato.
+Ha bisogno di un risultato.
                 </h1>
             </div>
         </section>
         
-        <section style="padding-top: 8rem; padding-bottom: 8rem; background-color: #f4f6f8;">
+        <section class="s s-bg">
             <div class="container-xl">
-                <p class="container-lg"
-                    style="
-                    font-family: 'Manrope', sans-serif;
-                    font-size: 1rem;
-                    color: #1a1a1a;
-                    margin-bottom: 1rem;
-                ">
+                <p>
 Ridurre le contaminazioni, migliorare il processo produttivo e aumentare la sicurezza alimentare richiede molto più che acquistare un generatore di ozono da catalogo. Richiede una soluzione progettata per la specifica applicazione, supportata da esperienza e costruita per funzionare nel mondo reale.
                 </p>
             </div>
@@ -70,74 +64,31 @@ Ridurre le contaminazioni, migliorare il processo produttivo e aumentare la sicu
 
     img_src = 'https://images.unsplash.com/photo-1509622905150-fa66d3906e09?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     i_get_you_0000_html = f'''
-        <section style="margin-top: 8rem; padding-bottom: 8rem;">
+        <section class="s">
             <div class="container-xl">
                 <div class="m-flex" style="gap: 5rem;">
                     <div style="flex: 1;">
                         <h2 style="
-                            font-family: 'Cormorant Garamond', serif; 
-                            letter-spacing: -0.02em;
-                            font-weight: 500;
-                            color: #1a1a1a; 
-                            font-size: 3em; 
-                            margin-bottom: 3rem;
-                            padding: 0 1rem;
                             text-transform: uppercase;
                         ">
 Comprendiamo il problema perché lo vediamo ogni giorno
                         </h2>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 1rem;
-                        ">
+                        <p>
 Molte aziende agroalimentari arrivano da noi dopo aver già provato altre soluzioni.
                         </p>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 1rem;
-                        ">
+                        <p>
 Spesso hanno acquistato un generatore di ozono online con la speranza di risolvere rapidamente il problema. Ma senza un corretto dimensionamento, senza una strategia di utilizzo e senza supporto tecnico, i risultati raramente sono quelli attesi.
                         </p>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 1rem;
-                        ">
+                        <p>
 Il problema non è l'ozono.
                         </p>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 1rem;
-                        ">
+                        <p>
 Il problema è pensare che una tecnologia, da sola, sia una soluzione.
                         </p>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 1rem;
-                        ">
+                        <p>
 Quando i risultati non arrivano, le aziende sono costrette a tornare a metodi alternativi: prodotti chimici che comportano costi, gestione e rischi aggiuntivi, oppure sistemi ad alta richiesta energetica come acqua calda e vapore.
                         </p>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 1rem;
-                        ">
+                        <p>
 Noi crediamo che esista un modo migliore.
                         </p>
                     </div>
@@ -151,7 +102,7 @@ Noi crediamo che esista un modo migliore.
     
     img_src = 'https://images.unsplash.com/photo-1780078474389-120262d71903?q=80&w=713&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     why_0000_html = f'''
-        <section style="padding-bottom: 8rem;">
+        <section class="s" style="padding-top: 0;">
             <div class="container-xl">
                 <div class="m-flex" style="gap: 5rem;">
                     <div style="flex: 1;">
@@ -159,69 +110,26 @@ Noi crediamo che esista un modo migliore.
                     </div>
                     <div style="flex: 1;">
                         <h2 style="
-                            font-family: 'Cormorant Garamond', serif; 
-                            letter-spacing: -0.02em;
-                            font-weight: 500;
-                            color: #1a1a1a; 
-                            font-size: 3em; 
-                            margin-bottom: 3rem;
-                            padding: 0 1rem;
                             text-transform: uppercase;
                         ">
 Perché è nata Ozonogroup
                         </h2>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 1rem;
-                        ">
+                        <p>
 Ozonogroup nasce da una constatazione semplice: nel settore agroalimentare non esistono problemi standard e, di conseguenza, non esistono soluzioni standard.
                         </p>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 1rem;
-                        ">
+                        <p>
 Nel corso degli anni abbiamo visto troppe aziende investire in apparecchiature inadatte alla loro applicazione, con aspettative elevate e risultati deludenti.
                         </p>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 1rem;
-                        ">
+                        <p>
 Per questo abbiamo scelto un approccio diverso.
                         </p>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 1rem;
-                        ">
+                        <p>
 Invece di vendere semplicemente generatori di ozono, analizziamo il processo produttivo, individuiamo la causa del problema e progettiamo una soluzione specifica per l'impianto, il prodotto e gli obiettivi del cliente.
                         </p>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 1rem;
-                        ">
+                        <p>
 L'obiettivo non è installare una macchina.
                         </p>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 1rem;
-                        ">
+                        <p>
 L'obiettivo è ottenere il risultato desiderato nel modo più efficace, sicuro ed efficiente possibile.
                         </p>
                     </div>
@@ -232,11 +140,9 @@ L'obiettivo è ottenere il risultato desiderato nel modo più efficace, sicuro e
 
     opacity = 0.1
     social_proof_0000_html = f'''
-        <section style="
-                height: 100vh;
-                background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('/immagini/unsplash/agri-0000.jpg');   
-                background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg');   
-                background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('https://images.unsplash.com/photo-1483871788521-4f224a86e166?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg');   
+        <section
+            class="s" 
+            style="
                 background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('https://images.unsplash.com/photo-1515276427842-f85802d514a2?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');   
                 background-position: center; 
                 background-size: cover;
@@ -244,7 +150,7 @@ L'obiettivo è ottenere il risultato desiderato nel modo più efficace, sicuro e
                 align-items: center;
             ">
             <div class="
-                m-flex container-xl
+                m-flex container-md
             " 
                 style="
                     flex-direction: column; 
@@ -252,162 +158,66 @@ L'obiettivo è ottenere il risultato desiderato nel modo più efficace, sicuro e
                     gap: 0rem; 
                     background-color: #ffffff;
                     padding: 3rem;
-                ">
-                <h2
-                class="container-md" 
-                style="font-family: 'Cormorant Garamond', serif; 
-                    letter-spacing: -0.02em;
-                    font-weight: 500;
-                    color: #1a1a1a; 
-                    font-size: 5rem; 
-                    font-size: 3em; 
-                    margin-bottom: 1rem;
-                    line-height: 1.1;
                     text-align: center;
-                    margin-bottom: 3rem;
+                ">
+                <h2 style="
                     text-transform: uppercase;
                 ">
 20 anni di esperienza al servizio dell'industria agroalimentare
                 </h2>
-                
-                        <p class="container-md"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 1rem;
-                            text-align: center;
-                        ">
+                <p>
 Da oltre 20 anni lavoriamo nel settore dell'ozono industriale con una specializzazione precisa: le applicazioni agroalimentari.
-                        </p>
-                        <p class="container-md"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 1rem;
-                            text-align: center;
-                        ">
+                </p>
+                <p>
 Questa esperienza ci permette di comprendere rapidamente le problematiche produttive, valutare la fattibilità tecnica degli interventi e sviluppare sistemi personalizzati e automatizzati che si integrano con i processi esistenti.
-                        </p>
-                        <p class="container-md"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 1rem;
-                            text-align: center;
-                        ">
+                </p>
+                <p>
 Ogni progetto viene sviluppato partendo dalle reali esigenze operative dell'azienda, evitando soluzioni sovradimensionate, inefficaci o difficili da gestire.
-                        </p>
-                        <p class="container-md"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 1rem;
-                            text-align: center;
-                        ">
+                </p>
+                <p>
 Per noi la tecnologia è uno strumento.
-                        </p>
-                        <p class="container-md"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 1rem;
-                            text-align: center;
-                        ">
+                </p>
+                <p>
 La soluzione è il progetto.
-                        </p>
+                </p>
             </div>
         </section>
     '''
 
     qualities_0000_html = f'''
-        <section 
-            style="
-                min-height: 50vh;
-                padding-top: 8rem; 
-                padding-bottom: 8rem; 
-            "
-        >
+        <section class="s">
             <div class="container-xl">
-                <h2 style="
-                    font-family: 'Cormorant Garamond', serif; 
-                    letter-spacing: 3px;
-                    font-weight: 400;
-                    color: #1a1a1a; 
-                    margin-bottom: 1rem;
-                    font-size: 1.5rem; 
-                    padding: 0 1rem;
-                ">
-                come lavoriamo
+                <h2 class="sup-h">
+come lavoriamo
                 </h2>
-                <div class="m-flex" style="gap: 2rem;">
-                    <div style="flex: 1; padding: 0 1rem;">
+                <div class="grid-3-0000">
+                    <div>
                         <h3 style="
-                            font-family: 'Cormorant Garamond', serif; 
-                            letter-spacing: -0.02em;
-                            font-weight: 500;
-                            color: #1a1a1a; 
-                            font-size: 2.5em; 
-                            margin-bottom: 1rem;
                             text-transform: uppercase;
                         ">
-                            Competenti
+Competenti
                         </h3>
-                        <p
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 3rem;
-                        ">
+                        <p>
 Conosciamo le dinamiche del settore agroalimentare e sappiamo come applicare l'ozono in modo efficace e misurabile.
                         </p>
                     </div>
-                    <div style="flex: 1; padding: 0 1rem;">
+                    <div>
                         <h3 style="
-                            font-family: 'Cormorant Garamond', serif; 
-                            letter-spacing: -0.02em;
-                            font-weight: 500;
-                            color: #1a1a1a; 
-                            font-size: 2.5em; 
-                            margin-bottom: 1rem;
                             text-transform: uppercase;
                         ">
-                            Pratici
+Pratici
                         </h3>
-                        <p
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 3rem;
-                        ">
+                        <p>
 Cerchiamo soluzioni che funzionino davvero nell'operatività quotidiana, non solo sulla carta.
                         </p>
                     </div>
-                    <div style="flex: 1; padding: 0 1rem;">
+                    <div>
                         <h3 style="
-                            font-family: 'Cormorant Garamond', serif; 
-                            letter-spacing: -0.02em;
-                            font-weight: 500;
-                            color: #1a1a1a; 
-                            font-size: 2.5em; 
-                            margin-bottom: 1rem;
                             text-transform: uppercase;
                         ">
-                            Affidabili
+Affidabili
                         </h3>
-                        <p
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 1rem;
-                        ">
+                        <p>
 Seguiamo il cliente dall'analisi iniziale alla messa in servizio, fornendo supporto tecnico e accompagnamento durante tutto il percorso.
                         </p>
                     </div>
@@ -417,24 +227,11 @@ Seguiamo il cliente dall'analisi iniziale alla messa in servizio, fornendo suppo
     '''
 
     cta_0000_html = f'''
-        <section 
-            style="
-                min-height: 50vh;
-                padding-top: 8rem; 
-                padding-bottom: 8rem; 
-                background-color: #f8f9fa;
-            "
-        >
+        <section class="s s-bg">
             <div class="container-xl">
-                <div class="m-flex" style="gap: 5rem;">
-                    <div style="flex: 1; padding: 0 1rem;">
+                <div class="grid-2-0000">
+                    <div>
                         <h2 style="
-                            font-family: 'Cormorant Garamond', serif; 
-                            letter-spacing: -0.02em;
-                            font-weight: 500;
-                            color: #1a1a1a; 
-                            font-size: 3em; 
-                            margin-bottom: 1rem;
                             text-transform: uppercase;
                         ">
 Parliamo del tuo caso specifico
@@ -445,40 +242,17 @@ Parliamo del tuo caso specifico
                             </a>
                         </div>
                     </div>
-                    <div style="flex: 1;">
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 1rem;
-                        ">
+                    <div>
+                        <p>
 Ogni impianto, ogni processo e ogni problema di contaminazione presenta caratteristiche diverse.
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 1rem;
-                        ">
+                        </p>
+                        <p>
 Per questo il primo passo non è proporre una soluzione standard, ma comprendere la situazione e valutare quale approccio possa generare il miglior risultato.
                         </p>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 1rem;
-                        ">
+                        <p>
 Prenota una chiamata conoscitiva con il team Ozonogroup.
                         </p>
-                        <p class="container-lg"
-                            style="
-                            font-family: 'Manrope', sans-serif;
-                            font-size: 1rem;
-                            color: #1a1a1a;
-                            margin-bottom: 1rem;
-                        ">
+                        <p>
 Analizzeremo il tuo caso, risponderemo alle tue domande e ti aiuteremo a capire se l'ozono può rappresentare la soluzione più efficace per la tua applicazione.
                         </p>
                     </div>
