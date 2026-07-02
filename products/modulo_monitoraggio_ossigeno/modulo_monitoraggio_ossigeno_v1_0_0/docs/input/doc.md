@@ -1,3 +1,17 @@
+[head]
+
+[/head]
+
+[rev]
+
+Versione, Data, Autore, Descrizione
+
+1.0.0, 2026-07-02, Martin Pellizzer, Versione iniziale
+
+[/rev]
+
+[body]
+
 # 1. Introduzione
 
 ## 1.1 Scopo del documento
@@ -686,3 +700,6 @@ Le seguenti risorse sono reperibili nella sezione "docs" della versione del prod
 
 - distinta base (BOM)
 - layout PCB
+
+
+[/body]
