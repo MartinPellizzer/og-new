@@ -153,7 +153,7 @@ Il modulo non è responsabile del controllo del processo di produzione dell’oz
 
 ---
 
-# 3. Hardware Design
+# 3. Progettazione Hardware
 
 ## 3.1 Architettura Hardware Generale
 
@@ -259,7 +259,7 @@ Queste soluzioni contribuiscono a migliorare la robustezza complessiva del siste
 
 ---
 
-# 4. Software Design
+# 4. Progettazione Software
 
 ## 4.1 Architettura Software
 
@@ -269,27 +269,90 @@ L’esecuzione del software non utilizza un sistema operativo real-time (RTOS), 
 
 L’architettura software è organizzata secondo le seguenti responsabilità principali:
 
-- gestione dello stato del sistema
+- gestione dello stato del sistema (Macchina a Stati)
 - acquisizione dati dal sensore di ossigeno US1010
 - gestione comunicazione RS485
-- generazione segnali analogici 0–10 V
+- generazione segnali analogici 0-10 V
 - aggiornamento interfaccia utente (display)
 - sincronizzazione temporale delle attività
 
+Il seguente diagramma mostra un'anteprima dell'architettura del software.
+
+!(C:/og-new/products/modulo_monitoraggio_ossigeno/modulo_monitoraggio_ossigeno_v1_0_0/docs/input_assets/diagrams/diagram_0002.png)
+
 ---
 
-## 4.2 State Machine
+## 4.2 Macchina a Stati
 
 Il software è basato su una macchina a stati semplice composta dai seguenti stati operativi:
 
-- **INIT**: inizializzazione del sistema e delle periferiche
-- **RUN**: funzionamento normale del modulo
+- **SETUP**: inizializzazione del sistema e delle periferiche
+- **LOOP**: funzionamento normale del modulo
 
-Durante lo stato INIT vengono eseguite le operazioni di configurazione hardware, inizializzazione delle interfacce di comunicazione e verifica preliminare del corretto avvio del sistema.
+Durante lo stato SETUP vengono eseguite le operazioni di configurazione hardware, inizializzazione delle interfacce di comunicazione e verifica preliminare del corretto avvio del sistema.
 
-Al termine della fase di inizializzazione, il sistema passa automaticamente allo stato RUN, nel quale tutte le funzioni operative vengono eseguite ciclicamente.
+Al termine della fase di inizializzazione, il sistema passa automaticamente allo stato LOOP, nel quale tutte le funzioni operative vengono eseguite ciclicamente.
 
 Non è attualmente implementata una gestione locale dei fault. Eventuali condizioni di errore sono gestite dal sistema di controllo principale.
+
+Il seguente diagramma mostra gli stati del software.
+
+!(C:/og-new/products/modulo_monitoraggio_ossigeno/modulo_monitoraggio_ossigeno_v1_0_0/docs/input_assets/diagrams/diagram_0003.png)
+
+---
+
+### 4.2.1 Stato SETUP
+
+Lo stato SETUP svolge le seguenti funzioni:
+
+- inizializza RS485
+- inizializza DISPLAY
+- inizializza HEARTBEAT
+
+Il sensore di ossigeno US1010 non ha bisogno di essere inizializzato dal modulo.
+
+### 4.2.2 Stato LOOP
+
+Lo stato LOOP svolge le seguenti funzioni:
+
+- esegui ciclo lettura dati tramite sensore ossigeno US1010
+- esegui ciclo invio dati tramite RS485
+- esegui ciclo visualizzazione dati tramite DISPLAY
+- esegui ciclo di visualizzazione fault/blocco del microcontrollore tramite HEARTBEAT
+
+
+### 4.2.3 Sequenza di Avvio
+
+:Passo, Operazione
+:1, Avvio ESP32
+:2, Inizializzazione UART_1 (sistema)
+:3, Inizializzazione RS485
+:5, Inizializzazione Display
+:6, Inizializzazione Heartbeat
+:7, Ingresso nello stato LOOP
+
+---
+
+### 4.2.4 Sequenza del Main Loop
+
+:Task,	Periodo,	Tipo
+:UART_1,	continuo,	event-driven
+:US1010,	continuo,	event-driven
+:Display,	1000 ms,	timer
+:RS485,	1000 ms,	timer
+:PWM,	1000 ms,	timer
+:Heartbeat,	500 ms,	timer
+
+Il seguente pseudo-codice mostra il ciclo loop.
+
+1. while (1)
+2. {
+3.    UART_Task();
+4.    RS485_Task();
+5.    Display_Task();
+6.    PWM_Task();
+7.    Heartbeat_Task();
+8. }
 
 ---
 
@@ -307,6 +370,10 @@ I dati acquisiti includono:
 
 I valori vengono aggiornati internamente ogni secondo e resi disponibili alle altre funzioni del sistema.
 
+Il seguente diagramma mostra come vengono acquisiti i dati dal sensore.
+
+!(C:/og-new/products/modulo_monitoraggio_ossigeno/modulo_monitoraggio_ossigeno_v1_0_0/docs/input_assets/diagrams/diagram_0004.png)
+
 ---
 
 ## 4.4 Elaborazione Dati
@@ -320,7 +387,11 @@ L’elaborazione include:
 - conversione in formato numerico interno
 - aggiornamento delle variabili globali di sistema
 
-Non sono attualmente implementati filtri avanzati o algoritmi di media temporale. Ll sistema utilizza direttamente i valori forniti dal sensore con aggiornamento a 1 Hz.
+I valori forniti dal sensore vengono utilizzati direttamente dal firmware, senza ulteriori elaborazioni o filtri software. Il sistema utilizza direttamente i valori forniti dal sensore con aggiornamento a 1 Hz.
+
+Il seguente diagramma mostra come vengono utilizzati i dati del sensore.
+
+!(C:/og-new/products/modulo_monitoraggio_ossigeno/modulo_monitoraggio_ossigeno_v1_0_0/docs/input_assets/diagrams/diagram_0005.png)
 
 ---
 
@@ -356,7 +427,7 @@ Le grandezze sono scalate in modo direttamente proporzionale rispetto ai valori 
 
 ## 4.7 Gestione dei Fault
 
-Il modulo non implementa una gestione autonoma dei fault a livello software.
+La gestione dei fault di sistema è demandata al controllore principale. Il firmware del modulo si limita all'acquisizione e alla trasmissione dei dati di misura.
 
 Eventuali condizioni di errore, perdita del segnale del sensore o anomalie operative vengono rilevate e gestite dal **sistema di controllo principale**, che è responsabile della logica di sicurezza e della gestione degli allarmi.
 

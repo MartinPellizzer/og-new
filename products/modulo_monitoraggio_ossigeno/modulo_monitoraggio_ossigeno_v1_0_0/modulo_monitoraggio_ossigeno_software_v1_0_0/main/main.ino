@@ -31,44 +31,38 @@ uint32_t timer_test = 0;
 #define HEARTBEAT_PIN 13
 typedef struct heartbeat_t {
   uint32_t millis_cur = 0;
-  uint32_t millis_timer = 1000;
+  uint32_t millis_timer = 500;
 } heartbeat_t;
 heartbeat_t heartbeat = {};
 
-
-void setup() 
+void rs485_init()
 {
-  Serial.begin(9600);
   Serial2.begin(9600, SERIAL_8N1, 27, 14);
-  // Serial2.begin(9600, SERIAL_8N1, 17, 4);
-  // Serial2.begin(9600);
   pinMode(RE_DE_PIN, OUTPUT);
-  pinMode(HEARTBEAT_PIN, OUTPUT);
-  
-  lcd.init();
-  lcd.backlight();
 }
 
-unsigned char FucCheckSum(unsigned char *i, unsigned char ln)
+void heartbeat_init()
 {
-  unsigned char j, tempq = 0;
-  i += 1;
-  for (j = 0; j < (ln - 2); j++)
-  {
-    tempq += *i;
-    i++;
-  }
-  tempq = (~tempq) + 1; return (tempq);
+  pinMode(HEARTBEAT_PIN, OUTPUT);
 }
 
-void loop() 
+void heartbeat_run()
 {
   if (millis() - heartbeat.millis_cur > heartbeat.millis_timer)
   {
     heartbeat.millis_cur = millis();
     digitalWrite(HEARTBEAT_PIN, !digitalRead(HEARTBEAT_PIN));
   }
+}
 
+void display_init()
+{  
+  lcd.init();
+  lcd.backlight();
+}
+
+void display_run()
+{  
   if (millis() - timer_test > 1000)
   {
     timer_test = millis();
@@ -110,6 +104,34 @@ void loop()
     // lcd.setCursor(0, 1);
     // lcd.print("PER SANIFICARE");
   }
+}
+
+void setup() 
+{
+  Serial.begin(9600);
+  rs485_init();
+  display_init();
+  heartbeat_init();
+}
+
+unsigned char FucCheckSum(unsigned char *i, unsigned char ln)
+{
+  unsigned char j, tempq = 0;
+  i += 1;
+  for (j = 0; j < (ln - 2); j++)
+  {
+    tempq += *i;
+    i++;
+  }
+  tempq = (~tempq) + 1; return (tempq);
+}
+
+void loop() 
+{
+  display_run();
+  heartbeat_run();
+
+  
 
   if (new_data)
   {
