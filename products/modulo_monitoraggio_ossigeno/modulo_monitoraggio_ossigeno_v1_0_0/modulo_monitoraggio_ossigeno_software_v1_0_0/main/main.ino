@@ -86,23 +86,22 @@ void us1010_run()
 
       // us1010_debug_serial();
 
-      
       // TODO: fix checksum function
       // Serial.println(us1010_checksum(us1010.buff, 12));
-      // if (us1010_checksum(us1010.buff, 12) == us1010.buff[11]) 
+      // if (us1010_checksum(us1010.buff, 12) == us1010.buff[11])
       if (1)
       {
-        us1010.concentration = float(us1010.buff[3]*256+us1010.buff[4])/10;
-        us1010.flow          = float(us1010.buff[5]*256+us1010.buff[6])/10;
-        us1010.temperature   = float(us1010.buff[7]*256+us1010.buff[8])/10;
-        us1010.err = 0;
+        us1010.concentration  = float(us1010.buff[3]*256+us1010.buff[4])/10;
+        us1010.flow           = float(us1010.buff[5]*256+us1010.buff[6])/10;
+        us1010.temperature    = float(us1010.buff[7]*256+us1010.buff[8])/10;
+        us1010.err            = 0;
       }
       else
       {
-        us1010.concentration = -1;
-        us1010.flow          = -1;
-        us1010.temperature   = -1;
-        us1010.err = 1;
+        us1010.concentration  = -1;
+        us1010.flow           = -1;
+        us1010.temperature    = -1;
+        us1010.err            = 1;
       }
 
       for(int k = 0; k < US1010_BUFF_LEN; k++)
