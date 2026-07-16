@@ -13,6 +13,10 @@ int sens_val_4 = 0;
 #include <LiquidCrystal_I2C.h>
 LiquidCrystal_I2C lcd(0x27,20,4);
 
+#define BUFFER_LEN 10
+int buffer[BUFFER_LEN] = {0};
+int buffer_index = 0;
+
 uint32_t timer_test = 0;
 
 void setup()
@@ -24,20 +28,48 @@ void setup()
   lcd.backlight();
 }
 
+void buffer_print()
+{
+  for (int i = 0; i < BUFFER_LEN; i++)
+  {
+    Serial.print(buffer[i]);
+    Serial.print(", ");
+  }
+  Serial.println();
+}
+
+void buffer_add(int val)
+{
+  buffer[buffer_index] = val;
+  buffer_index += 1;
+  if (buffer_index >= 10) buffer_index = 0;
+}
+
+int buffer_avg()
+{
+  int sum = 0;
+  for (int i = 0; i < BUFFER_LEN; i++)
+  {
+    sum += buffer[i];
+  }
+  int avg = int(sum / BUFFER_LEN);
+  return avg;
+}
+
 void loop()
 {
   if (millis() - timer_test > 500)
   {
     timer_test = millis();
 
-    sens_val_1 = analogRead(PIN_1);
-    Serial.println(sens_val_1);
-    sens_val_2 = analogRead(PIN_2);
-    Serial.println(sens_val_2);
+    // sens_val_1 = analogRead(PIN_1);
+    // sens_val_2 = analogRead(PIN_2);
     sens_val_3 = analogRead(PIN_3);
-    Serial.println(sens_val_3);
     sens_val_4 = analogRead(PIN_4);
-    Serial.println(sens_val_4);
+
+    buffer_add(sens_val_4);
+    int avg = buffer_avg();
+    buffer_print();
 
     // clear lcd
     lcd.setCursor(0, 0);
@@ -45,17 +77,19 @@ void loop()
     lcd.setCursor(0, 1);
     lcd.print("                ");
 
-    // display_debug_serial();
-
-    lcd.setCursor(0, 0);
-    lcd.print(sens_val_1);
-    lcd.setCursor(0, 1);
-    lcd.print(sens_val_2);
+    // lcd.setCursor(0, 0);
+    // lcd.print(sens_val_1);
+    // lcd.setCursor(0, 1);
+    // lcd.print(sens_val_2);
     lcd.setCursor(6, 0);
-    lcd.print(sens_val_3);
+    lcd.print(avg);
     lcd.setCursor(6, 1);
     lcd.print(sens_val_4);
 
+    // Serial.println(sens_val_1);
+    // Serial.println(sens_val_2);
+    Serial.println(avg);
+    Serial.println(sens_val_4);
     Serial.println();
   }
 }
