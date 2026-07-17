@@ -7,7 +7,7 @@ DATABASE_FOLDERPATH = r'/home/ubuntu/proj/og-new/website/database'
 DATABASE_FOLDERPATH = r'C:\og-new/website/database'
 
 WEBSITE_FOLDERPATH = r'/home/ubuntu/vault/ozonogroup/website/ozonogroup'
-WEBSITE_FOLDERPATH = r'C:\ozonogroup'
+WEBSITE_FOLDERPATH = r'C:\ozonogroup\website\ozonogroup'
 website_folderpath = WEBSITE_FOLDERPATH
 
 TEMPLATES_FOLDERPATH = r'/home/ubuntu/vault/ozonogroup-templates'

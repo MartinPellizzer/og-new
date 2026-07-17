@@ -19,7 +19,7 @@ def gen():
         line-height: 1.3;
         text-transform: uppercase;
     '''
-    
+
     style_big = f'''
         font-family: 'Cormorant Garamond', serif;
         letter-spacing: -0.02em;
@@ -53,7 +53,7 @@ Ha bisogno di un risultato.
                 </h1>
             </div>
         </section>
-        
+
         <section class="s s-bg">
             <div class="container-xl">
                 <p>
@@ -61,7 +61,6 @@ Ridurre le contaminazioni, migliorare il processo produttivo e aumentare la sicu
                 </p>
             </div>
         </section>
-
     '''
 
     img_src = 'https://images.unsplash.com/photo-1509622905150-fa66d3906e09?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
@@ -101,7 +100,7 @@ Noi crediamo che esista un modo migliore.
             </div>
         </section>
     '''
-    
+
     img_src = 'https://images.unsplash.com/photo-1780078474389-120262d71903?q=80&w=713&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     why_0000_html = f'''
         <section class="s" style="padding-top: 0;">

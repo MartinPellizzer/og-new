@@ -175,7 +175,6 @@ CONTATTACI E DESCRIVICI LA TUA SITUAZIONE. VALUTEREMO CON TE SE L'OZONO È LA SO
         </section>
     '''
                 # margin-top: 8rem;
-
    
     html = f'''
         <!DOCTYPE html>
@@ -208,4 +207,5 @@ CONTATTACI E DESCRIVICI LA TUA SITUAZIONE. VALUTEREMO CON TE SE L'OZONO È LA SO
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
         f.write(html)
     print(html_filepath)
+    print(html)
 

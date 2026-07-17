@@ -1,35 +1,47 @@
 
-import os
-import markdown
-
 from lib import g
 from lib import io
 from lib import components
 
+from data import settori_data
 
-def settori_settore(settore):
-    with open(f'./articoli/settori/settori-{settore}.md', encoding='utf-8') as f: markdown_text = f.read()
-
-    article_html = markdown.markdown(markdown_text, extensions=["tables", "fenced_code"])
-    html_breadcrumbs = components.breadcrumbs_new(f'settori/{settore}')
-
-    title = ''
-    for line in markdown_text.split('\n'):
-        if line.startswith('# '):
-            title = line.replace('# ', '').strip()
-            break
-    print(title)
-
-    html_article = f'''
-        <div class="article container-md" style="margin-top: 5rem;">
-            {html_breadcrumbs}
-            <p>
-                Maggio 6, 2026 <span>•</span> Staff Tecnico Ozonogroup
-            </p>
-            {article_html}
-        </div>
+def gen():
+    ########################################
+    # HERO 0001
+    ########################################
+    opacity = 0.3
+    hero_0001_html = f'''
+        <section 
+            style="
+            background-image: linear-gradient(rgba(0, 0, 0, {opacity}), rgba(0, 0, 0, {opacity})), url('/immagini/home/uva-0000.png');   
+            background-position: center; 
+            background-size: cover;
+        ">
+            {components.header_transparent()}
+            <div class="m-flex container-xl" style="flex-direction: column; justify-content: center; gap: 0rem; height: 96vh;">
+                <h1 style="color: #fff; text-align: center;">
+                    SETTORI DI UTILIZZO DELL'OZONO
+                </h1>
+                <div style="text-align: center;">
+                    <a href="/" class="button-white-ghost-2">
+                    Prenota Consulenza
+                </a>
+                </div>
+            </div>
+        </section>
     '''
-    html_article = html_article.replace('’', "'")
+
+    sectors_cards_html = f''
+    sectors_data = io.csv_to_dict('C:\ozonogroup\data\ssot\dataset\manual\settori.csv', delimiter='\\')
+    print(sectors_data)
+    quit()
+    sectors_0000_html = f'''
+        <section>
+            <div class="container-xl grid-4">
+                {sectors_cards_html}
+            </div>
+        </section>
+    '''
 
     html = f'''
         <!DOCTYPE html>
@@ -38,78 +50,25 @@ def settori_settore(settore):
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" href="/styles.css">
-            <title>{title}</title>
-            <meta name="description" content="">
+            <title>Sistemi Industriali a Ozono | Ozonogroup</title>
+            <meta name="description" content="Tecnologie e sistemi a ozono per applicazioni industriali, commerciali e civili. Progettazione, applicazioni e guida tecnica sull'ozono.">
         </head>
         <body>
-            {components.header_default()}
-            <main style="margin-bottom: 5rem;">
-                {html_article}
+            <main>
+                {hero_0001_html}
             </main>
+            <!-- =======================================
+                 FOOTER
+                 Include company info, legal, sitemap, social links
+            ======================================== -->
             {components.footer_dark()}
         </body>
         </html>
     '''
 
-    html_folderpath = f'{g.WEBSITE_FOLDERPATH}/settori/{settore}'
-    os.makedirs(html_folderpath, exist_ok=True)
-    html_filepath = f'{html_folderpath}/index.html'
+    html_filepath = f'{g.WEBSITE_FOLDERPATH}/settori.html'
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
         f.write(html)
     print(html_filepath)
+    print(html)
 
-def settori():
-    with open(f'./articoli/settori/settori.md', encoding='utf-8') as f: markdown_text = f.read()
-
-    article_html = markdown.markdown(markdown_text, extensions=["tables", "fenced_code"])
-    html_breadcrumbs = components.breadcrumbs_new('settori')
-
-    title = ''
-    for line in markdown_text.split('\n'):
-        if line.startswith('# '):
-            title = line.replace('# ', '').strip()
-            break
-    print(title)
-
-    html_article = f'''
-        <div class="article container-md" style="margin-top: 5rem;">
-            {html_breadcrumbs}
-            <p>
-                Maggio 6, 2026 <span>•</span> Staff Tecnico Ozonogroup
-            </p>
-            {article_html}
-        </div>
-    '''
-    html_article = html_article.replace('’', "'")
-
-    html = f'''
-        <!DOCTYPE html>
-        <html lang="it">
-        <head>
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <link rel="stylesheet" href="/styles.css">
-            <title>{title}</title>
-            <meta name="description" content="">
-        </head>
-        <body>
-            {components.header_default()}
-            <main style="margin-bottom: 5rem;">
-                {html_article}
-            </main>
-            {components.footer_dark()}
-        </body>
-        </html>
-    '''
-
-    html_folderpath = f'{g.WEBSITE_FOLDERPATH}/settori'
-    os.makedirs(html_folderpath, exist_ok=True)
-    html_filepath = f'{html_folderpath}/index.html'
-    with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: 
-        f.write(html)
-    print(html_filepath)
-
-def main():
-    settori()
-    settori_settore('vino')
-    settori_settore('lattiero-caseario')
