@@ -47,6 +47,7 @@ def header_light():
             <a style="font-family: 'Manrope', sans-serif; color: #111; text-decoration: none;" href="/">Ozonogroup</a></div>
             <ul style="display: flex; gap: 1rem; list-style: none;">
                 <li><a style="font-family: 'Manrope', sans-serif; color: #111; text-decoration: none;" href="/servizi.html">Servizi</a></li>
+                <li><a style="font-family: 'Manrope', sans-serif; color: #111; text-decoration: none;" href="/settori.html">Settori</a></li>
                 <li><a style="font-family: 'Manrope', sans-serif; color: #111; text-decoration: none;" href="/chi-siamo.html">Chi Siamo</a></li>
                 <li><a style="font-family: 'Manrope', sans-serif; color: #111; text-decoration: none;" href="/contatti.html">Contatti</a></li>
             </ul>
@@ -311,3 +312,36 @@ def toc(html_article):
     ### insert toc in html article
     html_article = html_article.replace('[toc]', toc_html)
     return html_article
+
+
+def header_light_logo():
+    html = f'''
+        <header class="header-light-logo">
+            <div>
+                <a href="/">
+                    <img class="header-light-logo--logo" src="/immagini/logo.png" alt="Ozonogroup" />
+                </a>
+            </div>
+            <nav style="display: flex; justify-content: space-between;">
+                <ul style="display: flex; gap: 1rem; list-style: none;">
+                    <li><a style="font-family: 'Manrope', sans-serif; color: #111; text-decoration: none;" href="/servizi.html">Servizi</a></li>
+                    <li><a style="font-family: 'Manrope', sans-serif; color: #111; text-decoration: none;" href="/settori.html">Settori</a></li>
+                    <li><a style="font-family: 'Manrope', sans-serif; color: #111; text-decoration: none;" href="/chi-siamo.html">Chi Siamo</a></li>
+                    <li><a style="font-family: 'Manrope', sans-serif; color: #111; text-decoration: none;" href="/contatti.html">Contatti</a></li>
+                </ul>
+            </nav>
+        </header>
+    '''
+    return html
+    
+def breadcrumbs_schema(url):
+    breadcrumb_list = url.strip('/')
+    breadcrumb_list = breadcrumb_list.split('/')
+    breadcrumb_href = ''
+    breadcrumb_html = ''
+    breadcrumb_html = 'Home'
+    for breadcrumb_i, breadcrumb_text in enumerate(breadcrumb_list):
+        breadcrumb_html += ' / ' + breadcrumb_text
+    print(breadcrumb_html)
+    # quit()
+    return breadcrumb_html

@@ -1013,6 +1013,19 @@ th {
 /* -------------------------
    HEADER
 ------------------------- */
+.header-light-logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-md) var(--space-lg);
+}
+
+.header-light-logo--logo {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
 header {
     display: flex;
     align-items: center;
@@ -2308,4 +2321,21 @@ TOC
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+}
+
+
+/*
+===========================================
+===========================================
+===========================================
+LISTING
+===========================================
+===========================================
+===========================================
+*/
+
+.listing h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #111;
+    font-size: 3.2rem;
 }
