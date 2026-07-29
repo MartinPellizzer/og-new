@@ -214,16 +214,43 @@ def sector_gen(item):
     cards_html = f''
     for item in data:
         card_html = f'''
-            <div>
-                <h3>{item['title']}</h3>
-                <p>{item['description']}</p>
+            <div
+                style="
+                    background-color: #fff;
+                    border: 1px solid #e2e4e6;
+                    border-radius: 10px;
+                    padding: 2rem;
+                "
+            >
+                <span
+                    aria-hidden="true"
+                    style="display:flex;width:40px;height:40px;align-items:center;justify-content:center;margin-bottom:22px;border-radius:10px;background:#eaf2ed;color:#1f5c45;font-size:18px;font-weight:700;"
+                >
+                    01
+                </span>
+
+                <h3 
+                    style="
+                        margin-bottom: 1rem;
+                    "
+                >
+                    {item['title']}
+                    </h3>
+                <p
+                    style="
+                        color: #626466;
+                        font-size: 0.9375rem;
+                    "
+                >
+                    {item['description']}
+                </p>
             </div>
         '''
         cards_html += card_html
 
     article_html += f'''
         <section>
-            <div class="grid-3">
+            <div class="grid-3" style="gap: 1rem;">
                 {cards_html}
             </div>
         </section>
@@ -1487,7 +1514,7 @@ def sector_gen(item):
         </head>
         <body>
             {components.header_light_logo()}
-            <main class="listing container-md" style="margin-top: 5rem; margin-bottom: 5rem;">
+            <main class="listing container-xl" style="margin-top: 5rem; margin-bottom: 5rem;">
                 {article_html}
             </main>
             <!-- =======================================

@@ -40,7 +40,7 @@ def header_transparent():
         </nav>
     '''
     return html
-    
+
 def header_light():
     html = f'''
         <nav style="display: flex; justify-content: space-between; padding: 1rem 2rem;">
