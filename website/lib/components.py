@@ -32,10 +32,10 @@ def header_transparent():
         <nav style="display: flex; justify-content: space-between; padding: 1rem 2rem;">
             <a style="font-family: 'Manrope', sans-serif; color: #fff; text-decoration: none;" href="/">Ozonogroup</a></div>
             <ul style="display: flex; gap: 1rem; list-style: none;">
-                <li><a style="font-family: 'Manrope', sans-serif; color: #fff; text-decoration: none;" href="/servizi.html">Servizi</a></li>
-                <li><a style="font-family: 'Manrope', sans-serif; color: #fff; text-decoration: none;" href="/settori.html">Settori</a></li>
-                <li><a style="font-family: 'Manrope', sans-serif; color: #fff; text-decoration: none;" href="/chi-siamo.html">Chi Siamo</a></li>
-                <li><a style="font-family: 'Manrope', sans-serif; color: #fff; text-decoration: none;" href="/contatti.html">Contatti</a></li>
+                <li><a style="font-family: 'Manrope', sans-serif; color: #fff; text-decoration: none;" href="/servizi/">Servizi</a></li>
+                <li><a style="font-family: 'Manrope', sans-serif; color: #fff; text-decoration: none;" href="/settori/">Settori</a></li>
+                <li><a style="font-family: 'Manrope', sans-serif; color: #fff; text-decoration: none;" href="/chi-siamo/">Chi Siamo</a></li>
+                <li><a style="font-family: 'Manrope', sans-serif; color: #fff; text-decoration: none;" href="/contatti/">Contatti</a></li>
             </ul>
         </nav>
     '''
@@ -46,10 +46,10 @@ def header_light():
         <nav style="display: flex; justify-content: space-between; padding: 1rem 2rem;">
             <a style="font-family: 'Manrope', sans-serif; color: #111; text-decoration: none;" href="/">Ozonogroup</a></div>
             <ul style="display: flex; gap: 1rem; list-style: none;">
-                <li><a style="font-family: 'Manrope', sans-serif; color: #111; text-decoration: none;" href="/servizi.html">Servizi</a></li>
-                <li><a style="font-family: 'Manrope', sans-serif; color: #111; text-decoration: none;" href="/settori.html">Settori</a></li>
-                <li><a style="font-family: 'Manrope', sans-serif; color: #111; text-decoration: none;" href="/chi-siamo.html">Chi Siamo</a></li>
-                <li><a style="font-family: 'Manrope', sans-serif; color: #111; text-decoration: none;" href="/contatti.html">Contatti</a></li>
+                <li><a style="font-family: 'Manrope', sans-serif; color: #111; text-decoration: none;" href="/servizi/">Servizi</a></li>
+                <li><a style="font-family: 'Manrope', sans-serif; color: #111; text-decoration: none;" href="/settori/">Settori</a></li>
+                <li><a style="font-family: 'Manrope', sans-serif; color: #111; text-decoration: none;" href="/chi-siamo/">Chi Siamo</a></li>
+                <li><a style="font-family: 'Manrope', sans-serif; color: #111; text-decoration: none;" href="/contatti/">Contatti</a></li>
             </ul>
         </nav>
     '''
@@ -324,10 +324,10 @@ def header_light_logo():
             </div>
             <nav style="display: flex; justify-content: space-between;">
                 <ul style="display: flex; gap: 1rem; list-style: none;">
-                    <li><a style="font-family: 'Manrope', sans-serif; color: #111; text-decoration: none;" href="/servizi.html">Servizi</a></li>
-                    <li><a style="font-family: 'Manrope', sans-serif; color: #111; text-decoration: none;" href="/settori.html">Settori</a></li>
-                    <li><a style="font-family: 'Manrope', sans-serif; color: #111; text-decoration: none;" href="/chi-siamo.html">Chi Siamo</a></li>
-                    <li><a style="font-family: 'Manrope', sans-serif; color: #111; text-decoration: none;" href="/contatti.html">Contatti</a></li>
+                    <li><a style="font-family: 'Manrope', sans-serif; color: #111; text-decoration: none;" href="/servizi/">Servizi</a></li>
+                    <li><a style="font-family: 'Manrope', sans-serif; color: #111; text-decoration: none;" href="/settori/">Settori</a></li>
+                    <li><a style="font-family: 'Manrope', sans-serif; color: #111; text-decoration: none;" href="/chi-siamo/">Chi Siamo</a></li>
+                    <li><a style="font-family: 'Manrope', sans-serif; color: #111; text-decoration: none;" href="/contatti/">Contatti</a></li>
                 </ul>
             </nav>
         </header>
@@ -337,11 +337,74 @@ def header_light_logo():
 def breadcrumbs_schema(url):
     breadcrumb_list = url.strip('/')
     breadcrumb_list = breadcrumb_list.split('/')
-    breadcrumb_href = ''
     breadcrumb_html = ''
-    breadcrumb_html = 'Home'
+    breadcrumb_html += f'''<nav aria-label="Percorso di navigazione">'''
+    breadcrumb_html += f'''
+        <ol 
+            itemscope
+            itemtype="https://schema.org/BreadcrumbList"
+            style="
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            "
+        >
+    '''
+    ###
+    breadcrumb_html += f'''
+        <li
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
+        >
+            <a
+                itemprop="item" 
+                href="/"
+            >
+                <span itemprop="name">Home</span>
+            </a>
+            <meta itemprop="position" content="1">
+        </li>
+        <li aria-hidden="true">/</li>
+    '''
+    breadcrumb_href = ''
     for breadcrumb_i, breadcrumb_text in enumerate(breadcrumb_list):
-        breadcrumb_html += ' / ' + breadcrumb_text
-    print(breadcrumb_html)
+        breadcrumb_href += f'/{breadcrumb_text}/'
+        breadcrumb_href = breadcrumb_href.replace('//', '/')
+        if breadcrumb_i != len(breadcrumb_list)-1:
+            breadcrumb_html += f'''
+                <li
+                    itemprop="itemListElement"
+                    itemscope
+                    itemtype="https://schema.org/ListItem"
+                >
+                    <a
+                        itemprop="item" 
+                        href="{breadcrumb_href}"
+                    >
+                        <span itemprop="name">{breadcrumb_text.capitalize()}</span>
+                    </a>
+                    <meta itemprop="position" content="{breadcrumb_i+2}">
+                </li>
+                <li aria-hidden="true">/</li>
+            '''
+        else:
+            breadcrumb_html += f'''
+                <li
+                    itemprop="itemListElement"
+                    itemscope
+                    itemtype="https://schema.org/ListItem"
+                    aria-current="page"
+                >
+                    <span itemprop="name">{breadcrumb_text.capitalize()}</span>
+                    <meta itemprop="position" content="{breadcrumb_i+2}">
+                </li>
+            '''
+    breadcrumb_html += f'''</ol>''' 
+    breadcrumb_html += f'''</nav>''' 
+    # print(breadcrumb_html)
     # quit()
     return breadcrumb_html

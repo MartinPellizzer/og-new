@@ -26,7 +26,7 @@ def gen():
                     MIGLIORA LA TUA PRODUZIONE AGROALIMENTARE
                 </h1>
                 <div style="text-align: center;">
-                    <a href="/" class="button-white-ghost-2">
+                    <a href="/contatti/" class="button-white-ghost-2">
                     Prenota Consulenza
                 </a>
                 </div>
@@ -84,7 +84,7 @@ LA NOSTRA AZIENDA
 sviluppiamo tecnologia a ozono per l'industria agroalimentare
                         </p>
                         <div>
-                            <a href="/contatti.html" class="button-black-ghost-2">
+                            <a href="/contatti/" class="button-black-ghost-2">
                                 CONTATTACI
                             </a>
                         </div>
@@ -166,7 +166,7 @@ CONTATTACI E DESCRIVICI LA TUA SITUAZIONE. VALUTEREMO CON TE SE L'OZONO È LA SO
                 </p>
                 <div class="m-flex" style="gap: 1rem; margin: 0 auto;">
                     <div style="text-align: center;">
-                        <a href="/contatti.html" class="button-black-2" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <a href="/contatti/" class="button-black-2" style="display: flex; align-items: center; gap: 0.5rem;">
                             LAVORIAMO ASSIEME
                         </a>
                     </div>

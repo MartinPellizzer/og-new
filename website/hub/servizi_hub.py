@@ -1,4 +1,5 @@
 from lib import g
+from lib import io
 from lib import components
 
 servizi_sanificazione_ambientale_data = [
@@ -46,7 +47,7 @@ def gen_old():
     hero_button = f'''
         <div style="flex: 1; display: flex; justify-content: end; margin-top: 0.25rem;">
             <div style="display: inline-block;">
-                <a class="button-default-1" href="/contatti.html">
+                <a class="button-default-1" href="/contatti/">
                     <span>Prenota Consulenza Gratuita</span>
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>                
                 </a>
@@ -269,7 +270,7 @@ def gen_old():
                     </div>
                     <div style="">
                         <div style="display: inline-block;">
-                            <a class="button-default-3" href="/contatti.html">
+                            <a class="button-default-3" href="/contatti/">
                                 <span>Prenota Consulenza Gratuita</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>                
                             </a>
@@ -640,7 +641,7 @@ Ti accompagniamo dalla valutazione iniziale fino alla manutenzione programmata d
                             Prenota una Chiamata Conoscitiva
                         </h2>
                         <div>
-                            <a href="/contatti.html" class="button-black-ghost-2">
+                            <a href="/contatti/" class="button-black-ghost-2">
                                 PRENOTA
                             </a>
                         </div>
@@ -688,5 +689,6 @@ Prenota ora una chiamata conoscitiva e scopri la soluzione più adatta alla tua 
         </body>
         </html>
     '''
-    html_filepath = f'{g.website_folderpath}/servizi.html'
+    html_filepath = f'{g.website_folderpath}/servizi/index.html'
+    io.folder_create_from_filepath(html_filepath)
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)

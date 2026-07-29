@@ -1,4 +1,5 @@
 from lib import g
+from lib import io
 from lib import components
 
 def gen():    
@@ -238,7 +239,7 @@ Seguiamo il cliente dall'analisi iniziale alla messa in servizio, fornendo suppo
 Parliamo del tuo caso specifico
                         </h2>
                         <div>
-                            <a href="/contatti.html" class="button-black-ghost-2">
+                            <a href="/contatti/" class="button-black-ghost-2">
                                 PRENOTA
                             </a>
                         </div>
@@ -290,5 +291,6 @@ Analizzeremo il tuo caso, risponderemo alle tue domande e ti aiuteremo a capire 
         </body>
         </html>
     '''
-    html_filepath = f'{g.website_folderpath}/chi-siamo.html'
+    html_filepath = f'{g.website_folderpath}/chi-siamo/index.html'
+    io.folder_create_from_filepath(html_filepath)
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)

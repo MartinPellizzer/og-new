@@ -1,4 +1,5 @@
 from lib import g
+from lib import io
 from lib import components
 
 def cta():
@@ -33,9 +34,7 @@ def gen():
     ########################################
     opacity = 0.3
     hero_html = f'''
-        <section 
-            style="
-        ">
+        <section style="">
             {components.header_light()}
             <div class="m-flex container-xl" style="flex-direction: column; justify-content: center; gap: 0rem; height: 96vh;">
                 <h1 style="font-family: 'Cormorant Garamond', serif; 
@@ -176,5 +175,6 @@ MIGLIORARE IL TUO PROCESSO PRODUTTIVO AGROALIMENTARE NON E' MAI STATO COSI' FACI
     '''
                 # {about_0000_html}
                 # {cta()}
-    html_filepath = f'{g.website_folderpath}/contatti.html'
+    html_filepath = f'{g.website_folderpath}/contatti/index.html'
+    io.folder_create_from_filepath(html_filepath)
     with open(html_filepath, 'w', encoding='utf-8', errors='ignore') as f: f.write(html)
