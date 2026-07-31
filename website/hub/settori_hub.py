@@ -131,19 +131,29 @@ def sector_gen(item):
     title = 'title'
     # h1 = item['h1']
     h1 = name
-    ###
     article_html = ''
+
+    ###
     demo_hero_html = f'''
         {components.breadcrumbs_schema(url_slug)}
-        <section>
-            <h1>
+        <section style="margin-bottom: 5rem;">
+            <h1 style="margin-bottom: 1rem;">
                 {h1}
             </h1>
-            <p>
+                <p
+                    style="
+                    max-width:820px;
+                    color:#68736c;
+                    line-height:1.7;
+                "
+                >
                 Esplora processi, applicazioni, problematiche e soluzioni
                 per l'impiego dell'ozono nell'industria lattiero-casearia,
                 dalla gestione dell'acqua e degli ambienti alla sanificazione
                 degli impianti e delle superfici.
+  </p>
+
+            <p>
             </p>
             <!-- Navigazione semantica interna -->
             <div
@@ -164,7 +174,7 @@ def sector_gen(item):
                     min-height: 48px;
                     padding: 0 22px;
                     border-radius: 8px;
-                    background: #101828;
+                    background: #12658F;
                     color: #ffffff;
                     font-size: 15px;
                     font-weight: 600;
@@ -213,6 +223,10 @@ def sector_gen(item):
 
     cards_html = f''
     for item in data:
+        order_str = ''
+        order_i = int(item['order'])+1
+        if order_i < 10: order_str = f'0{order_i}'
+        else: order_str = f'{order_i}'
         card_html = f'''
             <div
                 style="
@@ -224,14 +238,28 @@ def sector_gen(item):
             >
                 <span
                     aria-hidden="true"
-                    style="display:flex;width:40px;height:40px;align-items:center;justify-content:center;margin-bottom:22px;border-radius:10px;background:#eaf2ed;color:#1f5c45;font-size:18px;font-weight:700;"
+                    style="
+                        display:flex;
+                        width:40px;
+                        height:40px;
+                        align-items:center;
+                        justify-content:center;
+                        margin-bottom:22px;
+                        border-radius:10px;
+                        background:#E4F5F9;
+                        background:#F3FAFC;
+                        color:#12658F;
+                        font-size:18px;
+                        font-weight:700;
+                    "
                 >
-                    01
+                    {order_str}
                 </span>
 
                 <h3 
                     style="
                         margin-bottom: 1rem;
+                        color: #222;
                     "
                 >
                     {item['title']}
@@ -244,6 +272,19 @@ def sector_gen(item):
                 >
                     {item['description']}
                 </p>
+                <span
+                    style="
+                        display:inline-flex;
+                        align-items:center;
+                        gap:8px;
+                        color:#12658F;
+                        font-size:14px;
+                        font-weight:700;
+                    "
+                >
+                    Esplora le applicazioni
+                    <span aria-hidden="true">→</span>
+                </span>
             </div>
         '''
         cards_html += card_html
@@ -262,7 +303,7 @@ def sector_gen(item):
         <section
   id="industria-lattiero-casearia"
   aria-labelledby="sector-intro-title"
-  style="max-width:1180px;margin:0 auto;padding:80px 24px;background:#f7f8f6;color:#17201b;font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.7;"
+  style="max-width:1180px;margin:0 auto;padding:80px 24px;color:#17201b;font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.7;"
 >
 
   <!-- Eyebrow / Contesto semantico -->
@@ -491,7 +532,7 @@ def sector_gen(item):
   >
 </head>
 
-<body style="margin:0;background:#f7f8f6;color:#17201b;font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.6;">
+<body style="margin:0;color:#17201b;font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.6;">
 
   <main>
 
@@ -852,7 +893,7 @@ def sector_gen(item):
 </head>
 
 <body
-  style="margin:0;background:#f7f8f6;color:#17201b;font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.6;"
+  style="margin:0;color:#17201b;font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.6;"
 >
 
   <main>
