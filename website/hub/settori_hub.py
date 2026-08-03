@@ -130,31 +130,21 @@ def sector_gen(item):
     # title = item['title']
     title = 'title'
     # h1 = item['h1']
-    h1 = name
+    h1 = f'Ozono nel settore {name.lower()}'
     article_html = ''
 
     ###
     demo_hero_html = f'''
         {components.breadcrumbs_schema(url_slug)}
-        <section style="margin-bottom: 5rem;">
-            <h1 style="margin-bottom: 1rem;">
-                {h1}
-            </h1>
-                <p
-                    style="
-                    max-width:820px;
-                    color:#68736c;
-                    line-height:1.7;
-                "
-                >
-                Esplora processi, applicazioni, problematiche e soluzioni
-                per l'impiego dell'ozono nell'industria lattiero-casearia,
-                dalla gestione dell'acqua e degli ambienti alla sanificazione
-                degli impianti e delle superfici.
-  </p>
-
+        <section class="listing-hero">
+            <h1>{h1}</h1>
             <p>
+                Il settore lattiero-caseario comprende una filiera articolata che va dalla produzione del latte negli allevamenti fino alla trasformazione, confezionamento, conservazione, distribuzione e consumo. In ciascuna di queste fasi l'industria affronta specifiche esigenze di igiene, sanificazione, controllo microbiologico, trattamento dell'acqua, gestione degli ambienti e riduzione dei consumi di prodotti chimici e acqua. L'ozono può essere impiegato in diverse applicazioni lungo la filiera, sotto forma di ozono gassoso o disciolto in acqua, a seconda dell'obiettivo, del processo e delle condizioni operative.
             </p>
+            <p>
+                Questa guida analizza le applicazioni dell'ozono nel settore lattiero-caseario lungo l'intera filiera, dalle aziende agricole agli impianti di trasformazione, fino al confezionamento, alla distribuzione e alla gestione delle acque reflue.
+            </p>
+
             <!-- Navigazione semantica interna -->
             <div
             style="
@@ -218,82 +208,177 @@ def sector_gen(item):
 
     filepath = f'C:\ozonogroup\data\ssot\dataset\manual\settori_table_timeline.csv'
     data = io.csv_to_dict(filepath, delimiter="|")
-    # print(json.dumps(data, indent=4))
-    # quit()
+
+    def i_to_s(i):
+        if i < 10: s = f'0{i}'
+        else: s = f'{i}'
+        return s
 
     cards_html = f''
     for item in data:
-        order_str = ''
-        order_i = int(item['order'])+1
-        if order_i < 10: order_str = f'0{order_i}'
-        else: order_str = f'{order_i}'
         card_html = f'''
-            <div
-                style="
-                    background-color: #fff;
-                    border: 1px solid #e2e4e6;
-                    border-radius: 10px;
-                    padding: 2rem;
-                "
-            >
-                <span
-                    aria-hidden="true"
-                    style="
-                        display:flex;
-                        width:40px;
-                        height:40px;
-                        align-items:center;
-                        justify-content:center;
-                        margin-bottom:22px;
-                        border-radius:10px;
-                        background:#E4F5F9;
-                        background:#F3FAFC;
-                        color:#12658F;
-                        font-size:18px;
-                        font-weight:700;
-                    "
-                >
-                    {order_str}
+            <div class="listing-card">
+                <span aria-hidden="true" class="listing-card-num">
+                    {i_to_s(int(item['order'])+1)}
                 </span>
-
-                <h3 
-                    style="
-                        margin-bottom: 1rem;
-                        color: #222;
-                    "
-                >
+                <h3>
                     {item['title']}
-                    </h3>
-                <p
-                    style="
-                        color: #626466;
-                        font-size: 0.9375rem;
-                    "
-                >
+                </h3>
+                <p>
                     {item['description']}
                 </p>
-                <span
-                    style="
-                        display:inline-flex;
-                        align-items:center;
-                        gap:8px;
-                        color:#12658F;
-                        font-size:14px;
-                        font-weight:700;
-                    "
-                >
+                <a href="#{item['title']}">
                     Esplora le applicazioni
                     <span aria-hidden="true">→</span>
-                </span>
+                </a>
             </div>
         '''
         cards_html += card_html
 
     article_html += f'''
         <section>
-            <div class="grid-3" style="gap: 1rem;">
+            <h2>La filiera lattiero-casearia</h2>
+            <div class="grid-2" style="gap: 1rem; margin-bottom: 3rem;">
                 {cards_html}
             </div>
+
+            <h3 id="Allevamento">1. Allevamento</h3>
+
+            <p>
+                Nella fase di allevamento l'ozono può essere applicato alla gestione dell'acqua, alla sanificazione di ambienti e superfici, all'igiene delle attrezzature di mungitura e al controllo delle condizioni microbiologiche e igieniche degli spazi destinati agli animali, con applicazioni che variano in funzione della matrice trattata e dell'obiettivo del processo.
+            </p>
+
+            <h4>Problemi e criticità</h4>
+            <ul>
+                <li>Mastite bovina</li>
+                <li>Contaminazione microbiologica dell'acqua</li>
+                <li>Contaminazione microbiologica delle superfici e delle attrezzature di mungitura</li>
+                <li>Biofilm</li>
+                <li>Cattivi odori ed emissioni odorifere</li>
+            </ul>
+
+            <h4>Principali aree di applicazione</h4>
+
+            <table>
+                <thead>
+                <tr>
+                    <th>Area</th>
+                    <th>Matrice</th>
+                    <th>Obiettivo</th>
+                    <th>Applicazione dell'ozono</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Acqua di allevamento</td>
+                    <td>Acqua</td>
+                    <td>Trattamento e controllo microbiologico</td>
+                    <td>Ozonizzazione dell'acqua</td>
+                </tr>
+                <tr>
+                    <td>Abbeveraggio</td>
+                    <td>Acqua</td>
+                    <td>Gestione della qualità igienica dell'acqua</td>
+                    <td>Acqua ozonizzata</td>
+                </tr>
+                <tr>
+                    <td>Sale di mungitura</td>
+                    <td>Superfici e ambienti</td>
+                    <td>Igiene e sanificazione</td>
+                    <td>Trattamento con ozono</td>
+                </tr>
+                <tr>
+                    <td>Attrezzature di mungitura</td>
+                    <td>Superfici e impianti</td>
+                    <td>Sanificazione e controllo dei contaminanti</td>
+                    <td>Acqua ozonizzata e processi di sanificazione</td>
+                </tr>
+                <tr>
+                    <td>Serbatoi e contenitori</td>
+                    <td>Superfici</td>
+                    <td>Igiene delle superfici a contatto con il latte</td>
+                    <td>Sanificazione con acqua ozonizzata</td>
+                </tr>
+                <tr>
+                    <td>Stalle e ambienti di allevamento</td>
+                    <td>Aria e ambiente</td>
+                    <td>Controllo degli odori e delle condizioni igieniche</td>
+                    <td>Trattamento dell'aria e degli ambienti</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h4>Principali criticità</h4>
+
+            <ul>
+                <li>Qualità microbiologica dell'acqua utilizzata nell'allevamento</li>
+                <li>Contaminazione di superfici e attrezzature</li>
+                <li>Formazione di biofilm nelle linee e negli impianti idrici</li>
+                <li>Esigenze di igiene durante la mungitura</li>
+                <li>Sanificazione di sale e attrezzature di mungitura</li>
+                <li>Gestione degli odori negli ambienti di allevamento</li>
+                <li>Riduzione del consumo di acqua e prodotti chimici nei processi di pulizia</li>
+            </ul>
+
+            <h4>Applicazioni dell'ozono</h4>
+
+            <ul>
+                <li><strong>Trattamento dell'acqua:</strong> ozonizzazione dell'acqua destinata agli usi dell'allevamento.</li>
+                <li><strong>Acqua ozonizzata:</strong> utilizzo per specifiche operazioni di pulizia e sanificazione.</li>
+                <li><strong>Sanificazione delle attrezzature:</strong> trattamento di superfici e componenti degli impianti di mungitura.</li>
+                <li><strong>Igiene degli ambienti:</strong> applicazioni mirate al trattamento di ambienti e superfici.</li>
+                <li><strong>Controllo degli odori:</strong> trattamento dell'aria e degli ambienti in condizioni operative adeguate.</li>
+            </ul>
+
+            <h4>Fattori da considerare</h4>
+
+            <ul>
+                <li>Qualità e composizione dell'acqua</li>
+                <li>Carico organico e domanda di ozono</li>
+                <li>Concentrazione di ozono</li>
+                <li>Tempo di contatto</li>
+                <li>Temperatura e pH dell'acqua</li>
+                <li>Tipo di superficie o matrice trattata</li>
+                <li>Materiali compatibili con l'ozono</li>
+                <li>Modalità di applicazione e requisiti di sicurezza</li>
+            </ul>
+
+            <h4>Soluzioni tecnologiche</h4>
+
+            <table>
+                <thead>
+                <tr>
+                    <th>Soluzione</th>
+                    <th>Applicazioni</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Generatore di ozono</td>
+                    <td>Produzione di ozono per applicazioni industriali e agricole</td>
+                </tr>
+                <tr>
+                    <td>Sistema di ozonizzazione dell'acqua</td>
+                    <td>Trattamento dell'acqua utilizzata nell'allevamento</td>
+                </tr>
+                <tr>
+                    <td>Sistema di dissoluzione dell'ozono</td>
+                    <td>Produzione e distribuzione di acqua ozonizzata</td>
+                </tr>
+                <tr>
+                    <td>Sistema di trattamento dell'aria</td>
+                    <td>Applicazioni per ambienti e controllo degli odori</td>
+                </tr>
+                <tr>
+                    <td>Sistema di sanificazione</td>
+                    <td>Trattamento di superfici, attrezzature e ambienti</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p>
+                <a href="#soluzioni-lattiero-casearie">Esplora le soluzioni di ozonizzazione per l'allevamento →</a>
+            </p>
         </section>
     '''
 
@@ -1555,7 +1640,7 @@ def sector_gen(item):
         </head>
         <body>
             {components.header_light_logo()}
-            <main class="listing container-xl" style="margin-top: 5rem; margin-bottom: 5rem;">
+            <main class="listing container-md " style="margin-top: 5rem; margin-bottom: 5rem;">
                 {article_html}
             </main>
             <!-- =======================================

@@ -50,7 +50,7 @@ body {
 }
 
 .container-xl {
-    max-width: 1280px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
 }
@@ -2339,20 +2339,88 @@ LISTING
 .listing h1 {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
-    font-size: 3rem;
-    margin-bottom: 0;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    line-height: 1;
+    color: #111;
 }
 
 .listing h2 {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
-    font-size: 2rem;
-    margin-bottom: 0;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #111;
 }
 
 .listing h3 {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
     font-size: 1.25rem;
-    margin-bottom: 0;
+    margin-bottom: 1;
+    color: #111;
+}
+
+.listing h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #111;
+}
+
+.listing ul {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.listing-hero {
+    margin-bottom: 5rem;
+}
+
+.listing-hero p {
+    color: #68736c;
+    line-height: 1.7;
+    font-size: 1.125rem;
+}
+
+.listing-card {
+    background-color: #fff;
+    border: 1px solid #e2e4e6;
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.listing-card-num {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    border-radius: 10px;
+    background: #E4F5F9;
+    background: #F3FAFC;
+    color: #12658F;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.listing-card h3 {
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.listing-card p {
+    color: #626466;
+    font-size: 0.9375rem;
+}
+
+.listing-card a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #12658F;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
 }
