@@ -206,8 +206,9 @@ def sector_gen(item):
         {demo_hero_html}    
     '''
 
+
     filepath = f'C:\ozonogroup\data\ssot\dataset\manual\settori_table_timeline.csv'
-    data = io.csv_to_dict(filepath, delimiter="|")
+    phases_data = io.csv_to_dict(filepath, delimiter="|")
 
     def i_to_s(i):
         if i < 10: s = f'0{i}'
@@ -215,392 +216,77 @@ def sector_gen(item):
         return s
 
     cards_html = f''
-    for item in data:
+    for phase_item in phases_data:
         card_html = f'''
             <div class="listing-card">
                 <span aria-hidden="true" class="listing-card-num">
-                    {i_to_s(int(item['order'])+1)}
+                    {i_to_s(int(phase_item['order'])+1)}
                 </span>
                 <h3>
-                    {item['title']}
+                    {phase_item['title']}
                 </h3>
                 <p>
-                    {item['description']}
+                    {phase_item['description']}
                 </p>
-                <a href="#{item['title']}">
+                <a href="#{phase_item['title']}">
                     Esplora le applicazioni
                     <span aria-hidden="true">→</span>
                 </a>
             </div>
         '''
         cards_html += card_html
-
+    
     article_html += f'''
         <section>
             <h2>La filiera lattiero-casearia</h2>
-            <div class="grid-2" style="gap: 1rem; margin-bottom: 3rem;">
+            <div class="grid-2" style="gap: 1rem;">
                 {cards_html}
             </div>
+    '''
 
-            <h3 id="Allevamento">1. Allevamento</h3>
+    for phase_item in phases_data:
+        print(phase_item)
 
+        ### PROBLEMS
+        filepath = f'C:/ozonogroup/data/ssot/dataset/manual/table_sectors_problems.csv'
+        problems_data = io.csv_to_dict(filepath, delimiter="|")
+        problems_html = ''
+        for problem_item in problems_data:
+            if problem_item['phase'] == phase_item['title']:
+                problems_html += f'''
+                    <li>{problem_item['problem']}</li>
+                '''
+        ### PROCESSES
+        filepath = f'C:/ozonogroup/data/ssot/dataset/manual/table_sectors_processes.csv'
+        processes_data = io.csv_to_dict(filepath, delimiter="|")
+        processes_html = ''
+        for process_item in processes_data:
+            if process_item['phase'] == phase_item['title']:
+                processes_html += f'''
+                    <li>{process_item['process']}</li>
+                '''
+        ### 
+        article_html += f'''
+            <h3 id="Allevamento" style="margin-top: 3rem;">
+                {int(phase_item['order'])+1}. {phase_item['title']}
+            </h3>
             <p>
                 Nella fase di allevamento l'ozono può essere applicato alla gestione dell'acqua, alla sanificazione di ambienti e superfici, all'igiene delle attrezzature di mungitura e al controllo delle condizioni microbiologiche e igieniche degli spazi destinati agli animali, con applicazioni che variano in funzione della matrice trattata e dell'obiettivo del processo.
             </p>
-
-            <h4>Problemi e criticità</h4>
+            <h4 style="margin-bottom: 0.5rem">Problemi</h4>
             <ul>
-                <li>Mastite bovina</li>
-                <li>Contaminazione microbiologica dell'acqua</li>
-                <li>Contaminazione microbiologica delle superfici e delle attrezzature di mungitura</li>
-                <li>Biofilm</li>
-                <li>Cattivi odori ed emissioni odorifere</li>
+                {problems_html}
             </ul>
-
-            <h4>Principali aree di applicazione</h4>
-
-            <table>
-                <thead>
-                <tr>
-                    <th>Area</th>
-                    <th>Matrice</th>
-                    <th>Obiettivo</th>
-                    <th>Applicazione dell'ozono</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Acqua di allevamento</td>
-                    <td>Acqua</td>
-                    <td>Trattamento e controllo microbiologico</td>
-                    <td>Ozonizzazione dell'acqua</td>
-                </tr>
-                <tr>
-                    <td>Abbeveraggio</td>
-                    <td>Acqua</td>
-                    <td>Gestione della qualità igienica dell'acqua</td>
-                    <td>Acqua ozonizzata</td>
-                </tr>
-                <tr>
-                    <td>Sale di mungitura</td>
-                    <td>Superfici e ambienti</td>
-                    <td>Igiene e sanificazione</td>
-                    <td>Trattamento con ozono</td>
-                </tr>
-                <tr>
-                    <td>Attrezzature di mungitura</td>
-                    <td>Superfici e impianti</td>
-                    <td>Sanificazione e controllo dei contaminanti</td>
-                    <td>Acqua ozonizzata e processi di sanificazione</td>
-                </tr>
-                <tr>
-                    <td>Serbatoi e contenitori</td>
-                    <td>Superfici</td>
-                    <td>Igiene delle superfici a contatto con il latte</td>
-                    <td>Sanificazione con acqua ozonizzata</td>
-                </tr>
-                <tr>
-                    <td>Stalle e ambienti di allevamento</td>
-                    <td>Aria e ambiente</td>
-                    <td>Controllo degli odori e delle condizioni igieniche</td>
-                    <td>Trattamento dell'aria e degli ambienti</td>
-                </tr>
-                </tbody>
-            </table>
-
-            <h4>Principali criticità</h4>
-
+            <h4 style="margin-bottom: 0.5rem">Processi</h4>
             <ul>
-                <li>Qualità microbiologica dell'acqua utilizzata nell'allevamento</li>
-                <li>Contaminazione di superfici e attrezzature</li>
-                <li>Formazione di biofilm nelle linee e negli impianti idrici</li>
-                <li>Esigenze di igiene durante la mungitura</li>
-                <li>Sanificazione di sale e attrezzature di mungitura</li>
-                <li>Gestione degli odori negli ambienti di allevamento</li>
-                <li>Riduzione del consumo di acqua e prodotti chimici nei processi di pulizia</li>
+                {processes_html}
             </ul>
-
-            <h4>Applicazioni dell'ozono</h4>
-
-            <ul>
-                <li><strong>Trattamento dell'acqua:</strong> ozonizzazione dell'acqua destinata agli usi dell'allevamento.</li>
-                <li><strong>Acqua ozonizzata:</strong> utilizzo per specifiche operazioni di pulizia e sanificazione.</li>
-                <li><strong>Sanificazione delle attrezzature:</strong> trattamento di superfici e componenti degli impianti di mungitura.</li>
-                <li><strong>Igiene degli ambienti:</strong> applicazioni mirate al trattamento di ambienti e superfici.</li>
-                <li><strong>Controllo degli odori:</strong> trattamento dell'aria e degli ambienti in condizioni operative adeguate.</li>
-            </ul>
-
-            <h4>Fattori da considerare</h4>
-
-            <ul>
-                <li>Qualità e composizione dell'acqua</li>
-                <li>Carico organico e domanda di ozono</li>
-                <li>Concentrazione di ozono</li>
-                <li>Tempo di contatto</li>
-                <li>Temperatura e pH dell'acqua</li>
-                <li>Tipo di superficie o matrice trattata</li>
-                <li>Materiali compatibili con l'ozono</li>
-                <li>Modalità di applicazione e requisiti di sicurezza</li>
-            </ul>
-
-            <h4>Soluzioni tecnologiche</h4>
-
-            <table>
-                <thead>
-                <tr>
-                    <th>Soluzione</th>
-                    <th>Applicazioni</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Generatore di ozono</td>
-                    <td>Produzione di ozono per applicazioni industriali e agricole</td>
-                </tr>
-                <tr>
-                    <td>Sistema di ozonizzazione dell'acqua</td>
-                    <td>Trattamento dell'acqua utilizzata nell'allevamento</td>
-                </tr>
-                <tr>
-                    <td>Sistema di dissoluzione dell'ozono</td>
-                    <td>Produzione e distribuzione di acqua ozonizzata</td>
-                </tr>
-                <tr>
-                    <td>Sistema di trattamento dell'aria</td>
-                    <td>Applicazioni per ambienti e controllo degli odori</td>
-                </tr>
-                <tr>
-                    <td>Sistema di sanificazione</td>
-                    <td>Trattamento di superfici, attrezzature e ambienti</td>
-                </tr>
-                </tbody>
-            </table>
-
-            <p>
-                <a href="#soluzioni-lattiero-casearie">Esplora le soluzioni di ozonizzazione per l'allevamento →</a>
-            </p>
+        '''
+        
+    article_html += f'''
         </section>
     '''
 
-
-
-    article_html += '''
-        <section
-  id="industria-lattiero-casearia"
-  aria-labelledby="sector-intro-title"
-  style="max-width:1180px;margin:0 auto;padding:80px 24px;color:#17201b;font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.7;"
->
-
-  <!-- Eyebrow / Contesto semantico -->
-  <div
-    style="display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;padding:6px 10px;border:1px solid #e2e7e3;border-radius:999px;background:#ffffff;color:#1f5c45;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;"
-  >
-    Settore agroalimentare
-  </div>
-
-
-  <!-- H1 principale della pagina -->
-  <h1
-    id="sector-intro-title"
-    style="max-width:850px;margin:0 0 28px;font-size:clamp(34px,5vw,58px);line-height:1.08;letter-spacing:-.04em;font-weight:750;"
-  >
-    Industria lattiero-casearia
-  </h1>
-
-
-  <!-- Definizione sintetica dell'entità -->
-  <p
-    style="max-width:820px;margin:0 0 52px;color:#68736c;font-size:20px;line-height:1.7;"
-  >
-    L'industria lattiero-casearia comprende la filiera dedicata alla
-    trasformazione del latte e alla produzione di alimenti e derivati
-    lattiero-caseari. È un settore caratterizzato da processi produttivi
-    complessi, rigorosi requisiti igienico-sanitari e specifiche esigenze
-    di gestione dell'acqua, degli impianti, delle superfici e degli ambienti.
-  </p>
-
-
-  <!-- Contenuto principale + informazioni strutturate -->
-  <div
-    style="display:grid;grid-template-columns:minmax(0,1.6fr) minmax(280px,.8fr);gap:56px;align-items:start;"
-  >
-
-
-    <!-- Definizione approfondita -->
-    <div>
-
-      <h2
-        style="margin:0 0 16px;font-size:28px;line-height:1.25;letter-spacing:-.02em;font-weight:700;"
-      >
-        Che cos'è l'industria lattiero-casearia?
-      </h2>
-
-      <p
-        style="margin:0 0 20px;color:#3f4943;font-size:17px;"
-      >
-        La filiera lattiero-casearia comprende le attività industriali
-        legate alla raccolta e al trattamento del latte e alla sua
-        trasformazione in prodotti come latte alimentare, formaggi,
-        yogurt, burro e altri derivati.
-      </p>
-
-      <p
-        style="margin:0 0 20px;color:#3f4943;font-size:17px;"
-      >
-        A seconda del prodotto e del processo produttivo, la filiera
-        comprende diverse fasi, tra cui ricevimento e stoccaggio delle
-        materie prime, trattamento del latte, trasformazione, fermentazione,
-        caseificazione, eventuale stagionatura, confezionamento e
-        conservazione.
-      </p>
-
-      <p
-        style="margin:0;color:#3f4943;font-size:17px;"
-      >
-        L'igiene degli impianti e degli ambienti rappresenta un elemento
-        centrale del settore. La gestione della qualità microbiologica
-        dell'acqua, delle superfici e degli ambienti produttivi deve essere
-        integrata nei processi di controllo e sanificazione adottati
-        dall'industria lattiero-casearia.
-      </p>
-
-    </div>
-
-
-    <!-- Informazioni strutturate sul settore -->
-    <aside
-      aria-label="Panoramica dell'industria lattiero-casearia"
-      style="padding:28px;border:1px solid #e2e7e3;border-radius:16px;background:#ffffff;"
-    >
-
-      <h2
-        style="margin:0 0 22px;font-size:14px;font-weight:750;letter-spacing:.04em;text-transform:uppercase;"
-      >
-        Panoramica del settore
-      </h2>
-
-
-      <!-- Fact: Macrosettore -->
-      <div
-        style="padding:0 0 16px;border-top:0;"
-      >
-        <span
-          style="display:block;margin-bottom:4px;color:#68736c;font-size:13px;"
-        >
-          Macrosettore
-        </span>
-
-        <span
-          style="display:block;font-size:16px;font-weight:650;"
-        >
-          Agroalimentare
-        </span>
-      </div>
-
-
-      <!-- Fact: Settore -->
-      <div
-        style="padding:16px 0;border-top:1px solid #e2e7e3;"
-      >
-        <span
-          style="display:block;margin-bottom:4px;color:#68736c;font-size:13px;"
-        >
-          Settore
-        </span>
-
-        <span
-          style="display:block;font-size:16px;font-weight:650;"
-        >
-          Lattiero-caseario
-        </span>
-      </div>
-
-
-      <!-- Fact: Prodotti -->
-      <div
-        style="padding:16px 0;border-top:1px solid #e2e7e3;"
-      >
-        <span
-          style="display:block;margin-bottom:4px;color:#68736c;font-size:13px;"
-        >
-          Principali prodotti
-        </span>
-
-        <span
-          style="display:block;font-size:16px;font-weight:650;"
-        >
-          Latte, formaggi, yogurt, burro e derivati
-        </span>
-      </div>
-
-
-      <!-- Fact: Ambiti -->
-      <div
-        style="padding:16px 0 0;border-top:1px solid #e2e7e3;"
-      >
-        <span
-          style="display:block;margin-bottom:4px;color:#68736c;font-size:13px;"
-        >
-          Ambiti correlati
-        </span>
-
-        <span
-          style="display:block;font-size:16px;font-weight:650;"
-        >
-          Processi, igiene, acqua, sanificazione e conservazione
-        </span>
-      </div>
-
-    </aside>
-
-  </div>
-
-
-  <!-- Navigazione semantica verso i cluster della pagina -->
-  <nav
-    aria-label="Esplora l'industria lattiero-casearia"
-    style="display:flex;flex-wrap:wrap;gap:12px;margin-top:48px;padding-top:28px;border-top:1px solid #e2e7e3;"
-  >
-
-    <a
-      href="#processi"
-      style="display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border:1px solid #e2e7e3;border-radius:8px;background:#ffffff;color:#17201b;font-size:14px;font-weight:650;text-decoration:none;"
-    >
-      Processi del settore
-      <span aria-hidden="true">→</span>
-    </a>
-
-
-    <a
-      href="#applicazioni"
-      style="display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border:1px solid #e2e7e3;border-radius:8px;background:#ffffff;color:#17201b;font-size:14px;font-weight:650;text-decoration:none;"
-    >
-      Applicazioni dell'ozono
-      <span aria-hidden="true">→</span>
-    </a>
-
-
-    <a
-      href="#problematiche"
-      style="display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border:1px solid #e2e7e3;border-radius:8px;background:#ffffff;color:#17201b;font-size:14px;font-weight:650;text-decoration:none;"
-    >
-      Problematiche
-      <span aria-hidden="true">→</span>
-    </a>
-
-
-    <a
-      href="#soluzioni"
-      style="display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border:1px solid #e2e7e3;border-radius:8px;background:#ffffff;color:#17201b;font-size:14px;font-weight:650;text-decoration:none;"
-    >
-      Soluzioni OzonoGroup
-      <span aria-hidden="true">→</span>
-    </a>
-
-  </nav>
-
-</section>  
-    '''
 
     article_html += '''
     <!DOCTYPE html>
@@ -1628,6 +1314,75 @@ def sector_gen(item):
 </html>
     '''
 
+    sidebar_html = f'''
+        <nav style="
+            position: sticky;
+            top: 1rem;;
+        ">
+            <ul style="list-style: none;">
+                <li>
+                    <a href="#" style="font-size: 0.9375rem; color: blue; text-decoration: none;">
+                        Ozono nel settore lattiero-caseario
+                    </a>
+                </li>
+                <ul style="list-style: none;">
+                    <li>
+                        <a href="#" style="font-size: 0.9375rem; color: blue; text-decoration: none;">
+                            La filiera lattiero-casearia
+                        </a>
+                    </li>
+                    <ul style="list-style: none;">
+                        <li>
+                            <a href="#" style="font-size: 0.9375rem; color: blue; text-decoration: none;">
+                                 1. Allevamento 
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" style="font-size: 0.9375rem; color: blue; text-decoration: none;">
+                                  2. Raccolta latte 
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" style="font-size: 0.9375rem; color: blue; text-decoration: none;">
+                                 3. Trasporto latte 
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" style="font-size: 0.9375rem; color: blue; text-decoration: none;">
+                                 4. Caseificio 
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" style="font-size: 0.9375rem; color: blue; text-decoration: none;">
+                                  5. Confezionamento 
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" style="font-size: 0.9375rem; color: blue; text-decoration: none;">
+                                 6. Magazzino 
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" style="font-size: 0.9375rem; color: blue; text-decoration: none;">
+                                 7. Centro distribuzione 
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" style="font-size: 0.9375rem; color: blue; text-decoration: none;">
+                                 8. Trasporto 
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" style="font-size: 0.9375rem; color: blue; text-decoration: none;">
+                                 9. Punto vendita 
+                            </a>
+                        </li>
+                    </ul>
+                </ul>
+            </ul>
+        </nav>
+    '''
+
 
     html = f'''
         <!DOCTYPE html>
@@ -1640,8 +1395,20 @@ def sector_gen(item):
         </head>
         <body>
             {components.header_light_logo()}
-            <main class="listing container-md " style="margin-top: 5rem; margin-bottom: 5rem;">
-                {article_html}
+            <main 
+                class="listing container-xl"
+                style="
+                    margin-top: 5rem; margin-bottom: 5rem;
+                    display: flex;
+                    gap: 3rem;
+                "
+            >
+                <div style="flex: 1;">
+                    {sidebar_html}
+                </div>
+                <div style="flex: 3;">
+                    {article_html}
+                </div>
             </main>
             <!-- =======================================
                 FOOTER
