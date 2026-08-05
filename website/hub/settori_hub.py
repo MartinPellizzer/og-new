@@ -206,14 +206,15 @@ def sector_gen(item):
         {demo_hero_html}    
     '''
 
-
-    filepath = f'C:\ozonogroup\data\ssot\dataset\manual\settori_table_timeline.csv'
-    phases_data = io.csv_to_dict(filepath, delimiter="|")
-
     def i_to_s(i):
         if i < 10: s = f'0{i}'
         else: s = f'{i}'
         return s
+
+    ### FILIERA
+
+    filepath = f'C:\ozonogroup\data\ssot\dataset\manual\settori_table_timeline.csv'
+    phases_data = io.csv_to_dict(filepath, delimiter="|")
 
     cards_html = f''
     for phase_item in phases_data:
@@ -238,7 +239,7 @@ def sector_gen(item):
     
     article_html += f'''
         <section>
-            <h2>La filiera lattiero-casearia</h2>
+            <h2>Le fasi della filiera</h2>
             <div class="grid-2" style="gap: 1rem;">
                 {cards_html}
             </div>
@@ -266,6 +267,7 @@ def sector_gen(item):
                     <li>{process_item['process']}</li>
                 '''
         ### 
+        """
         article_html += f'''
             <h3 id="Allevamento" style="margin-top: 3rem;">
                 {int(phase_item['order'])+1}. {phase_item['title']}
@@ -282,9 +284,44 @@ def sector_gen(item):
                 {processes_html}
             </ul>
         '''
+        """
         
     article_html += f'''
         </section>
+    '''
+        
+    ### PROBLEMI
+    
+    filepath = f'C:/ozonogroup/data/ssot/dataset/manual/table_sectors_problems_new.csv'
+    data = io.csv_to_dict(filepath, delimiter="|")
+
+    cards_html = f''
+    for i, item in enumerate(data):
+        card_html = f'''
+            <div class="listing-card">
+                <span aria-hidden="true" class="listing-card-num">
+                    {i_to_s(int(i)+1)}
+                </span>
+                <h3>
+                    {item['heading']}
+                </h3>
+                <p>
+                    {item['description']}
+                </p>
+            </div>
+        '''
+        cards_html += card_html
+                # <a href="#{item['title']}">
+                #     Esplora le applicazioni
+                #     <span aria-hidden="true">→</span>
+                # </a>
+    
+    article_html += f'''
+        <section style="margin-top: 3rem;">
+            <h2>Problemi</h2>
+            <div class="grid-2" style="gap: 1rem;">
+                {cards_html}
+            </div>
     '''
 
 
@@ -1314,66 +1351,67 @@ def sector_gen(item):
 </html>
     '''
 
+    link_color = '#12658F'
     sidebar_html = f'''
         <nav style="
             position: sticky;
-            top: 1rem;;
+            top: 1rem;
         ">
             <ul style="list-style: none;">
                 <li>
-                    <a href="#" style="font-size: 0.9375rem; color: blue; text-decoration: none;">
+                    <a href="#" style="font-size: 0.9375rem; color: {link_color}; text-decoration: none;">
                         Ozono nel settore lattiero-caseario
                     </a>
                 </li>
                 <ul style="list-style: none;">
                     <li>
-                        <a href="#" style="font-size: 0.9375rem; color: blue; text-decoration: none;">
+                        <a href="#" style="font-size: 0.9375rem; color: {link_color}; text-decoration: none;">
                             La filiera lattiero-casearia
                         </a>
                     </li>
                     <ul style="list-style: none;">
                         <li>
-                            <a href="#" style="font-size: 0.9375rem; color: blue; text-decoration: none;">
+                            <a href="#" style="font-size: 0.9375rem; color: {link_color}; text-decoration: none;">
                                  1. Allevamento 
                             </a>
                         </li>
                         <li>
-                            <a href="#" style="font-size: 0.9375rem; color: blue; text-decoration: none;">
+                            <a href="#" style="font-size: 0.9375rem; color: {link_color}; text-decoration: none;">
                                   2. Raccolta latte 
                             </a>
                         </li>
                         <li>
-                            <a href="#" style="font-size: 0.9375rem; color: blue; text-decoration: none;">
+                            <a href="#" style="font-size: 0.9375rem; color: {link_color}; text-decoration: none;">
                                  3. Trasporto latte 
                             </a>
                         </li>
                         <li>
-                            <a href="#" style="font-size: 0.9375rem; color: blue; text-decoration: none;">
+                            <a href="#" style="font-size: 0.9375rem; color: {link_color}; text-decoration: none;">
                                  4. Caseificio 
                             </a>
                         </li>
                         <li>
-                            <a href="#" style="font-size: 0.9375rem; color: blue; text-decoration: none;">
+                            <a href="#" style="font-size: 0.9375rem; color: {link_color}; text-decoration: none;">
                                   5. Confezionamento 
                             </a>
                         </li>
                         <li>
-                            <a href="#" style="font-size: 0.9375rem; color: blue; text-decoration: none;">
+                            <a href="#" style="font-size: 0.9375rem; color: {link_color}; text-decoration: none;">
                                  6. Magazzino 
                             </a>
                         </li>
                         <li>
-                            <a href="#" style="font-size: 0.9375rem; color: blue; text-decoration: none;">
+                            <a href="#" style="font-size: 0.9375rem; color: {link_color}; text-decoration: none;">
                                  7. Centro distribuzione 
                             </a>
                         </li>
                         <li>
-                            <a href="#" style="font-size: 0.9375rem; color: blue; text-decoration: none;">
+                            <a href="#" style="font-size: 0.9375rem; color: {link_color}; text-decoration: none;">
                                  8. Trasporto 
                             </a>
                         </li>
                         <li>
-                            <a href="#" style="font-size: 0.9375rem; color: blue; text-decoration: none;">
+                            <a href="#" style="font-size: 0.9375rem; color: {link_color}; text-decoration: none;">
                                  9. Punto vendita 
                             </a>
                         </li>

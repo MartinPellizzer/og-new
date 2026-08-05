@@ -338,7 +338,7 @@ def breadcrumbs_schema(url):
     breadcrumb_list = url.strip('/')
     breadcrumb_list = breadcrumb_list.split('/')
     breadcrumb_html = ''
-    breadcrumb_html += f'''<nav aria-label="Percorso di navigazione">'''
+    breadcrumb_html += f'''<nav aria-label="Percorso di navigazione" class="breadcrumbs-schema">'''
     breadcrumb_html += f'''
         <ol 
             itemscope

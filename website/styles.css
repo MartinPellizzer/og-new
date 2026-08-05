@@ -2424,3 +2424,16 @@ LISTING
     font-weight: 700;
     text-decoration: none;
 }
+
+.breadcrumbs-schema {
+    margin-bottom: 0.75rem;
+}
+
+.breadcrumbs-schema li {
+    font-size: 0.9375rem;
+}
+
+.breadcrumbs-schema a {
+    color: #111;
+    text-decoration: none;
+}
