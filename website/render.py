@@ -1609,13 +1609,19 @@ def render_sector_html():
             {json_data['ambienti']}
             {json_data['ambienti_lst']}
         '''
-        html_toc = f''''''
+        html_article_new = f''
+        html_toc = f''
+        i = 0
         for line in html_article.strip().split('\n'):
-            if '<h1>' in line:
-                pass
-            elif '<h2>' in line:
-                line = line.replace('<h2>', '').replace('</h2>', '')
-                html_toc += f'''<li style="font-weight: 700;"><a href="">{line}</a></li>\n'''
+            if '<h2>' in line:
+                line_toc = line.replace('<h2>', '').replace('</h2>', '')
+                line_article = line.replace('<h2', f'<h2 id="{i}"')
+                html_toc += f'''<li style="font-weight: 700;"><a href="#{i}">{line_toc}</a></li>\n'''
+                html_article_new += f'''{line_article}'''
+                i += 1
+            else:
+                html_article_new += f'''{line}'''
+        html_article = html_article_new
 
         html_body = f'''
 <body>
