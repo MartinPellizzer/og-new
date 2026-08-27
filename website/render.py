@@ -86,21 +86,37 @@ def render_sectors_html():
 
     ###
     html_h1 = f'''<h1>Settori</h1>'''
-    html_sectors = ''
+    ###
+    sectors_cards_html = ''
     if sectors_lvl_1 != []:
-        html_sectors += '<ul>'
         for sector in sectors_lvl_1:
-            html_sectors += f'''<li><a href="/settori/{sector['sector_slug']}">{sector['sector_name']}</a></li>'''
-        html_sectors += '</ul>'
+            print(sector)
+            sectors_cards_html += f'''
+                <div class="card">
+                    <div class="card-image"></div>
+                    <div class="card-content">
+                        <a href="/settori/{sector['sector_slug']}">{sector['sector_name']}</a>
+                    </div>
+                </div>
+            '''
+
+    sectors_html = f'''
+        <section>
+            <h1 style="text-align: center;">Settori</h1>
+            <p>Discover the latest trends, tips, and best practices in modern web development. From UI components to design systems, stay updated with our expert insights.</p>
+            <div class="cards">
+                {sectors_cards_html}
+            </div>
+        </section>
+    '''
+    ###
     article_html = f'''
-        {html_h1}
-        {html_sectors}
+        {sectors_html}
     '''
 
     ###
     url_slug = f'''settori'''
     meta_title = f'''Settori'''
-            # <link rel="stylesheet" href="/styles.css">
     html = f''' 
         <!DOCTYPE html>
         <html lang="it">
@@ -108,17 +124,14 @@ def render_sectors_html():
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <title>{meta_title}</title>
-
-            <!-- USWDS initializer -->
-            <script src="/assets/uswds/dist/js/uswds-init.min.js"></script>
-
-            <!-- USWDS -->
-            <link rel="stylesheet" href="/assets/uswds/dist/css/uswds.min.css">
-
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="/styles.css">
         </head>
         <body>
             {components.header_light_logo()}
-            <main class="listing container-md">
+            <main class="hub-sectors container-xl">
                 {article_html}
             </main>
             {components.footer_dark()}
@@ -132,7 +145,7 @@ def render_sectors_html():
     with open(html_filepath, 'w') as f: f.write(html)
     print(html_filepath)
 
-def render_sector_html():
+def render_sector_html_backup():
     input_data = sectors_data.data
     for sector_item in input_data:
         sector_name = sector_item['sector_name']
@@ -1980,8 +1993,101 @@ def render_sector_html():
         print(html_filepath)
         quit()
 
+def render_sector():
+    input_data = sectors_data.data
+    for sector_item in input_data:
+        sector_name_eng = sector_item['sector_name_eng']
+        sector_name = sector_item['sector_name']
+        sector_slug = sector_item['sector_slug']
+        url_slug = f'''settori/{sector_slug}'''
+
+        if sector_name_eng != 'Food & Beverage': continue
+
+
+        pubmed_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/contaminations/sort/{sector_name_eng}'
+        pubmed_filenames = sorted(os.listdir(pubmed_folderpath))
+        contaminants_names = []
+        sectors_names = []
+        for pubmed_filename in pubmed_filenames:
+            pubmed_filepath = f'{pubmed_folderpath}/{pubmed_filename}'
+            pubmed_data = io.json_read(pubmed_filepath)
+            # print(json.dumps(pubmed_data, indent=4))
+            # quit()
+            for item in pubmed_data['reply']:
+                contaminants_names.append(item['contamination_name'].lower())
+        contaminants_html = ''
+        contaminants_html += '<ul>'
+        for contaminant_name in sorted(contaminants_names):
+            contaminants_html += f'''<li>{contaminant_name}</li>'''
+        contaminants_html += '</ul>'
+
+        pubmed_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/subsectors/sort/{sector_name_eng}'
+        pubmed_filenames = sorted(os.listdir(pubmed_folderpath))
+        contaminants_names = []
+        sectors_names = []
+        for pubmed_filename in pubmed_filenames:
+            pubmed_filepath = f'{pubmed_folderpath}/{pubmed_filename}'
+            pubmed_data = io.json_read(pubmed_filepath)
+            # print(json.dumps(pubmed_data, indent=4))
+            # quit()
+            for item in pubmed_data['reply']:
+                sectors_names.append(item['sector_name'].lower())
+        sectors_html = ''
+        sectors_html += '<h1>Sectors</h1>'
+        sectors_html += '<ul>'
+        for sector_name in sorted(sectors_names):
+            sectors_html += f'''<li>{sector_name}</li>'''
+        sectors_html += '</ul>'
+
+        ###
+        title = f'''Ozono nel settore {sector_name}'''.capitalize()
+        html_h1 = f'''<h1>{title}</h1>'''
+        
+        ###
+        article_html = f'''
+            {html_h1}
+        '''
+
+        ###
+
+        html_intro = f'''
+            <p>{lorem.words(16)}</p>
+            <p>{lorem.paragraph()}</p>
+            <p>{contaminants_html}</p>
+            <p>{sectors_html}</p>
+        '''
+
+        html_body = f'''
+            <body>
+                <main class="container-xl">
+                    {html_h1}
+                    {html_intro}
+                <main>
+            </body>
+        '''
+        meta_title = f'''{sector_name}'''
+        html = f''' 
+            <!DOCTYPE html>
+            <html lang="it">
+            <head>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <title>{meta_title}</title>
+                <link rel="stylesheet" href="/styles.css">
+            </head>
+            {html_body}
+            </html>
+        '''.strip()
+
+        ###
+        html_folderpath = f'{g.website_folderpath}/{url_slug}'
+        io.folders_recursive_gen(html_folderpath)
+        html_filepath = f'{g.website_folderpath}/{url_slug}/index.html'
+        with open(html_filepath, 'w') as f: f.write(html)
+        print(html_filepath)
+
 def run():
-    shutil.copy2(f'styles-custom.css', f'{g.WEBSITE_FOLDERPATH}/styles-custom.css')
+    shutil.copy2(f'styles.css', f'{g.WEBSITE_FOLDERPATH}/styles.css')
 
     output_folderpath = f'{g.WEBSITE_FOLDERPATH}/settori'
     try: shutil.rmtree(output_folderpath)
@@ -1991,6 +2097,7 @@ def run():
 
     render_sectors_html()
     ###
-    render_sector_html()
+    # render_sector_html_backup()
+    # render_sector()
 
 run()
