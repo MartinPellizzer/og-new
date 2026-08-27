@@ -91,9 +91,17 @@ def render_sectors_html():
     if sectors_lvl_1 != []:
         for sector in sectors_lvl_1:
             print(sector)
+            if sector['sector_name'].lower() == 'acqua':
+                sector_image = 'https://plus.unsplash.com/premium_photo-1733266883899-29971ddbe5e3?q=80&w=1075&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            elif sector['sector_name'].lower() == 'alimentare':
+                sector_image = 'https://images.unsplash.com/photo-1651525669944-00de65d3b8a5?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            else:
+                sector_image = 'https://images.unsplash.com/photo-1787540757892-cab3118bd223?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
             sectors_cards_html += f'''
                 <div class="card">
-                    <div class="card-image"></div>
+                    <div class="card-image">
+                        <img src="{sector_image}" alt="Example Image" height="200">
+                    </div>
                     <div class="card-content">
                         <a href="/settori/{sector['sector_slug']}">{sector['sector_name']}</a>
                     </div>
