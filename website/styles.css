@@ -2448,7 +2448,7 @@ HUB
 */
 
 .hub-sectors {
-    font-style: "Inter", sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
 .hub-sectors h1 {
@@ -2486,5 +2486,39 @@ HUB
 
 .hub-sectors .card-content {
     padding: 2rem;
+}
+
+.hub-sectors .card-content h3 {
+    font-family: "Inter", sans-serif;
+    font-size: 1.25rem;
+    margin-bottom: 0;
+}
+
+.hub-sectors .card-content h3 a {
+    font-family: "Inter", sans-serif;
+    text-decoration: none;
+    color: oklch(14.5% 0 0);
+}
+
+.hub-sectors .card-content h3 a:hover {
+    text-decoration: underline;
+}
+
+.hub-sectors .card-content .author-date {
+    font-family: "Inter", sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+
+.hub-sectors .card-content .description {
+    font-family: "Inter", sans-serif;
+    color: oklch(55.6% 0 0);
+    font-size: 0.875rem;
+    line-height: 1.625;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
 }
 

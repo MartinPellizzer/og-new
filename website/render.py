@@ -95,6 +95,14 @@ def render_sectors_html():
                 sector_image = 'https://plus.unsplash.com/premium_photo-1733266883899-29971ddbe5e3?q=80&w=1075&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
             elif sector['sector_name'].lower() == 'alimentare':
                 sector_image = 'https://images.unsplash.com/photo-1651525669944-00de65d3b8a5?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            elif sector['sector_name'].lower() == 'agricoltura':
+                sector_image = 'https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            elif sector['sector_name'].lower() == 'sanità':
+                sector_image = 'https://images.unsplash.com/photo-1640876777002-badf6aee5bcc?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            elif sector['sector_name'].lower() == 'ospitalità':
+                sector_image = 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            elif sector['sector_name'].lower() == 'edilizia':
+                sector_image = 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
             else:
                 sector_image = 'https://images.unsplash.com/photo-1787540757892-cab3118bd223?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
             sectors_cards_html += f'''
@@ -103,7 +111,17 @@ def render_sectors_html():
                         <img src="{sector_image}" alt="Example Image" height="200">
                     </div>
                     <div class="card-content">
-                        <a href="/settori/{sector['sector_slug']}">{sector['sector_name']}</a>
+                        <h3>
+                            <a href="/settori/{sector['sector_slug']}">
+                                {sector['sector_name']}
+                            </a>
+                        </h3>
+                        <p class="author-date">
+                            Sarah Chen · 1 Jan 2024
+                        </p>
+                        <p class="description">
+                            Learn how to quickly integrate and customize shadcn/ui components in your Next.js projects. We'll cover installation, theming, and best practices for building modern interfaces.
+                        </p>
                     </div>
                 </div>
             '''
