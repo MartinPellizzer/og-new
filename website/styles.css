@@ -2460,6 +2460,17 @@ HUB
     font-weight: 400;
 }
 
+.hub-sectors .intro {
+    font-size: 1.125rem;
+    line-height: 1.5;
+    max-width: 42rem;
+    color: oklch(56.6% 0 0);
+    margin-bottom: 4rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .hub-sectors .cards {
     display: grid;
     grid-template-columns: repeat(3,minmax(0,1fr));

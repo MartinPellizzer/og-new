@@ -103,6 +103,18 @@ def render_sectors_html():
                 sector_image = 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
             elif sector['sector_name'].lower() == 'edilizia':
                 sector_image = 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            elif sector['sector_name'].lower() == 'manifatturiero':
+                sector_image = 'https://images.unsplash.com/photo-1717386255773-1e3037c81788?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            elif sector['sector_name'].lower() == 'energia':
+                sector_image = 'https://images.unsplash.com/photo-1467533003447-e295ff1b0435?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            elif sector['sector_name'].lower() == 'ambiente':
+                sector_image = 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1613&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            elif sector['sector_name'].lower() == 'trasporti':
+                sector_image = 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            elif sector['sector_name'].lower() == 'residenziale':
+                sector_image = 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            elif sector['sector_name'].lower() == 'ricerca':
+                sector_image = 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
             else:
                 sector_image = 'https://images.unsplash.com/photo-1787540757892-cab3118bd223?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
             sectors_cards_html += f'''
@@ -127,9 +139,9 @@ def render_sectors_html():
             '''
 
     sectors_html = f'''
-        <section>
+        <section style="margin-top: 5rem; margin-bottom: 5rem;">
             <h1 style="text-align: center;">Settori</h1>
-            <p>Discover the latest trends, tips, and best practices in modern web development. From UI components to design systems, stay updated with our expert insights.</p>
+            <p class="intro">Discover the latest trends, tips, and best practices in modern web development. From UI components to design systems, stay updated with our expert insights.</p>
             <div class="cards">
                 {sectors_cards_html}
             </div>
