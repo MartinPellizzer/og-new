@@ -7,6 +7,8 @@ from lib import g
 from lib import io
 from lib import llm
 
+import sectors_data
+
 model_filepath = '/home/ubuntu/vault-tmp/llm/gemma-4-26B-A4B-it-UD-Q4_K_M.gguf'
 # model_filepath = '/home/ubuntu/vault-tmp/llm/gemma-4-31B-it-Q4_K_M.gguf'
 
@@ -486,6 +488,205 @@ def parse_sector_subsectors_extract_raw(sector_name):
             # quit()
     # quit()
 
+def parse_sector_contaminations_categorize_raw(target_sector_name='Food & Beverage'):
+    input_data = sectors_data.data
+    for sector_item in input_data:
+        sector_name_eng = sector_item['sector_name_eng']
+        sector_name = sector_item['sector_name']
+        sector_slug = sector_item['sector_slug']
+        url_slug = f'''settori/{sector_slug}'''
+
+        # print(sector_item)
+        # quit()
+        if sector_name_eng.lower() != target_sector_name.lower(): continue
+        # print(json.dumps(sector_item, indent=4))
+        # quit()
+
+        ###
+        regen = True
+        json_data_filepath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/articles/{target_sector_name}.json'
+        json_data = io.json_read(json_data_filepath, create=True)
+        key = 'contaminants'
+        if key not in json_data: json_data[key] = []
+        if regen: json_data[key] = []
+        if json_data[key] == []:
+            pubmed_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/contaminations/sort/{sector_name_eng}'
+            pubmed_filenames = sorted(os.listdir(pubmed_folderpath))
+            for pubmed_filename in pubmed_filenames:
+                pubmed_filepath = f'{pubmed_folderpath}/{pubmed_filename}'
+                pubmed_data = io.json_read(pubmed_filepath)
+                # print(json.dumps(pubmed_data, indent=4))
+                # quit()
+                pubmed_title = pubmed_data['title']
+                pubmed_abstract = pubmed_data['abstract']
+                content_to_extract = f'{pubmed_title} {pubmed_abstract}'
+                for reply_item in pubmed_data['reply']:
+                    contamination_name = reply_item['contamination_name']
+                    print('################################################################################')
+                    print(contamination_name)
+                    print('################################################################################')
+                    nature = None
+                    _class = None
+                    ### FACET A: NATURE
+                    prompt = f'''
+                        From the scientific study ABSTRACT below about the {sector_name_eng} sector, I extracted the following contamination: {contamination_name}.
+                        Choose the best category name for this contaminant from the CATEGORIES below.
+                        CATEGORIES NAMES:
+                        - Biological
+                        - Chemical
+                        - Physical
+                        ADDITIONAL CONTEXT:
+
+                        - Biological: Living organisms or biologically active structures (Bacteria, viruses, fungi, yeasts, parasites, spores, biofilms)
+                        - Chemical: Molecules, compounds, residues, toxins (Pesticides, aflatoxins, heavy metals, antibiotics, allergens, VOCs)
+                        - Physical: Solid foreign matter or particulate material (Dust, glass, plastic, insects, soil, metal fragments)
+                        RULES:
+                        Pick only one category, the one that best represent the contamination.
+                        Reply only with the category name.
+                        ABSTRACT:
+                        {content_to_extract}
+                    '''.strip()
+                    # print(prompt)
+                    prompt = prompt.replace('<text>', content_to_extract)
+                    reply = llm.reply(prompt, model_filepath, max_tokens=512)
+                    print()
+                    nature = reply
+
+                    classes_names = f''
+                    classes_context = f''
+                    if nature.strip().lower() == 'biological':
+                        classes_names = f'''
+                            - Bacterium
+                            - Virus
+                            - Fungus
+                            - Parasite
+                            - Microbial Community
+                        '''
+                        classes_context = f'''
+                            - Bacterium: including Prokaryotic bacteria (Salmonella, E. coli, Listeria, Pseudomonas)
+                            - Virus: including All viruses (Norovirus, SARS-CoV-2, HAV)
+                            - Fungus: including Molds and yeasts (Aspergillus, Penicillium, Saccharomyces, Candida)
+                            - Parasite: including Protozoa and helminths (Cryptosporidium, Giardia, Angiostrongylu)
+                            - Microbial Community: including Non-specific microbial populations (Microbiota, indigenous flora, total bacteria, microbial contamination)
+                        '''
+                    else: continue
+
+                    ### FACET B: CLASS
+                    prompt = f'''
+                        From the scientific study ABSTRACT below about the {sector_name_eng} sector, I extracted the following contamination: {contamination_name}.
+                        I also categorized this contamination as: {nature}.
+                        Now, choose the best category name for this contaminant of nature {nature} from the CLASSES below.
+                        CLASSES NAMES:
+                        {classes_names}
+                        ADDITIONAL CONTEXT:
+                        {classes_context}
+                        RULES:
+                        Pick only one class, the one that best represent the contamination.
+                        Reply only with the class name.
+                        ABSTRACT:
+                        {content_to_extract}
+                    '''.strip()
+                    # print(prompt)
+                    prompt = prompt.replace('<text>', content_to_extract)
+                    reply = llm.reply(prompt, model_filepath, max_tokens=512)
+                    print()
+                    _class = reply
+
+                    ### FACET C: SPECIFIC ENTITY
+                    prompt = f'''
+                        From the scientific study ABSTRACT below about the {sector_name_eng} sector, I extracted the following contamination: {contamination_name}.
+                        I also categorized this contamination as {nature} nature and {_class} class.
+                        Now, identify its specific entity name.
+                        By entity name I mean the canonical name of the individual biological target, chemical compound, physical contaminant, or composite being studied.
+                        For example, canonical names are like Escherichia coli O157:H7, Listeria monocytogenes, Norovirus, Aflatoxin B1, Chlorpyrifos, Geosmin, Glass fragment, Indigenous microbiota.
+                        RULES:
+                        Pick only one canonical name, the one that best represent the contamination.
+                        Reply only with the canonical name.
+                        If the contamination can't match to a canonical entity name because is a category or something else: reply with "NONE".
+                        ABSTRACT:
+                        {content_to_extract}
+                    '''.strip()
+                    # print(prompt)
+                    prompt = prompt.replace('<text>', content_to_extract)
+                    reply = llm.reply(prompt, model_filepath, max_tokens=512)
+                    print()
+                    entity_name = reply
+                    # quit()
+
+                    ### FACET D: FUNCTIONAL ROLEs
+                    prompt = f'''
+                        From the scientific study ABSTRACT below about the {sector_name_eng} sector, I extracted the following contamination: {contamination_name}.
+                        I also categorized this contamination as {nature} nature, {_class} class, and {entity_name} specific entity.
+                        Now, choose the best functional role (or roles) for this contaminant from the FUNCTIONAL ROLE NAMES below.
+                        FUNCTIONAL ROLE NAMES NAMES:
+                        - Pathogen
+                        - Spoilage Agent
+                        - Indicator
+                        - Beneficial Organism
+                        - Producer
+                        - Unknown / Unspecified
+                        ADDITIONAL CONTEXT:
+                        - Pathogen: Causes disease in humans, animals, or plants (examples are Salmonella, Listeria monocytogenes, Norovirus, Cryptosporidium)
+                        - Spoilage Agent: Causes food or material deterioration without necessarily causing disease (examples are Pseudomonas fluorescens, Botrytis cinerea, Brettanomyces bruxellensis)
+                        - Indicator: Used as a surrogate or hygiene indicator (examples are Coliforms, Total aerobic bacteria, Enterococci, E. coli generic)
+                        - Beneficial Organism: Desirable microorganisms that may be unintentionally affected by ozone (examples are Lactic acid bacteria, probiotics, starter cultures, yeasts used in fermentation)
+                        - Producer: (Produces undesirable metabolites, toxins, odors, or biofilms (examples are Aspergillus flavus (aflatoxin producer), Streptomyces (geosmin producer), biofilm-forming Listeria)
+                        - Unknown / Unspecified: Functional role not stated or not applicable in the study (examples are Generic "bacteria", environmental isolates, unidentified microbiota)
+                        - RULES:
+                        Pick only the functional role/roles that best represent the contamination in the context of the study.
+                        Reply only with the roles name separated by commas.
+                        ABSTRACT:
+                        {content_to_extract}
+                    '''.strip()
+                    # print(prompt)
+                    prompt = prompt.replace('<text>', content_to_extract)
+                    reply = llm.reply(prompt, model_filepath, max_tokens=512)
+                    print()
+                    functional_role_name = reply
+                    # quit()
+
+                    ### Facet E — BIOLOGICAL STATE
+                    prompt = f'''
+                        From the scientific study ABSTRACT below about the {sector_name_eng} sector, I extracted the following contamination: {contamination_name}.
+                        I also categorized this contamination as {nature} nature, {_class} class, {entity_name} specific entity, {functional_role_name} functional role.
+                        Now, choose the best biological state for this contaminant from the BIOLOGICAL STATE NAMES below.
+                        BIOLOGICAL STATES:
+                        - Vegetative
+                        - Spore
+                        - Biofilm
+                        - Dormant
+                        - Unknown / Unspecified
+                        ADDITIONAL CONTEXT:
+                        - Vegetative: Metabolically active, free-living cells or organisms (examples are E. coli, Listeria, yeasts, protozoa)
+                        - Spore: Dormant, highly resistant reproductive or survival structure (examples are Bacillus spores, Clostridium spores, fungal spores)
+                        - Biofilm: Surface-attached microbial community embedded in an extracellular matrix (examples are Listeria biofilm, Pseudomonas biofilm, mixed biofilm)
+                        - Dormant: Viable but metabolically inactive forms other than spores (examples are VBNC bacteria, latent viruses, dormant fungal cells)
+                        - Unknown / Unspecified: Biological state not reported or not applicable (examples are Most papers simply stating "Salmonella")
+                        - RULES:
+                        Pick only the biological state that best represent the contamination in the context of the study.
+                        Reply only with the biological state name.
+                        If the biological state is not applicable to the contamination, reply with "NONE".
+                        ABSTRACT:
+                        {content_to_extract}
+                    '''.strip()
+                    # print(prompt)
+                    prompt = prompt.replace('<text>', content_to_extract)
+                    reply = llm.reply(prompt, model_filepath, max_tokens=512)
+                    print()
+                    biological_state_name = reply
+                    # quit()
+
+                    json_data[key].append({
+                        'contamination': contamination_name,
+                        'nature': nature,
+                        '_class': _class,
+                        'entity': entity_name,
+                        'functional_role': functional_role_name,
+                        'biological_state': biological_state_name,
+                    })
+                    io.json_write(json_data_filepath, json_data)
+
+
 def run():
     print('parse >> pubmed')
 
@@ -501,7 +702,8 @@ def run():
     # parse_sector_contaminations_extract_raw(sector_name='Food & Beverage')
     # parse_sector_problems_extract_raw(sector_name='Food & Beverage')
     # parse_sector_sectors_extract_raw(sector_name='Food & Beverage')
-    parse_sector_subsectors_extract_raw(sector_name='Food & Beverage')
+    # parse_sector_subsectors_extract_raw(sector_name='Food & Beverage')
 
+    parse_sector_contaminations_categorize_raw(target_sector_name='Food & Beverage')
 
 run()

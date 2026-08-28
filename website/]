@@ -2049,32 +2049,20 @@ def render_sector(target_sector_name='Food & Beverage'):
         input_data = json_data['contaminants']
 
         contaminations_items = []
-        for input_item in input_data[:]:
+        for input_item in input_data:
+            nature = input_item['nature']
             nature_found = False
-            ### NATURE
             for contamination_item in contaminations_items:
-                if input_item['nature'] in contamination_item['nature']:
+                if nature in contamination_item['nature']:
                     nature_found = True
-                    ### CLASS
-                    class_found = False
-                    for contamination_class in contamination_item['classes']:
-                        if input_item['_class'] == contamination_class['class']:
-                            class_found = True
-                            break
-                    if not class_found:
-                        class_item = {
-                            'class': input_item['_class'],
-                        }
-                        contamination_item['classes'].append(class_item)
                     break
             if not nature_found:
                 contamination_item = {
                     'nature': input_item['nature'],
-                    'classes': [],
                 }
                 contaminations_items.append(contamination_item)
-        # print(json.dumps(contaminations_items, indent=4))
-        # quit()
+        print(contaminations_items)
+        quit()
         [
             {
                 'nature': 'nature',
@@ -2091,38 +2079,15 @@ def render_sector(target_sector_name='Food & Beverage'):
             },
         ]
         
-        contaminations_items = [
-            {
-                "nature": "Biological",
-                "classes": [
-                    {
-                        "class": "Bacterium",
-                    },
-                    {
-                        "class": "Fungus",
-                    },
-                    {
-                        "class": "Parasite",
-                    },
-                    {
-                        "class": "Virus",
-                    },
-                    {
-                        "class": "Microbial Community",
-                    },
-                ]
-            }
-        ]
             
 
+        contaminations_natures_html = ''
+        for contamination_natures in sorted(contaminations_natures):
+            contaminations_natures_html += f'''<li>{contamination_natures}</li>'''
         contaminations_html = f'''
             <h2>Contaminations</h2>
+            {contaminations_natures_html}
         '''
-        for contamination_item in contaminations_items:
-            contaminations_html += f'''<h3>{contamination_item['nature']}</h3>'''
-            for contamination_class in contamination_item['classes']:
-                contaminations_html += f'''<h4>{contamination_class['class']}</h4>'''
-                
 
         pubmed_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/contaminations/sort/{sector_name_eng}'
         pubmed_filenames = sorted(os.listdir(pubmed_folderpath))
