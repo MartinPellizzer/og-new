@@ -2097,31 +2097,60 @@ def render_sector(target_sector_name='Food & Beverage'):
                 "classes": [
                     {
                         "class": "Bacterium",
+                        "entities": [],
                     },
                     {
                         "class": "Fungus",
+                        "entities": [],
                     },
                     {
                         "class": "Parasite",
+                        "entities": [],
                     },
                     {
                         "class": "Virus",
+                        "entities": [],
                     },
                     {
                         "class": "Microbial Community",
+                        "entities": [],
                     },
                 ]
             }
         ]
             
+        input_data = json_data['contaminants']
+        for input_item in input_data:
+            nature = input_item['nature']
+            _class = input_item['_class']
+            entity = input_item['entity']
+            if entity == 'NONE': continue
+            for nature_item in contaminations_items:
+                if nature_item['nature'] == nature:
+                    for class_item in nature_item['classes']:
+                        if class_item['class'] == _class:
+                            found = False
+                            for entity_name in class_item['entities']:
+                                if entity_name == entity:
+                                    found = True
+                                    break
+                            if not found:
+                                class_item['entities'].append(entity)
+            
+        for contamination_item in contaminations_items:
+            print(json.dumps(contamination_item, indent=4))
+        # quit()
 
         contaminations_html = f'''
-            <h2>Contaminations</h2>
+            <h2 class="block-blogpost-5-h2">Contaminations</h2>
+            <p class="block-blogpost-5-paragraph">{lorem.sentence()}</p>
         '''
         for contamination_item in contaminations_items:
             contaminations_html += f'''<h3>{contamination_item['nature']}</h3>'''
             for contamination_class in contamination_item['classes']:
                 contaminations_html += f'''<h4>{contamination_class['class']}</h4>'''
+                for contamination_entity in sorted(contamination_class['entities']):
+                    contaminations_html += f'''<p>{contamination_entity}</p>'''
                 
 
         pubmed_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/contaminations/sort/{sector_name_eng}'
@@ -2163,28 +2192,36 @@ def render_sector(target_sector_name='Food & Beverage'):
 
         ###
         title = f'''Ozono nel settore {sector_name}'''.capitalize()
-        html_h1 = f'''<h1>{title}</h1>'''
+        html_h1 = f'''<h1 class="block-blogpost-5-h1">{title}</h1>'''
         
-        ###
-        article_html = f'''
-            {html_h1}
-        '''
-
-        ###
-
         html_intro = f'''
-            <p>{lorem.words(16)}</p>
-            <p>{lorem.paragraph()}</p>
-            <p>{contaminations_html}</p>
             <p>{contaminants_html}</p>
             <p>{sectors_html}</p>
         '''
 
+        featuredimage_html = f'''
+            <img class="block-blogpost-5-featuredimage" src="https://images.unsplash.com/photo-1651525669944-00de65d3b8a5?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+        '''
+
         html_body = f'''
             <body>
-                <main class="container-xl">
+                <main class="container-xl block-blogpost-5">
                     {html_h1}
-                    {html_intro}
+                    <div class="block-blogpost-5-layout">
+                        <div>
+                            {featuredimage_html}
+                            <p class="block-blogpost-5-intro">{lorem.sentence()}</p>
+                            <p class="block-blogpost-5-intro">{lorem.sentence()}</p>
+                            <p class="block-blogpost-5-intro">{lorem.sentence()}</p>
+                            <p class="block-blogpost-5-intro">{lorem.sentence()}</p>
+                            <section class="block-blogpost-5-section">
+                                {contaminations_html}
+                            </section>
+                        </div>
+                        <div>
+                            <h2>test</h2>
+                        </div>
+                    </div>
                 <main>
             </body>
         '''
@@ -2196,6 +2233,9 @@ def render_sector(target_sector_name='Food & Beverage'):
                 <meta charset="utf-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1">
                 <title>{meta_title}</title>
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
                 <link rel="stylesheet" href="/styles.css">
             </head>
             {html_body}

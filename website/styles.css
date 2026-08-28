@@ -2533,3 +2533,71 @@ HUB
     margin-bottom: 0;
 }
 
+
+/*
+################################################################################
+################################################################################
+BLOCKS
+################################################################################
+################################################################################
+*/
+
+.block-blogpost-5 {
+    font-family: "Inter", sans-serif !important;
+}
+
+.block-blogpost-5-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.block-blogpost-5-section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.block-blogpost-5-h1 {
+    font-family: "Inter", sans-serif !important;
+    font-size: 4.5rem;
+    line-height: 1;
+    margin-bottom: 2.5rem;
+    font-weight: 700;
+    max-width: 48rem;
+    margin-top: 2.25rem;
+    color: oklch(14.5% 0 0);
+    letter-spacing: 1px;
+}
+
+.block-blogpost-5-h2 {
+    font-family: "Inter", sans-serif !important;
+    margin-top: 0;
+    color: oklch(21% .034 264.665);
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    font-weight: 700;
+    line-height: 1.33333;
+}
+
+.block-blogpost-5-featuredimage {
+    object-fit: cover;
+    border-radius: 8px;
+    height: 480px;
+    margin-bottom: 2rem;
+}
+
+.block-blogpost-5-intro {
+    font-family: "Inter", sans-serif !important;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: oklch(55.6% 0 0);
+}
+
+.block-blogpost-5-paragraph {
+    font-family: "Inter", sans-serif !important;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: oklch(37.3% .034 259.733);
+    max-width: 65ch;
+    font-weight: 400;
+}
+
