@@ -2222,14 +2222,13 @@ def contaminations_biological_content_llm(context_data, regen=False):
         io.json_write(json_filepath, json_data)
     return json_data
 
-def section_intro_llm(regen=False):
-    json_filepath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/articles/sector_food.json'
+def section_intro_llm(json_filepath, Sector, regen=False):
     json_data = io.json_read(json_filepath)
     key = 'section_intro_llm'
     if key not in json_data: json_data[key] = ''
     if regen: json_data[key] = ''
     if json_data[key] == '':
-        Sector = 'settore alimentare'
+        Sector = f'settore {Sector}'
         prompt = f'''
 You are an expert technical writer and semantic SEO content architect.
 ## Context
@@ -2355,14 +2354,13 @@ Reply only in Italian.
         io.json_write(json_filepath, json_data)
     return json_data
 
-def section_role_llm(regen=False):
-    json_filepath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/articles/sector_food.json'
-    json_data = io.json_read(json_filepath, create=True)
+def section_role_llm(json_filepath, Sector, regen=False):
+    json_data = io.json_read(json_filepath)
     key = 'section_role_llm'
     if key not in json_data: json_data[key] = ''
     if regen: json_data[key] = ''
     if json_data[key] == '':
-        Sector = 'settore alimentare'
+        Sector = f'settore {Sector}'
         prompt = f'''
 You are an expert technical writer and semantic SEO content architect.
 ## Context
@@ -2492,14 +2490,13 @@ Reply only in Italian.
         io.json_write(json_filepath, json_data)
     return json_data
 
-def section_applications_llm(regen=False):
-    json_filepath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/articles/sector_food.json'
-    json_data = io.json_read(json_filepath, create=True)
+def section_applications_llm(json_filepath, Sector, regen=False):
+    json_data = io.json_read(json_filepath)
     key = 'section_applications_llm'
     if key not in json_data: json_data[key] = ''
     if regen: json_data[key] = ''
     if json_data[key] == '':
-        Sector = 'settore alimentare'
+        Sector = f'settore {Sector}'
         prompt = f'''
 You are an expert technical writer and semantic SEO content architect.
 ## Context
@@ -2676,14 +2673,13 @@ Reply only in Italian.
         io.json_write(json_filepath, json_data)
     return json_data
 
-def section_mechanisms_llm(regen=False):
-    json_filepath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/articles/sector_food.json'
-    json_data = io.json_read(json_filepath, create=True)
+def section_mechanisms_llm(json_filepath, Sector, regen=False):
+    json_data = io.json_read(json_filepath)
     key = 'section_mechanisms_llm'
     if key not in json_data: json_data[key] = ''
     if regen: json_data[key] = ''
     if json_data[key] == '':
-        Sector = 'settore alimentare'
+        Sector = f'settore {Sector}'
         prompt = f'''
 You are an expert technical writer and semantic SEO content architect.
 ## Context
@@ -2780,14 +2776,13 @@ Reply only in Italian.
         io.json_write(json_filepath, json_data)
     return json_data
 
-def section_benefits_llm(regen=False):
-    json_filepath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/articles/sector_food.json'
-    json_data = io.json_read(json_filepath, create=True)
+def section_benefits_llm(json_filepath, Sector, regen=False):
+    json_data = io.json_read(json_filepath)
     key = 'section_benefits_llm'
     if key not in json_data: json_data[key] = ''
     if regen: json_data[key] = ''
     if json_data[key] == '':
-        Sector = 'settore alimentare'
+        Sector = f'settore {Sector}'
         prompt = f'''
 You are an expert technical writer and semantic SEO content architect.
 ## Context
@@ -2882,14 +2877,13 @@ Reply only in Italian.
         io.json_write(json_filepath, json_data)
     return json_data
 
-def section_considerations_llm(regen=False):
-    json_filepath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/articles/sector_food.json'
-    json_data = io.json_read(json_filepath, create=True)
+def section_considerations_llm(json_filepath, Sector, regen=False):
+    json_data = io.json_read(json_filepath)
     key = 'section_considerations_llm'
     if key not in json_data: json_data[key] = ''
     if regen: json_data[key] = ''
     if json_data[key] == '':
-        Sector = 'settore alimentare'
+        Sector = f'settore {Sector}'
         prompt = f'''
 You are an expert technical writer and semantic SEO content architect.
 ## Context
@@ -2988,14 +2982,13 @@ Reply only in Italian.
         io.json_write(json_filepath, json_data)
     return json_data
 
-def section_safety_llm(regen=False):
-    json_filepath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/articles/sector_food.json'
-    json_data = io.json_read(json_filepath, create=True)
+def section_safety_llm(json_filepath, Sector, regen=False):
+    json_data = io.json_read(json_filepath)
     key = 'section_safety_llm'
     if key not in json_data: json_data[key] = ''
     if regen: json_data[key] = ''
     if json_data[key] == '':
-        Sector = 'settore alimentare'
+        Sector = f'settore {Sector}'
         prompt = f'''
 You are an expert technical writer and semantic SEO content architect.
 ## Context
@@ -3141,14 +3134,13 @@ Alway write the headings, titles in Italian.
         io.json_write(json_filepath, json_data)
     return json_data
 
-def section_related_llm(regen=False):
-    json_filepath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/articles/sector_food.json'
-    json_data = io.json_read(json_filepath, create=True)
+def section_related_llm(json_filepath, Sector, regen=False):
+    json_data = io.json_read(json_filepath)
     key = 'section_related_llm'
     if key not in json_data: json_data[key] = ''
     if regen: json_data[key] = ''
     if json_data[key] == '':
-        Sector = 'settore alimentare'
+        Sector = f'settore {Sector}'
         prompt = f'''
 You are an expert technical writer and semantic SEO content architect.
 ## Context
@@ -3267,325 +3259,354 @@ Reply only in Italian.
         io.json_write(json_filepath, json_data)
     return json_data
 
-def render_sector(target_sector_name='Food & Beverage'):
-    input_data = sectors_data.data
-    for sector_item in input_data:
-        sector_name_eng = sector_item['sector_name_eng']
-        sector_name = sector_item['sector_name']
-        sector_slug = sector_item['sector_slug']
-        url_slug = f'''settori/{sector_slug}'''
+def render_sector(sector_item):
+    sector_name_eng = sector_item['sector_name_eng']
+    sector_name = sector_item['sector_name']
+    sector_slug = sector_item['sector_slug']
+    url_slug = f'''settori/{sector_slug}'''
 
-        if sector_name_eng.lower() != target_sector_name.lower(): continue
+    # if sector_name_eng.lower() != target_sector_name.lower(): continue
 
-        # print(json.dumps(sector_item, indent=4))
+    # print(json.dumps(sector_item, indent=4))
+    # quit()
+
+    json_filepath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/articles/{sector_name}.json'
+    json_data = io.json_read(json_filepath, create=True)
+
+
+    ################################################################################
+    # 0. INTRO
+    ################################################################################
+    json_data = section_intro_llm(json_filepath, sector_name, regen=False)
+    role_html = f''''''
+    intro_html = f'''
+    '''
+    paragraphs = f''
+    for line in json_data['section_intro_llm'].split('\n'):
+        if line.strip().startswith('##'): continue
+        if line.strip().startswith('###'): continue
+        if line.strip().startswith('####'): continue
+        paragraphs += f'<p class="block-blogpost-5-paragraph">{line}</p>\n'
+    intro_html += f'''{paragraphs}'''
+
+    ################################################################################
+    # 1. ROLE
+    ################################################################################
+    json_data = section_role_llm(json_filepath, sector_name, regen=False)
+    role_html = f''''''
+    role_html = f'''
+        <h2 class="block-blogpost-5-h2">Il ruolo dell'ozono nel settore {sector_name}</h2>\n
+    '''
+    paragraphs = f''
+    for line in json_data['section_role_llm'].split('\n'):
+        if line.strip().startswith('##'): continue
+        if line.strip().startswith('###'): continue
+        if line.strip().startswith('####'): continue
+        paragraphs += f'<p class="block-blogpost-5-paragraph">{line}</p>\n'
+    role_html += f'''{paragraphs}'''
+
+    ################################################################################
+    # 2. APPLICATIONS
+    ################################################################################
+    json_data = section_applications_llm(json_filepath, sector_name, regen=False)
+    applications_html = f''''''
+    applications_html = f'''
+        <h2 class="block-blogpost-5-h2">Applicazioni</h2>\n
+    '''
+    paragraphs = f''
+    for line in json_data['section_applications_llm'].split('\n'):
+        # if line.strip().startswith('####'): continue
+        # if line.strip().startswith('##'): continue
+        if line.strip().startswith('###'): 
+            line = line.replace('###', '').strip()
+            paragraphs += f'<h3 class="block-blogpost-5-h3">{line}</h3>\n'
+        else:
+            paragraphs += f'<p class="block-blogpost-5-paragraph">{line}</p>\n'
+    applications_html += f'''{paragraphs}'''
+
+    ################################################################################
+    # 3. MECHANISMS
+    ################################################################################
+    json_data = section_mechanisms_llm(json_filepath, sector_name, regen=False)
+    mechanisms_html = f''''''
+    mechanisms_html = f'''
+        <h2 class="block-blogpost-5-h2">Meccanismi</h2>\n
+    '''
+    paragraphs = f''
+    for line in json_data['section_mechanisms_llm'].split('\n'):
+        # if line.strip().startswith('####'): continue
+        # if line.strip().startswith('##'): continue
+        if line.strip().startswith('###'): 
+            line = line.replace('###', '').strip()
+            paragraphs += f'<h3 class="block-blogpost-5-h3">{line}</h3>\n'
+        else:
+            paragraphs += f'<p class="block-blogpost-5-paragraph">{line}</p>\n'
+    mechanisms_html += f'''{paragraphs}'''
+
+    ################################################################################
+    # 4. BENEFITS
+    ################################################################################
+    json_data = section_benefits_llm(json_filepath, sector_name, regen=False)
+    benefits_html = f''''''
+    benefits_html = f'''
+        <h2 class="block-blogpost-5-h2">Benefici e risultati</h2>\n
+    '''
+    paragraphs = f''
+    for line in json_data['section_benefits_llm'].split('\n'):
+        # if line.strip().startswith('####'): continue
+        # if line.strip().startswith('##'): continue
+        if line.strip().startswith('###'): 
+            line = line.replace('###', '').strip()
+            paragraphs += f'<h3 class="block-blogpost-5-h3">{line}</h3>\n'
+        else:
+            paragraphs += f'<p class="block-blogpost-5-paragraph">{line}</p>\n'
+    benefits_html += f'''{paragraphs}'''
+
+    ################################################################################
+    # 5. CONSIDERATIONS
+    ################################################################################
+    json_data = section_considerations_llm(json_filepath, sector_name, regen=False)
+    considerations_html = f''''''
+    considerations_html = f'''
+        <h2 class="block-blogpost-5-h2">Considerazioni Operative</h2>\n
+    '''
+    paragraphs = f''
+    for line in json_data['section_considerations_llm'].split('\n'):
+        # if line.strip().startswith('####'): continue
+        # if line.strip().startswith('##'): continue
+        if line.strip().startswith('###'): 
+            line = line.replace('###', '').strip()
+            paragraphs += f'<h3 class="block-blogpost-5-h3">{line}</h3>\n'
+        else:
+            paragraphs += f'<p class="block-blogpost-5-paragraph">{line}</p>\n'
+    considerations_html += f'''{paragraphs}'''
+
+    ################################################################################
+    # 6. SAFETY
+    ################################################################################
+    json_data = section_safety_llm(json_filepath, sector_name, regen=False)
+    safety_html = f''''''
+    safety_html = f'''
+        <h2 class="block-blogpost-5-h2">Sicurezza, regolamenti e limiti</h2>\n
+    '''
+    paragraphs = f''
+    for line in json_data['section_safety_llm'].split('\n'):
+        # if line.strip().startswith('####'): continue
+        # if line.strip().startswith('##'): continue
+        if line.strip().startswith('####'): 
+            line = line.replace('####', '').strip()
+            paragraphs += f'<h4 class="block-blogpost-5-h4">{line}</h4>\n'
+        elif line.strip().startswith('###'): 
+            line = line.replace('###', '').strip()
+            paragraphs += f'<h3 class="block-blogpost-5-h3">{line}</h3>\n'
+        else:
+            paragraphs += f'<p class="block-blogpost-5-paragraph">{line}</p>\n'
+    safety_html += f'''{paragraphs}'''
+
+    ################################################################################
+    # 7. RELATED
+    ################################################################################
+    json_data = section_related_llm(json_filepath, sector_name, regen=False)
+    related_html = f''''''
+    related_html = f'''
+        <h2 class="block-blogpost-5-h2">Applicazioni correlate</h2>\n
+    '''
+    paragraphs = f''
+    for line in json_data['section_related_llm'].split('\n'):
+        # if line.strip().startswith('####'): continue
+        # if line.strip().startswith('##'): continue
+        if line.strip().startswith('####'): 
+            line = line.replace('####', '').strip()
+            paragraphs += f'<h4 class="block-blogpost-5-h4">{line}</h4>\n'
+        elif line.strip().startswith('###'): 
+            line = line.replace('###', '').strip()
+            paragraphs += f'<h3 class="block-blogpost-5-h3">{line}</h3>\n'
+        else:
+            paragraphs += f'<p class="block-blogpost-5-paragraph">{line}</p>\n'
+    related_html += f'''{paragraphs}'''
+
+    """
+    ################################################################################
+    # SUBSECTORS
+    ################################################################################
+    pubmed_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/subsectors/sort/{sector_name_eng}'
+    pubmed_filenames = sorted(os.listdir(pubmed_folderpath))
+    contaminants_names = []
+    pubmed_sectors_names = []
+    for pubmed_filename in pubmed_filenames:
+        pubmed_filepath = f'{pubmed_folderpath}/{pubmed_filename}'
+        pubmed_data = io.json_read(pubmed_filepath)
+        # print(json.dumps(pubmed_data, indent=4))
         # quit()
+        for item in pubmed_data['reply']:
+            print(json.dumps(item, indent=4))
+            try: pubmed_sectors_names.append(item['subsector_name'].lower())
+            except: pubmed_sectors_names.append(item['subsector'].lower())
+    sectors_html = ''
+    sectors_html += '<h1>Sectors</h1>'
+    sectors_html += '<ul>'
+    for pubmed_sector_name in sorted(pubmed_sectors_names):
+        sectors_html += f'''<li>{pubmed_sector_name}</li>'''
+    sectors_html += '</ul>'
 
-        json_data_filepath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/articles/{target_sector_name}.json'
-        json_data = io.json_read(json_data_filepath, create=True)
-
-
-        ################################################################################
-        # 0. INTRO
-        ################################################################################
-        json_data = section_intro_llm(regen=False)
-        role_html = f''''''
-        intro_html = f'''
+    ################################################################################
+    # CONTAMINATIONS
+    ################################################################################
+    contaminations_items = contaminations_groups_gen(json_data_filepath)
+    contaminations_html = f'''
+        <h2 class="block-blogpost-5-h2">Contaminations</h2>
+        <p class="block-blogpost-5-paragraph">{lorem.sentence()}</p>
+    '''
+    for contamination_item in contaminations_items:
+        contaminations_html += f'''<h3 class="block-blogpost-5-h3">{contamination_item['nature']}</h3>'''
+        context_data = f'''
+            {contamination_item['nature']}
         '''
+        json_data = contaminations_biological_content_llm(context_data, regen=False)
         paragraphs = f''
-        for line in json_data['section_intro_llm'].split('\n'):
-            if line.strip().startswith('##'): continue
-            if line.strip().startswith('###'): continue
-            if line.strip().startswith('####'): continue
-            paragraphs += f'<p class="block-blogpost-5-paragraph">{line}</p>\n'
-        intro_html += f'''{paragraphs}'''
-
-        ################################################################################
-        # 1. ROLE
-        ################################################################################
-        json_data = section_role_llm(regen=False)
-        role_html = f''''''
-        role_html = f'''
-            <h2 class="block-blogpost-5-h2">Il ruolo dell'ozono nel settore {sector_name}</h2>\n
-        '''
-        paragraphs = f''
-        for line in json_data['section_role_llm'].split('\n'):
-            if line.strip().startswith('##'): continue
-            if line.strip().startswith('###'): continue
-            if line.strip().startswith('####'): continue
-            paragraphs += f'<p class="block-blogpost-5-paragraph">{line}</p>\n'
-        role_html += f'''{paragraphs}'''
-
-        ################################################################################
-        # 2. APPLICATIONS
-        ################################################################################
-        json_data = section_applications_llm(regen=False)
-        applications_html = f''''''
-        applications_html = f'''
-            <h2 class="block-blogpost-5-h2">Applicazioni</h2>\n
-        '''
-        paragraphs = f''
-        for line in json_data['section_applications_llm'].split('\n'):
-            # if line.strip().startswith('####'): continue
-            # if line.strip().startswith('##'): continue
-            if line.strip().startswith('###'): 
-                line = line.replace('###', '').strip()
-                paragraphs += f'<h3 class="block-blogpost-5-h3">{line}</h3>\n'
-            else:
-                paragraphs += f'<p class="block-blogpost-5-paragraph">{line}</p>\n'
-        applications_html += f'''{paragraphs}'''
-
-        ################################################################################
-        # 3. MECHANISMS
-        ################################################################################
-        json_data = section_mechanisms_llm(regen=False)
-        mechanisms_html = f''''''
-        mechanisms_html = f'''
-            <h2 class="block-blogpost-5-h2">Meccanismi</h2>\n
-        '''
-        paragraphs = f''
-        for line in json_data['section_mechanisms_llm'].split('\n'):
-            # if line.strip().startswith('####'): continue
-            # if line.strip().startswith('##'): continue
-            if line.strip().startswith('###'): 
-                line = line.replace('###', '').strip()
-                paragraphs += f'<h3 class="block-blogpost-5-h3">{line}</h3>\n'
-            else:
-                paragraphs += f'<p class="block-blogpost-5-paragraph">{line}</p>\n'
-        mechanisms_html += f'''{paragraphs}'''
-
-        ################################################################################
-        # 4. BENEFITS
-        ################################################################################
-        json_data = section_benefits_llm(regen=False)
-        benefits_html = f''''''
-        benefits_html = f'''
-            <h2 class="block-blogpost-5-h2">Benefici e risultati</h2>\n
-        '''
-        paragraphs = f''
-        for line in json_data['section_benefits_llm'].split('\n'):
-            # if line.strip().startswith('####'): continue
-            # if line.strip().startswith('##'): continue
-            if line.strip().startswith('###'): 
-                line = line.replace('###', '').strip()
-                paragraphs += f'<h3 class="block-blogpost-5-h3">{line}</h3>\n'
-            else:
-                paragraphs += f'<p class="block-blogpost-5-paragraph">{line}</p>\n'
-        benefits_html += f'''{paragraphs}'''
-
-        ################################################################################
-        # 5. CONSIDERATIONS
-        ################################################################################
-        json_data = section_considerations_llm(regen=False)
-        considerations_html = f''''''
-        considerations_html = f'''
-            <h2 class="block-blogpost-5-h2">Considerazioni Operative</h2>\n
-        '''
-        paragraphs = f''
-        for line in json_data['section_considerations_llm'].split('\n'):
-            # if line.strip().startswith('####'): continue
-            # if line.strip().startswith('##'): continue
-            if line.strip().startswith('###'): 
-                line = line.replace('###', '').strip()
-                paragraphs += f'<h3 class="block-blogpost-5-h3">{line}</h3>\n'
-            else:
-                paragraphs += f'<p class="block-blogpost-5-paragraph">{line}</p>\n'
-        considerations_html += f'''{paragraphs}'''
-
-        ################################################################################
-        # 6. SAFETY
-        ################################################################################
-        json_data = section_safety_llm(regen=False)
-        safety_html = f''''''
-        safety_html = f'''
-            <h2 class="block-blogpost-5-h2">Sicurezza, regolamenti e limiti</h2>\n
-        '''
-        paragraphs = f''
-        for line in json_data['section_safety_llm'].split('\n'):
-            # if line.strip().startswith('####'): continue
-            # if line.strip().startswith('##'): continue
-            if line.strip().startswith('####'): 
-                line = line.replace('####', '').strip()
-                paragraphs += f'<h4 class="block-blogpost-5-h4">{line}</h4>\n'
-            elif line.strip().startswith('###'): 
-                line = line.replace('###', '').strip()
-                paragraphs += f'<h3 class="block-blogpost-5-h3">{line}</h3>\n'
-            else:
-                paragraphs += f'<p class="block-blogpost-5-paragraph">{line}</p>\n'
-        safety_html += f'''{paragraphs}'''
-
-        ################################################################################
-        # 7. RELATED
-        ################################################################################
-        json_data = section_related_llm(regen=False)
-        related_html = f''''''
-        related_html = f'''
-            <h2 class="block-blogpost-5-h2">Applicazioni correlate</h2>\n
-        '''
-        paragraphs = f''
-        for line in json_data['section_related_llm'].split('\n'):
-            # if line.strip().startswith('####'): continue
-            # if line.strip().startswith('##'): continue
-            if line.strip().startswith('####'): 
-                line = line.replace('####', '').strip()
-                paragraphs += f'<h4 class="block-blogpost-5-h4">{line}</h4>\n'
-            elif line.strip().startswith('###'): 
-                line = line.replace('###', '').strip()
-                paragraphs += f'<h3 class="block-blogpost-5-h3">{line}</h3>\n'
-            else:
-                paragraphs += f'<p class="block-blogpost-5-paragraph">{line}</p>\n'
-        related_html += f'''{paragraphs}'''
-
-        ################################################################################
-        # SUBSECTORS
-        ################################################################################
-        pubmed_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/subsectors/sort/{sector_name_eng}'
-        pubmed_filenames = sorted(os.listdir(pubmed_folderpath))
-        contaminants_names = []
-        pubmed_sectors_names = []
-        for pubmed_filename in pubmed_filenames:
-            pubmed_filepath = f'{pubmed_folderpath}/{pubmed_filename}'
-            pubmed_data = io.json_read(pubmed_filepath)
-            # print(json.dumps(pubmed_data, indent=4))
-            # quit()
-            for item in pubmed_data['reply']:
-                print(json.dumps(item, indent=4))
-                try: pubmed_sectors_names.append(item['subsector_name'].lower())
-                except: pubmed_sectors_names.append(item['subsector'].lower())
-        sectors_html = ''
-        sectors_html += '<h1>Sectors</h1>'
-        sectors_html += '<ul>'
-        for pubmed_sector_name in sorted(pubmed_sectors_names):
-            sectors_html += f'''<li>{pubmed_sector_name}</li>'''
-        sectors_html += '</ul>'
-
-        ################################################################################
-        # CONTAMINATIONS
-        ################################################################################
-        contaminations_items = contaminations_groups_gen(json_data_filepath)
-        contaminations_html = f'''
-            <h2 class="block-blogpost-5-h2">Contaminations</h2>
-            <p class="block-blogpost-5-paragraph">{lorem.sentence()}</p>
-        '''
-        for contamination_item in contaminations_items:
-            contaminations_html += f'''<h3 class="block-blogpost-5-h3">{contamination_item['nature']}</h3>'''
+        for line in json_data['contaminations_biological_content_llm'].split('\n'):
+            paragraphs += f'<p class="block-blogpost-5-paragraph">{line}</p>'
+        contaminations_html += f'''{paragraphs}'''
+        ###
+        for contamination_class in contamination_item['classes']:
+            contaminations_html += f'''<h4 class="block-blogpost-5-h4">{contamination_class['class']}</h4>'''
             context_data = f'''
                 {contamination_item['nature']}
+                {contamination_class}
             '''
-            json_data = contaminations_biological_content_llm(context_data, regen=False)
+            json_data = contaminations_biological_bacterium_content_llm(context_data, regen=False)
             paragraphs = f''
-            for line in json_data['contaminations_biological_content_llm'].split('\n'):
+            for line in json_data['contaminations_biological_bacterium_content_llm'].split('\n'):
                 paragraphs += f'<p class="block-blogpost-5-paragraph">{line}</p>'
             contaminations_html += f'''{paragraphs}'''
-            ###
-            for contamination_class in contamination_item['classes']:
-                contaminations_html += f'''<h4 class="block-blogpost-5-h4">{contamination_class['class']}</h4>'''
-                context_data = f'''
-                    {contamination_item['nature']}
-                    {contamination_class}
-                '''
-                json_data = contaminations_biological_bacterium_content_llm(context_data, regen=False)
-                paragraphs = f''
-                for line in json_data['contaminations_biological_bacterium_content_llm'].split('\n'):
-                    paragraphs += f'<p class="block-blogpost-5-paragraph">{line}</p>'
-                contaminations_html += f'''{paragraphs}'''
+    """
 
-        ###
-        title = f'''Ozono nel settore {sector_name}'''.capitalize()
-        html_h1 = f'''<h1 class="block-blogpost-5-h1">{title}</h1>'''
+    ###
+    title = f'''Ozono nel settore {sector_name}'''.capitalize()
+    html_h1 = f'''<h1 class="block-blogpost-5-h1">{title}</h1>'''
+    
+    if sector_name.lower() == 'acqua':
+        sector_image = 'https://plus.unsplash.com/premium_photo-1733266883899-29971ddbe5e3?q=80&w=1075&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    elif sector_name.lower() == 'alimentare':
+        sector_image = 'https://images.unsplash.com/photo-1651525669944-00de65d3b8a5?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    elif sector_name.lower() == 'agricoltura':
+        sector_image = 'https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    elif sector_name.lower() == 'sanità':
+        sector_image = 'https://images.unsplash.com/photo-1640876777002-badf6aee5bcc?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    elif sector_name.lower() == 'ospitalità':
+        sector_image = 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    elif sector_name.lower() == 'edilizia':
+        sector_image = 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    elif sector_name.lower() == 'manifatturiero':
+        sector_image = 'https://images.unsplash.com/photo-1717386255773-1e3037c81788?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    elif sector_name.lower() == 'energia':
+        sector_image = 'https://images.unsplash.com/photo-1467533003447-e295ff1b0435?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    elif sector_name.lower() == 'ambiente':
+        sector_image = 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1613&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    elif sector_name.lower() == 'trasporti':
+        sector_image = 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    elif sector_name.lower() == 'residenziale':
+        sector_image = 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    elif sector_name.lower() == 'ricerca':
+        sector_image = 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    else:
+        sector_image = 'https://images.unsplash.com/photo-1787540757892-cab3118bd223?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+
+    featuredimage_html = f'''
+        <img class="block-blogpost-5-featuredimage" src="{sector_image}">
+    '''
+    
+    subsectors_html = f'''
+        <h2 class="block-blogpost-5-h2">Subsectors</h2>
+        <div class="block-list-panel-default">
+            <div class="component-list-panel-default">Ortofrutticolo</div>
+            <div class="component-list-panel-default">Cerealicolo</div>
+            <div class="component-list-panel-default">Frutta secca</div>
+            <div class="component-list-panel-default">Spezie</div>
+            <div class="component-list-panel-default">Carne</div>
+            <div class="component-list-panel-default">Ittico</div>
+            <div class="component-list-panel-default">Lattiero-caseario</div>
+            <div class="component-list-panel-default">Uova</div>
+            <div class="component-list-panel-default">Bevande</div>
+            <div class="component-list-panel-default">Oleario</div>
+            <div class="component-list-panel-default">Pet Food</div>
+            <div class="component-list-panel-default">Altri</div>
+        </div>
+    '''
+
+    article_html = f'''
+        {intro_html}
+        {role_html}
+        {applications_html}
+        {mechanisms_html}
+        {benefits_html}
+        {considerations_html}
+        {safety_html}
+        {related_html}
+    '''
+
+    toc_list_elements_html = f''
+    for line in article_html.strip().split('\n'):
+        if line.strip().startswith('<h2'):
+            line = line.split('>', 1)[1].split('<', 1)[0]
+            toc_list_elements_html += f'''<li><a class="block-blogpost-5-toc-li-h2" href="#">{line}</a></li>'''
+        elif line.strip().startswith('<h3'):
+            line = line.split('>', 1)[1].split('<', 1)[0]
+            toc_list_elements_html += f'''<li><a class="block-blogpost-5-toc-li-h3" href="#">{line}</a></li>'''
+        else:
+            print(line)
         
-        featuredimage_html = f'''
-            <img class="block-blogpost-5-featuredimage" src="https://images.unsplash.com/photo-1651525669944-00de65d3b8a5?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-        '''
-        
-        subsectors_html = f'''
-            <h2 class="block-blogpost-5-h2">Subsectors</h2>
-            <div class="block-list-panel-default">
-                <div class="component-list-panel-default">Ortofrutticolo</div>
-                <div class="component-list-panel-default">Cerealicolo</div>
-                <div class="component-list-panel-default">Frutta secca</div>
-                <div class="component-list-panel-default">Spezie</div>
-                <div class="component-list-panel-default">Carne</div>
-                <div class="component-list-panel-default">Ittico</div>
-                <div class="component-list-panel-default">Lattiero-caseario</div>
-                <div class="component-list-panel-default">Uova</div>
-                <div class="component-list-panel-default">Bevande</div>
-                <div class="component-list-panel-default">Oleario</div>
-                <div class="component-list-panel-default">Pet Food</div>
-                <div class="component-list-panel-default">Altri</div>
-            </div>
-        '''
+    
 
-        article_html = f'''
-            {intro_html}
-            {role_html}
-            {applications_html}
-            {mechanisms_html}
-            {benefits_html}
-            {considerations_html}
-            {safety_html}
-            {related_html}
-        '''
-
-        toc_list_elements_html = f''
-        for line in article_html.strip().split('\n'):
-            if line.strip().startswith('<h2'):
-                line = line.split('>', 1)[1].split('<', 1)[0]
-                toc_list_elements_html += f'''<li><a class="block-blogpost-5-toc-li-h2" href="#">{line}</a></li>'''
-            elif line.strip().startswith('<h3'):
-                line = line.split('>', 1)[1].split('<', 1)[0]
-                toc_list_elements_html += f'''<li><a class="block-blogpost-5-toc-li-h3" href="#">{line}</a></li>'''
-            else:
-                print(line)
-            
-        
-
-        html_body = f'''
-            <body>
-                <main class="container-xl block-blogpost-5">
-                    {html_h1}
-                    <div class="block-blogpost-5-layout">
-                        <div>
-                            {featuredimage_html}
-                            {article_html}
-                        </div>
-                        <aside class="block-blogpost-5-toc">
-                            <div class="block-blogpost-5-toc-nav">
-                            <h2 class="block-blogpost-5-toc-title" style="margin-bottom: 1.25rem;">SU QUESTA PAGINA</h2>
-                                <nav>
-                                    <ul class="block-blogpost-5-toc-nav-ul">
-                                        {toc_list_elements_html}
-                                    </ul>
-                                </nav>
-                            <div>
-                        </aside>
+    html_body = f'''
+        <body>
+            {components.header_light_logo()}
+            <main class="container-xl block-blogpost-5" style="margin-bottom: 3rem;">
+                {html_h1}
+                <div class="block-blogpost-5-layout">
+                    <div>
+                        {featuredimage_html}
+                        {article_html}
                     </div>
-                <main>
-            </body>
-        '''
+                    <aside class="block-blogpost-5-toc">
+                        <div class="block-blogpost-5-toc-nav">
+                        <h2 class="block-blogpost-5-toc-title" style="margin-bottom: 1.25rem;">SU QUESTA PAGINA</h2>
+                            <nav>
+                                <ul class="block-blogpost-5-toc-nav-ul">
+                                    {toc_list_elements_html}
+                                </ul>
+                            </nav>
+                        <div>
+                    </aside>
+                </div>
+            </main>
+            {components.footer_dark()}
+        </body>
+    '''
 
-        meta_title = f'''{sector_name}'''
-        html = f''' 
-            <!DOCTYPE html>
-            <html lang="it">
-            <head>
-                <meta charset="utf-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1">
-                <title>{meta_title}</title>
-                <link rel="preconnect" href="https://fonts.googleapis.com">
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-                <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
-                <link rel="stylesheet" href="/styles.css">
-            </head>
-            {html_body}
-            </html>
-        '''.strip()
+    meta_title = f'''{sector_name}'''
+    html = f''' 
+        <!DOCTYPE html>
+        <html lang="it">
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>{meta_title}</title>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="/styles.css">
+        </head>
+        {html_body}
+        </html>
+    '''.strip()
 
-        ###
-        html_folderpath = f'{g.website_folderpath}/{url_slug}'
-        io.folders_recursive_gen(html_folderpath)
-        html_filepath = f'{g.website_folderpath}/{url_slug}/index.html'
-        with open(html_filepath, 'w') as f: f.write(html)
-        print(html_filepath)
+    ###
+    html_folderpath = f'{g.website_folderpath}/{url_slug}'
+    io.folders_recursive_gen(html_folderpath)
+    html_filepath = f'{g.website_folderpath}/{url_slug}/index.html'
+    with open(html_filepath, 'w') as f: f.write(html)
+    print(html_filepath)
 
 def run():
     shutil.copy2(f'styles.css', f'{g.WEBSITE_FOLDERPATH}/styles.css')
@@ -3596,9 +3617,10 @@ def run():
     io.folders_recursive_gen(output_folderpath)
     ###
 
-    render_sectors_html()
+    # render_sectors_html()
     ###
     # render_sector_html_backup()
-    render_sector()
+    for sector_item in sectors_data.data:
+        render_sector(sector_item)
 
 run()
