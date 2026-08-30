@@ -687,6 +687,25 @@ def parse_sector_contaminations_categorize_raw(target_sector_name='Food & Bevera
                     io.json_write(json_data_filepath, json_data)
 
 
+def analyze_sector_subsectors_raw(target_sector_name):
+    input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/subsectors/sort/{target_sector_name}'
+    ###
+    input_filenames = os.listdir(input_folderpath)
+    not_found_count = 0
+    i = 0
+    for input_filename in input_filenames[i:]:
+        input_filename_base = input_filename.split('.')[0].strip()
+        i += 1
+        # print(f'{i}/{len(input_filenames)}')
+        input_filepath = f'{input_folderpath}/{input_filename}'
+        input_data = io.json_read(input_filepath)
+        # print(json.dumps(input_data, indent=4))
+        # quit()
+        for item in input_data['reply']:
+            try: print(item['subsector_name'])
+            except: not_found_count += 1
+    print(not_found_count)
+
 def run():
     print('parse >> pubmed')
 
@@ -704,6 +723,7 @@ def run():
     # parse_sector_sectors_extract_raw(sector_name='Food & Beverage')
     # parse_sector_subsectors_extract_raw(sector_name='Food & Beverage')
 
-    parse_sector_contaminations_categorize_raw(target_sector_name='Food & Beverage')
+    # parse_sector_contaminations_categorize_raw(target_sector_name='Food & Beverage')
+    analyze_sector_subsectors_raw(target_sector_name='Food & Beverage')
 
 run()
