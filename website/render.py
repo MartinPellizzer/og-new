@@ -147,9 +147,39 @@ def render_sectors_html():
             </div>
         </section>
     '''
+
+    sector_image = 'https://images.unsplash.com/photo-1787540757892-cab3118bd223?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    block_blog1 = f'''
+        <section class="block-blog1">
+            <h2 class="block-blog1-title">Latest Blog Posts</h2>
+            <div class="block-blog1-cards">
+                <div class="block-blog1-card">
+                    <div class="block-blog1-card-image">
+                        <img class="block-blog1-img" src="{sector_image}" alt="Example Image" height="200">
+                    </div>
+                    <h3>Subsector</h3>
+                </div>
+                <div class="block-blog1-card">
+                    <div class="block-blog1-card-image">
+                        <img class="block-blog1-img" src="{sector_image}" alt="Example Image" height="200">
+                    </div>
+                    <h3>Subsector</h3>
+                </div>
+                <div class="block-blog1-card">
+                    <div class="block-blog1-card-image">
+                        <img class="block-blog1-img" src="{sector_image}" alt="Example Image" height="200">
+                    </div>
+                    <h3>Subsector</h3>
+                </div>
+            </div>
+        </section>
+    '''
+    subsectors_alimentare = block_blog1
+
     ###
     article_html = f'''
         {sectors_html}
+        {subsectors_alimentare}
     '''
 
     ###
@@ -2230,116 +2260,116 @@ def section_intro_llm(json_filepath, Sector, regen=False):
     if json_data[key] == '':
         Sector = f'settore {Sector}'
         prompt = f'''
-You are an expert technical writer and semantic SEO content architect.
-## Context
-This page is about the use of ozone in the {Sector}. It is part of a larger topical knowledge base about ozone and belongs to the website's sector-level architecture.
-The introduction is the semantic entry point to the page. Its primary function is to establish the relationship between the entity "Ozone" and the entity "{Sector}", define the scope of the page, and prepare the reader for the sections that follow.
-The introduction must complement the rest of the page rather than duplicate it.
-## Objective
-Write a concise, information-dense introduction explaining the role of ozone within {Sector}.
-The reader should immediately understand:
-- what {Sector} is in relation to ozone
-- why ozone is relevant to this sector
-- the broad categories of activities or problems in which ozone is relevant
-- what the page covers
-Do not attempt to comprehensively explain the applications, mechanisms, benefits, operational considerations, safety, regulations, limitations, or related applications. Those topics are developed in the body of the page.
-## Semantic Role
-Establish the primary contextual relationship:
-Ozone → is used within → {Sector}
-Then establish the broader topical relationships:
-{Sector} → contains → processes, environments, and activities relevant to ozone
-Ozone → addresses → sector-specific needs
-Ozone → is applied across → relevant stages or functions of the sector
-The introduction should establish these relationships at a high level without expanding them into detailed explanations.
-## Information Architecture
-The introduction should naturally prepare the reader for the page's major information dimensions:
-- the role of ozone in {Sector}
-- applications of ozone
-- mechanisms by which ozone acts
-- benefits and outcomes
-- operational considerations
-- safety, regulations, and limitations
-- related ozone applications
-Mention these dimensions only as needed to establish scope. Do not mechanically reproduce the section titles as a list.
-## Scope
-Describe {Sector} specifically in the context of ozone.
-Focus on the intersection:
-Ozone × {Sector}
-Do not write a generic introduction to ozone.
-Do not write a generic introduction to {Sector}.
-Every substantive statement should help establish why the intersection of these two entities is meaningful.
-## Exclusions
-DO NOT:
-- provide a detailed definition of ozone
-- provide a history of ozone
-- provide a history of ozone use in {Sector}
-- list specific applications
-- describe individual subsectors in detail
-- explain scientific mechanisms
-- explain oxidation chemistry
-- make detailed benefit claims
-- provide operating parameters
-- discuss equipment
-- discuss safety procedures
-- discuss regulations
-- discuss limitations in detail
-- compare ozone with competing technologies
-- provide statistics unless they are essential and verified
-- make unsupported claims
-- repeat information that belongs to the body sections
-- include a conclusion
-## Writing Style
-- Write for technically informed readers, industry professionals, and decision makers.
-- Use authoritative, precise, neutral language.
-- Avoid promotional language such as "revolutionary", "powerful solution", "game-changing", or "best".
-- Avoid generic SEO filler.
-- Avoid rhetorical questions.
-- Avoid unnecessary background information.
-- Prefer concrete terminology over vague statements.
-- Introduce the topic directly.
-- Keep the introduction concise and information-dense.
-## Semantic SEO Requirements
-Use "Ozone" as the primary entity and "{Sector}" as the contextual entity.
-Naturally establish relevant attributes and relationships without keyword stuffing.
-Use terminology that is genuinely characteristic of {Sector}.
-Do not force semantic entities into the text merely because they are associated with ozone.
-Prioritize information gain: every sentence should either define the topic, establish an important relationship, clarify scope, or orient the reader toward the page's information architecture.
-## Paragraph Structure
-Write 2–4 paragraphs.
-Paragraph 1: Directly establish what the use of ozone in {Sector} means and why the relationship is relevant.
-Paragraph 2: Explain the broad sector needs, processes, or conditions that create a role for ozone, without discussing individual applications in detail.
-Paragraph 3: Where useful, establish the breadth of the page by indicating that ozone's role can be examined through its applications, mechanisms, outcomes, operational requirements, and constraints.
-Use paragraph 3 only if it adds genuine information; do not add it merely to reach a word count.
-## Length
-Aim for approximately 120–200 words.
-Prioritize semantic completeness and information density over length.
-Do not exceed 250 words unless the complexity of {Sector} genuinely requires additional context.
-## Accuracy
-Make only claims that are broadly established and defensible.
-Do not imply that ozone is universally used throughout {Sector}.
-Distinguish between established uses and potential uses when relevant.
-Do not imply regulatory approval, safety, efficacy, or superiority without appropriate context.
-## Final Quality Check
-Before producing the output, verify:
-1. The introduction clearly establishes Ozone × {Sector}.
-2. The introduction explains why the relationship matters.
-3. The introduction defines the page's scope.
-4. No major body section is unnecessarily reproduced.
-5. No application is explained in detail.
-6. No mechanism is explained in detail.
-7. No benefit, regulation, safety issue, or limitation is developed beyond introductory context.
-8. Every paragraph provides distinct information.
-9. The introduction could stand alone as an accurate description of what the page covers.
-## Output
-Return only the finished introduction in Markdown.
-Use paragraphs only.
-Do not use bullet points.
-Do not use numbered lists.
-Do not use tables.
-Do not use H2 or H3 headings.
-Do not add a conclusion.
-Reply only with paragraphs. Never use lists.
-Reply only in Italian.
+    You are an expert technical writer and semantic SEO content architect.
+    ## Context
+    This page is about the use of ozone in the {Sector}. It is part of a larger topical knowledge base about ozone and belongs to the website's sector-level architecture.
+    The introduction is the semantic entry point to the page. Its primary function is to establish the relationship between the entity "Ozone" and the entity "{Sector}", define the scope of the page, and prepare the reader for the sections that follow.
+    The introduction must complement the rest of the page rather than duplicate it.
+    ## Objective
+    Write a concise, information-dense introduction explaining the role of ozone within {Sector}.
+    The reader should immediately understand:
+    - what {Sector} is in relation to ozone
+    - why ozone is relevant to this sector
+    - the broad categories of activities or problems in which ozone is relevant
+    - what the page covers
+    Do not attempt to comprehensively explain the applications, mechanisms, benefits, operational considerations, safety, regulations, limitations, or related applications. Those topics are developed in the body of the page.
+    ## Semantic Role
+    Establish the primary contextual relationship:
+    Ozone → is used within → {Sector}
+    Then establish the broader topical relationships:
+    {Sector} → contains → processes, environments, and activities relevant to ozone
+    Ozone → addresses → sector-specific needs
+    Ozone → is applied across → relevant stages or functions of the sector
+    The introduction should establish these relationships at a high level without expanding them into detailed explanations.
+    ## Information Architecture
+    The introduction should naturally prepare the reader for the page's major information dimensions:
+    - the role of ozone in {Sector}
+    - applications of ozone
+    - mechanisms by which ozone acts
+    - benefits and outcomes
+    - operational considerations
+    - safety, regulations, and limitations
+    - related ozone applications
+    Mention these dimensions only as needed to establish scope. Do not mechanically reproduce the section titles as a list.
+    ## Scope
+    Describe {Sector} specifically in the context of ozone.
+    Focus on the intersection:
+    Ozone × {Sector}
+    Do not write a generic introduction to ozone.
+    Do not write a generic introduction to {Sector}.
+    Every substantive statement should help establish why the intersection of these two entities is meaningful.
+    ## Exclusions
+    DO NOT:
+    - provide a detailed definition of ozone
+    - provide a history of ozone
+    - provide a history of ozone use in {Sector}
+    - list specific applications
+    - describe individual subsectors in detail
+    - explain scientific mechanisms
+    - explain oxidation chemistry
+    - make detailed benefit claims
+    - provide operating parameters
+    - discuss equipment
+    - discuss safety procedures
+    - discuss regulations
+    - discuss limitations in detail
+    - compare ozone with competing technologies
+    - provide statistics unless they are essential and verified
+    - make unsupported claims
+    - repeat information that belongs to the body sections
+    - include a conclusion
+    ## Writing Style
+    - Write for technically informed readers, industry professionals, and decision makers.
+    - Use authoritative, precise, neutral language.
+    - Avoid promotional language such as "revolutionary", "powerful solution", "game-changing", or "best".
+    - Avoid generic SEO filler.
+    - Avoid rhetorical questions.
+    - Avoid unnecessary background information.
+    - Prefer concrete terminology over vague statements.
+    - Introduce the topic directly.
+    - Keep the introduction concise and information-dense.
+    ## Semantic SEO Requirements
+    Use "Ozone" as the primary entity and "{Sector}" as the contextual entity.
+    Naturally establish relevant attributes and relationships without keyword stuffing.
+    Use terminology that is genuinely characteristic of {Sector}.
+    Do not force semantic entities into the text merely because they are associated with ozone.
+    Prioritize information gain: every sentence should either define the topic, establish an important relationship, clarify scope, or orient the reader toward the page's information architecture.
+    ## Paragraph Structure
+    Write 2–4 paragraphs.
+    Paragraph 1: Directly establish what the use of ozone in {Sector} means and why the relationship is relevant.
+    Paragraph 2: Explain the broad sector needs, processes, or conditions that create a role for ozone, without discussing individual applications in detail.
+    Paragraph 3: Where useful, establish the breadth of the page by indicating that ozone's role can be examined through its applications, mechanisms, outcomes, operational requirements, and constraints.
+    Use paragraph 3 only if it adds genuine information; do not add it merely to reach a word count.
+    ## Length
+    Aim for approximately 120–200 words.
+    Prioritize semantic completeness and information density over length.
+    Do not exceed 250 words unless the complexity of {Sector} genuinely requires additional context.
+    ## Accuracy
+    Make only claims that are broadly established and defensible.
+    Do not imply that ozone is universally used throughout {Sector}.
+    Distinguish between established uses and potential uses when relevant.
+    Do not imply regulatory approval, safety, efficacy, or superiority without appropriate context.
+    ## Final Quality Check
+    Before producing the output, verify:
+    1. The introduction clearly establishes Ozone × {Sector}.
+    2. The introduction explains why the relationship matters.
+    3. The introduction defines the page's scope.
+    4. No major body section is unnecessarily reproduced.
+    5. No application is explained in detail.
+    6. No mechanism is explained in detail.
+    7. No benefit, regulation, safety issue, or limitation is developed beyond introductory context.
+    8. Every paragraph provides distinct information.
+    9. The introduction could stand alone as an accurate description of what the page covers.
+    ## Output
+    Return only the finished introduction in Markdown.
+    Use paragraphs only.
+    Do not use bullet points.
+    Do not use numbered lists.
+    Do not use tables.
+    Do not use H2 or H3 headings.
+    Do not add a conclusion.
+    Reply only with paragraphs. Never use lists.
+    Reply only in Italian.
         '''.strip()
         print(prompt)
         reply = llm.reply(prompt, model_filepath)
@@ -3142,109 +3172,109 @@ def section_related_llm(json_filepath, Sector, regen=False):
     if json_data[key] == '':
         Sector = f'settore {Sector}'
         prompt = f'''
-You are an expert technical writer and semantic SEO content architect.
-## Context
-This page is about the use of ozone in the {Sector}. It belongs to a larger knowledge base about ozone.
-This section is ONLY responsible for establishing the semantic relationships between the {Sector} and other closely related ozone entities, applications, processes, technologies, and sectors.
-Previous sections have already explained the role of ozone, applications, mechanisms, benefits, operational considerations, safety, regulations, and limitations within {Sector}. This section must NOT repeat those topics. Its purpose is to connect the {Sector} page to adjacent areas of the broader ozone knowledge graph.
-Think of this section as a semantic bridge, not a summary or conclusion.
-## Objective
-Identify and explain the most contextually relevant entities that a reader studying ozone in the {Sector} would naturally need to understand next.
-The reader should finish this section understanding:
-- which related ozone applications are closely connected to {Sector}
-- which related processes or technologies provide additional context
-- which adjacent sectors or subsectors share meaningful ozone relationships
-- how these entities relate to ozone and to {Sector}
-Only include relationships that add genuine contextual information.
-## Scope
-Identify related entities from the following relationship classes where relevant:
-### Related Applications
-Identify ozone applications that are closely related to the {Sector} but were not already covered as primary applications in Section 2.
-### Related Processes
-Identify processes that interact with, support, precede, or follow ozone treatment within the broader {Sector} context.
-### Related Technologies
-Identify technologies that are technically or operationally adjacent to ozone, including treatment, monitoring, control, or complementary technologies where relevant.
-### Related Equipment
-Mention equipment entities only when they represent an important adjacent concept that warrants deeper coverage elsewhere. Do not turn this section into an equipment guide.
-### Related Subsector Entities
-Identify important subsectors, industries, or specialized environments within or adjacent to {Sector} that have a meaningful relationship with ozone.
-### Related Sectors
-Identify other sectors where ozone serves a related function and where understanding the relationship would expand the reader's understanding of ozone.
-## Relationship Test
-For every entity considered, ask:
-1. Is this entity meaningfully related to ozone?
-2. Is it meaningfully related to {Sector}?
-3. Does understanding this entity add information that is not already provided elsewhere on this page?
-4. Does it naturally lead to a deeper topic elsewhere in the ozone knowledge base?
-If the answer to these questions is not sufficiently strong, exclude the entity.
-Do not add entities simply because they are semantically associated with ozone.
-## MECE Requirements
-Keep relationship categories distinct:
-- Related applications = other ozone use cases.
-- Related processes = processes connected to ozone treatment.
-- Related technologies = technologies that interact with or complement ozone.
-- Related equipment = physical systems used to enable or control ozone-related processes.
-- Related subsectors = specialized areas within or adjacent to {Sector}.
-- Related sectors = distinct industries or sectors with meaningful ozone relationships.
-Do not duplicate entities across categories unless the entity genuinely has different relationships that cannot be represented without duplication.
-Do not repeat applications, mechanisms, benefits, operational factors, safety issues, regulations, or limitations already covered in Sections 1–6.
-## Exclusions
-DO NOT:
-- summarize the preceding sections
-- repeat the benefits of ozone
-- explain ozone mechanisms again
-- provide detailed application descriptions
-- provide operational instructions
-- provide equipment specifications
-- provide safety procedures
-- explain regulations
-- compare ozone with competing technologies
-- introduce unrelated entities
-- create a generic "see also" list without contextual explanation
-- write a conclusion
-## Semantic SEO Requirements
-Use "{Sector}" as the contextual entity.
-Use "Ozone" as the primary entity.
-Prioritize meaningful entity relationships such as:
-Ozone → relates to → Related application
-{Sector} → contains → Subsector
-{Sector} → connects to → Related sector
-Ozone application → interacts with → Related process
-Ozone → complements → Related technology
-Ozone process → requires or interacts with → Related equipment
-For each entity, explain the relationship rather than merely naming it.
-Favor entities that can naturally become dedicated pages or meaningful internal links within the broader ozone topical map.
-## Internal-Linking Intent
-The entities identified in this section should function as potential semantic destinations within the wider website.
-Prioritize:
-- high topical relevance
-- strong entity relationship
-- distinct search intent
-- useful information gain
-- logical progression from {Sector}
-Do not force internal-link opportunities where no meaningful relationship exists.
-## Writing Style
-- Write for technically informed readers and decision makers.
-- Be factual, concise, and objective.
-- Explain relationships naturally in prose.
-- Avoid promotional language.
-- Avoid generic statements such as "ozone has many applications across many industries."
-- Avoid producing a disconnected catalog of entities.
-- Each paragraph should explain a meaningful relationship.
-## Output
-Produce:
-- a short introductory paragraph explaining how {Sector} connects to the broader ozone ecosystem
-- one H3 subsection for each relevant relationship category
-- under each H3, use H4 subsections for individual high-value related entities when this improves clarity
-For every related entity, write 1–2 concise paragraphs explaining what the entity is and why it is related to ozone and {Sector}.
-Write entirely in paragraph form.
-Do not use bullet points, numbered lists, tables, or key-value labels.
-Only create a relationship category if it contains genuinely relevant entities.
-Do not force all six relationship categories to appear.
-Do not generate a conclusion.
-Return only Markdown.
-Reply using only paragraphs.
-Reply only in Italian.
+    You are an expert technical writer and semantic SEO content architect.
+    ## Context
+    This page is about the use of ozone in the {Sector}. It belongs to a larger knowledge base about ozone.
+    This section is ONLY responsible for establishing the semantic relationships between the {Sector} and other closely related ozone entities, applications, processes, technologies, and sectors.
+    Previous sections have already explained the role of ozone, applications, mechanisms, benefits, operational considerations, safety, regulations, and limitations within {Sector}. This section must NOT repeat those topics. Its purpose is to connect the {Sector} page to adjacent areas of the broader ozone knowledge graph.
+    Think of this section as a semantic bridge, not a summary or conclusion.
+    ## Objective
+    Identify and explain the most contextually relevant entities that a reader studying ozone in the {Sector} would naturally need to understand next.
+    The reader should finish this section understanding:
+    - which related ozone applications are closely connected to {Sector}
+    - which related processes or technologies provide additional context
+    - which adjacent sectors or subsectors share meaningful ozone relationships
+    - how these entities relate to ozone and to {Sector}
+    Only include relationships that add genuine contextual information.
+    ## Scope
+    Identify related entities from the following relationship classes where relevant:
+    ### Related Applications
+    Identify ozone applications that are closely related to the {Sector} but were not already covered as primary applications in Section 2.
+    ### Related Processes
+    Identify processes that interact with, support, precede, or follow ozone treatment within the broader {Sector} context.
+    ### Related Technologies
+    Identify technologies that are technically or operationally adjacent to ozone, including treatment, monitoring, control, or complementary technologies where relevant.
+    ### Related Equipment
+    Mention equipment entities only when they represent an important adjacent concept that warrants deeper coverage elsewhere. Do not turn this section into an equipment guide.
+    ### Related Subsector Entities
+    Identify important subsectors, industries, or specialized environments within or adjacent to {Sector} that have a meaningful relationship with ozone.
+    ### Related Sectors
+    Identify other sectors where ozone serves a related function and where understanding the relationship would expand the reader's understanding of ozone.
+    ## Relationship Test
+    For every entity considered, ask:
+    1. Is this entity meaningfully related to ozone?
+    2. Is it meaningfully related to {Sector}?
+    3. Does understanding this entity add information that is not already provided elsewhere on this page?
+    4. Does it naturally lead to a deeper topic elsewhere in the ozone knowledge base?
+    If the answer to these questions is not sufficiently strong, exclude the entity.
+    Do not add entities simply because they are semantically associated with ozone.
+    ## MECE Requirements
+    Keep relationship categories distinct:
+    - Related applications = other ozone use cases.
+    - Related processes = processes connected to ozone treatment.
+    - Related technologies = technologies that interact with or complement ozone.
+    - Related equipment = physical systems used to enable or control ozone-related processes.
+    - Related subsectors = specialized areas within or adjacent to {Sector}.
+    - Related sectors = distinct industries or sectors with meaningful ozone relationships.
+    Do not duplicate entities across categories unless the entity genuinely has different relationships that cannot be represented without duplication.
+    Do not repeat applications, mechanisms, benefits, operational factors, safety issues, regulations, or limitations already covered in Sections 1–6.
+    ## Exclusions
+    DO NOT:
+    - summarize the preceding sections
+    - repeat the benefits of ozone
+    - explain ozone mechanisms again
+    - provide detailed application descriptions
+    - provide operational instructions
+    - provide equipment specifications
+    - provide safety procedures
+    - explain regulations
+    - compare ozone with competing technologies
+    - introduce unrelated entities
+    - create a generic "see also" list without contextual explanation
+    - write a conclusion
+    ## Semantic SEO Requirements
+    Use "{Sector}" as the contextual entity.
+    Use "Ozone" as the primary entity.
+    Prioritize meaningful entity relationships such as:
+    Ozone → relates to → Related application
+    {Sector} → contains → Subsector
+    {Sector} → connects to → Related sector
+    Ozone application → interacts with → Related process
+    Ozone → complements → Related technology
+    Ozone process → requires or interacts with → Related equipment
+    For each entity, explain the relationship rather than merely naming it.
+    Favor entities that can naturally become dedicated pages or meaningful internal links within the broader ozone topical map.
+    ## Internal-Linking Intent
+    The entities identified in this section should function as potential semantic destinations within the wider website.
+    Prioritize:
+    - high topical relevance
+    - strong entity relationship
+    - distinct search intent
+    - useful information gain
+    - logical progression from {Sector}
+    Do not force internal-link opportunities where no meaningful relationship exists.
+    ## Writing Style
+    - Write for technically informed readers and decision makers.
+    - Be factual, concise, and objective.
+    - Explain relationships naturally in prose.
+    - Avoid promotional language.
+    - Avoid generic statements such as "ozone has many applications across many industries."
+    - Avoid producing a disconnected catalog of entities.
+    - Each paragraph should explain a meaningful relationship.
+    ## Output
+    Produce:
+    - a short introductory paragraph explaining how {Sector} connects to the broader ozone ecosystem
+    - one H3 subsection for each relevant relationship category
+    - under each H3, use H4 subsections for individual high-value related entities when this improves clarity
+    For every related entity, write 1–2 concise paragraphs explaining what the entity is and why it is related to ozone and {Sector}.
+    Write entirely in paragraph form.
+    Do not use bullet points, numbered lists, tables, or key-value labels.
+    Only create a relationship category if it contains genuinely relevant entities.
+    Do not force all six relationship categories to appear.
+    Do not generate a conclusion.
+    Return only Markdown.
+    Reply using only paragraphs.
+    Reply only in Italian.
         '''.strip()
         print(prompt)
         reply = llm.reply(prompt, model_filepath)
@@ -3617,7 +3647,7 @@ def run():
     io.folders_recursive_gen(output_folderpath)
     ###
 
-    # render_sectors_html()
+    render_sectors_html()
     ###
     # render_sector_html_backup()
     for sector_item in sectors_data.data:

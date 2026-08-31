@@ -2682,3 +2682,36 @@ BLOCKS
     padding: 0.75rem 1rem;
 }
 
+/* BLOCK -> BLOG 1*/
+
+.block-blog1 {
+    font-family: sans-serif !important;
+}
+
+.block-blog1-title {
+    font-size: 3.75rem;
+    font-family: inherit;
+}
+
+.block-blog1-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.block-blog1-card {
+    background-color: oklch(97% 0 0);
+}
+
+.block-blog1-card-image {
+    height: 200px;
+
+}
+
+.block-blog1-img {
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+
+}
