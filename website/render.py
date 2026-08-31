@@ -155,21 +155,24 @@ def render_sectors_html():
             <div class="block-blog1-cards">
                 <div class="block-blog1-card">
                     <div class="block-blog1-card-image">
-                        <img class="block-blog1-img" src="{sector_image}" alt="Example Image" height="200">
+                        <img class="block-blog1-card-img" src="{sector_image}" alt="Example Image" height="200">
                     </div>
-                    <h3>Subsector</h3>
+                    <h3 class="block-blog1-card-title">10 Web Design Trends to Watch in 2023</h3>
+                    <p>Discover the latest design trends that are shaping the digital landscape and how you can implement them in your next project.</p>
                 </div>
                 <div class="block-blog1-card">
                     <div class="block-blog1-card-image">
-                        <img class="block-blog1-img" src="{sector_image}" alt="Example Image" height="200">
+                        <img class="block-blog1-card-img" src="{sector_image}" alt="Example Image" height="400">
                     </div>
-                    <h3>Subsector</h3>
+                    <h3 class="block-blog1-card-title">10 Web Design Trends to Watch in 2023</h3>
+                    <p>Discover the latest design trends that are shaping the digital landscape and how you can implement them in your next project.</p>
                 </div>
                 <div class="block-blog1-card">
                     <div class="block-blog1-card-image">
-                        <img class="block-blog1-img" src="{sector_image}" alt="Example Image" height="200">
+                        <img class="block-blog1-card-img" src="{sector_image}" alt="Example Image" height="400">
                     </div>
-                    <h3>Subsector</h3>
+                    <h3 class="block-blog1-card-title">10 Web Design Trends to Watch in 2023</h3>
+                    <p>Discover the latest design trends that are shaping the digital landscape and how you can implement them in your next project.</p>
                 </div>
             </div>
         </section>
@@ -199,7 +202,7 @@ def render_sectors_html():
         </head>
         <body>
             {components.header_light_logo()}
-            <main class="hub-sectors container-xl">
+            <main class="hub-sectors container-xl" style="margin-bottom: 3rem;">
                 {article_html}
             </main>
             {components.footer_dark()}
