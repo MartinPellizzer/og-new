@@ -4,6 +4,8 @@ void sensor_ozone_alarm_read_ppb()
   {
     o3_sensor_alarm.millis2_cur = millis();
     uint32_t result = analogRead(S1_010V);
+    Serial.println("here");
+    Serial.println(result);
     uint16_t ppb = map(result, 0, 4095, 0, 10000);
     o3_sensor_alarm.ppb_cur = ppb;
   }

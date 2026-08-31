@@ -45,6 +45,7 @@ void debug_manager()
     // Serial.println(nextion.page_cur);
 
     // Serial.println(o3_sensor_alarm.ppb_cur);
+    // Serial.println(o3_sensor_alarm.ppb_cur);
 
     
 

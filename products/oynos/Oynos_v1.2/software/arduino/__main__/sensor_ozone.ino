@@ -21,7 +21,7 @@ void sensor_update()
     }
   }
 
-  if (sensor_new_data) 
+  if (sensor_new_data)
   {
     if (millis() - timer > 40) 
     {
