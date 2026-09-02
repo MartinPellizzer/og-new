@@ -109,13 +109,18 @@ def scrape_emails(url):
 
 
 def open_browser():
-	global driver
-	driver = webdriver.Firefox()
-	driver.maximize_window()
-	driver.get('https://www.google.com')
-	sleep(2)
-	driver.find_element(By.XPATH, '//div[text()="Rifiuta tutto"]').click()
-	sleep(2)
+    global driver
+
+    geckodriver_path = 'geckodriver'
+    driver_service = webdriver.FirefoxService(executable_path=geckodriver_path)
+    driver = webdriver.Firefox(service=driver_service)
+
+    # driver = webdriver.Firefox()
+    driver.maximize_window()
+    driver.get('https://www.google.com')
+    sleep(2)
+    driver.find_element(By.XPATH, '//div[text()="Rifiuta tutto"]').click()
+    sleep(2)
 
 
 def scroll_down_up_down():
