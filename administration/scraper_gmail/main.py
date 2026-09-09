@@ -294,39 +294,53 @@ def scrape_new_business(search_text, search_industry, search_district, i):
 # MAIN
 ######################################################################################
 def main():
-	search_industry = input('Inserisci il settore (es. salumifici): ')
-	search_district = input('Inserisci la provincia (es. TV): ')
-	scrapes_num = int(input('Inserisci il numero di azioni (es. 30): '))
+    search_industry = input('Inserisci il settore (es. salumifici): ')
+    # search_district = input('Inserisci la provincia (es. TV): ')
+    search_district = input('Inserisci la provincia (es. treviso): ')
+    scrapes_num = int(input('Inserisci il numero di azioni (es. 30): '))
 
-	# search_industry = 'caseifici'
-	# search_district = 'BO'
-	# scrapes_num = 20
+    # search_industry = 'caseifici'
+    # search_district = 'BO'
+    # scrapes_num = 20
 
-	# GET COMUNI FROM PROVINCIA
-	with open('comuni.csv', 'r', encoding="utf-8") as f: comuni = [line.split(sep) for line in f.readlines()]
-	comuni_filtered = [line for line in comuni if line[2].strip().lower() == search_district.strip().lower()]
+    open_browser()
 
-	open_browser()
-	# search(search_text)
-	
-	for i, comune in enumerate(comuni_filtered):
-		print('*********************************')
-		print(comune)
-		print(f'{i}/{len(comuni_filtered)}')
-		print('*********************************')
+    search_text = f'{search_industry} {search_district}'
+    search(search_text)
+    sleep(10)
 
-		comune_nome = comune[1]
-		search_text = f'{search_industry} {comune_nome.lower()}'
-		search(search_text)
-		sleep(10)
-		# if i >= 3: break
+    # FETCH PER PROVINCIA
+    for k in range(scrapes_num):
+        err = scrape_new_business(search_text, search_industry, search_district, k)
+        print(err, '\n')
+        # if err == 'name_not_equal_label': break
 
-		for k in range(scrapes_num):
-			err = scrape_new_business(search_text, search_industry, search_district, k)
-			print(err, '\n')
-			# if err == 'name_not_equal_label': break
+    '''
+    # GET COMUNI FROM PROVINCIA
+    with open('comuni.csv', 'r', encoding="utf-8") as f: comuni = [line.split(sep) for line in f.readlines()]
+    comuni_filtered = [line for line in comuni if line[2].strip().lower() == search_district.strip().lower()]
 
-	driver.quit()
+    # search(search_text)
+
+    for i, comune in enumerate(comuni_filtered):
+        print('*********************************')
+        print(comune)
+        print(f'{i}/{len(comuni_filtered)}')
+        print('*********************************')
+
+        comune_nome = comune[1]
+        search_text = f'{search_industry} {comune_nome.lower()}'
+        search(search_text)
+        sleep(10)
+        # if i >= 3: break
+
+        for k in range(scrapes_num):
+            err = scrape_new_business(search_text, search_industry, search_district, k)
+            print(err, '\n')
+            # if err == 'name_not_equal_label': break
+    '''
+
+    driver.quit()
 
 main()
 
