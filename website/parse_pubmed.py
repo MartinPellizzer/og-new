@@ -75,6 +75,68 @@ def parse_problems_extract_raw():
     print(len(relationships_found))
     # quit()
 
+def parse_nouns_llm():
+    input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/fetch/pubmed/ozone/json'
+    output_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/nouns/raw'
+    # try: shutil.rmtree(output_folderpath)
+    # except: pass
+    io.folders_recursive_gen(output_folderpath)
+    ###
+    # relationships_found = []
+    input_filenames = os.listdir(input_folderpath)
+    i = 0
+    for input_filename in input_filenames[i:]:
+        i += 1
+        print(f'{i}/{len(input_filenames)}')
+        output_filepath = f'{output_folderpath}/{input_filename}'
+        if os.path.exists(output_filepath): continue
+        input_filepath = f'{input_folderpath}/{input_filename}'
+        try: input_data = io.json_read(input_filepath)
+        except: continue
+        try: article_data = input_data['PubmedArticle'][0]['MedlineCitation']['Article']
+        except: pass
+        try: input_title = article_data['ArticleTitle']
+        except: input_title = ''
+        try: input_abstract = ' '.join(article_data['Abstract']['AbstractText'])
+        except: continue
+        # print(json.dumps(input_title, indent=4))
+        # print(input_title)
+        # print(input_abstract)
+        # quit()
+        content_to_extract = f'{input_title} {input_abstract}'
+        prompt = f'''
+            Extract all the nouns from the scientific study ABSTRACT below.
+            ABSTRACT:
+            {content_to_extract}
+            RULES:
+            Reply only with the nouns.
+            Write the nouns exactly how you find them in the abstract.
+            Write each noun in a new line.
+        '''.strip()
+        prompt = prompt.replace('<text>', content_to_extract)
+        reply = llm.reply(prompt, model_filepath, max_tokens=512)
+        if '</think>' in reply:
+            reply = reply.split('</think>')[1].strip()
+        print('################################################################################')
+        print(reply)
+        print('########################################')
+        # print(prompt)
+        print('################################################################################')
+        # relationships_found.append(reply)
+        output_data = {
+            'title': input_title,
+            'abstract': input_abstract,
+            'reply': reply,
+        }
+        io.json_write(
+            output_filepath,
+            output_data,
+        )
+    # if i > 10:
+        # quit()
+    # print(len(relationships_found))
+    # quit()
+
 def parse_sector_extract_raw():
     input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/fetch/pubmed/ozone/json'
     output_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/sector/raw'
@@ -121,10 +183,8 @@ def parse_sector_extract_raw():
         prompt = f'''
             Categorize the scientific study ABSTRACT below.
             Choose only one of the CATEGORIES below.
-
             ABSTRACT:
             {content_to_extract}
-
             CATEGORIES:
             Water
             Food & Beverage
@@ -706,8 +766,50 @@ def analyze_sector_subsectors_raw(target_sector_name):
             except: not_found_count += 1
     print(not_found_count)
 
+def analyze_sector_subsectors_group_llm(target_sector_name):
+    input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/subsectors/sort/{target_sector_name}'
+    ###
+    input_filenames = os.listdir(input_folderpath)
+    not_found_count = 0
+    subsectors_names = []
+    i = 0
+    for input_filename in input_filenames[i:]:
+        input_filename_base = input_filename.split('.')[0].strip()
+        i += 1
+        # print(f'{i}/{len(input_filenames)}')
+        input_filepath = f'{input_folderpath}/{input_filename}'
+        input_data = io.json_read(input_filepath)
+        # print(json.dumps(input_data, indent=4))
+        # quit()
+        for item in input_data['reply']:
+            try: 
+                print(item['subsector_name'])
+                subsectors_names.append(item['subsector_name'])
+            except: not_found_count += 1
+    print(not_found_count)
+    ###
+    prompt_subsectors_names = '\n'.join(subsectors_names)
+    prompt = f'''
+        I need to create a list of subsectors of the food and beverage sector.
+        I need to create this list of subsectors using the list below and the MECE principle (Mutually Exclusive, Collectively Exhaustive).
+        Name the subsectors using as few words as possible, ideally one word for sector.
+        Reply only with the list of subsectors.
+        Each item in the list of subsectors must be the umbrella term followed by the word "sector".
+        LIST:
+        {prompt_subsectors_names}
+    '''.strip()
+    # print(prompt)
+    reply = llm.reply(prompt, model_filepath, max_tokens=512)
+    print()
+    print('########################################')
+    print(reply)
+    print('########################################')
+    print()
+
 def run():
     print('parse >> pubmed')
+
+    parse_nouns_llm() ### WARNING: takes many many hours (nightly running)
 
     # parse_sector_extract_raw() ### WARNING: takes many many hours (nightly running)
 
@@ -721,9 +823,11 @@ def run():
     # parse_sector_contaminations_extract_raw(sector_name='Food & Beverage')
     # parse_sector_problems_extract_raw(sector_name='Food & Beverage')
     # parse_sector_sectors_extract_raw(sector_name='Food & Beverage')
-    # parse_sector_subsectors_extract_raw(sector_name='Food & Beverage')
 
     # parse_sector_contaminations_categorize_raw(target_sector_name='Food & Beverage')
-    analyze_sector_subsectors_raw(target_sector_name='Food & Beverage')
+
+    # parse_sector_subsectors_extract_raw(sector_name='Food & Beverage')
+    # analyze_sector_subsectors_group_llm(target_sector_name='Food & Beverage')
+    # analyze_sector_subsectors_raw(target_sector_name='Food & Beverage')
 
 run()
