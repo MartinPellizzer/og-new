@@ -137,6 +137,204 @@ def parse_nouns_llm():
     # print(len(relationships_found))
     # quit()
 
+def parse_nouns_phrases_llm():
+    input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/fetch/pubmed/ozone/json'
+    output_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/nouns_phrases/raw'
+    # try: shutil.rmtree(output_folderpath)
+    # except: pass
+    io.folders_recursive_gen(output_folderpath)
+    ###
+    # relationships_found = []
+    input_filenames = os.listdir(input_folderpath)
+    i = 0
+    for input_filename in input_filenames[i:]:
+        i += 1
+        print(f'{i}/{len(input_filenames)}')
+        output_filepath = f'{output_folderpath}/{input_filename}'
+        if os.path.exists(output_filepath): continue
+        input_filepath = f'{input_folderpath}/{input_filename}'
+        try: input_data = io.json_read(input_filepath)
+        except: continue
+        try: article_data = input_data['PubmedArticle'][0]['MedlineCitation']['Article']
+        except: pass
+        try: input_title = article_data['ArticleTitle']
+        except: input_title = ''
+        try: input_abstract = ' '.join(article_data['Abstract']['AbstractText'])
+        except: continue
+        # print(json.dumps(input_title, indent=4))
+        # print(input_title)
+        # print(input_abstract)
+        # quit()
+        content_to_extract = f'{input_title} {input_abstract}'
+            # Extract all the nouns from the scientific study ABSTRACT below.
+        prompt = f'''
+            Extract all noun phrases and nominal expressions from this document.
+            Preserve the complete noun phrase when multiple words together form the expression.
+            Do not extract verbs, adjectives, complete clauses, propositions, relationships, claims, or sentences.
+            Do not interpret, normalize, categorize, merge, or judge the extracted terms.
+            Do not use any assumptions about the subject matter or domain.
+            Preserve the terminology exactly as used by the author.
+            When a noun phrase contains a coordinated list of independent nouns, extract the individual noun phrases separately where grammatically appropriate.
+            Return the extracted noun phrases in their original wording.
+            ABSTRACT:
+            {content_to_extract}
+            RULES:
+            Reply only with the nouns.
+            Write the nouns exactly how you find them in the abstract.
+            Write each noun in a new line.
+        '''.strip()
+        prompt = prompt.replace('<text>', content_to_extract)
+        reply = llm.reply(prompt, model_filepath, max_tokens=512)
+        if '</think>' in reply:
+            reply = reply.split('</think>')[1].strip()
+        print('################################################################################')
+        print(reply)
+        print('########################################')
+        # print(prompt)
+        print('################################################################################')
+        # relationships_found.append(reply)
+        output_data = {
+            'title': input_title,
+            'abstract': input_abstract,
+            'reply': reply,
+        }
+        io.json_write(
+            output_filepath,
+            output_data,
+        )
+    # if i > 10:
+        # quit()
+    # print(len(relationships_found))
+    # quit()
+
+def parse_concepts_llm():
+    input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/fetch/pubmed/ozone/json'
+    output_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/concepts/raw'
+    # try: shutil.rmtree(output_folderpath)
+    # except: pass
+    io.folders_recursive_gen(output_folderpath)
+    ###
+    # relationships_found = []
+    input_filenames = os.listdir(input_folderpath)
+    i = 0
+    for input_filename in input_filenames[i:100]:
+        i += 1
+        print(f'{i}/{len(input_filenames)}')
+        output_filepath = f'{output_folderpath}/{input_filename}'
+        if os.path.exists(output_filepath): continue
+        input_filepath = f'{input_folderpath}/{input_filename}'
+        try: input_data = io.json_read(input_filepath)
+        except: continue
+        try: article_data = input_data['PubmedArticle'][0]['MedlineCitation']['Article']
+        except: pass
+        try: input_title = article_data['ArticleTitle']
+        except: input_title = ''
+        try: input_abstract = ' '.join(article_data['Abstract']['AbstractText'])
+        except: continue
+        # print(json.dumps(input_title, indent=4))
+        # print(input_title)
+        # print(input_abstract)
+        # quit()
+        content_to_extract = f'{input_title} {input_abstract}'
+        prompt = f'''
+            Read the document ABSTRACT below and identify the distinct, semantically meaningful concepts expressed in it. Extract each concept as a self-contained phrase, using enough words to preserve the concept's meaning but no unnecessary words. Do not simply extract nouns or noun phrases mechanically. Combine words when they form a single meaningful concept and keep phrases separate when they represent different meanings. Infer concepts from the document's context rather than from a predefined list of domain categories.
+            ABSTRACT:
+            {content_to_extract}
+            RULES:
+            Reply only with the concepts.
+            Write the concepts exactly how you find them in the abstract.
+            Write each concept in a new line.
+        '''.strip()
+        prompt = prompt.replace('<text>', content_to_extract)
+        reply = llm.reply(prompt, model_filepath, max_tokens=512)
+        if '</think>' in reply:
+            reply = reply.split('</think>')[1].strip()
+        print('################################################################################')
+        print(reply)
+        print('########################################')
+        # print(prompt)
+        print('################################################################################')
+        # relationships_found.append(reply)
+        output_data = {
+            'title': input_title,
+            'abstract': input_abstract,
+            'reply': reply,
+        }
+        io.json_write(
+            output_filepath,
+            output_data,
+        )
+    # if i > 10:
+        # quit()
+    # print(len(relationships_found))
+    # quit()
+
+def parse_expressions_llm():
+    input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/fetch/pubmed/ozone/json'
+    output_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/expressions/raw'
+    # try: shutil.rmtree(output_folderpath)
+    # except: pass
+    io.folders_recursive_gen(output_folderpath)
+    ###
+    # relationships_found = []
+    input_filenames = os.listdir(input_folderpath)
+    i = 0
+    for input_filename in input_filenames[i:10]:
+        i += 1
+        print(f'{i}/{len(input_filenames)}')
+        output_filepath = f'{output_folderpath}/{input_filename}'
+        if os.path.exists(output_filepath): continue
+        input_filepath = f'{input_folderpath}/{input_filename}'
+        try: input_data = io.json_read(input_filepath)
+        except: continue
+        try: article_data = input_data['PubmedArticle'][0]['MedlineCitation']['Article']
+        except: pass
+        try: input_title = article_data['ArticleTitle']
+        except: input_title = ''
+        try: input_abstract = ' '.join(article_data['Abstract']['AbstractText'])
+        except: continue
+        # print(json.dumps(input_title, indent=4))
+        # print(input_title)
+        # print(input_abstract)
+        # quit()
+        content_to_extract = f'{input_title} {input_abstract}'
+        prompt = f'''
+            Extract the noun phrases and nominal expressions fron the ABSTRACT document below that refer to identifiable things, concepts, objects, substances, phenomena, activities, methods, measurements, locations, organisms, materials, or other subjects discussed by the author.
+            Do not extract complete statements, claims, findings, relationships, events, or propositions.
+            Do not extract a noun merely because it is grammatically a noun. Prefer the complete noun phrase when multiple words together form the referring expression.
+            For each expression, preserve the wording used by the author. Do not normalize, classify, interpret, generalize, or merge expressions.
+            Your task is linguistic extraction only. Do not decide what constitutes a domain entity.
+            ABSTRACT:
+            {content_to_extract}
+            RULES:
+            Reply only with the concepts.
+            Write the concepts exactly how you find them in the abstract.
+            Write each concept in a new line.
+        '''.strip()
+        prompt = prompt.replace('<text>', content_to_extract)
+        reply = llm.reply(prompt, model_filepath, max_tokens=512)
+        if '</think>' in reply:
+            reply = reply.split('</think>')[1].strip()
+        print('################################################################################')
+        print(reply)
+        print('########################################')
+        # print(prompt)
+        print('################################################################################')
+        # relationships_found.append(reply)
+        output_data = {
+            'title': input_title,
+            'abstract': input_abstract,
+            'reply': reply,
+        }
+        io.json_write(
+            output_filepath,
+            output_data,
+        )
+    # if i > 10:
+        # quit()
+    # print(len(relationships_found))
+    # quit()
+
 def parse_sector_extract_raw():
     input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/fetch/pubmed/ozone/json'
     output_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/sector/raw'
@@ -806,10 +1004,110 @@ def analyze_sector_subsectors_group_llm(target_sector_name):
     print('########################################')
     print()
 
+def nouns_phrases_string_match():
+    input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/nouns_phrases/raw'
+    output_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/nouns_phrases/string_match'
+    # try: shutil.rmtree(output_folderpath)
+    # except: pass
+    io.folders_recursive_gen(output_folderpath)
+    ###
+    input_filenames = os.listdir(input_folderpath)
+    i = 0
+    for input_filename in input_filenames[i:]:
+        i += 1
+        print(f'{i}/{len(input_filenames)}')
+        output_filepath = f'{output_folderpath}/{input_filename}'
+        if os.path.exists(output_filepath): continue
+        input_filepath = f'{input_folderpath}/{input_filename}'
+        try: input_data = io.json_read(input_filepath)
+        except: continue
+        ###
+        study_id = input_filename.strip().split('.')[0]
+        study_title = input_data['title']
+        study_abstract = input_data['abstract']
+        terms = []
+        for term in input_data['reply'].strip().split('\n'):
+            if term.lower() in study_abstract.lower():
+                terms.append(term)
+        ###
+        output_data = {
+            'study_id': study_id,
+            'study_title': study_title,
+            'study_abstract': study_abstract,
+            'reply': terms,
+        }
+        io.json_write(
+            output_filepath,
+            output_data,
+        )
+
+def nouns_phrases_find_passages_llm():
+    input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/nouns_phrases/string_match'
+    output_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/nouns_phrases/passages'
+    # try: shutil.rmtree(output_folderpath)
+    # except: pass
+    io.folders_recursive_gen(output_folderpath)
+    ###
+    input_filenames = os.listdir(input_folderpath)
+    i = 0
+    for input_filename in input_filenames[i:]:
+        i += 1
+        print(f'{i}/{len(input_filenames)}')
+        output_filepath = f'{output_folderpath}/{input_filename}'
+        if os.path.exists(output_filepath): continue
+        input_filepath = f'{input_folderpath}/{input_filename}'
+        try: input_data = io.json_read(input_filepath)
+        except: continue
+        ###
+        study_id = input_data['study_id']
+        study_title = input_data['study_title']
+        study_abstract = input_data['study_abstract']
+        study_terms = input_data['reply']
+        output_data = {
+            'study_id': study_id,
+            'study_title': study_title,
+            'study_abstract': study_abstract,
+            'terms': [],
+        }
+        for study_term in study_terms:
+            prompt = f'''
+                Extract all the passages from the ABSTRACT below where is mentioned this term: {study_term}.
+                Write these passages exactly as they are in the abstract.
+                By passage I mean the full sentence where the term is mentioned.
+                Write one passage per new line.
+                Reply only with the asked content.
+                ABSTRACT:
+                {study_abstract}
+            '''.strip()
+            reply = llm.reply(prompt, model_filepath, max_tokens=512)
+            if '</think>' in reply:
+                reply = reply.split('</think>')[1].strip()
+            print()
+            print('################################################################################')
+            print(reply)
+            print('################################################################################')
+
+            output_item = {
+                'term': study_term,
+                'passages': reply.strip().split('\n'),
+            }
+            output_data['terms'].append(output_item)
+        ###
+        io.json_write(
+            output_filepath,
+            output_data,
+        )
+        # quit()
+
 def run():
     print('parse >> pubmed')
 
-    parse_nouns_llm() ### WARNING: takes many many hours (nightly running)
+    # parse_nouns_llm() ### WARNING: takes many many hours (nightly running)
+    # parse_concepts_llm() ### WARNING: takes many many hours (nightly running)
+    # parse_expressions_llm() ### WARNING: takes many many hours (nightly running)
+    # parse_nouns_phrases_llm() ### WARNING: takes many many hours (nightly running)
+    nouns_phrases_string_match()
+    nouns_phrases_find_passages_llm() ### WARNING: takes many many hours (nightly running)
 
     # parse_sector_extract_raw() ### WARNING: takes many many hours (nightly running)
 
