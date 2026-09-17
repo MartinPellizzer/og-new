@@ -1,7 +1,7 @@
 HardwareSerial rs485_aurora(1);
 #define RS485_AURORA_RE_DE_PIN 16
 
-#define SENSOR1_RE_DE_PIN 26
+// #define SENSOR1_RE_DE_PIN 26
 #define SENSOR_BUFF_LEN 9
 typedef struct sensor_t {
   uint8_t buff[SENSOR_BUFF_LEN] = { 0 };
@@ -42,9 +42,9 @@ uint8_t ppb_get()
 
 void ze27o3_listen()
 {
-  if (Serial2.available() > 0)
+  if (rs485_aurora.available() > 0)
   {
-    uint8_t c = Serial2.read();
+    uint8_t c = rs485_aurora.read();
     sensor.buff[sensor.buff_i] = c;
     sensor.buff_i += 1;
     sensor.buff_ready = 1;
@@ -59,17 +59,6 @@ int8_t ze27o3_ready()
     return 1;
   }
   return 0;
-}
-
-void rs485_aurora_write()       
-{
-  digitalWrite(RS485_AURORA_RE_DE_PIN, HIGH);
-  for(int i = 0; i < SENSOR_BUFF_LEN; i++)
-  {
-    rs485_aurora.write(sensor.buff[i]);
-  }
-  delay(10);
-  digitalWrite(RS485_AURORA_RE_DE_PIN, LOW);
 }
 
 void ze27o3_debug()
@@ -95,10 +84,6 @@ void setup()
   rs485_aurora.begin(9600, SERIAL_8N1, 17, 4);  // RO, DI
   pinMode(RS485_AURORA_RE_DE_PIN, OUTPUT);
   digitalWrite(RS485_AURORA_RE_DE_PIN, LOW);
-  
-  Serial2.begin(9600, SERIAL_8N1, 27, 14);  // RO, DI
-  pinMode(SENSOR1_RE_DE_PIN, OUTPUT);
-  digitalWrite(SENSOR1_RE_DE_PIN, LOW);
 }
 
 void loop()
@@ -116,7 +101,7 @@ void loop()
       Serial.println("CHECKSUM: VALID");
 
       // SEND ZE27O3 RS485
-      rs485_aurora_write();
+      // rs485_aurora_write();
 
       // SEND PPB 0-10V
       // TODO
