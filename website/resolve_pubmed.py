@@ -374,6 +374,103 @@ def categoryze_llm():
         # print()
     quit()
 
+def aggregate_relationships():
+    input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/relationships/raw'
+    filter_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/sectors/sort/Food & Beverage'
+    input_filenames = os.listdir(input_folderpath)
+    filter_filenames = [filename.split('.')[0] for filename in os.listdir(filter_folderpath)]
+    # print(filter_filenames[:10])
+    i = 0
+    term_all = []
+    terms_aggregates = []
+    for input_filename in input_filenames[i:]:
+        relationships_all = []
+        i += 1
+        print(f'{i}/{len(input_filenames)}')
+        input_filename_base = input_filename.split('.')[0]
+        input_filepath = f'{input_folderpath}/{input_filename}'
+        input_data = io.json_read(input_filepath)
+        # print(json.dumps(input_data, indent=4))
+        # print(input_filename)
+        # quit()
+        if input_filename_base not in filter_filenames: continue
+        terms = input_data['terms']
+        # terms = sorted(terms)
+        # print(json.dumps(input_data, indent=4))
+        print(json.dumps(terms, indent=4))
+        # print(input_filename)
+        for term in terms:
+            relationships = term['relationships']
+            for relationship_str in relationships:
+                print(type(relationship_str))
+                for line in relationship_str.split('\n'):
+                    line = line.strip()
+                    line = line.replace('[', '')
+                    line = line.replace(']', '')
+                    chunks = line.split(',')
+                    if len(chunks) != 3: continue
+                    relationships_all.append(chunks[1].strip())
+                # quit()
+        relationships_unique = sorted(list(set(relationships_all)))
+        for x in sorted(relationships_all):
+            print(x)
+        for x in relationships_unique:
+            print(x)
+        print(len(relationships_all))
+        print(len(relationships_unique))
+        # prompt_batch = f''
+        # for item in batch:
+            # prompt_batch += f'''term name: {item['term_name']}\nterm passage: {item['term_passage']}\n\n'''
+            # For context, each term name have an associated term passage from where it was extracted, so you can identify the type better. 
+        """
+        prompt = f'''
+            For each term name in the following LIST, identify the most general type of thing that the term denotes. 
+            Do not use a predefined taxonomy. 
+            If the appropriate type is unknown, create a short type label. 
+            Use the same type label whenever multiple terms denote the same kind of thing.
+            Reply only with the content asked.
+            OUTPUT FORMAT:
+            term name 1: type 1
+            term name 2: type 2
+            term name 3: type 3
+            etc...
+            LIST:
+            {relationships_unique}
+        '''.strip()
+        # print(prompt)
+        # quit()
+        reply = llm.reply(prompt, model_filepath, max_tokens=4096)
+        print()
+        print('########################################')
+        print(reply)
+        print('########################################')
+        quit()
+        """
+        prompt = f'''
+            Group equivalent relationships from the LIST below.
+            By equivalent relationships I mean relationships that essentially mean the same thing.
+            For each group choose the canonical relationship term from that group.
+            Reply only with the asked content.
+            Include all relationships of the list in the reply.
+            OUTPUT FORMAT:
+            canonical term 1: group equivalent relationship 1, group equivalent relationship 2, etc.
+            canonical term 2: group equivalent relationship 1, group equivalent relationship 2, etc.
+            canonical term 3: group equivalent relationship 1, group equivalent relationship 2, etc.
+            etc...
+            LIST:
+            {relationships_unique}
+        '''.strip()
+        # print(prompt)
+        # quit()
+        reply = llm.reply(prompt, model_filepath, max_tokens=4096)
+        print()
+        print('########################################')
+        print(reply)
+        print('########################################')
+        print()
+        # types_resolved = reply.strip().split('\n')
+        quit()
+    
 
 def run():
     print('RESOLVE >> pubmed')
@@ -392,6 +489,8 @@ HOURS:   {(time.perf_counter() - start)/60/60}
 ################################################################################
     ''')
     # resolve_manual_console()
-    categoryze_llm()
+    # categoryze_llm()
+
+    aggregate_relationships()
 
 run()

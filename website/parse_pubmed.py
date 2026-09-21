@@ -1099,6 +1099,75 @@ def nouns_phrases_find_passages_llm():
         )
         # quit()
 
+def relationships_llm():
+    input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/nouns_phrases/passages'
+    output_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/relationships/raw'
+    # try: shutil.rmtree(output_folderpath)
+    # except: pass
+    io.folders_recursive_gen(output_folderpath)
+    ###
+    input_filenames = os.listdir(input_folderpath)
+    i = 0
+    for input_filename in input_filenames[i:]:
+        i += 1
+        print(f'{i}/{len(input_filenames)}')
+        output_filepath = f'{output_folderpath}/{input_filename}'
+        if os.path.exists(output_filepath): continue
+        input_filepath = f'{input_folderpath}/{input_filename}'
+        try: input_data = io.json_read(input_filepath)
+        except: continue
+        # print(json.dumps(input_data, indent=4))
+        # quit()
+        ###
+        study_id = input_data['study_id']
+        study_title = input_data['study_title']
+        study_abstract = input_data['study_abstract']
+        study_terms = input_data['terms']
+        study_terms_names = [x['term'] for x in study_terms]
+        output_data = {
+            'study_id': study_id,
+            'study_title': study_title,
+            'study_abstract': study_abstract,
+            'terms': [],
+        }
+        for study_term in study_terms:
+            study_term_name = study_term['term']
+            study_passages = study_term['passages']
+            study_terms_names_prompt = '\n'.join(sorted(list(set(study_terms_names))))
+            prompt = f'''
+                From the ABSTRACT below I extracted all the PHRASE NOUNS below.
+                Now identify all relationships between the phrase noun "{study_term_name}" and all the others phrase nouns based on the abstract.
+                Reply only with the asked content.
+                OUPUT FORMAT: 
+                [{study_term_name}, relationship, phrase noun]
+                PHRASE NOUNS:
+                {study_terms_names_prompt}
+                ABSTRACT:
+                {study_abstract}
+            '''.strip()
+            print(prompt)
+            print()
+            reply = llm.reply(prompt, model_filepath, max_tokens=512)
+            if '</think>' in reply:
+                reply = reply.split('</think>')[1].strip()
+            print()
+            print('################################################################################')
+            print(reply)
+            print('################################################################################')
+            output_item = {
+                'term': study_term_name,
+                'passages': study_passages,
+                'relationships': reply.strip().split('\n'),
+            }
+            output_data['terms'].append(output_item)
+            # quit()
+        ###
+        io.json_write(
+            output_filepath,
+            output_data,
+        )
+        # quit()
+
 def run():
     print('parse >> pubmed')
 
@@ -1106,8 +1175,10 @@ def run():
     # parse_concepts_llm() ### WARNING: takes many many hours (nightly running)
     # parse_expressions_llm() ### WARNING: takes many many hours (nightly running)
     # parse_nouns_phrases_llm() ### WARNING: takes many many hours (nightly running)
-    nouns_phrases_string_match()
-    nouns_phrases_find_passages_llm() ### WARNING: takes many many hours (nightly running)
+    # nouns_phrases_string_match()
+    # nouns_phrases_find_passages_llm() ### WARNING: takes many many hours (nightly running)
+
+    relationships_llm() ### WARNING: takes many many hours (nightly running)
 
     # parse_sector_extract_raw() ### WARNING: takes many many hours (nightly running)
 
