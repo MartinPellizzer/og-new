@@ -69,6 +69,7 @@
 * SYS-16 — out of scope
 * SYS-17 — major functions
 * SYS-18 — operating modes
+
 * SYS-20 — state transitions
 * SYS-21 — normal behavior
 * SYS-22 — abnormal behavior
