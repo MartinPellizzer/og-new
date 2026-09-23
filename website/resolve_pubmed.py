@@ -9,7 +9,8 @@ from lib import llm
 
 import sectors_data
 
-model_filepath = '/home/ubuntu/vault-tmp/llm/gemma-4-26B-A4B-it-UD-Q4_K_M.gguf'
+# model_filepath = '/home/ubuntu/vault-tmp/llm/gemma-4-26B-A4B-it-UD-Q4_K_M.gguf'
+model_filepath = '/home/ubuntu/vault-tmp/llm/gemma-4-12B-it-qat-UD-Q4_K_XL.gguf'
 
 def resolve_sector_subsectors_manual(target_sector_name='Food & Beverage'):
     subsectors_ideas = f'''
@@ -381,11 +382,14 @@ def aggregate_relationships():
     filter_filenames = [filename.split('.')[0] for filename in os.listdir(filter_folderpath)]
     # print(filter_filenames[:10])
     i = 0
+    filter_count = 0
     term_all = []
     terms_aggregates = []
+    relationships_resolve_relative = set()
     for input_filename in input_filenames[i:]:
         relationships_all = []
         i += 1
+        if filter_count >= 100: break
         print(f'{i}/{len(input_filenames)}')
         input_filename_base = input_filename.split('.')[0]
         input_filepath = f'{input_folderpath}/{input_filename}'
@@ -394,6 +398,7 @@ def aggregate_relationships():
         # print(input_filename)
         # quit()
         if input_filename_base not in filter_filenames: continue
+        filter_count += 1
         terms = input_data['terms']
         # terms = sorted(terms)
         # print(json.dumps(input_data, indent=4))
@@ -418,40 +423,12 @@ def aggregate_relationships():
             print(x)
         print(len(relationships_all))
         print(len(relationships_unique))
-        # prompt_batch = f''
-        # for item in batch:
-            # prompt_batch += f'''term name: {item['term_name']}\nterm passage: {item['term_passage']}\n\n'''
-            # For context, each term name have an associated term passage from where it was extracted, so you can identify the type better. 
-        """
+        ###
         prompt = f'''
-            For each term name in the following LIST, identify the most general type of thing that the term denotes. 
-            Do not use a predefined taxonomy. 
-            If the appropriate type is unknown, create a short type label. 
-            Use the same type label whenever multiple terms denote the same kind of thing.
-            Reply only with the content asked.
-            OUTPUT FORMAT:
-            term name 1: type 1
-            term name 2: type 2
-            term name 3: type 3
-            etc...
-            LIST:
-            {relationships_unique}
-        '''.strip()
-        # print(prompt)
-        # quit()
-        reply = llm.reply(prompt, model_filepath, max_tokens=4096)
-        print()
-        print('########################################')
-        print(reply)
-        print('########################################')
-        quit()
-        """
-        prompt = f'''
-            Group equivalent relationships from the LIST below.
-            By equivalent relationships I mean relationships that essentially mean the same thing.
-            For each group choose the canonical relationship term from that group.
+            Group equivalent relationship terms from the LIST below.
+            For each group choose a canonical relationship term from that group.
+            Choose a term that is the most umbrella term for that relationship, normalized and as short as possible.
             Reply only with the asked content.
-            Include all relationships of the list in the reply.
             OUTPUT FORMAT:
             canonical term 1: group equivalent relationship 1, group equivalent relationship 2, etc.
             canonical term 2: group equivalent relationship 1, group equivalent relationship 2, etc.
@@ -468,9 +445,95 @@ def aggregate_relationships():
         print(reply)
         print('########################################')
         print()
+        lines = []
+        for line in reply.strip().split('\n'):
+            line = line.strip()
+            if line == '': continue
+            if ": " in line: line = line.split(':')[0]
+            line = line.lower().strip()
+            if line == '': continue
+            lines.append(line)
+        for line in lines:
+            print(line)
+            relationships_resolve_relative.add(line)
         # types_resolved = reply.strip().split('\n')
+        # quit()
+    # for line in relationships_resolve_relative:
+        # print(line)
+    output_items = []
+    for line in relationships_resolve_relative:
+        output_item = {
+            'relationship_term_name': line,
+        }
+        output_items.append(output_item)
+    output_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/relationships/aggregate'
+    io.folders_recursive_gen(output_folderpath)
+    output_filepath = f'{output_folderpath}/data.json'
+    io.json_write(output_filepath, output_items)
+
+def resolve_relationships():
+    input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/relationships/raw'
+    filter_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/sectors/sort/Food & Beverage'
+    input_filenames = os.listdir(input_folderpath)
+    filter_filenames = [filename.split('.')[0] for filename in os.listdir(filter_folderpath)]
+    # print(filter_filenames[:10])
+    i = 0
+    filter_count = 0
+    term_all = []
+    terms_aggregates = []
+    relationships_resolve_relative = set()
+    for input_filename in input_filenames[i:]:
+        relationships_all = []
+        i += 1
+        if filter_count >= 100: break
+        print(f'{i}/{len(input_filenames)}')
+        input_filename_base = input_filename.split('.')[0]
+        input_filepath = f'{input_folderpath}/{input_filename}'
+        input_data = io.json_read(input_filepath)
+        # print(json.dumps(input_data, indent=4))
+        # print(input_filename)
+        # quit()
+        if input_filename_base not in filter_filenames: continue
+        filter_count += 1
+        terms = input_data['terms']
+        # terms = sorted(terms)
+        # print(json.dumps(input_data, indent=4))
+        # print(json.dumps(terms, indent=4))
+        # print(input_filename)
+        # quit()
+        for term in terms:
+            passages = term['passages']
+            relationships = term['relationships']
+            for passage in passages:
+                print(passage)
+            for relationship in relationships:
+                print(relationship)
+                relationship_term = relationship.strip()
+                relationship_term = relationship_term.replace('[', '')
+                relationship_term = relationship_term.replace(']', '')
+                relationship_term = relationship_term.split(',')[1]
+                relationships_filepath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/relationships/aggregate/data.json'
+                relationships_items = io.json_read(relationships_filepath)
+                relationships_categories = [item['relationship_term_name'] for item in relationships_items]
+                relationships_categories = '\n'.join(relationships_categories)
+                prompt = f'''
+                    Categorize the following RELATIONSHIP TERM by selecting the most appropriate term in the RELATIONSHIPS LIST below.
+                    RELATIONSHIP TERM:
+                    {relationship_term}
+                    RULES:
+                    Reply only with the asked content.
+                    LIST:
+                    {relationships_categories}
+                '''.strip()
+                # print(prompt)
+                # quit()
+                reply = llm.reply(prompt, model_filepath, max_tokens=4096)
+                print()
+                print('########################################')
+                print(reply)
+                print('########################################')
+                print()
         quit()
-    
 
 def run():
     print('RESOLVE >> pubmed')
@@ -491,6 +554,7 @@ HOURS:   {(time.perf_counter() - start)/60/60}
     # resolve_manual_console()
     # categoryze_llm()
 
-    aggregate_relationships()
+    # aggregate_relationships()
+    resolve_relationships()
 
 run()
