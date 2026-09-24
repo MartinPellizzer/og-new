@@ -490,7 +490,7 @@ void loop()
 {
   // external_input.state_cur = digitalRead(RI_1);
   
-  // debug_manager();
+  debug_manager();
 
   sensor_ozone_manager();
   // sensor_ozone_alarm_manager();
