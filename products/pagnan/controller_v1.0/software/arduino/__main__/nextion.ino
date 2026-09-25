@@ -1183,11 +1183,16 @@ void nextion_update_page_home(uint8_t force_refresh)
     {
       if (sensor.is_connected == 1)
       {
+        int16_t ppb_cur_nextion = sensor.ppb_cur;
+        if (ppb_cur_nextion >= 10000)
+        {
+        ppb_cur_nextion = 9999;
+        } 
         uint8_t _buffer[] = { 0x74, 0x35, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0x30, 0x30, 0x2E, 0x30, 0x30, 0x30, 0x22, 0xff, 0xff, 0xff };
-        _buffer[9] = (sensor.ppb_cur % 10000 / 1000) + 0x30;
-        _buffer[11] = (sensor.ppb_cur % 1000 / 100) + 0x30;
-        _buffer[12] = (sensor.ppb_cur % 100 / 10) + 0x30;
-        _buffer[13] = (sensor.ppb_cur % 10 / 1) + 0x30;
+        _buffer[9] = (ppb_cur_nextion % 10000 / 1000) + 0x30;
+        _buffer[11] = (ppb_cur_nextion % 1000 / 100) + 0x30;
+        _buffer[12] = (ppb_cur_nextion % 100 / 10) + 0x30;
+        _buffer[13] = (ppb_cur_nextion % 10 / 1) + 0x30;
         for (uint8_t i = 0; i < sizeof(_buffer) / sizeof(uint8_t); i++) 
         {
           Serial2.write(_buffer[i]);
