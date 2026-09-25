@@ -501,9 +501,13 @@ def resolve_relationships():
         # print(json.dumps(terms, indent=4))
         # print(input_filename)
         # quit()
+        output_data = input_data
         for term in terms:
             passages = term['passages']
             relationships = term['relationships']
+            term['relationships_resolve'] = []
+            # print(json.dumps(term, indent=4))
+            # quit()
             for passage in passages:
                 print(passage)
             for relationship in relationships:
@@ -511,7 +515,8 @@ def resolve_relationships():
                 relationship_term = relationship.strip()
                 relationship_term = relationship_term.replace('[', '')
                 relationship_term = relationship_term.replace(']', '')
-                relationship_term = relationship_term.split(',')[1]
+                try: entity_1_term, relationship_term, entity_2_term = relationship_term.split(',')
+                except: continue
                 relationships_filepath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/relationships/aggregate/data.json'
                 relationships_items = io.json_read(relationships_filepath)
                 relationships_categories = [item['relationship_term_name'] for item in relationships_items]
@@ -528,12 +533,28 @@ def resolve_relationships():
                 # print(prompt)
                 # quit()
                 reply = llm.reply(prompt, model_filepath, max_tokens=4096)
+                reply = reply.strip()
                 print()
                 print('########################################')
                 print(reply)
                 print('########################################')
                 print()
-        quit()
+                term['relationships_resolve'].append({
+                    'entity_1': entity_1_term.strip(),
+                    'relationship_term': relationship_term.strip(),
+                    'entity_2': entity_2_term.strip(),
+                    'relationship_resolve_local': reply.strip(),
+                })
+            # print(json.dumps(output_data, indent=4))
+            # quit()
+        output_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/relationships/resolve_local'
+        io.folders_recursive_gen(output_folderpath)
+        output_filepath = f'{output_folderpath}/{input_filename_base}.json'
+        io.json_write(output_filepath, output_data)
+        print(json.dumps(output_data, indent=4))
+        # quit()
+            
+        # quit()
 
 def run():
     print('RESOLVE >> pubmed')

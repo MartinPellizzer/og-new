@@ -231,54 +231,60 @@ def add_business_to_csv(output_file, label, address, website, phone, s_emails, d
 		
 
 def scrape_new_business(search_text, search_industry, search_district, i):
-	global sep
+    global sep
 
-	output_file = f'./exports/{search_industry}-{search_district}.csv'.replace(' ', '_')
+    output_file = f'./exports/{search_industry}-{search_district}.csv'.replace(' ', '_')
 
-	old_businesses = get_old_businesses(output_file)
-	business, label = find_new_business(old_businesses)
-	print(f'{i}: {label}')
+    old_businesses = get_old_businesses(output_file)
+    business, label = find_new_business(old_businesses)
+    print(f'{i}: {label}')
 
-	if not business:
-		scroll_down_up_down()
-		return 'no_new_business_found'
+    if not business:
+        scroll_down_up_down()
+        return 'no_new_business_found'
 
-	# google maps is bugged: scroll a bit the screen and try clicking again if needed
-	if not click_on_listing(business):
-		scroll_down_up_down()
-		return 'failed_to_click_listing'
+    # google maps is bugged: scroll a bit the screen and try clicking again if needed
+    if not click_on_listing(business):
+        scroll_down_up_down()
+        return 'failed_to_click_listing'
 
-	# TODO: if time is not enough to open new card, manage it
-	# otherwise it will take business info from previous card, which is wrong!!!
-	sleep(5)
-	
-	card_element = get_card_element(business)
+    # TODO: if time is not enough to open new card, manage it
+    # otherwise it will take business info from previous card, which is wrong!!!
+    sleep(5)
 
-	name = scrape_name(card_element)
-	address = scrape_address(card_element)
-	district = scrape_district(card_element)
-	website = scrape_website(card_element)
-	phone = scrape_phone(card_element)
-	emails = scrape_emails(website)
-	s_emails = ' '.join(emails)
+    card_element = get_card_element(business)
 
-	# if search_district.lower().strip() != district.lower().strip():
-	# 	return 'NO MATCH: District'
+    name = scrape_name(card_element)
+    address = scrape_address(card_element)
+    district = scrape_district(card_element)
+    website = scrape_website(card_element)
+    phone = scrape_phone(card_element)
+    emails = scrape_emails(website)
+    s_emails = ' '.join(emails)
 
-	name = sanitize(name)
-	address = sanitize(address)
-	district = sanitize(district)
-	phone = sanitize(phone)
+    # if search_district.lower().strip() != district.lower().strip():
+    # 	return 'NO MATCH: District'
 
-	if name != label:
-		add_business_to_csv(output_file, label, address, website, phone, s_emails, district, name)
-		return 'name_not_equal_label'
+    name = sanitize(name)
+    address = sanitize(address)
+    district = sanitize(district)
+    phone = sanitize(phone)
 
-	add_business_to_csv(output_file, label, address, website, phone, s_emails, district, '')
+    if name != label:
+        add_business_to_csv(output_file, label, address, website, phone, s_emails, district, name)
+        return 'name_not_equal_label'
 
-	debug_info(name, address, district, website, phone, s_emails)
+    with open(output_file, 'r', encoding="utf-8") as f: lines = f.readlines()
+    if lines != []:
+        addresses = [sanitize(line.split(sep)[1]) for line in lines]
+        print(addresses)
+        if address in addresses: return 'ERR: address duplicate'
 
-	return 'success'
+    add_business_to_csv(output_file, label, address, website, phone, s_emails, district, '')
+
+    debug_info(name, address, district, website, phone, s_emails)
+
+    return 'success'
 	
 
 
@@ -296,24 +302,34 @@ def scrape_new_business(search_text, search_industry, search_district, i):
 def main():
     search_industry = input('Inserisci il settore (es. salumifici): ')
     # search_district = input('Inserisci la provincia (es. TV): ')
-    search_district = input('Inserisci la provincia (es. treviso): ')
-    scrapes_num = int(input('Inserisci il numero di azioni (es. 30): '))
+    # search_district = input('Inserisci la provincia (es. treviso): ')
+    # scrapes_num = int(input('Inserisci il numero di azioni (es. 30): '))
 
     # search_industry = 'caseifici'
     # search_district = 'BO'
-    # scrapes_num = 20
+    scrapes_num = 100
 
     open_browser()
 
-    search_text = f'{search_industry} {search_district}'
-    search(search_text)
-    sleep(10)
+    search_districts = [
+        'veneto',
+        'belluno',
+        'padova',
+        'rovigo',
+        'treviso',
+        'venezia',
+        'verona',
+        'vicenza',
+    ]
 
-    # FETCH PER PROVINCIA
-    for k in range(scrapes_num):
-        err = scrape_new_business(search_text, search_industry, search_district, k)
-        print(err, '\n')
-        # if err == 'name_not_equal_label': break
+    for search_district in search_districts:
+        search_text = f'{search_industry} {search_district}'
+        search(search_text)
+        sleep(10)
+        for k in range(scrapes_num):
+            err = scrape_new_business(search_text, search_industry, search_district, k)
+            print(err, '\n')
+            # if err == 'name_not_equal_label': break
 
     '''
     # GET COMUNI FROM PROVINCIA
