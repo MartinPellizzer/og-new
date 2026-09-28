@@ -1116,8 +1116,6 @@ def relationships_llm():
         input_filepath = f'{input_folderpath}/{input_filename}'
         try: input_data = io.json_read(input_filepath)
         except: continue
-        # print(json.dumps(input_data, indent=4))
-        # quit()
         ###
         study_id = input_data['study_id']
         study_title = input_data['study_title']
@@ -1168,17 +1166,85 @@ def relationships_llm():
         )
         # quit()
 
+def definitions_llm():
+    input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/relationships/raw'
+    output_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/definitions/raw'
+    # try: shutil.rmtree(output_folderpath)
+    # except: pass
+    io.folders_recursive_gen(output_folderpath)
+    input_filenames = os.listdir(input_folderpath)
+    i = 0
+    for input_filename in input_filenames[i:]:
+        i += 1
+        print(f'{i}/{len(input_filenames)}')
+        input_filepath = f'{input_folderpath}/{input_filename}'
+        output_filepath = f'{output_folderpath}/{input_filename}'
+        try: input_data = io.json_read(input_filepath)
+        except: continue
+        # print(json.dumps(input_data, indent=4))
+        # quit()
+        study_id = input_data['study_id']
+        study_title = input_data['study_title']
+        study_abstract = input_data['study_abstract']
+        for term_item in input_data['terms']:
+            term_text = term_item['term']
+            term_passages = term_item['passages']
+            term_relationships = term_item['relationships']
+            if 'definition' not in term_item:
+                prompt = f'''
+                    Write a short and concise 1-sentence definition for the following TERM.
+                    To eliminate ambiguity, this term was extracted from the CONTEXT below.
+                    Use the CONTEXT only to do TERM resolution, don't define the TERM with details from the CONTEXT, you must give me a generalized definition of the term.
+                    Reply only with the asked content.
+                    TERM:
+                    {term_text}
+                    CONTEXT:
+                    {study_abstract}
+                '''.strip()
+                print(prompt)
+                print()
+                reply = llm.reply(prompt, model_filepath, max_tokens=512)
+                if '</think>' in reply:
+                    reply = reply.split('</think>')[1].strip()
+                print()
+                print('################################################################################')
+                print(reply)
+                print('################################################################################')
+                term_item['definition'] = reply
+                # quit()
+            ###
+            io.json_write(output_filepath, input_data)
+
+def relationships_peek():
+    input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/relationships/raw'
+    input_filenames = os.listdir(input_folderpath)
+    i = 0
+    for input_filename in input_filenames[i:]:
+        i += 1
+        print(f'{i}/{len(input_filenames)}')
+        input_filepath = f'{input_folderpath}/{input_filename}'
+        try: input_data = io.json_read(input_filepath)
+        except: continue
+        print(json.dumps(input_data, indent=4))
+        quit()
+
 def run():
     print('parse >> pubmed')
+    ### CURRENT
+    # parse_nouns_phrases_llm() ### WARNING: takes many many hours (nightly running)
+    # nouns_phrases_string_match()
+    nouns_phrases_find_passages_llm() ### WARNING: takes many many hours (nightly running)
 
+    # relationships_llm() ### WARNING: takes many many hours (nightly running)
+    # relationships_peek() ### WARNING: takes many many hours (nightly running)
+
+    # definitions_llm() ### WARNING: takes many many hours (nightly running)
+
+    ### OLD?
     # parse_nouns_llm() ### WARNING: takes many many hours (nightly running)
     # parse_concepts_llm() ### WARNING: takes many many hours (nightly running)
     # parse_expressions_llm() ### WARNING: takes many many hours (nightly running)
-    # parse_nouns_phrases_llm() ### WARNING: takes many many hours (nightly running)
-    # nouns_phrases_string_match()
-    # nouns_phrases_find_passages_llm() ### WARNING: takes many many hours (nightly running)
 
-    relationships_llm() ### WARNING: takes many many hours (nightly running)
 
     # parse_sector_extract_raw() ### WARNING: takes many many hours (nightly running)
 
