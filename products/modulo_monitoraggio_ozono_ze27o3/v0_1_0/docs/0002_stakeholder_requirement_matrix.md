@@ -1,3 +1,9 @@
+
+ok, now i want to create the questions for the: CORE Firmware Engineer
+
+give me a list of questions for this stakeholder specific to this project. give me a complete and comprehensive list of focused questions i should ask to this stakeholder. also identify about 30 of them that are important and the top 5 that are mission critical.
+
+
 # Stakeholder Requirement Matrix
 
 ## Ozone Sensor Expansion Module — ZE27-O3 / RS485 / CORE
@@ -2354,3 +2360,693 @@ Your elicitation record should therefore distinguish:
 | "We could change CORE if necessary."           | Design option / project decision  |
 
 That distinction will make the transition from **Stakeholder Elicitation → StRS → Module Requirements** much cleaner.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Absolutely. Now that we're focusing on **this specific ozone sensor expansion module**, the questions should stop being generic and should explicitly investigate the interaction between:
+
+**ZE27-O3 sensor → Expansion Module → CORE**
+
+with particular attention to what **CORE expects, controls, assumes, and does with the data**.
+
+I would structure the interview so that the answers can later feed directly into your **Stakeholder Elicitation Record → StRS → Module Requirements Specification**.
+
+I would use the following priority levels:
+
+* 🔴 **MISSION-CRITICAL** — absolutely do not leave the interview without an answer or explicit TBD.
+* ⭐ **IMPORTANT** — approximately the 30 questions I would definitely cover.
+* ○ **DEEP-DIVE** — ask when relevant or when an important answer opens a new topic.
+
+---
+
+# CORE Firmware Engineer — Project-Specific Question Set
+
+## 1. CORE's Role in the System
+
+First establish exactly what CORE expects this module to be.
+
+| ID       | Priority | Question                                                                                                                                        |
+| -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| CORE-001 | 🔴       | **What exactly does CORE need this expansion module to provide?**                                                                               |
+| CORE-002 | 🔴       | **What is the boundary of responsibility between CORE and the expansion module?**                                                               |
+| CORE-003 | ⭐        | Which functions related to the ozone measurement must be performed by the module, and which must be performed by CORE?                          |
+| CORE-004 | ⭐        | Does CORE need only the ozone measurement, or does it also need status, validity, freshness, diagnostics, or other information from the module? |
+| CORE-005 | ⭐        | Is CORE expected to make any control or safety decisions based on the ozone value received from the module?                                     |
+| CORE-006 | ○        | Does CORE already communicate with other expansion modules using a similar architecture?                                                        |
+| CORE-007 | ○        | Is there an existing module/interface that this new module is expected to behave like?                                                          |
+| CORE-008 | ○        | Are there existing CORE assumptions about expansion modules that this module must satisfy?                                                      |
+| CORE-009 | ○        | Are there existing CORE limitations that constrain the design of this module?                                                                   |
+
+### Why this section matters
+
+You don't want to discover later that the CORE engineer expected the module to provide:
+
+> value + validity + stale indication + diagnostics
+
+while the module requirements only defined:
+
+> ozone value.
+
+---
+
+# 2. CORE ↔ Module Communication Architecture
+
+This is probably the most important technical section.
+
+| ID       | Priority | Question                                                                                 |
+| -------- | -------- | ---------------------------------------------------------------------------------------- |
+| CORE-010 | 🔴       | **What physical communication interface must CORE use to communicate with this module?** |
+| CORE-011 | 🔴       | **What communication protocol must be used between CORE and the module?**                |
+| CORE-012 | 🔴       | **Which side is the communication master and which side is the slave?**                  |
+| CORE-013 | ⭐        | Who initiates every communication transaction?                                           |
+| CORE-014 | ⭐        | Is CORE expected to periodically poll the module for the ozone measurement?              |
+| CORE-015 | ⭐        | How frequently will CORE request the measurement?                                        |
+| CORE-016 | ⭐        | Is the communication cycle period fixed or configurable?                                 |
+| CORE-017 | ⭐        | Does CORE ever send commands to the module, or does it only request data?                |
+| CORE-018 | ○        | Does CORE need to configure the module through the communication interface?              |
+| CORE-019 | ○        | Does CORE need to read module configuration?                                             |
+| CORE-020 | ○        | Does CORE need to write module configuration?                                            |
+| CORE-021 | ○        | Are there existing communication timing rules that the module must follow?               |
+| CORE-022 | ○        | Are there existing addressing rules for expansion modules?                               |
+| CORE-023 | ○        | How is this particular module identified by CORE?                                        |
+| CORE-024 | ○        | Can multiple instances of this module exist in the same system?                          |
+| CORE-025 | ○        | If multiple modules can exist, how are they individually addressed?                      |
+
+---
+
+# 3. Modbus Interface
+
+Because your current project architecture specifically uses **Modbus with CORE as master and the expansion module as slave**, this deserves its own section.
+
+Do not assume the details are already obvious just because "it's Modbus."
+
+| ID       | Priority | Question                                                                            |
+| -------- | -------- | ----------------------------------------------------------------------------------- |
+| CORE-026 | 🔴       | **Which Modbus variant does CORE use to communicate with expansion modules?**       |
+| CORE-027 | 🔴       | **Which Modbus function codes does CORE expect this module to support?**            |
+| CORE-028 | ⭐        | What Modbus slave address should the module use?                                    |
+| CORE-029 | ⭐        | How is the module address assigned or configured?                                   |
+| CORE-030 | ⭐        | Which registers does CORE expect to read from the module?                           |
+| CORE-031 | ⭐        | Which registers, if any, does CORE expect to write?                                 |
+| CORE-032 | ⭐        | What data type does CORE expect for the ozone measurement?                          |
+| CORE-033 | ⭐        | What byte order does CORE expect?                                                   |
+| CORE-034 | ⭐        | What register order does CORE expect for multi-register values?                     |
+| CORE-035 | ⭐        | What scaling factor does CORE expect for the ozone value?                           |
+| CORE-036 | ⭐        | What unit does CORE expect for the ozone value?                                     |
+| CORE-037 | ⭐        | What numerical range does CORE expect?                                              |
+| CORE-038 | ○        | What resolution does CORE expect?                                                   |
+| CORE-039 | ○        | Are there reserved numerical values that CORE interprets as invalid or unavailable? |
+| CORE-040 | ⭐        | Does CORE expect a dedicated status register or status bits?                        |
+| CORE-041 | ⭐        | Does CORE expect a data-age, timestamp, or freshness indication?                    |
+| CORE-042 | ○        | Does CORE expect diagnostic counters from the module?                               |
+| CORE-043 | ○        | Does CORE need a module firmware-version register?                                  |
+| CORE-044 | ○        | Does CORE need a module hardware-revision or identification register?               |
+| CORE-045 | ○        | What response should CORE expect when a requested register is unavailable?          |
+| CORE-046 | ○        | What response should CORE expect for unsupported Modbus functions?                  |
+| CORE-047 | ○        | What response should CORE expect for invalid register addresses?                    |
+| CORE-048 | ○        | Are there existing Modbus register-mapping conventions used by CORE?                |
+| CORE-049 | ○        | Are there reserved registers or address ranges that this module must not use?       |
+
+---
+
+# 4. Ozone Measurement Semantics
+
+This is where I would be particularly careful.
+
+The module will acquire an ozone measurement, but **CORE needs to know what that number actually means**.
+
+| ID       | Priority | Question                                                                                  |
+| -------- | -------- | ----------------------------------------------------------------------------------------- |
+| CORE-050 | 🔴       | **When CORE reads the ozone value, what exactly should that value represent?**            |
+| CORE-051 | ⭐        | Should CORE receive the latest valid measurement acquired by the module?                  |
+| CORE-052 | ⭐        | Should an invalid sensor frame ever be exposed to CORE as a new measurement?              |
+| CORE-053 | 🔴       | **How must CORE distinguish a valid ozone measurement from an invalid measurement?**      |
+| CORE-054 | ⭐        | How should CORE know that no valid ozone measurement has yet been received after startup? |
+| CORE-055 | ⭐        | How should CORE know that the last valid measurement has become stale?                    |
+| CORE-056 | ⭐        | Should the module provide a separate validity indication?                                 |
+| CORE-057 | ⭐        | Should the module provide a separate stale/fresh indication?                              |
+| CORE-058 | ⭐        | Should CORE receive the age of the last valid measurement?                                |
+| CORE-059 | ○        | Should CORE receive the timestamp of the last valid measurement?                          |
+| CORE-060 | ○        | Should CORE receive the timestamp or age of the last sensor communication?                |
+| CORE-061 | ○        | Does CORE distinguish "sensor disconnected" from "sensor data invalid"?                   |
+| CORE-062 | ○        | Does CORE distinguish "sensor communication failure" from "module communication failure"? |
+| CORE-063 | ○        | What should CORE do with the last valid ozone value after a sensor communication failure? |
+| CORE-064 | ○        | How long is CORE allowed to use the last valid ozone value?                               |
+| CORE-065 | ○        | What should happen if the module reports an ozone value but marks it invalid?             |
+| CORE-066 | ○        | Does CORE require any plausibility checking of the ozone value?                           |
+| CORE-067 | ○        | Should the module perform plausibility checking, or should CORE do it?                    |
+| CORE-068 | ○        | Are there physical or process limits that CORE expects the ozone value to respect?        |
+| CORE-069 | ○        | How should out-of-range values be represented to CORE?                                    |
+
+---
+
+# 5. Sensor Acquisition vs CORE Data
+
+This is important because the module and CORE operate at different rates.
+
+The sensor might provide data at one rate while CORE polls at another.
+
+| ID       | Priority | Question                                                                                             |
+| -------- | -------- | ---------------------------------------------------------------------------------------------------- |
+| CORE-070 | ⭐        | How frequently does CORE need a new ozone measurement?                                               |
+| CORE-071 | ⭐        | Does CORE expect the module to continuously acquire sensor data independently of CORE polling?       |
+| CORE-072 | 🔴       | **Should loss of CORE communication stop the module from acquiring sensor data?**                    |
+| CORE-073 | ⭐        | If CORE temporarily stops polling, should the module continue updating its latest valid measurement? |
+| CORE-074 | ○        | When CORE resumes communication, should it receive the latest measurement available at that moment?  |
+| CORE-075 | ○        | Does CORE need every individual sensor measurement, or only the latest valid measurement?            |
+| CORE-076 | ○        | Does CORE require a history or sequence of measurements?                                             |
+| CORE-077 | ○        | Does CORE need to know whether a new sensor measurement has arrived since the previous CORE request? |
+| CORE-078 | ○        | Does CORE need a measurement sequence counter?                                                       |
+
+This section directly addresses a critical architectural point:
+
+> **The module should probably not make sensor acquisition dependent on whether CORE happens to be polling at that instant.**
+
+But don't make that an assumption in the requirements yet. Ask the CORE engineer.
+
+---
+
+# 6. Timing and Latency
+
+| ID       | Priority | Question                                                                                                                   |
+| -------- | -------- | -------------------------------------------------------------------------------------------------------------------------- |
+| CORE-079 | ⭐        | What is the maximum acceptable age of the ozone data when CORE receives it?                                                |
+| CORE-080 | ⭐        | What is the maximum acceptable delay between receiving a valid sensor frame and making that measurement available to CORE? |
+| CORE-081 | ⭐        | What is the maximum acceptable response time to a CORE Modbus request?                                                     |
+| CORE-082 | ⭐        | How frequently will CORE poll the module?                                                                                  |
+| CORE-083 | ○        | Is there a maximum allowed time between two successful CORE-module communications?                                         |
+| CORE-084 | ○        | What communication timeout does CORE use?                                                                                  |
+| CORE-085 | ○        | How many retries does CORE perform after a failed request?                                                                 |
+| CORE-086 | ○        | What is the retry interval?                                                                                                |
+| CORE-087 | ○        | After how many failed requests does CORE declare the module unavailable?                                                   |
+| CORE-088 | ○        | Does CORE have different timeout requirements during startup versus normal operation?                                      |
+
+---
+
+# 7. Communication Failure
+
+| ID       | Priority | Question                                                                            |
+| -------- | -------- | ----------------------------------------------------------------------------------- |
+| CORE-089 | ⭐        | How does CORE determine that communication with the module has failed?              |
+| CORE-090 | ⭐        | What should CORE do after one failed Modbus transaction?                            |
+| CORE-091 | ⭐        | What should CORE do after repeated communication failures?                          |
+| CORE-092 | ⭐        | How many consecutive failures cause CORE to declare the module unavailable?         |
+| CORE-093 | ⭐        | How does CORE determine that communication has recovered?                           |
+| CORE-094 | ○        | Should CORE automatically retry communication?                                      |
+| CORE-095 | ○        | Should CORE continue using the last received ozone value during communication loss? |
+| CORE-096 | ○        | If yes, for how long?                                                               |
+| CORE-097 | ○        | When should CORE declare the ozone measurement unavailable?                         |
+| CORE-098 | ○        | Should loss of communication generate a system alarm?                               |
+| CORE-099 | ○        | Does the module need to explicitly report its communication status to CORE?         |
+
+---
+
+# 8. Sensor Failure as Seen by CORE
+
+Here we specifically distinguish **sensor failure** from **module failure**.
+
+| ID       | Priority | Question                                                                                       |
+| -------- | -------- | ---------------------------------------------------------------------------------------------- |
+| CORE-100 | ⭐        | Does CORE need to know whether the ZE27-O3 sensor is communicating correctly with the module?  |
+| CORE-101 | ⭐        | Does CORE need to distinguish sensor failure from module failure?                              |
+| CORE-102 | ⭐        | What sensor fault information must be exposed to CORE?                                         |
+| CORE-103 | ○        | Does CORE need the number of sensor communication errors?                                      |
+| CORE-104 | ○        | Does CORE need the number of invalid sensor frames?                                            |
+| CORE-105 | ○        | Does CORE need to know when the last valid sensor frame was received?                          |
+| CORE-106 | ○        | Does CORE need to know when the sensor was last seen?                                          |
+| CORE-107 | ○        | Should CORE receive a sensor-connected/disconnected status?                                    |
+| CORE-108 | ○        | What should CORE do if the sensor stops responding but the module itself is still operational? |
+
+---
+
+# 9. Startup and Initialization
+
+| ID       | Priority | Question                                                                                             |
+| -------- | -------- | ---------------------------------------------------------------------------------------------------- |
+| CORE-109 | ⭐        | What should CORE receive from the module immediately after power-up?                                 |
+| CORE-110 | ⭐        | What should CORE receive before the first valid ozone measurement has been acquired?                 |
+| CORE-111 | ⭐        | Should the ozone value be explicitly marked invalid until the first valid sensor frame is received?  |
+| CORE-112 | ⭐        | When should CORE consider the module ready?                                                          |
+| CORE-113 | ○        | Does CORE expect a startup handshake?                                                                |
+| CORE-114 | ○        | Does CORE expect the module to identify itself during startup?                                       |
+| CORE-115 | ○        | Does CORE need to wait for the sensor to warm up or initialize?                                      |
+| CORE-116 | ○        | Does CORE need to know that the sensor is still initializing?                                        |
+| CORE-117 | ○        | What should happen if no valid sensor measurement is available for an extended period after startup? |
+
+---
+
+# 10. Module Reset and Recovery
+
+| ID       | Priority | Question                                                                                        |
+| -------- | -------- | ----------------------------------------------------------------------------------------------- |
+| CORE-118 | ⭐        | What should CORE do if the module unexpectedly resets?                                          |
+| CORE-119 | ⭐        | How should CORE detect that the module has restarted?                                           |
+| CORE-120 | ⭐        | After a module restart, does CORE need to reconfigure the module?                               |
+| CORE-121 | ○        | Should CORE automatically resume polling after module recovery?                                 |
+| CORE-122 | ○        | Should the module retain any configuration through a reset?                                     |
+| CORE-123 | ○        | What should CORE do with the previous ozone value after module restart?                         |
+| CORE-124 | ○        | Should CORE consider the ozone value invalid until the module provides a new valid measurement? |
+
+---
+
+# 11. Diagnostics and Status
+
+| ID       | Priority | Question                                                      |
+| -------- | -------- | ------------------------------------------------------------- |
+| CORE-125 | ⭐        | What diagnostic information does CORE need from the module?   |
+| CORE-126 | ⭐        | Does CORE need a general module-health status?                |
+| CORE-127 | ⭐        | Does CORE need separate sensor communication status?          |
+| CORE-128 | ⭐        | Does CORE need a CRC/error counter from the sensor interface? |
+| CORE-129 | ○        | Does CORE need a Modbus communication error counter?          |
+| CORE-130 | ○        | Does CORE need the number of invalid sensor frames?           |
+| CORE-131 | ○        | Does CORE need the number of valid sensor frames received?    |
+| CORE-132 | ○        | Does CORE need the last sensor communication timestamp/age?   |
+| CORE-133 | ○        | Does CORE need the module firmware version?                   |
+| CORE-134 | ○        | Does CORE need hardware revision information?                 |
+| CORE-135 | ○        | Does CORE need a module serial number or unique identifier?   |
+| CORE-136 | ○        | Does CORE need access to module fault codes?                  |
+
+---
+
+# 12. Safety / Control Use of Ozone Data
+
+This section is critical if the ozone measurement influences control behavior.
+
+| ID       | Priority | Question                                                                                 |
+| -------- | -------- | ---------------------------------------------------------------------------------------- |
+| CORE-137 | 🔴       | **Is the ozone measurement used by CORE for any safety-related or protective function?** |
+| CORE-138 | 🔴       | **What must CORE do if the ozone measurement becomes invalid or stale?**                 |
+| CORE-139 | ⭐        | Is there a defined safe or degraded behavior when ozone data is unavailable?             |
+| CORE-140 | ⭐        | What maximum data age is acceptable for control decisions?                               |
+| CORE-141 | ○        | What maximum data age is acceptable for safety-related decisions?                        |
+| CORE-142 | ○        | Should CORE prevent specific functions when ozone data is unavailable?                   |
+| CORE-143 | ○        | Should CORE generate an alarm when ozone data becomes invalid?                           |
+| CORE-144 | ○        | Should recovery from invalid/stale ozone data be automatic or require acknowledgement?   |
+| CORE-145 | ○        | Are there existing safety rules in CORE related to sensor data validity?                 |
+| CORE-146 | ○        | Does the module interface need to support any safety diagnostic mechanism?               |
+
+---
+
+# 13. Register / Data Mapping
+
+This should eventually become part of your formal interface specification.
+
+| ID       | Priority | Question                                                          |
+| -------- | -------- | ----------------------------------------------------------------- |
+| CORE-147 | ⭐        | Which Modbus register should contain the ozone measurement?       |
+| CORE-148 | ⭐        | Which register should contain measurement validity/status?        |
+| CORE-149 | ⭐        | Is a dedicated freshness/data-age register required?              |
+| CORE-150 | ○        | Which registers should contain diagnostic information?            |
+| CORE-151 | ○        | Which registers should contain module identification information? |
+| CORE-152 | ○        | Which registers should contain firmware version information?      |
+| CORE-153 | ○        | Which registers should contain error counters?                    |
+| CORE-154 | ○        | Are there existing register-map conventions we must follow?       |
+| CORE-155 | ○        | Are register addresses already reserved for this module?          |
+| CORE-156 | ○        | Which registers are read-only?                                    |
+| CORE-157 | ○        | Which registers, if any, are writable?                            |
+
+---
+
+# 14. Configuration and Addressing
+
+| ID       | Priority | Question                                                          |
+| -------- | -------- | ----------------------------------------------------------------- |
+| CORE-158 | ⭐        | Is the Modbus slave address fixed or configurable?                |
+| CORE-159 | ○        | If configurable, who assigns the address?                         |
+| CORE-160 | ○        | Can CORE configure the address?                                   |
+| CORE-161 | ○        | How does CORE determine which module address to communicate with? |
+| CORE-162 | ○        | Are sensor-specific parameters configurable through CORE?         |
+| CORE-163 | ○        | Should CORE be able to configure sensor communication parameters? |
+| CORE-164 | ○        | Should CORE be able to trigger sensor/module diagnostics?         |
+| CORE-165 | ○        | Which parameters must survive power cycling?                      |
+
+---
+
+# 15. Compatibility
+
+| ID       | Priority | Question                                                                  |
+| -------- | -------- | ------------------------------------------------------------------------- |
+| CORE-166 | ⭐        | Which CORE firmware versions must support this module?                    |
+| CORE-167 | ⭐        | Which module firmware versions must be compatible with CORE?              |
+| CORE-168 | ⭐        | How should CORE detect an incompatible module firmware/interface version? |
+| CORE-169 | ○        | Does CORE require an interface version register?                          |
+| CORE-170 | ○        | Is backward compatibility required?                                       |
+| CORE-171 | ○        | Can the module firmware interface change independently of CORE firmware?  |
+| CORE-172 | ○        | What should happen if CORE encounters an unsupported module version?      |
+
+---
+
+# 16. Existing CORE Software Architecture
+
+| ID       | Priority | Question                                                                                 |
+| -------- | -------- | ---------------------------------------------------------------------------------------- |
+| CORE-173 | ⭐        | Where in the existing CORE firmware architecture should this module be integrated?       |
+| CORE-174 | ⭐        | Is there an existing driver or communication abstraction that should be reused?          |
+| CORE-175 | ⭐        | Is there an existing software abstraction for expansion modules?                         |
+| CORE-176 | ○        | Which CORE task/thread should handle communication with the module?                      |
+| CORE-177 | ○        | Are there CPU, RAM, flash, timing, or communication-bandwidth constraints?               |
+| CORE-178 | ○        | Are there existing state machines that the module must integrate with?                   |
+| CORE-179 | ○        | Are there existing APIs that should expose the ozone measurement?                        |
+| CORE-180 | ○        | Can introducing this module affect existing CORE functionality?                          |
+| CORE-181 | ○        | Are there existing coding or architectural conventions the module interface must follow? |
+
+---
+
+# 17. Testing and Integration
+
+| ID       | Priority | Question                                                                 |
+| -------- | -------- | ------------------------------------------------------------------------ |
+| CORE-182 | ⭐        | How will the CORE-module communication be tested?                        |
+| CORE-183 | ⭐        | What normal communication scenarios must be tested?                      |
+| CORE-184 | ⭐        | What communication-failure scenarios must be tested?                     |
+| CORE-185 | ⭐        | What sensor-failure scenarios must be tested from CORE's perspective?    |
+| CORE-186 | ⭐        | How will invalid/stale ozone data be tested?                             |
+| CORE-187 | ○        | Can CORE communicate with a simulated module during development?         |
+| CORE-188 | ○        | Can the module be simulated during CORE development?                     |
+| CORE-189 | ○        | Is hardware-in-the-loop testing available?                               |
+| CORE-190 | ○        | What tools are used to monitor or analyze the CORE-module communication? |
+| CORE-191 | ○        | How will timing and latency be verified?                                 |
+| CORE-192 | ○        | How will CRC/protocol-error handling be verified?                        |
+| CORE-193 | ○        | How will module restart/recovery be tested?                              |
+| CORE-194 | ○        | What constitutes successful integration?                                 |
+
+---
+
+# 18. Existing Documentation / Sources
+
+| ID       | Priority | Question                                                                                            |
+| -------- | -------- | --------------------------------------------------------------------------------------------------- |
+| CORE-195 | ⭐        | What existing document defines the communication interface between CORE and expansion modules?      |
+| CORE-196 | ⭐        | Is there an existing Modbus register map that this module must follow?                              |
+| CORE-197 | ⭐        | Are there existing CORE source-code implementations we should use as reference?                     |
+| CORE-198 | ○        | Are there existing modules whose firmware/interface should be used as a reference?                  |
+| CORE-199 | ○        | Are there existing test specifications for similar modules?                                         |
+| CORE-200 | ○        | Are there known bugs or limitations in the existing CORE communication implementation?              |
+| CORE-201 | ○        | Which document or implementation is considered the authoritative source if documentation conflicts? |
+
+---
+
+# 19. Assumptions, Unknowns and Final Discovery
+
+| ID       | Priority | Question                                                                                                 |
+| -------- | -------- | -------------------------------------------------------------------------------------------------------- |
+| CORE-202 | ⭐        | What assumptions does CORE currently make about this module?                                             |
+| CORE-203 | ⭐        | Which of those assumptions have not yet been verified?                                                   |
+| CORE-204 | ⭐        | Are there any undocumented CORE behaviors that the module must accommodate?                              |
+| CORE-205 | ⭐        | What is the biggest potential integration risk between CORE and this module?                             |
+| CORE-206 | ⭐        | What requirement or behavior is most likely to be overlooked?                                            |
+| CORE-207 | ○        | Is there anything CORE needs from the module that we have not discussed?                                 |
+| CORE-208 | ○        | Is there anything the module should explicitly not do from CORE's perspective?                           |
+| CORE-209 | 🔴       | **What could cause CORE to interpret an otherwise valid-looking ozone value incorrectly?**               |
+| CORE-210 | ⭐        | **What have we not asked you that you believe is essential for the module to work correctly with CORE?** |
+
+---
+
+# The 30 Questions I Would Definitely Ask
+
+If you want a focused but thorough interview, these are the **30 I would put in bold in your interview sheet**:
+
+|  # | ID          | Question                                                                                                           |
+| -: | ----------- | ------------------------------------------------------------------------------------------------------------------ |
+|  1 | 🔴 CORE-001 | What exactly does CORE need this expansion module to provide?                                                      |
+|  2 | 🔴 CORE-002 | What is the boundary of responsibility between CORE and the expansion module?                                      |
+|  3 | ⭐ CORE-004  | Does CORE need only the ozone measurement, or also status, validity, freshness, diagnostics, or other information? |
+|  4 | ⭐ CORE-005  | Is CORE expected to make control or safety decisions based on the ozone value?                                     |
+|  5 | 🔴 CORE-010 | What physical communication interface must CORE use to communicate with this module?                               |
+|  6 | 🔴 CORE-011 | What communication protocol must be used?                                                                          |
+|  7 | 🔴 CORE-012 | Which side is the communication master and which side is the slave?                                                |
+|  8 | ⭐ CORE-014  | Is CORE expected to periodically poll the module for the ozone measurement?                                        |
+|  9 | ⭐ CORE-015  | How frequently will CORE request the measurement?                                                                  |
+| 10 | 🔴 CORE-026 | Which Modbus variant does CORE use?                                                                                |
+| 11 | 🔴 CORE-027 | Which Modbus function codes does CORE expect this module to support?                                               |
+| 12 | ⭐ CORE-030  | Which registers does CORE expect to read?                                                                          |
+| 13 | ⭐ CORE-032  | What data type does CORE expect for the ozone measurement?                                                         |
+| 14 | ⭐ CORE-035  | What scaling factor does CORE expect?                                                                              |
+| 15 | ⭐ CORE-036  | What unit does CORE expect?                                                                                        |
+| 16 | 🔴 CORE-053 | How must CORE distinguish a valid ozone measurement from an invalid measurement?                                   |
+| 17 | ⭐ CORE-055  | How should CORE know that the last valid measurement has become stale?                                             |
+| 18 | ⭐ CORE-058  | Should CORE receive the age of the last valid measurement?                                                         |
+| 19 | ⭐ CORE-071  | Does CORE expect the module to continuously acquire sensor data independently of CORE polling?                     |
+| 20 | 🔴 CORE-072 | Should loss of CORE communication stop the module from acquiring sensor data?                                      |
+| 21 | ⭐ CORE-079  | What is the maximum acceptable age of the ozone data when CORE receives it?                                        |
+| 22 | ⭐ CORE-081  | What is the maximum acceptable response time to a CORE Modbus request?                                             |
+| 23 | ⭐ CORE-089  | How does CORE determine that communication with the module has failed?                                             |
+| 24 | ⭐ CORE-093  | How does CORE determine that communication has recovered?                                                          |
+| 25 | ⭐ CORE-101  | Does CORE need to distinguish sensor failure from module failure?                                                  |
+| 26 | ⭐ CORE-110  | What should CORE receive before the first valid ozone measurement has been acquired?                               |
+| 27 | 🔴 CORE-138 | What must CORE do if the ozone measurement becomes invalid or stale?                                               |
+| 28 | ⭐ CORE-166  | Which CORE firmware versions must support this module?                                                             |
+| 29 | ⭐ CORE-182  | How will the CORE-module communication be tested?                                                                  |
+| 30 | ⭐ CORE-204  | Are there any undocumented CORE behaviors that the module must accommodate?                                        |
+
+---
+
+# The 5 Mission-Critical Questions
+
+If I had only one short meeting with the CORE Firmware Engineer, these are the **five questions I would absolutely not leave unanswered**.
+
+### 🔴 CORE-MC-01 — Responsibility Boundary
+
+> **What exactly does CORE expect this expansion module to do, and where is the boundary of responsibility between CORE and the module?**
+
+This establishes the fundamental allocation of functionality.
+
+You need to know whether:
+
+* module acquires the sensor,
+* module validates the sensor data,
+* module determines freshness,
+* CORE determines freshness,
+* module detects sensor failure,
+* CORE interprets sensor failure,
+* module performs plausibility checks,
+* CORE performs plausibility checks,
+* etc.
+
+---
+
+### 🔴 CORE-MC-02 — Communication Contract
+
+> **How exactly will CORE communicate with the module: physical interface, protocol, master/slave roles, addressing, requests, responses, timing, and supported functions?**
+
+For your current architecture, this should eventually resolve things such as:
+
+```text
+CORE
+  │
+  │ RS485-2
+  │
+  │ Modbus RTU
+  │
+  ▼
+Expansion Module
+  │
+  │ RS485-1
+  │
+  ▼
+ZE27-O3
+```
+
+But don't fill in anything that the CORE engineer hasn't confirmed.
+
+This question is effectively asking for the **CORE side of the interface contract**.
+
+---
+
+### 🔴 CORE-MC-03 — Data Validity
+
+> **How must CORE distinguish a valid ozone measurement from an invalid, unavailable, or stale measurement?**
+
+This is absolutely critical.
+
+You need a clear answer to whether CORE expects something like:
+
+```text
+OZONE_VALUE
+OZONE_VALID
+OZONE_STALE
+OZONE_SENSOR_ERROR
+```
+
+or perhaps:
+
+```text
+OZONE_VALUE
+OZONE_STATUS
+```
+
+or some completely different existing CORE convention.
+
+Don't design the register map before understanding this.
+
+---
+
+### 🔴 CORE-MC-04 — Failure Behavior
+
+> **What must CORE do when the module stops providing valid ozone data, when communication with the module is lost, or when the module reports a sensor fault?**
+
+This should uncover the complete failure chain:
+
+```text
+ZE27-O3 failure
+      ↓
+Module detects failure
+      ↓
+Module reports status
+      ↓
+CORE receives status
+      ↓
+CORE determines system state
+      ↓
+System action
+```
+
+You need to understand where each responsibility belongs.
+
+---
+
+### 🔴 CORE-MC-05 — Independent Acquisition
+
+> **Should the module continuously acquire and validate the ZE27-O3 data independently of CORE polling, so that CORE always receives the latest valid measurement when it requests it?**
+
+This question is particularly important for **your specific architecture**.
+
+It tests the fundamental architectural assumption that:
+
+> Sensor acquisition and CORE communication are independent activities.
+
+If CORE says:
+
+> "Yes, the module should continuously acquire the sensor and maintain the latest valid value."
+
+then you have a very strong basis for requirements such as:
+
+* module continuously acquires sensor data,
+* valid measurements update stored value,
+* invalid measurements don't overwrite it,
+* CORE reads the latest stored valid value,
+* loss of CORE communication doesn't stop sensor acquisition.
+
+If instead CORE says:
+
+> "No, CORE controls when the sensor is sampled."
+
+then your architecture and requirements would be substantially different.
+
+---
+
+# One thing I would specifically probe during this interview
+
+Your project contains a potentially subtle distinction:
+
+### Sensor data path
+
+```text
+ZE27-O3
+   ↓
+RS485-1
+   ↓
+Module
+   ↓
+validate frame
+   ↓
+validate CRC
+   ↓
+latest valid measurement
+```
+
+### CORE data path
+
+```text
+CORE
+   ↓
+RS485-2 / Modbus request
+   ↓
+Module
+   ↓
+latest valid measurement + status
+   ↓
+CORE
+```
+
+These are **not necessarily one continuous transaction**.
+
+So I would explicitly ask the CORE engineer:
+
+> **"When CORE requests the ozone value, does it expect the module to return the most recently validated measurement already stored by the module, or does CORE expect that request to trigger acquisition of a new sensor measurement?"**
+
+That question can have a major impact on the architecture.
+
+For your requirements process, I would record the answer very carefully because it can generate several downstream requirements.
+
+---
+
+# What I would expect to get out of this interview
+
+By the end of the CORE interview, you should ideally have enough information to define the **CORE-side interface contract**, including:
+
+```text
+1. Physical interface
+2. Communication protocol
+3. Master/slave roles
+4. Addressing
+5. Request types
+6. Response types
+7. Register map
+8. Data types
+9. Byte/register order
+10. Scaling
+11. Units
+12. Validity representation
+13. Stale-data representation
+14. Sensor-error representation
+15. Module-error representation
+16. Polling rate
+17. Response-time requirement
+18. Communication timeout
+19. Retry behavior
+20. Startup behavior
+21. Restart behavior
+22. Recovery behavior
+23. Configuration requirements
+24. Diagnostic requirements
+25. Firmware compatibility
+26. Safety/control behavior
+27. Test/verification expectations
+```
+
+And importantly, **you don't need to resolve all 26 during the interview**.
+
+If the CORE engineer says:
+
+> "I don't know; that's defined by the System Architect."
+
+that's a perfectly valid answer.
+
+Record it as an **open issue / follow-up**, rather than inventing an answer.
+
+That is exactly what your **Elicitation Record** is supposed to capture.
+
+What exactly does CORE need this expansion module to provide?                                                      
+What is the boundary of responsibility between CORE and the expansion module?                                      
+What physical communication interface must CORE use to communicate with this module?                               
+What communication protocol must be used?                                                                          
+Which side is the communication master and which side is the slave?                                                
+Which Modbus variant does CORE use?                                                                                
+Which Modbus function codes does CORE expect this module to support?                                               
+How must CORE distinguish a valid ozone measurement from an invalid measurement?                                   
+Should loss of CORE communication stop the module from acquiring sensor data?                                      
+What must CORE do if the ozone measurement becomes invalid or stale?                                               

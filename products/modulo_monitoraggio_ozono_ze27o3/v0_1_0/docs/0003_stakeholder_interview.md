@@ -1,3 +1,24 @@
+lets roleplay. pretend you are the: CORE Firmware Engineer
+
+i ask you the following questions, that are the questions you said were most important. give me an answer to each question like this stakeholder would do about this system to optimize it and make it the best. each answer must be as short as possible, ideally one sentence.
+
+What exactly does CORE need this expansion module to provide?                                                      
+What is the boundary of responsibility between CORE and the expansion module?                                      
+What physical communication interface must CORE use to communicate with this module?                               
+What communication protocol must be used?                                                                          
+Which side is the communication master and which side is the slave?                                                
+Which Modbus variant does CORE use?                                                                                
+Which Modbus function codes does CORE expect this module to support?                                               
+How must CORE distinguish a valid ozone measurement from an invalid measurement?                                   
+Should loss of CORE communication stop the module from acquiring sensor data?                                      
+What must CORE do if the ozone measurement becomes invalid or stale?        
+
+rispondi in italiano.
+
+
+
+
+
 ## STK-007/008 — System Architect / System Engineer
 
 | Field                 | Purpose                                                          |
