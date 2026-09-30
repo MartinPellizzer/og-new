@@ -3050,3 +3050,419 @@ Which Modbus function codes does CORE expect this module to support?
 How must CORE distinguish a valid ozone measurement from an invalid measurement?                                   
 Should loss of CORE communication stop the module from acquiring sensor data?                                      
 What must CORE do if the ozone measurement becomes invalid or stale?                                               
+
+
+
+
+
+
+
+
+
+
+
+Certo. Per il **Sensor / Instrumentation Engineer** conviene concentrarsi soprattutto su **ZE27-O3, comportamento reale del sensore, protocollo RS485, formato dei dati, validità della misura, errori, timing, condizioni operative, calibrazione e diagnostica**.
+
+Di seguito uso una classificazione:
+
+* 🔴 **Mission Critical** — indispensabile per definire correttamente il comportamento del modulo.
+* ⭐ **Importante** — molto rilevante per requisiti, interfaccia o verifica.
+* ○ **Approfondimento** — da chiedere se applicabile o se emerge durante l'intervista.
+
+---
+
+# Questionario — Sensor / Instrumentation Engineer
+
+## 1. Identificazione e ruolo del sensore
+
+| ID      | Priorità | Domanda                                                                              |
+| ------- | -------- | ------------------------------------------------------------------------------------ |
+| SEN-001 | 🔴       | **Qual è esattamente il modello di sensore di ozono che il modulo deve supportare?** |
+| SEN-002 | 🔴       | **Il modulo deve supportare esclusivamente il ZE27-O3 o anche altri sensori?**       |
+| SEN-003 | ⭐        | Qual è la funzione del sensore all'interno del sistema complessivo?                  |
+| SEN-004 | ⭐        | Quale grandezza fisica misura esattamente il sensore?                                |
+| SEN-005 | ⭐        | Qual è l'unità di misura restituita dal sensore?                                     |
+| SEN-006 | ⭐        | Qual è il campo di misura nominale del sensore?                                      |
+| SEN-007 | ⭐        | Qual è la risoluzione della misura?                                                  |
+| SEN-008 | ○        | Qual è l'accuratezza dichiarata dal costruttore?                                     |
+| SEN-009 | ○        | Qual è la ripetibilità della misura?                                                 |
+| SEN-010 | ○        | Qual è il limite di rilevabilità del sensore?                                        |
+| SEN-011 | ○        | Esistono condizioni in cui la misura non deve essere considerata affidabile?         |
+
+---
+
+# 2. Interfaccia elettrica del sensore
+
+| ID      | Priorità | Domanda                                                                                             |
+| ------- | -------- | --------------------------------------------------------------------------------------------------- |
+| SEN-012 | 🔴       | **Qual è esattamente l'interfaccia elettrica utilizzata dal ZE27-O3 per comunicare con il modulo?** |
+| SEN-013 | 🔴       | **Quali sono i parametri della comunicazione RS485 del sensore?**                                   |
+| SEN-014 | ⭐        | Qual è il baud rate richiesto?                                                                      |
+| SEN-015 | ⭐        | Quale formato seriale deve essere utilizzato (data bit, parity, stop bit)?                          |
+| SEN-016 | ⭐        | Il sensore utilizza un proprio indirizzo o un identificativo sulla linea?                           |
+| SEN-017 | ⭐        | Il sensore richiede terminazione RS485?                                                             |
+| SEN-018 | ○        | Qual è la topologia prevista della linea RS485?                                                     |
+| SEN-019 | ○        | Qual è la lunghezza massima prevista del collegamento?                                              |
+| SEN-020 | ○        | Sono richieste resistenze di bias/fail-safe sulla linea?                                            |
+| SEN-021 | ○        | Esistono vincoli particolari sul cablaggio RS485 del sensore?                                       |
+| SEN-022 | ○        | Il sensore può condividere la linea con altri dispositivi?                                          |
+| SEN-023 | ○        | Qual è il comportamento elettrico del sensore durante power-up e power-down?                        |
+
+---
+
+# 3. Protocollo e comunicazione con ZE27-O3
+
+| ID      | Priorità | Domanda                                                                                             |
+| ------- | -------- | --------------------------------------------------------------------------------------------------- |
+| SEN-024 | 🔴       | **Quale protocollo deve utilizzare il modulo per comunicare con il ZE27-O3?**                       |
+| SEN-025 | 🔴       | **Quale sequenza di richiesta e risposta deve utilizzare il modulo per ottenere la misura?**        |
+| SEN-026 | 🔴       | **Quali comandi o frame deve inviare il modulo al sensore per leggere la concentrazione di ozono?** |
+| SEN-027 | ⭐        | Qual è il formato esatto del frame trasmesso dal sensore?                                           |
+| SEN-028 | ⭐        | Qual è il formato esatto del frame di richiesta inviato dal modulo?                                 |
+| SEN-029 | ⭐        | Quali campi contiene il frame di risposta del sensore?                                              |
+| SEN-030 | ⭐        | Come viene identificata la misura di ozono all'interno del frame?                                   |
+| SEN-031 | ⭐        | Come viene codificato il valore numerico della misura?                                              |
+| SEN-032 | ⭐        | Qual è l'ordine dei byte nel valore della misura?                                                   |
+| SEN-033 | ⭐        | Il valore richiede scaling o conversione prima di essere utilizzato?                                |
+| SEN-034 | ⭐        | Come viene calcolato e verificato il CRC o il controllo di integrità del frame?                     |
+| SEN-035 | ⭐        | Quali tipi di frame o messaggi di errore può restituire il sensore?                                 |
+| SEN-036 | ○        | Il sensore può inviare messaggi spontanei oppure risponde esclusivamente a richieste?               |
+| SEN-037 | ○        | Esistono comandi per leggere lo stato diagnostico del sensore?                                      |
+| SEN-038 | ○        | Esistono comandi per leggere la versione firmware del sensore?                                      |
+| SEN-039 | ○        | Esistono comandi per leggere informazioni identificative del sensore?                               |
+
+---
+
+# 4. Frequenza di acquisizione e timing
+
+| ID      | Priorità | Domanda                                                                                     |
+| ------- | -------- | ------------------------------------------------------------------------------------------- |
+| SEN-040 | 🔴       | **Con quale frequenza deve essere acquisita la misura di ozono dal sensore?**               |
+| SEN-041 | ⭐        | Qual è il tempo minimo tra due richieste consecutive al sensore?                            |
+| SEN-042 | ⭐        | Quanto tempo impiega normalmente il sensore a rispondere?                                   |
+| SEN-043 | ⭐        | Qual è il timeout da utilizzare per una risposta del sensore?                               |
+| SEN-044 | ⭐        | Quanti tentativi di comunicazione devono essere effettuati in caso di timeout?              |
+| SEN-045 | ○        | Qual è il tempo massimo accettabile per ottenere una nuova misura valida?                   |
+| SEN-046 | ○        | Il sensore richiede un tempo di stabilizzazione dopo l'accensione?                          |
+| SEN-047 | ○        | Durante il warm-up il sensore fornisce dati oppure deve essere considerato non disponibile? |
+| SEN-048 | ○        | La frequenza di acquisizione deve essere fissa o configurabile?                             |
+| SEN-049 | ○        | Esistono vincoli sul duty cycle della comunicazione con il sensore?                         |
+
+---
+
+# 5. Validità della misura
+
+Questa è una delle sezioni più importanti perché determina **quando il modulo può aggiornare il valore che successivamente fornirà a CORE**.
+
+| ID      | Priorità | Domanda                                                                                                         |
+| ------- | -------- | --------------------------------------------------------------------------------------------------------------- |
+| SEN-050 | 🔴       | **Come possiamo determinare che una misura ricevuta dal sensore è valida?**                                     |
+| SEN-051 | 🔴       | **Quali condizioni devono essere soddisfatte prima che il modulo possa accettare una misura?**                  |
+| SEN-052 | 🔴       | **Un frame con CRC errato deve essere sempre considerato non valido?**                                          |
+| SEN-053 | ⭐        | Un frame strutturalmente corretto ma contenente un valore fuori range deve essere considerato non valido?       |
+| SEN-054 | ⭐        | Il sensore fornisce un proprio bit o codice di validità della misura?                                           |
+| SEN-055 | ⭐        | Esistono valori numerici riservati che indicano errore o misura non disponibile?                                |
+| SEN-056 | ⭐        | Come deve essere gestita una misura proveniente da un sensore in stato di warm-up?                              |
+| SEN-057 | ⭐        | Come deve essere gestita una misura quando il sensore segnala un proprio errore?                                |
+| SEN-058 | ⭐        | Il modulo deve effettuare anche un controllo di plausibilità oltre al controllo del frame?                      |
+| SEN-059 | ○        | Quali limiti fisici devono essere utilizzati per il controllo di plausibilità?                                  |
+| SEN-060 | ○        | È necessario verificare la variazione massima ammessa tra due misure consecutive?                               |
+| SEN-061 | ○        | Una misura valida può essere mantenuta indefinitamente se il sensore smette di rispondere?                      |
+| SEN-062 | ⭐        | **Per quanto tempo l'ultima misura valida può essere considerata utilizzabile in assenza di una nuova misura?** |
+
+---
+
+# 6. Errori di comunicazione e perdita del sensore
+
+| ID      | Priorità | Domanda                                                                                             |
+| ------- | -------- | --------------------------------------------------------------------------------------------------- |
+| SEN-063 | 🔴       | **Come deve comportarsi il modulo quando il sensore non risponde?**                                 |
+| SEN-064 | ⭐        | Dopo quanti timeout consecutivi deve essere considerata persa la comunicazione con il sensore?      |
+| SEN-065 | ⭐        | Come deve essere distinto un timeout da un frame ricevuto ma non valido?                            |
+| SEN-066 | ⭐        | Il modulo deve mantenere l'ultima misura valida durante una perdita temporanea della comunicazione? |
+| SEN-067 | ⭐        | Quando deve dichiarare la misura non più disponibile?                                               |
+| SEN-068 | ⭐        | Come deve essere rilevato il ripristino della comunicazione con il sensore?                         |
+| SEN-069 | ⭐        | Dopo il ripristino, è sufficiente una singola misura valida per tornare allo stato operativo?       |
+| SEN-070 | ○        | Devono essere conteggiati i timeout di comunicazione?                                               |
+| SEN-071 | ○        | Devono essere conteggiati i frame invalidi?                                                         |
+| SEN-072 | ○        | Deve essere registrato l'ultimo momento in cui il sensore ha risposto correttamente?                |
+| SEN-073 | ○        | Il modulo deve distinguere tra sensore scollegato, sensore spento e sensore guasto?                 |
+
+---
+
+# 7. Comportamento del sensore durante startup e reset
+
+| ID      | Priorità | Domanda                                                                               |
+| ------- | -------- | ------------------------------------------------------------------------------------- |
+| SEN-074 | ⭐        | **Qual è il comportamento previsto del sensore dopo l'accensione?**                   |
+| SEN-075 | ⭐        | Quanto tempo impiega il sensore a diventare operativo?                                |
+| SEN-076 | ⭐        | Il modulo deve attendere una condizione specifica prima di iniziare le acquisizioni?  |
+| SEN-077 | ⭐        | Cosa deve fare il modulo se il sensore non diventa operativo entro il tempo previsto? |
+| SEN-078 | ○        | Il sensore mantiene configurazioni dopo un power cycle?                               |
+| SEN-079 | ○        | Il modulo deve inizializzare o configurare il sensore a ogni avvio?                   |
+| SEN-080 | ○        | È necessario eseguire una procedura specifica dopo un reset del modulo?               |
+| SEN-081 | ○        | È necessario eseguire una procedura specifica dopo il reset del sensore?              |
+
+---
+
+# 8. Campo di misura e trattamento del dato
+
+| ID      | Priorità | Domanda                                                                            |
+| ------- | -------- | ---------------------------------------------------------------------------------- |
+| SEN-082 | ⭐        | Qual è il range operativo nominale della concentrazione di ozono?                  |
+| SEN-083 | ⭐        | Qual è il massimo valore che il modulo deve poter rappresentare?                   |
+| SEN-084 | ⭐        | Qual è la precisione richiesta al dato trasferito a CORE?                          |
+| SEN-085 | ⭐        | Qual è l'unità che deve essere utilizzata internamente e verso CORE?               |
+| SEN-086 | ⭐        | Sono necessarie conversioni di unità tra sensore, modulo e CORE?                   |
+| SEN-087 | ○        | Qual è il comportamento previsto quando il sensore restituisce un valore negativo? |
+| SEN-088 | ○        | Come devono essere gestiti valori superiori al fondo scala?                        |
+| SEN-089 | ○        | Come devono essere gestiti valori esattamente ai limiti del range?                 |
+| SEN-090 | ○        | È necessario applicare filtri, media mobile o altre elaborazioni alla misura?      |
+| SEN-091 | ○        | Se sì, quali sono i requisiti di latenza introdotti dal filtraggio?                |
+
+---
+
+# 9. Accuratezza, calibrazione e deriva
+
+| ID      | Priorità | Domanda                                                                            |
+| ------- | -------- | ---------------------------------------------------------------------------------- |
+| SEN-092 | ⭐        | Quali requisiti di accuratezza della misura sono necessari per questo sistema?     |
+| SEN-093 | ⭐        | Il sensore deve essere calibrato prima dell'installazione?                         |
+| SEN-094 | ⭐        | Qual è la procedura di calibrazione prevista?                                      |
+| SEN-095 | ⭐        | Con quale frequenza deve essere ricalibrato il sensore?                            |
+| SEN-096 | ○        | Chi è responsabile della calibrazione?                                             |
+| SEN-097 | ○        | Il modulo deve supportare o assistere una procedura di calibrazione?               |
+| SEN-098 | ○        | Il modulo deve memorizzare informazioni relative alla calibrazione?                |
+| SEN-099 | ○        | Come deve essere identificato un sensore non calibrato o con calibrazione scaduta? |
+| SEN-100 | ○        | Qual è la deriva massima ammessa nel tempo?                                        |
+| SEN-101 | ○        | Esistono requisiti di tracciabilità metrologica?                                   |
+
+---
+
+# 10. Condizioni ambientali e influenza sulla misura
+
+| ID      | Priorità | Domanda                                                                                   |
+| ------- | -------- | ----------------------------------------------------------------------------------------- |
+| SEN-102 | ⭐        | Qual è il range di temperatura nel quale il sensore garantisce le prestazioni dichiarate? |
+| SEN-103 | ⭐        | Qual è il range di umidità ammesso?                                                       |
+| SEN-104 | ⭐        | La temperatura influenza significativamente la misura di ozono?                           |
+| SEN-105 | ○        | Il sensore dispone di compensazione della temperatura?                                    |
+| SEN-106 | ○        | Il modulo deve acquisire temperatura o altri parametri per correggere la misura?          |
+| SEN-107 | ○        | Esistono condizioni di pressione che influenzano la misura?                               |
+| SEN-108 | ○        | Esistono gas o sostanze interferenti che possono alterare la misura?                      |
+| SEN-109 | ○        | Quali condizioni ambientali possono rendere la misura non affidabile?                     |
+| SEN-110 | ○        | Il sensore deve segnalare condizioni ambientali fuori specifica?                          |
+
+---
+
+# 11. Stato e diagnostica del sensore
+
+| ID      | Priorità | Domanda                                                                                      |
+| ------- | -------- | -------------------------------------------------------------------------------------------- |
+| SEN-111 | 🔴       | **Quali informazioni sullo stato del sensore devono essere rese disponibili al modulo?**     |
+| SEN-112 | ⭐        | Il sensore fornisce uno stato operativo esplicito?                                           |
+| SEN-113 | ⭐        | Quali codici di errore può fornire il sensore?                                               |
+| SEN-114 | ⭐        | Quali errori devono essere distinti dal modulo?                                              |
+| SEN-115 | ⭐        | Il modulo deve rendere disponibile a CORE lo stato diagnostico del sensore?                  |
+| SEN-116 | ○        | Quali contatori diagnostici sono necessari?                                                  |
+| SEN-117 | ○        | È necessario conoscere il numero di errori CRC?                                              |
+| SEN-118 | ○        | È necessario conoscere il numero di timeout?                                                 |
+| SEN-119 | ○        | È necessario conoscere il numero di misure non valide?                                       |
+| SEN-120 | ○        | È necessario conoscere l'ultimo momento in cui il sensore è stato correttamente interrogato? |
+
+---
+
+# 12. Configurazione del sensore
+
+| ID      | Priorità | Domanda                                                                   |
+| ------- | -------- | ------------------------------------------------------------------------- |
+| SEN-121 | ⭐        | Il sensore richiede una configurazione iniziale?                          |
+| SEN-122 | ⭐        | Quali parametri del sensore devono essere configurati?                    |
+| SEN-123 | ⭐        | Il modulo deve poter modificare tali parametri?                           |
+| SEN-124 | ○        | La configurazione deve essere effettuata automaticamente all'avvio?       |
+| SEN-125 | ○        | Quali parametri devono essere mantenuti dopo un power cycle?              |
+| SEN-126 | ○        | Il modulo deve verificare che la configurazione del sensore sia corretta? |
+| SEN-127 | ○        | Cosa deve accadere se la configurazione del sensore non è quella attesa?  |
+
+---
+
+# 13. Compatibilità e sostituzione del sensore
+
+| ID      | Priorità | Domanda                                                                              |
+| ------- | -------- | ------------------------------------------------------------------------------------ |
+| SEN-128 | ⭐        | Il sensore deve poter essere sostituito senza modificare il firmware del modulo?     |
+| SEN-129 | ⭐        | Quali caratteristiche deve avere un sensore sostitutivo per essere compatibile?      |
+| SEN-130 | ○        | Il modulo deve identificare automaticamente il modello del sensore collegato?        |
+| SEN-131 | ○        | Il modulo deve verificare firmware o versione del sensore?                           |
+| SEN-132 | ○        | Come deve comportarsi il modulo se viene collegato un sensore non supportato?        |
+| SEN-133 | ○        | È previsto l'utilizzo futuro di sensori con protocollo o caratteristiche differenti? |
+
+---
+
+# 14. Cablaggio, installazione e manutenzione
+
+| ID      | Priorità | Domanda                                                                                                |
+| ------- | -------- | ------------------------------------------------------------------------------------------------------ |
+| SEN-134 | ⭐        | Quali requisiti di cablaggio sono necessari per garantire una comunicazione affidabile con il sensore? |
+| SEN-135 | ⭐        | Qual è la lunghezza massima del cavo prevista nell'installazione reale?                                |
+| SEN-136 | ○        | Quale tipo di cavo deve essere utilizzato?                                                             |
+| SEN-137 | ○        | Sono richiesti cavi schermati?                                                                         |
+| SEN-138 | ○        | Come deve essere collegata la schermatura?                                                             |
+| SEN-139 | ○        | Sono presenti vincoli sulla posa del cavo rispetto ai cavi di potenza?                                 |
+| SEN-140 | ○        | Il sensore è sostituibile durante la manutenzione senza spegnere l'intero sistema?                     |
+| SEN-141 | ○        | Quali operazioni di manutenzione devono essere possibili sul sensore?                                  |
+
+---
+
+# 15. Verifica e validazione della misura
+
+| ID      | Priorità | Domanda                                                                                    |
+| ------- | -------- | ------------------------------------------------------------------------------------------ |
+| SEN-142 | ⭐        | Come possiamo verificare che il modulo stia acquisendo correttamente il sensore?           |
+| SEN-143 | ⭐        | Quali test devono essere eseguiti per verificare la corretta decodifica del protocollo?    |
+| SEN-144 | ⭐        | Come deve essere verificata la gestione di un CRC errato?                                  |
+| SEN-145 | ⭐        | Come deve essere verificata la gestione di un timeout del sensore?                         |
+| SEN-146 | ⭐        | Come deve essere verificata la gestione di una misura fuori range?                         |
+| SEN-147 | ○        | Come deve essere verificato il comportamento durante il warm-up?                           |
+| SEN-148 | ○        | Come deve essere verificato il recupero dopo una perdita temporanea del sensore?           |
+| SEN-149 | ○        | Quale strumentazione deve essere utilizzata per verificare la misura?                      |
+| SEN-150 | ○        | È necessario utilizzare un simulatore del sensore durante i test?                          |
+| SEN-151 | ○        | Quali criteri determinano che l'acquisizione del sensore è stata verificata correttamente? |
+
+---
+
+# 16. Documentazione e fonti tecniche
+
+| ID      | Priorità | Domanda                                                                                                 |
+| ------- | -------- | ------------------------------------------------------------------------------------------------------- |
+| SEN-152 | 🔴       | **Qual è la documentazione tecnica ufficiale che dobbiamo utilizzare come riferimento per il ZE27-O3?** |
+| SEN-153 | ⭐        | Esiste una datasheet aggiornata del sensore?                                                            |
+| SEN-154 | ⭐        | Esiste un documento ufficiale che descrive il protocollo di comunicazione?                              |
+| SEN-155 | ⭐        | Esiste una specifica ufficiale del formato dei frame?                                                   |
+| SEN-156 | ⭐        | Esiste una documentazione ufficiale sui codici di errore?                                               |
+| SEN-157 | ○        | Quale revisione della documentazione deve essere considerata normativa per il progetto?                 |
+| SEN-158 | ○        | Esistono errata, note applicative o limitazioni note del costruttore?                                   |
+| SEN-159 | ○        | Esistono precedenti implementazioni del ZE27-O3 che possiamo utilizzare come riferimento?               |
+
+---
+
+# 17. Domande finali e rischi
+
+| ID      | Priorità | Domanda                                                                                                                                        |
+| ------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| SEN-160 | 🔴       | **Qual è il principale rischio tecnico che potrebbe causare al modulo l'acquisizione di una misura di ozono errata ma apparentemente valida?** |
+| SEN-161 | ⭐        | Qual è il problema più probabile nella comunicazione con il sensore?                                                                           |
+| SEN-162 | ⭐        | Qual è il problema più probabile nella qualità della misura?                                                                                   |
+| SEN-163 | ⭐        | Quale comportamento del sensore potrebbe essere facilmente interpretato erroneamente dal firmware?                                             |
+| SEN-164 | ⭐        | Quale requisito del sensore viene più frequentemente trascurato nelle implementazioni?                                                         |
+| SEN-165 | ⭐        | Quale informazione sul sensore manca attualmente per poter definire correttamente il modulo?                                                   |
+| SEN-166 | ○        | Ci sono comportamenti non documentati del sensore che dobbiamo conoscere?                                                                      |
+| SEN-167 | ○        | Ci sono condizioni in cui il sensore sembra funzionare normalmente ma la misura non deve essere utilizzata?                                    |
+| SEN-168 | ○        | C'è qualcosa che il modulo deve assolutamente evitare di fare con questo sensore?                                                              |
+| SEN-169 | ⭐        | **C'è qualche requisito del sensore che non abbiamo ancora considerato e che ritieni essenziale per il corretto funzionamento del sistema?**   |
+
+---
+
+# Le 30 domande più importanti
+
+Queste sono quelle che utilizzerei come **intervista principale**, se non fosse possibile fare tutte le 169 domande:
+
+1. **SEN-001** — Qual è esattamente il modello di sensore di ozono che il modulo deve supportare?
+2. **SEN-002** — Il modulo deve supportare esclusivamente il ZE27-O3 o anche altri sensori?
+3. **SEN-012** — Qual è esattamente l'interfaccia elettrica utilizzata dal ZE27-O3?
+4. **SEN-013** — Quali sono i parametri della comunicazione RS485 del sensore?
+5. **SEN-024** — Quale protocollo deve utilizzare il modulo per comunicare con il ZE27-O3?
+6. **SEN-025** — Quale sequenza di richiesta e risposta deve utilizzare il modulo?
+7. **SEN-026** — Quali comandi/frame deve inviare il modulo per leggere la concentrazione di ozono?
+8. **SEN-030** — Come viene identificata la misura di ozono nel frame?
+9. **SEN-031** — Come viene codificato il valore numerico?
+10. **SEN-034** — Come viene calcolato e verificato il CRC?
+11. **SEN-040** — Con quale frequenza deve essere acquisita la misura?
+12. **SEN-043** — Qual è il timeout per una risposta del sensore?
+13. **SEN-050** — Come possiamo determinare che una misura ricevuta è valida?
+14. **SEN-051** — Quali condizioni devono essere soddisfatte prima di accettare una misura?
+15. **SEN-052** — Un frame con CRC errato deve sempre essere considerato non valido?
+16. **SEN-053** — Un valore fuori range deve essere considerato non valido?
+17. **SEN-054** — Il sensore fornisce un proprio bit/codice di validità?
+18. **SEN-055** — Esistono valori riservati che indicano errore o misura non disponibile?
+19. **SEN-062** — Per quanto tempo l'ultima misura valida può essere considerata utilizzabile?
+20. **SEN-063** — Come deve comportarsi il modulo quando il sensore non risponde?
+21. **SEN-066** — Il modulo deve mantenere l'ultima misura valida durante una perdita temporanea?
+22. **SEN-067** — Quando deve dichiarare la misura non più disponibile?
+23. **SEN-074** — Qual è il comportamento previsto del sensore dopo l'accensione?
+24. **SEN-075** — Quanto tempo impiega il sensore a diventare operativo?
+25. **SEN-092** — Quali requisiti di accuratezza sono necessari?
+26. **SEN-111** — Quali informazioni sullo stato del sensore devono essere disponibili?
+27. **SEN-115** — Il modulo deve rendere disponibile a CORE lo stato diagnostico del sensore?
+28. **SEN-128** — Il sensore deve poter essere sostituito senza modificare il firmware?
+29. **SEN-152** — Qual è la documentazione tecnica ufficiale da utilizzare come riferimento?
+30. **SEN-160** — Qual è il principale rischio che potrebbe causare una misura errata ma apparentemente valida?
+
+---
+
+# Top 5 — Mission Critical
+
+Se dovessi scegliere **solo cinque domande** da cui dipende realmente la corretta definizione del modulo, sceglierei queste, **tutte già presenti nella lista sopra**:
+
+### 🔴 1. SEN-025
+
+**Quale sequenza di richiesta e risposta deve utilizzare il modulo per ottenere la misura dal sensore?**
+
+→ Definisce il comportamento fondamentale della comunicazione modulo ↔ ZE27-O3.
+
+### 🔴 2. SEN-031
+
+**Come viene codificato il valore numerico della misura?**
+
+→ Determina come il firmware deve interpretare correttamente i byte ricevuti.
+
+### 🔴 3. SEN-050
+
+**Come possiamo determinare che una misura ricevuta dal sensore è valida?**
+
+→ È fondamentale per impedire che un dato non affidabile venga propagato a CORE.
+
+### 🔴 4. SEN-062
+
+**Per quanto tempo l'ultima misura valida può essere considerata utilizzabile in assenza di una nuova misura?**
+
+→ Determina la semantica di **fresh/stale data** e il momento in cui il valore deve diventare non utilizzabile.
+
+### 🔴 5. SEN-063
+
+**Come deve comportarsi il modulo quando il sensore non risponde?**
+
+→ Definisce la gestione della perdita del sensore, il mantenimento dell'ultimo dato valido e il successivo recupero.
+
+---
+
+## Un punto particolarmente importante per questo progetto
+
+Dal punto di vista dell'architettura, l'intervista al Sensor Engineer dovrebbe permetterci di definire con precisione questa catena:
+
+**ZE27-O3 → frame ricevuto → verifica integrità → verifica validità → decodifica → plausibilità → misura valida → memorizzazione → aging/stale → disponibilità a CORE**
+
+Il Sensor Engineer deve quindi aiutarci soprattutto a stabilire **quando possiamo dire con certezza che "questa misura è valida"**. Questo è il confine tecnico fondamentale tra **dato ricevuto dal sensore** e **dato che il modulo è autorizzato a presentare a CORE**.
+
+Inoltre, eviterei di inventare nella specifica dettagli come **baud rate, formato frame, CRC, registri del sensore o codici di errore** finché non vengono confermati dalla documentazione ufficiale del ZE27-O3 o dallo stakeholder: queste domande servono proprio a raccogliere tali informazioni.
+
+
+Quale sequenza di richiesta e risposta deve utilizzare il modulo per ottenere la misura dal sensore?
+Come viene codificato il valore numerico della misura?
+Come possiamo determinare che una misura ricevuta dal sensore è valida?
+Per quanto tempo l'ultima misura valida può essere considerata utilizzabile in assenza di una nuova misura?
+Come deve comportarsi il modulo quando il sensore non risponde?
+
+
+
+
+
+
+
+
+
+
+
+
+
+

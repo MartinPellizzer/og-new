@@ -793,3 +793,10 @@ The following distinction shall be maintained:
 | Can we trace and verify it?               | RTM                                        |
 
 The Stakeholder Requirements Specification therefore represents the **approved bridge between stakeholder input and engineering requirements**.
+
+
+
+
+
+
+
