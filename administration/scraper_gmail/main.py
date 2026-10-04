@@ -307,7 +307,7 @@ def main():
 
     # search_industry = 'caseifici'
     # search_district = 'BO'
-    scrapes_num = 100
+    scrapes_num = 30
 
     open_browser()
 
@@ -322,14 +322,15 @@ def main():
         'vicenza',
     ]
 
-    for search_district in search_districts:
-        search_text = f'{search_industry} {search_district}'
-        search(search_text)
-        sleep(10)
-        for k in range(scrapes_num):
-            err = scrape_new_business(search_text, search_industry, search_district, k)
-            print(err, '\n')
-            # if err == 'name_not_equal_label': break
+    for i in range(3):
+        for search_district in search_districts:
+            search_text = f'{search_industry} {search_district}'
+            search(search_text)
+            sleep(10)
+            for k in range(scrapes_num):
+                err = scrape_new_business(search_text, search_industry, search_district, k)
+                print(err, '\n')
+                # if err == 'name_not_equal_label': break
 
     '''
     # GET COMUNI FROM PROVINCIA
