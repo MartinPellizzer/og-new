@@ -1087,9 +1087,49 @@ def nouns_phrases_find_passages_llm():
             print(reply)
             print('################################################################################')
 
+def nouns_phrases_find_passages_by_index_llm():
+    input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/nouns_phrases/string_match'
+    output_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/nouns_phrases/passages'
+    # try: shutil.rmtree(output_folderpath)
+    # except: pass
+    io.folders_recursive_gen(output_folderpath)
+    ###
+    input_filenames = os.listdir(input_folderpath)
+    i = 0
+    for input_filename in input_filenames[i:]:
+        i += 1
+        print(f'{i}/{len(input_filenames)}')
+        output_filepath = f'{output_folderpath}/{input_filename}'
+        if os.path.exists(output_filepath): continue
+        input_filepath = f'{input_folderpath}/{input_filename}'
+        try: input_data = io.json_read(input_filepath)
+        except: continue
+        ###
+        study_id = input_data['study_id']
+        study_title = input_data['study_title']
+        study_abstract = input_data['study_abstract']
+        study_terms = input_data['reply']
+        output_data = {
+            'study_id': study_id,
+            'study_title': study_title,
+            'study_abstract': study_abstract,
+            'terms': [],
+        }
+        sentences_filepath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/abstracts_sentences/json/{input_filename}'
+        sentences_items = io.json_read(sentences_filepath)
+        # print(sentences_data)
+        # quit()
+        for study_term in study_terms:
+            sentences_filter = []
+            for sentence_item in sentences_items:
+                if study_term.lower() in sentence_item['sentence_text'].lower():
+                    sentences_filter.append(sentence_item['sentence_text'])
+            # for sentence_filter in sentences_filter:
+                # print(sentence_filter )
+
             output_item = {
                 'term': study_term,
-                'passages': reply.strip().split('\n'),
+                'passages': sentences_filter,
             }
             output_data['terms'].append(output_item)
         ###
@@ -1097,6 +1137,7 @@ def nouns_phrases_find_passages_llm():
             output_filepath,
             output_data,
         )
+        print(output_filepath)
         # quit()
 
 def relationships_llm():
@@ -1135,9 +1176,11 @@ def relationships_llm():
             prompt = f'''
                 From the ABSTRACT below I extracted all the PHRASE NOUNS below.
                 Now identify all relationships between the phrase noun "{study_term_name}" and all the others phrase nouns based on the abstract.
+                Write each relationship term exactly how you find it in the abstract.
+                Write each phrase noun exactly how you find it in the abstract.
                 Reply only with the asked content.
                 OUPUT FORMAT: 
-                [{study_term_name}, relationship, phrase noun]
+                [{study_term_name}, relationship term, phrase noun]
                 PHRASE NOUNS:
                 {study_terms_names_prompt}
                 ABSTRACT:
@@ -1228,17 +1271,120 @@ def relationships_peek():
         print(json.dumps(input_data, indent=4))
         quit()
 
+def abstracts_to_sentences_llm():
+    input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/fetch/pubmed/ozone/json'
+    output_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/abstracts_sentences/json'
+    # try: shutil.rmtree(output_folderpath)
+    # except: pass
+    io.folders_recursive_gen(output_folderpath)
+    ###
+    # relationships_found = []
+    input_filenames = os.listdir(input_folderpath)
+    i = 0
+    for input_filename in input_filenames[i:]:
+        i += 1
+        print(f'{i}/{len(input_filenames)}')
+        output_filepath = f'{output_folderpath}/{input_filename}'
+        if os.path.exists(output_filepath): continue
+        input_filepath = f'{input_folderpath}/{input_filename}'
+        try: input_data = io.json_read(input_filepath)
+        except: continue
+        try: article_data = input_data['PubmedArticle'][0]['MedlineCitation']['Article']
+        except: pass
+        try: input_title = article_data['ArticleTitle']
+        except: input_title = ''
+        try: input_abstract = ' '.join(article_data['Abstract']['AbstractText'])
+        except: continue
+        print(json.dumps(input_title, indent=4))
+        # print(input_title)
+        print(input_abstract)
+        # quit()
+        prompt = f'''
+            Separate each sentence of the following ABSTRACT in a new line.
+            Write each sentence in a new line without missing or skipping any sentence from the original ABSTRACT.
+            Write the sentences using the exact same words as they are in the ABSTRACT, never change words.
+            Reply only with the asked content.
+            ABSTRACT:
+            {input_abstract}
+        '''.strip()
+        print(prompt)
+        print()
+        reply = llm.reply(prompt, model_filepath, max_tokens=512)
+        if '</think>' in reply:
+            reply = reply.split('</think>')[1].strip()
+        print()
+        print('################################################################################')
+        print(reply)
+        print('################################################################################')
+        # quit()
+        lines_raw = []
+        for line in reply.split('\n'):
+            line = line.strip()
+            if line == "": continue
+            lines_raw.append(line)
+        lines_filter = []
+        for line in lines_raw:
+            if line in input_abstract:
+                lines_filter.append(line)
+        for line in lines_filter:
+            print(line)
+            print()
+        print(len(lines_raw))
+        print(len(lines_filter))
+        abstract_remain = input_abstract
+        for line in lines_filter:
+            abstract_remain = abstract_remain.replace(line, '')
+        print(f'ABSTRACT REMAIN: {abstract_remain}')
+        output_data = []
+        for line in lines_filter:
+            output_item = {
+                'sentence_text': line,
+            }
+            output_data.append(output_item)
+        io.json_write(output_filepath, output_data)
+        # quit()
+
+def nouns_phrases_aggregate():
+    input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/nouns_phrases/passages'
+    input_filenames = os.listdir(input_folderpath)
+    terms_all = []
+    for i, input_filename in enumerate(input_filenames[:]):
+        print(f'{i}/{len(input_filenames)}')
+        input_filepath = f'{input_folderpath}/{input_filename}'
+        input_data = io.json_read(input_filepath)
+        terms = input_data['terms']
+        for term in terms:
+            term_name = term['term'].lower().strip()
+            terms_all.append(term_name)
+
+    from collections import Counter
+
+    result = [{"term": term, "count": count}
+              for term, count in Counter(terms_all).most_common()]
+    result = result[:100]
+    print(json.dumps(result, indent=4))
+    # quit()
+
 def run():
     print('parse >> pubmed')
     ### CURRENT
+    # abstracts_to_sentences_llm() ### WARNING: takes many many hours (nightly running)
+
     # parse_nouns_phrases_llm() ### WARNING: takes many many hours (nightly running)
     # nouns_phrases_string_match()
-    nouns_phrases_find_passages_llm() ### WARNING: takes many many hours (nightly running)
+    # nouns_phrases_find_passages_llm() ### WARNING: takes many many WEEKS
+    # nouns_phrases_find_passages_by_index_llm() ### WARNING: takes many many hours (nightly running)
 
-    # relationships_llm() ### WARNING: takes many many hours (nightly running)
+    # nouns_phrases_aggregate()
+
+    relationships_llm() ### WARNING: takes many many hours (nightly running)
     # relationships_peek() ### WARNING: takes many many hours (nightly running)
 
     # definitions_llm() ### WARNING: takes many many hours (nightly running)
+
+
+    quit()
+
 
     ### OLD?
     # parse_nouns_llm() ### WARNING: takes many many hours (nightly running)
