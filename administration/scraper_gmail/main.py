@@ -307,7 +307,7 @@ def main():
 
     # search_industry = 'caseifici'
     # search_district = 'BO'
-    scrapes_num = 30
+    scrapes_num = 100
 
     open_browser()
 
