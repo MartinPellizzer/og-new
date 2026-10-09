@@ -49,11 +49,28 @@ void setup()
 }
 
 int led = 0;
+int ret = 0;
 
 void loop()
 {
-  int ret = node.writeSingleCoil(0x00C, led);
-  led = !led;
+  ret = node.readInputRegisters(0x7531, 1);
+  if (ret == node.ku8MBSuccess)
+  {
+    int nn = node.getResponseBuffer(0);
+    Serial.print("analog read: ");
+    Serial.println(nn);
+  }
+
+  // ret = node.readDiscreteInputs(0x4001, 16);
+  // if (ret == node.ku8MBSuccess)
+  // {
+  //   unsigned int nn = node.getResponseBuffer(0);
+  //   Serial.print("digital read: ");
+  //   Serial.println(nn, BIN);
+  // }
+
+  // ret = node.writeSingleCoil(0x00C, led);
+  // led = !led;
   delay(1000);
 
   if (0)

@@ -1,6 +1,5 @@
 // SLAVE
 
-
 HardwareSerial Sender(1);
 uint8_t state = 0;
 
@@ -17,6 +16,9 @@ Modbus slave(Sender, 23, RE_DE_PIN);
 
 #define LED_PIN 13
 
+
+uint8_t button_value = 0;
+
 void setup() 
 {
   Serial.begin(9600);
@@ -26,9 +28,11 @@ void setup()
   pinMode(LED_PIN, OUTPUT);
   digitalWrite(LED_PIN, LOW);
 
+  
+
   // slave.cbVector[CB_WRITE_COILS] = writeDigitalOut;
-  slave.cbVector[CB_READ_COILS] = readDigital;
-  slave.cbVector[CB_READ_DISCRETE_INPUTS] = readDigital;
+  // slave.cbVector[CB_READ_COILS] = readDigital;
+  slave.cbVector[CB_READ_INPUT_REGISTERS] = readAnalogIn;
 
   slave.begin(9600);
 
@@ -45,45 +49,89 @@ void loop()
 
   if (0)
   {
-  if (new_data)
-  {
-    if (millis() - timer > 40)
+    if (new_data)
     {
-      i = 0;
-      new_data = 0;
-      for(int k = 0; k < 9; k++)
+      if (millis() - timer > 40)
       {
-        Serial.print(buff[k]);
-        Serial.print(",");
+        i = 0;
+        new_data = 0;
+        for(int k = 0; k < 9; k++)
+        {
+          Serial.print(buff[k]);
+          Serial.print(",");
+        }
+        Serial.println();
       }
-      Serial.println();
+    }
+    if (Sender.available() > 0)  
+    {
+      uint8_t c = Sender.read();
+      buff[i] = c;
+      i++;
+      new_data = 1;
+      timer = millis();
     }
   }
-  if (Sender.available() > 0)  
-  {
-    uint8_t c = Sender.read();
-    buff[i] = c;
-    i++;
-    new_data = 1;
-    timer = millis();
-  }
-    
-  }
-}
-uint8_t readDigital(uint8_t fc, uint16_t address, uint16_t length, void* data)
-
 }
 
-uint8_t writeDigitalOut(uint8_t fc, uint16_t address, uint16_t length, void* data)
+uint8_t readAnalogIn(uint8_t fc, uint16_t address, uint16_t length, void* data)
 {
-  Serial.print("FC=05: ");
-  Serial.println(fc);
-  Serial.println(address);
-  Serial.println(length);
+    Serial.printf(
+        "FC=%u, Address=%u, Length=%u -> ",
+        fc, address, length
+    );
 
-  if (address == 12)
-  {
-    digitalWrite(LED_PIN, slave.readCoilFromBuffer(0));
-  }
-  return STATUS_OK;
+    if (length == 1)
+    {
+      if (address == 0 || address == 30001)
+      {
+          Serial.println("MATCH");
+          slave.writeRegisterToBuffer(0, 10000);
+          return STATUS_OK;
+      }
+      else
+      {
+        Serial.println("STATUS_ILLEGAL_DATA_ADDRESS");
+        return STATUS_ILLEGAL_DATA_ADDRESS;
+      }
+    }
+    else
+    {
+      Serial.println("STATUS_ILLEGAL_DATA_VALUE");
+      return STATUS_ILLEGAL_DATA_VALUE;
+    }
+
 }
+
+// uint8_t readDigital(uint8_t fc, uint16_t address, uint16_t length, void* data)
+// {
+//   Serial.print("FC=01/02: ");
+//   Serial.println(fc);
+//   Serial.println(address);
+//   Serial.println(length);
+
+//   for (int i = 0; i < length; i++)
+//   {
+//     int bt = 0;
+//     if (i == 0)
+//     {
+//       bt = button_value;
+//     }
+//     slave.writeCoilToBuffer(i, bt);
+//   }
+//   return STATUS_OK;
+// }
+
+// uint8_t writeDigitalOut(uint8_t fc, uint16_t address, uint16_t length, void* data)
+// {
+//   Serial.print("FC=05: ");
+//   Serial.println(fc);
+//   Serial.println(address);
+//   Serial.println(length);
+
+//   if (address == 12)
+//   {
+//     digitalWrite(LED_PIN, slave.readCoilFromBuffer(0));
+//   }
+//   return STATUS_OK;
+// }
