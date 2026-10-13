@@ -1,6 +1,6 @@
 // SLAVE
 
-HardwareSerial Sender(1);
+HardwareSerial rs485_serial(1);
 uint8_t state = 0;
 
 uint8_t buff[9] = {0};
@@ -12,65 +12,80 @@ uint32_t timer = 0;
 #define RE_DE_PIN 16
 
 #include <ModbusSlave.h>
-Modbus slave(Sender, 23, RE_DE_PIN);
+Modbus slave(rs485_serial, 23, RE_DE_PIN);
 
 #define LED_PIN 13
 
+#define SENSOR_BUFF_LEN 9
+typedef struct sensor_t {
+  uint8_t buff[SENSOR_BUFF_LEN] = { 0 };
+  uint8_t buff_i = 0;
+  uint8_t buff_ready = 0;
+  uint32_t buff_timer = 0;
+  int16_t ppb_old = 0;
+  int16_t ppb_cur = 0;
+  uint32_t timeout_timer_cur = 0; 
+  uint8_t timeout_error = 0; 
+} sensor_t;
+sensor_t sensor = {};
 
 uint8_t button_value = 0;
+
+int led_state = 0;
 
 void setup() 
 {
   Serial.begin(9600);
-  Sender.begin(9600, SERIAL_8N1, 17, 4);
+  Serial2.begin(9600, SERIAL_8N1, 27, 14);
+  rs485_serial.begin(9600, SERIAL_8N1, 17, 4);
   pinMode(RE_DE_PIN, OUTPUT);
   digitalWrite(RE_DE_PIN, LOW);
   pinMode(LED_PIN, OUTPUT);
   digitalWrite(LED_PIN, LOW);
-
-  
 
   // slave.cbVector[CB_WRITE_COILS] = writeDigitalOut;
   // slave.cbVector[CB_READ_COILS] = readDigital;
   slave.cbVector[CB_READ_INPUT_REGISTERS] = readAnalogIn;
 
   slave.begin(9600);
-
 }
 
-int led_state = 0;
 
 void loop() 
 {
   slave.poll();
-  // digitalWrite(LED_PIN, led_state);
-  // led_state = !led_state;
-  // delay(1000);
 
-  if (0)
+  if (millis() - sensor.timeout_timer_cur > 5000) 
   {
-    if (new_data)
+    // if (sensor.timeout_error == 0)
     {
-      if (millis() - timer > 40)
-      {
-        i = 0;
-        new_data = 0;
-        for(int k = 0; k < 9; k++)
-        {
-          Serial.print(buff[k]);
-          Serial.print(",");
-        }
-        Serial.println();
-      }
+      // sensor.timeout_error = 1;
+      sensor.ppb_cur = 10001;
     }
-    if (Sender.available() > 0)  
+  }
+
+  ze27o3_listen();
+
+  if (ze27o3_ready())
+  {
+    sensor.buff_i = 0;
+    sensor.buff_ready = 0;
+
+    // CHECKSUM
+    if (ze27o3_checksum_valid())
     {
-      uint8_t c = Sender.read();
-      buff[i] = c;
-      i++;
-      new_data = 1;
-      timer = millis();
+      Serial.println("CHECKSUM: VALID");
+      sensor.ppb_cur = ze27o3_ppb_get();
+
+      sensor.timeout_timer_cur = millis();
+      // sensor.timeout_error = 0;
     }
+    else
+    {
+      Serial.println("CHECKSUM: ERROR");
+    }
+
+    ze27o3_debug();
   }
 }
 
@@ -86,7 +101,7 @@ uint8_t readAnalogIn(uint8_t fc, uint16_t address, uint16_t length, void* data)
       if (address == 0 || address == 30001)
       {
           Serial.println("MATCH");
-          slave.writeRegisterToBuffer(0, 10000);
+          slave.writeRegisterToBuffer(0, sensor.ppb_cur);
           return STATUS_OK;
       }
       else
@@ -100,7 +115,6 @@ uint8_t readAnalogIn(uint8_t fc, uint16_t address, uint16_t length, void* data)
       Serial.println("STATUS_ILLEGAL_DATA_VALUE");
       return STATUS_ILLEGAL_DATA_VALUE;
     }
-
 }
 
 // uint8_t readDigital(uint8_t fc, uint16_t address, uint16_t length, void* data)

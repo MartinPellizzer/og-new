@@ -59,6 +59,11 @@ void loop()
     int nn = node.getResponseBuffer(0);
     Serial.print("analog read: ");
     Serial.println(nn);
+
+    lcd.setCursor(0, 0);
+    lcd.print("                ");
+    lcd.setCursor(0, 0);
+    lcd.print(nn);
   }
 
   // ret = node.readDiscreteInputs(0x4001, 16);
