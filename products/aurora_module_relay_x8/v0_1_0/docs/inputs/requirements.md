@@ -178,3 +178,36 @@ The CORE shall immediately declare a Relay Module communication fault, prevent f
 - The CORE shall transition Aurora to the appropriate safe system state
 - The CORE shall notify Aurora the HMI
 - The CORE shall automatically re-synchronize the required relay states only after reliable communication has been restored
+
+# Answer ID 11
+
+Question ID 11
+Answer ID 11
+Stakeholder Role Stakeholder Role Electrical Engineer
+
+What are the electrical specifications of the eight relay-driver outputs, based on the physical relays they must control?
+
+Each driver shall independently and reliably energize its assigned relay coil across
+the full specified supply, temperature, and tolerance range, with adequate
+voltage/current margin, continuous-duty capability, short-circuit/overload protection,
+and no unintended activation during reset or fault conditions.
+
+- Each MODULE driver shall independently and reliably energize its assigned relay coil
+- Each MODULE driver shall account for full specified supply
+- Each MODULE driver shall account for temperature
+- Each MODULE driver shall account for tolerance range
+- Each MODULE driver shall account for adequate voltage/current margin
+- Each MODULE driver shall account for continuous-duty capability
+- Each MODULE driver shall account for short-circuit/overload protection
+- Each MODULE driver shall account for no unintended activation during reset conditions
+- Each MODULE driver shall account for no unintended activation during fault conditions
+
+- Each driver shall de-energize its assigned relay coil when commanded OFF, within the specified response time.
+- Each driver shall be electrically compatible with the specified voltage, current and characteristics of its assigned relay coil.
+- The Relay Module shall support all permitted combinations of simultaneously energized channels without exceeding electrical or thermal limits.
+- Each driver shall respond to a valid command within the specified activation and deactivation time limits.
+- Each driver shall safely manage the voltage transient generated when its relay coil is de-energized.
+- A fault in one driver shall not cause unintended activation or damage to other channels, within the defined fault conditions.
+- Each driver shall assume its specified state during power-up, reset and other defined startup conditions.
+- Each driver shall implement the specified output response for each relevant fault condition.
+- Each driver shall be verified against defined electrical, thermal, functional and fault-condition acceptance criteria.
