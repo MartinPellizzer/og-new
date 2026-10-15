@@ -1,4 +1,5 @@
 import os
+import re
 import json
 import time
 import shutil
@@ -1087,7 +1088,7 @@ def nouns_phrases_find_passages_llm():
             print(reply)
             print('################################################################################')
 
-def nouns_phrases_find_passages_by_index_llm():
+def nouns_phrases_find_passages_by_index():
     input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/nouns_phrases/string_match'
     output_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/nouns_phrases/passages'
     # try: shutil.rmtree(output_folderpath)
@@ -1126,7 +1127,6 @@ def nouns_phrases_find_passages_by_index_llm():
                     sentences_filter.append(sentence_item['sentence_text'])
             # for sentence_filter in sentences_filter:
                 # print(sentence_filter )
-
             output_item = {
                 'term': study_term,
                 'passages': sentences_filter,
@@ -1365,6 +1365,132 @@ def nouns_phrases_aggregate():
     print(json.dumps(result, indent=4))
     # quit()
 
+def relationships_str_to_triple():
+    input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/relationships/raw'
+    output_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/relationships_triple/raw'
+    # try: shutil.rmtree(output_folderpath)
+    # except: pass
+    io.folders_recursive_gen(output_folderpath)
+    ###
+    input_filenames = os.listdir(input_folderpath)
+    i = 0
+    for input_filename in input_filenames[i:]:
+        i += 1
+        print(f'{i}/{len(input_filenames)}')
+        output_filepath = f'{output_folderpath}/{input_filename}'
+        if os.path.exists(output_filepath): continue
+        input_filepath = f'{input_folderpath}/{input_filename}'
+        try: input_data = io.json_read(input_filepath)
+        except: continue
+        for term in input_data['terms']:
+            relationships_triples = []
+            for relationship_str in term['relationships']:
+                relationship_lst = relationship_str.strip("[]").split(", ")
+                if len(relationship_lst) == 3:
+                    relationships_triples.append(relationship_lst)
+            term['relationships_triples'] = []
+            for relationship_triple in relationships_triples:
+                term['relationships_triples'].append({
+                    'relationship': relationship_triple,
+                })
+            # print(json.dumps(term, indent=4))
+            # quit()
+        io.json_write(
+            output_filepath,
+            input_data,
+        )
+        # quit()
+
+def relationships_find_passages_by_index():
+    input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/relationships_triple/raw'
+    output_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/relationships_passages/raw'
+    # try: shutil.rmtree(output_folderpath)
+    # except: pass
+    io.folders_recursive_gen(output_folderpath)
+    ###
+    input_filenames = os.listdir(input_folderpath)
+    i = 0
+    for input_filename in input_filenames[i:]:
+        i += 1
+        print(f'{i}/{len(input_filenames)}')
+        output_filepath = f'{output_folderpath}/{input_filename}'
+        if os.path.exists(output_filepath): continue
+        input_filepath = f'{input_folderpath}/{input_filename}'
+        try: input_data = io.json_read(input_filepath)
+        except: continue
+        # print(json.dumps(input_data, indent=4))
+        # quit()
+        for term in input_data['terms']:
+            for relationship_triple in term['relationships_triples']:
+                entity_1 = relationship_triple['relationship'][0]
+                relationship = relationship_triple['relationship'][1]
+                entity_2 = relationship_triple['relationship'][2]
+                passages_filtered = []
+                passages_filtered_tag = []
+                for passage_str in term['passages']:
+                    entity_1_found = False
+                    relationship_found = False
+                    entity_2_found = False
+                    if entity_1.lower() in passage_str.lower(): entity_1_found = True
+                    if relationship.lower() in passage_str.lower(): relationship_found = True
+                    if entity_2.lower() in passage_str.lower(): entity_2_found = True
+                    ###
+                    if entity_1_found and relationship_found and entity_2_found:
+                        passages_filtered.append(passage_str)
+                        passage_filtered_tag = passage_str
+                        tag_open = f'<found>'
+                        tag_close = f'</found>'
+                        passage_filtered_tag = re.sub(
+                            rf'\b{re.escape(entity_1)}\b',
+                            f'{tag_open}{entity_1}{tag_close}',
+                            passage_filtered_tag,
+                            flags=re.IGNORECASE
+                        )
+                        passage_filtered_tag = re.sub(
+                            rf'\b{re.escape(relationship)}\b',
+                            f'{tag_open}{relationship}{tag_close}',
+                            passage_filtered_tag,
+                            flags=re.IGNORECASE
+                        )
+                        passage_filtered_tag = re.sub(
+                            rf'\b{re.escape(entity_2)}\b',
+                            f'{tag_open}{entity_2}{tag_close}',
+                            passage_filtered_tag,
+                            flags=re.IGNORECASE
+                        )
+                        # passage_filtered_tag = passage_filtered_tag.replace(entity_1, f'<<{entity_1}>>')
+                        # passage_filtered_tag = passage_filtered_tag.replace(relationship, f'<<{relationship}>>')
+                        # passage_filtered_tag = passage_filtered_tag.replace(entity_2, f'<<{entity_2}>>')
+                        passages_filtered_tag.append(passage_filtered_tag )
+                # print(json.dumps(term, indent=4))
+                # print(json.dumps(passages_filtered, indent=4))
+                # print(json.dumps(passages_filtered_tag, indent=4))
+                relationship_triple['passages'] = passages_filtered 
+                relationship_triple['passages_tag'] = passages_filtered_tag
+                # print(json.dumps(relationship_triple, indent=4))
+                # quit()
+            '''
+            quit()
+            relationships_triples = []
+            for relationship_str in term['relationships']:
+                relationship_lst = relationship_str.strip("[]").split(", ")
+                if len(relationship_lst) == 3:
+                    relationships_triples.append(relationship_lst)
+            term['relationships_triples'] = []
+            for relationship_triple in relationships_triples:
+                term['relationships_triples'].append({
+                    'relationship': relationship_triple,
+                })
+            '''
+            # print(json.dumps(term, indent=4))
+            # quit()
+        io.json_write(
+            output_filepath,
+            input_data,
+        )
+        # quit()
+
+
 def run():
     print('parse >> pubmed')
     ### CURRENT
@@ -1373,11 +1499,13 @@ def run():
     # parse_nouns_phrases_llm() ### WARNING: takes many many hours (nightly running)
     # nouns_phrases_string_match()
     # nouns_phrases_find_passages_llm() ### WARNING: takes many many WEEKS
-    # nouns_phrases_find_passages_by_index_llm() ### WARNING: takes many many hours (nightly running)
+    # nouns_phrases_find_passages_by_index()
 
     # nouns_phrases_aggregate()
 
-    relationships_llm() ### WARNING: takes many many hours (nightly running)
+    relationships_llm() ### WARNING: takes many many days/weeks (nightly running) TODO: run to complete all studies
+    # relationships_str_to_triple()
+    # relationships_find_passages_by_index()
     # relationships_peek() ### WARNING: takes many many hours (nightly running)
 
     # definitions_llm() ### WARNING: takes many many hours (nightly running)
