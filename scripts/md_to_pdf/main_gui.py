@@ -80,7 +80,7 @@ h3 = ParagraphStyle(
     fontName='Helvetica-Bold', 
     fontSize=12, 
     textColor=PRIMARY, 
-    spaceBefore=body_leading*1.5, 
+    spaceBefore=body_leading, 
     spaceAfter=body_leading
 )
 section_style = ParagraphStyle(
@@ -216,11 +216,95 @@ def ol_gen(items):
         )
     )
     
-def table_gen(items):
-    table = Table(
-        items,
-        colWidths=[doc.width / len(items[0])] * len(items[0]),
+# def table_gen(items, available_width, elements):
+#     if not items:
+#         return
+
+#     table = Table(
+#         items,
+#         colWidths=[available_width / len(items[0])] * len(items[0]),
+#     )
+#     table.setStyle(TableStyle([
+#         # Header
+#         ('BACKGROUND', (0, 0), (-1, 0), PRIMARY),
+#         ('TEXTCOLOR', (0, 0), (-1, 0), colors.white),
+#         ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+#         ('FONTSIZE', (0, 0), (-1, 0), 10),
+#         ('BOTTOMPADDING', (0, 0), (-1, 0), 8),
+#         ('TOPPADDING', (0, 0), (-1, 0), 8),
+
+#         # Body
+#         ('FONTNAME', (0, 1), (-1, -1), 'Helvetica'),
+#         ('FONTSIZE', (0, 1), (-1, -1), 9),
+#         ('TEXTCOLOR', (0, 1), (-1, -1), colors.HexColor("#222222")),
+#         ('TOPPADDING', (0, 1), (-1, -1), 6),
+#         ('BOTTOMPADDING', (0, 1), (-1, -1), 6),
+
+#         # Alternate row colors
+#         ('ROWBACKGROUNDS', (0, 1), (-1, -1),
+#             [colors.white, colors.HexColor("#F8FAFC")]),
+
+#         # Borders
+#         ('LINEBELOW', (0, 0), (-1, 0), 1, PRIMARY),
+#         ('LINEBELOW', (0, 1), (-1, -1), 0.25, LIGHT_GREY),
+
+#         # Outer border
+#         ('BOX', (0, 0), (-1, -1), 0.5, LIGHT_GREY),
+
+#         # Alignment
+#         ('ALIGN', (0, 0), (0, -1), 'CENTER'),   # Version
+#         ('ALIGN', (1, 0), (2, -1), 'CENTER'),   # Date, Author
+#         ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
+
+#         # Left padding
+#         ('LEFTPADDING', (0, 0), (-1, -1), 8),
+#         ('RIGHTPADDING', (0, 0), (-1, -1), 8),
+#     ]))
+#     elements.append(table)
+#     elements.append(Spacer(1, 20))
+
+    
+def table_gen(items, doc, elements):
+    if not items:
+        return
+
+    # Convert cell strings to Paragraphs so long text wraps
+    cell_style = ParagraphStyle(
+        name="table_cell",
+        fontName="Helvetica",
+        fontSize=9,
+        leading=12,
+        textColor=colors.HexColor("#222222"),
+        wordWrap="CJK",
     )
+
+    header_style = ParagraphStyle(
+        name="table_header",
+        parent=cell_style,
+        fontName="Helvetica-Bold",
+        textColor=colors.white,
+    )
+
+    formatted_items = []
+
+    for row_index, row in enumerate(items):
+        style = header_style if row_index == 0 else cell_style
+
+        formatted_row = [
+            Paragraph(str(cell).strip(), style)
+            for cell in row
+        ]
+        formatted_items.append(formatted_row)
+
+    num_cols = len(formatted_items[0])
+
+    table = Table(
+        formatted_items,
+        # colWidths=[available_width / num_cols] * num_cols,
+        colWidths=[doc.width * 0.3, doc.width * 0.7],
+        repeatRows=1,
+    )
+
     table.setStyle(TableStyle([
         # Header
         ('BACKGROUND', (0, 0), (-1, 0), PRIMARY),
@@ -233,32 +317,29 @@ def table_gen(items):
         # Body
         ('FONTNAME', (0, 1), (-1, -1), 'Helvetica'),
         ('FONTSIZE', (0, 1), (-1, -1), 9),
-        ('TEXTCOLOR', (0, 1), (-1, -1), colors.HexColor("#222222")),
+        ('TEXTCOLOR', (0, 1), (-1, -1),
+         colors.HexColor("#222222")),
         ('TOPPADDING', (0, 1), (-1, -1), 6),
         ('BOTTOMPADDING', (0, 1), (-1, -1), 6),
 
         # Alternate row colors
         ('ROWBACKGROUNDS', (0, 1), (-1, -1),
-            [colors.white, colors.HexColor("#F8FAFC")]),
+         [colors.white, colors.HexColor("#F8FAFC")]),
 
         # Borders
         ('LINEBELOW', (0, 0), (-1, 0), 1, PRIMARY),
         ('LINEBELOW', (0, 1), (-1, -1), 0.25, LIGHT_GREY),
-
-        # Outer border
         ('BOX', (0, 0), (-1, -1), 0.5, LIGHT_GREY),
 
         # Alignment
-        ('ALIGN', (0, 0), (0, -1), 'CENTER'),   # Version
-        ('ALIGN', (1, 0), (2, -1), 'CENTER'),   # Date, Author
-        ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
-
-        # Left padding
+        ('VALIGN', (0, 0), (-1, -1), 'TOP'),
         ('LEFTPADDING', (0, 0), (-1, -1), 8),
         ('RIGHTPADDING', (0, 0), (-1, -1), 8),
     ]))
+
     elements.append(table)
     elements.append(Spacer(1, 20))
+
 
 ################################################################################
 # HEADER / FOOTER
@@ -281,7 +362,7 @@ def header_footer(canvas, doc):
 # PARSE
 ################################################################################
 state = ''
-def parse(lines, elements):
+def parse(lines, elements, doc):
     global state
     ul_start = False
     ul_items = []
@@ -293,6 +374,13 @@ def parse(lines, elements):
         line = line.strip()
         line = line.replace('–', '-')
         line = line.replace('*', '')
+
+        # Flush a pending table when the next non-table line appears.
+        if state == '<body>' and table_start and not line.startswith('|'):
+            table_start = False
+            table_gen(table_items, doc, elements)
+            table_items = []
+            
         if line == '': continue
 
         if line == '<body>':  state = '<body>'
@@ -316,13 +404,27 @@ def parse(lines, elements):
                     ol_items = []
                 if table_start == True:
                     table_start = False
-                    table_gen(table_items)
+                    table_gen(table_items, doc, elements)
                     table_items = []
                 elements.append(PageBreak())
                 continue
             
             if line.startswith('<spacer>'):
                 elements.append(Spacer(1, 20))
+                continue
+
+            # Markdown pipe tables
+            if line.startswith('|') and line.endswith('|'):
+                # Skip the Markdown header separator: | --- | --- |
+                cells = [cell.strip() for cell in line.strip('|').split('|')]
+                if all(
+                    cell.replace(':', '').replace('-', '').strip() == ''
+                    and '-' in cell
+                    for cell in cells
+                ):
+                    continue
+                table_items.append(cells)
+                table_start = True
                 continue
             
             if line[0] == '-':
@@ -353,7 +455,7 @@ def parse(lines, elements):
                 continue
             if table_start == True:
                 table_start = False
-                table_gen(table_items)
+                table_gen(table_items, doc, elements)
                 table_items = []
 
             if line.startswith('###'):
@@ -399,6 +501,11 @@ def parse(lines, elements):
         ul_start = False
         ul_gen(ul_items)
         ul_items = []
+    # Flush the final table if the file ends with one
+    if table_start:
+        table_start = False
+        table_gen(table_items, doc, elements)
+        table_items = []
     if lines:
         elements.append(PageBreak())
 
@@ -460,6 +567,8 @@ def cover_add(elements):
 
 def rev_parse(lines):
     global state
+    global revision_history
+    revision_history = []
     for line in lines:
         line = line.strip()
         if line == '': continue
@@ -602,35 +711,44 @@ def cover_parse(lines):
 # ------------------------------------------------------------------------------
 
 def run():
-    elements = []
+    input_folderpath = f'C:/og-new/products/aurora_module_relay_x8/v0_1_0/docs/inputs'
+    output_folderpath = f'C:/og-new/products/aurora_module_relay_x8/v0_1_0/docs/outputs'
 
-    input_filepath = 'C:/og-new/products/aurora_module_relay_x8/v0_1_0/docs/inputs/specifications.md'
-    output_filepath = 'C:/og-new/products/aurora_module_relay_x8/v0_1_0/docs/outputs/specifications.pdf'
+    input_filenames = os.listdir(input_folderpath)
+    for input_filename in input_filenames:
+        elements = []
 
-    with open(input_filepath, encoding='utf-8') as f: lines = f.read().split('\n')
-    print(lines)
+        # print('################')
+        # print(input_filename)
+        # print('################')
+        input_filename_base = input_filename.split('.md')[0]
+        input_filepath = f'{input_folderpath}/{input_filename_base}.md'
+        output_filepath = f'{output_folderpath}/{input_filename_base}.pdf'
 
-    ################################################################################
-    # DOCUMENT SETUP
-    ################################################################################
-    doc = MyDocTemplate(
-        output_filepath,
-        pagesize=A4,
-        rightMargin=70,
-        leftMargin=70,
-        topMargin=90,
-        bottomMargin=60
-    )
+        with open(input_filepath, encoding='utf-8') as f: lines = f.read().split('\n')
+        print(lines)
 
-    cover_parse(lines)
-    cover_add(elements)
-    rev_parse(lines)
-    rev_add(elements)
-    toc_add(elements)
-    parse(lines, elements)
-    
-    # BUILD
-    # doc.build(elements, onFirstPage=header_footer, onLaterPages=header_footer)
-    doc.multiBuild(elements)
+        ################################################################################
+        # DOCUMENT SETUP
+        ################################################################################
+        doc = MyDocTemplate(
+            output_filepath,
+            pagesize=A4,
+            rightMargin=70,
+            leftMargin=70,
+            topMargin=90,
+            bottomMargin=60
+        )
+
+        cover_parse(lines)
+        cover_add(elements)
+        rev_parse(lines)
+        rev_add(elements)
+        toc_add(elements)
+        parse(lines, elements, doc)
+        
+        # BUILD
+        # doc.build(elements, onFirstPage=header_footer, onLaterPages=header_footer)
+        doc.multiBuild(elements)
 
 run()
