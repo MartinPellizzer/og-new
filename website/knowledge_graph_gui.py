@@ -196,6 +196,64 @@ def draw_grid():
 # WORLD OBJECTS
 # ============================================================
 
+def draw_edges():
+    for edge in edges:
+        ### LINE
+        node_start_x = edge['edge_start']['node']['world_x']
+        node_start_y = edge['edge_start']['node']['world_y']
+        node_start_w = edge['edge_start']['node']['world_w']
+        node_start_h = edge['edge_start']['node']['world_h']
+        node_end_x = edge['edge_end']['node']['world_x']
+        node_end_y = edge['edge_end']['node']['world_y']
+        node_end_w = edge['edge_end']['node']['world_w']
+        node_end_h = edge['edge_end']['node']['world_h']
+        node_start_x_mid = node_start_x + (node_start_w // 2)
+        node_start_y_mid = node_start_y + (node_start_h // 2)
+        node_end_x_mid = node_end_x + (node_end_w // 2)
+        node_end_y_mid = node_end_y + (node_end_h // 2)
+        edge['world_x1'] = node_start_x_mid
+        edge['world_y1'] = node_start_y_mid
+        edge['world_x2'] = node_end_x_mid
+        edge['world_y2'] = node_end_y_mid
+        edge_screen_x1, edge_screen_y1 = world_to_screen(node_start_x_mid, node_start_y_mid)
+        edge_screen_x2, edge_screen_y2 = world_to_screen(node_end_x_mid, node_end_y_mid)
+        points = [
+            (edge_screen_x1, edge_screen_y1),
+            (edge_screen_x2, edge_screen_y2),
+        ]
+        pygame.draw.lines(screen, (255, 255, 255), False, points)
+        ### RELATIONSHIP TEXT
+        edge_center_screen_x = (edge['world_x1'] + edge['world_x2']) // 2
+        edge_center_screen_y = (edge['world_y1'] + edge['world_y2']) // 2
+        edge['text_world_x1'] = edge_center_screen_x
+        edge['text_world_y1'] = edge_center_screen_y
+        ###
+        edge_text_screen_x1, edge_text_screen_y1 = world_to_screen(edge['text_world_x1'], edge['text_world_y1'])
+        text = font.render(edge['edge_relationship'], True, (255, 255, 255))
+        screen.blit(text, (edge_text_screen_x1, edge_text_screen_y1))
+        ###
+        text_width, text_height = font.size(edge['edge_relationship'])
+        edge['text_world_x2'] = edge['text_world_x1'] + (text_width // camera['scale'])
+        edge['text_world_y2'] = edge['text_world_y1'] + (text_height // camera['scale'])
+        # print(json.dumps(edge, indent=4))
+        continue
+        ###
+        text_width, text_height = font.size(edge['edge_relationship'])
+        edge_center_screen_x -= text_width // 2
+        edge_center_screen_y -= text_height // 2
+        ###
+        background_color = (40, 40, 40)
+        screen_x = edge_center_screen_x 
+        screen_y = edge_center_screen_y
+        screen_w = text_width
+        screen_h = text_height
+        pygame.draw.rect(screen, background_color, (screen_x, screen_y, screen_w, screen_h))
+        ###
+        ###
+        text_width, text_height = font.size(node['text'])
+        text_width_scale = text_width * camera['scale']
+        text_height_scale = text_height * camera['scale']
+
 def draw_nodes():
     for node in nodes:
         ### RECT
@@ -292,51 +350,6 @@ text = 'o3'
 node = node_create(x, y, 0, 0, text)
 node_width_by_text(node)
 
-
-def draw_edges():
-    for edge in edges:
-        ### LINE
-        node_start_x = edge['edge_start']['node']['world_x']
-        node_start_y = edge['edge_start']['node']['world_y']
-        node_start_w = edge['edge_start']['node']['world_w']
-        node_start_h = edge['edge_start']['node']['world_h']
-        node_end_x = edge['edge_end']['node']['world_x']
-        node_end_y = edge['edge_end']['node']['world_y']
-        node_end_w = edge['edge_end']['node']['world_w']
-        node_end_h = edge['edge_end']['node']['world_h']
-        node_start_x_mid = node_start_x + (node_start_w // 2)
-        node_start_y_mid = node_start_y + (node_start_h // 2)
-        node_end_x_mid = node_end_x + (node_end_w // 2)
-        node_end_y_mid = node_end_y + (node_end_h // 2)
-        screen_x1, screen_y1 = world_to_screen(node_start_x_mid, node_start_y_mid)
-        screen_x2, screen_y2 = world_to_screen(node_end_x_mid, node_end_y_mid)
-        points = [
-            (screen_x1, screen_y1),
-            (screen_x2, screen_y2),
-        ]
-        pygame.draw.lines(screen, (255, 255, 255), False, points)
-
-        ### RELATIONSHIP TEXT
-        edge_start_screen_x = screen_x1
-        edge_start_screen_y = screen_y1
-        edge_end_screen_x = screen_x2
-        edge_end_screen_y = screen_y2
-        edge_center_screen_x = (edge_start_screen_x + edge_end_screen_x) // 2
-        edge_center_screen_y = (edge_start_screen_y + edge_end_screen_y) // 2
-        ###
-        text_width, text_height = font.size(edge['edge_relationship'])
-        edge_center_screen_x -= text_width // 2
-        edge_center_screen_y -= text_height // 2
-        ###
-        background_color = (40, 40, 40)
-        screen_x = edge_center_screen_x 
-        screen_y = edge_center_screen_y
-        screen_w = text_width
-        screen_h = text_height
-        pygame.draw.rect(screen, background_color, (screen_x, screen_y, screen_w, screen_h))
-        ###
-        text = font.render(edge['edge_relationship'], True, (255, 255, 255))
-        screen.blit(text, (edge_center_screen_x, edge_center_screen_y))
 
 def inputs_mouse_click_right():
     x = mouse['world_x']
@@ -436,6 +449,16 @@ def inputs():
                             interaction['drag_offset_x'] = mouse['world_x'] - node['world_x']
                             interaction['drag_offset_y'] = mouse['world_y'] - node['world_y']
                             break
+                    for edge in reversed(edges):
+                        pass
+                        # print(json.dumps(edge, indent=4))
+                        if (
+                            mouse['world_x'] >= edge['text_world_x1'] and 
+                            mouse['world_y'] >= edge['text_world_y1'] and 
+                            mouse['world_x'] <= edge['text_world_x2'] and 
+                            mouse['world_y'] <= edge['text_world_y2'] 
+                        ):
+                            print('found')
             elif event.button == 2:
                 interaction['action'] = 'pan'
                 interaction['camera_x_start'] = camera['world_x']
@@ -508,7 +531,7 @@ def draw_debug():
 def draw_background():
     screen.fill((40, 40, 40))
 
-def draw():
+def main_draw():
     draw_background()
     draw_grid()
 
@@ -525,7 +548,7 @@ def main():
     while core['running']:
         inputs()
         update()
-        draw()
+        main_draw()
 
     pygame.quit()
 
