@@ -35,8 +35,6 @@ mouse = {
     'world_y': 0,
 }
 
-nodes = []
-
 interaction = {
     'action': None,
     'node_drag': None,
@@ -51,106 +49,12 @@ interaction = {
     'mouse_y_start': 0,
 }
 
-# ============================================================
-# NODES
-# ============================================================
+nodes = []
+edges = []
 
-def node_create(x, y, w, h, text):
-    node = {
-        'world_x': x,
-        'world_y': y,
-        'world_w': w,
-        'world_h': h,
-        'text': text,
-    }
-    nodes.append(node)
-
-# ============================================================
-# COORDINATE CONVERSION
-# ============================================================
-
-def world_to_screen(x, y):
-    return (
-        (x - camera['world_x']) * camera['scale'] + screen_w / 2,
-        (y - camera['world_y']) * camera['scale'] + screen_h / 2,
-    )
-
-
-def screen_to_world(x, y):
-    return (
-        (x - screen_w / 2) / camera['scale'] + camera['world_x'],
-        (y - screen_h / 2) / camera['scale'] + camera['world_y'],
-    )
-
-
-# ============================================================
-# GRID
-# ============================================================
-
-def draw_grid():
-    grid_size = 100
-    color = (28, 28, 28)
-
-    # Get visible world boundaries
-    left, top = screen_to_world(0, 0)
-    right, bottom = screen_to_world(screen_w, screen_h)
-
-    # Find first grid line
-    start_x = int(left // grid_size) * grid_size
-    start_y = int(top // grid_size) * grid_size
-
-    # Find last grid line
-    end_x = int(right // grid_size + 1) * grid_size
-    end_y = int(bottom // grid_size + 1) * grid_size
-
-    for x in range(start_x, end_x + grid_size, grid_size):
-        x1, y1 = world_to_screen(x, top)
-        x2, y2 = world_to_screen(x, bottom)
-        pygame.draw.line(screen, color, (x1, y1), (x2, y2))
-
-    for y in range(start_y, end_y + grid_size, grid_size):
-        x1, y1 = world_to_screen(left, y)
-        x2, y2 = world_to_screen(right, y)
-        pygame.draw.line(screen, color, (x1, y1), (x2, y2))
-
-
-# ============================================================
-# WORLD OBJECTS
-# ============================================================
-
-def draw_nodes():
-    for node in nodes:
-        ### RECT
-        background_color = (65, 65, 65)
-        border_color = (26, 26, 26)
-        screen_x, screen_y = world_to_screen(node['world_x'], node['world_y'])
-        screen_w = node['world_w'] * camera['scale']
-        screen_h = node['world_h'] * camera['scale']
-        pygame.draw.rect(screen, background_color, (screen_x, screen_y, screen_w, screen_h))
-        pygame.draw.rect(screen, border_color, (screen_x, screen_y, screen_w, screen_h), 1*int(camera['scale']))
-
-        # SELECTED
-        '''
-        if node == interaction['node_focus'] and interaction['field_focus'] == 'title':
-            pygame.draw.rect(screen, (0, 0, 255), (screen_x, screen_y, screen_w, row_h), 2*int(camera['scale']))
-        elif node == interaction['node_focus'] and interaction['field_i_focus'] != None:
-            pygame.draw.rect(
-                screen, (0, 0, 255), 
-                (screen_x, screen_y + row_h*interaction['field_i_focus'], screen_w, row_h), 
-                2*int(camera['scale'])
-            )
-        elif node == interaction['node_focus']:
-            pygame.draw.rect(screen, (0, 0, 255), (screen_x, screen_y, screen_w, screen_h), 2*int(camera['scale']))
-        '''
-        if node == interaction['node_focus']:
-            pygame.draw.rect(screen, (0, 0, 255), (screen_x, screen_y, screen_w, screen_h), 2*int(camera['scale']))
-
-        ### TEXT
-        world_x = node['world_x'] + 10
-        world_y = node['world_y'] + 10
-        screen_x, screen_y = world_to_screen(world_x, world_y)
-        text = font.render(node['text'], True, (255, 255, 255))
-        screen.blit(text, (screen_x, screen_y))
+################################################################################
+# PROJ UTILS
+################################################################################
 
 def project_new():
     global current_file
@@ -223,8 +127,97 @@ def project_open():
                 edge['edge_end']['node']['fields'] = node['fields']
 
 # ============================================================
-# MAIN LOOP
+# NODES
 # ============================================================
+
+def node_create(x, y, w, h, text):
+    node = {
+        'world_x': x,
+        'world_y': y,
+        'world_w': w,
+        'world_h': h,
+        'text': text,
+    }
+    nodes.append(node)
+    return node
+
+def node_width_by_text(node):
+    text_width, text_height = font.size(node['text'])
+    text_width_scale = text_width * camera['scale']
+    text_height_scale = text_height * camera['scale']
+    node['world_w'] = text_width_scale
+    node['world_h'] = text_height_scale
+    node['world_w'] += 10 + 10
+    node['world_h'] += 10 + 10
+
+# ============================================================
+# COORDINATE CONVERSION
+# ============================================================
+
+def world_to_screen(x, y):
+    return (
+        (x - camera['world_x']) * camera['scale'] + screen_w / 2,
+        (y - camera['world_y']) * camera['scale'] + screen_h / 2,
+    )
+
+def screen_to_world(x, y):
+    return (
+        (x - screen_w / 2) / camera['scale'] + camera['world_x'],
+        (y - screen_h / 2) / camera['scale'] + camera['world_y'],
+    )
+
+# ============================================================
+# GRID
+# ============================================================
+
+def draw_grid():
+    grid_size = 100
+    color = (28, 28, 28)
+    ### Get visible world boundaries
+    left, top = screen_to_world(0, 0)
+    right, bottom = screen_to_world(screen_w, screen_h)
+    ### Find first grid line
+    start_x = int(left // grid_size) * grid_size
+    start_y = int(top // grid_size) * grid_size
+    ### Find last grid line
+    end_x = int(right // grid_size + 1) * grid_size
+    end_y = int(bottom // grid_size + 1) * grid_size
+    ###
+    for x in range(start_x, end_x + grid_size, grid_size):
+        x1, y1 = world_to_screen(x, top)
+        x2, y2 = world_to_screen(x, bottom)
+        pygame.draw.line(screen, color, (x1, y1), (x2, y2))
+    for y in range(start_y, end_y + grid_size, grid_size):
+        x1, y1 = world_to_screen(left, y)
+        x2, y2 = world_to_screen(right, y)
+        pygame.draw.line(screen, color, (x1, y1), (x2, y2))
+
+# ============================================================
+# WORLD OBJECTS
+# ============================================================
+
+def draw_nodes():
+    for node in nodes:
+        ### RECT
+        background_color = (65, 65, 65)
+        border_color = (26, 26, 26)
+        screen_x, screen_y = world_to_screen(node['world_x'], node['world_y'])
+        screen_w = node['world_w'] * camera['scale']
+        screen_h = node['world_h'] * camera['scale']
+        pygame.draw.rect(screen, background_color, (screen_x, screen_y, screen_w, screen_h))
+        pygame.draw.rect(screen, border_color, (screen_x, screen_y, screen_w, screen_h), 1*int(camera['scale']))
+        if node == interaction['node_focus']:
+            pygame.draw.rect(screen, (0, 0, 255), (screen_x, screen_y, screen_w, screen_h), 2*int(camera['scale']))
+        ### TEXT
+        world_x = node['world_x'] + 10
+        world_y = node['world_y'] + 10
+        screen_x, screen_y = world_to_screen(world_x, world_y)
+        text = font.render(node['text'], True, (255, 255, 255))
+        screen.blit(text, (screen_x, screen_y))
+
+################################################################################
+# EDGES
+################################################################################
 
 def edge_start():
     interaction['node_focus'] = None
@@ -265,6 +258,7 @@ def edge_end():
                 'edge_end': {
                     'node': interaction['node_end'],
                 },
+                'edge_relationship': '???',
             }
             edges.append(edge)
             # print(edges)
@@ -288,47 +282,16 @@ def edge_delete():
 
 x = -200
 y = 0
-w = 200
-h = 100
 text = 'ozone'
-node_create(x, y, w, h, text)
+node = node_create(x, y, 0, 0, text)
+node_width_by_text(node)
 
 x = 100
 y = 0
-w = 200
-h = 100
 text = 'o3'
-node_create(x, y, w, h, text)
+node = node_create(x, y, 0, 0, text)
+node_width_by_text(node)
 
-'''
-edge_1 = {
-    'edge_type': '1:N',
-    'edge_start': {
-        'node': nodes[0],
-        'field_i': 1,
-    },
-    'edge_end': {
-        'node': nodes[1],
-        'field_i': 1,
-    },
-}
-
-edge_2 = {
-    'edge_start': {
-        'node': nodes[0],
-        'field_i': 2,
-    },
-    'edge_end': {
-        'node': nodes[1],
-        'field_i': 2,
-    },
-}
-
-edges.append(edge_1)
-# edges.append(edge_2)
-'''
-
-edges = []
 
 def draw_edges():
     for edge in edges:
@@ -341,24 +304,6 @@ def draw_edges():
         node_end_y = edge['edge_end']['node']['world_y']
         node_end_w = edge['edge_end']['node']['world_w']
         node_end_h = edge['edge_end']['node']['world_h']
-        # if node_start_x < node_end_x:
-            # node_start_x += edge['edge_start']['node']['world_w']
-        # else:
-            # node_end_x += edge['edge_end']['node']['world_w']
-        '''
-        screen_x1, screen_y1 = world_to_screen(node_start_x, node_start_y)
-        screen_x4, screen_y4 = world_to_screen(node_end_x, node_end_y)
-        screen_x2 = (screen_x1 + screen_x4) / 2
-        screen_y2 = screen_y1
-        screen_x3 = (screen_x1 + screen_x4) / 2
-        screen_y3 = screen_y4
-        points = [
-            (screen_x1, screen_y1),
-            (screen_x2, screen_y2),
-            (screen_x3, screen_y3),
-            (screen_x4, screen_y4),
-        ]
-        '''
         node_start_x_mid = node_start_x + (node_start_w // 2)
         node_start_y_mid = node_start_y + (node_start_h // 2)
         node_end_x_mid = node_end_x + (node_end_w // 2)
@@ -372,24 +317,67 @@ def draw_edges():
         pygame.draw.lines(screen, (255, 255, 255), False, points)
 
         ### RELATIONSHIP TEXT
-        # text = font.render(edge['edge_type'], True, (255, 255, 255))
-        # screen.blit(text, (screen_x2, (screen_y2 + screen_y3) / 2))
+        edge_start_screen_x = screen_x1
+        edge_start_screen_y = screen_y1
+        edge_end_screen_x = screen_x2
+        edge_end_screen_y = screen_y2
+        edge_center_screen_x = (edge_start_screen_x + edge_end_screen_x) // 2
+        edge_center_screen_y = (edge_start_screen_y + edge_end_screen_y) // 2
+        ###
+        text_width, text_height = font.size(edge['edge_relationship'])
+        edge_center_screen_x -= text_width // 2
+        edge_center_screen_y -= text_height // 2
+        ###
+        background_color = (40, 40, 40)
+        screen_x = edge_center_screen_x 
+        screen_y = edge_center_screen_y
+        screen_w = text_width
+        screen_h = text_height
+        pygame.draw.rect(screen, background_color, (screen_x, screen_y, screen_w, screen_h))
+        ###
+        text = font.render(edge['edge_relationship'], True, (255, 255, 255))
+        screen.blit(text, (edge_center_screen_x, edge_center_screen_y))
 
 def inputs_mouse_click_right():
     x = mouse['world_x']
     y = mouse['world_y']
-    w = 200
-    h = 100
-    title = 'table_name'
-    kind = 'data'
-    description = ''
-    fields = [
-        {'name': 'id', 'key': 'none'}, 
-        {'name': 'name', 'key': 'none'}, 
-    ]
-    node_create(x, y, w, h, title, kind, description, fields)
+    text = '???'
+    node = node_create(x, y, 0, 0, text)
+    node_width_by_text(node)
+
+def inputs_key_press(event):
+    if event.key == pygame.K_ESCAPE:
+        core['running'] = False
+    # Ctrl+N
+    elif event.key == pygame.K_n and pygame.key.get_mods() & pygame.KMOD_CTRL:
+        project_new()
+    # Ctrl+S
+    elif event.key == pygame.K_s and (pygame.key.get_mods() & pygame.KMOD_CTRL):
+        project_save()
+    # Ctrl+O
+    elif event.key == pygame.K_o and (pygame.key.get_mods() & pygame.KMOD_CTRL):
+        project_open()
+    # Ctrl+D
+    elif event.key == pygame.K_d and (pygame.key.get_mods() & pygame.KMOD_CTRL):
+        # edge_delete()
+        pass
+    # Editor
+    elif event.key == pygame.K_BACKSPACE:
+        if interaction['node_focus'] != None:
+            interaction['node_focus']['text'] = interaction['node_focus']['text'][:-1]
+            node_width_by_text(interaction['node_focus'])
+    else:
+        if (pygame.K_a <= event.key <= pygame.K_z or 
+            pygame.K_0 <= event.key <= pygame.K_9 or 
+            event.unicode == '_'
+        ):
+            letter = event.unicode
+            if interaction['node_focus'] != None:
+                interaction['node_focus']['text'] += letter
+                node_width_by_text(interaction['node_focus'])
 
 def inputs():
+    global font
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             core['running'] = False
@@ -477,120 +465,7 @@ def inputs():
             font = pygame.font.Font(None, 24*int(camera['scale']))
 
         elif event.type == pygame.KEYDOWN:
-            # Ctrl+N
-            if event.key == pygame.K_n and pygame.key.get_mods() & pygame.KMOD_CTRL:
-                project_new()
-            # Ctrl+S
-            elif event.key == pygame.K_s and (pygame.key.get_mods() & pygame.KMOD_CTRL):
-                project_save()
-            # Ctrl+O
-            elif event.key == pygame.K_o and (pygame.key.get_mods() & pygame.KMOD_CTRL):
-                project_open()
-            # Ctrl+D
-            elif event.key == pygame.K_d and (pygame.key.get_mods() & pygame.KMOD_CTRL):
-                edge_delete()
-            # Ctrl+P
-            elif event.key == pygame.K_p and (pygame.key.get_mods() & pygame.KMOD_CTRL):
-                if interaction['field_i_focus'] != None:
-                    i = interaction['field_i_focus']-1
-                    if interaction['node_focus']['fields'][i]['key'] != 'primary_key':
-                        interaction['node_focus']['fields'][i]['key'] = 'primary_key'
-                    else:
-                        interaction['node_focus']['fields'][i]['key'] = ''
-            # Ctrl+F
-            elif event.key == pygame.K_f and (pygame.key.get_mods() & pygame.KMOD_CTRL):
-                if interaction['field_i_focus'] != None:
-                    i = interaction['field_i_focus']-1
-                    if interaction['node_focus']['fields'][i]['key'] != 'foreign_key':
-                        interaction['node_focus']['fields'][i]['key'] = 'foreign_key'
-                    else:
-                        interaction['node_focus']['fields'][i]['key'] = ''
-
-            # Ctrl+Q
-            elif event.key == pygame.K_q and (pygame.key.get_mods() & pygame.KMOD_CTRL):
-                print('################################################################')
-                for node in nodes:
-                    print(json.dumps(node, indent=4))
-                    print('---')
-                print('------------------------------------------------------------------')
-                for node in nodes:
-                    print(json.dumps(node, indent=4))
-                    print('---')
-                print('################################################################')
-
-            # Reorder Fields
-            elif event.key == pygame.K_UP and pygame.key.get_mods() & pygame.KMOD_CTRL:
-                if interaction['field_i_focus'] != None:
-                    i = interaction['field_i_focus']-1
-                    if i > 0:
-                        node = interaction['node_focus']
-                        node['fields'][i], node['fields'][i-1] = node['fields'][i-1], node['fields'][i]
-                        interaction['field_i_focus'] = i
-            elif event.key == pygame.K_DOWN and pygame.key.get_mods() & pygame.KMOD_CTRL:
-                if interaction['field_i_focus'] != None:
-                    i = interaction['field_i_focus']-1
-                    if i < len(node['fields'])-1:
-                        node = interaction['node_focus']
-                        node['fields'][i], node['fields'][i+1] = node['fields'][i+1], node['fields'][i]
-                        interaction['field_i_focus'] = i + 2
-            # Ctrl+RIGHT
-            elif event.key == pygame.K_RIGHT and pygame.key.get_mods() & pygame.KMOD_CTRL:
-                if interaction['field_i_focus'] != None:
-                    i = interaction['field_i_focus']
-                    node = interaction['node_focus']
-                    print(i)
-                    for edge in edges:
-                        found = False
-                        if not found:
-                            if edge['edge_end']['node'] == node and edge['edge_end']['field_i'] == i:
-                                found = True
-                                print('here 1')
-                        if not found:
-                            if edge['edge_start']['node'] == node and edge['edge_start']['field_i'] == i:
-                                found = True
-                                print('here 2')
-                        if found:
-                            if edge['edge_type'] == '1:1':
-                                edge['edge_type'] = '1:N'
-                            elif edge['edge_type'] == '1:N':
-                                edge['edge_type'] = 'M:N'
-                            elif edge['edge_type'] == 'M:N':
-                                edge['edge_type'] = '1:1'
-                            break
-                else:
-                    interaction['node_focus']['world_w'] += 10
-            # Ctrl+LEFT
-            elif event.key == pygame.K_LEFT and pygame.key.get_mods() & pygame.KMOD_CTRL:
-                if interaction['field_i_focus'] != None:
-                    pass
-                else:
-                    interaction['node_focus']['world_w'] -= 10
-            # Editor
-            elif event.unicode == '+':
-                if interaction['node_focus'] != None:
-                    interaction['node_focus']['fields'].append({'name': 'field'})
-            # Editor
-            elif event.key == pygame.K_BACKSPACE:
-                if interaction['node_focus'] != None:
-                    if interaction['field_focus'] == 'title':
-                        interaction['node_focus']['title'] = interaction['node_focus']['title'][:-1]
-                    else:
-                        if interaction['field_i_focus'] != None:
-                            i = interaction['field_i_focus']-1
-                            interaction['node_focus']['fields'][i]['name'] = interaction['node_focus']['fields'][i]['name'][:-1]
-            else:
-                if (pygame.K_a <= event.key <= pygame.K_z or 
-                    pygame.K_0 <= event.key <= pygame.K_9 or 
-                    event.unicode == '_'
-                ):
-                    letter = event.unicode
-                    if interaction['node_focus'] != None:
-                        if interaction['field_focus'] == 'title':
-                            interaction['node_focus']['title'] += letter
-                        else:
-                            if interaction['field_i_focus'] != None:
-                                i = interaction['field_i_focus']-1
-                                interaction['node_focus']['fields'][i]['name'] += letter
+            inputs_key_press(event)
 
     mouse['screen_x'], mouse['screen_y'] = pygame.mouse.get_pos()
     mouse['world_x'], mouse['world_y'] = screen_to_world(mouse['screen_x'], mouse['screen_y'])
