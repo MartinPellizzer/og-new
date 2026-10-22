@@ -586,7 +586,8 @@ def draw_frame_left():
     for i in range(len(input_data)):
         input_item = input_data[i]
         term = input_item['term']
-        text = font_debug.render(term, True, (255, 0, 255))
+        count = input_item['count']
+        text = font_debug.render(f'{count}: {term}', True, (255, 0, 255))
         screen.blit(text, (offset_x, 24 * offset_y_counter))
         offset_y_counter += 1
         if i > 10: break
