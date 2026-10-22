@@ -1490,6 +1490,96 @@ def relationships_find_passages_by_index():
         )
         # quit()
 
+def aggregate_nouns_phrases():
+    input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/relationships_passages/raw'
+    input_filenames = os.listdir(input_folderpath)
+    terms_all = []
+    for i, input_filename in enumerate(input_filenames[:]):
+        print(f'AGGREGATE {i}/{len(input_filenames)}')
+        input_filepath = f'{input_folderpath}/{input_filename}'
+        input_data = io.json_read(input_filepath)
+        terms = input_data['terms']
+        for term in terms:
+            term_name = term['term'].lower().strip()
+            terms_all.append(term_name)
+    from collections import Counter
+    result = [{"term": term, "count": count}
+              for term, count in Counter(terms_all).most_common()]
+    result = result[:100]
+    print(json.dumps(result, indent=4))
+    # quit()
+
+def aggregate_entities_2(noun):
+    input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/relationships_passages/raw'
+    output_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/terms/{noun}'
+    # try: shutil.rmtree(output_folderpath)
+    # except: pass
+    io.folders_recursive_gen(output_folderpath)
+    output_filepath = f'{output_folderpath}/test.json'
+    ###
+    input_filenames = os.listdir(input_folderpath)
+    terms_all = []
+    for i, input_filename in enumerate(input_filenames[:]):
+        print(f'AGGREGATE RELATIONSHIPS {noun} {i}/{len(input_filenames)}')
+        input_filepath = f'{input_folderpath}/{input_filename}'
+        input_data = io.json_read(input_filepath)
+        # print(json.dumps(input_data, indent=4))
+        terms = input_data['terms']
+        for term in terms:
+            term_name = term['term'].lower().strip()
+            if term_name == 'ozone':
+                # print(json.dumps(term, indent=4))
+                for relationship_triple in term['relationships_triples']:
+                    relationship = relationship_triple['relationship'] 
+                    # print(relationship[2] )
+                    terms_all.append(relationship[2])
+                    ###
+                    if relationship[2] == 'ozone':
+                        # ['relationship']:
+                        # print(relationship_triple[2])
+                        # print(json.dumps(term, indent=4))
+                        # quit()
+                        pass
+                    # quit()
+                # quit()
+    from collections import Counter
+    result = [{"term": term, "count": count}
+              for term, count in Counter(terms_all).most_common()]
+    result_preview = result[:100]
+    print(json.dumps(result_preview, indent=4))
+    io.json_write(output_filepath, result)
+    # quit()
+
+def aggregate_relationships(entity_1, entity_2):
+    input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/relationships_passages/raw'
+    input_filenames = os.listdir(input_folderpath)
+    terms_all = []
+    for i, input_filename in enumerate(input_filenames[:]):
+        print(f'AGGREGATE RELATIONSHIPS {entity_1} {entity_2} {i}/{len(input_filenames)}')
+        input_filepath = f'{input_folderpath}/{input_filename}'
+        input_data = io.json_read(input_filepath)
+        # print(json.dumps(input_data, indent=4))
+        terms = input_data['terms']
+        for term in terms:
+            term_name = term['term'].lower().strip()
+            if term_name == entity_1:
+                # print(json.dumps(term, indent=4))
+                for relationship_triple in term['relationships_triples']:
+                    relationship = relationship_triple['relationship'] 
+                    # print(relationship[2] )
+                    term_name_2 = relationship[2]
+                    if term_name_2 == entity_2:
+                        terms_all.append(relationship[1])
+                        # terms_all.append(term)
+                    ###
+                # quit()
+    from collections import Counter
+    result = [{"term": term, "count": count}
+              for term, count in Counter(terms_all).most_common()]
+    result = result[:100]
+    print(json.dumps(result, indent=4))
+    # quit()
+    # print(json.dumps(terms_all[:10], indent=4))
 
 def run():
     print('parse >> pubmed')
@@ -1503,13 +1593,17 @@ def run():
 
     # nouns_phrases_aggregate()
 
-    relationships_llm() ### WARNING: takes many many days/weeks (nightly running) TODO: run to complete all studies
+    # relationships_llm() ### WARNING: takes many many days/weeks (nightly running) TODO: run to complete all studies
+
     # relationships_str_to_triple()
     # relationships_find_passages_by_index()
     # relationships_peek() ### WARNING: takes many many hours (nightly running)
 
     # definitions_llm() ### WARNING: takes many many hours (nightly running)
 
+    # aggregate_nouns_phrases()
+    aggregate_entities_2(noun='ozone')
+    # aggregate_relationships(entity_1='ozone', entity_2='ozone exposure')
 
     quit()
 

@@ -1,7 +1,20 @@
+### TODO
+"""
+implement left sidebar. include entries for inserting RAW relationship term and RESOLVED relationship term.
+if RESOLVED term is not filled, the node graph shows the RAW term in red.
+include also a field for the count of the frequency.
+"""
+
 import os
 import json
 import pygame
 import subprocess
+
+from lib import g
+from lib import io
+
+input_filepath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/terms/ozone/test.json'
+input_data = io.json_read(input_filepath)
 
 pygame.init()
 
@@ -41,6 +54,7 @@ interaction = {
     'node_focus': None,
     'field_focus': None,
     'field_i_focus': None,
+    'edge_focus': None,
     'drag_offset_x': 0,
     'drag_offset_y': 0,
     'camera_x_start': 0,
@@ -51,6 +65,21 @@ interaction = {
 
 nodes = []
 edges = []
+
+frame_left = {
+    'x': 0,
+    'y': 0,
+    'w': 320,
+    'h': screen_h,
+}
+
+frame_center = {
+    'x': 0 + frame_left['x'],
+    'y': 0,
+    'w': screen_w - frame_left['w'],
+    'h': screen_h,
+}
+
 
 ################################################################################
 # PROJ UTILS
@@ -225,19 +254,27 @@ def draw_edges():
         ### RELATIONSHIP TEXT
         edge_center_screen_x = (edge['world_x1'] + edge['world_x2']) // 2
         edge_center_screen_y = (edge['world_y1'] + edge['world_y2']) // 2
-        edge['text_world_x1'] = edge_center_screen_x
+        ###
+        ### TODO is // camera['scale'] the right way to get font base size? how node text managed bbox?
+        text_width, text_height = font.size(edge['edge_relationship'])
+        edge['text_world_x1'] = edge_center_screen_x - (text_width // camera['scale']) // 2
         edge['text_world_y1'] = edge_center_screen_y
+        edge['text_world_x2'] = edge['text_world_x1'] + (text_width // camera['scale'])
+        edge['text_world_y2'] = edge['text_world_y1'] + (text_height // camera['scale'])
         ###
         edge_text_screen_x1, edge_text_screen_y1 = world_to_screen(edge['text_world_x1'], edge['text_world_y1'])
         text = font.render(edge['edge_relationship'], True, (255, 255, 255))
         screen.blit(text, (edge_text_screen_x1, edge_text_screen_y1))
         ###
-        text_width, text_height = font.size(edge['edge_relationship'])
-        edge['text_world_x2'] = edge['text_world_x1'] + (text_width // camera['scale'])
-        edge['text_world_y2'] = edge['text_world_y1'] + (text_height // camera['scale'])
+        if edge == interaction['edge_focus']:
+            screen_x = edge_text_screen_x1
+            screen_y = edge_text_screen_y1
+            screen_w = text_width
+            screen_h = text_height
+            pygame.draw.rect(screen, (0, 0, 255), (screen_x, screen_y, screen_w, screen_h), 2*int(camera['scale']))
         # print(json.dumps(edge, indent=4))
         continue
-        ###
+        ### TODO background color on text relationship
         text_width, text_height = font.size(edge['edge_relationship'])
         edge_center_screen_x -= text_width // 2
         edge_center_screen_y -= text_height // 2
@@ -264,6 +301,7 @@ def draw_nodes():
         screen_h = node['world_h'] * camera['scale']
         pygame.draw.rect(screen, background_color, (screen_x, screen_y, screen_w, screen_h))
         pygame.draw.rect(screen, border_color, (screen_x, screen_y, screen_w, screen_h), 1*int(camera['scale']))
+        ###
         if node == interaction['node_focus']:
             pygame.draw.rect(screen, (0, 0, 255), (screen_x, screen_y, screen_w, screen_h), 2*int(camera['scale']))
         ### TEXT
@@ -379,6 +417,9 @@ def inputs_key_press(event):
         if interaction['node_focus'] != None:
             interaction['node_focus']['text'] = interaction['node_focus']['text'][:-1]
             node_width_by_text(interaction['node_focus'])
+        elif interaction['edge_focus'] != None:
+            # if len(interaction['edge_focus']['edge_relationship']) > 1:
+            interaction['edge_focus']['edge_relationship'] = interaction['edge_focus']['edge_relationship'][:-1]
     else:
         if (pygame.K_a <= event.key <= pygame.K_z or 
             pygame.K_0 <= event.key <= pygame.K_9 or 
@@ -388,8 +429,10 @@ def inputs_key_press(event):
             if interaction['node_focus'] != None:
                 interaction['node_focus']['text'] += letter
                 node_width_by_text(interaction['node_focus'])
+            elif interaction['edge_focus'] != None:
+                interaction['edge_focus']['edge_relationship'] += letter
 
-def inputs():
+def main_inputs():
     global font
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -432,8 +475,7 @@ def inputs():
                             break
                 else:
                     interaction['node_focus'] = None
-                    interaction['field_focus'] = None
-                    interaction['field_i_focus'] = None
+                    interaction['edge_focus'] = None
                     for node in reversed(nodes):
                         if (
                             mouse['world_x'] >= node['world_x'] and 
@@ -458,7 +500,7 @@ def inputs():
                             mouse['world_x'] <= edge['text_world_x2'] and 
                             mouse['world_y'] <= edge['text_world_y2'] 
                         ):
-                            print('found')
+                            interaction['edge_focus'] = edge
             elif event.button == 2:
                 interaction['action'] = 'pan'
                 interaction['camera_x_start'] = camera['world_x']
@@ -493,7 +535,7 @@ def inputs():
     mouse['screen_x'], mouse['screen_y'] = pygame.mouse.get_pos()
     mouse['world_x'], mouse['world_y'] = screen_to_world(mouse['screen_x'], mouse['screen_y'])
 
-def update():
+def main_update():
     if interaction['action'] == 'pan':
         dx = mouse['screen_x'] - interaction['mouse_x_start']
         dy = mouse['screen_y'] - interaction['mouse_y_start']
@@ -512,24 +554,45 @@ def update():
 
 def draw_debug():
     i = 1
+    offset_x = screen_w - 320
     text = font_debug.render(f"mouse screen x:{mouse['screen_x']} y:{mouse['screen_y']}", True, (255, 0, 255))
-    screen.blit(text, (32, 24 * i))
+    screen.blit(text, (offset_x, 24 * i))
     i += 1
     text = font_debug.render(f"mouse world x:{mouse['world_x']:.2f} y:{mouse['world_y']:.2f}", True, (255, 0, 255))
-    screen.blit(text, (32, 24 * i))
+    screen.blit(text, (offset_x, 24 * i))
     i += 1
     text = font_debug.render(f"camera world x:{camera['world_x']:.2f} y:{camera['world_y']:.2f}", True, (255, 0, 255))
-    screen.blit(text, (32, 24 * i))
+    screen.blit(text, (offset_x, 24 * i))
     i += 1
     text = font_debug.render(f"screen center x:{screen_w // 2} y:{screen_h // 2}", True, (255, 0, 255))
-    screen.blit(text, (32, 24 * i))
+    screen.blit(text, (offset_x, 24 * i))
     i += 1
     text = font_debug.render(f"scale: {camera['scale']}", True, (255, 0, 255))
-    screen.blit(text, (32, 24 * i))
+    screen.blit(text, (offset_x, 24 * i))
     i += 1
 
 def draw_background():
     screen.fill((40, 40, 40))
+
+def draw_frame_left():
+    frame_x = frame_left['x']
+    frame_y = frame_left['y']
+    frame_w = frame_left['w']
+    frame_h = frame_left['h']
+    pygame.draw.rect(screen, (60, 60, 60), (frame_x, frame_y, frame_w, frame_h))
+
+    offset_y_counter = 1
+    offset_x = 32
+    for i in range(len(input_data)):
+        input_item = input_data[i]
+        term = input_item['term']
+        text = font_debug.render(term, True, (255, 0, 255))
+        screen.blit(text, (offset_x, 24 * offset_y_counter))
+        offset_y_counter += 1
+        if i > 10: break
+
+    # print(json.dumps(input_data[:10], indent=4))
+    # quit()
 
 def main_draw():
     draw_background()
@@ -542,12 +605,14 @@ def main_draw():
     draw_nodes()
     draw_debug()
 
+    draw_frame_left()
+
     pygame.display.flip()
 
 def main():
     while core['running']:
-        inputs()
-        update()
+        main_inputs()
+        main_update()
         main_draw()
 
     pygame.quit()
