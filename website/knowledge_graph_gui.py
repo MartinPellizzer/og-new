@@ -18,18 +18,21 @@ input_data = io.json_read(input_filepath)
 
 pygame.init()
 
-screen_w = 1280
-screen_h = 720
+screen_w = 1600
+screen_h = 900
 
 screen = pygame.display.set_mode((screen_w, screen_h))
 clock = pygame.time.Clock()
 
 font = pygame.font.Font(None, 24)
 font_debug = pygame.font.Font(None, 24)
+font_sidebar = pygame.font.Font(None, 18)
 
 current_file = None
 
 row_h = 34
+
+terms_2_index = 0
 
 core = {
     'running': True,
@@ -69,12 +72,12 @@ edges = []
 frame_left = {
     'x': 0,
     'y': 0,
-    'w': 320,
+    'w': 480,
     'h': screen_h,
 }
 
 frame_center = {
-    'x': 0 + frame_left['x'],
+    'x': 0 + frame_left['w'],
     'y': 0,
     'w': screen_w - frame_left['w'],
     'h': screen_h,
@@ -434,6 +437,7 @@ def inputs_key_press(event):
 
 def main_inputs():
     global font
+    global terms_2_index
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             core['running'] = False
@@ -521,13 +525,30 @@ def main_inputs():
                 interaction['node_drag'] = None
 
         elif event.type == pygame.MOUSEWHEEL:
-            if event.y == 1:
-                if camera['scale'] < 16:
-                    camera['scale'] *= 2
-            elif event.y == -1:
-                if camera['scale'] > 1:
-                    camera['scale'] /= 2
-            font = pygame.font.Font(None, 24*int(camera['scale']))
+            if (
+                mouse['screen_x'] > frame_center['x'] and
+                mouse['screen_y'] > frame_center['y'] and
+                mouse['screen_x'] < frame_center['x'] + frame_center['w'] and
+                mouse['screen_y'] < frame_center['y'] + frame_center['h']
+            ):
+                if event.y == 1:
+                    if camera['scale'] < 16:
+                        camera['scale'] *= 2
+                elif event.y == -1:
+                    if camera['scale'] > 1:
+                        camera['scale'] /= 2
+                font = pygame.font.Font(None, 24*int(camera['scale']))
+            elif (
+                mouse['screen_x'] > frame_left['x'] and
+                mouse['screen_y'] > frame_left['y'] and
+                mouse['screen_x'] < frame_left['x'] + frame_left['w'] and
+                mouse['screen_y'] < frame_left['y'] + frame_left['h']
+            ):
+                if event.y == 1:
+                    if terms_2_index > 0:
+                        terms_2_index -= 1
+                elif event.y == -1:
+                    terms_2_index += 1
 
         elif event.type == pygame.KEYDOWN:
             inputs_key_press(event)
@@ -575,22 +596,45 @@ def draw_background():
     screen.fill((40, 40, 40))
 
 def draw_frame_left():
+    global terms_2_index
+
     frame_x = frame_left['x']
     frame_y = frame_left['y']
     frame_w = frame_left['w']
     frame_h = frame_left['h']
     pygame.draw.rect(screen, (60, 60, 60), (frame_x, frame_y, frame_w, frame_h))
 
+    list_1 = [
+        'ozone',
+    ]
     offset_y_counter = 1
     offset_x = 32
+    for i in range(len(list_1)):
+        offset_y = 24 * offset_y_counter
+        offset_y_counter += 1
+        if offset_y > screen_h: break
+        ###
+        input_item = list_1[i]
+        term = input_item
+        text = font_sidebar.render(f'{term}', True, (255, 255, 255))
+        screen.blit(text, (offset_x, offset_y))
+
+    # terms_2_index = 0
+
+    offset_y_counter = 1
+    offset_x = 128
     for i in range(len(input_data)):
+        offset_y = 24 * offset_y_counter
+        if i < terms_2_index: continue
+        offset_y_counter += 1
+        if offset_y > screen_h: break
+        ###
         input_item = input_data[i]
         term = input_item['term']
         count = input_item['count']
-        text = font_debug.render(f'{count}: {term}', True, (255, 0, 255))
-        screen.blit(text, (offset_x, 24 * offset_y_counter))
-        offset_y_counter += 1
-        if i > 10: break
+        text = font_sidebar.render(f'{i} - {term}', True, (255, 255, 255))
+        screen.blit(text, (offset_x, offset_y))
+        # if i > 10: break
 
     # print(json.dumps(input_data[:10], indent=4))
     # quit()

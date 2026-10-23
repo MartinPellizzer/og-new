@@ -1593,7 +1593,7 @@ def run():
 
     # nouns_phrases_aggregate()
 
-    # relationships_llm() ### WARNING: takes many many days/weeks (nightly running) TODO: run to complete all studies
+    relationships_llm() ### WARNING: takes many many days/weeks (nightly running) TODO: run to complete all studies
 
     # relationships_str_to_triple()
     # relationships_find_passages_by_index()
@@ -1602,7 +1602,7 @@ def run():
     # definitions_llm() ### WARNING: takes many many hours (nightly running)
 
     # aggregate_nouns_phrases()
-    aggregate_entities_2(noun='ozone')
+    # aggregate_entities_2(noun='ozone')
     # aggregate_relationships(entity_1='ozone', entity_2='ozone exposure')
 
     quit()
