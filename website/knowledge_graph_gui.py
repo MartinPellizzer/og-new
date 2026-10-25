@@ -24,8 +24,10 @@ screen_h = 900
 screen = pygame.display.set_mode((screen_w, screen_h))
 clock = pygame.time.Clock()
 
+font_sidebar_size = 24
+
 font = pygame.font.Font(None, 24)
-font_debug = pygame.font.Font(None, 24)
+font_debug = pygame.font.Font(None, font_sidebar_size)
 font_sidebar = pygame.font.Font(None, 18)
 
 current_file = None
@@ -128,21 +130,22 @@ def project_save():
     else:
         project_new()
 
-def project_open():
+def project_open(filename=''):
     global current_file
     global nodes
     global edges
     project_dir = os.path.dirname(os.path.abspath(__file__)) + '/uncategorized'
-    filename = subprocess.run(
-        [
-            "zenity",
-            "--file-selection",
-            f"--filename=file://{project_dir}/",
-            "--file-filter=JSON files | *.json",
-        ],
-        capture_output=True,
-        text=True
-    ).stdout.strip()
+    if filename == '':
+        filename = subprocess.run(
+            [
+                "zenity",
+                "--file-selection",
+                f"--filename=file://{project_dir}/",
+                "--file-filter=JSON files | *.json",
+            ],
+            capture_output=True,
+            text=True
+        ).stdout.strip()
     if filename:
         with open(filename, "r") as f:
             data = json.load(f)
@@ -153,10 +156,12 @@ def project_open():
         for node in nodes: 
             if edge['edge_start']['node'] == node:
                 edge['edge_start']['node'] = node
-                edge['edge_start']['node']['fields'] = node['fields']
+                # edge['edge_start']['node']['fields'] = node['fields']
             if edge['edge_end']['node'] == node:
                 edge['edge_end']['node'] = node
-                edge['edge_end']['node']['fields'] = node['fields']
+                # edge['edge_end']['node']['fields'] = node['fields']
+
+project_open(filename='kg.json')
 
 # ============================================================
 # NODES
@@ -379,6 +384,7 @@ def edge_delete():
 # TEST
 ################################################################################
 
+"""
 x = -200
 y = 0
 text = 'ozone'
@@ -390,6 +396,7 @@ y = 0
 text = 'o3'
 node = node_create(x, y, 0, 0, text)
 node_width_by_text(node)
+"""
 
 
 def inputs_mouse_click_right():
@@ -478,6 +485,15 @@ def main_inputs():
                             interaction['drag_offset_y'] = mouse['world_y'] - node['world_y']
                             break
                 else:
+                    for term in lst_terms_lvl2:
+                        y = term['y'] - terms_2_index * font_sidebar_size
+                        if (
+                            mouse['screen_x'] >= term['x'] and 
+                            mouse['screen_y'] >= y and 
+                            mouse['screen_x'] <= term['x'] + term['w'] and 
+                            mouse['screen_y'] <= y + term['h']
+                        ):
+                            print(term)
                     interaction['node_focus'] = None
                     interaction['edge_focus'] = None
                     for node in reversed(nodes):
@@ -595,6 +611,88 @@ def draw_debug():
 def draw_background():
     screen.fill((40, 40, 40))
 
+def lst_item_create(x=0, y=0, w=0, h=0, text='???'):
+    item = {
+        'x': x,
+        'y': y,
+        'w': w,
+        'h': h,
+        'text': text,
+    }
+    return item
+
+"""
+lst_terms_lvl2 = []
+for i in range(100):
+    text = f'???{i}'
+    x = 0
+    y = font_sidebar_size * i
+    w, h = font.size(text)
+    item = lst_item_create(
+        x=x,
+        y=y,
+        w=w,
+        h=h,
+        text=text,
+    )
+    lst_terms_lvl2.append(item)
+"""
+
+lst_terms_lvl2 = []
+for i, item in enumerate(input_data):
+    # print(item)
+    # quit()
+    term = item['term']
+    text = f'{term}'
+    x = 0
+    y = font_sidebar_size * i
+    w, h = font.size(text)
+    item = lst_item_create(
+        x=x,
+        y=y,
+        w=w,
+        h=h,
+        text=text,
+    )
+    lst_terms_lvl2.append(item)
+
+def draw_lst_item():
+    # offset_y_counter = 1
+    for i in range(len(lst_terms_lvl2)):
+        if i < terms_2_index: continue
+        item = lst_terms_lvl2[i]
+        # offset_y = 24 * offset_y_counter
+        term = item['text']
+        x = item['x']
+        y = item['y'] - terms_2_index * font_sidebar_size
+        if y > screen_h: break
+        text = font_sidebar.render(f'{i} - {term}', True, (255, 255, 255))
+        screen.blit(text, (x, y))
+    return
+    ###
+    offset_x = 128
+    offset_y = 32
+    for i, item in enumerate(lst_terms_lvl2):
+        term = item['text']
+        x = item['x']
+        y = item['y']
+        text = font_sidebar.render(f'{i} - {term}', True, (255, 255, 255))
+        screen.blit(text, (x, y))
+    ###
+    offset_y_counter = 1
+    offset_x = 128
+    for i in range(len(input_data)):
+        offset_y = 24 * offset_y_counter
+        if i < terms_2_index: continue
+        offset_y_counter += 1
+        if offset_y > screen_h: break
+        ###
+        input_item = input_data[i]
+        term = input_item['term']
+        count = input_item['count']
+        text = font_sidebar.render(f'{i} - {term}', True, (255, 255, 255))
+        screen.blit(text, (offset_x, offset_y))
+
 def draw_frame_left():
     global terms_2_index
 
@@ -603,6 +701,10 @@ def draw_frame_left():
     frame_w = frame_left['w']
     frame_h = frame_left['h']
     pygame.draw.rect(screen, (60, 60, 60), (frame_x, frame_y, frame_w, frame_h))
+
+    draw_lst_item()
+
+    return
 
     list_1 = [
         'ozone',

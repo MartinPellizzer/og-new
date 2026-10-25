@@ -1602,6 +1602,8 @@ def run():
     # definitions_llm() ### WARNING: takes many many hours (nightly running)
 
     # aggregate_nouns_phrases()
+    ### TODO: get terms ordered by occurences, but also aggregate their definitions to export a json with
+    ###       terms -> definition items for the ontology gui
     # aggregate_entities_2(noun='ozone')
     # aggregate_relationships(entity_1='ozone', entity_2='ozone exposure')
 

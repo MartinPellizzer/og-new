@@ -1,0 +1,49 @@
+{
+    "nodes": [
+        {
+            "world_x": -182.0,
+            "world_y": -51.0,
+            "world_w": 67.0,
+            "world_h": 36.0,
+            "text": "ozone"
+        },
+        {
+            "world_x": -66.0,
+            "world_y": -231.0,
+            "world_w": 182,
+            "world_h": 36,
+            "text": "chemical_substance"
+        }
+    ],
+    "edges": [
+        {
+            "edge_start": {
+                "node": {
+                    "world_x": -182.0,
+                    "world_y": -51.0,
+                    "world_w": 67.0,
+                    "world_h": 36.0,
+                    "text": "ozone"
+                }
+            },
+            "edge_end": {
+                "node": {
+                    "world_x": -66.0,
+                    "world_y": -231.0,
+                    "world_w": 182,
+                    "world_h": 36,
+                    "text": "chemical_substance"
+                }
+            },
+            "edge_relationship": "is_a",
+            "world_x1": -149.0,
+            "world_y1": -33.0,
+            "world_x2": 25.0,
+            "world_y2": -213.0,
+            "text_world_x1": -77.0,
+            "text_world_y1": -123.0,
+            "text_world_x2": -46.0,
+            "text_world_y2": -107.0
+        }
+    ]
+}
