@@ -83,6 +83,14 @@ h3 = ParagraphStyle(
     spaceBefore=body_leading, 
     spaceAfter=body_leading
 )
+h4 = ParagraphStyle(
+    'h4', 
+    fontName='Helvetica-Bold', 
+    fontSize=10, 
+    textColor=PRIMARY, 
+    spaceBefore=body_leading, 
+    spaceAfter=body_leading
+)
 section_style = ParagraphStyle(
     'section', 
     fontName='Helvetica-Bold', 
@@ -180,7 +188,7 @@ class AccentLine(Flowable):
         self.canv.setFillColor(PRIMARY)
         self.canv.rect(0, 0, 70, 4, fill=1, stroke=0)
 
-def ul_gen(items):
+def ul_gen(items, elements):
     items_formatted = []
     for item in items:
         items_formatted.append(Paragraph(item, list_style))
@@ -198,7 +206,7 @@ def ul_gen(items):
         )
     )
 
-def ol_gen(items):
+def ol_gen(items, elements):
     items_formatted = []
     for item in items:
         items_formatted.append(Paragraph(item, list_style))
@@ -396,11 +404,11 @@ def parse(lines, elements, doc):
             if line.startswith('---'):
                 if ul_start == True:
                     ul_start = False
-                    ul_gen(ul_items)
+                    ul_gen(ul_items, elements)
                     ul_items = []
                 if ol_start == True:
                     ol_start = False
-                    ol_gen(ol_items)
+                    ol_gen(ol_items, elements)
                     ol_items = []
                 if table_start == True:
                     table_start = False
@@ -434,7 +442,7 @@ def parse(lines, elements, doc):
                 continue
             if ul_start == True:
                 ul_start = False
-                ul_gen(ul_items)
+                ul_gen(ul_items, elements)
                 ul_items = []
                 
             if line[0].isdigit() and line[1] == '.':
@@ -444,7 +452,7 @@ def parse(lines, elements, doc):
                 continue
             if ol_start == True:
                 ol_start = False
-                ol_gen(ol_items)
+                ol_gen(ol_items, elements)
                 ol_items = []
                 
             if line[0] == ':':
@@ -458,7 +466,10 @@ def parse(lines, elements, doc):
                 table_gen(table_items, doc, elements)
                 table_items = []
 
-            if line.startswith('###'):
+            if line.startswith('####'):
+                line = line.replace('####', '').strip()
+                elements.append(Paragraph(line, h4))
+            elif line.startswith('###'):
                 line = line.replace('###', '').strip()
                 elements.append(Paragraph(line, h3))
             elif line.startswith('##'):
@@ -499,7 +510,7 @@ def parse(lines, elements, doc):
                 elements.append(Paragraph(line, body_style))
     if ul_start == True:
         ul_start = False
-        ul_gen(ul_items)
+        ul_gen(ul_items, elements)
         ul_items = []
     # Flush the final table if the file ends with one
     if table_start:
