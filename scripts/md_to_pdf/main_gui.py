@@ -29,7 +29,7 @@ docs_folderpath = f'C:/og-new/products/{product_filename}/{product_filename}__v{
 
 input_folderpath = f'{docs_folderpath}/input'
 output_folderpath = f'{docs_folderpath}/output'
-prepared_for = "Technical Staff"
+prepared_for = "Engineering Team"
 
 # print()
 # quit()
@@ -172,6 +172,8 @@ class MyDocTemplate(BaseDocTemplate):
             level = 1
         elif style == "h3":
             level = 2
+        elif style == "h4":
+            level = 3
         else:
             return
 

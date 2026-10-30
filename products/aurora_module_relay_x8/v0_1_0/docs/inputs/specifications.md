@@ -38,53 +38,481 @@ The Relay Module shall communicate with CORE via Modbus RTU protocol.
 | ------------------ | ------------------------------------ |
 | Protocollo         | Modbus RTU                           |
 | Module role        | Slave                                |
-| Module ID          | 1 decimal (0x01 exadecimal)          |
+| Module ID          | 0x01                                 |
 | Baud rate          | 9600 bps                             |
 | Data format        | 8 bits, no parity, 1 stop bit (8N1)  |
 
 ---
 
-## 1.2 CORE Commands (TODO with real table data)
+## 1.2 CORE Commands
 
 The Relay Module shall execute commands received from CORE to turn ON/OFF each relay driver independently.
 
+---
+
 ### 1.2.1 CORE Command: Turn ON a realy driver
 
-The Relay Module shall turn ON a relay driver when receiving the following Modbus command.
-
-| Address function code         | Function code 04 (0x04 / FC04)        |
-| Registers starting address    | 0x0000 zero-based (30001 conceptual)  |
-| Number of registers           | 1                                     |
-| Register data type            | 16 bit Unsigned Integer (uint16)      |
-
-### 1.2.2 CORE Command: Turn OFF a realy driver
-
-The Relay Module shall turn OFF a relay driver when receiving the following Modbus command.
-
-| Address function code         | Function code 04 (0x04 / FC04)        |
-| Registers starting address    | 0x0000 zero-based (30001 conceptual)  |
-| Number of registers           | 1                                     |
-| Register data type            | 16 bit Unsigned Integer (uint16)      |
+The Relay Module shall turn ON a relay driver when receiving one of the following Modbus commands.
 
 ---
 
-| Valore ricevuto dal sensore          | Da 0 a 10000 ppb     |
-| Risoluzione sensore          | 10 ppb     |
-| Accuratezza sensore          | Non fornita dal costruttore     |
-| Ripetibilità della misura          | Non fornita dal costruttore     |
-| Tempo di risposta (T90)          | ≤ 90 s     |
-| Tempo di stabilizzazione dopo l'accensione          | ≤ 3 min     |
-| Comportamento in caso di guasto della cella          | Il sensore comunica un valore pari a 10001 ppb     |
-| Registri Modbus aggiuntivi per diagnostica          | Non presenti     |
-| Vita utile della cella del sensore          | 2 anni     |
-| Modalità di calibrazione periodica          | Non disponibile     |
-| Tensione di alimentazione          | 12 V     |
-| Assorbimento del sensore          | 0.5 A     |
+#### 1.2.1.1 CORE Command: Turn ON a realy driver number 1
+
+The Relay Module shall turn ON the relay driver number 1 when receiving the following Modbus commands.
+
+| Description        | Value                                |
+| ------------------ | ------------------------------------ |
+| Module ID          | 0x01                                 |
+| Function code      | 0x05                                 |
+| Coil address       | 0x00 0x00                            |
+| Turn ON            | 0xFF 0x00                            |
+| CRC16              | 0xXX 0xXX                            |
+
+The complete data frame is: 01 05 00 00 FF 00 XX XX
+
+---
+
+#### 1.2.1.2 CORE Command: Turn ON a realy driver number 2
+
+The Relay Module shall turn ON the relay driver number 2 when receiving the following Modbus commands.
+
+| Description        | Value                                |
+| ------------------ | ------------------------------------ |
+| Module ID          | 0x01                                 |
+| Function code      | 0x05                                 |
+| Coil address       | 0x00 0x01                            |
+| Turn ON            | 0xFF 0x00                            |
+| CRC16              | 0xXX 0xXX                            |
+
+The complete data frame is: 01 05 00 01 FF 00 XX XX
+
+---
+
+#### 1.2.1.3 CORE Command: Turn ON a realy driver number 3
+
+The Relay Module shall turn ON the relay driver number 3 when receiving the following Modbus commands.
+
+| Description        | Value                                |
+| ------------------ | ------------------------------------ |
+| Module ID          | 0x01                                 |
+| Function code      | 0x05                                 |
+| Coil address       | 0x00 0x02                            |
+| Turn ON            | 0xFF 0x00                            |
+| CRC16              | 0xXX 0xXX                            |
+
+The complete data frame is: 01 05 00 02 FF 00 XX XX
+
+---
+
+#### 1.2.1.4 CORE Command: Turn ON a realy driver number 4
+
+The Relay Module shall turn ON the relay driver number 4 when receiving the following Modbus commands.
+
+| Description        | Value                                |
+| ------------------ | ------------------------------------ |
+| Module ID          | 0x01                                 |
+| Function code      | 0x05                                 |
+| Coil address       | 0x00 0x03                            |
+| Turn ON            | 0xFF 0x00                            |
+| CRC16              | 0xXX 0xXX                            |
+
+The complete data frame is: 01 05 00 03 FF 00 XX XX
+
+---
+
+#### 1.2.1.5 CORE Command: Turn ON a realy driver number 5
+
+The Relay Module shall turn ON the relay driver number 5 when receiving the following Modbus commands.
+
+| Description        | Value                                |
+| ------------------ | ------------------------------------ |
+| Module ID          | 0x01                                 |
+| Function code      | 0x05                                 |
+| Coil address       | 0x00 0x04                            |
+| Turn ON            | 0xFF 0x00                            |
+| CRC16              | 0xXX 0xXX                            |
+
+The complete data frame is: 01 05 00 04 FF 00 XX XX
+
+---
+
+#### 1.2.1.6 CORE Command: Turn ON a realy driver number 6
+
+The Relay Module shall turn ON the relay driver number 6 when receiving the following Modbus commands.
+
+| Description        | Value                                |
+| ------------------ | ------------------------------------ |
+| Module ID          | 0x01                                 |
+| Function code      | 0x05                                 |
+| Coil address       | 0x00 0x05                            |
+| Turn ON            | 0xFF 0x00                            |
+| CRC16              | 0xXX 0xXX                            |
+
+The complete data frame is: 01 05 00 05 FF 00 XX XX
+
+---
+
+#### 1.2.1.7 CORE Command: Turn ON a realy driver number 7
+
+The Relay Module shall turn ON the relay driver number 7 when receiving the following Modbus commands.
+
+| Description        | Value                                |
+| ------------------ | ------------------------------------ |
+| Module ID          | 0x01                                 |
+| Function code      | 0x05                                 |
+| Coil address       | 0x00 0x06                            |
+| Turn ON            | 0xFF 0x00                            |
+| CRC16              | 0xXX 0xXX                            |
+
+The complete data frame is: 01 05 00 06 FF 00 XX XX
+
+---
+
+#### 1.2.1.8 CORE Command: Turn ON a realy driver number 8
+
+The Relay Module shall turn ON the relay driver number 8 when receiving the following Modbus commands.
+
+| Description        | Value                                |
+| ------------------ | ------------------------------------ |
+| Module ID          | 0x01                                 |
+| Function code      | 0x05                                 |
+| Coil address       | 0x00 0x07                            |
+| Turn ON            | 0xFF 0x00                            |
+| CRC16              | 0xXX 0xXX                            |
+
+The complete data frame is: 01 05 00 07 FF 00 XX XX
+
+---
+
+### 1.2.2 CORE Command: Turn OFF a realy driver
+
+The Relay Module shall turn OFF a relay driver when receiving one of the following Modbus commands.
+
+---
+
+#### 1.2.2.1 CORE Command: Turn OFF a realy driver number 1
+
+The Relay Module shall turn OFF the relay driver number 1 when receiving the following Modbus commands.
+
+| Description        | Value                                |
+| ------------------ | ------------------------------------ |
+| Module ID          | 0x01                                 |
+| Function code      | 0x05                                 |
+| Coil address       | 0x00 0x00                            |
+| Turn OFF           | 0x00 0x00                            |
+| CRC16              | 0xXX 0xXX                            |
+
+The complete data frame is: 01 05 00 00 FF 00 XX XX
+
+---
+
+#### 1.2.2.2 CORE Command: Turn OFF a realy driver number 2
+
+The Relay Module shall turn OFF the relay driver number 2 when receiving the following Modbus commands.
+
+| Description        | Value                                |
+| ------------------ | ------------------------------------ |
+| Module ID          | 0x01                                 |
+| Function code      | 0x05                                 |
+| Coil address       | 0x00 0x01                            |
+| Turn OFF           | 0x00 0x00                            |
+| CRC16              | 0xXX 0xXX                            |
+
+The complete data frame is: 01 05 00 01 FF 00 XX XX
+
+---
+
+#### 1.2.2.3 CORE Command: Turn OFF a realy driver number 3
+
+The Relay Module shall turn OFF the relay driver number 3 when receiving the following Modbus commands.
+
+| Description        | Value                                |
+| ------------------ | ------------------------------------ |
+| Module ID          | 0x01                                 |
+| Function code      | 0x05                                 |
+| Coil address       | 0x00 0x02                            |
+| Turn OFF           | 0x00 0x00                            |
+| CRC16              | 0xXX 0xXX                            |
+
+The complete data frame is: 01 05 00 02 FF 00 XX XX
+
+---
+
+#### 1.2.2.4 CORE Command: Turn OFF a realy driver number 4
+
+The Relay Module shall turn OFF the relay driver number 4 when receiving the following Modbus commands.
+
+| Description        | Value                                |
+| ------------------ | ------------------------------------ |
+| Module ID          | 0x01                                 |
+| Function code      | 0x05                                 |
+| Coil address       | 0x00 0x03                            |
+| Turn OFF           | 0x00 0x00                            |
+| CRC16              | 0xXX 0xXX                            |
+
+The complete data frame is: 01 05 00 03 FF 00 XX XX
+
+---
+
+#### 1.2.2.5 CORE Command: Turn OFF a realy driver number 5
+
+The Relay Module shall turn OFF the relay driver number 5 when receiving the following Modbus commands.
+
+| Description        | Value                                |
+| ------------------ | ------------------------------------ |
+| Module ID          | 0x01                                 |
+| Function code      | 0x05                                 |
+| Coil address       | 0x00 0x04                            |
+| Turn OFF           | 0x00 0x00                            |
+| CRC16              | 0xXX 0xXX                            |
+
+The complete data frame is: 01 05 00 04 FF 00 XX XX
+
+---
+
+#### 1.2.2.6 CORE Command: Turn OFF a realy driver number 6
+
+The Relay Module shall turn OFF the relay driver number 6 when receiving the following Modbus commands.
+
+| Description        | Value                                |
+| ------------------ | ------------------------------------ |
+| Module ID          | 0x01                                 |
+| Function code      | 0x05                                 |
+| Coil address       | 0x00 0x05                            |
+| Turn OFF           | 0x00 0x00                            |
+| CRC16              | 0xXX 0xXX                            |
+
+The complete data frame is: 01 05 00 05 FF 00 XX XX
+
+---
+
+#### 1.2.2.7 CORE Command: Turn OFF a realy driver number 7
+
+The Relay Module shall turn OFF the relay driver number 7 when receiving the following Modbus commands.
+
+| Description        | Value                                |
+| ------------------ | ------------------------------------ |
+| Module ID          | 0x01                                 |
+| Function code      | 0x05                                 |
+| Coil address       | 0x00 0x06                            |
+| Turn OFF           | 0x00 0x00                            |
+| CRC16              | 0xXX 0xXX                            |
+
+The complete data frame is: 01 05 00 06 FF 00 XX XX
+
+---
+
+#### 1.2.2.8 CORE Command: Turn OFF a realy driver number 8
+
+The Relay Module shall turn OFF the relay driver number 8 when receiving the following Modbus commands.
+
+| Description        | Value                                |
+| ------------------ | ------------------------------------ |
+| Module ID          | 0x01                                 |
+| Function code      | 0x05                                 |
+| Coil address       | 0x00 0x07                            |
+| Turn OFF           | 0x00 0x00                            |
+| CRC16              | 0xXX 0xXX                            |
+
+The complete data frame is: 01 05 00 07 FF 00 XX XX
+
+---
+
+## 1.3 CORE Report
+
+---
+
+### 1.3.1 CORE Report: Status
+
+The Relay Module shall report to CORE its status. 
+
+Modbus register definition: 
+
+| Parameter          | Value                                |
+| ------------------ | ------------------------------------ |
+| Register name      | Module_Status                        |
+| Register address   | [TODO] 30001 (0x0000 zero-based)     |
+| Function code      | FC04                                 |
+| Register type      | Input Register                       |
+| Data type          | UINT16                               |
+| Access             | Read-only                            |
+| Default value      | 0 (INITIALIZING)                     |
+| Update             | Whenever operational state changes   |
+
+Modbus master command:  
+
+| Parameter          | Value                                |
+| ------------------ | ------------------------------------ |
+| Module ID          | 0x01                                 |
+| Function code      | 0x04                                 |
+| Starting address   | [TODO] 0x00 0x00                     |
+| Quantity           | [TODO] 0x00 0x01                     |
+| CRC16              | 0xXX 0xXX                            |
+
+The complete data frame is: 01 04 00 00 00 01 XX XX
+
+Modbus slave response:  
+
+| Parameter              | Value                                |
+| ---------------------- | ------------------------------------ |
+| Module ID              | 0x01                                 |
+| Function code          | 0x04                                 |
+| Number of data bytes   | 0x00 0x02                            |
+| Register value         | 0xXX 0xXX                            |
+| CRC16                  | 0xXX 0xXX                            |
+
+The complete data frame is: 01 04 02 XX XX XX XX
+
+---
+
+#### 1.3.1.1 CORE Report: Status INITIALIZING
+
+The Relay Module shall report the status INITIALIZING (if it's in such state) when Modbus asks for it.
+
+| Parameter              | Value                                |
+| ---------------------- | ------------------------------------ |
+| Module ID              | 0x01                                 |
+| Function code          | 0x04                                 |
+| Number of data bytes   | 0x00 0x02                            |
+| Register value         | 0x00 0x00                            |
+| CRC16                  | 0xXX 0xXX                            |
+
+The complete data frame is: 01 04 02 00 00 XX XX
+
+---
+
+#### 1.3.1.2 CORE Report: Status READY
+
+The Relay Module shall report the status READY (if it's in such state) when Modbus asks for it.
+
+| Parameter              | Value                                |
+| ---------------------- | ------------------------------------ |
+| Module ID              | 0x01                                 |
+| Function code          | 0x04                                 |
+| Number of data bytes   | 0x00 0x02                            |
+| Register value         | 0x00 0x01                            |
+| CRC16                  | 0xXX 0xXX                            |
+
+The complete data frame is: 01 04 02 00 01 XX XX
+
+---
+
+#### 1.3.1.3 CORE Report: Status OPERATING
+
+The Relay Module shall report the status OPERATING (if it's in such state) when Modbus asks for it.
+
+| Parameter              | Value                                |
+| ---------------------- | ------------------------------------ |
+| Module ID              | 0x01                                 |
+| Function code          | 0x04                                 |
+| Number of data bytes   | 0x00 0x02                            |
+| Register value         | 0x00 0x02                            |
+| CRC16                  | 0xXX 0xXX                            |
+
+The complete data frame is: 01 04 02 00 02 XX XX
+
+---
+
+#### 1.3.1.4 CORE Report: Status WARNING
+
+The Relay Module shall report the status WARNING (if it's in such state) when Modbus asks for it.
+
+| Parameter              | Value                                |
+| ---------------------- | ------------------------------------ |
+| Module ID              | 0x01                                 |
+| Function code          | 0x04                                 |
+| Number of data bytes   | 0x00 0x02                            |
+| Register value         | 0x00 0x03                            |
+| CRC16                  | 0xXX 0xXX                            |
+
+The complete data frame is: 01 04 02 00 03 XX XX
+
+---
+
+#### 1.3.1.5 CORE Report: Status FAULT
+
+The Relay Module shall report the status FAULT (if it's in such state) when Modbus asks for it.
+
+| Parameter              | Value                                |
+| ---------------------- | ------------------------------------ |
+| Module ID              | 0x01                                 |
+| Function code          | 0x04                                 |
+| Number of data bytes   | 0x00 0x02                            |
+| Register value         | 0x00 0x04                            |
+| CRC16                  | 0xXX 0xXX                            |
+
+The complete data frame is: 01 04 02 00 04 XX XX
+
+---
+
+#### 1.3.1.6 CORE Report: Status MAINTENANCE
+
+The Relay Module shall report the status MAINTENANCE (if it's in such state) when Modbus asks for it.
+
+| Parameter              | Value                                |
+| ---------------------- | ------------------------------------ |
+| Module ID              | 0x01                                 |
+| Function code          | 0x04                                 |
+| Number of data bytes   | 0x00 0x02                            |
+| Register value         | 0x00 0x05                            |
+| CRC16                  | 0xXX 0xXX                            |
+
+The complete data frame is: 01 04 02 00 05 XX XX
+
+---
+
+#### 1.3.1.7 CORE Report: Status OFFLINE
+
+The Relay Module shall report the status OFFLINE (if it's in such state) when Modbus asks for it.
+
+| Parameter              | Value                                |
+| ---------------------- | ------------------------------------ |
+| Module ID              | 0x01                                 |
+| Function code          | 0x04                                 |
+| Number of data bytes   | 0x00 0x02                            |
+| Register value         | 0x00 0x06                            |
+| CRC16                  | 0xXX 0xXX                            |
+
+The complete data frame is: 01 04 02 00 06 XX XX
+
+---
+
+
+Modbus register definition
+Parameter	Definition
+Register name	Module_Status
+Register address	30001 (example)
+Function code	FC04
+Register type	Input Register
+Data type	UINT16
+Access	Read-only
+Default value	0 (INITIALIZING)
+Update	Whenever operational state changes
+
+
+The status is a UINT16 Modbus register containing an enumerated state.
+
+Module_Status - UINT16 - Read-only
+
+### 1.3.1 CORE Report: Status INITIALIZING
+
+Value	State	Meaning
+0	INITIALIZING	Module is powering up and performing initialization.
+| ------------------ | ------------------------------------ |
+1	READY	Module is initialized and ready to operate.
+2	OPERATING	Module is operating and controlling its outputs.
+3	WARNING	Module is operational but has an active warning.
+4	FAULT	A fault has been detected that affects normal operation.
+5	MAINTENANCE	Module is in maintenance or service mode.
+6	OFFLINE	Module is not operational or has been intentionally disabled.
+
+
+
+
+
 
 
 ## 1.2 CORE Execute
-
-- The Relay Module shall execute relay-output commands (ON/OFF) received from CORE
 
 - The Relay Module shall execute relay-output commands (ON/OFF) deterministically
 
@@ -92,39 +520,6 @@ The Relay Module shall turn OFF a relay driver when receiving the following Modb
 
 - The Relay Module shall execute normal operation only when explicit reauthorization from CORE is given
 
----
-
-### 1.2.1 The Relay Module shall execute relay-output commands (ON/OFF) received from CORE
-
-#### Statements
-
-- The Relay Module shall execute relay-output commands received from CORE
-
-- The Relay Module shall manage the eight relay outputs to control or influence the ozone-generation process by operating the required process equipment and auxiliaries
-
----
-
-### 1.2.2 The Relay Module shall execute relay-output commands (ON/OFF) deterministically
-
-#### Statements
-
-- The Relay Module shall execute commands deterministically
-
----
-
-### 1.2.3 The Relay Module shall execute relay-output commands (ON/OFF) within specified time
-
-#### Statements
-
-- The Relay Module shall turn ON/OFF outputs within specified time
-
----
-
-### 1.2.4 The Relay Module shall execute normal operation only when explicit reauthorization from CORE is given
-
-#### Statements
-
-- The Relay Module shall require explicit reauthorization from CORE before returning to normal operation
 
 ---
 
