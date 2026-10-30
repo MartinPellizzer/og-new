@@ -338,6 +338,8 @@ Example:
 
 TODO: Not implemented in this version
 
+---
+
 ### 1.3.2 CORE Report: Status Module
 
 The Relay Module shall report to CORE its status. 
@@ -509,7 +511,7 @@ The complete data frame is: 01 04 02 00 06 XX XX
 
 [TODO] The Relay Module shall report the output status of the relay drivers. It should report ONLY the status of the outputs (GPIO) communicated by the microcontroller, not the output status of the actual relay coils, since there no feedback system for that.
 
-
+---
 
 
 ## 1.2 CORE Execute
