@@ -322,9 +322,37 @@ The complete data frame is: 01 05 00 07 FF 00 XX XX
 
 ---
 
-### 1.3.1 CORE Report: Status
+### 1.3.1 CORE Report: Health
+
+The Relay Module shall report to CORE its health.
+
+Example:
+
+| Value    | Description                                                           |
+| -------- | --------------------------------------------------------------------- |
+| UNKNOWN  | Health condition has not yet been evaluated                           |
+| HEALTHY  | Module is operating normally                                          |
+| DEGRADED | Module is operational but a non-critical issue has been detected      |
+| CRITICAL | A serious issue has been detected that compromises reliable operation |
+| FAILED   | Module is unable to perform its intended function                     |
+
+TODO: Not implemented in this version
+
+### 1.3.2 CORE Report: Status Module
 
 The Relay Module shall report to CORE its status. 
+
+Possible status:
+
+| Value | Description |
+| ------------------ | ------------------------------------ |
+| INITIALIZING | Module is powering up and performing initialization | 
+| READY | Module is initialized and ready to operate |
+| OPERATING | Module is operating and controlling its outputs |
+| WARNING | Module is operational but has an active warning |
+| FAULT | A fault has been detected that affects normal operation |
+| MAINTENANCE | Module is in maintenance or service mode |
+| OFFLINE | Module is not operational or has been intentionally disabled |
 
 Modbus register definition: 
 
@@ -365,7 +393,7 @@ The complete data frame is: 01 04 02 XX XX XX XX
 
 ---
 
-#### 1.3.1.1 CORE Report: Status INITIALIZING
+#### 1.3.2.1 CORE Report: Status Module INITIALIZING
 
 The Relay Module shall report the status INITIALIZING (if it's in such state) when Modbus asks for it.
 
@@ -381,7 +409,7 @@ The complete data frame is: 01 04 02 00 00 XX XX
 
 ---
 
-#### 1.3.1.2 CORE Report: Status READY
+#### 1.3.2.2 CORE Report: Status Module READY
 
 The Relay Module shall report the status READY (if it's in such state) when Modbus asks for it.
 
@@ -397,7 +425,7 @@ The complete data frame is: 01 04 02 00 01 XX XX
 
 ---
 
-#### 1.3.1.3 CORE Report: Status OPERATING
+#### 1.3.2.3 CORE Report: Status Module OPERATING
 
 The Relay Module shall report the status OPERATING (if it's in such state) when Modbus asks for it.
 
@@ -413,7 +441,7 @@ The complete data frame is: 01 04 02 00 02 XX XX
 
 ---
 
-#### 1.3.1.4 CORE Report: Status WARNING
+#### 1.3.2.4 CORE Report: Status Module WARNING
 
 The Relay Module shall report the status WARNING (if it's in such state) when Modbus asks for it.
 
@@ -429,7 +457,7 @@ The complete data frame is: 01 04 02 00 03 XX XX
 
 ---
 
-#### 1.3.1.5 CORE Report: Status FAULT
+#### 1.3.2.5 CORE Report: Status Module FAULT
 
 The Relay Module shall report the status FAULT (if it's in such state) when Modbus asks for it.
 
@@ -445,7 +473,7 @@ The complete data frame is: 01 04 02 00 04 XX XX
 
 ---
 
-#### 1.3.1.6 CORE Report: Status MAINTENANCE
+#### 1.3.2.6 CORE Report: Status Module MAINTENANCE
 
 The Relay Module shall report the status MAINTENANCE (if it's in such state) when Modbus asks for it.
 
@@ -461,7 +489,7 @@ The complete data frame is: 01 04 02 00 05 XX XX
 
 ---
 
-#### 1.3.1.7 CORE Report: Status OFFLINE
+#### 1.3.2.7 CORE Report: Status Module OFFLINE
 
 The Relay Module shall report the status OFFLINE (if it's in such state) when Modbus asks for it.
 
@@ -477,37 +505,9 @@ The complete data frame is: 01 04 02 00 06 XX XX
 
 ---
 
+### 1.3.2 CORE Report: Status Outputs
 
-Modbus register definition
-Parameter	Definition
-Register name	Module_Status
-Register address	30001 (example)
-Function code	FC04
-Register type	Input Register
-Data type	UINT16
-Access	Read-only
-Default value	0 (INITIALIZING)
-Update	Whenever operational state changes
-
-
-The status is a UINT16 Modbus register containing an enumerated state.
-
-Module_Status - UINT16 - Read-only
-
-### 1.3.1 CORE Report: Status INITIALIZING
-
-Value	State	Meaning
-0	INITIALIZING	Module is powering up and performing initialization.
-| ------------------ | ------------------------------------ |
-1	READY	Module is initialized and ready to operate.
-2	OPERATING	Module is operating and controlling its outputs.
-3	WARNING	Module is operational but has an active warning.
-4	FAULT	A fault has been detected that affects normal operation.
-5	MAINTENANCE	Module is in maintenance or service mode.
-6	OFFLINE	Module is not operational or has been intentionally disabled.
-
-
-
+[TODO] The Relay Module shall report the output status of the relay drivers. It should report ONLY the status of the outputs (GPIO) communicated by the microcontroller, not the output status of the actual relay coils, since there no feedback system for that.
 
 
 
@@ -525,8 +525,6 @@ Value	State	Meaning
 
 ## 1.3 CORE Report
 
-- The Relay Module shall report to CORE its status
-
 - The Relay Module shall report to CORE outputs status
 
 - The Relay Module shall report to CORE communication status
@@ -541,8 +539,6 @@ Value	State	Meaning
 
 - The Relay Module shall report to CORE any condition preventing reliable output control
 
-- The Relay Module shall report to CORE module health
-
 - The Relay Module shall report to CORE electrical identification
 
 - The Relay Module shall report to CORE thermal identification
@@ -553,13 +549,6 @@ Value	State	Meaning
 
 ---
 
-### 1.3.1 The Relay Module shall report to CORE its status
-
-#### Statements
-
-- The Relay Module shall report its status to CORE
-
----
 
 ### 1.3.2 The Relay Module shall report to CORE outputs status
 
