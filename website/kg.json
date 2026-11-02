@@ -1,26 +1,117 @@
 {
     "nodes": [
         {
-            "world_x": -182.0,
-            "world_y": -51.0,
+            "world_x": -200.0,
+            "world_y": -100.0,
             "world_w": 67.0,
             "world_h": 36.0,
             "text": "ozone"
         },
         {
-            "world_x": -66.0,
-            "world_y": -231.0,
-            "world_w": 182,
+            "world_x": -111.0,
+            "world_y": -99.0,
+            "world_w": 154,
+            "world_h": 37,
+            "text": "nitrogen_dioxide"
+        },
+        {
+            "world_x": 197.0,
+            "world_y": 100.0,
+            "world_w": 197,
             "world_h": 36,
-            "text": "chemical_substance"
+            "text": "ozone_concentrations"
+        },
+        {
+            "world_x": 411.0,
+            "world_y": 100.0,
+            "world_w": 187,
+            "world_h": 36,
+            "text": "ozone_concentration"
+        },
+        {
+            "world_x": 197.0,
+            "world_y": 2.0,
+            "world_w": 150,
+            "world_h": 36,
+            "text": "ozone_exposure"
+        },
+        {
+            "world_x": 75.0,
+            "world_y": -97.0,
+            "world_w": 134.0,
+            "world_h": 36.0,
+            "text": "sulfur_dioxide"
+        },
+        {
+            "world_x": 233.0,
+            "world_y": -101.0,
+            "world_w": 174.0,
+            "world_h": 37.0,
+            "text": "hydrogen_peroxide"
+        },
+        {
+            "world_x": -69.0,
+            "world_y": -307.0,
+            "world_w": 91.0,
+            "world_h": 36.0,
+            "text": "chemical"
+        },
+        {
+            "world_x": -206.0,
+            "world_y": 201.0,
+            "world_w": 89.0,
+            "world_h": 37.0,
+            "text": "mortality"
+        },
+        {
+            "world_x": -197.0,
+            "world_y": 262.0,
+            "world_w": 167.0,
+            "world_h": 36.0,
+            "text": "particulate_matter"
+        },
+        {
+            "world_x": 198.0,
+            "world_y": 200.0,
+            "world_w": 153.0,
+            "world_h": 36.0,
+            "text": "ozone_treatment"
+        },
+        {
+            "world_x": -203.0,
+            "world_y": -32.0,
+            "world_w": 40,
+            "world_h": 36,
+            "text": "o3"
+        },
+        {
+            "world_x": -194.0,
+            "world_y": 9.0,
+            "world_w": 49,
+            "world_h": 36,
+            "text": "o(3)"
+        },
+        {
+            "world_x": -113.0,
+            "world_y": -33.0,
+            "world_w": 49.0,
+            "world_h": 36.0,
+            "text": "no2"
+        },
+        {
+            "world_x": 198.0,
+            "world_y": 282.0,
+            "world_w": 151.0,
+            "world_h": 36.0,
+            "text": "oxidative_stress"
         }
     ],
     "edges": [
         {
             "edge_start": {
                 "node": {
-                    "world_x": -182.0,
-                    "world_y": -51.0,
+                    "world_x": -200.0,
+                    "world_y": -100.0,
                     "world_w": 67.0,
                     "world_h": 36.0,
                     "text": "ozone"
@@ -28,22 +119,109 @@
             },
             "edge_end": {
                 "node": {
-                    "world_x": -66.0,
-                    "world_y": -231.0,
-                    "world_w": 182,
-                    "world_h": 36,
-                    "text": "chemical_substance"
+                    "world_x": -69.0,
+                    "world_y": -307.0,
+                    "world_w": 91.0,
+                    "world_h": 36.0,
+                    "text": "chemical"
                 }
             },
             "edge_relationship": "is_a",
-            "world_x1": -149.0,
-            "world_y1": -33.0,
-            "world_x2": 25.0,
-            "world_y2": -213.0,
-            "text_world_x1": -77.0,
-            "text_world_y1": -123.0,
-            "text_world_x2": -46.0,
-            "text_world_y2": -107.0
+            "world_x1": -167.0,
+            "world_y1": -82.0,
+            "world_x2": -24.0,
+            "world_y2": -289.0,
+            "text_world_x1": -111.0,
+            "text_world_y1": -186.0,
+            "text_world_x2": -80.0,
+            "text_world_y2": -170.0
+        },
+        {
+            "edge_start": {
+                "node": {
+                    "world_x": -111.0,
+                    "world_y": -99.0,
+                    "world_w": 154,
+                    "world_h": 37,
+                    "text": "nitrogen_dioxide"
+                }
+            },
+            "edge_end": {
+                "node": {
+                    "world_x": -69.0,
+                    "world_y": -307.0,
+                    "world_w": 91.0,
+                    "world_h": 36.0,
+                    "text": "chemical"
+                }
+            },
+            "edge_relationship": "is_a",
+            "world_x1": -34.0,
+            "world_y1": -81.0,
+            "world_x2": -24.0,
+            "world_y2": -289.0,
+            "text_world_x1": -44.0,
+            "text_world_y1": -185.0,
+            "text_world_x2": -13.0,
+            "text_world_y2": -169.0
+        },
+        {
+            "edge_start": {
+                "node": {
+                    "world_x": 75.0,
+                    "world_y": -97.0,
+                    "world_w": 134.0,
+                    "world_h": 36.0,
+                    "text": "sulfur_dioxide"
+                }
+            },
+            "edge_end": {
+                "node": {
+                    "world_x": -69.0,
+                    "world_y": -307.0,
+                    "world_w": 91.0,
+                    "world_h": 36.0,
+                    "text": "chemical"
+                }
+            },
+            "edge_relationship": "is_a",
+            "world_x1": 142.0,
+            "world_y1": -79.0,
+            "world_x2": -24.0,
+            "world_y2": -289.0,
+            "text_world_x1": 44.0,
+            "text_world_y1": -184.0,
+            "text_world_x2": 75.0,
+            "text_world_y2": -168.0
+        },
+        {
+            "edge_start": {
+                "node": {
+                    "world_x": 233.0,
+                    "world_y": -101.0,
+                    "world_w": 174.0,
+                    "world_h": 37.0,
+                    "text": "hydrogen_peroxide"
+                }
+            },
+            "edge_end": {
+                "node": {
+                    "world_x": -69.0,
+                    "world_y": -307.0,
+                    "world_w": 91.0,
+                    "world_h": 36.0,
+                    "text": "chemical"
+                }
+            },
+            "edge_relationship": "is_a",
+            "world_x1": 320.0,
+            "world_y1": -83.0,
+            "world_x2": -24.0,
+            "world_y2": -289.0,
+            "text_world_x1": 133.0,
+            "text_world_y1": -186.0,
+            "text_world_x2": 164.0,
+            "text_world_y2": -170.0
         }
     ]
 }

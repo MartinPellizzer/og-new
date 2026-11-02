@@ -29,6 +29,7 @@ font_sidebar_size = 24
 font = pygame.font.Font(None, 24)
 font_debug = pygame.font.Font(None, font_sidebar_size)
 font_sidebar = pygame.font.Font(None, 18)
+font_bottom = pygame.font.Font(None, 24)
 
 current_file = None
 
@@ -71,20 +72,28 @@ interaction = {
 nodes = []
 edges = []
 
+frame_bottom = {
+    'x': 0,
+    'y': screen_h - 240,
+    'w': screen_w,
+    'h': 240,
+}
+
 frame_left = {
     'x': 0,
     'y': 0,
     'w': 480,
-    'h': screen_h,
+    'h': screen_h - 240,
 }
 
 frame_center = {
     'x': 0 + frame_left['w'],
     'y': 0,
     'w': screen_w - frame_left['w'],
-    'h': screen_h,
+    'h': screen_h - frame_bottom['h'],
 }
 
+definitions_focus = []
 
 ################################################################################
 # PROJ UTILS
@@ -445,6 +454,7 @@ def inputs_key_press(event):
 def main_inputs():
     global font
     global terms_2_index
+    global definitions_focus 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             core['running'] = False
@@ -494,6 +504,7 @@ def main_inputs():
                             mouse['screen_y'] <= y + term['h']
                         ):
                             print(term)
+                            definitions_focus = term['term_definitions']
                     interaction['node_focus'] = None
                     interaction['edge_focus'] = None
                     for node in reversed(nodes):
@@ -611,13 +622,14 @@ def draw_debug():
 def draw_background():
     screen.fill((40, 40, 40))
 
-def lst_item_create(x=0, y=0, w=0, h=0, text='???'):
+def lst_item_create(x=0, y=0, w=0, h=0, text='???', term_definitions=[]):
     item = {
         'x': x,
         'y': y,
         'w': w,
         'h': h,
         'text': text,
+        'term_definitions': term_definitions,
     }
     return item
 
@@ -640,9 +652,13 @@ for i in range(100):
 
 lst_terms_lvl2 = []
 for i, item in enumerate(input_data):
-    # print(item)
+    # for key, value in item.items():
+        # print(key)
     # quit()
-    term = item['term']
+    # print(json.dumps(item, indent=4))
+    # quit()
+    term = item['term_name']
+    term_definitions = item['term_definitions'][:8]
     text = f'{term}'
     x = 0
     y = font_sidebar_size * i
@@ -653,6 +669,7 @@ for i, item in enumerate(input_data):
         w=w,
         h=h,
         text=text,
+        term_definitions=term_definitions,
     )
     lst_terms_lvl2.append(item)
 
@@ -665,7 +682,7 @@ def draw_lst_item():
         term = item['text']
         x = item['x']
         y = item['y'] - terms_2_index * font_sidebar_size
-        if y > screen_h: break
+        if y > frame_left['h']: break
         text = font_sidebar.render(f'{i} - {term}', True, (255, 255, 255))
         screen.blit(text, (x, y))
     return
@@ -695,15 +712,12 @@ def draw_lst_item():
 
 def draw_frame_left():
     global terms_2_index
-
     frame_x = frame_left['x']
     frame_y = frame_left['y']
     frame_w = frame_left['w']
     frame_h = frame_left['h']
     pygame.draw.rect(screen, (60, 60, 60), (frame_x, frame_y, frame_w, frame_h))
-
     draw_lst_item()
-
     return
 
     list_1 = [
@@ -741,6 +755,20 @@ def draw_frame_left():
     # print(json.dumps(input_data[:10], indent=4))
     # quit()
 
+def draw_frame_bottom():
+    frame = frame_bottom
+    frame_x = frame['x']
+    frame_y = frame['y']
+    frame_w = frame['w']
+    frame_h = frame['h']
+    pygame.draw.rect(screen, (72, 72, 72), (frame_x, frame_y, frame_w, frame_h))
+    ###
+    for definition_i, definition in enumerate(definitions_focus):
+        offset_x = 24
+        offset_y = 24 + frame_bottom['y'] + (definition_i * 24)
+        text = font_bottom.render(f'{definition}', True, (255, 255, 255))
+        screen.blit(text, (offset_x, offset_y))
+
 def main_draw():
     draw_background()
     draw_grid()
@@ -753,6 +781,7 @@ def main_draw():
     draw_debug()
 
     draw_frame_left()
+    draw_frame_bottom()
 
     pygame.display.flip()
 

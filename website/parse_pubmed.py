@@ -1210,7 +1210,7 @@ def relationships_llm():
         # quit()
 
 def definitions_llm():
-    input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/relationships/raw'
+    input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/relationships_passages/raw'
     output_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/definitions/raw'
     # try: shutil.rmtree(output_folderpath)
     # except: pass
@@ -1219,9 +1219,11 @@ def definitions_llm():
     i = 0
     for input_filename in input_filenames[i:]:
         i += 1
-        print(f'{i}/{len(input_filenames)}')
+        print(f'DEFINITION {i}/{len(input_filenames)}')
+        print(f'*****************************************************')
         input_filepath = f'{input_folderpath}/{input_filename}'
         output_filepath = f'{output_folderpath}/{input_filename}'
+        if os.path.exists(output_filepath): continue
         try: input_data = io.json_read(input_filepath)
         except: continue
         # print(json.dumps(input_data, indent=4))
@@ -1257,6 +1259,19 @@ def definitions_llm():
                 # quit()
             ###
             io.json_write(output_filepath, input_data)
+
+def definitions_peek():
+    input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/definitions/raw'
+    input_filenames = os.listdir(input_folderpath)
+    i = 0
+    for input_filename in input_filenames[i:]:
+        i += 1
+        print(f'{i}/{len(input_filenames)}')
+        input_filepath = f'{input_folderpath}/{input_filename}'
+        try: input_data = io.json_read(input_filepath)
+        except: continue
+        print(json.dumps(input_data, indent=4))
+        quit()
 
 def relationships_peek():
     input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/relationships/raw'
@@ -1436,22 +1451,28 @@ def relationships_find_passages_by_index():
                     if entity_2.lower() in passage_str.lower(): entity_2_found = True
                     ###
                     if entity_1_found and relationship_found and entity_2_found:
+                        entity_1 = entity_1.replace('\\', '')
+                        relationship = relationship.replace('\\', '')
+                        entity_2 = entity_2.replace('\\', '')
                         passages_filtered.append(passage_str)
                         passage_filtered_tag = passage_str
                         tag_open = f'<found>'
                         tag_close = f'</found>'
+                        # print(entity_1)
                         passage_filtered_tag = re.sub(
                             rf'\b{re.escape(entity_1)}\b',
                             f'{tag_open}{entity_1}{tag_close}',
                             passage_filtered_tag,
                             flags=re.IGNORECASE
                         )
+                        # print(relationship)
                         passage_filtered_tag = re.sub(
                             rf'\b{re.escape(relationship)}\b',
                             f'{tag_open}{relationship}{tag_close}',
                             passage_filtered_tag,
                             flags=re.IGNORECASE
                         )
+                        # print(entity_2)
                         passage_filtered_tag = re.sub(
                             rf'\b{re.escape(entity_2)}\b',
                             f'{tag_open}{entity_2}{tag_close}',
@@ -1491,25 +1512,113 @@ def relationships_find_passages_by_index():
         # quit()
 
 def aggregate_nouns_phrases():
-    input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/relationships_passages/raw'
+    # input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/relationships_passages/raw'
+    input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/definitions/raw'
+    output_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/definitions_ref/raw'
     input_filenames = os.listdir(input_folderpath)
     terms_all = []
     for i, input_filename in enumerate(input_filenames[:]):
         print(f'AGGREGATE {i}/{len(input_filenames)}')
         input_filepath = f'{input_folderpath}/{input_filename}'
         input_data = io.json_read(input_filepath)
+        # print(json.dumps(input_data, indent=4))
+        # quit()
         terms = input_data['terms']
-        for term in terms:
+        for term_i, term in enumerate(terms):
+            # print(term_i)
             term_name = term['term'].lower().strip()
-            terms_all.append(term_name)
+            try: term_definition = term['definition'].lower().strip()
+            except: term_definition = ''
+            # print(json.dumps(term, indent=4))
+            # quit()
+            # terms_all.append(term_name)
+            terms_all.append(
+                {
+                    'term_name': term_name,
+                    'term_definition': term_definition,
+                }
+            )
+    # print(json.dumps(terms_all, indent=4))
+    # quit()
+    """
     from collections import Counter
     result = [{"term": term, "count": count}
               for term, count in Counter(terms_all).most_common()]
-    result = result[:100]
-    print(json.dumps(result, indent=4))
+    """
+    ###
+    from collections import defaultdict
+    grouped = defaultdict(lambda: {"count": 0, "term_definitions": []})
+    for item in terms_all:
+        term = item["term_name"]
+        grouped[term]["count"] += 1
+        grouped[term]["term_definitions"].append(item["term_definition"])
+    result = [
+        {
+            "term_name": term,
+            **data
+        }
+        for term, data in grouped.items()
+    ]
+    ###
+    output_filepath = f'{output_folderpath}/definitions.json'
+    io.folders_recursive_gen(output_folderpath)
+    io.json_write(output_filepath, result)
+    result_preview = result[:10]
+    print(json.dumps(result_preview, indent=4))
     # quit()
 
 def aggregate_entities_2(noun):
+    # input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/relationships_passages/raw'
+    input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/definitions/raw'
+    output_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/terms/{noun}'
+    # try: shutil.rmtree(output_folderpath)
+    # except: pass
+    io.folders_recursive_gen(output_folderpath)
+    output_filepath = f'{output_folderpath}/test.json'
+    ###
+    input_filenames = os.listdir(input_folderpath)
+    terms_all = []
+    for i, input_filename in enumerate(input_filenames[:]):
+        print(f'AGGREGATE RELATIONSHIPS {noun} {i}/{len(input_filenames)}')
+        input_filepath = f'{input_folderpath}/{input_filename}'
+        input_data = io.json_read(input_filepath)
+        terms = input_data['terms']
+        for term in terms:
+            term_name = term['term'].lower().strip()
+            if term_name == 'ozone':
+                # print(json.dumps(term, indent=4))
+                for relationship_triple in term['relationships_triples']:
+                    relationship = relationship_triple['relationship'] 
+                    terms_all.append(relationship[2])
+                # quit()
+    from collections import Counter
+    result = [{"term": term, "count": count}
+              for term, count in Counter(terms_all).most_common()]
+    ###
+    definitions_filepath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/definitions_ref/raw/definitions.json'
+    definitions_data = io.json_read(definitions_filepath)
+    output_items = []
+    for res_i, res in enumerate(result): 
+        print(f'{res_i}/{len(result)}')
+        term_name = res['term']
+        term_count = res['count']
+        term_definitions = []
+        for definition_item in definitions_data:
+            if definition_item['term_name'] == term_name:
+                term_definitions = definition_item["term_definitions"]
+                break
+        output_item = {
+            'term_name': term_name,
+            'term_count': term_count,
+            'term_definitions': term_definitions,
+        }
+        output_items.append(output_item)
+    io.json_write(output_filepath, output_items)
+    result_preview = output_items[:100]
+    print(json.dumps(result_preview, indent=4))
+    # quit()
+
+def aggregate_entities_2_old(noun):
     input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/relationships_passages/raw'
     output_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/terms/{noun}'
     # try: shutil.rmtree(output_folderpath)
@@ -1523,7 +1632,6 @@ def aggregate_entities_2(noun):
         print(f'AGGREGATE RELATIONSHIPS {noun} {i}/{len(input_filenames)}')
         input_filepath = f'{input_folderpath}/{input_filename}'
         input_data = io.json_read(input_filepath)
-        # print(json.dumps(input_data, indent=4))
         terms = input_data['terms']
         for term in terms:
             term_name = term['term'].lower().strip()
@@ -1531,16 +1639,7 @@ def aggregate_entities_2(noun):
                 # print(json.dumps(term, indent=4))
                 for relationship_triple in term['relationships_triples']:
                     relationship = relationship_triple['relationship'] 
-                    # print(relationship[2] )
                     terms_all.append(relationship[2])
-                    ###
-                    if relationship[2] == 'ozone':
-                        # ['relationship']:
-                        # print(relationship_triple[2])
-                        # print(json.dumps(term, indent=4))
-                        # quit()
-                        pass
-                    # quit()
                 # quit()
     from collections import Counter
     result = [{"term": term, "count": count}
@@ -1593,13 +1692,14 @@ def run():
 
     # nouns_phrases_aggregate()
 
-    relationships_llm() ### WARNING: takes many many days/weeks (nightly running) TODO: run to complete all studies
+    # relationships_llm() ### WARNING: takes many many days/weeks (nightly running) TODO: run to complete all studies
 
     # relationships_str_to_triple()
     # relationships_find_passages_by_index()
     # relationships_peek() ### WARNING: takes many many hours (nightly running)
 
-    # definitions_llm() ### WARNING: takes many many hours (nightly running)
+    definitions_llm() ### WARNING: takes many many hours (nightly running)
+    # definitions_peek()
 
     # aggregate_nouns_phrases()
     ### TODO: get terms ordered by occurences, but also aggregate their definitions to export a json with
