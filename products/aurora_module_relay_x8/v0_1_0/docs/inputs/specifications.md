@@ -14,25 +14,61 @@ Version, Date, Author, Description
 
 # 1. CORE
 
+---
+
+## 1.1 CORE Communication
+
+---
+
+### 1.1.1 CORE Communication Software
+
 | Setting            | Value                                |
 | ------------------ | ------------------------------------ |
+| Protocol           | Modbus |
 | Mode               | RTU |
 | Role               | Slave |
-| Module ID          | 0x01                                 |
+| Device ID          | 1                                 |
 | Baud rate          | 9600 bps |
-| Data format        | 8 bits, no parity, 1 stop bit (8N1)  |
+| Data bits          | 8 |
+| Parity             | None  |
+| Stop bits          | 1  |
 
 ---
 
-## 1.1 CORE Report
+### 1.1.2 CORE Communication Hardware
+
+| Setting            | Value                                |
+| ------------------ | ------------------------------------ |
+| Physical interface | RS485 |
+| Wires              | 2 wires (A, B) |
 
 ---
 
-### 1.1.1 CORE Report Status
+## 1.2 CORE Command
 
 ---
 
-#### 1.1.1.1 CORE Report Status.Initializing
+### 1.2.1 CORE Command Turn ON Relay Driver
+
+---
+
+#### 1.2.1.1 CORE Command Turn ON Relay Driver 1
+
+| Setting            | Value                                |
+| ------------------ | ------------------------------------ |
+| Function code      | Write Single Coil (0x05) |
+
+---
+
+## 1.3 CORE Report
+
+---
+
+### 1.3.1 CORE Report Status
+
+---
+
+#### 1.3.1.1 CORE Report Status Initializing
 
 ---
 
