@@ -104,6 +104,20 @@
             "world_w": 151.0,
             "world_h": 36.0,
             "text": "oxidative_stress"
+        },
+        {
+            "world_x": 632.0,
+            "world_y": -110.0,
+            "world_w": 54,
+            "world_h": 36,
+            "text": "heat"
+        },
+        {
+            "world_x": 773.0,
+            "world_y": -96.0,
+            "world_w": 40,
+            "world_h": 36,
+            "text": "air"
         }
     ],
     "edges": [
