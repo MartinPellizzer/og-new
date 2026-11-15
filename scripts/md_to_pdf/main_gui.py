@@ -311,7 +311,7 @@ def table_gen(items, doc, elements):
     table = Table(
         formatted_items,
         # colWidths=[available_width / num_cols] * num_cols,
-        colWidths=[doc.width * 0.3, doc.width * 0.7],
+        colWidths=[doc.width * 0.4, doc.width * 0.6],
         repeatRows=1,
     )
 
