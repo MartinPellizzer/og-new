@@ -13,13 +13,21 @@ import subprocess
 from lib import g
 from lib import io
 
-input_filepath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/terms/ozone/test.json'
+input_filepath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/terms/ozone/current.json'
 input_data = io.json_read(input_filepath)
+if 0:
+    print(json.dumps({
+        'term_name': input_data[0]['term_name'],
+        'term_count': input_data[0]['term_count'],
+        'term_definintions': input_data[0]['term_definitions'][:10],
+        'term_passages': input_data[0]['term_passages'][:10],
+    }, indent=4))
+    quit()
 
 pygame.init()
 
-screen_w = 1600
-screen_h = 900
+screen_w = 1920
+screen_h = 1080
 
 screen = pygame.display.set_mode((screen_w, screen_h))
 clock = pygame.time.Clock()
@@ -39,6 +47,8 @@ terms_2_index = 0
 
 core = {
     'running': True,
+    'workspace': '0',
+    'term_focus': None,
 }
 
 camera = {
@@ -94,6 +104,7 @@ frame_center = {
 }
 
 definitions_focus = []
+passages_focus = []
 
 ################################################################################
 # PROJ UTILS
@@ -138,6 +149,8 @@ def project_save():
             json.dump(output, f, indent=4)
     else:
         project_new()
+    ###
+    io.json_write(f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/terms/ozone/terms.json', lst_terms_lvl2)
 
 def project_open(filename=''):
     global current_file
@@ -418,6 +431,18 @@ def inputs_mouse_click_right():
 def inputs_key_press(event):
     if event.key == pygame.K_ESCAPE:
         core['running'] = False
+    # TAB: change workspace
+    elif event.key == pygame.K_TAB:
+        if core['workspace'] == '0':
+            core['workspace'] = '1'
+        else:
+            core['workspace'] = '0'
+    # Ctrl+1: change workspace
+    elif event.key == pygame.K_1 and pygame.key.get_mods() & pygame.KMOD_CTRL:
+        core['workspace'] = '1'
+    # Ctrl+0: change workspace
+    elif event.key == pygame.K_0 and pygame.key.get_mods() & pygame.KMOD_CTRL:
+        core['workspace'] = '0'
     # Ctrl+N
     elif event.key == pygame.K_n and pygame.key.get_mods() & pygame.KMOD_CTRL:
         project_new()
@@ -431,6 +456,29 @@ def inputs_key_press(event):
     elif event.key == pygame.K_d and (pygame.key.get_mods() & pygame.KMOD_CTRL):
         # edge_delete()
         pass
+    # Ctrl+DELETE
+    elif event.key == pygame.K_DELETE and (pygame.key.get_mods() & pygame.KMOD_CTRL):
+        # edge_delete()
+        if interaction['node_focus'] != None:
+            nodes.remove(interaction['node_focus'])
+            interaction['node_focus'] = None
+        pass
+    # A: add term
+    elif core['term_focus'] != None:
+        if event.key == pygame.K_a:
+            print('here')
+            # edge_delete()
+            ### create new node from term
+            text = core['term_focus']['text']
+            node = node_create(0, 0, 0, 0, text)
+            node_width_by_text(node)
+            interaction['node_focus'] = node
+            core['term_focus']['term_status'] = 'added'
+            # jump
+            # lst_terms_lvl2.remove(core['term_focus'])
+            terms_positions_regen()
+            core['term_focus'] = None
+        return
     # Editor
     elif event.key == pygame.K_BACKSPACE:
         if interaction['node_focus'] != None:
@@ -451,137 +499,178 @@ def inputs_key_press(event):
             elif interaction['edge_focus'] != None:
                 interaction['edge_focus']['edge_relationship'] += letter
 
-def main_inputs():
+def inputs_workspace_0(event):
     global font
     global terms_2_index
     global definitions_focus 
+    global passages_focus 
+
+    if event.type == pygame.MOUSEBUTTONDOWN:
+        if event.button == 1:
+            if pygame.key.get_mods() & pygame.KMOD_CTRL:
+                edge_start()
+                ####
+                interaction['node_focus'] = None
+                for node in reversed(nodes):
+                    if (
+                        mouse['world_x'] >= node['world_x'] and 
+                        mouse['world_y'] >= node['world_y'] and 
+                        mouse['world_x'] <= node['world_x'] + node['world_w'] and 
+                        mouse['world_y'] <= node['world_y'] + node['world_h']
+                    ):
+                        # nodes.remove(node)
+                        # nodes.append(node)
+                        interaction['node_focus'] = node
+            elif pygame.key.get_mods() & pygame.KMOD_SHIFT:
+                interaction['node_focus'] = None
+                interaction['field_focus'] = None
+                interaction['field_i_focus'] = None
+                for node in reversed(nodes):
+                    if (
+                        mouse['world_x'] >= node['world_x'] and 
+                        mouse['world_y'] >= node['world_y'] and 
+                        mouse['world_x'] <= node['world_x'] + node['world_w'] and 
+                        mouse['world_y'] <= node['world_y'] + node['world_h']
+                    ):
+                        # nodes.remove(node)
+                        # nodes.append(node)
+                        interaction['node_focus'] = node
+                        interaction['action'] = 'drag_snap'
+                        interaction['node_drag'] = node
+                        interaction['drag_offset_x'] = mouse['world_x'] - node['world_x']
+                        interaction['drag_offset_y'] = mouse['world_y'] - node['world_y']
+                        break
+            else:
+                core['term_focus'] = None
+                for term in lst_terms_lvl2:
+                    y = term['y'] - terms_2_index * font_sidebar_size
+                    if (
+                        mouse['screen_x'] >= term['x'] and 
+                        mouse['screen_y'] >= y and 
+                        # mouse['screen_x'] <= term['x'] + term['w'] and 
+                        mouse['screen_x'] <= term['x'] + frame_left['w'] and 
+                        # mouse['screen_y'] <= y + term['h']
+                        mouse['screen_y'] <= y + 24
+                    ):
+                        print(term)
+                        definitions_focus = term['term_definitions']
+                        passages_focus = term['term_passages']
+                        core['term_focus'] = term
+                interaction['node_focus'] = None
+                interaction['edge_focus'] = None
+                for node in reversed(nodes):
+                    if (
+                        mouse['world_x'] >= node['world_x'] and 
+                        mouse['world_y'] >= node['world_y'] and 
+                        mouse['world_x'] <= node['world_x'] + node['world_w'] and 
+                        mouse['world_y'] <= node['world_y'] + node['world_h']
+                    ):
+                        # nodes.remove(node)
+                        # nodes.append(node)
+                        interaction['node_focus'] = node
+                        interaction['action'] = 'drag'
+                        interaction['node_drag'] = node
+                        interaction['drag_offset_x'] = mouse['world_x'] - node['world_x']
+                        interaction['drag_offset_y'] = mouse['world_y'] - node['world_y']
+                        break
+                for edge in reversed(edges):
+                    pass
+                    # print(json.dumps(edge, indent=4))
+                    if (
+                        mouse['world_x'] >= edge['text_world_x1'] and 
+                        mouse['world_y'] >= edge['text_world_y1'] and 
+                        mouse['world_x'] <= edge['text_world_x2'] and 
+                        mouse['world_y'] <= edge['text_world_y2'] 
+                    ):
+                        interaction['edge_focus'] = edge
+        elif event.button == 2:
+            interaction['action'] = 'pan'
+            interaction['camera_x_start'] = camera['world_x']
+            interaction['camera_y_start'] = camera['world_y']
+            interaction['mouse_x_start'] = event.pos[0]
+            interaction['mouse_y_start'] = event.pos[1]
+        elif event.button == 3:
+            inputs_mouse_click_right()
+
+    elif event.type == pygame.MOUSEBUTTONUP:
+        if event.button == 1:
+            if interaction['action'] == 'edge':
+                edge_end()
+            interaction['action'] = None
+            interaction['node_drag'] = None
+        elif event.button == 2:
+            interaction['action'] = None
+            interaction['node_drag'] = None
+
+    elif event.type == pygame.MOUSEWHEEL:
+        if (
+            mouse['screen_x'] > frame_center['x'] and
+            mouse['screen_y'] > frame_center['y'] and
+            mouse['screen_x'] < frame_center['x'] + frame_center['w'] and
+            mouse['screen_y'] < frame_center['y'] + frame_center['h']
+        ):
+            if event.y == 1:
+                if camera['scale'] < 16:
+                    camera['scale'] *= 2
+            elif event.y == -1:
+                if camera['scale'] > 1:
+                    camera['scale'] /= 2
+            font = pygame.font.Font(None, 24*int(camera['scale']))
+        elif (
+            mouse['screen_x'] > frame_left['x'] and
+            mouse['screen_y'] > frame_left['y'] and
+            mouse['screen_x'] < frame_left['x'] + frame_left['w'] and
+            mouse['screen_y'] < frame_left['y'] + frame_left['h']
+        ):
+            if event.y == 1:
+                if terms_2_index > 0:
+                    terms_2_index -= 1
+            elif event.y == -1:
+                terms_2_index += 1
+
+    elif event.type == pygame.KEYDOWN:
+        inputs_key_press(event)
+
+def inputs_workspace_1(event):
+    global font
+    global terms_2_index
+    global definitions_focus 
+    global passages_focus 
+
+    if event.type == pygame.KEYDOWN:
+        inputs_key_press(event)
+
+    if event.type == pygame.MOUSEBUTTONDOWN:
+        if event.button == 1:
+            if False: pass
+            else:
+                for term in lst_terms_lvl2:
+                    y = term['y'] - terms_2_index * font_sidebar_size
+                    if (
+                        mouse['screen_x'] >= term['x'] and 
+                        mouse['screen_y'] >= y and 
+                        mouse['screen_x'] <= term['x'] + term['w'] and 
+                        mouse['screen_y'] <= y + term['h']
+                    ):
+                        print(json.dumps(term, indent=4))
+                        definitions_focus = term['term_definitions']
+                        passages_focus = term['term_passages']
+                interaction['node_focus'] = None
+                interaction['edge_focus'] = None
+
+def main_inputs():
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             core['running'] = False
 
-        elif event.type == pygame.MOUSEBUTTONDOWN:
-            if event.button == 1:
-                if pygame.key.get_mods() & pygame.KMOD_CTRL:
-                    edge_start()
-                    ####
-                    interaction['node_focus'] = None
-                    for node in reversed(nodes):
-                        if (
-                            mouse['world_x'] >= node['world_x'] and 
-                            mouse['world_y'] >= node['world_y'] and 
-                            mouse['world_x'] <= node['world_x'] + node['world_w'] and 
-                            mouse['world_y'] <= node['world_y'] + node['world_h']
-                        ):
-                            nodes.remove(node)
-                            nodes.append(node)
-                            interaction['node_focus'] = node
-                elif pygame.key.get_mods() & pygame.KMOD_SHIFT:
-                    interaction['node_focus'] = None
-                    interaction['field_focus'] = None
-                    interaction['field_i_focus'] = None
-                    for node in reversed(nodes):
-                        if (
-                            mouse['world_x'] >= node['world_x'] and 
-                            mouse['world_y'] >= node['world_y'] and 
-                            mouse['world_x'] <= node['world_x'] + node['world_w'] and 
-                            mouse['world_y'] <= node['world_y'] + node['world_h']
-                        ):
-                            nodes.remove(node)
-                            nodes.append(node)
-                            interaction['node_focus'] = node
-                            interaction['action'] = 'drag_snap'
-                            interaction['node_drag'] = node
-                            interaction['drag_offset_x'] = mouse['world_x'] - node['world_x']
-                            interaction['drag_offset_y'] = mouse['world_y'] - node['world_y']
-                            break
-                else:
-                    for term in lst_terms_lvl2:
-                        y = term['y'] - terms_2_index * font_sidebar_size
-                        if (
-                            mouse['screen_x'] >= term['x'] and 
-                            mouse['screen_y'] >= y and 
-                            mouse['screen_x'] <= term['x'] + term['w'] and 
-                            mouse['screen_y'] <= y + term['h']
-                        ):
-                            print(term)
-                            definitions_focus = term['term_definitions']
-                    interaction['node_focus'] = None
-                    interaction['edge_focus'] = None
-                    for node in reversed(nodes):
-                        if (
-                            mouse['world_x'] >= node['world_x'] and 
-                            mouse['world_y'] >= node['world_y'] and 
-                            mouse['world_x'] <= node['world_x'] + node['world_w'] and 
-                            mouse['world_y'] <= node['world_y'] + node['world_h']
-                        ):
-                            nodes.remove(node)
-                            nodes.append(node)
-                            interaction['node_focus'] = node
-                            interaction['action'] = 'drag'
-                            interaction['node_drag'] = node
-                            interaction['drag_offset_x'] = mouse['world_x'] - node['world_x']
-                            interaction['drag_offset_y'] = mouse['world_y'] - node['world_y']
-                            break
-                    for edge in reversed(edges):
-                        pass
-                        # print(json.dumps(edge, indent=4))
-                        if (
-                            mouse['world_x'] >= edge['text_world_x1'] and 
-                            mouse['world_y'] >= edge['text_world_y1'] and 
-                            mouse['world_x'] <= edge['text_world_x2'] and 
-                            mouse['world_y'] <= edge['text_world_y2'] 
-                        ):
-                            interaction['edge_focus'] = edge
-            elif event.button == 2:
-                interaction['action'] = 'pan'
-                interaction['camera_x_start'] = camera['world_x']
-                interaction['camera_y_start'] = camera['world_y']
-                interaction['mouse_x_start'] = event.pos[0]
-                interaction['mouse_y_start'] = event.pos[1]
-            elif event.button == 3:
-                inputs_mouse_click_right()
-
-        elif event.type == pygame.MOUSEBUTTONUP:
-            if event.button == 1:
-                if interaction['action'] == 'edge':
-                    edge_end()
-                interaction['action'] = None
-                interaction['node_drag'] = None
-            elif event.button == 2:
-                interaction['action'] = None
-                interaction['node_drag'] = None
-
-        elif event.type == pygame.MOUSEWHEEL:
-            if (
-                mouse['screen_x'] > frame_center['x'] and
-                mouse['screen_y'] > frame_center['y'] and
-                mouse['screen_x'] < frame_center['x'] + frame_center['w'] and
-                mouse['screen_y'] < frame_center['y'] + frame_center['h']
-            ):
-                if event.y == 1:
-                    if camera['scale'] < 16:
-                        camera['scale'] *= 2
-                elif event.y == -1:
-                    if camera['scale'] > 1:
-                        camera['scale'] /= 2
-                font = pygame.font.Font(None, 24*int(camera['scale']))
-            elif (
-                mouse['screen_x'] > frame_left['x'] and
-                mouse['screen_y'] > frame_left['y'] and
-                mouse['screen_x'] < frame_left['x'] + frame_left['w'] and
-                mouse['screen_y'] < frame_left['y'] + frame_left['h']
-            ):
-                if event.y == 1:
-                    if terms_2_index > 0:
-                        terms_2_index -= 1
-                elif event.y == -1:
-                    terms_2_index += 1
-
-        elif event.type == pygame.KEYDOWN:
-            inputs_key_press(event)
+        if core['workspace'] == '0':
+            inputs_workspace_0(event)
+        elif core['workspace'] == '1':
+            inputs_workspace_1(event)
 
     mouse['screen_x'], mouse['screen_y'] = pygame.mouse.get_pos()
     mouse['world_x'], mouse['world_y'] = screen_to_world(mouse['screen_x'], mouse['screen_y'])
+
 
 def main_update():
     if interaction['action'] == 'pan':
@@ -622,14 +711,17 @@ def draw_debug():
 def draw_background():
     screen.fill((40, 40, 40))
 
-def lst_item_create(x=0, y=0, w=0, h=0, text='???', term_definitions=[]):
+def lst_item_create(x=0, y=0, w=0, h=0, text='???', term_count='0', term_definitions=[], term_passages=[], term_status='todo'):
     item = {
         'x': x,
         'y': y,
         'w': w,
         'h': h,
         'text': text,
+        'term_count': term_count,
         'term_definitions': term_definitions,
+        'term_passages': term_passages,
+        'term_status': term_status,
     }
     return item
 
@@ -650,39 +742,83 @@ for i in range(100):
     lst_terms_lvl2.append(item)
 """
 
-lst_terms_lvl2 = []
-for i, item in enumerate(input_data):
-    # for key, value in item.items():
-        # print(key)
-    # quit()
-    # print(json.dumps(item, indent=4))
-    # quit()
-    term = item['term_name']
-    term_definitions = item['term_definitions'][:8]
-    text = f'{term}'
-    x = 0
-    y = font_sidebar_size * i
-    w, h = font.size(text)
-    item = lst_item_create(
-        x=x,
-        y=y,
-        w=w,
-        h=h,
-        text=text,
-        term_definitions=term_definitions,
-    )
-    lst_terms_lvl2.append(item)
+# ;jump
+try: lst_terms_lvl2 = io.json_read(f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/terms/ozone/terms.json')
+except: lst_terms_lvl2 = []
+if lst_terms_lvl2 == []:
+    for i, item in enumerate(input_data):
+        # for key, value in item.items():
+            # print(key)
+        # quit()
+        # print(json.dumps(item, indent=4))
+        # quit()
+        term = item['term_name']
+        term_count = item['term_count']
+        term_definitions = item['term_definitions'][:8]
+        term_passages = item['term_passages'][:20]
+        text = f'{term}'
+        x = 0
+        y = font_sidebar_size * i
+        w, h = font.size(text)
+        if 'term_status' not in item: item['term_status'] = 'todo'
+        term_status = item['term_status']
+        item = lst_item_create(
+            x=x,
+            y=y,
+            w=w,
+            h=h,
+            text=text,
+            term_count=term_count,
+            term_definitions=term_definitions,
+            term_passages=term_passages,
+            term_status=term_status
+        )
+        lst_terms_lvl2.append(item)
+
+def terms_positions_regen():
+    i = 0
+    for item in lst_terms_lvl2:
+        if item['term_status'] == 'todo':
+            x = 0
+            y = font_sidebar_size * i
+            item['x'] = x
+            item['y'] = y
+            i += 1
 
 def draw_lst_item():
+    # offset_y_counter = 1
+    i = -1
+    line_i = terms_2_index
+    for item in lst_terms_lvl2:
+        i += 1
+        if i < terms_2_index: continue
+        if item['term_status'] != 'todo': continue
+        # offset_y = 24 * offset_y_counter
+        term_text = item['text']
+        x = item['x']
+        y = item['y'] - terms_2_index * font_sidebar_size
+        if y > frame_left['h']: break
+        ####
+        if core['term_focus'] != None and core['term_focus'] == item:
+            pygame.draw.rect(screen, (0, 0, 255), (x, y, frame_left['w'], 24))
+        text = font_sidebar.render(f'{i} - {term_text}', True, (255, 255, 255))
+        screen.blit(text, (x, y))
+    return
+
+def draw_lst_item_old():
     # offset_y_counter = 1
     for i in range(len(lst_terms_lvl2)):
         if i < terms_2_index: continue
         item = lst_terms_lvl2[i]
+        if item['term_status'] != 'todo': continue
         # offset_y = 24 * offset_y_counter
         term = item['text']
         x = item['x']
         y = item['y'] - terms_2_index * font_sidebar_size
         if y > frame_left['h']: break
+        ####
+        if core['term_focus'] != None and core['term_focus'] == item:
+            pygame.draw.rect(screen, (0, 0, 255), (x, y, frame_left['w'], 24))
         text = font_sidebar.render(f'{i} - {term}', True, (255, 255, 255))
         screen.blit(text, (x, y))
     return
@@ -711,6 +847,15 @@ def draw_lst_item():
         screen.blit(text, (offset_x, offset_y))
 
 def draw_frame_left():
+    global terms_2_index
+    frame_x = frame_left['x']
+    frame_y = frame_left['y']
+    frame_w = frame_left['w']
+    frame_h = frame_left['h']
+    pygame.draw.rect(screen, (60, 60, 60), (frame_x, frame_y, frame_w, frame_h))
+    draw_lst_item()
+
+def draw_ws_1_frame_left():
     global terms_2_index
     frame_x = frame_left['x']
     frame_y = frame_left['y']
@@ -755,7 +900,7 @@ def draw_frame_left():
     # print(json.dumps(input_data[:10], indent=4))
     # quit()
 
-def draw_frame_bottom():
+def draw_ws_1_frame_bottom():
     frame = frame_bottom
     frame_x = frame['x']
     frame_y = frame['y']
@@ -769,19 +914,38 @@ def draw_frame_bottom():
         text = font_bottom.render(f'{definition}', True, (255, 255, 255))
         screen.blit(text, (offset_x, offset_y))
 
+def draw_ws_1_frame_center():
+    frame = frame_center
+    frame_x = frame['x']
+    frame_y = frame['y']
+    frame_w = frame['w']
+    frame_h = frame['h']
+    # pygame.draw.rect(screen, (72, 72, 72), (frame_x, frame_y, frame_w, frame_h))
+    ###
+    for line_i, line in enumerate(passages_focus):
+        offset_x = frame_x + 24
+        offset_y = frame_y + 24 + (line_i * 32)
+        text = font_bottom.render(f'{line}', True, (255, 255, 255))
+        screen.blit(text, (offset_x, offset_y))
+
 def main_draw():
     draw_background()
-    draw_grid()
+    if core['workspace'] == '0':
+        draw_grid()
 
-    if interaction['action'] == 'edge':
-        pygame.draw.line(screen, (255, 255, 255), (interaction['edge_x1'], interaction['edge_y1']), (mouse['screen_x'], mouse['screen_y']))
+        if interaction['action'] == 'edge':
+            pygame.draw.line(screen, (255, 255, 255), (interaction['edge_x1'], interaction['edge_y1']), (mouse['screen_x'], mouse['screen_y']))
 
-    draw_edges()
-    draw_nodes()
-    draw_debug()
+        draw_edges()
+        draw_nodes()
+        draw_debug()
 
-    draw_frame_left()
-    draw_frame_bottom()
+        draw_frame_left()
+
+    elif core['workspace'] == '1':
+        draw_ws_1_frame_left()
+        draw_ws_1_frame_bottom()
+        draw_ws_1_frame_center()
 
     pygame.display.flip()
 

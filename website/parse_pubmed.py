@@ -1270,8 +1270,17 @@ def definitions_peek():
         input_filepath = f'{input_folderpath}/{input_filename}'
         try: input_data = io.json_read(input_filepath)
         except: continue
-        print(json.dumps(input_data, indent=4))
-        quit()
+        if 0:
+            print(json.dumps(input_data, indent=4))
+            quit()
+        else:
+            for term in input_data['terms']:
+                if term['term'].lower() == 'ozone':
+                    print(json.dumps(term, indent=4))
+                    for relationship_triple in term['relationships_triples']:
+                        if relationship_triple['relationship'][2].lower() == 'o3':
+                            print(relationship_triple)
+                            quit()
 
 def relationships_peek():
     input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/relationships/raw'
@@ -1582,6 +1591,8 @@ def aggregate_entities_2(noun):
         print(f'AGGREGATE RELATIONSHIPS {noun} {i}/{len(input_filenames)}')
         input_filepath = f'{input_folderpath}/{input_filename}'
         input_data = io.json_read(input_filepath)
+        print(json.dumps(input_data, indent=4))
+        quit()
         terms = input_data['terms']
         for term in terms:
             term_name = term['term'].lower().strip()
@@ -1591,6 +1602,9 @@ def aggregate_entities_2(noun):
                     relationship = relationship_triple['relationship'] 
                     terms_all.append(relationship[2])
                 # quit()
+    # print(json.dumps(terms_all, indent=4))
+    # quit()
+    ###
     from collections import Counter
     result = [{"term": term, "count": count}
               for term, count in Counter(terms_all).most_common()]
@@ -1617,6 +1631,71 @@ def aggregate_entities_2(noun):
     result_preview = output_items[:100]
     print(json.dumps(result_preview, indent=4))
     # quit()
+
+def aggregate_entities_3(noun):
+    input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/definitions/raw'
+    output_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/terms/{noun}'
+    io.folders_recursive_gen(output_folderpath)
+    output_filepath = f'{output_folderpath}/test.json'
+    input_filenames = os.listdir(input_folderpath)
+    # Aggregate terms, frequencies and passages simultaneously
+    from collections import defaultdict
+    terms_all = defaultdict(lambda: {
+        'count': 0,
+        'passages': set()
+    })
+    for i, input_filename in enumerate(input_filenames[:]):
+        print(f'AGGREGATE RELATIONSHIPS {noun} {i}/{len(input_filenames)}')
+        input_filepath = f'{input_folderpath}/{input_filename}'
+        input_data = io.json_read(input_filepath)
+        terms = input_data['terms']
+        for term in terms:
+            term_name = term['term'].lower().strip()
+            if term_name == noun:
+                for relationship_triple in term['relationships_triples']:
+                    relationship = relationship_triple['relationship']
+                    aggregate_term = relationship[2]
+                    # Increment frequency
+                    terms_all[aggregate_term]['count'] += 1
+                    # Collect associated passages
+                    terms_all[aggregate_term]['passages'].update(
+                        relationship_triple.get('passages', [])
+                    )
+    # Sort terms by frequency (descending)
+    result = sorted(
+        [
+            {
+                'term': term,
+                'count': data['count'],
+                'passages': list(data['passages'])
+            }
+            for term, data in terms_all.items()
+        ],
+        key=lambda x: x['count'],
+        reverse=True
+    )
+    # Load definitions
+    definitions_filepath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/definitions_ref/raw/definitions.json'
+    definitions_data = io.json_read(definitions_filepath)
+    # Create definition lookup for faster access
+    definitions_lookup = {
+        item['term_name']: item['term_definitions']
+        for item in definitions_data
+    }
+    output_items = []
+    for res_i, res in enumerate(result):
+        print(f'{res_i}/{len(result)}')
+        term_name = res['term']
+        output_item = {
+            'term_name': term_name,
+            'term_count': res['count'],
+            'term_definitions': definitions_lookup.get(term_name, []),
+            'term_passages': res['passages']
+        }
+        output_items.append(output_item)
+    io.json_write(output_filepath, output_items)
+    # result_preview = output_items[:100]
+    # print(json.dumps(result_preview, indent=4))
 
 def aggregate_entities_2_old(noun):
     input_folderpath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/relationships_passages/raw'
@@ -1698,13 +1777,14 @@ def run():
     # relationships_find_passages_by_index()
     # relationships_peek() ### WARNING: takes many many hours (nightly running)
 
-    definitions_llm() ### WARNING: takes many many hours (nightly running)
+    # definitions_llm() ### WARNING: takes many many hours (nightly running)
     # definitions_peek()
 
     # aggregate_nouns_phrases()
     ### TODO: get terms ordered by occurences, but also aggregate their definitions to export a json with
     ###       terms -> definition items for the ontology gui
     # aggregate_entities_2(noun='ozone')
+    aggregate_entities_3(noun='ozone')
     # aggregate_relationships(entity_1='ozone', entity_2='ozone exposure')
 
     quit()
