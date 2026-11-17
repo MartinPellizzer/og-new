@@ -184,18 +184,23 @@ def project_open(filename=''):
                 # edge['edge_end']['node']['fields'] = node['fields']
 
 project_open(filename='kg.json')
+# project_open(filename='')
 
 # ============================================================
 # NODES
 # ============================================================
 
-def node_create(x, y, w, h, text):
+def node_create(x, y, w, h, text, term_name, term_frequency, term_definitions, term_passages):
     node = {
         'world_x': x,
         'world_y': y,
         'world_w': w,
         'world_h': h,
         'text': text,
+        'term_name': term_name,
+        'term_frequency': term_frequency,
+        'term_definitions': term_definitions,
+        'term_passages': term_passages,
     }
     nodes.append(node)
     return node
@@ -421,12 +426,14 @@ node_width_by_text(node)
 """
 
 
+'''
 def inputs_mouse_click_right():
     x = mouse['world_x']
     y = mouse['world_y']
     text = '???'
     node = node_create(x, y, 0, 0, text)
     node_width_by_text(node)
+'''
 
 def inputs_key_press(event):
     if event.key == pygame.K_ESCAPE:
@@ -434,7 +441,11 @@ def inputs_key_press(event):
     # TAB: change workspace
     elif event.key == pygame.K_TAB:
         if core['workspace'] == '0':
-            core['workspace'] = '1'
+            if interaction['node_focus'] != None:
+                print(interaction['node_focus'])
+                core['workspace'] = '1'
+            elif core['term_focus'] != None:
+                core['workspace'] = '1'
         else:
             core['workspace'] = '0'
     # Ctrl+1: change workspace
@@ -469,8 +480,13 @@ def inputs_key_press(event):
             print('here')
             # edge_delete()
             ### create new node from term
+            print(json.dumps(core['term_focus'], indent=4))
             text = core['term_focus']['text']
-            node = node_create(0, 0, 0, 0, text)
+            term_name = core['term_focus']['text']
+            term_frequency = core['term_focus']['term_count']
+            term_definitions = core['term_focus']['term_definitions']
+            term_passages = core['term_focus']['term_passages']
+            node = node_create(0, 0, 0, 0, text, term_name, term_frequency, term_definitions, term_passages)
             node_width_by_text(node)
             interaction['node_focus'] = node
             core['term_focus']['term_status'] = 'added'
@@ -556,6 +572,7 @@ def inputs_workspace_0(event):
                         definitions_focus = term['term_definitions']
                         passages_focus = term['term_passages']
                         core['term_focus'] = term
+                ###
                 interaction['node_focus'] = None
                 interaction['edge_focus'] = None
                 for node in reversed(nodes):
@@ -567,6 +584,11 @@ def inputs_workspace_0(event):
                     ):
                         # nodes.remove(node)
                         # nodes.append(node)
+                        try: definitions_focus = node['term_definitions']
+                        except: pass
+                        try: passages_focus = node['term_passages']
+                        except: pass
+                        ###
                         interaction['node_focus'] = node
                         interaction['action'] = 'drag'
                         interaction['node_drag'] = node
@@ -590,7 +612,8 @@ def inputs_workspace_0(event):
             interaction['mouse_x_start'] = event.pos[0]
             interaction['mouse_y_start'] = event.pos[1]
         elif event.button == 3:
-            inputs_mouse_click_right()
+            # inputs_mouse_click_right()
+            pass
 
     elif event.type == pygame.MOUSEBUTTONUP:
         if event.button == 1:
@@ -644,17 +667,21 @@ def inputs_workspace_1(event):
         if event.button == 1:
             if False: pass
             else:
+                core['term_focus'] = None
                 for term in lst_terms_lvl2:
                     y = term['y'] - terms_2_index * font_sidebar_size
                     if (
                         mouse['screen_x'] >= term['x'] and 
                         mouse['screen_y'] >= y and 
-                        mouse['screen_x'] <= term['x'] + term['w'] and 
-                        mouse['screen_y'] <= y + term['h']
+                        # mouse['screen_x'] <= term['x'] + term['w'] and 
+                        mouse['screen_x'] <= term['x'] + frame_left['w'] and 
+                        # mouse['screen_y'] <= y + term['h']
+                        mouse['screen_y'] <= y + 24
                     ):
-                        print(json.dumps(term, indent=4))
+                        print(term)
                         definitions_focus = term['term_definitions']
                         passages_focus = term['term_passages']
+                        core['term_focus'] = term
                 interaction['node_focus'] = None
                 interaction['edge_focus'] = None
 
@@ -803,7 +830,6 @@ def draw_lst_item():
             pygame.draw.rect(screen, (0, 0, 255), (x, y, frame_left['w'], 24))
         text = font_sidebar.render(f'{i} - {term_text}', True, (255, 255, 255))
         screen.blit(text, (x, y))
-    return
 
 def draw_lst_item_old():
     # offset_y_counter = 1

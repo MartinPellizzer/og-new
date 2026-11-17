@@ -1650,6 +1650,8 @@ def aggregate_entities_3(noun):
         input_data = io.json_read(input_filepath)
         terms = input_data['terms']
         for term in terms:
+            print(json.dumps(input_data, indent=4))
+            quit()
             term_name = term['term'].lower().strip()
             if term_name == noun:
                 for relationship_triple in term['relationships_triples']:
