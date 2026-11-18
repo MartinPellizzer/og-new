@@ -1,47 +1,6 @@
 {
     "nodes": [
         {
-            "world_x": 17.0,
-            "world_y": 8.0,
-            "world_w": 7.375,
-            "world_h": 2.6875,
-            "text": "ozone exposure",
-            "term_name": "ozone exposure",
-            "term_frequency": 1929,
-            "term_definitions": [
-                "ozone exposure refers to the inhalation of ozone gas, which can lead to respiratory inflammation and changes in lung function.",
-                "ozone exposure refers to the contact or inhalation of ozone gas by an organism.",
-                "ozone exposure is the state of being subjected to contact with or presence of ozone in the environment.",
-                "ozone exposure refers to the contact of an organism with ozone gas in the environment.",
-                "the contact of an organism or biological system with ozone gas.",
-                "ozone exposure refers to the contact of an organism or substance with ozone gas for a specific duration and concentration.",
-                "ozone exposure refers to the contact of an individual with ozone gas in the surrounding environment.",
-                "ozone exposure is the state of being subjected to contact with ozone gas in the surrounding environment."
-            ],
-            "term_passages": [
-                "However, limited research has gone beyond examining histopathological alterations in the olfactory bulb (OB) to explore the effects of ozone exposure on olfactory and cognitive functions.",
-                "Existing measurements may overestimate ozone exposure and intake in typical indoor environments.",
-                "To determine whether oxygenation products of arachidonic acid may be involved in the airway hyperresponsiveness induced by ozone exposure, we studied whether ozone-induced hyperresponsiveness could be inhibited by the prostaglandin synthetase inhibitor, indomethacin, in dogs.",
-                "Indoor ozone levels range from 10 to 80 percent of outdoor levels, with many people receiving a substantial portion of their ozone exposure while indoors.",
-                "By 24 h after exposure these changes had been obscured by an increase in epithelial permeability, perhaps as the result of an inflammatory response to the ozone exposure.",
-                "This paper focuses on epidemiological panel studies and human clinical studies of ozone exposure, and discusses issues specific to this pollutant that may influence study design and interpretation as well as other, broader considerations relevant to ozone-health research.",
-                "PGF2-alpha levels were similar in both groups prior to ozone exposure with indomethacin (Asth = 65 pg/ml, Nm = 59 pg/ml), but postexposure levels in Asth were significantly elevated (118 pg/ml) compared to Nm (54 pg/ml).",
-                "After ozone exposure the release of prostanoids was also enhanced (unstimulated, PGF(2\u03b1) and TxB(2); histamine, PGF(2\u03b1), PGE(2); methacholine, PGF(2\u03b1), TxB(2), 6-kPGF(1\u03b1), PGE(2)).",
-                "To determine if the CD4+ T-cell-derived cytokine interleukin (IL)-4 was involved in the differential effect of T-cell depletion on the ozone-induced inflammatory responses of C3 and B6 mice, mice were pretreated with either 400 ng of recombinant mouse IL-4 or vehicle, or 5.0 mg anti-IL-4 receptor monoclonal antibody or an isotype-matched antibody before either air or ozone exposure.",
-                "Plasma IL-6 increased post-exercise (<i>p</i> = 0.0015), and TNF-\u03b1 increased post-ozone exposure (<i>p</i> = 0.0018).",
-                "Taken together, these results support that RBEE protects plants against ozone exposure and its use as a new biostimulant could be proposed.",
-                "Given the ubiquity of ozone exposure and the importance of diabetes on quality of life and survival, these results may have important implications for the protection of public health.",
-                "The distribution of lipids was modified by ozone exposure of 115 and 1000\u202fppb for 16\u202fh with the following reactivity: consumption of alkene, formation of aldehydes and formation of nonanoic acid and octadecanoic acid.",
-                "The cellular data indicate an acute inflammation developed during ozone exposure in the lower respiratory tract.",
-                "There was no significant effect of ozone exposure on the ability of neutrophils to degrade fibronectin or injure epithelial cells.",
-                "These findings indicate that the risk of ozone-induced lung toxicity is substantially increased in a hyperthyroid state and suggest that the susceptibility of the lung to damage from ozone exposure may be significantly influenced by individual thyroid hormone status.",
-                "The interest in the pathology of ozone exposure and the molecular events that underlie its course stems from DNA damage caused by oxygen stress including hydroxyl radicals, superoxide, singlet oxygen, and hydrogen peroxide.",
-                "Data suggest that plasma 2,3-DHBA is a sensitive marker indicating acute ozone exposure, even at an ozone concentration that causes minimal observable airway effects in healthy subjects.",
-                "However, subjects with the greatest ozone-induced decrements in FEV(1) tended to have lower PC(15) values after ozone exposure.",
-                "Prolonged ozone exposure, though not continuous, produced remarkable behavioural disturbances with an increase in drinking, grooming and resting, and a reduction of rearing, jumping-play and locomotor activities."
-            ]
-        },
-        {
             "world_x": 57.0,
             "world_y": -5.0,
             "world_w": 9.380952380952381,
@@ -83,48 +42,7 @@
             ]
         },
         {
-            "world_x": 17.0,
-            "world_y": 12.0,
-            "world_w": 4.944444444444445,
-            "world_h": 2.7222222222222223,
-            "text": "mortality",
-            "term_name": "mortality",
-            "term_frequency": 536,
-            "term_definitions": [
-                "mortality is the state or process of being subject to death.",
-                "mortality refers to the state or rate of death within a population.",
-                "mortality refers to the state or rate of death within a population.",
-                "mortality refers to the state or rate of being subject to death.",
-                "mortality refers to the state or rate of death within a population.",
-                "mortality refers to the state or rate of being subject to death.",
-                "mortality is the state or rate of being subject to death.",
-                "mortality refers to the state or incidence of death within a population."
-            ],
-            "term_passages": [
-                "The aim of this study was to analyze the effect of ozone on mortality, and the extent to which this is due to short-term mortality displacement in 48 U.S. cities between 1989 and 2000.",
-                "Ozone and particulate matter smaller than 10 microm were found at high concentrations in SC3 and SC7, respectively, but their impact on mortality was not clear.",
-                "Ozone and particulate matter 10 microns in diameter or less (PM10) are associated with increased risk of morbidity and mortality.",
-                "In this study, the authors aimed to examine whether temperature modified effects of ozone on cardiovascular mortality in 95 large US cities.",
-                "The maximum relative risk (RR) of mortality from cardiovascular and cerebrovascular diseases for every 10 \u03bcg/m<sup{3}</sup> increase in ozone was 1.005 (95% CI: 1.002-1.008).",
-                "Ozone exposure causes airway hyperreactivity, lung hyperpermeability, inflammation, and cell damage in humans and laboratory animals, and exposure to ozone has been associated with exacerbation of asthma, altered lung function, and mortality.",
-                "This study used a case-crossover design to examine whether impacts of ozone on mortality were modified by socioeconomic status coded at the tract or characteristics at an individual level in eastern Massachusetts, US for a period May-September, 1995-2002, with a total of 157,197 non-accident deaths aging 35 years or older.",
-                "Hazard ratios (HR) for mortality, were related to PM<sub>2.5</sub> and ozone using Cox proportional hazards survival models, adjusting for socioeconomic characteristics and individual confounders.",
-                "This is especially noteworthy in light of recent work indicating little, if any, threshold for ozone's impact on mortality.",
-                "During the summer quarters, an effect of ozone on mortality was also detected, but this association could be due to confounding with temperature.",
-                "Exposure to PM<sub>2.5</sub> was related to an increased risk of mortality from lung cancer, and both ozone and PM<sub>2.5</sub> exposure were related to risk of mortality from ischemic heart disease, and the risk varied spatially by climate zone.",
-                "Our quantitative review revealed a paucity of independent studies regarding the associations between long-term exposure to ozone and mortality.",
-                "Daily changes in ambient concentrations of particulate matter, nitrogen oxides and ozone are associated with increased cardiopulmonary morbidity and mortality, with the lungs and their function being a vulnerable target.",
-                "The association between nonaccidental mortality was examined with ozone alone and with ozone after adjustment for fine particle mass, sulfate, organic carbon, or nitrate concentrations.",
-                "In this study, we explored whether temperature modifies the effect of short-term ozone exposure on mortality.",
-                "Overall, ozone and PM<sub>2.5</sub> showed higher season-specific risk of mortality than hospitalization: warm-season ozone: 0.54% (95% credible interval, 0.20, 0.85) vs. 0.14% (0.02, 0.27) per 10\u00a0ppb; and year-round PM<sub>2.5</sub>: 0.90% (0.33, 1.41) vs. 0.29% (0.03, 0.56) per 10\u00a0\u03bcg/m<sup{3</sup>.",
-                "On average, a 10 \u00b5g/m<sup>3</sup> increase in ozone during the current and previous day was associated with an overall relative risk of mortality of 1.0018 (95% confidence interval 1.0012 to 1.0024).",
-                "Ozone is a highly reactive, oxidative gas associated with adverse health outcome, including mortality and morbidity.",
-                "Acute associations between mortality and ozone are largely accepted, though recent evidence is less conclusive.",
-                "The authors separately used a nonparametric regression model and a parametric regression model to explore interactive effects of temperature and ozone on cardiovascular mortality between May and October of the years from 1987 to 2000."
-            ]
-        },
-        {
-            "world_x": 17.0,
+            "world_x": 30.0,
             "world_y": 15.0,
             "world_w": 8.055555555555555,
             "world_h": 2.7222222222222223,
@@ -165,8 +83,8 @@
             ]
         },
         {
-            "world_x": 17.0,
-            "world_y": 18.0,
+            "world_x": 44.0,
+            "world_y": 15.0,
             "world_w": 6.777777777777778,
             "world_h": 2.7222222222222223,
             "text": "ozone pollution",
@@ -247,8 +165,8 @@
             ]
         },
         {
-            "world_x": 15.0,
-            "world_y": -21.0,
+            "world_x": 39.0,
+            "world_y": 15.0,
             "world_w": 3.9375,
             "world_h": 2.6875,
             "text": "PM2.5",
@@ -276,47 +194,6 @@
                 "Responses of ozone and PM2.5 to emission changes are coupled because of interactions between their precursors.",
                 "We then compared the ambient regional concentrations of ozone and PM2.5 with the rate of cognitive decline in residents within those regions.",
                 "The effects of air pollutants such as ozone, particulate matter (PM10, PM2.5, and PM0.1), and indoor air pollutants on respiratory health have been widely reported."
-            ]
-        },
-        {
-            "world_x": 17.0,
-            "world_y": 4.0,
-            "world_w": 2.8235294117647056,
-            "world_h": 2.6470588235294117,
-            "text": "air",
-            "term_name": "air",
-            "term_frequency": 355,
-            "term_definitions": [
-                "a gaseous mixture of various gases that surrounds the earth and constitutes the atmosphere.",
-                "air is a gaseous mixture of various gases that surrounds the earth and constitutes the atmosphere.",
-                "a mixture of gases that constitutes the earth's atmosphere.",
-                "air is the invisible mixture of gases that surrounds the earth and makes up its atmosphere.",
-                "air is the gaseous mixture of various elements and compounds that makes up the atmosphere surrounding earth.",
-                "the invisible mixture of gases that surrounds the earth and makes up the atmosphere.",
-                "a mixture of gases that makes up the earth's atmosphere.",
-                "the invisible mixture of gases and particles that surrounds the earth and constitutes the atmosphere."
-            ],
-            "term_passages": [
-                "Compared with conventional liquid-based disinfection techniques, the portable ozone disinfection system has the following advantages: (i) a gaseous biocide can reach all surfaces inside the treatment target, without any restriction from orientation or surface tension; (b) ozone is effective in reducing planktonic and biofilm bacterial counts; and (c) ozone is generated at the point of use from air, using minimal electrical power, requiring no chemical delivery or storage, and producing no toxic residues.",
-                "The concentrations of hypochlorous acid, chlorine dioxide, and ozone in the air reached an approximately 2-log reduction of SARS-CoV-2 infectivity titer within 10\u00a0min at 0.02, 1.0, and 1.0\u00a0ppm, respectively.",
-                "After exposure to either 3.0 parts/million ozone or air at the same flow rate for 2 h, guinea pigs were anesthetized and tracheostomized, and then lung resistance (RL) was measured.",
-                "The second aim was to investigate the dependence of the efficiency of ozone removal from the air on the height of the adsorber layer and on concentrations of ozone, and to obtain empirical formulas for calculating the efficiency of ozone treatment.",
-                "In a subset of four subjects, alveolar macrophage arachidonic acid metabolism was studied in vitro following separate in vivo exposures to both ozone and air.",
-                "The use of ozone (as gas or as ozonated water) can be effective for sanitizing air, water, and surfaces in contact with food, and its use can also be extended to the treatment of waste and process water.",
-                "Nonsensitized and sensitized guinea pigs were treated with 5-bromo-2-deoxyuridine (BrdU) to label newly divided cells and were exposed to air or ozone for 4 h.",
-                "A hitherto unknown reaction, the isotope exchange between oxygen and ozone, accompanies formation of the latter upon ionization of O(2) or air, a long-known process widely utilized for the production of ozone and of great relevance to atmospheric chemistry.",
-                "The microbicidal effect of ozone in air was tested at concentrations between 50 and 600 micrograms/m3 against the species: Staphylococcus epidermidis, Micrococcus luteus, Arthrobacter citreus, Bacillus subtilis (veg.), Escherichia coli, Salmonella typhimurium, Serratia marcescens, Pseudomonas fluorescens and Candida albicans.",
-                "Respirable dust concentrations in the air of the work place were 0.1-1.0 mg/m3, total dust concentrations 0.2-2.0 mg/m3, and ozone concentrations 0.004-0.06 ppm (0.008-0.12 mg/m3).",
-                "IL-13(-/-), IL-4/13(-/-) and IL-13-overexpressing transgenic (Tg) mice were exposed to ozone (3 ppm; 3 h) or air.",
-                "Ozone causes vagally mediated airway hyperreactivity and recruits inflammatory cells, including eosinophils, to lungs, where they mediate ozone-induced hyperreactivity 1 day after exposure but are paradoxically protective 3 days later.",
-                "The ozone concentration in intercellular air spaces calculated from the ozone uptake rate and diffusion resistance to ozone scattered around zero.",
-                "Experimental details are provided for ozone generation technique, mixing method, ozone concentrations in air and water, and input energy required to produce adequate ozone concentrations for bacterial inactivation in a contaminated, open water system.",
-                "SB239063 inhibited bronchial contraction equally in air- and ozone-exposed C57/BL6 and MKP-1(-/-) mice.",
-                "Substituting ozone for air further enhanced overall PFAS removal (e.g., PFOS >95\u00a0% under comparable conditions) and improved foam stability, although at the expense of greater safety requirements, higher cost, and added operational complexity.",
-                "To identify the afferents responsible for initiating the vagally mediated respiratory changes evoked by acute exposure to ozone, we recorded vagal impulses in anesthetized, open-chest, artificially ventilated dogs and examined the pulmonary afferent response to ozone (2-3 ppm in air) delivered to the lower trachea for 20-60 min.",
-                "Smokers (12) and nonsmokers (15) were exposed once to air and twice to 0.22 ppm ozone for four hours with exercise in an environmental chamber; each exposure was separated by at least three weeks.",
-                "Heat-inactivated plasma and lavage from animals exposed to ozone for 5 or 7 d significantly increased DNA synthesis by lung pneumocytes compared with plasma or lavage from air-exposed animals.",
-                "Fourteen ozone-responsive subjects were randomly exposed to both air and ozone (0.2 ppm for 2 h) after 7 days of either placebo treatment or supplementation with vitamin C (500 mg/day) and E (100 mg/day)."
             ]
         },
         {
@@ -422,88 +299,6 @@
                 "The lifetimes of gaseous HONO and ozone are approximately 10 min due to this multiphase reaction under indoor conditions, which is a significant sink for HONO and O<sub>3</sub> as compared to those of other indoor reactions and air exchange.",
                 "Here, we use a vertical wetted wall flow tube reactor to evaluate the effect of ionic strength on the heterogeneous reaction of gas-phase ozone (O<sub>3</sub>) with a liquid film of <i>o</i>-vanillin (<i>o</i>-VL) (2-hydroxy-3-methoxybenzaldehyde), as a proxy for methoxyphenols.",
                 "The reaction of BCA with O<sub>3</sub> can generate primary ozone oxides and the Criegee Intermediates oIM3, subsequent main reaction products include keto-BCA, as well as other small molecule aqSOA precursors."
-            ]
-        },
-        {
-            "world_x": 17.0,
-            "world_y": 21.0,
-            "world_w": 7.285714285714286,
-            "world_h": 2.642857142857143,
-            "text": "oxidative stress",
-            "term_name": "oxidative stress",
-            "term_frequency": 344,
-            "term_definitions": [
-                "oxidative stress is an imbalance between the production of reactive oxygen species and a biological system's ability to detoxify them or repair the resulting damage.",
-                "oxidative stress is an imbalance between the production of reactive oxygen species and a biological system's ability to detoxify them or repair the resulting damage.",
-                "oxidative stress is a physiological condition characterized by an imbalance between the production of reactive oxygen species and the biological system's ability to detoxify them.",
-                "oxidative stress is a physiological condition characterized by an imbalance between the production of reactive oxidizing agents and the body's ability to neutralize them, often leading to cellular damage and inflammation.",
-                "oxidative stress is a physiological condition characterized by an imbalance between the production of reactive oxygen species and the ability of a biological system to neutralize them through antioxidant defenses.",
-                "oxidative stress is a physiological state characterized by an imbalance between the production of reactive oxygen species and the body's ability to detoxify them through antioxidant mechanisms.",
-                "oxidative stress is a physiological condition characterized by an imbalance between the production of reactive oxygen species and the body's ability to detoxify them through antioxidant defenses.",
-                "oxidative stress is a physiological condition characterized by an imbalance between the production of reactive oxygen species and the body's ability to detoxify them through antioxidant defenses."
-            ],
-            "term_passages": [
-                "In conclusion, ozone altered oxidative stress, metabolic pathway, and amyloid plaque accumulation besides endothelial stress response involving mitochondria as the critical factor in ATP degeneration, caspase pathway, and neuronal damage.",
-                "Ozone-induced injury and oxidative stress in bronchiolar epithelium were linked to methacholine-induced alterations in pulmonary mechanics.",
-                "Our purpose was to test that oxidative stress caused by chronic low doses of ozone, by itself, alters adult neurogenesis and causes progressive neurodegeneration in the hippocampus, which actions lead to the loss of brain plasticity in the mature central nervous system of rats.",
-                "Furthermore, postharvest treatments of grapes with ozone can stimulate defense responses by synthetizing secondary metabolites against oxidative stress.",
-                "Animals were exposed to an ozone-free air stream and for 15, 30, 60, and 90 days to low doses of ozone to cause oxidative stress.",
-                "Acute exposure to ozone causes oxidative stress, characterized by increases in nitric oxide (NO) and other reactive nitrogen species in the lung.",
-                "A principal component analysis showed that the enzyme ascorbate peroxidase can be an indicator of oxidative stress caused by ozone.",
-                "An exciting new aspect is that ozone, being a strong oxidizer, can stimulate the increase of cellular anti-oxidant enzymes, eventually inhibiting the oxidative stress.",
-                "To determine whether ozone exposure induces greater oxidative stress and airway inflammation in RAO-affected horses in remission than in healthy horses.",
-                "Our study aimed to evaluate the effect of chronic exposition of rats to controlled low doses of ozone on oxidative stress, apoptosis, mitochondrial dynamics, and cardiac hypertrophy.",
-                "In asthmatic mice, ozone exposure induces oxidative stress and worsens pulmonary dysfunction, lung tissue damage, and inflammation, disrupting the balance of type 2 innate lymphoid cells (ILC2s), T helper type 2 (Th2), and T helper type 17 (Th17) cells.",
-                "After inhalation of PGs, pollen-transported ozone could be transferred to mucous membranes and exacerbate symptoms through oxidative stress and local inflammation.",
-                "Using an environmentally realistic concentration (0.8 parts per million), we demonstrated that exposure of rats to ozone induced whole-body insulin resistance and oxidative stress, with associated endoplasmic reticulum (ER) stress, c-Jun N-terminal kinase (JNK) activation, and disruption of insulin signaling in skeletal muscle.",
-                "Medical ozone reduced inflammation, IL-1\u03b2, TNF-\u03b1 mRNA levels and oxidative stress in PG/PS-induced arthritis in rats.",
-                "The relationship of PR-10 proteins, particularly PR-10c, to oxidative stress caused by metals or ozone was studied in tolerant and sensitive birch clones to find out possible linkages to tolerance.",
-                "One of the greatest problems concerning an application of ozone in medicine is its induction of oxidative stress.",
-                "Exposure to environmental ozone can cause significant damage to plants by imposing conditions of oxidative stress.",
-                "Metabolomics analysis showed that acute ozone exposure led to alterations in stress hormones, systemic inflammation, oxidative stress, and energy metabolism.",
-                "To study the effect of chronic administration of tibolone on lipid peroxidation, memory and motor deficits in ozone induced oxidative stress.",
-                "Ozone is a secondary air pollutant, which causes oxidative stress in plants by producing reactive oxygen species (ROS) starting by an external attack of leaf apoplast."
-            ]
-        },
-        {
-            "world_x": 17.0,
-            "world_y": 1.0,
-            "world_w": 3.791666666666667,
-            "world_h": 2.6666666666666665,
-            "text": "water",
-            "term_name": "water",
-            "term_frequency": 339,
-            "term_definitions": [
-                "a transparent, odorless, and tasteless liquid substance that is essential for all known forms of life.",
-                "a transparent, odorless, and tasteless liquid that is essential for all known forms of life.",
-                "a transparent, tasteless, odorless liquid that is essential for all known forms of life.",
-                "a transparent, tasteless, odorless, and nearly colorless chemical substance that is the main constituent of earth's hydrosphere and the fluids supporting most known forms of life.",
-                "a transparent, tasteless, odorless, and nearly colorless chemical substance that is the main constituent of earth's hydrosphere and the fluids of all known living organisms.",
-                "a vital liquid substance essential for the survival and physiological processes of living organisms.",
-                "a transparent, tasteless, odorless liquid that is the main constituent of earth's hydrosphere and a vital solvent for life.",
-                "a transparent, tasteless, odorless, and nearly colorless chemical substance that is the main constituent of earth's hydrosphere and the fluids of all known living organisms."
-            ],
-            "term_passages": [
-                "Ozone solutions in water and in NaCl solutions found are widely used in technology and medicine.",
-                "An efficient oxidation process with ozone can be obtained by focusing the oxidation with ozone selectively on the direct oxidation of toxic pollutants and to minimize ozone losses due to the decay of ozone in water.",
-                "The use of ozone (as gas or as ozonated water) can be effective for sanitizing air, water, and surfaces in contact with food, and its use can also be extended to the treatment of waste and process water.",
-                "Ozonation has been used as an advanced technique that is applied in wastewater treatment to remove CIP, but the primary limitation of this method is the low solubility of ozone in water.",
-                "Atmospheric vertical profiles of ozone, nitrous oxide, methane, dichlorodifluoromethane, and water are retrieved from data collected with a widely tunable external-cavity quantum-cascade laser heterodyne radiometer (EC-QC-LHR) covering a spectral range between 1120 and 1238 cm(-1).",
-                "The changes of dissolved ozone in water and the TBA experiment proved that the ternary catalyst could accelerate the decomposition of ozone into hydroxyl radicals, thus accelerating the oxidation of phenol.",
-                "The results of experimental study on effectiveness of gas-phase total oxidation of toluene towards carbon dioxide and water with the aid of ozone over Co(II)/SiO<sub>2</sub> catalyst are presented in this work.",
-                "It is unclear whether ozone treatment of water or fresh produce can reduce the spread of the emerging parasite Cyclospora cayetanensis, which causes cyclosporiasis in humans.",
-                "The large oxygen content may arise by cocondensation of small oxygenated molecules such as water or multistep reactions with ozone, water, or other species that produce highly oxygenated macromolecules.",
-                "The present study aimed to optimize ozone (O<sub>3</sub>) treatments, as gas and dissolved in water, to remove difenoconazole and linuron in carrots.",
-                "Experimental details are provided for ozone generation technique, mixing method, ozone concentrations in air and water, and input energy required to produce adequate ozone concentrations for bacterial inactivation in a contaminated, open water system.",
-                "Vacuum UltraViolet (VUV)/UltraViolet (UV) photoabsorption spectra of the irradiated ice revealed absorption features from carbon dioxide, ozone, water, carbon monoxide and oxygen in addition to a band peaking at ~200\u202fnm which is identified to be characteristic of carbonic acid.",
-                "The treatment (2 min) of inoculated alfalfa sprouts with water containing 5.0 +/- 0.5, 9.0 +/- 0.5, or 23.2 +/- 1.6 microg/ml of ozone resulted in significant (P < or = 0.05) reductions of 0.78, 0.81, and 0.91 log10 CFU/g, respectively, compared to populations detected on sprouts treated with water.",
-                "The continuous sparging of seeds with ozonated water (initial ozone concentration of 21.3 +/- 0.2 microg/ml) for 20 min significantly reduced the population by 1.48 log10 CFU/g.",
-                "Also determined during the study was the sensitivity of spores of B. cereus and B. megaterium to ozone in water.",
-                "Extracting waterborne contaminants to ozone-loaded Volasiltrade mark245 (a siloxane solvent in which ozone is ten times more soluble than water) has been studied as a means of enhancing reaction kinetics and thus, providing more rapid wastewater decontamination.",
-                "The industrial use of ozone as a sanitizing agent in water treatment and food processing in recent years calls for sensor technologies for monitoring ozone in water for process control.",
-                "Ozone (ozonated water and water continuously bubble with ozone) or conventional domestic (washing with distilled water, detergent, acetic acid, sodium bicarbonate, and sodium hypochlorite solutions) procedures were investigated to identify the most effective way to remove fungicide residues in bell peppers.",
-                "It can be used to detect ozone in water samples down to 3.6 \u00d7 10(-9) mol L(-1).",
-                "The raspberry matrix seems to enhance inactivation by ozone compared to water."
             ]
         },
         {
@@ -703,18 +498,6 @@
             ]
         },
         {
-            "world_x": -7.0,
-            "world_y": -10.0,
-            "world_w": 5.636363636363637,
-            "world_h": 2.6818181818181817,
-            "text": "CHEMICAL",
-            "term_name": "",
-            "term_frequency": "",
-            "term_definitions": "",
-            "term_passages": "",
-            "kind": "class"
-        },
-        {
             "world_x": 1.0,
             "world_y": -22.0,
             "world_w": 7.8,
@@ -756,19 +539,7 @@
             ]
         },
         {
-            "world_x": 20.0,
-            "world_y": -10.0,
-            "world_w": 5.363636363636363,
-            "world_h": 2.6818181818181817,
-            "text": "PROCESS",
-            "term_name": "",
-            "term_frequency": "",
-            "term_definitions": "",
-            "term_passages": "",
-            "kind": "class"
-        },
-        {
-            "world_x": 19.0,
+            "world_x": 17.0,
             "world_y": -5.0,
             "world_w": 7.428571428571429,
             "world_h": 2.642857142857143,
@@ -809,18 +580,6 @@
             ]
         },
         {
-            "world_x": 46.0,
-            "world_y": -10.0,
-            "world_w": 5.421052631578947,
-            "world_h": 2.6842105263157894,
-            "text": "MEASURE",
-            "term_name": "",
-            "term_frequency": "",
-            "term_definitions": "",
-            "term_passages": "",
-            "kind": "class"
-        },
-        {
             "world_x": 44.0,
             "world_y": -5.0,
             "world_w": 8.55,
@@ -859,6 +618,271 @@
                 "The ratio hw/hs, determined from the respective peak amplitudes of the resulting EPR spectra of 3-maleimido-1-oxyl-2,2,5,5-tetramethylpyrrolidine bound to the ozone treated membranes, was shown to be elevated following an increased ozone concentration.",
                 "When exposed to ozone, the papers change color from blue to white, and the ozone concentration can be determined by measuring the reflectance of the papers.",
                 "FEV(1) was not associated with ozone concentration."
+            ]
+        },
+        {
+            "world_x": 45.0,
+            "world_y": -10.0,
+            "world_w": 7.545454545454546,
+            "world_h": 2.6818181818181817,
+            "text": "MEASUREMENT",
+            "term_name": "",
+            "term_frequency": "",
+            "term_definitions": "",
+            "term_passages": "",
+            "kind": "class"
+        },
+        {
+            "world_x": 21.0,
+            "world_y": -26.0,
+            "world_w": 3.791666666666667,
+            "world_h": 2.6666666666666665,
+            "text": "water",
+            "term_name": "water",
+            "term_frequency": 339,
+            "term_definitions": [
+                "a transparent, odorless, and tasteless liquid substance that is essential for all known forms of life.",
+                "a transparent, odorless, and tasteless liquid that is essential for all known forms of life.",
+                "a transparent, tasteless, odorless liquid that is essential for all known forms of life.",
+                "a transparent, tasteless, odorless, and nearly colorless chemical substance that is the main constituent of earth's hydrosphere and the fluids supporting most known forms of life.",
+                "a transparent, tasteless, odorless, and nearly colorless chemical substance that is the main constituent of earth's hydrosphere and the fluids of all known living organisms.",
+                "a vital liquid substance essential for the survival and physiological processes of living organisms.",
+                "a transparent, tasteless, odorless liquid that is the main constituent of earth's hydrosphere and a vital solvent for life.",
+                "a transparent, tasteless, odorless, and nearly colorless chemical substance that is the main constituent of earth's hydrosphere and the fluids of all known living organisms."
+            ],
+            "term_passages": [
+                "Ozone solutions in water and in NaCl solutions found are widely used in technology and medicine.",
+                "An efficient oxidation process with ozone can be obtained by focusing the oxidation with ozone selectively on the direct oxidation of toxic pollutants and to minimize ozone losses due to the decay of ozone in water.",
+                "The use of ozone (as gas or as ozonated water) can be effective for sanitizing air, water, and surfaces in contact with food, and its use can also be extended to the treatment of waste and process water.",
+                "Ozonation has been used as an advanced technique that is applied in wastewater treatment to remove CIP, but the primary limitation of this method is the low solubility of ozone in water.",
+                "Atmospheric vertical profiles of ozone, nitrous oxide, methane, dichlorodifluoromethane, and water are retrieved from data collected with a widely tunable external-cavity quantum-cascade laser heterodyne radiometer (EC-QC-LHR) covering a spectral range between 1120 and 1238 cm(-1).",
+                "The changes of dissolved ozone in water and the TBA experiment proved that the ternary catalyst could accelerate the decomposition of ozone into hydroxyl radicals, thus accelerating the oxidation of phenol.",
+                "The results of experimental study on effectiveness of gas-phase total oxidation of toluene towards carbon dioxide and water with the aid of ozone over Co(II)/SiO<sub>2</sub> catalyst are presented in this work.",
+                "It is unclear whether ozone treatment of water or fresh produce can reduce the spread of the emerging parasite Cyclospora cayetanensis, which causes cyclosporiasis in humans.",
+                "The large oxygen content may arise by cocondensation of small oxygenated molecules such as water or multistep reactions with ozone, water, or other species that produce highly oxygenated macromolecules.",
+                "The present study aimed to optimize ozone (O<sub>3</sub>) treatments, as gas and dissolved in water, to remove difenoconazole and linuron in carrots.",
+                "Experimental details are provided for ozone generation technique, mixing method, ozone concentrations in air and water, and input energy required to produce adequate ozone concentrations for bacterial inactivation in a contaminated, open water system.",
+                "Vacuum UltraViolet (VUV)/UltraViolet (UV) photoabsorption spectra of the irradiated ice revealed absorption features from carbon dioxide, ozone, water, carbon monoxide and oxygen in addition to a band peaking at ~200\u202fnm which is identified to be characteristic of carbonic acid.",
+                "The treatment (2 min) of inoculated alfalfa sprouts with water containing 5.0 +/- 0.5, 9.0 +/- 0.5, or 23.2 +/- 1.6 microg/ml of ozone resulted in significant (P < or = 0.05) reductions of 0.78, 0.81, and 0.91 log10 CFU/g, respectively, compared to populations detected on sprouts treated with water.",
+                "The continuous sparging of seeds with ozonated water (initial ozone concentration of 21.3 +/- 0.2 microg/ml) for 20 min significantly reduced the population by 1.48 log10 CFU/g.",
+                "Also determined during the study was the sensitivity of spores of B. cereus and B. megaterium to ozone in water.",
+                "Extracting waterborne contaminants to ozone-loaded Volasiltrade mark245 (a siloxane solvent in which ozone is ten times more soluble than water) has been studied as a means of enhancing reaction kinetics and thus, providing more rapid wastewater decontamination.",
+                "The industrial use of ozone as a sanitizing agent in water treatment and food processing in recent years calls for sensor technologies for monitoring ozone in water for process control.",
+                "Ozone (ozonated water and water continuously bubble with ozone) or conventional domestic (washing with distilled water, detergent, acetic acid, sodium bicarbonate, and sodium hypochlorite solutions) procedures were investigated to identify the most effective way to remove fungicide residues in bell peppers.",
+                "It can be used to detect ozone in water samples down to 3.6 \u00d7 10(-9) mol L(-1).",
+                "The raspberry matrix seems to enhance inactivation by ozone compared to water."
+            ]
+        },
+        {
+            "world_x": -7.0,
+            "world_y": -10.0,
+            "world_w": 5.636363636363637,
+            "world_h": 2.6818181818181817,
+            "text": "CHEMICAL",
+            "term_name": "",
+            "term_frequency": "",
+            "term_definitions": "",
+            "term_passages": "",
+            "kind": "class"
+        },
+        {
+            "world_x": 17.0,
+            "world_y": -26.0,
+            "world_w": 2.8235294117647056,
+            "world_h": 2.6470588235294117,
+            "text": "air",
+            "term_name": "air",
+            "term_frequency": 355,
+            "term_definitions": [
+                "a gaseous mixture of various gases that surrounds the earth and constitutes the atmosphere.",
+                "air is a gaseous mixture of various gases that surrounds the earth and constitutes the atmosphere.",
+                "a mixture of gases that constitutes the earth's atmosphere.",
+                "air is the invisible mixture of gases that surrounds the earth and makes up its atmosphere.",
+                "air is the gaseous mixture of various elements and compounds that makes up the atmosphere surrounding earth.",
+                "the invisible mixture of gases that surrounds the earth and makes up the atmosphere.",
+                "a mixture of gases that makes up the earth's atmosphere.",
+                "the invisible mixture of gases and particles that surrounds the earth and constitutes the atmosphere."
+            ],
+            "term_passages": [
+                "Compared with conventional liquid-based disinfection techniques, the portable ozone disinfection system has the following advantages: (i) a gaseous biocide can reach all surfaces inside the treatment target, without any restriction from orientation or surface tension; (b) ozone is effective in reducing planktonic and biofilm bacterial counts; and (c) ozone is generated at the point of use from air, using minimal electrical power, requiring no chemical delivery or storage, and producing no toxic residues.",
+                "The concentrations of hypochlorous acid, chlorine dioxide, and ozone in the air reached an approximately 2-log reduction of SARS-CoV-2 infectivity titer within 10\u00a0min at 0.02, 1.0, and 1.0\u00a0ppm, respectively.",
+                "After exposure to either 3.0 parts/million ozone or air at the same flow rate for 2 h, guinea pigs were anesthetized and tracheostomized, and then lung resistance (RL) was measured.",
+                "The second aim was to investigate the dependence of the efficiency of ozone removal from the air on the height of the adsorber layer and on concentrations of ozone, and to obtain empirical formulas for calculating the efficiency of ozone treatment.",
+                "In a subset of four subjects, alveolar macrophage arachidonic acid metabolism was studied in vitro following separate in vivo exposures to both ozone and air.",
+                "The use of ozone (as gas or as ozonated water) can be effective for sanitizing air, water, and surfaces in contact with food, and its use can also be extended to the treatment of waste and process water.",
+                "Nonsensitized and sensitized guinea pigs were treated with 5-bromo-2-deoxyuridine (BrdU) to label newly divided cells and were exposed to air or ozone for 4 h.",
+                "A hitherto unknown reaction, the isotope exchange between oxygen and ozone, accompanies formation of the latter upon ionization of O(2) or air, a long-known process widely utilized for the production of ozone and of great relevance to atmospheric chemistry.",
+                "The microbicidal effect of ozone in air was tested at concentrations between 50 and 600 micrograms/m3 against the species: Staphylococcus epidermidis, Micrococcus luteus, Arthrobacter citreus, Bacillus subtilis (veg.), Escherichia coli, Salmonella typhimurium, Serratia marcescens, Pseudomonas fluorescens and Candida albicans.",
+                "Respirable dust concentrations in the air of the work place were 0.1-1.0 mg/m3, total dust concentrations 0.2-2.0 mg/m3, and ozone concentrations 0.004-0.06 ppm (0.008-0.12 mg/m3).",
+                "IL-13(-/-), IL-4/13(-/-) and IL-13-overexpressing transgenic (Tg) mice were exposed to ozone (3 ppm; 3 h) or air.",
+                "Ozone causes vagally mediated airway hyperreactivity and recruits inflammatory cells, including eosinophils, to lungs, where they mediate ozone-induced hyperreactivity 1 day after exposure but are paradoxically protective 3 days later.",
+                "The ozone concentration in intercellular air spaces calculated from the ozone uptake rate and diffusion resistance to ozone scattered around zero.",
+                "Experimental details are provided for ozone generation technique, mixing method, ozone concentrations in air and water, and input energy required to produce adequate ozone concentrations for bacterial inactivation in a contaminated, open water system.",
+                "SB239063 inhibited bronchial contraction equally in air- and ozone-exposed C57/BL6 and MKP-1(-/-) mice.",
+                "Substituting ozone for air further enhanced overall PFAS removal (e.g., PFOS >95\u00a0% under comparable conditions) and improved foam stability, although at the expense of greater safety requirements, higher cost, and added operational complexity.",
+                "To identify the afferents responsible for initiating the vagally mediated respiratory changes evoked by acute exposure to ozone, we recorded vagal impulses in anesthetized, open-chest, artificially ventilated dogs and examined the pulmonary afferent response to ozone (2-3 ppm in air) delivered to the lower trachea for 20-60 min.",
+                "Smokers (12) and nonsmokers (15) were exposed once to air and twice to 0.22 ppm ozone for four hours with exercise in an environmental chamber; each exposure was separated by at least three weeks.",
+                "Heat-inactivated plasma and lavage from animals exposed to ozone for 5 or 7 d significantly increased DNA synthesis by lung pneumocytes compared with plasma or lavage from air-exposed animals.",
+                "Fourteen ozone-responsive subjects were randomly exposed to both air and ozone (0.2 ppm for 2 h) after 7 days of either placebo treatment or supplementation with vitamin C (500 mg/day) and E (100 mg/day)."
+            ]
+        },
+        {
+            "world_x": 18.0,
+            "world_y": -10.0,
+            "world_w": 5.363636363636363,
+            "world_h": 2.6818181818181817,
+            "text": "PROCESS",
+            "term_name": "",
+            "term_frequency": "",
+            "term_definitions": "",
+            "term_passages": "",
+            "kind": "class"
+        },
+        {
+            "world_x": 25.0,
+            "world_y": -5.0,
+            "world_w": 7.375,
+            "world_h": 2.6875,
+            "text": "ozone exposure",
+            "term_name": "ozone exposure",
+            "term_frequency": 1929,
+            "term_definitions": [
+                "ozone exposure refers to the inhalation of ozone gas, which can lead to respiratory inflammation and changes in lung function.",
+                "ozone exposure refers to the contact or inhalation of ozone gas by an organism.",
+                "ozone exposure is the state of being subjected to contact with or presence of ozone in the environment.",
+                "ozone exposure refers to the contact of an organism with ozone gas in the environment.",
+                "the contact of an organism or biological system with ozone gas.",
+                "ozone exposure refers to the contact of an organism or substance with ozone gas for a specific duration and concentration.",
+                "ozone exposure refers to the contact of an individual with ozone gas in the surrounding environment.",
+                "ozone exposure is the state of being subjected to contact with ozone gas in the surrounding environment."
+            ],
+            "term_passages": [
+                "However, limited research has gone beyond examining histopathological alterations in the olfactory bulb (OB) to explore the effects of ozone exposure on olfactory and cognitive functions.",
+                "Existing measurements may overestimate ozone exposure and intake in typical indoor environments.",
+                "To determine whether oxygenation products of arachidonic acid may be involved in the airway hyperresponsiveness induced by ozone exposure, we studied whether ozone-induced hyperresponsiveness could be inhibited by the prostaglandin synthetase inhibitor, indomethacin, in dogs.",
+                "Indoor ozone levels range from 10 to 80 percent of outdoor levels, with many people receiving a substantial portion of their ozone exposure while indoors.",
+                "By 24 h after exposure these changes had been obscured by an increase in epithelial permeability, perhaps as the result of an inflammatory response to the ozone exposure.",
+                "This paper focuses on epidemiological panel studies and human clinical studies of ozone exposure, and discusses issues specific to this pollutant that may influence study design and interpretation as well as other, broader considerations relevant to ozone-health research.",
+                "PGF2-alpha levels were similar in both groups prior to ozone exposure with indomethacin (Asth = 65 pg/ml, Nm = 59 pg/ml), but postexposure levels in Asth were significantly elevated (118 pg/ml) compared to Nm (54 pg/ml).",
+                "After ozone exposure the release of prostanoids was also enhanced (unstimulated, PGF(2\u03b1) and TxB(2); histamine, PGF(2\u03b1), PGE(2); methacholine, PGF(2\u03b1), TxB(2), 6-kPGF(1\u03b1), PGE(2)).",
+                "To determine if the CD4+ T-cell-derived cytokine interleukin (IL)-4 was involved in the differential effect of T-cell depletion on the ozone-induced inflammatory responses of C3 and B6 mice, mice were pretreated with either 400 ng of recombinant mouse IL-4 or vehicle, or 5.0 mg anti-IL-4 receptor monoclonal antibody or an isotype-matched antibody before either air or ozone exposure.",
+                "Plasma IL-6 increased post-exercise (<i>p</i> = 0.0015), and TNF-\u03b1 increased post-ozone exposure (<i>p</i> = 0.0018).",
+                "Taken together, these results support that RBEE protects plants against ozone exposure and its use as a new biostimulant could be proposed.",
+                "Given the ubiquity of ozone exposure and the importance of diabetes on quality of life and survival, these results may have important implications for the protection of public health.",
+                "The distribution of lipids was modified by ozone exposure of 115 and 1000\u202fppb for 16\u202fh with the following reactivity: consumption of alkene, formation of aldehydes and formation of nonanoic acid and octadecanoic acid.",
+                "The cellular data indicate an acute inflammation developed during ozone exposure in the lower respiratory tract.",
+                "There was no significant effect of ozone exposure on the ability of neutrophils to degrade fibronectin or injure epithelial cells.",
+                "These findings indicate that the risk of ozone-induced lung toxicity is substantially increased in a hyperthyroid state and suggest that the susceptibility of the lung to damage from ozone exposure may be significantly influenced by individual thyroid hormone status.",
+                "The interest in the pathology of ozone exposure and the molecular events that underlie its course stems from DNA damage caused by oxygen stress including hydroxyl radicals, superoxide, singlet oxygen, and hydrogen peroxide.",
+                "Data suggest that plasma 2,3-DHBA is a sensitive marker indicating acute ozone exposure, even at an ozone concentration that causes minimal observable airway effects in healthy subjects.",
+                "However, subjects with the greatest ozone-induced decrements in FEV(1) tended to have lower PC(15) values after ozone exposure.",
+                "Prolonged ozone exposure, though not continuous, produced remarkable behavioural disturbances with an increase in drinking, grooming and resting, and a reduction of rearing, jumping-play and locomotor activities."
+            ]
+        },
+        {
+            "world_x": 17.0,
+            "world_y": 7.0,
+            "world_w": 4.25,
+            "world_h": 2.65,
+            "text": "EVENT",
+            "term_name": "",
+            "term_frequency": "",
+            "term_definitions": "",
+            "term_passages": "",
+            "kind": "class"
+        },
+        {
+            "world_x": 17.0,
+            "world_y": 12.0,
+            "world_w": 4.944444444444445,
+            "world_h": 2.7222222222222223,
+            "text": "mortality",
+            "term_name": "mortality",
+            "term_frequency": 536,
+            "term_definitions": [
+                "mortality is the state or process of being subject to death.",
+                "mortality refers to the state or rate of death within a population.",
+                "mortality refers to the state or rate of death within a population.",
+                "mortality refers to the state or rate of being subject to death.",
+                "mortality refers to the state or rate of death within a population.",
+                "mortality refers to the state or rate of being subject to death.",
+                "mortality is the state or rate of being subject to death.",
+                "mortality refers to the state or incidence of death within a population."
+            ],
+            "term_passages": [
+                "The aim of this study was to analyze the effect of ozone on mortality, and the extent to which this is due to short-term mortality displacement in 48 U.S. cities between 1989 and 2000.",
+                "Ozone and particulate matter smaller than 10 microm were found at high concentrations in SC3 and SC7, respectively, but their impact on mortality was not clear.",
+                "Ozone and particulate matter 10 microns in diameter or less (PM10) are associated with increased risk of morbidity and mortality.",
+                "In this study, the authors aimed to examine whether temperature modified effects of ozone on cardiovascular mortality in 95 large US cities.",
+                "The maximum relative risk (RR) of mortality from cardiovascular and cerebrovascular diseases for every 10 \u03bcg/m<sup{3}</sup> increase in ozone was 1.005 (95% CI: 1.002-1.008).",
+                "Ozone exposure causes airway hyperreactivity, lung hyperpermeability, inflammation, and cell damage in humans and laboratory animals, and exposure to ozone has been associated with exacerbation of asthma, altered lung function, and mortality.",
+                "This study used a case-crossover design to examine whether impacts of ozone on mortality were modified by socioeconomic status coded at the tract or characteristics at an individual level in eastern Massachusetts, US for a period May-September, 1995-2002, with a total of 157,197 non-accident deaths aging 35 years or older.",
+                "Hazard ratios (HR) for mortality, were related to PM<sub>2.5</sub> and ozone using Cox proportional hazards survival models, adjusting for socioeconomic characteristics and individual confounders.",
+                "This is especially noteworthy in light of recent work indicating little, if any, threshold for ozone's impact on mortality.",
+                "During the summer quarters, an effect of ozone on mortality was also detected, but this association could be due to confounding with temperature.",
+                "Exposure to PM<sub>2.5</sub> was related to an increased risk of mortality from lung cancer, and both ozone and PM<sub>2.5</sub> exposure were related to risk of mortality from ischemic heart disease, and the risk varied spatially by climate zone.",
+                "Our quantitative review revealed a paucity of independent studies regarding the associations between long-term exposure to ozone and mortality.",
+                "Daily changes in ambient concentrations of particulate matter, nitrogen oxides and ozone are associated with increased cardiopulmonary morbidity and mortality, with the lungs and their function being a vulnerable target.",
+                "The association between nonaccidental mortality was examined with ozone alone and with ozone after adjustment for fine particle mass, sulfate, organic carbon, or nitrate concentrations.",
+                "In this study, we explored whether temperature modifies the effect of short-term ozone exposure on mortality.",
+                "Overall, ozone and PM<sub>2.5</sub> showed higher season-specific risk of mortality than hospitalization: warm-season ozone: 0.54% (95% credible interval, 0.20, 0.85) vs. 0.14% (0.02, 0.27) per 10\u00a0ppb; and year-round PM<sub>2.5</sub>: 0.90% (0.33, 1.41) vs. 0.29% (0.03, 0.56) per 10\u00a0\u03bcg/m<sup{3</sup>.",
+                "On average, a 10 \u00b5g/m<sup>3</sup> increase in ozone during the current and previous day was associated with an overall relative risk of mortality of 1.0018 (95% confidence interval 1.0012 to 1.0024).",
+                "Ozone is a highly reactive, oxidative gas associated with adverse health outcome, including mortality and morbidity.",
+                "Acute associations between mortality and ozone are largely accepted, though recent evidence is less conclusive.",
+                "The authors separately used a nonparametric regression model and a parametric regression model to explore interactive effects of temperature and ozone on cardiovascular mortality between May and October of the years from 1987 to 2000."
+            ]
+        },
+        {
+            "world_x": 17.0,
+            "world_y": 20.0,
+            "world_w": 4.05,
+            "world_h": 2.65,
+            "text": "STATE",
+            "term_name": "",
+            "term_frequency": "",
+            "term_definitions": "",
+            "term_passages": "",
+            "kind": "class"
+        },
+        {
+            "world_x": 17.0,
+            "world_y": 24.0,
+            "world_w": 7.285714285714286,
+            "world_h": 2.642857142857143,
+            "text": "oxidative stress",
+            "term_name": "oxidative stress",
+            "term_frequency": 344,
+            "term_definitions": [
+                "oxidative stress is an imbalance between the production of reactive oxygen species and a biological system's ability to detoxify them or repair the resulting damage.",
+                "oxidative stress is an imbalance between the production of reactive oxygen species and a biological system's ability to detoxify them or repair the resulting damage.",
+                "oxidative stress is a physiological condition characterized by an imbalance between the production of reactive oxygen species and the biological system's ability to detoxify them.",
+                "oxidative stress is a physiological condition characterized by an imbalance between the production of reactive oxidizing agents and the body's ability to neutralize them, often leading to cellular damage and inflammation.",
+                "oxidative stress is a physiological condition characterized by an imbalance between the production of reactive oxygen species and the ability of a biological system to neutralize them through antioxidant defenses.",
+                "oxidative stress is a physiological state characterized by an imbalance between the production of reactive oxygen species and the body's ability to detoxify them through antioxidant mechanisms.",
+                "oxidative stress is a physiological condition characterized by an imbalance between the production of reactive oxygen species and the body's ability to detoxify them through antioxidant defenses.",
+                "oxidative stress is a physiological condition characterized by an imbalance between the production of reactive oxygen species and the body's ability to detoxify them through antioxidant defenses."
+            ],
+            "term_passages": [
+                "In conclusion, ozone altered oxidative stress, metabolic pathway, and amyloid plaque accumulation besides endothelial stress response involving mitochondria as the critical factor in ATP degeneration, caspase pathway, and neuronal damage.",
+                "Ozone-induced injury and oxidative stress in bronchiolar epithelium were linked to methacholine-induced alterations in pulmonary mechanics.",
+                "Our purpose was to test that oxidative stress caused by chronic low doses of ozone, by itself, alters adult neurogenesis and causes progressive neurodegeneration in the hippocampus, which actions lead to the loss of brain plasticity in the mature central nervous system of rats.",
+                "Furthermore, postharvest treatments of grapes with ozone can stimulate defense responses by synthetizing secondary metabolites against oxidative stress.",
+                "Animals were exposed to an ozone-free air stream and for 15, 30, 60, and 90 days to low doses of ozone to cause oxidative stress.",
+                "Acute exposure to ozone causes oxidative stress, characterized by increases in nitric oxide (NO) and other reactive nitrogen species in the lung.",
+                "A principal component analysis showed that the enzyme ascorbate peroxidase can be an indicator of oxidative stress caused by ozone.",
+                "An exciting new aspect is that ozone, being a strong oxidizer, can stimulate the increase of cellular anti-oxidant enzymes, eventually inhibiting the oxidative stress.",
+                "To determine whether ozone exposure induces greater oxidative stress and airway inflammation in RAO-affected horses in remission than in healthy horses.",
+                "Our study aimed to evaluate the effect of chronic exposition of rats to controlled low doses of ozone on oxidative stress, apoptosis, mitochondrial dynamics, and cardiac hypertrophy.",
+                "In asthmatic mice, ozone exposure induces oxidative stress and worsens pulmonary dysfunction, lung tissue damage, and inflammation, disrupting the balance of type 2 innate lymphoid cells (ILC2s), T helper type 2 (Th2), and T helper type 17 (Th17) cells.",
+                "After inhalation of PGs, pollen-transported ozone could be transferred to mucous membranes and exacerbate symptoms through oxidative stress and local inflammation.",
+                "Using an environmentally realistic concentration (0.8 parts per million), we demonstrated that exposure of rats to ozone induced whole-body insulin resistance and oxidative stress, with associated endoplasmic reticulum (ER) stress, c-Jun N-terminal kinase (JNK) activation, and disruption of insulin signaling in skeletal muscle.",
+                "Medical ozone reduced inflammation, IL-1\u03b2, TNF-\u03b1 mRNA levels and oxidative stress in PG/PS-induced arthritis in rats.",
+                "The relationship of PR-10 proteins, particularly PR-10c, to oxidative stress caused by metals or ozone was studied in tolerant and sensitive birch clones to find out possible linkages to tolerance.",
+                "One of the greatest problems concerning an application of ozone in medicine is its induction of oxidative stress.",
+                "Exposure to environmental ozone can cause significant damage to plants by imposing conditions of oxidative stress.",
+                "Metabolomics analysis showed that acute ozone exposure led to alterations in stress hormones, systemic inflammation, oxidative stress, and energy metabolism.",
+                "To study the effect of chronic administration of tibolone on lipid peroxidation, memory and motor deficits in ozone induced oxidative stress.",
+                "Ozone is a secondary air pollutant, which causes oxidative stress in plants by producing reactive oxygen species (ROS) starting by an external attack of leaf apoplast."
             ]
         }
     ],
@@ -1549,7 +1573,7 @@
         {
             "edge_start": {
                 "node": {
-                    "world_x": 20.0,
+                    "world_x": 18.0,
                     "world_y": -10.0,
                     "world_w": 5.363636363636363,
                     "world_h": 2.6818181818181817,
@@ -1563,7 +1587,7 @@
             },
             "edge_end": {
                 "node": {
-                    "world_x": 19.0,
+                    "world_x": 17.0,
                     "world_y": -5.0,
                     "world_w": 7.428571428571429,
                     "world_h": 2.642857142857143,
@@ -1605,23 +1629,23 @@
                 }
             },
             "edge_relationship": "???",
-            "world_x1": 22.0,
+            "world_x1": 20.0,
             "world_y1": -9.0,
-            "world_x2": 22.0,
+            "world_x2": 20.0,
             "world_y2": -4.0,
-            "text_world_x1": 22.0,
+            "text_world_x1": 20.0,
             "text_world_y1": -7.0,
-            "text_world_x2": 23.0,
+            "text_world_x2": 21.0,
             "text_world_y2": -7.0
         },
         {
             "edge_start": {
                 "node": {
-                    "world_x": 46.0,
+                    "world_x": 45.0,
                     "world_y": -10.0,
-                    "world_w": 5.421052631578947,
-                    "world_h": 2.6842105263157894,
-                    "text": "MEASURE",
+                    "world_w": 7.545454545454546,
+                    "world_h": 2.6818181818181817,
+                    "text": "MEASUREMENT",
                     "term_name": "",
                     "term_frequency": "",
                     "term_definitions": "",
@@ -1681,6 +1705,346 @@
             "text_world_y1": -7.0,
             "text_world_x2": 49.0,
             "text_world_y2": -7.0
+        },
+        {
+            "edge_start": {
+                "node": {
+                    "world_x": -7.0,
+                    "world_y": -10.0,
+                    "world_w": 5.636363636363637,
+                    "world_h": 2.6818181818181817,
+                    "text": "CHEMICAL",
+                    "term_name": "",
+                    "term_frequency": "",
+                    "term_definitions": "",
+                    "term_passages": "",
+                    "kind": "class"
+                }
+            },
+            "edge_end": {
+                "node": {
+                    "world_x": 21.0,
+                    "world_y": -26.0,
+                    "world_w": 3.791666666666667,
+                    "world_h": 2.6666666666666665,
+                    "text": "water",
+                    "term_name": "water",
+                    "term_frequency": 339,
+                    "term_definitions": [
+                        "a transparent, odorless, and tasteless liquid substance that is essential for all known forms of life.",
+                        "a transparent, odorless, and tasteless liquid that is essential for all known forms of life.",
+                        "a transparent, tasteless, odorless liquid that is essential for all known forms of life.",
+                        "a transparent, tasteless, odorless, and nearly colorless chemical substance that is the main constituent of earth's hydrosphere and the fluids supporting most known forms of life.",
+                        "a transparent, tasteless, odorless, and nearly colorless chemical substance that is the main constituent of earth's hydrosphere and the fluids of all known living organisms.",
+                        "a vital liquid substance essential for the survival and physiological processes of living organisms.",
+                        "a transparent, tasteless, odorless liquid that is the main constituent of earth's hydrosphere and a vital solvent for life.",
+                        "a transparent, tasteless, odorless, and nearly colorless chemical substance that is the main constituent of earth's hydrosphere and the fluids of all known living organisms."
+                    ],
+                    "term_passages": [
+                        "Ozone solutions in water and in NaCl solutions found are widely used in technology and medicine.",
+                        "An efficient oxidation process with ozone can be obtained by focusing the oxidation with ozone selectively on the direct oxidation of toxic pollutants and to minimize ozone losses due to the decay of ozone in water.",
+                        "The use of ozone (as gas or as ozonated water) can be effective for sanitizing air, water, and surfaces in contact with food, and its use can also be extended to the treatment of waste and process water.",
+                        "Ozonation has been used as an advanced technique that is applied in wastewater treatment to remove CIP, but the primary limitation of this method is the low solubility of ozone in water.",
+                        "Atmospheric vertical profiles of ozone, nitrous oxide, methane, dichlorodifluoromethane, and water are retrieved from data collected with a widely tunable external-cavity quantum-cascade laser heterodyne radiometer (EC-QC-LHR) covering a spectral range between 1120 and 1238 cm(-1).",
+                        "The changes of dissolved ozone in water and the TBA experiment proved that the ternary catalyst could accelerate the decomposition of ozone into hydroxyl radicals, thus accelerating the oxidation of phenol.",
+                        "The results of experimental study on effectiveness of gas-phase total oxidation of toluene towards carbon dioxide and water with the aid of ozone over Co(II)/SiO<sub>2</sub> catalyst are presented in this work.",
+                        "It is unclear whether ozone treatment of water or fresh produce can reduce the spread of the emerging parasite Cyclospora cayetanensis, which causes cyclosporiasis in humans.",
+                        "The large oxygen content may arise by cocondensation of small oxygenated molecules such as water or multistep reactions with ozone, water, or other species that produce highly oxygenated macromolecules.",
+                        "The present study aimed to optimize ozone (O<sub>3</sub>) treatments, as gas and dissolved in water, to remove difenoconazole and linuron in carrots.",
+                        "Experimental details are provided for ozone generation technique, mixing method, ozone concentrations in air and water, and input energy required to produce adequate ozone concentrations for bacterial inactivation in a contaminated, open water system.",
+                        "Vacuum UltraViolet (VUV)/UltraViolet (UV) photoabsorption spectra of the irradiated ice revealed absorption features from carbon dioxide, ozone, water, carbon monoxide and oxygen in addition to a band peaking at ~200\u202fnm which is identified to be characteristic of carbonic acid.",
+                        "The treatment (2 min) of inoculated alfalfa sprouts with water containing 5.0 +/- 0.5, 9.0 +/- 0.5, or 23.2 +/- 1.6 microg/ml of ozone resulted in significant (P < or = 0.05) reductions of 0.78, 0.81, and 0.91 log10 CFU/g, respectively, compared to populations detected on sprouts treated with water.",
+                        "The continuous sparging of seeds with ozonated water (initial ozone concentration of 21.3 +/- 0.2 microg/ml) for 20 min significantly reduced the population by 1.48 log10 CFU/g.",
+                        "Also determined during the study was the sensitivity of spores of B. cereus and B. megaterium to ozone in water.",
+                        "Extracting waterborne contaminants to ozone-loaded Volasiltrade mark245 (a siloxane solvent in which ozone is ten times more soluble than water) has been studied as a means of enhancing reaction kinetics and thus, providing more rapid wastewater decontamination.",
+                        "The industrial use of ozone as a sanitizing agent in water treatment and food processing in recent years calls for sensor technologies for monitoring ozone in water for process control.",
+                        "Ozone (ozonated water and water continuously bubble with ozone) or conventional domestic (washing with distilled water, detergent, acetic acid, sodium bicarbonate, and sodium hypochlorite solutions) procedures were investigated to identify the most effective way to remove fungicide residues in bell peppers.",
+                        "It can be used to detect ozone in water samples down to 3.6 \u00d7 10(-9) mol L(-1).",
+                        "The raspberry matrix seems to enhance inactivation by ozone compared to water."
+                    ]
+                }
+            },
+            "edge_relationship": "???",
+            "world_x1": -5.0,
+            "world_y1": -9.0,
+            "world_x2": 22.0,
+            "world_y2": -25.0,
+            "text_world_x1": 8.0,
+            "text_world_y1": -17.0,
+            "text_world_x2": 9.0,
+            "text_world_y2": -17.0
+        },
+        {
+            "edge_start": {
+                "node": {
+                    "world_x": -7.0,
+                    "world_y": -10.0,
+                    "world_w": 5.636363636363637,
+                    "world_h": 2.6818181818181817,
+                    "text": "CHEMICAL",
+                    "term_name": "",
+                    "term_frequency": "",
+                    "term_definitions": "",
+                    "term_passages": "",
+                    "kind": "class"
+                }
+            },
+            "edge_end": {
+                "node": {
+                    "world_x": 17.0,
+                    "world_y": -26.0,
+                    "world_w": 2.8235294117647056,
+                    "world_h": 2.6470588235294117,
+                    "text": "air",
+                    "term_name": "air",
+                    "term_frequency": 355,
+                    "term_definitions": [
+                        "a gaseous mixture of various gases that surrounds the earth and constitutes the atmosphere.",
+                        "air is a gaseous mixture of various gases that surrounds the earth and constitutes the atmosphere.",
+                        "a mixture of gases that constitutes the earth's atmosphere.",
+                        "air is the invisible mixture of gases that surrounds the earth and makes up its atmosphere.",
+                        "air is the gaseous mixture of various elements and compounds that makes up the atmosphere surrounding earth.",
+                        "the invisible mixture of gases that surrounds the earth and makes up the atmosphere.",
+                        "a mixture of gases that makes up the earth's atmosphere.",
+                        "the invisible mixture of gases and particles that surrounds the earth and constitutes the atmosphere."
+                    ],
+                    "term_passages": [
+                        "Compared with conventional liquid-based disinfection techniques, the portable ozone disinfection system has the following advantages: (i) a gaseous biocide can reach all surfaces inside the treatment target, without any restriction from orientation or surface tension; (b) ozone is effective in reducing planktonic and biofilm bacterial counts; and (c) ozone is generated at the point of use from air, using minimal electrical power, requiring no chemical delivery or storage, and producing no toxic residues.",
+                        "The concentrations of hypochlorous acid, chlorine dioxide, and ozone in the air reached an approximately 2-log reduction of SARS-CoV-2 infectivity titer within 10\u00a0min at 0.02, 1.0, and 1.0\u00a0ppm, respectively.",
+                        "After exposure to either 3.0 parts/million ozone or air at the same flow rate for 2 h, guinea pigs were anesthetized and tracheostomized, and then lung resistance (RL) was measured.",
+                        "The second aim was to investigate the dependence of the efficiency of ozone removal from the air on the height of the adsorber layer and on concentrations of ozone, and to obtain empirical formulas for calculating the efficiency of ozone treatment.",
+                        "In a subset of four subjects, alveolar macrophage arachidonic acid metabolism was studied in vitro following separate in vivo exposures to both ozone and air.",
+                        "The use of ozone (as gas or as ozonated water) can be effective for sanitizing air, water, and surfaces in contact with food, and its use can also be extended to the treatment of waste and process water.",
+                        "Nonsensitized and sensitized guinea pigs were treated with 5-bromo-2-deoxyuridine (BrdU) to label newly divided cells and were exposed to air or ozone for 4 h.",
+                        "A hitherto unknown reaction, the isotope exchange between oxygen and ozone, accompanies formation of the latter upon ionization of O(2) or air, a long-known process widely utilized for the production of ozone and of great relevance to atmospheric chemistry.",
+                        "The microbicidal effect of ozone in air was tested at concentrations between 50 and 600 micrograms/m3 against the species: Staphylococcus epidermidis, Micrococcus luteus, Arthrobacter citreus, Bacillus subtilis (veg.), Escherichia coli, Salmonella typhimurium, Serratia marcescens, Pseudomonas fluorescens and Candida albicans.",
+                        "Respirable dust concentrations in the air of the work place were 0.1-1.0 mg/m3, total dust concentrations 0.2-2.0 mg/m3, and ozone concentrations 0.004-0.06 ppm (0.008-0.12 mg/m3).",
+                        "IL-13(-/-), IL-4/13(-/-) and IL-13-overexpressing transgenic (Tg) mice were exposed to ozone (3 ppm; 3 h) or air.",
+                        "Ozone causes vagally mediated airway hyperreactivity and recruits inflammatory cells, including eosinophils, to lungs, where they mediate ozone-induced hyperreactivity 1 day after exposure but are paradoxically protective 3 days later.",
+                        "The ozone concentration in intercellular air spaces calculated from the ozone uptake rate and diffusion resistance to ozone scattered around zero.",
+                        "Experimental details are provided for ozone generation technique, mixing method, ozone concentrations in air and water, and input energy required to produce adequate ozone concentrations for bacterial inactivation in a contaminated, open water system.",
+                        "SB239063 inhibited bronchial contraction equally in air- and ozone-exposed C57/BL6 and MKP-1(-/-) mice.",
+                        "Substituting ozone for air further enhanced overall PFAS removal (e.g., PFOS >95\u00a0% under comparable conditions) and improved foam stability, although at the expense of greater safety requirements, higher cost, and added operational complexity.",
+                        "To identify the afferents responsible for initiating the vagally mediated respiratory changes evoked by acute exposure to ozone, we recorded vagal impulses in anesthetized, open-chest, artificially ventilated dogs and examined the pulmonary afferent response to ozone (2-3 ppm in air) delivered to the lower trachea for 20-60 min.",
+                        "Smokers (12) and nonsmokers (15) were exposed once to air and twice to 0.22 ppm ozone for four hours with exercise in an environmental chamber; each exposure was separated by at least three weeks.",
+                        "Heat-inactivated plasma and lavage from animals exposed to ozone for 5 or 7 d significantly increased DNA synthesis by lung pneumocytes compared with plasma or lavage from air-exposed animals.",
+                        "Fourteen ozone-responsive subjects were randomly exposed to both air and ozone (0.2 ppm for 2 h) after 7 days of either placebo treatment or supplementation with vitamin C (500 mg/day) and E (100 mg/day)."
+                    ]
+                }
+            },
+            "edge_relationship": "???",
+            "world_x1": -5.0,
+            "world_y1": -9.0,
+            "world_x2": 18.0,
+            "world_y2": -25.0,
+            "text_world_x1": 6.0,
+            "text_world_y1": -17.0,
+            "text_world_x2": 7.0,
+            "text_world_y2": -17.0
+        },
+        {
+            "edge_start": {
+                "node": {
+                    "world_x": 18.0,
+                    "world_y": -10.0,
+                    "world_w": 5.363636363636363,
+                    "world_h": 2.6818181818181817,
+                    "text": "PROCESS",
+                    "term_name": "",
+                    "term_frequency": "",
+                    "term_definitions": "",
+                    "term_passages": "",
+                    "kind": "class"
+                }
+            },
+            "edge_end": {
+                "node": {
+                    "world_x": 25.0,
+                    "world_y": -5.0,
+                    "world_w": 7.375,
+                    "world_h": 2.6875,
+                    "text": "ozone exposure",
+                    "term_name": "ozone exposure",
+                    "term_frequency": 1929,
+                    "term_definitions": [
+                        "ozone exposure refers to the inhalation of ozone gas, which can lead to respiratory inflammation and changes in lung function.",
+                        "ozone exposure refers to the contact or inhalation of ozone gas by an organism.",
+                        "ozone exposure is the state of being subjected to contact with or presence of ozone in the environment.",
+                        "ozone exposure refers to the contact of an organism with ozone gas in the environment.",
+                        "the contact of an organism or biological system with ozone gas.",
+                        "ozone exposure refers to the contact of an organism or substance with ozone gas for a specific duration and concentration.",
+                        "ozone exposure refers to the contact of an individual with ozone gas in the surrounding environment.",
+                        "ozone exposure is the state of being subjected to contact with ozone gas in the surrounding environment."
+                    ],
+                    "term_passages": [
+                        "However, limited research has gone beyond examining histopathological alterations in the olfactory bulb (OB) to explore the effects of ozone exposure on olfactory and cognitive functions.",
+                        "Existing measurements may overestimate ozone exposure and intake in typical indoor environments.",
+                        "To determine whether oxygenation products of arachidonic acid may be involved in the airway hyperresponsiveness induced by ozone exposure, we studied whether ozone-induced hyperresponsiveness could be inhibited by the prostaglandin synthetase inhibitor, indomethacin, in dogs.",
+                        "Indoor ozone levels range from 10 to 80 percent of outdoor levels, with many people receiving a substantial portion of their ozone exposure while indoors.",
+                        "By 24 h after exposure these changes had been obscured by an increase in epithelial permeability, perhaps as the result of an inflammatory response to the ozone exposure.",
+                        "This paper focuses on epidemiological panel studies and human clinical studies of ozone exposure, and discusses issues specific to this pollutant that may influence study design and interpretation as well as other, broader considerations relevant to ozone-health research.",
+                        "PGF2-alpha levels were similar in both groups prior to ozone exposure with indomethacin (Asth = 65 pg/ml, Nm = 59 pg/ml), but postexposure levels in Asth were significantly elevated (118 pg/ml) compared to Nm (54 pg/ml).",
+                        "After ozone exposure the release of prostanoids was also enhanced (unstimulated, PGF(2\u03b1) and TxB(2); histamine, PGF(2\u03b1), PGE(2); methacholine, PGF(2\u03b1), TxB(2), 6-kPGF(1\u03b1), PGE(2)).",
+                        "To determine if the CD4+ T-cell-derived cytokine interleukin (IL)-4 was involved in the differential effect of T-cell depletion on the ozone-induced inflammatory responses of C3 and B6 mice, mice were pretreated with either 400 ng of recombinant mouse IL-4 or vehicle, or 5.0 mg anti-IL-4 receptor monoclonal antibody or an isotype-matched antibody before either air or ozone exposure.",
+                        "Plasma IL-6 increased post-exercise (<i>p</i> = 0.0015), and TNF-\u03b1 increased post-ozone exposure (<i>p</i> = 0.0018).",
+                        "Taken together, these results support that RBEE protects plants against ozone exposure and its use as a new biostimulant could be proposed.",
+                        "Given the ubiquity of ozone exposure and the importance of diabetes on quality of life and survival, these results may have important implications for the protection of public health.",
+                        "The distribution of lipids was modified by ozone exposure of 115 and 1000\u202fppb for 16\u202fh with the following reactivity: consumption of alkene, formation of aldehydes and formation of nonanoic acid and octadecanoic acid.",
+                        "The cellular data indicate an acute inflammation developed during ozone exposure in the lower respiratory tract.",
+                        "There was no significant effect of ozone exposure on the ability of neutrophils to degrade fibronectin or injure epithelial cells.",
+                        "These findings indicate that the risk of ozone-induced lung toxicity is substantially increased in a hyperthyroid state and suggest that the susceptibility of the lung to damage from ozone exposure may be significantly influenced by individual thyroid hormone status.",
+                        "The interest in the pathology of ozone exposure and the molecular events that underlie its course stems from DNA damage caused by oxygen stress including hydroxyl radicals, superoxide, singlet oxygen, and hydrogen peroxide.",
+                        "Data suggest that plasma 2,3-DHBA is a sensitive marker indicating acute ozone exposure, even at an ozone concentration that causes minimal observable airway effects in healthy subjects.",
+                        "However, subjects with the greatest ozone-induced decrements in FEV(1) tended to have lower PC(15) values after ozone exposure.",
+                        "Prolonged ozone exposure, though not continuous, produced remarkable behavioural disturbances with an increase in drinking, grooming and resting, and a reduction of rearing, jumping-play and locomotor activities."
+                    ]
+                }
+            },
+            "edge_relationship": "???",
+            "world_x1": 20.0,
+            "world_y1": -9.0,
+            "world_x2": 28.0,
+            "world_y2": -4.0,
+            "text_world_x1": 24.0,
+            "text_world_y1": -7.0,
+            "text_world_x2": 25.0,
+            "text_world_y2": -7.0
+        },
+        {
+            "edge_start": {
+                "node": {
+                    "world_x": 17.0,
+                    "world_y": 7.0,
+                    "world_w": 4.25,
+                    "world_h": 2.65,
+                    "text": "EVENT",
+                    "term_name": "",
+                    "term_frequency": "",
+                    "term_definitions": "",
+                    "term_passages": "",
+                    "kind": "class"
+                }
+            },
+            "edge_end": {
+                "node": {
+                    "world_x": 17.0,
+                    "world_y": 12.0,
+                    "world_w": 4.944444444444445,
+                    "world_h": 2.7222222222222223,
+                    "text": "mortality",
+                    "term_name": "mortality",
+                    "term_frequency": 536,
+                    "term_definitions": [
+                        "mortality is the state or process of being subject to death.",
+                        "mortality refers to the state or rate of death within a population.",
+                        "mortality refers to the state or rate of death within a population.",
+                        "mortality refers to the state or rate of being subject to death.",
+                        "mortality refers to the state or rate of death within a population.",
+                        "mortality refers to the state or rate of being subject to death.",
+                        "mortality is the state or rate of being subject to death.",
+                        "mortality refers to the state or incidence of death within a population."
+                    ],
+                    "term_passages": [
+                        "The aim of this study was to analyze the effect of ozone on mortality, and the extent to which this is due to short-term mortality displacement in 48 U.S. cities between 1989 and 2000.",
+                        "Ozone and particulate matter smaller than 10 microm were found at high concentrations in SC3 and SC7, respectively, but their impact on mortality was not clear.",
+                        "Ozone and particulate matter 10 microns in diameter or less (PM10) are associated with increased risk of morbidity and mortality.",
+                        "In this study, the authors aimed to examine whether temperature modified effects of ozone on cardiovascular mortality in 95 large US cities.",
+                        "The maximum relative risk (RR) of mortality from cardiovascular and cerebrovascular diseases for every 10 \u03bcg/m<sup{3}</sup> increase in ozone was 1.005 (95% CI: 1.002-1.008).",
+                        "Ozone exposure causes airway hyperreactivity, lung hyperpermeability, inflammation, and cell damage in humans and laboratory animals, and exposure to ozone has been associated with exacerbation of asthma, altered lung function, and mortality.",
+                        "This study used a case-crossover design to examine whether impacts of ozone on mortality were modified by socioeconomic status coded at the tract or characteristics at an individual level in eastern Massachusetts, US for a period May-September, 1995-2002, with a total of 157,197 non-accident deaths aging 35 years or older.",
+                        "Hazard ratios (HR) for mortality, were related to PM<sub>2.5</sub> and ozone using Cox proportional hazards survival models, adjusting for socioeconomic characteristics and individual confounders.",
+                        "This is especially noteworthy in light of recent work indicating little, if any, threshold for ozone's impact on mortality.",
+                        "During the summer quarters, an effect of ozone on mortality was also detected, but this association could be due to confounding with temperature.",
+                        "Exposure to PM<sub>2.5</sub> was related to an increased risk of mortality from lung cancer, and both ozone and PM<sub>2.5</sub> exposure were related to risk of mortality from ischemic heart disease, and the risk varied spatially by climate zone.",
+                        "Our quantitative review revealed a paucity of independent studies regarding the associations between long-term exposure to ozone and mortality.",
+                        "Daily changes in ambient concentrations of particulate matter, nitrogen oxides and ozone are associated with increased cardiopulmonary morbidity and mortality, with the lungs and their function being a vulnerable target.",
+                        "The association between nonaccidental mortality was examined with ozone alone and with ozone after adjustment for fine particle mass, sulfate, organic carbon, or nitrate concentrations.",
+                        "In this study, we explored whether temperature modifies the effect of short-term ozone exposure on mortality.",
+                        "Overall, ozone and PM<sub>2.5</sub> showed higher season-specific risk of mortality than hospitalization: warm-season ozone: 0.54% (95% credible interval, 0.20, 0.85) vs. 0.14% (0.02, 0.27) per 10\u00a0ppb; and year-round PM<sub>2.5</sub>: 0.90% (0.33, 1.41) vs. 0.29% (0.03, 0.56) per 10\u00a0\u03bcg/m<sup{3</sup>.",
+                        "On average, a 10 \u00b5g/m<sup>3</sup> increase in ozone during the current and previous day was associated with an overall relative risk of mortality of 1.0018 (95% confidence interval 1.0012 to 1.0024).",
+                        "Ozone is a highly reactive, oxidative gas associated with adverse health outcome, including mortality and morbidity.",
+                        "Acute associations between mortality and ozone are largely accepted, though recent evidence is less conclusive.",
+                        "The authors separately used a nonparametric regression model and a parametric regression model to explore interactive effects of temperature and ozone on cardiovascular mortality between May and October of the years from 1987 to 2000."
+                    ]
+                }
+            },
+            "edge_relationship": "???",
+            "world_x1": 19.0,
+            "world_y1": 8.0,
+            "world_x2": 19.0,
+            "world_y2": 13.0,
+            "text_world_x1": 19.0,
+            "text_world_y1": 10.0,
+            "text_world_x2": 20.0,
+            "text_world_y2": 10.0
+        },
+        {
+            "edge_start": {
+                "node": {
+                    "world_x": 17.0,
+                    "world_y": 20.0,
+                    "world_w": 4.05,
+                    "world_h": 2.65,
+                    "text": "STATE",
+                    "term_name": "",
+                    "term_frequency": "",
+                    "term_definitions": "",
+                    "term_passages": "",
+                    "kind": "class"
+                }
+            },
+            "edge_end": {
+                "node": {
+                    "world_x": 17.0,
+                    "world_y": 24.0,
+                    "world_w": 7.285714285714286,
+                    "world_h": 2.642857142857143,
+                    "text": "oxidative stress",
+                    "term_name": "oxidative stress",
+                    "term_frequency": 344,
+                    "term_definitions": [
+                        "oxidative stress is an imbalance between the production of reactive oxygen species and a biological system's ability to detoxify them or repair the resulting damage.",
+                        "oxidative stress is an imbalance between the production of reactive oxygen species and a biological system's ability to detoxify them or repair the resulting damage.",
+                        "oxidative stress is a physiological condition characterized by an imbalance between the production of reactive oxygen species and the biological system's ability to detoxify them.",
+                        "oxidative stress is a physiological condition characterized by an imbalance between the production of reactive oxidizing agents and the body's ability to neutralize them, often leading to cellular damage and inflammation.",
+                        "oxidative stress is a physiological condition characterized by an imbalance between the production of reactive oxygen species and the ability of a biological system to neutralize them through antioxidant defenses.",
+                        "oxidative stress is a physiological state characterized by an imbalance between the production of reactive oxygen species and the body's ability to detoxify them through antioxidant mechanisms.",
+                        "oxidative stress is a physiological condition characterized by an imbalance between the production of reactive oxygen species and the body's ability to detoxify them through antioxidant defenses.",
+                        "oxidative stress is a physiological condition characterized by an imbalance between the production of reactive oxygen species and the body's ability to detoxify them through antioxidant defenses."
+                    ],
+                    "term_passages": [
+                        "In conclusion, ozone altered oxidative stress, metabolic pathway, and amyloid plaque accumulation besides endothelial stress response involving mitochondria as the critical factor in ATP degeneration, caspase pathway, and neuronal damage.",
+                        "Ozone-induced injury and oxidative stress in bronchiolar epithelium were linked to methacholine-induced alterations in pulmonary mechanics.",
+                        "Our purpose was to test that oxidative stress caused by chronic low doses of ozone, by itself, alters adult neurogenesis and causes progressive neurodegeneration in the hippocampus, which actions lead to the loss of brain plasticity in the mature central nervous system of rats.",
+                        "Furthermore, postharvest treatments of grapes with ozone can stimulate defense responses by synthetizing secondary metabolites against oxidative stress.",
+                        "Animals were exposed to an ozone-free air stream and for 15, 30, 60, and 90 days to low doses of ozone to cause oxidative stress.",
+                        "Acute exposure to ozone causes oxidative stress, characterized by increases in nitric oxide (NO) and other reactive nitrogen species in the lung.",
+                        "A principal component analysis showed that the enzyme ascorbate peroxidase can be an indicator of oxidative stress caused by ozone.",
+                        "An exciting new aspect is that ozone, being a strong oxidizer, can stimulate the increase of cellular anti-oxidant enzymes, eventually inhibiting the oxidative stress.",
+                        "To determine whether ozone exposure induces greater oxidative stress and airway inflammation in RAO-affected horses in remission than in healthy horses.",
+                        "Our study aimed to evaluate the effect of chronic exposition of rats to controlled low doses of ozone on oxidative stress, apoptosis, mitochondrial dynamics, and cardiac hypertrophy.",
+                        "In asthmatic mice, ozone exposure induces oxidative stress and worsens pulmonary dysfunction, lung tissue damage, and inflammation, disrupting the balance of type 2 innate lymphoid cells (ILC2s), T helper type 2 (Th2), and T helper type 17 (Th17) cells.",
+                        "After inhalation of PGs, pollen-transported ozone could be transferred to mucous membranes and exacerbate symptoms through oxidative stress and local inflammation.",
+                        "Using an environmentally realistic concentration (0.8 parts per million), we demonstrated that exposure of rats to ozone induced whole-body insulin resistance and oxidative stress, with associated endoplasmic reticulum (ER) stress, c-Jun N-terminal kinase (JNK) activation, and disruption of insulin signaling in skeletal muscle.",
+                        "Medical ozone reduced inflammation, IL-1\u03b2, TNF-\u03b1 mRNA levels and oxidative stress in PG/PS-induced arthritis in rats.",
+                        "The relationship of PR-10 proteins, particularly PR-10c, to oxidative stress caused by metals or ozone was studied in tolerant and sensitive birch clones to find out possible linkages to tolerance.",
+                        "One of the greatest problems concerning an application of ozone in medicine is its induction of oxidative stress.",
+                        "Exposure to environmental ozone can cause significant damage to plants by imposing conditions of oxidative stress.",
+                        "Metabolomics analysis showed that acute ozone exposure led to alterations in stress hormones, systemic inflammation, oxidative stress, and energy metabolism.",
+                        "To study the effect of chronic administration of tibolone on lipid peroxidation, memory and motor deficits in ozone induced oxidative stress.",
+                        "Ozone is a secondary air pollutant, which causes oxidative stress in plants by producing reactive oxygen species (ROS) starting by an external attack of leaf apoplast."
+                    ]
+                }
+            },
+            "edge_relationship": "???",
+            "world_x1": 19.0,
+            "world_y1": 21.0,
+            "world_x2": 20.0,
+            "world_y2": 25.0,
+            "text_world_x1": 19.0,
+            "text_world_y1": 23.0,
+            "text_world_x2": 20.0,
+            "text_world_y2": 23.0
         }
     ]
 }

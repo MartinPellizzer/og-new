@@ -12,6 +12,9 @@ import subprocess
 
 from lib import g
 from lib import io
+from lib import llm
+
+model_filepath = '/home/ubuntu/vault-tmp/llm/gemma-4-26B-A4B-it-UD-Q4_K_M.gguf'
 
 input_filepath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/terms/ozone/current.json'
 input_data = io.json_read(input_filepath)
@@ -420,6 +423,32 @@ def edge_delete():
                     edges.remove(edge)
                     return
 
+# ;jump
+def llm_description_gen():
+    node = interaction['node_focus']
+    if node != None:
+        # print(node)
+        # quit()
+        passages_focus_prompt = '\n'.join(passages_focus)
+        prompt = f'''
+            Write a one-sentence detailed definition for the following term: {node['term_name']}.
+            For context this term was extracted from the follwing sentences:
+            {passages_focus_prompt}
+            RULES:
+            Start the definition with: {node['term_name']} is a .
+            The definition must be worthy of an ontology, using best practices for the semantic web.
+            The ontologies have a taxonomic backbone, so the words right after the "is a" relationships must be the term used for the class this term inherit from.
+            For example, "ozone is a chemical", "ozone treatment is a process", etc.
+            Reply only with the asked content.
+        '''.strip()
+        print(prompt)
+        reply = llm.reply(prompt, model_filepath, max_tokens=512)
+        if '</think>' in reply:
+            reply = reply.split('</think>')[1].strip()
+        print('################################################################################')
+        print(reply)
+        print('########################################')
+
 def inputs_key_press(event):
     if event.key == pygame.K_ESCAPE:
         core['running'] = False
@@ -451,6 +480,10 @@ def inputs_key_press(event):
     # Ctrl+D
     elif event.key == pygame.K_d and (pygame.key.get_mods() & pygame.KMOD_CTRL):
         # edge_delete()
+        pass
+    # Ctrl+L
+    elif event.key == pygame.K_l and (pygame.key.get_mods() & pygame.KMOD_CTRL):
+        llm_description_gen()
         pass
     # Ctrl+DELETE
     elif event.key == pygame.K_DELETE and (pygame.key.get_mods() & pygame.KMOD_CTRL):
