@@ -504,7 +504,8 @@ def inputs_key_press(event):
             term_frequency = core['term_focus']['term_count']
             term_definitions = core['term_focus']['term_definitions']
             term_passages = core['term_focus']['term_passages']
-            node = node_create(0, 0, 0, 0, text, term_name, term_frequency, term_definitions, term_passages)
+            kind = 'term'
+            node = node_create(0, 0, 0, 0, text, term_name, term_frequency, term_definitions, term_passages, kind)
             node_width_by_text(node)
             interaction['node_focus'] = node
             core['term_focus']['term_status'] = 'added'
