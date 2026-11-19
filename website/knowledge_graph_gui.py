@@ -12,6 +12,9 @@ import subprocess
 
 from lib import g
 from lib import io
+from lib import llm
+
+model_filepath = '/home/ubuntu/vault-tmp/llm/gemma-4-26B-A4B-it-UD-Q4_K_M.gguf'
 
 input_filepath = f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/terms/ozone/current.json'
 input_data = io.json_read(input_filepath)
@@ -34,7 +37,11 @@ clock = pygame.time.Clock()
 
 font_sidebar_size = 24
 
-font = pygame.font.Font(None, 24)
+grid_size = 1
+
+font_base = 1
+
+font_nodes = pygame.font.Font(None, font_base)
 font_debug = pygame.font.Font(None, font_sidebar_size)
 font_sidebar = pygame.font.Font(None, 18)
 font_bottom = pygame.font.Font(None, 24)
@@ -54,8 +61,10 @@ core = {
 camera = {
     'world_x': 0,
     'world_y': 0,
-    'scale': 1,
+    'scale': 24,
 }
+
+font_nodes = pygame.font.Font(None, font_base*int(camera['scale']))
 
 mouse = {
     'screen_x': 0,
@@ -190,7 +199,7 @@ project_open(filename='kg.json')
 # NODES
 # ============================================================
 
-def node_create(x, y, w, h, text, term_name, term_frequency, term_definitions, term_passages):
+def node_create(x, y, w, h, text, term_name, term_frequency, term_definitions, term_passages, kind):
     node = {
         'world_x': x,
         'world_y': y,
@@ -201,18 +210,20 @@ def node_create(x, y, w, h, text, term_name, term_frequency, term_definitions, t
         'term_frequency': term_frequency,
         'term_definitions': term_definitions,
         'term_passages': term_passages,
+        'kind': kind,
     }
     nodes.append(node)
     return node
 
+# ;jump
 def node_width_by_text(node):
-    text_width, text_height = font.size(node['text'])
-    text_width_scale = text_width * camera['scale']
-    text_height_scale = text_height * camera['scale']
+    text_width, text_height = font_nodes.size(node['text'])
+    text_width_scale = text_width / camera['scale']
+    text_height_scale = text_height / camera['scale']
     node['world_w'] = text_width_scale
     node['world_h'] = text_height_scale
-    node['world_w'] += 10 + 10
-    node['world_h'] += 10 + 10
+    node['world_w'] += 1 + 1
+    node['world_h'] += 1 + 1
 
 # ============================================================
 # COORDINATE CONVERSION
@@ -234,8 +245,8 @@ def screen_to_world(x, y):
 # GRID
 # ============================================================
 
+
 def draw_grid():
-    grid_size = 100
     color = (28, 28, 28)
     ### Get visible world boundaries
     left, top = screen_to_world(0, 0)
@@ -291,14 +302,14 @@ def draw_edges():
         edge_center_screen_y = (edge['world_y1'] + edge['world_y2']) // 2
         ###
         ### TODO is // camera['scale'] the right way to get font base size? how node text managed bbox?
-        text_width, text_height = font.size(edge['edge_relationship'])
+        text_width, text_height = font_nodes.size(edge['edge_relationship'])
         edge['text_world_x1'] = edge_center_screen_x - (text_width // camera['scale']) // 2
         edge['text_world_y1'] = edge_center_screen_y
         edge['text_world_x2'] = edge['text_world_x1'] + (text_width // camera['scale'])
         edge['text_world_y2'] = edge['text_world_y1'] + (text_height // camera['scale'])
         ###
         edge_text_screen_x1, edge_text_screen_y1 = world_to_screen(edge['text_world_x1'], edge['text_world_y1'])
-        text = font.render(edge['edge_relationship'], True, (255, 255, 255))
+        text = font_nodes.render(edge['edge_relationship'], True, (255, 255, 255))
         screen.blit(text, (edge_text_screen_x1, edge_text_screen_y1))
         ###
         if edge == interaction['edge_focus']:
@@ -310,7 +321,7 @@ def draw_edges():
         # print(json.dumps(edge, indent=4))
         continue
         ### TODO background color on text relationship
-        text_width, text_height = font.size(edge['edge_relationship'])
+        text_width, text_height = font_nodes.size(edge['edge_relationship'])
         edge_center_screen_x -= text_width // 2
         edge_center_screen_y -= text_height // 2
         ###
@@ -322,28 +333,33 @@ def draw_edges():
         pygame.draw.rect(screen, background_color, (screen_x, screen_y, screen_w, screen_h))
         ###
         ###
-        text_width, text_height = font.size(node['text'])
+        text_width, text_height = font_nodes.size(node['text'])
         text_width_scale = text_width * camera['scale']
         text_height_scale = text_height * camera['scale']
 
+# ;jump
 def draw_nodes():
     for node in nodes:
         ### RECT
-        background_color = (65, 65, 65)
+        if 'kind' in node and node['kind'] == 'class':
+            # background_color = (65, 65, 65)
+            background_color = (0, 0, 255)
+        else:
+            background_color = (65, 65, 65)
         border_color = (26, 26, 26)
         screen_x, screen_y = world_to_screen(node['world_x'], node['world_y'])
         screen_w = node['world_w'] * camera['scale']
         screen_h = node['world_h'] * camera['scale']
         pygame.draw.rect(screen, background_color, (screen_x, screen_y, screen_w, screen_h))
-        pygame.draw.rect(screen, border_color, (screen_x, screen_y, screen_w, screen_h), 1*int(camera['scale']))
+        pygame.draw.rect(screen, border_color, (screen_x, screen_y, screen_w, screen_h), 2)
         ###
         if node == interaction['node_focus']:
-            pygame.draw.rect(screen, (0, 0, 255), (screen_x, screen_y, screen_w, screen_h), 2*int(camera['scale']))
+            pygame.draw.rect(screen, (0, 0, 255), (screen_x, screen_y, screen_w, screen_h), 2)
         ### TEXT
-        world_x = node['world_x'] + 10
-        world_y = node['world_y'] + 10
+        world_x = node['world_x'] + 1
+        world_y = node['world_y'] + 1
         screen_x, screen_y = world_to_screen(world_x, world_y)
-        text = font.render(node['text'], True, (255, 255, 255))
+        text = font_nodes.render(node['text'], True, (255, 255, 255))
         screen.blit(text, (screen_x, screen_y))
 
 ################################################################################
@@ -407,33 +423,31 @@ def edge_delete():
                     edges.remove(edge)
                     return
 
-################################################################################
-# TEST
-################################################################################
-
-"""
-x = -200
-y = 0
-text = 'ozone'
-node = node_create(x, y, 0, 0, text)
-node_width_by_text(node)
-
-x = 100
-y = 0
-text = 'o3'
-node = node_create(x, y, 0, 0, text)
-node_width_by_text(node)
-"""
-
-
-'''
-def inputs_mouse_click_right():
-    x = mouse['world_x']
-    y = mouse['world_y']
-    text = '???'
-    node = node_create(x, y, 0, 0, text)
-    node_width_by_text(node)
-'''
+# ;jump
+def llm_description_gen():
+    node = interaction['node_focus']
+    if node != None:
+        # print(node)
+        # quit()
+        passages_focus_prompt = '\n'.join(passages_focus)
+        prompt = f'''
+            Write a one-sentence detailed definition for the following term: {node['term_name']}.
+            For context this term was extracted from the follwing sentences:
+            {passages_focus_prompt}
+            RULES:
+            Start the definition with: {node['term_name']} is a .
+            The definition must be worthy of an ontology, using best practices for the semantic web.
+            The ontologies have a taxonomic backbone, so the words right after the "is a" relationships must be the term used for the class this term inherit from.
+            For example, "ozone is a chemical", "ozone treatment is a process", etc.
+            Reply only with the asked content.
+        '''.strip()
+        print(prompt)
+        reply = llm.reply(prompt, model_filepath, max_tokens=512)
+        if '</think>' in reply:
+            reply = reply.split('</think>')[1].strip()
+        print('################################################################################')
+        print(reply)
+        print('########################################')
 
 def inputs_key_press(event):
     if event.key == pygame.K_ESCAPE:
@@ -467,6 +481,10 @@ def inputs_key_press(event):
     elif event.key == pygame.K_d and (pygame.key.get_mods() & pygame.KMOD_CTRL):
         # edge_delete()
         pass
+    # Ctrl+L
+    elif event.key == pygame.K_l and (pygame.key.get_mods() & pygame.KMOD_CTRL):
+        llm_description_gen()
+        pass
     # Ctrl+DELETE
     elif event.key == pygame.K_DELETE and (pygame.key.get_mods() & pygame.KMOD_CTRL):
         # edge_delete()
@@ -490,7 +508,6 @@ def inputs_key_press(event):
             node_width_by_text(node)
             interaction['node_focus'] = node
             core['term_focus']['term_status'] = 'added'
-            # jump
             # lst_terms_lvl2.remove(core['term_focus'])
             terms_positions_regen()
             core['term_focus'] = None
@@ -515,8 +532,34 @@ def inputs_key_press(event):
             elif interaction['edge_focus'] != None:
                 interaction['edge_focus']['edge_relationship'] += letter
 
+# ;jump
+def inputs_mouse_click_right():
+    x = mouse['world_x']
+    y = mouse['world_y']
+    w = 0
+    h = 0
+    kind = 'class'
+    text = '???'
+    term_name = ''
+    term_frequency = ''
+    term_definitions = ''
+    term_passages = ''
+    node = node_create(
+        x, 
+        y,
+        w, 
+        h, 
+        text, 
+        term_name, 
+        term_frequency, 
+        term_definitions, 
+        term_passages,
+        kind,
+    )
+    node_width_by_text(node)
+
 def inputs_workspace_0(event):
-    global font
+    global font_nodes
     global terms_2_index
     global definitions_focus 
     global passages_focus 
@@ -590,7 +633,8 @@ def inputs_workspace_0(event):
                         except: pass
                         ###
                         interaction['node_focus'] = node
-                        interaction['action'] = 'drag'
+                        # interaction['action'] = 'drag'
+                        interaction['action'] = 'drag_snap'
                         interaction['node_drag'] = node
                         interaction['drag_offset_x'] = mouse['world_x'] - node['world_x']
                         interaction['drag_offset_y'] = mouse['world_y'] - node['world_y']
@@ -612,7 +656,7 @@ def inputs_workspace_0(event):
             interaction['mouse_x_start'] = event.pos[0]
             interaction['mouse_y_start'] = event.pos[1]
         elif event.button == 3:
-            # inputs_mouse_click_right()
+            inputs_mouse_click_right()
             pass
 
     elif event.type == pygame.MOUSEBUTTONUP:
@@ -633,12 +677,12 @@ def inputs_workspace_0(event):
             mouse['screen_y'] < frame_center['y'] + frame_center['h']
         ):
             if event.y == 1:
-                if camera['scale'] < 16:
-                    camera['scale'] *= 2
+                if camera['scale'] < 128:
+                    camera['scale'] += 1
             elif event.y == -1:
                 if camera['scale'] > 1:
-                    camera['scale'] /= 2
-            font = pygame.font.Font(None, 24*int(camera['scale']))
+                    camera['scale'] -= 1
+            font_nodes = pygame.font.Font(None, font_base*int(camera['scale']))
         elif (
             mouse['screen_x'] > frame_left['x'] and
             mouse['screen_y'] > frame_left['y'] and
@@ -655,7 +699,7 @@ def inputs_workspace_0(event):
         inputs_key_press(event)
 
 def inputs_workspace_1(event):
-    global font
+    global font_nodes
     global terms_2_index
     global definitions_focus 
     global passages_focus 
@@ -711,8 +755,8 @@ def main_update():
         interaction['node_drag']['world_y'] = (mouse['world_y'] - interaction['drag_offset_y'])
 
     if interaction['action'] == 'drag_snap':
-        interaction['node_drag']['world_x'] = (mouse['world_x'] - interaction['drag_offset_x']) // 100 * 100
-        interaction['node_drag']['world_y'] = (mouse['world_y'] - interaction['drag_offset_y']) // 100 * 100
+        interaction['node_drag']['world_x'] = (mouse['world_x'] - interaction['drag_offset_x']) // grid_size * grid_size
+        interaction['node_drag']['world_y'] = (mouse['world_y'] - interaction['drag_offset_y']) // grid_size * grid_size
 
     clock.tick(60)
 
@@ -769,7 +813,6 @@ for i in range(100):
     lst_terms_lvl2.append(item)
 """
 
-# ;jump
 try: lst_terms_lvl2 = io.json_read(f'{g.VAULT_FOLDERPATH}/ozonogroup/data/parse/pubmed/terms/ozone/terms.json')
 except: lst_terms_lvl2 = []
 if lst_terms_lvl2 == []:
@@ -786,7 +829,7 @@ if lst_terms_lvl2 == []:
         text = f'{term}'
         x = 0
         y = font_sidebar_size * i
-        w, h = font.size(text)
+        w, h = font_nodes.size(text)
         if 'term_status' not in item: item['term_status'] = 'todo'
         term_status = item['term_status']
         item = lst_item_create(
