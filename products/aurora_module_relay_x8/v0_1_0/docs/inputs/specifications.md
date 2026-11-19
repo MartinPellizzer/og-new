@@ -20,7 +20,16 @@ Version, Date, Author, Description
 
 ---
 
-### 1.1.1 CORE Communication Software
+### 1.1.1 CORE Communication Hardware
+
+| Setting            | Value                                |
+| ------------------ | ------------------------------------ |
+| Physical interface | RS485 |
+| Wires              | 2 wires (A, B) |
+
+---
+
+### 1.1.2 CORE Communication Software
 
 | Setting            | Value                                |
 | ------------------ | ------------------------------------ |
@@ -35,12 +44,65 @@ Version, Date, Author, Description
 
 ---
 
-### 1.1.2 CORE Communication Hardware
+#### 1.1.2.1 CORE Communication Software Modbus Register Map
 
-| Setting            | Value                                |
-| ------------------ | ------------------------------------ |
-| Physical interface | RS485 |
-| Wires              | 2 wires (A, B) |
+The following table lists the address ranges for different modbus operations.
+
+                | Address Range                     | Category                          |
+                | --------------------------------- | ------------------------------------ |
+                | 40001-40099 | Identification |
+| 40101-40199 | Command |
+| 40201-40299 | Status |
+| 40301-40399 | Diagnostic |
+| 40401-40499 | Fault |
+
+---
+
+The following table lists the specific addresses for each modbus operation.
+
+                | Address                           | Parameter                          |
+                | --------------------------------- | ------------------------------------ |
+                | 40001 | Identification Electrical |
+| 40002 | Identification Thermal |
+| 40003 | Identification Hardware |
+| 40004 | Identification Software |
+| 40101 | Command Relay Driver 1 |
+| 40102 | Command Relay Driver 2 |
+| 40103 | Command Relay Driver 3 |
+| 40104 | Command Relay Driver 4 |
+| 40105 | Command Relay Driver 5 |
+| 40106 | Command Relay Driver 6 |
+| 40107 | Command Relay Driver 7 |
+| 40108 | Command Relay Driver 8 |
+| 40201 | Status Module |
+| 40202 | Status Relay Driver 1 |
+| 40203 | Status Relay Driver 2 |
+| 40204 | Status Relay Driver 3 |
+| 40205 | Status Relay Driver 4 |
+| 40206 | Status Relay Driver 5 |
+| 40207 | Status Relay Driver 6 |
+| 40208 | Status Relay Driver 7 |
+| 40209 | Status Relay Driver 8 |
+
+---
+
+### 1.1.3 CORE Read Identification
+
+---
+
+#### 1.1.3.1 CORE Read Identification Electrical
+
+---
+
+#### 1.1.3.2 CORE Read Identification Thermal
+
+---
+
+#### 1.1.3.3 CORE Read Identification Hardware
+
+---
+
+#### 1.1.3.4 CORE Read Identification Firmware
 
 ---
 
@@ -752,7 +814,7 @@ The Relay Module (Slave) shall respond to CORE (Master) with the status "INITIAL
 | CRC-16 - High Byte                | 30 |
 | CRC-16 - Low Byte                 | B9  |
 
-The complete respnse data frame is: 01 04 02 00 00 B9 30
+The complete response data frame is: 01 04 02 00 00 B9 30
 
 ---
 
@@ -806,7 +868,7 @@ The Relay Module (Slave) shall respond to CORE (Master) with the status "READY",
 | CRC-16 - High Byte                | F0 |
 | CRC-16 - Low Byte                 | 78  |
 
-The complete respnse data frame is: 01 04 02 00 01 78 F0
+The complete response data frame is: 01 04 02 00 01 78 F0
 
 ---
 
@@ -862,7 +924,7 @@ The Relay Module (Slave) shall respond to CORE (Master) with the status "OPERATI
 | CRC-16 - High Byte                | F1 |
 | CRC-16 - Low Byte                 | 38  |
 
-The complete respnse data frame is: 01 04 02 00 02 38 F1
+The complete response data frame is: 01 04 02 00 02 38 F1
 
 ---
 
@@ -920,7 +982,7 @@ The Relay Module (Slave) shall respond to CORE (Master) with the status "WARNING
 | CRC-16 - High Byte                | 31 |
 | CRC-16 - Low Byte                 | F9  |
 
-The complete respnse data frame is: 01 04 02 00 03 F9 31
+The complete response data frame is: 01 04 02 00 03 F9 31
 
 ---
 
@@ -978,7 +1040,7 @@ The Relay Module (Slave) shall respond to CORE (Master) with the status "FAULT",
 | CRC-16 - High Byte                | F3 |
 | CRC-16 - Low Byte                 | B8  |
 
-The complete respnse data frame is: 01 04 02 00 04 B8 F3
+The complete response data frame is: 01 04 02 00 04 B8 F3
 
 ---
 
@@ -1036,7 +1098,7 @@ The Relay Module (Slave) shall respond to CORE (Master) with the status "MAINTEN
 | CRC-16 - High Byte                | 33 |
 | CRC-16 - Low Byte                 | 79  |
 
-The complete respnse data frame is: 01 04 02 00 05 79 33
+The complete response data frame is: 01 04 02 00 05 79 33
 
 ---
 
@@ -1094,7 +1156,7 @@ The Relay Module (Slave) shall respond to CORE (Master) with the status "OFFLINE
 | CRC-16 - High Byte                | 32 |
 | CRC-16 - Low Byte                 | 39  |
 
-The complete respnse data frame is: 01 04 02 00 06 39 32
+The complete response data frame is: 01 04 02 00 06 39 32
 
 ---
 
@@ -1158,7 +1220,7 @@ The Relay Module (Slave) shall respond to CORE (Master) with the GPIO output sta
 | CRC-16 - High Byte                | XX |
 | CRC-16 - Low Byte                 | XX  |
 
-The complete respnse data frame is: 01 04 02 00 XX XX XX
+The complete response data frame is: 01 04 02 00 XX XX XX
 
 ---
 
@@ -1218,7 +1280,7 @@ The Relay Module (Slave) shall respond to CORE (Master) with the GPIO output sta
 | CRC-16 - High Byte                | XX |
 | CRC-16 - Low Byte                 | XX  |
 
-The complete respnse data frame is: 01 04 02 00 XX XX XX
+The complete response data frame is: 01 04 02 00 XX XX XX
 
 ---
 
@@ -1280,7 +1342,7 @@ The Relay Module (Slave) shall respond to CORE (Master) with the GPIO output sta
 | CRC-16 - High Byte                | XX |
 | CRC-16 - Low Byte                 | XX  |
 
-The complete respnse data frame is: 01 04 02 00 XX XX XX
+The complete response data frame is: 01 04 02 00 XX XX XX
 
 ---
 
@@ -1342,7 +1404,7 @@ The Relay Module (Slave) shall respond to CORE (Master) with the GPIO output sta
 | CRC-16 - High Byte                | XX |
 | CRC-16 - Low Byte                 | XX  |
 
-The complete respnse data frame is: 01 04 02 00 XX XX XX
+The complete response data frame is: 01 04 02 00 XX XX XX
 
 ---
 
@@ -1404,7 +1466,7 @@ The Relay Module (Slave) shall respond to CORE (Master) with the GPIO output sta
 | CRC-16 - High Byte                | XX |
 | CRC-16 - Low Byte                 | XX  |
 
-The complete respnse data frame is: 01 04 02 00 XX XX XX
+The complete response data frame is: 01 04 02 00 XX XX XX
 
 ---
 
@@ -1466,7 +1528,7 @@ The Relay Module (Slave) shall respond to CORE (Master) with the GPIO output sta
 | CRC-16 - High Byte                | XX |
 | CRC-16 - Low Byte                 | XX  |
 
-The complete respnse data frame is: 01 04 02 00 XX XX XX
+The complete response data frame is: 01 04 02 00 XX XX XX
 
 ---
 
@@ -1528,7 +1590,7 @@ The Relay Module (Slave) shall respond to CORE (Master) with the GPIO output sta
 | CRC-16 - High Byte                | XX |
 | CRC-16 - Low Byte                 | XX  |
 
-The complete respnse data frame is: 01 04 02 00 XX XX XX
+The complete response data frame is: 01 04 02 00 XX XX XX
 
 ---
 
@@ -1590,7 +1652,7 @@ The Relay Module (Slave) shall respond to CORE (Master) with the GPIO output sta
 | CRC-16 - High Byte                | XX |
 | CRC-16 - Low Byte                 | XX  |
 
-The complete respnse data frame is: 01 04 02 00 XX XX XX
+The complete response data frame is: 01 04 02 00 XX XX XX
 
 ---
 
@@ -1599,26 +1661,6 @@ The complete respnse data frame is: 01 04 02 00 XX XX XX
 ---
 
 ### 1.3.4 CORE Read Faults
-
----
-
-### 1.3.5 CORE Read Identification
-
----
-
-#### 1.3.5.1 CORE Read Identification Electrical
-
----
-
-#### 1.3.5.2 CORE Read Identification Thermal
-
----
-
-#### 1.3.5.3 CORE Read Identification Firmware
-
----
-
-#### 1.3.5.4 CORE Read Identification Hardware
 
 ---
 
