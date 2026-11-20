@@ -51,10 +51,10 @@ The following table lists the address ranges for different modbus operations.
                 | Address Range                     | Category                          |
                 | --------------------------------- | ------------------------------------ |
                 | 40001-40099 | Identification |
-| 40101-40199 | Command |
-| 40201-40299 | Status |
-| 40301-40399 | Diagnostic |
-| 40401-40499 | Fault |
+| 40101-40199 | Status |
+| 40201-40299 | Diagnostic |
+| 40301-40399 | Fault |
+| 00001-00099 | Relay Driver |
 
 ---
 
@@ -66,23 +66,23 @@ The following table lists the specific addresses for each modbus operation.
 | 40002 | Identification Thermal |
 | 40003 | Identification Hardware |
 | 40004 | Identification Software |
-| 40101 | Command Relay Driver 1 |
-| 40102 | Command Relay Driver 2 |
-| 40103 | Command Relay Driver 3 |
-| 40104 | Command Relay Driver 4 |
-| 40105 | Command Relay Driver 5 |
-| 40106 | Command Relay Driver 6 |
-| 40107 | Command Relay Driver 7 |
-| 40108 | Command Relay Driver 8 |
-| 40201 | Status Module |
-| 40202 | Status Relay Driver 1 |
-| 40203 | Status Relay Driver 2 |
-| 40204 | Status Relay Driver 3 |
-| 40205 | Status Relay Driver 4 |
-| 40206 | Status Relay Driver 5 |
-| 40207 | Status Relay Driver 6 |
-| 40208 | Status Relay Driver 7 |
-| 40209 | Status Relay Driver 8 |
+| 00001 | Command Relay Driver 1 |
+| 00002 | Command Relay Driver 2 |
+| 00003 | Command Relay Driver 3 |
+| 00004 | Command Relay Driver 4 |
+| 00005 | Command Relay Driver 5 |
+| 00006 | Command Relay Driver 6 |
+| 00007 | Command Relay Driver 7 |
+| 00008 | Command Relay Driver 8 |
+| 40101 | Status Module |
+| 40102 | Status Relay Driver 1 |
+| 40103 | Status Relay Driver 2 |
+| 40104 | Status Relay Driver 3 |
+| 40105 | Status Relay Driver 4 |
+| 40106 | Status Relay Driver 5 |
+| 40107 | Status Relay Driver 6 |
+| 40108 | Status Relay Driver 7 |
+| 40109 | Status Relay Driver 8 |
 
 ---
 
