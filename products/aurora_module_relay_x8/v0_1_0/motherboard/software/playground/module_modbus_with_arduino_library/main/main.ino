@@ -43,6 +43,16 @@ int led_state = 0;
 
 uint32_t timer_cur = 0; 
 
+uint8_t relay1_state = LOW;
+uint8_t relay2_state = LOW;
+uint8_t relay3_state = LOW;
+uint8_t relay4_state = LOW;
+uint8_t relay5_state = LOW;
+uint8_t relay6_state = LOW;
+uint8_t relay7_state = LOW;
+uint8_t relay8_state = LOW;
+
+
 enum device_state_enum {
     INITIALIZING,
     READY,
@@ -80,8 +90,9 @@ void setup()
   digitalWrite(RELAY_DRIVER_8_PIN, LOW);
 
   slave.cbVector[CB_WRITE_COILS] = writeDigitalOut;
-  // slave.cbVector[CB_READ_COILS] = readDigital;
-  slave.cbVector[CB_READ_INPUT_REGISTERS] = readAnalogIn;
+  // slave.cbVector[CB_READ_COILS] = readCoils; // FC01
+  slave.cbVector[CB_READ_DISCRETE_INPUTS] = readDiscreteInputs; // FC02
+  // slave.cbVector[CB_READ_INPUT_REGISTERS] = readAnalogIn;
 
   slave.begin(9600);
 }
@@ -141,16 +152,52 @@ uint8_t readAnalogIn(uint8_t fc, uint16_t address, uint16_t length, void* data)
     );
     if (length == 1)
     {
-      if (address == 100 || address == 40101)
+      if (address == 100)
       {
           Serial.println("MATCH");
           slave.writeRegisterToBuffer(0, device_state);
           return STATUS_OK;
       }
-      else if (address == 101 || address == 40102)
+      else if (address == 102)
       {
           Serial.println("MATCH");
-          slave.writeRegisterToBuffer(0, analogRead(RELAY_DRIVER_1_PIN));
+          slave.writeRegisterToBuffer(0, digitalRead(RELAY_DRIVER_2_PIN));
+          return STATUS_OK;
+      }
+      else if (address == 103)
+      {
+          Serial.println("MATCH");
+          slave.writeRegisterToBuffer(0, digitalRead(RELAY_DRIVER_3_PIN));
+          return STATUS_OK;
+      }
+      else if (address == 104)
+      {
+          Serial.println("MATCH");
+          slave.writeRegisterToBuffer(0, digitalRead(RELAY_DRIVER_4_PIN));
+          return STATUS_OK;
+      }
+      else if (address == 105)
+      {
+          Serial.println("MATCH");
+          slave.writeRegisterToBuffer(0, digitalRead(RELAY_DRIVER_5_PIN));
+          return STATUS_OK;
+      }
+      else if (address == 106)
+      {
+          Serial.println("MATCH");
+          slave.writeRegisterToBuffer(0, digitalRead(RELAY_DRIVER_6_PIN));
+          return STATUS_OK;
+      }
+      else if (address == 107)
+      {
+          Serial.println("MATCH");
+          slave.writeRegisterToBuffer(0, digitalRead(RELAY_DRIVER_7_PIN));
+          return STATUS_OK;
+      }
+      else if (address == 108)
+      {
+          Serial.println("MATCH");
+          slave.writeRegisterToBuffer(0, digitalRead(RELAY_DRIVER_8_PIN));
           return STATUS_OK;
       }
       else
@@ -166,24 +213,75 @@ uint8_t readAnalogIn(uint8_t fc, uint16_t address, uint16_t length, void* data)
     }
 }
 
-// uint8_t readDigital(uint8_t fc, uint16_t address, uint16_t length, void* data)
-// {
-//   Serial.print("FC=01/02: ");
-//   Serial.println(fc);
-//   Serial.println(address);
-//   Serial.println(length);
+uint8_t readDiscreteInputs(uint8_t fc, uint16_t address, uint16_t length, void* data)
+{
+    Serial.printf(
+        "FC=%u, Address=%u, Length=%u -> ",
+        fc, address, length
+    );
 
-//   for (int i = 0; i < length; i++)
-//   {
-//     int bt = 0;
-//     if (i == 0)
-//     {
-//       bt = button_value;
-//     }
-//     slave.writeCoilToBuffer(i, bt);
-//   }
-//   return STATUS_OK;
-// }
+    if (length != 1)
+        return STATUS_ILLEGAL_DATA_VALUE;
+
+    if (address == 0)
+    {
+      Serial.print("RELAY 1 STATE: ");
+      Serial.println(relay1_state);
+      slave.writeCoilToBuffer(0, relay1_state);
+      return STATUS_OK;
+    }
+    else if (address == 1)
+    {
+      Serial.print("RELAY 2 STATE: ");
+      Serial.println(relay2_state);
+      slave.writeCoilToBuffer(0, relay2_state);
+      return STATUS_OK;
+    }
+    else if (address == 2)
+    {
+      Serial.print("RELAY 3 STATE: ");
+      Serial.println(relay3_state);
+      slave.writeCoilToBuffer(0, relay3_state);
+      return STATUS_OK;
+    }
+    else if (address == 3)
+    {
+      Serial.print("RELAY 4 STATE: ");
+      Serial.println(relay4_state);
+      slave.writeCoilToBuffer(0, relay4_state);
+      return STATUS_OK;
+    }
+    else if (address == 4)
+    {
+      Serial.print("RELAY 5 STATE: ");
+      Serial.println(relay5_state);
+      slave.writeCoilToBuffer(0, relay5_state);
+      return STATUS_OK;
+    }
+    else if (address == 5)
+    {
+      Serial.print("RELAY 6 STATE: ");
+      Serial.println(relay6_state);
+      slave.writeCoilToBuffer(0, relay6_state);
+      return STATUS_OK;
+    }
+    else if (address == 6)
+    {
+      Serial.print("RELAY 7 STATE: ");
+      Serial.println(relay7_state);
+      slave.writeCoilToBuffer(0, relay7_state);
+      return STATUS_OK;
+    }
+    else if (address == 7)
+    {
+      Serial.print("RELAY 8 STATE: ");
+      Serial.println(relay8_state);
+      slave.writeCoilToBuffer(0, relay8_state);
+      return STATUS_OK;
+    }
+
+    return STATUS_ILLEGAL_DATA_ADDRESS;
+}
 
 uint8_t writeDigitalOut(uint8_t fc, uint16_t address, uint16_t length, void* data)
 {
@@ -211,35 +309,43 @@ uint8_t writeDigitalOut(uint8_t fc, uint16_t address, uint16_t length, void* dat
 
   if (address == address_coil_1_zero_based)
   {
-    digitalWrite(RELAY_DRIVER_1_PIN, slave.readCoilFromBuffer(0));
+    relay1_state = slave.readCoilFromBuffer(0);
+    digitalWrite(RELAY_DRIVER_1_PIN, relay1_state);
   }
   if (address == address_coil_2_zero_based)
   {
-    digitalWrite(RELAY_DRIVER_2_PIN, slave.readCoilFromBuffer(0));
+    relay2_state = slave.readCoilFromBuffer(0);
+    digitalWrite(RELAY_DRIVER_2_PIN, relay2_state);
   }
   if (address == address_coil_3_zero_based)
   {
-    digitalWrite(RELAY_DRIVER_3_PIN, slave.readCoilFromBuffer(0));
+    relay3_state = slave.readCoilFromBuffer(0);
+    digitalWrite(RELAY_DRIVER_3_PIN, relay3_state);
   }
   if (address == address_coil_4_zero_based)
   {
-    digitalWrite(RELAY_DRIVER_4_PIN, slave.readCoilFromBuffer(0));
+    relay4_state = slave.readCoilFromBuffer(0);
+    digitalWrite(RELAY_DRIVER_4_PIN, relay4_state);
   }
   if (address == address_coil_5_zero_based)
   {
-    digitalWrite(RELAY_DRIVER_5_PIN, slave.readCoilFromBuffer(0));
+    relay5_state = slave.readCoilFromBuffer(0);
+    digitalWrite(RELAY_DRIVER_5_PIN, relay5_state);
   }
   if (address == address_coil_6_zero_based)
   {
-    digitalWrite(RELAY_DRIVER_6_PIN, slave.readCoilFromBuffer(0));
+    relay6_state = slave.readCoilFromBuffer(0);
+    digitalWrite(RELAY_DRIVER_6_PIN, relay6_state);
   }
   if (address == address_coil_7_zero_based)
   {
-    digitalWrite(RELAY_DRIVER_7_PIN, slave.readCoilFromBuffer(0));
+    relay7_state = slave.readCoilFromBuffer(0);
+    digitalWrite(RELAY_DRIVER_7_PIN, relay7_state);
   }
   if (address == address_coil_8_zero_based)
   {
-    digitalWrite(RELAY_DRIVER_8_PIN, slave.readCoilFromBuffer(0));
+    relay8_state = slave.readCoilFromBuffer(0);
+    digitalWrite(RELAY_DRIVER_8_PIN, relay8_state);
   }
   return STATUS_OK;
 }

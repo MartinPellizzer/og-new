@@ -66,23 +66,15 @@ The following table lists the specific addresses for each modbus operation.
 | 40002 | Identification Thermal |
 | 40003 | Identification Hardware |
 | 40004 | Identification Software |
-| 00001 | Command Relay Driver 1 |
-| 00002 | Command Relay Driver 2 |
-| 00003 | Command Relay Driver 3 |
-| 00004 | Command Relay Driver 4 |
-| 00005 | Command Relay Driver 5 |
-| 00006 | Command Relay Driver 6 |
-| 00007 | Command Relay Driver 7 |
-| 00008 | Command Relay Driver 8 |
+| 00001 | Read/Write Relay Driver 1 |
+| 00002 | Read/Write Relay Driver 2 |
+| 00003 | Read/Write Relay Driver 3 |
+| 00004 | Read/Write Relay Driver 4 |
+| 00005 | Read/Write Relay Driver 5 |
+| 00006 | Read/Write Relay Driver 6 |
+| 00007 | Read/Write Relay Driver 7 |
+| 00008 | Read/Write Relay Driver 8 |
 | 40101 | Status Module |
-| 40102 | Status Relay Driver 1 |
-| 40103 | Status Relay Driver 2 |
-| 40104 | Status Relay Driver 3 |
-| 40105 | Status Relay Driver 4 |
-| 40106 | Status Relay Driver 5 |
-| 40107 | Status Relay Driver 6 |
-| 40108 | Status Relay Driver 7 |
-| 40109 | Status Relay Driver 8 |
 
 ---
 
@@ -1182,18 +1174,27 @@ CORE (Master) shall request to the Realy Module (Slave) the GPIO output state of
 
 
 
+
+
+
+
+
+
+
+
+
 | Setting                           | Value (HEX)                          |
 | --------------------------------- | ------------------------------------ |
 | Slave Address                     | 01 |
-| Function Code                     | 04 |
+| Function Code                     | 01 |
 | Starting Address - High Byte      | 00 |
 | Starting Address - Low Byte       | 00 |
 | Quantity of Registers - High Byte | 00 |
 | Quantity of Registers - Low Byte  | 01 |
 | CRC-16 - High Byte                | CA |
-| CRC-16 - Low Byte                 | 31  |
+| CRC-16 - Low Byte                 | FD  |
 
-The complete response data frame is: 01 04 00 00 00 01 31 CA
+The complete response data frame is: 01 01 00 00 00 01 FD CA
 
 The Relay Module (Slave) shall respond to CORE (Master) with the GPIO output state of Relay Driver 1 (0 or 1) using the following message.
 
@@ -1210,17 +1211,18 @@ The Relay Module (Slave) shall respond to CORE (Master) with the GPIO output sta
 
 
 
+
 | Setting                           | Value (HEX)                          |
 | --------------------------------- | ------------------------------------ |
 | Slave Address                     | 01 |
-| Function Code                     | 04 |
+| Function Code                     | 01 |
 | Byte Count                        | 02 |
 | Register Data - High Byte         | 00 |
 | Register Data - Low Byte          | XX |
 | CRC-16 - High Byte                | XX |
 | CRC-16 - Low Byte                 | XX  |
 
-The complete response data frame is: 01 04 02 00 XX XX XX
+The complete response data frame is: 01 01 02 00 XX XX XX
 
 ---
 
@@ -1242,18 +1244,21 @@ CORE (Master) shall request to the Realy Module (Slave) the GPIO output state of
 
 
 
+
+
+
 | Setting                           | Value (HEX)                          |
 | --------------------------------- | ------------------------------------ |
 | Slave Address                     | 01 |
-| Function Code                     | 04 |
+| Function Code                     | 01 |
 | Starting Address - High Byte      | 00 |
-| Starting Address - Low Byte       | 00 |
+| Starting Address - Low Byte       | 01 |
 | Quantity of Registers - High Byte | 00 |
 | Quantity of Registers - Low Byte  | 01 |
-| CRC-16 - High Byte                | CA |
-| CRC-16 - Low Byte                 | 31  |
+| CRC-16 - High Byte                | 0A |
+| CRC-16 - Low Byte                 | AC  |
 
-The complete response data frame is: 01 04 00 00 00 01 31 CA
+The complete response data frame is: 01 01 00 01 00 01 AC 0A
 
 The Relay Module (Slave) shall respond to CORE (Master) with the GPIO output state of Relay Driver 2 (0 or 1) using the following message.
 
@@ -1270,17 +1275,19 @@ The Relay Module (Slave) shall respond to CORE (Master) with the GPIO output sta
 
 
 
+
+
 | Setting                           | Value (HEX)                          |
 | --------------------------------- | ------------------------------------ |
 | Slave Address                     | 01 |
-| Function Code                     | 04 |
+| Function Code                     | 01 |
 | Byte Count                        | 02 |
 | Register Data - High Byte         | 00 |
 | Register Data - Low Byte          | XX |
 | CRC-16 - High Byte                | XX |
 | CRC-16 - Low Byte                 | XX  |
 
-The complete response data frame is: 01 04 02 00 XX XX XX
+The complete response data frame is: 01 01 02 00 XX XX XX
 
 ---
 
@@ -1303,18 +1310,21 @@ CORE (Master) shall request to the Realy Module (Slave) the GPIO output state of
 
 
 
+
+
+
 | Setting                           | Value (HEX)                          |
 | --------------------------------- | ------------------------------------ |
 | Slave Address                     | 01 |
-| Function Code                     | 04 |
+| Function Code                     | 01 |
 | Starting Address - High Byte      | 00 |
-| Starting Address - Low Byte       | 00 |
+| Starting Address - Low Byte       | 02 |
 | Quantity of Registers - High Byte | 00 |
 | Quantity of Registers - Low Byte  | 01 |
-| CRC-16 - High Byte                | CA |
-| CRC-16 - Low Byte                 | 31  |
+| CRC-16 - High Byte                | 0A |
+| CRC-16 - Low Byte                 | 5C  |
 
-The complete response data frame is: 01 04 00 00 00 01 31 CA
+The complete response data frame is: 01 01 00 02 00 01 5C 0A
 
 The Relay Module (Slave) shall respond to CORE (Master) with the GPIO output state of Relay Driver 3 (0 or 1) using the following message.
 
@@ -1332,17 +1342,19 @@ The Relay Module (Slave) shall respond to CORE (Master) with the GPIO output sta
 
 
 
+
+
 | Setting                           | Value (HEX)                          |
 | --------------------------------- | ------------------------------------ |
 | Slave Address                     | 01 |
-| Function Code                     | 04 |
+| Function Code                     | 01 |
 | Byte Count                        | 02 |
 | Register Data - High Byte         | 00 |
 | Register Data - Low Byte          | XX |
 | CRC-16 - High Byte                | XX |
 | CRC-16 - Low Byte                 | XX  |
 
-The complete response data frame is: 01 04 02 00 XX XX XX
+The complete response data frame is: 01 01 02 00 XX XX XX
 
 ---
 
@@ -1365,18 +1377,21 @@ CORE (Master) shall request to the Realy Module (Slave) the GPIO output state of
 
 
 
+
+
+
 | Setting                           | Value (HEX)                          |
 | --------------------------------- | ------------------------------------ |
 | Slave Address                     | 01 |
-| Function Code                     | 04 |
+| Function Code                     | 01 |
 | Starting Address - High Byte      | 00 |
-| Starting Address - Low Byte       | 00 |
+| Starting Address - Low Byte       | 03 |
 | Quantity of Registers - High Byte | 00 |
 | Quantity of Registers - Low Byte  | 01 |
 | CRC-16 - High Byte                | CA |
-| CRC-16 - Low Byte                 | 31  |
+| CRC-16 - Low Byte                 | 0D  |
 
-The complete response data frame is: 01 04 00 00 00 01 31 CA
+The complete response data frame is: 01 01 00 03 00 01 0D CA
 
 The Relay Module (Slave) shall respond to CORE (Master) with the GPIO output state of Relay Driver 4 (0 or 1) using the following message.
 
@@ -1394,17 +1409,19 @@ The Relay Module (Slave) shall respond to CORE (Master) with the GPIO output sta
 
 
 
+
+
 | Setting                           | Value (HEX)                          |
 | --------------------------------- | ------------------------------------ |
 | Slave Address                     | 01 |
-| Function Code                     | 04 |
+| Function Code                     | 01 |
 | Byte Count                        | 02 |
 | Register Data - High Byte         | 00 |
 | Register Data - Low Byte          | XX |
 | CRC-16 - High Byte                | XX |
 | CRC-16 - Low Byte                 | XX  |
 
-The complete response data frame is: 01 04 02 00 XX XX XX
+The complete response data frame is: 01 01 02 00 XX XX XX
 
 ---
 
@@ -1427,18 +1444,21 @@ CORE (Master) shall request to the Realy Module (Slave) the GPIO output state of
 
 
 
+
+
+
 | Setting                           | Value (HEX)                          |
 | --------------------------------- | ------------------------------------ |
 | Slave Address                     | 01 |
-| Function Code                     | 04 |
+| Function Code                     | 01 |
 | Starting Address - High Byte      | 00 |
-| Starting Address - Low Byte       | 00 |
+| Starting Address - Low Byte       | 04 |
 | Quantity of Registers - High Byte | 00 |
 | Quantity of Registers - Low Byte  | 01 |
-| CRC-16 - High Byte                | CA |
-| CRC-16 - Low Byte                 | 31  |
+| CRC-16 - High Byte                | 0B |
+| CRC-16 - Low Byte                 | BC  |
 
-The complete response data frame is: 01 04 00 00 00 01 31 CA
+The complete response data frame is: 01 01 00 04 00 01 BC 0B
 
 The Relay Module (Slave) shall respond to CORE (Master) with the GPIO output state of Relay Driver 5 (0 or 1) using the following message.
 
@@ -1456,17 +1476,19 @@ The Relay Module (Slave) shall respond to CORE (Master) with the GPIO output sta
 
 
 
+
+
 | Setting                           | Value (HEX)                          |
 | --------------------------------- | ------------------------------------ |
 | Slave Address                     | 01 |
-| Function Code                     | 04 |
+| Function Code                     | 01 |
 | Byte Count                        | 02 |
 | Register Data - High Byte         | 00 |
 | Register Data - Low Byte          | XX |
 | CRC-16 - High Byte                | XX |
 | CRC-16 - Low Byte                 | XX  |
 
-The complete response data frame is: 01 04 02 00 XX XX XX
+The complete response data frame is: 01 01 02 00 XX XX XX
 
 ---
 
@@ -1489,18 +1511,21 @@ CORE (Master) shall request to the Realy Module (Slave) the GPIO output state of
 
 
 
+
+
+
 | Setting                           | Value (HEX)                          |
 | --------------------------------- | ------------------------------------ |
 | Slave Address                     | 01 |
-| Function Code                     | 04 |
+| Function Code                     | 01 |
 | Starting Address - High Byte      | 00 |
-| Starting Address - Low Byte       | 00 |
+| Starting Address - Low Byte       | 05 |
 | Quantity of Registers - High Byte | 00 |
 | Quantity of Registers - Low Byte  | 01 |
-| CRC-16 - High Byte                | CA |
-| CRC-16 - Low Byte                 | 31  |
+| CRC-16 - High Byte                | CB |
+| CRC-16 - Low Byte                 | ED  |
 
-The complete response data frame is: 01 04 00 00 00 01 31 CA
+The complete response data frame is: 01 01 00 05 00 01 ED CB
 
 The Relay Module (Slave) shall respond to CORE (Master) with the GPIO output state of Relay Driver 6 (0 or 1) using the following message.
 
@@ -1518,17 +1543,19 @@ The Relay Module (Slave) shall respond to CORE (Master) with the GPIO output sta
 
 
 
+
+
 | Setting                           | Value (HEX)                          |
 | --------------------------------- | ------------------------------------ |
 | Slave Address                     | 01 |
-| Function Code                     | 04 |
+| Function Code                     | 01 |
 | Byte Count                        | 02 |
 | Register Data - High Byte         | 00 |
 | Register Data - Low Byte          | XX |
 | CRC-16 - High Byte                | XX |
 | CRC-16 - Low Byte                 | XX  |
 
-The complete response data frame is: 01 04 02 00 XX XX XX
+The complete response data frame is: 01 01 02 00 XX XX XX
 
 ---
 
@@ -1551,18 +1578,21 @@ CORE (Master) shall request to the Realy Module (Slave) the GPIO output state of
 
 
 
+
+
+
 | Setting                           | Value (HEX)                          |
 | --------------------------------- | ------------------------------------ |
 | Slave Address                     | 01 |
-| Function Code                     | 04 |
+| Function Code                     | 01 |
 | Starting Address - High Byte      | 00 |
-| Starting Address - Low Byte       | 00 |
+| Starting Address - Low Byte       | 06 |
 | Quantity of Registers - High Byte | 00 |
 | Quantity of Registers - Low Byte  | 01 |
-| CRC-16 - High Byte                | CA |
-| CRC-16 - Low Byte                 | 31  |
+| CRC-16 - High Byte                | CB |
+| CRC-16 - Low Byte                 | 1D  |
 
-The complete response data frame is: 01 04 00 00 00 01 31 CA
+The complete response data frame is: 01 01 00 06 00 01 1D CB
 
 The Relay Module (Slave) shall respond to CORE (Master) with the GPIO output state of Relay Driver 7 (0 or 1) using the following message.
 
@@ -1580,17 +1610,19 @@ The Relay Module (Slave) shall respond to CORE (Master) with the GPIO output sta
 
 
 
+
+
 | Setting                           | Value (HEX)                          |
 | --------------------------------- | ------------------------------------ |
 | Slave Address                     | 01 |
-| Function Code                     | 04 |
+| Function Code                     | 01 |
 | Byte Count                        | 02 |
 | Register Data - High Byte         | 00 |
 | Register Data - Low Byte          | XX |
 | CRC-16 - High Byte                | XX |
 | CRC-16 - Low Byte                 | XX  |
 
-The complete response data frame is: 01 04 02 00 XX XX XX
+The complete response data frame is: 01 01 02 00 XX XX XX
 
 ---
 
@@ -1613,18 +1645,21 @@ CORE (Master) shall request to the Realy Module (Slave) the GPIO output state of
 
 
 
+
+
+
 | Setting                           | Value (HEX)                          |
 | --------------------------------- | ------------------------------------ |
 | Slave Address                     | 01 |
-| Function Code                     | 04 |
+| Function Code                     | 01 |
 | Starting Address - High Byte      | 00 |
-| Starting Address - Low Byte       | 00 |
+| Starting Address - Low Byte       | 07 |
 | Quantity of Registers - High Byte | 00 |
 | Quantity of Registers - Low Byte  | 01 |
-| CRC-16 - High Byte                | CA |
-| CRC-16 - Low Byte                 | 31  |
+| CRC-16 - High Byte                | 0B |
+| CRC-16 - Low Byte                 | 4C  |
 
-The complete response data frame is: 01 04 00 00 00 01 31 CA
+The complete response data frame is: 01 01 00 07 00 01 4C 0B
 
 The Relay Module (Slave) shall respond to CORE (Master) with the GPIO output state of Relay Driver 8 (0 or 1) using the following message.
 
@@ -1642,17 +1677,19 @@ The Relay Module (Slave) shall respond to CORE (Master) with the GPIO output sta
 
 
 
+
+
 | Setting                           | Value (HEX)                          |
 | --------------------------------- | ------------------------------------ |
 | Slave Address                     | 01 |
-| Function Code                     | 04 |
+| Function Code                     | 01 |
 | Byte Count                        | 02 |
 | Register Data - High Byte         | 00 |
 | Register Data - Low Byte          | XX |
 | CRC-16 - High Byte                | XX |
 | CRC-16 - Low Byte                 | XX  |
 
-The complete response data frame is: 01 04 02 00 XX XX XX
+The complete response data frame is: 01 01 02 00 XX XX XX
 
 ---
 

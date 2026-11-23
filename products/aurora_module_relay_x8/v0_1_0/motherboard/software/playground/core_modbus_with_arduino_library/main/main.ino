@@ -53,14 +53,6 @@ int ret = 0;
 
 void loop()
 {
-
-  // ret = node.readDiscreteInputs(0x4001, 16);
-  // if (ret == node.ku8MBSuccess)
-  // {
-  //   unsigned int nn = node.getResponseBuffer(0);
-  //   Serial.print("digital read: ");
-  //   Serial.println(nn, BIN);
-  // }
   
   const char* address_status_device = "40101";
   uint16_t address_status_device_zero_based = atoi(address_status_device) - 40001;
@@ -126,23 +118,10 @@ void loop()
     }
   }
 
-  // TODO  
-  // const char* address_status_relay_driver_1 = "40102";
-  // uint16_t address_status_relay_driver_1_zero_based = atoi(address_status_relay_driver_1) - 40001;
-  // ret = node.readInputRegisters(address_status_relay_driver_1_zero_based, 1);
-  // if (ret == node.ku8MBSuccess)
-  // {
-  //   int nn = node.getResponseBuffer(0);
-  //   if (nn == 0)
-  //   {
-  //     Serial.print("analog read RELAY_DRIVER_1_PIN:");
-  //     Serial.println(nn);
-  //     lcd.setCursor(0, 1);
-  //     lcd.print("                ");
-  //     lcd.setCursor(0, 1);
-  //     lcd.print(nn);
-  //   }
-  // }
+  const char* address_status_relay_driver_1 = "00001";
+  uint16_t address_status_relay_driver_1_zero_based = atoi(address_status_relay_driver_1) - 00001;
+  
+  // COILS
 
   const char* address_coil_1 = "00001";
   uint16_t address_coil_1_zero_based = atoi(address_coil_1) - 1;
@@ -160,7 +139,8 @@ void loop()
   uint16_t address_coil_7_zero_based = atoi(address_coil_7) - 1;
   const char* address_coil_8 = "00008";
   uint16_t address_coil_8_zero_based = atoi(address_coil_8) - 1;
-
+  
+  // WRITE
   ret = node.writeSingleCoil(address_coil_1_zero_based, led);
   ret = node.writeSingleCoil(address_coil_2_zero_based, led);
   ret = node.writeSingleCoil(address_coil_3_zero_based, led);
@@ -169,6 +149,83 @@ void loop()
   ret = node.writeSingleCoil(address_coil_6_zero_based, led);
   ret = node.writeSingleCoil(address_coil_7_zero_based, led);
   ret = node.writeSingleCoil(address_coil_8_zero_based, led);
+
+  // READ
+  lcd.setCursor(0, 0);
+  lcd.print("                ");
+  ret = node.readDiscreteInputs(address_coil_1_zero_based, 1);
+  if (ret == node.ku8MBSuccess)
+  {
+    int nn = node.getResponseBuffer(0);
+    Serial.print("digital read RELAY_DRIVER_1_PIN:");
+    Serial.println(nn);
+    lcd.setCursor(0, 1);
+    lcd.print(nn);
+  }
+  ret = node.readDiscreteInputs(address_coil_2_zero_based, 1);
+  if (ret == node.ku8MBSuccess)
+  {
+    int nn = node.getResponseBuffer(0);
+    Serial.print("digital read RELAY_DRIVER_2_PIN:");
+    Serial.println(nn);
+    lcd.setCursor(1, 1);
+    lcd.print(nn);
+  }
+  ret = node.readDiscreteInputs(address_coil_3_zero_based, 1);
+  if (ret == node.ku8MBSuccess)
+  {
+    int nn = node.getResponseBuffer(0);
+    Serial.print("digital read RELAY_DRIVER_3_PIN:");
+    Serial.println(nn);
+    lcd.setCursor(2, 1);
+    lcd.print(nn);
+  }
+  ret = node.readDiscreteInputs(address_coil_4_zero_based, 1);
+  if (ret == node.ku8MBSuccess)
+  {
+    int nn = node.getResponseBuffer(0);
+    Serial.print("digital read RELAY_DRIVER_4_PIN:");
+    Serial.println(nn);
+    lcd.setCursor(3, 1);
+    lcd.print(nn);
+  }
+  ret = node.readDiscreteInputs(address_coil_5_zero_based, 1);
+  if (ret == node.ku8MBSuccess)
+  {
+    int nn = node.getResponseBuffer(0);
+    Serial.print("digital read RELAY_DRIVER_5_PIN:");
+    Serial.println(nn);
+    lcd.setCursor(4, 1);
+    lcd.print(nn);
+  }
+  ret = node.readDiscreteInputs(address_coil_6_zero_based, 1);
+  if (ret == node.ku8MBSuccess)
+  {
+    int nn = node.getResponseBuffer(0);
+    Serial.print("digital read RELAY_DRIVER_6_PIN:");
+    Serial.println(nn);
+    lcd.setCursor(5, 1);
+    lcd.print(nn);
+  }
+  ret = node.readDiscreteInputs(address_coil_7_zero_based, 1);
+  if (ret == node.ku8MBSuccess)
+  {
+    int nn = node.getResponseBuffer(0);
+    Serial.print("digital read RELAY_DRIVER_7_PIN:");
+    Serial.println(nn);
+    lcd.setCursor(6, 1);
+    lcd.print(nn);
+  }
+  ret = node.readDiscreteInputs(address_coil_8_zero_based, 1);
+  if (ret == node.ku8MBSuccess)
+  {
+    int nn = node.getResponseBuffer(0);
+    Serial.print("digital read RELAY_DRIVER_8_PIN:");
+    Serial.println(nn);
+    lcd.setCursor(7, 1);
+    lcd.print(nn);
+  }
+
   led = !led;
 
   delay(1000);
