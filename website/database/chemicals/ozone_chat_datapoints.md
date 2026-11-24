@@ -613,5 +613,342 @@ I'd preserve the distinction between the **broad ROS classification** and the **
 | Stratospheric ozone | is classified as | Naturally occurring atmospheric constituent | WHO |
 
 **Important:** Keep the tropospheric and stratospheric classifications separate. Ozone's atmospheric role depends on which atmospheric region it occupies. [epa.gov](https://www.epa.gov/system/files/documents/2025-07/o3_2024.pdf?utm_source=chatgpt.com)
+
+## Data point 27: Whether ozone is an element or compound
+
+**Most likely answer: Elemental substance (not a compound).**
+
+More precisely, ozone (O₃) is an **allotrope of the chemical element oxygen**. It consists exclusively of oxygen atoms.
+
+### Authoritative sources
+
+1. **IUPAC – Nomenclature of Inorganic Chemistry (Red Book, 2005)**  
+   [IUPAC Red Book](https://iupac.org/wp-content/uploads/2016/07/Red_Book_2005.pdf?utm_source=chatgpt.com) — Classifies O₃ as an allotrope of oxygen and lists its systematic name as trioxygen.
+
+2. **PubChem – Ozone**  
+   [PubChem](https://pubchem.ncbi.nlm.nih.gov/compound/Ozone?utm_source=chatgpt.com) — Explicitly classifies ozone as an elemental molecule.
+
+3. **Purdue University – Chemistry of Oxygen and Sulfur**  
+   [Purdue Chemistry](https://chemed.chem.purdue.edu/genchem/topicreview/bp/ch10/group6.php?utm_source=chatgpt.com) — Explains that O₂ and O₃ are allotropes of the element oxygen.
+
+4. **NIST Chemistry WebBook**  
+   [NIST](https://webbook.nist.gov/cgi/cbook.cgi?Name=Ozone&utm_source=chatgpt.com) — Provides its molecular formula, O₃.
+
+### Enter in your table
+
+| Subject | Relationship | Object | Source |
+|---|---|---|---|
+| Ozone | is classified as | Elemental substance (oxygen allotrope), not a compound | IUPAC Red Book; PubChem |
+
+**Terminology note:** Avoid simply writing "ozone is an element." More precisely, oxygen is the element; ozone is one of its elemental forms (allotropes).
+
+
+
+## Data point 28: Whether ozone is a molecule
+
+**Most likely answer: Yes.** Ozone (O₃) is a molecule consisting of three chemically bonded oxygen atoms. More specifically, it is an **elemental molecule** (an allotrope of oxygen), not a compound of different elements. [pubchem.ncbi.nlm.nih.gov](https://pubchem.ncbi.nlm.nih.gov/compound/Ozon?utm_source=chatgpt.com)
+
+### Authoritative sources
+
+1. **PubChem (NIH)** — explicitly describes ozone as an elemental molecule.  
+   [PubChem: Ozone](https://pubchem.ncbi.nlm.nih.gov/compound/Ozon?utm_source=chatgpt.com)
+
+2. **NASA** — explicitly states that each ozone molecule contains three oxygen atoms.  
+   [NASA: Twenty Questions and Answers About the Ozone Layer](https://science.nasa.gov/wp-content/uploads/2024/09/final-20qs-2022-full-document-26april2023-digital-version.pdf?utm_source=chatgpt.com)
+
+3. **NIST Chemistry WebBook** — provides its molecular formula and chemical structure.  
+   [NIST: Ozone](https://webbook.nist.gov/cgi/cbook.cgi?Name=Ozone&utm_source=chatgpt.com)
+
+### Enter in your table
+
+| Subject | Relationship | Object | Source |
+|---|---|---|---|
+| Ozone | is a molecule | Yes | PubChem; NASA |
+
+**Note:** You can later record "is an elemental molecule" as a separate, more specific data point.
+
+
+
+## Data point 29: Whether ozone is a molecular allotrope of oxygen
+
+**Most likely answer: Yes.** Ozone (O₃) is a triatomic molecular allotrope of oxygen, alongside dioxygen (O₂). Both consist exclusively of oxygen atoms but have different molecular structures.
+
+### Authoritative sources
+
+1. **IUPAC Gold Book** — authoritative chemical terminology.  
+   [IUPAC Gold Book](https://goldbook.iupac.org/?utm_source=chatgpt.com)
+
+2. **PubChem (NIH)** — explicitly describes ozone as an elemental molecule and an allotropic form of oxygen.  
+   [PubChem: Ozone](https://pubchem.ncbi.nlm.nih.gov/compound/ozone?utm_source=chatgpt.com)
+
+3. **Peer-reviewed Journal of Chemical Physics paper (2008)** — explicitly describes ozone as a triatomic allotrope of dioxygen.  
+   [Electronic structure and bonding of ozone](https://jupiter.chem.uoa.gr/pchem/pubs/pdf/JCP_129%282008%29054312.pdf?utm_source=chatgpt.com)
+
+4. **Purdue University Chemistry** — explains the relationship between O₂ and O₃ as oxygen allotropes.  
+   [Purdue: The Chemistry of Oxygen and Sulfur](https://chemed.chem.purdue.edu/genchem/topicreview/bp/ch10/group6.php?utm_source=chatgpt.com)
+
+### Enter in your table
+
+| Subject | Relationship | Object | Source |
+|---|---|---|---|
+| Ozone | is a molecular allotrope of | Oxygen | PubChem; Journal of Chemical Physics |
+
+**Recommended answer:** Yes.
+
+
+## Data point 30: Whether ozone is a pure substance
+
+**Most likely answer: Yes.**
+
+Ozone (O₃) is a **pure chemical substance** when considered in its pure form. More specifically, it is an **elementary substance and an allotrope of oxygen**, not a chemical compound.
+
+### Most authoritative sources
+
+1. **IUPAC Gold Book** — Defines chemical elements and pure chemical substances.  
+   [IUPAC Gold Book – Chemical Element](https://goldbook.iupac.org/terms/view/C01022/pdf?utm_source=chatgpt.com)
+
+2. **IUPAC – Principles of Chemical Nomenclature** — Explains pure substances, elementary substances and allotropes.  
+   [IUPAC publication](https://iupac.org/wp-content/uploads/2021/12/Principles_Leigh2011-compressed.pdf?utm_source=chatgpt.com)
+
+3. **PubChem (NIH)** — Explicitly classifies ozone as an elemental molecule.  
+   [PubChem – Ozone](https://pubchem.ncbi.nlm.nih.gov/compound/Ozone?utm_source=chatgpt.com)
+
+4. **NIST Chemistry WebBook** — Authoritative reference for ozone's chemical identity and composition.  
+   [NIST – Ozone](https://webbook.nist.gov/cgi/cbook.cgi?Name=Ozone&utm_source=chatgpt.com)
+
+### Enter in your table
+
+| Subject | Relationship | Object | Source |
+|---|---|---|---|
+| Ozone | is a | Pure substance | IUPAC; PubChem |
+
+**Note:** This describes pure ozone itself, not ordinary atmospheric air containing ozone.
+
+
+
+## Data point 31: Whether ozone is a chemical species
+
+**Most likely answer: Yes.**
+
+Ozone (O₃) is a chemical species. More specifically, it is a molecular species and a distinct chemical form (allotrope) of the element oxygen.
+
+### Most authoritative sources
+
+1. **[IUPAC Gold Book – Chemical species](https://goldbook.iupac.org/terms/view/CT01038?utm_source=chatgpt.com)** — Official IUPAC definition of a chemical species.
+2. **[IUPAC Gold Book – Chemical species of an element](https://goldbook.iupac.org/terms/view/CT06859?utm_source=chatgpt.com)** — Particularly relevant: defines a specific form of an element by its molecular structure, among other characteristics.
+3. **[ChEBI – Ozone (CHEBI:25812)](https://www.zfin.org/action/ontology/term/CHEBI%3A25812?utm_source=chatgpt.com)** — Explicitly classifies ozone as an elemental molecule with formula O₃.
+4. **[PubChem – Ozone](https://pubchem.ncbi.nlm.nih.gov/compound/Ozon?utm_source=chatgpt.com)** — Authoritative chemical database identifying ozone and its molecular formula.
+
+### Enter in your table
+
+| Subject | Relationship | Object | Source |
+|---|---|---|---|
+| Ozone | is a chemical species | Yes | IUPAC Gold Book; ChEBI |
+
+**Terminology note:** Ozone is also a *molecular entity* at the individual-molecule level. IUPAC distinguishes a molecular entity (one identifiable molecule) from a chemical species (an ensemble of such entities). [goldbook.iupac.org](https://goldbook.iupac.org/terms/view/M03986?utm_source=chatgpt.com)
+
+
+
+## Data point 32: Whether ozone is naturally occurring
+
+**Most likely answer: Yes.**
+
+Ozone occurs naturally in Earth's atmosphere, particularly in the stratosphere, where sunlight-driven reactions involving oxygen continuously produce it. It can also form naturally in the troposphere. [csl.noaa.gov](https://csl.noaa.gov/assessments/ozone/2022/twentyquestions/?utm_source=chatgpt.com)
+
+### Most authoritative sources
+
+1. **NOAA – Scientific Assessment of Ozone Depletion, 2022**  
+   [NOAA: Twenty Questions and Answers About the Ozone Layer](https://csl.noaa.gov/assessments/ozone/2022/twentyquestions/?utm_source=chatgpt.com)
+2. **NASA – What Is Ozone?**  
+   [NASA Ozone Watch](https://ozonewatch.gsfc.nasa.gov/facts/?utm_source=chatgpt.com)
+3. **World Meteorological Organization (WMO) – The Ozone Layer**  
+   [WMO: The Ozone Layer](https://wmo.int/themes/ozone-layer?utm_source=chatgpt.com)
+4. **United Nations Environment Programme (UNEP) – Twenty Questions and Answers**  
+   [UNEP: Ozone Assessment](https://ozone.unep.org/sites/default/files/2023-05/Final_20Qs%202022%20full%20document_26April2023_digital%20version.pdf?utm_source=chatgpt.com)
+5. **US Environmental Protection Agency (EPA) – What Is Ozone?**  
+   [EPA: What Is Ozone?](https://www.epa.gov/ozone-pollution-and-your-patients-health/what-ozone?_upf_link=410191&_upf_visitor=dx40j5x9&utm_source=chatgpt.com)
+
+### Enter in your table
+
+| Subject | Relationship | Object | Source |
+|---|---|---|---|
+| Ozone | occurs naturally | Yes | NOAA; NASA; WMO |
+
+**Note:** Natural occurrence does not mean all atmospheric ozone is exclusively natural; human activities also contribute to ozone formation, especially near ground level. [epa.gov](https://www.epa.gov/ozone-pollution-and-your-patients-health/what-ozone?_upf_link=410191&_upf_visitor=dx40j5x9\&utm_source=chatgpt.com)
+
+
+
+## Data point 33: Whether ozone is synthetically producible
+
+**Most likely answer: Yes.**
+
+Ozone can be artificially generated from molecular oxygen (O₂), principally using electrical discharge (corona discharge), ultraviolet radiation, or electrochemical methods.
+
+### Recommended authoritative sources
+
+1. **[USDA – 2025 Technical Report: Ozone](https://www.ams.usda.gov/sites/default/files/media/2025-TR-Ozone-Handling-FINAL_508.pdf)** — explicitly describes synthetic ozone production and its methods.
+2. **[US EPA – Alternative Disinfectants and Oxidants Guidance Manual](https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=2000229L.TXT)** — detailed explanation of ozone generation methods.
+3. **[US EPA – Ozone Generators](https://www.epa.gov/indoor-air-quality-iaq/ozone-generators-are-sold-air-cleaners)** — authoritative information about ozone-generating devices.
+4. **[American Chemical Society – Ozone Decontamination](https://pubs.acs.org/doi/10.1021/acs.iecr.2c03754)** — peer-reviewed discussion of ozone generation technologies.
+
+### Enter in your table
+
+| Subject | Relationship | Object | Source |
+|---|---|---|---|
+| Ozone | is synthetically producible | Yes | USDA 2025 Technical Report |
+
+**Note:** This describes the ability to produce ozone synthetically, not whether ozone occurs naturally. Both are true. [ams.usda.gov](https://www.ams.usda.gov/sites/default/files/media/2025-TR-Ozone-Handling-FINAL_508.pdf?utm_source=chatgpt.com)
+
+
+
+## Data point 34: Whether ozone is a free radical
+
+**Most likely answer: No.** Ground-state ozone (O₃) is generally classified as a **non-radical molecule**. It has a singlet ground state and is diamagnetic.
+
+There is an important nuance: ozone has some degree of *diradical character*, which has been debated in scientific literature. This does not mean it is conventionally classified as a free radical.
+
+### Recommended authoritative sources
+
+1. **IUPAC Gold Book** — Definition of a radical (the criterion for classification).  
+   [IUPAC Gold Book – Radical](https://goldbook.iupac.org/terms/view/R05066?utm_source=chatgpt.com)
+
+2. **PubChem – Ozone** — Chemical classification and molecular information.  
+   [PubChem: Ozone](https://pubchem.ncbi.nlm.nih.gov/compound/Ozone?utm_source=chatgpt.com)
+
+3. **Journal of Chemical Physics (2008)** — *Electronic Structure and Bonding of Ozone*. Discusses the debate over ozone's biradical character.  
+   [Full research paper](https://jupiter.chem.uoa.gr/pchem/pubs/pdf/JCP_129%282008%29054312.pdf?utm_source=chatgpt.com)
+
+4. **Journal of Physical Chemistry A (2015)** — *Insights into the Electronic Structure of Ozone and Sulfur Dioxide from Generalized Valence Bond Theory*. Examines ozone's significant diradical character.  
+   [ACS research paper](https://pubs.acs.org/doi/abs/10.1021/acs.jpca.5b00998?utm_source=chatgpt.com)
+
+### Enter in your table
+
+| Subject | Relationship | Object | Source |
+|---|---|---|---|
+| Ozone | is a free radical | No | IUPAC Gold Book; PubChem |
+
+**Note:** Keep *free radical classification* and *diradical character* as separate data points. This preserves the scientific nuance.
+
+
+
+## Data point 35: Whether ozone is an ion
+
+**Most likely answer: No.** Ozone (O₃) is a neutral molecule, not an ion. Its overall formal charge is zero.
+
+### Recommended authoritative sources
+
+1. **[PubChem – Ozone](https://pubchem.ncbi.nlm.nih.gov/compound/24823)** — explicitly lists its formal charge as 0.
+2. **[NIST Chemistry WebBook – Ozone](https://webbook.nist.gov/cgi/cbook.cgi?ID=C10028156)** — provides its molecular formula, structure and chemical identifiers.
+3. **[ChEBI – Chemical Entities of Biological Interest](https://www.ebi.ac.uk/chebi/)** — useful for checking chemical entity classification.
+4. **[IUPAC Gold Book](https://goldbook.iupac.org/)** — authoritative terminology for distinguishing molecules, ions and related chemical concepts.
+
+### Enter in your table
+
+| Subject | Relationship | Object | Source |
+|---|---|---|---|
+| Ozone | is an ion | No (neutral molecule; formal charge 0) | PubChem |
+
+**Note:** Ozone can form charged species such as O₃⁻ and O₃⁺. These are ozone ions, distinct from ordinary neutral ozone. [pubchem.ncbi.nlm.nih.gov](https://pubchem.ncbi.nlm.nih.gov/compound/Ozon?utm_source=chatgpt.com)
+
+
+
+## Data point 36: Whether ozone is electrically neutral
+
+**Most likely answer: Yes.** An ordinary ozone molecule (O₃) has an overall electrical charge of **zero**.
+
+### Most authoritative sources
+
+1. [PubChem – Ozone](https://pubchem.ncbi.nlm.nih.gov/compound/Ozon?utm_source=chatgpt.com) — explicitly lists *Formal Charge: 0*.
+2. [NIST Chemistry WebBook – Ozone](https://webbook.nist.gov/cgi/cbook.cgi?Name=Ozone&utm_source=chatgpt.com) — identifies ozone as O₃ and provides its molecular identifiers.
+3. [ChEBI – Chemical Entities of Biological Interest](https://www.ebi.ac.uk/chebi/?utm_source=chatgpt.com) — useful specialist chemical ontology.
+4. [IUPAC Gold Book](https://goldbook.iupac.org/?utm_source=chatgpt.com) — authoritative terminology for chemical concepts.
+
+### Enter in your table
+
+| Subject | Relationship | Object | Source |
+|---|---|---|---|
+| Ozone | has overall electrical charge | 0 (neutral) | PubChem |
+
+**Important distinction:** Individual oxygen atoms in some ozone structural representations carry formal charges, but the molecule as a whole is electrically neutral.
+
+
+## Data point 37: Whether ozone is stable or metastable
+
+**Most likely answer:** Ozone is **thermodynamically unstable (metastable) relative to molecular oxygen (O₂)**. It can nevertheless persist for measurable periods because its decomposition is kinetically hindered.
+
+### Authoritative sources
+
+1. **NIST Chemistry WebBook** — thermochemical data for ozone, useful for establishing its thermodynamic instability.  
+   [NIST Chemistry WebBook: Ozone](https://webbook.nist.gov/cgi/cbook.cgi?ID=C10028156&Mask=C0F&utm_source=chatgpt.com)
+
+2. **Journal of Chemical Physics** — research on metastable states during ozone formation.  
+   [Ozone formation: Metastable states and anomalous isotope effect](https://pubs.aip.org/aip/jcp/article-abstract/119/5/2577/294753/Formation-of-ozone-Metastable-states-and-anomalous?redirectedFrom=fulltext&utm_source=chatgpt.com)
+
+3. **Chemical Society Reviews / Chemistry Europe** — review discussing ozone's lower stability relative to triplet oxygen.  
+   [The Diverse Modes of Oxygen Reactivity in Life & Chemistry](https://chemistry-europe.onlinelibrary.wiley.com/doi/full/10.1002%2Fcssc.202201323?utm_source=chatgpt.com)
+
+4. **Atmospheric Chemistry and Physics research** — explains how newly formed ozone can redissociate unless stabilized through collisions.  
+   [Oxygen isotope dynamics and ozone formation](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2012jd017992?utm_source=chatgpt.com)
+
+### Enter in your table
+
+| Subject | Relationship | Object | Source |
+|---|---|---|---|
+| Ozone | is thermodynamically unstable relative to | Molecular oxygen (O₂) | NIST Chemistry WebBook |
+| Ozone | is classified as | Metastable species | Chemistry Europe review |
+
+**Important distinction:** Metastable does not mean that ozone is an excited electronic state. Ground-state ozone is a real, chemically identifiable species; it is simply less thermodynamically stable than O₂.
+
+
+
+## Data point 38: Whether ozone is an oxidising agent
+
+**Most likely answer: Yes.** Ozone (O₃) is a **strong oxidising agent**. It accepts electrons and is reduced during oxidation reactions involving other substances.
+
+### Authoritative sources
+
+1. **IUPAC Gold Book** — authoritative terminology; identifies ozone as an oxidant in atmospheric chemistry.  
+   [IUPAC Gold Book – Oxidant](https://goldbook.iupac.org/terms/view/O04361/html?utm_source=chatgpt.com)
+
+2. **US Environmental Protection Agency (EPA)** — explicitly describes ozone as a strong oxidant.  
+   [EPA – Air Quality Criteria for Ozone](https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=30001DAV.TXT&utm_source=chatgpt.com)
+
+3. **National Institute of Standards and Technology (NIST)** — authoritative chemical reference; useful for ozone's identity and chemical data.  
+   [NIST Chemistry WebBook – Ozone](https://webbook.nist.gov/cgi/cbook.cgi?Name=Ozone&utm_source=chatgpt.com)
+
+4. **PubChem (NIH)** — classifies ozone as an oxidising agent, drawing on curated chemical sources.  
+   [PubChem – Ozone](https://pubchem.ncbi.nlm.nih.gov/compound/Ozone?utm_source=chatgpt.com)
+
+5. **United States Pharmacopeia (USP)** — describes ozone as a potent oxidising agent.  
+   [USP Food Chemicals Codex – Ozone](https://doi.usp.org/USPFCC/FCC_F100462_04_01.html?utm_source=chatgpt.com)
+
+### Enter in your table
+
+| Subject | Relationship | Object | Source |
+|---|---|---|---|
+| Ozone | is an | Oxidising agent | EPA; USP; PubChem |
+
+**Note:** Use *strong oxidising agent* if you want the more informative answer.
+
+
+
+## Data point 39: Whether ozone is a molecular gas
+
+**Most likely answer:** Yes. Ozone is a molecular substance consisting of discrete O₃ molecules and is gaseous under ordinary ambient conditions.
+
+### Authoritative sources
+
+1. [PubChem – Ozone](https://pubchem.ncbi.nlm.nih.gov/compound/Ozone) — explicitly describes ozone as a gas molecular entity.
+2. [NIST Chemistry WebBook](https://webbook.nist.gov/cgi/cbook.cgi?Name=Ozone) — authoritative molecular identity and gas-phase data.
+3. [ILO/WHO International Chemical Safety Card](https://chemicalsafety.ilo.org/dyn/icsc/showcard.display?p_card_id=0068) — physical state and chemical description.
+4. [USDA Technical Report on Ozone](https://www.ams.usda.gov/sites/default/files/media/USDANOPTechnicalReport_Ozone.pdf) — identifies ozone as a highly reactive gas. [pubchem.ncbi.nlm.nih.gov](https://pubchem.ncbi.nlm.nih.gov/compound/Ozone?utm_source=chatgpt.com)
+
+### Enter in your table
+
+| Subject | Relationship | Object | Source |
+|---|---|---|---|
+| Ozone | is a molecular gas under ordinary ambient conditions | Yes | PubChem; ILO/WHO |
+
+**Note:** Ozone can also exist as a liquid or solid at sufficiently low temperatures.
 """
 
