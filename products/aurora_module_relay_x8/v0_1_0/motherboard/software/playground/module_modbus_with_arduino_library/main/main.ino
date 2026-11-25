@@ -92,7 +92,7 @@ void setup()
   slave.cbVector[CB_WRITE_COILS] = writeDigitalOut;
   // slave.cbVector[CB_READ_COILS] = readCoils; // FC01
   slave.cbVector[CB_READ_DISCRETE_INPUTS] = readDiscreteInputs; // FC02
-  // slave.cbVector[CB_READ_INPUT_REGISTERS] = readAnalogIn;
+  slave.cbVector[CB_READ_INPUT_REGISTERS] = readAnalogIn;
 
   slave.begin(9600);
 }
@@ -144,6 +144,12 @@ void loop()
   // }
 }
 
+int identification_software_vendor_id = 0;
+int identification_software_product_id = 1;
+int identification_software_version_major = 0;
+int identification_software_version_minor = 1;
+int identification_software_version_patch = 0;
+
 uint8_t readAnalogIn(uint8_t fc, uint16_t address, uint16_t length, void* data)
 {
     Serial.printf(
@@ -152,7 +158,37 @@ uint8_t readAnalogIn(uint8_t fc, uint16_t address, uint16_t length, void* data)
     );
     if (length == 1)
     {
-      if (address == 100)
+      if (address == 0)
+      {
+          Serial.println("MATCH");
+          slave.writeRegisterToBuffer(0, identification_software_vendor_id);
+          return STATUS_OK;
+      }
+      else if (address == 1)
+      {
+          Serial.println("MATCH");
+          slave.writeRegisterToBuffer(0, identification_software_product_id);
+          return STATUS_OK;
+      }
+      else if (address == 2)
+      {
+          Serial.println("MATCH");
+          slave.writeRegisterToBuffer(0, identification_software_version_major);
+          return STATUS_OK;
+      }
+      else if (address == 3)
+      {
+          Serial.println("MATCH");
+          slave.writeRegisterToBuffer(0, identification_software_version_minor);
+          return STATUS_OK;
+      }
+      else if (address == 4)
+      {
+          Serial.println("MATCH");
+          slave.writeRegisterToBuffer(0, identification_software_version_patch);
+          return STATUS_OK;
+      }
+      else if (address == 100)
       {
           Serial.println("MATCH");
           slave.writeRegisterToBuffer(0, device_state);

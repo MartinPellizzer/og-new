@@ -62,10 +62,10 @@ The following table lists the specific addresses for each modbus operation.
 
                 | Address                           | Parameter                          |
                 | --------------------------------- | ------------------------------------ |
-                | 40001 | Identification Electrical |
-| 40002 | Identification Thermal |
-| 40003 | Identification Hardware |
-| 40004 | Identification Software |
+                | 40021 | Identification Electrical |
+| 40031 | Identification Thermal |
+| 40011 | Identification Hardware |
+| 40001 | Identification Software |
 | 00001 | Read/Write Relay Driver 1 |
 | 00002 | Read/Write Relay Driver 2 |
 | 00003 | Read/Write Relay Driver 3 |
@@ -94,7 +94,377 @@ The following table lists the specific addresses for each modbus operation.
 
 ---
 
-#### 1.1.3.4 CORE Read Identification Firmware
+#### 1.1.3.4 CORE Read Identification Software Vendor ID
+
+CORE (Master) shall request to the Realy Module (Slave) the software Vendor ID identification by sending the following message.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+| Setting                           | Value (HEX)                          |
+| --------------------------------- | ------------------------------------ |
+| Slave Address                     | 01 |
+| Function Code                     | 03 |
+| Starting Address - High Byte      | 00 |
+| Starting Address - Low Byte       | 00 |
+| Quantity of Registers - High Byte | 00 |
+| Quantity of Registers - Low Byte  | 01 |
+| CRC-16 - High Byte                | 00 |
+| CRC-16 - Low Byte                 | 00  |
+
+The complete response data frame is: 01 03 00 00 00 01 00 00
+
+The Relay Module (Slave) shall respond to CORE (Master) with the software Vendor ID using the following message.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+| Setting                           | Value (HEX)                          |
+| --------------------------------- | ------------------------------------ |
+| Slave Address                     | 01 |
+| Function Code                     | 03 |
+| Byte Count                        | 02 |
+| Register Data - High Byte         | 00 |
+| Register Data - Low Byte          | 00 |
+| CRC-16 - High Byte                | XX |
+| CRC-16 - Low Byte                 | XX  |
+
+The complete response data frame is: 01 03 02 00 00 XX XX
+
+---
+
+#### 1.1.3.5 CORE Read Identification Software Product ID
+
+CORE (Master) shall request to the Realy Module (Slave) the software Product ID identification by sending the following message.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+| Setting                           | Value (HEX)                          |
+| --------------------------------- | ------------------------------------ |
+| Slave Address                     | 01 |
+| Function Code                     | 03 |
+| Starting Address - High Byte      | 00 |
+| Starting Address - Low Byte       | 00 |
+| Quantity of Registers - High Byte | 00 |
+| Quantity of Registers - Low Byte  | 01 |
+| CRC-16 - High Byte                | 00 |
+| CRC-16 - Low Byte                 | 00  |
+
+The complete response data frame is: 01 03 00 00 00 01 00 00
+
+The Relay Module (Slave) shall respond to CORE (Master) with the software Product ID using the following message.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+| Setting                           | Value (HEX)                          |
+| --------------------------------- | ------------------------------------ |
+| Slave Address                     | 01 |
+| Function Code                     | 03 |
+| Byte Count                        | 02 |
+| Register Data - High Byte         | 00 |
+| Register Data - Low Byte          | 00 |
+| CRC-16 - High Byte                | XX |
+| CRC-16 - Low Byte                 | XX  |
+
+The complete response data frame is: 01 03 02 00 00 XX XX
+
+---
+
+#### 1.1.3.6 CORE Read Identification Software Major Revision
+
+CORE (Master) shall request to the Realy Module (Slave) the software Major Revision identification by sending the following message.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+| Setting                           | Value (HEX)                          |
+| --------------------------------- | ------------------------------------ |
+| Slave Address                     | 01 |
+| Function Code                     | 03 |
+| Starting Address - High Byte      | 00 |
+| Starting Address - Low Byte       | 00 |
+| Quantity of Registers - High Byte | 00 |
+| Quantity of Registers - Low Byte  | 01 |
+| CRC-16 - High Byte                | 00 |
+| CRC-16 - Low Byte                 | 00  |
+
+The complete response data frame is: 01 03 00 00 00 01 00 00
+
+The Relay Module (Slave) shall respond to CORE (Master) with the software Major Revision using the following message.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+| Setting                           | Value (HEX)                          |
+| --------------------------------- | ------------------------------------ |
+| Slave Address                     | 01 |
+| Function Code                     | 03 |
+| Byte Count                        | 02 |
+| Register Data - High Byte         | 00 |
+| Register Data - Low Byte          | 00 |
+| CRC-16 - High Byte                | XX |
+| CRC-16 - Low Byte                 | XX  |
+
+The complete response data frame is: 01 03 02 00 00 XX XX
+
+---
+
+#### 1.1.3.7 CORE Read Identification Software Minor Revision
+
+CORE (Master) shall request to the Realy Module (Slave) the software Minor Revision identification by sending the following message.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+| Setting                           | Value (HEX)                          |
+| --------------------------------- | ------------------------------------ |
+| Slave Address                     | 01 |
+| Function Code                     | 03 |
+| Starting Address - High Byte      | 00 |
+| Starting Address - Low Byte       | 00 |
+| Quantity of Registers - High Byte | 00 |
+| Quantity of Registers - Low Byte  | 01 |
+| CRC-16 - High Byte                | 00 |
+| CRC-16 - Low Byte                 | 00  |
+
+The complete response data frame is: 01 03 00 00 00 01 00 00
+
+The Relay Module (Slave) shall respond to CORE (Master) with the software Minor Revision using the following message.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+| Setting                           | Value (HEX)                          |
+| --------------------------------- | ------------------------------------ |
+| Slave Address                     | 01 |
+| Function Code                     | 03 |
+| Byte Count                        | 02 |
+| Register Data - High Byte         | 00 |
+| Register Data - Low Byte          | 00 |
+| CRC-16 - High Byte                | XX |
+| CRC-16 - Low Byte                 | XX  |
+
+The complete response data frame is: 01 03 02 00 00 XX XX
+
+---
+
+#### 1.1.3.8 CORE Read Identification Software Patch Revision
+
+CORE (Master) shall request to the Realy Module (Slave) the software Patch Revision identification by sending the following message.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+| Setting                           | Value (HEX)                          |
+| --------------------------------- | ------------------------------------ |
+| Slave Address                     | 01 |
+| Function Code                     | 03 |
+| Starting Address - High Byte      | 00 |
+| Starting Address - Low Byte       | 00 |
+| Quantity of Registers - High Byte | 00 |
+| Quantity of Registers - Low Byte  | 01 |
+| CRC-16 - High Byte                | 00 |
+| CRC-16 - Low Byte                 | 00  |
+
+The complete response data frame is: 01 03 00 00 00 01 00 00
+
+The Relay Module (Slave) shall respond to CORE (Master) with the software Patch Revision using the following message.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+| Setting                           | Value (HEX)                          |
+| --------------------------------- | ------------------------------------ |
+| Slave Address                     | 01 |
+| Function Code                     | 03 |
+| Byte Count                        | 02 |
+| Register Data - High Byte         | 00 |
+| Register Data - Low Byte          | 00 |
+| CRC-16 - High Byte                | XX |
+| CRC-16 - Low Byte                 | XX  |
+
+The complete response data frame is: 01 03 02 00 00 XX XX
 
 ---
 
