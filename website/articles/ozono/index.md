@@ -6748,3 +6748,5057 @@ Può essere limitato da:
 - costi di generazione e controllo.
 
 La scelta deve essere basata su efficacia convalidata, compatibilità, sicurezza e confronto con alternative come detergenti, disinfettanti liquidi, calore, vapore e radiazione UV-C.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## **78. Come si misura l'ozono?**
+
+### **Che cosa significa misurare la concentrazione di ozono?**
+
+La concentrazione di ozono indica la quantità di O₃ presente in un determinato volume di gas o di liquido. Il valore ottenuto dipende dalla matrice analizzata, dalle condizioni ambientali, dal metodo di misura e dal momento in cui viene effettuato il campionamento.
+
+In termini generali, è necessario distinguere quattro grandezze:
+
+- **Concentrazione in fase gassosa:** quantità di ozono presente nell'aria o in un'altra miscela di gas. Può essere espressa come frazione molare o volumetrica, per esempio in ppm o ppb, oppure come concentrazione massica, per esempio in µg/m³.
+- **Concentrazione disciolta:** quantità di ozono presente in acqua o in un'altra soluzione, generalmente espressa in mg/L o µg/L.
+- **Pressione parziale:** contributo dell'ozono alla pressione totale di una miscela gassosa.
+- **Quantità totale nella colonna atmosferica:** numero complessivo di molecole di ozono presenti lungo una colonna verticale dell'atmosfera, espresso normalmente in Dobson Unit (DU).
+
+Queste grandezze descrivono aspetti differenti. Ad esempio, una misura di 100 ppb nell'aria indica una frazione molare locale, mentre 300 DU indicano la quantità integrata di ozono lungo l'intera colonna atmosferica sopra un punto della superficie terrestre.
+
+### **Misurazione dell'ozono in fase gassosa**
+
+La misurazione in fase gassosa è utilizzata per determinare la concentrazione di ozono:
+
+- nell'aria esterna;
+- negli ambienti interni;
+- negli ambienti di lavoro;
+- negli impianti di trattamento dell'acqua;
+- negli impianti di disinfezione;
+- nei processi industriali;
+- nelle camere e nei sistemi di prova di laboratorio.
+
+Un metodo di riferimento molto utilizzato è la **fotometria di assorbimento ultravioletto (UV)**. L'ozono assorbe la radiazione UV intorno a 254 nm. Lo strumento misura la differenza tra la radiazione che attraversa un campione contenente ozono e quella che attraversa un campione di aria privata dell'ozono mediante uno scrubber selettivo.
+
+La relazione tra assorbimento e concentrazione è descritta dalla legge di Beer-Lambert:
+
+\\[ A=\ln\left(\frac{I_0}{I}\right)=\alpha c l \\]
+
+dove:
+
+- \\(A\\) è l'assorbanza;
+- \\(I_0\\) è l'intensità della radiazione di riferimento;
+- \\(I\\) è l'intensità misurata dopo il passaggio nel campione;
+- \\(\alpha\\) è il coefficiente di assorbimento;
+- \\(c\\) è la concentrazione espressa in una forma coerente con il coefficiente;
+- \\(l\\) è la lunghezza del percorso ottico.
+
+Il metodo è selettivo per l'ozono alle condizioni previste dalle norme tecniche e dai protocolli di riferimento. La corretta progettazione della cella, la qualità della sorgente UV e la gestione delle perdite di ozono nel circuito sono essenziali per ottenere risultati affidabili.
+
+### **Misurazione dell'ozono disciolto in acqua**
+
+L'ozono disciolto viene misurato soprattutto negli impianti di trattamento e disinfezione dell'acqua, nei sistemi di ozonizzazione industriale e nei laboratori.
+
+La concentrazione può essere determinata mediante:
+
+- metodo colorimetrico all'indaco;
+- spettrofotometria UV;
+- sensori elettrochimici;
+- analizzatori online;
+- metodi analitici validati per specifiche matrici.
+
+L'ozono in acqua è instabile: reagisce con sostanze organiche e inorganiche e può decomporsi. Di conseguenza, il risultato dipende dal tempo trascorso tra prelievo e analisi, dal pH, dalla temperatura e dalla domanda ossidante dell'acqua.
+
+Per questo motivo, il campione deve essere analizzato il più rapidamente possibile, evitando agitazione, trasferimenti e condizioni che favoriscano la perdita del gas.
+
+### **Misurazione dell'ozono nell'aria ambiente**
+
+Il monitoraggio dell'ozono atmosferico viene effettuato attraverso reti di stazioni di qualità dell'aria. Gli analizzatori misurano la concentrazione a intervalli regolari e producono serie temporali utilizzate per:
+
+- valutare l'esposizione della popolazione;
+- individuare episodi di inquinamento fotochimico;
+- verificare il rispetto dei limiti normativi;
+- studiare le variazioni giornaliere e stagionali;
+- analizzare la relazione tra ozono, temperatura, radiazione solare e precursori.
+
+Le stazioni di riferimento impiegano normalmente analizzatori automatici con metodi di misura validati. I dati devono essere accompagnati da informazioni su calibrazione, validazione, disponibilità temporale e qualità del campionamento.
+
+### **Misurazione dell'ozono indoor**
+
+La misurazione negli ambienti interni è importante quando sono presenti apparecchiature che possono generare ozono, come alcuni ionizzatori, generatori di ozono e dispositivi elettrici.
+
+Il monitoraggio indoor può essere effettuato con analizzatori UV, sensori elettrochimici o altri strumenti adatti all'intervallo di concentrazione previsto.
+
+È importante considerare che la concentrazione può variare in funzione di:
+
+- ventilazione;
+- volume dell'ambiente;
+- distanza dalla sorgente;
+- ricambio d'aria;
+- temperatura e umidità;
+- reazioni dell'ozono con superfici, materiali e composti organici volatili.
+
+Una misura vicino a un generatore non rappresenta necessariamente l'esposizione media dell'intero ambiente. Per caratterizzare l'esposizione occorre definire posizione, altezza, durata e frequenza del campionamento.
+
+### **Misurazione in laboratorio**
+
+Nei laboratori l'ozono viene misurato per verificare concentrazioni generate, studiare reazioni chimiche, valutare la stabilità delle miscele e controllare processi sperimentali.
+
+Poiché l'ozono non è stabile come molti gas utilizzati per preparare miscele certificate in bombola, le concentrazioni di riferimento vengono spesso generate dinamicamente e verificate con fotometria UV.
+
+Un sistema di calibrazione può comprendere:
+
+1. generatore di ozono;
+2. flusso di aria o ossigeno a concentrazione controllata;
+3. diluizione dinamica;
+4. fotometro UV di riferimento;
+5. collettore di distribuzione;
+6. analizzatore da verificare.
+
+I componenti a valle del generatore devono essere scelti per ridurre le perdite e le reazioni indesiderate con le superfici interne.
+
+### **Monitoraggio industriale e misurazione continua**
+
+Negli impianti industriali l'ozono può essere monitorato in continuo per controllare il processo e rilevare eventuali fughe.
+
+Le applicazioni includono:
+
+- trattamento e disinfezione dell'acqua;
+- trattamento delle acque reflue;
+- lavorazioni industriali;
+- processi di ossidazione;
+- sistemi di disinfezione;
+- monitoraggio di ambienti e apparecchiature.
+
+Il sistema può utilizzare sensori installati in linea, analizzatori a campionamento continuo o rilevatori ambientali collocati in punti specifici.
+
+La scelta dipende dal fatto che si voglia misurare la concentrazione nel processo, il residuo disciolto nell'acqua oppure la presenza di ozono nell'aria circostante.
+
+### **Misurazione continua e portatile**
+
+| Caratteristica | Strumenti continui                        | Strumenti portatili                        |
+| -------------- | ----------------------------------------- | ------------------------------------------ |
+| Obiettivo      | Monitoraggio prolungato                   | Controlli localizzati e mobili             |
+| Frequenza      | Letture ripetute o quasi continue         | Misure puntuali o registrazione temporanea |
+| Applicazioni   | Stazioni ambientali, processi industriali | Ispezioni, sicurezza, indagini indoor      |
+| Vantaggio      | Serie temporali e allarmi                 | Flessibilità e trasportabilità             |
+| Limite         | Costi e manutenzione                      | Possibile minore selettività e stabilità   |
+
+Un dispositivo portatile non è automaticamente equivalente a un analizzatore di riferimento. La sua idoneità dipende da prestazioni documentate, calibrazione, interferenze, intervallo di misura e condizioni operative.
+
+### **Calibrazione, accuratezza e precisione**
+
+La **calibrazione** stabilisce la relazione tra il segnale dello strumento e concentrazioni di riferimento note. Per l'ozono gassoso, la fotometria UV a 254 nm costituisce un riferimento primario ampiamente utilizzato.
+
+La tracciabilità metrologica collega il risultato a riferimenti riconosciuti attraverso una catena documentata di confronti e calibrazioni.
+
+È necessario distinguere:
+
+- **Accuratezza:** quanto il risultato è vicino al valore vero o di riferimento.
+- **Precisione:** quanto sono vicine tra loro misure ripetute nelle stesse condizioni.
+- **Ripetibilità:** precisione ottenuta mantenendo condizioni operative simili.
+- **Limite di rilevabilità (LOD):** concentrazione minima distinguibile dal bianco secondo un criterio definito.
+- **Limite di quantificazione (LOQ):** concentrazione minima misurabile con precisione e accuratezza adeguate allo scopo.
+- **Incertezza di misura:** intervallo quantitativo associato al risultato che descrive la dispersione dei valori ragionevolmente attribuibili al misurando.
+
+Uno strumento può essere molto preciso ma non accurato, per esempio se presenta uno scostamento sistematico dovuto a una calibrazione errata.
+
+### **Perdite di ozono durante il campionamento**
+
+L'ozono è un gas reattivo. Può essere consumato o perso quando entra in contatto con superfici e materiali non idonei.
+
+Per questo motivo, i sistemi di campionamento devono ridurre:
+
+- lunghezza e volume delle linee;
+- tempi di permanenza;
+- superfici interne reattive;
+- ristagni e contaminazioni;
+- variazioni non controllate di temperatura e pressione.
+
+Materiali inerti o a bassa reattività, come vetro e PTFE idoneo, sono comunemente utilizzati nei circuiti di misura. La compatibilità deve comunque essere verificata per il dispositivo e per le condizioni operative.
+
+La qualità del risultato dipende dall'intero sistema di misura, non soltanto dal sensore.
+
+## **79. Unità di misura dell'ozono**
+
+La concentrazione dell'ozono può essere espressa in diverse unità. La scelta dipende dalla matrice, dal metodo analitico e dall'applicazione.
+
+### **Parti per milione (ppm)**
+
+Il ppm (*parts per million*) rappresenta una parte di sostanza ogni milione di parti della miscela.
+
+Per l'ozono gassoso, quando si intende una frazione molare o volumetrica:
+
+\\[ 1\ \mathrm{ppm}=10^{-6} \\]
+
+In condizioni ideali, la frazione volumetrica coincide con quella molare. Questa unità è utilizzata frequentemente per concentrazioni relativamente elevate, applicazioni industriali e misure di sicurezza.
+
+### **Parti per miliardo (ppb)**
+
+Il ppb (*parts per billion*) rappresenta una parte ogni miliardo:
+
+\\[ 1\ \mathrm{ppb}=10^{-9} \\]
+
+Le misure ambientali di ozono vengono spesso espresse in ppb perché le concentrazioni atmosferiche sono generalmente molto inferiori a una parte per milione.
+
+La relazione tra ppm e ppb è:
+
+\\[ 1\ \mathrm{ppm}=1000\ \mathrm{ppb} \\]
+
+\\[ 1\ \mathrm{ppb}=0{,}001\ \mathrm{ppm} \\]
+
+### **Microgrammi per metro cubo (µg/m³)**
+
+Questa unità indica la massa di ozono presente in un metro cubo di aria.
+
+È utilizzata nella valutazione della qualità dell'aria e nella comunicazione dei dati ambientali.
+
+A differenza di ppm e ppb, che descrivono una frazione molare o volumetrica, µg/m³ esprime una concentrazione massica.
+
+### **Milligrammi per metro cubo (mg/m³)**
+
+Il mg/m³ indica il numero di milligrammi di ozono presenti in un metro cubo di gas.
+
+È frequentemente utilizzato in ambito industriale, nella sicurezza occupazionale e nella caratterizzazione di processi.
+
+La relazione con µg/m³ è:
+
+\\[ 1\ \mathrm{mg/m^3}=1000\ \mathrm{\mu g/m^3} \\]
+
+### **Milligrammi per litro (mg/L)**
+
+Il mg/L viene utilizzato soprattutto per l'ozono disciolto in acqua.
+
+In acqua diluita, 1 mg/L equivale numericamente a 1 g/m³, ma non deve essere confuso con la concentrazione gassosa espressa in mg/m³ di aria.
+
+Per esempio, un residuo di ozono pari a 0,5 mg/L in acqua non è equivalente a 0,5 mg/m³ nell'aria.
+
+### **Percentuale di concentrazione**
+
+Una percentuale esprime una parte ogni cento. Per una miscela gassosa, deve essere specificato se si tratta di percentuale molare o volumetrica.
+
+Le conversioni sono:
+
+\\[ 1\\%=10\\,000\ \mathrm{ppm} \\]
+
+\\[ 0{,}1\\%=1000\ \mathrm{ppm} \\]
+
+\\[ 0{,}01\\%=100\ \mathrm{ppm} \\]
+
+La percentuale è utilizzata in alcune specifiche di generatori e miscele concentrate, ma per il monitoraggio ambientale sono più pratiche ppm e ppb.
+
+### **Pressione parziale dell'ozono**
+
+La pressione parziale è la quota della pressione totale attribuibile all'ozono.
+
+Per una miscela ideale:
+
+\\[ p\_{O_3}=x\_{O_3}\\,P \\]
+
+dove:
+
+- \\(p\_{O_3}\\) è la pressione parziale dell'ozono;
+- \\(x\_{O_3}\\) è la frazione molare;
+- \\(P\\) è la pressione totale.
+
+Se la frazione molare è espressa in ppm:
+
+\\[ p\_{O_3}=P\times\frac{\mathrm{ppm}}{10^6} \\]
+
+La pressione parziale può essere utile in studi di chimica atmosferica, spettroscopia e processi di trasferimento gas-liquido.
+
+### **Frazione di mescolamento volumetrica**
+
+La frazione di mescolamento (*volume mixing ratio*, VMR) esprime il rapporto tra la quantità di ozono e la quantità totale della miscela gassosa.
+
+Può essere riportata in:
+
+- mol/mol;
+- ppmv;
+- ppbv;
+- percentuale molare.
+
+In condizioni ideali, per gas che occupano lo stesso volume alle medesime condizioni di temperatura e pressione, la frazione volumetrica corrisponde alla frazione molare.
+
+È importante non confondere la frazione di mescolamento con la concentrazione massica: per passare da una all'altra occorre conoscere peso molecolare, temperatura e pressione.
+
+### **Dobson Unit (DU)**
+
+La Dobson Unit è utilizzata per descrivere la quantità totale di ozono lungo una colonna atmosferica.
+
+Non è un'unità per la concentrazione locale di ozono nell'aria. Una DU corrisponde a uno strato equivalente di ozono puro spesso 0,01 mm, riportato a 0 °C e 1 atmosfera.
+
+In termini molecolari:
+
+\\[ 1\ \mathrm{DU}\approx2{,}687\times10^{16} \ \mathrm{molecole/cm^2} \\]
+
+Questa unità è fondamentale per monitorare lo strato di ozono e il buco dell'ozono.
+
+### **Conversione tra ppm, ppb e mg/m³ nell'aria**
+
+Per un gas ideale, la conversione tra frazione molare e concentrazione massica dipende da temperatura e pressione.
+
+La formula generale è:
+
+\\[ C\_{\mathrm{mg/m^3}}= x\_{\mathrm{ppm}}\\, \frac{M\\,P}{R\\,T}\times10^{-3} \\]
+
+dove:
+
+- \\(C\_{\mathrm{mg/m^3}}\\) è la concentrazione massica;
+- \\(x\_{\mathrm{ppm}}\\) è la concentrazione in ppm;
+- \\(M\\) è la massa molare dell'ozono, circa 48,00 g/mol;
+- \\(P\\) è la pressione assoluta in Pa;
+- \\(R\\) è la costante universale dei gas, 8,314462 J/(mol·K);
+- \\(T\\) è la temperatura assoluta in kelvin.
+
+Per passare da ppb a mg/m³ si sostituisce \\(x\_{\mathrm{ppm}}\\) con \\(x\_{\mathrm{ppb}}/1000\\).
+
+**Esempio a 25 °C e 101,325 kPa:**
+
+\\[ 1\ \mathrm{ppm\ O_3}\approx1{,}96\ \mathrm{mg/m^3} \\]
+
+\\[ 1\ \mathrm{ppb\ O_3}\approx1{,}96\ \mathrm{\mu g/m^3} \\]
+
+Quindi:
+
+\\[ 100\ \mathrm{ppb}\approx196\ \mathrm{\mu g/m^3} \\]
+
+Questi valori sono approssimativi e si riferiscono alle condizioni indicate. Non devono essere trasferiti automaticamente a misure effettuate a temperature o pressioni differenti.
+
+### **Tabella di conversione: valori indicativi**
+
+| Frazione gassosa | A 25 °C e 101,325 kPa |
+| ---------------- | --------------------- |
+| 1 ppb            | 1,96 µg/m³            |
+| 10 ppb           | 19,6 µg/m³            |
+| 50 ppb           | 98,1 µg/m³            |
+| 100 ppb          | 196 µg/m³             |
+| 200 ppb          | 392 µg/m³             |
+| 1 ppm            | 1,96 mg/m³            |
+| 10 ppm           | 19,6 mg/m³            |
+
+I valori sono calcolati con la legge dei gas ideali e una massa molare di O₃ pari a circa 48,00 g/mol.
+
+### **Correzione per temperatura e pressione**
+
+A parità di frazione molare, la concentrazione massica aumenta quando la pressione aumenta e diminuisce quando la temperatura aumenta.
+
+Per convertire un valore di concentrazione massica tra condizioni diverse:
+
+\\[ C_2=C_1 \left(\frac{P_2}{P_1}\right) \left(\frac{T_1}{T_2}\right) \\]
+
+La relazione è valida per lo stesso gas e la stessa frazione molare, assumendo comportamento ideale.
+
+La temperatura deve essere espressa in kelvin e la pressione deve essere assoluta, non relativa o manometrica.
+
+### **Perché bisogna indicare le condizioni di riferimento?**
+
+Due strumenti possono riportare valori in mg/m³ differenti pur misurando la stessa frazione molare, se utilizzano condizioni di riferimento diverse.
+
+Per rendere confrontabili i risultati occorre specificare:
+
+- unità di misura;
+- temperatura;
+- pressione;
+- base secca o umida, quando rilevante;
+- metodo di conversione;
+- eventuale correzione applicata.
+
+Nei dati atmosferici, ppb o ppm sono spesso preferibili per confrontare frazioni molari indipendentemente dalle variazioni di densità dell'aria. Nei dati normativi espressi in massa, invece, bisogna rispettare le condizioni di riferimento definite dalla norma applicabile.
+
+## **80. Tecnologie per il rilevamento dell'ozono**
+
+Le tecnologie di rilevamento dell'ozono si basano su principi fisici e chimici differenti. Non esiste un sensore universale adatto a ogni applicazione.
+
+La scelta deve considerare intervallo di misura, sensibilità, selettività, tempo di risposta, stabilità, calibrazione, interferenze e costo complessivo.
+
+### **80.1 Analizzatori fotometrici UV**
+
+**Principio di misura.** Gli analizzatori UV misurano l'assorbimento della radiazione intorno a 254 nm da parte dell'ozono. Il campione viene confrontato con aria privata dell'ozono mediante uno scrubber, così da determinare la differenza di assorbimento.
+
+**Intervallo di misura.** Dipende dal modello, dalla lunghezza del percorso ottico e dalla configurazione dello strumento. Gli analizzatori ambientali sono progettati per misurare concentrazioni tipiche dell'aria esterna, mentre modelli e configurazioni differenti possono coprire intervalli più ampi.
+
+**Sensibilità e selettività.** Il metodo è molto selettivo per l'ozono alle condizioni previste dalle procedure standard. La fotometria UV è utilizzata come riferimento per la calibrazione degli analizzatori ambientali.
+
+**Accuratezza.** Dipende da calibrazione, stabilità della sorgente, geometria della cella, temperatura, pressione, perdite e qualità del sistema di campionamento.
+
+**Tempo di risposta.** È generalmente adatto al monitoraggio continuo; il tempo effettivo dipende dal flusso, dal volume della cella e dal ciclo di misura.
+
+**Interferenze.** Possibili problemi derivano da perdite di ozono, contaminazione ottica, assorbimenti non corretti, variazioni del sistema e materiali reattivi. Il disegno dello strumento e il metodo di riferimento limitano le interferenze alle concentrazioni previste.
+
+**Calibrazione e manutenzione.** Richiede controlli dello zero, verifica della risposta, calibrazione con standard fotometrici e manutenzione di pompa, filtri, scrubber e circuito di campionamento.
+
+**Applicazioni.** Reti di qualità dell'aria, laboratori, calibrazione di strumenti e monitoraggio industriale.
+
+**Limiti e costi.** Gli strumenti di riferimento sono più costosi e richiedono manutenzione e personale qualificato rispetto ai sensori portatili economici.
+
+### **80.2 Sensori elettrochimici**
+
+**Principio di misura.** L'ozono reagisce all'elettrodo di lavoro di una cella elettrochimica. La reazione genera una corrente o un segnale elettrico correlato alla concentrazione.
+
+**Intervallo e sensibilità.** Variano in funzione del modello, della membrana, dell'elettrolita e della progettazione. Non esiste un intervallo universale valido per tutti i sensori elettrochimici.
+
+**Selettività e interferenze.** Alcuni sensori possono rispondere anche ad altri gas ossidanti, come biossido di azoto o cloro. Umidità e temperatura possono influenzare il segnale.
+
+**Accuratezza e tempo di risposta.** Possono essere adeguati a misure indicative e ad applicazioni di sicurezza, ma le prestazioni devono essere verificate rispetto a uno strumento di riferimento. Il tempo di risposta dipende dalla diffusione del gas e dalla chimica della cella.
+
+**Calibrazione.** È necessario controllare lo zero e la risposta a concentrazioni note, verificando anche la deriva nel tempo.
+
+**Manutenzione.** Può richiedere sostituzione della cella, controllo dell'elettrolita e verifiche periodiche.
+
+**Applicazioni.** Rilevatori portatili, monitoraggio industriale e sistemi di allarme.
+
+**Limiti e costi.** Sono generalmente più compatti e meno costosi degli analizzatori UV, ma possono avere maggiore sensibilità alle interferenze e all'invecchiamento.
+
+### **80.3 Sensori a semiconduttore e ossidi metallici**
+
+**Principio di misura.** Nei sensori a ossido metallico (MOS), l'interazione dell'ozono con la superficie del materiale sensibile modifica la resistenza elettrica. Il cambiamento è correlato alla presenza del gas.
+
+**Sensibilità.** Può essere elevata, ma dipende dal materiale, dalla temperatura operativa e dalla geometria del sensore.
+
+**Selettività.** È spesso una limitazione importante: altri gas e composti presenti nell'aria possono produrre risposte simili.
+
+**Accuratezza.** La risposta può essere non lineare e dipendere da umidità, temperatura, invecchiamento e condizioni precedenti del sensore.
+
+**Tempo di risposta.** Varia con il dispositivo; alcuni sensori hanno tempi di risposta e recupero relativamente lunghi.
+
+**Calibrazione.** Richiedono calibrazione e caratterizzazione in condizioni ambientali rappresentative. Le correzioni software non eliminano necessariamente le interferenze.
+
+**Manutenzione.** È necessario monitorare deriva, stabilità e cambiamenti della linea di base.
+
+**Applicazioni.** Dispositivi compatti, monitoraggio indicativo indoor e ricerca sui sensori a basso costo.
+
+**Limiti e costi.** Il costo è spesso contenuto, ma non tutti i dispositivi sono idonei a misure quantitative affidabili o a verifiche regolatorie.
+
+### **80.4 Rilevamento colorimetrico**
+
+**Principio di misura.** L'ozono reagisce con un reagente chimico provocando un cambiamento di colore. L'intensità del cambiamento viene confrontata con una scala o misurata con uno spettrofotometro.
+
+**Sensibilità e intervallo.** Dipendono dal reagente, dal volume del campione e dalla procedura. I test colorimetrici possono essere progettati per differenti intervalli.
+
+**Selettività.** Dipende dalla chimica del reagente. Altri ossidanti possono reagire con il sistema e produrre risultati falsamente elevati.
+
+**Accuratezza.** È influenzata da tempi di reazione, temperatura, pH, qualità dei reagenti, illuminazione e interpretazione del colore.
+
+**Tempo di risposta.** Può essere breve, ma dipende dalla procedura analitica.
+
+**Calibrazione e manutenzione.** Richiede standard, bianchi, reagenti freschi e procedure riproducibili.
+
+**Applicazioni.** Analisi dell'acqua, controlli di processo, kit di campo e laboratori.
+
+**Limiti e costi.** Può essere economico e semplice, ma la misura visiva è meno robusta di una determinazione strumentale ben calibrata.
+
+### **80.5 Metodi basati sulla chemiluminescenza**
+
+**Principio di misura.** L'ozono reagisce con un gas reagente, come ossido nitrico (NO) o etilene (C₂H₄), producendo specie eccitate che emettono luce. L'intensità luminosa viene misurata con un rivelatore e correlata alla concentrazione di ozono.
+
+**Intervallo e sensibilità.** Dipendono dalla configurazione e dal rivelatore. I metodi automatizzati possono essere utilizzati per misure continue.
+
+**Selettività.** Dipende dalla reazione scelta e dal sistema di misura. Occorre controllare la presenza di sostanze che possono interferire con la reazione o con il segnale.
+
+**Accuratezza.** Richiede flussi controllati, concentrazioni note del reagente e calibrazione rispetto a standard di ozono tracciabili.
+
+**Tempo di risposta.** Può essere compatibile con il monitoraggio in continuo.
+
+**Calibrazione e manutenzione.** Richiede controllo dei flussi, dei gas reagenti, della cella di misura e del rivelatore.
+
+**Applicazioni.** È una tecnologia contemplata in procedure di riferimento per la misura continua dell'ozono atmosferico.
+
+**Limiti e costi.** La necessità di gas reagenti e di un sistema di flussi controllati aumenta la complessità operativa.
+
+### **80.6 Spettroscopia di assorbimento ottico differenziale (DOAS)**
+
+**Principio di misura.** La DOAS (*Differential Optical Absorption Spectroscopy*) analizza la luce trasmessa o diffusa lungo un percorso ottico. Le specie gassose vengono identificate attraverso le caratteristiche spettrali dei loro assorbimenti.
+
+Il metodo utilizza l'informazione spettrale differenziale per distinguere gli assorbimenti delle molecole da contributi più lenti e continui dovuti a scattering e altre componenti ottiche.
+
+**Intervallo e sensibilità.** Dipendono dalla lunghezza del percorso ottico, dallo spettro utilizzato, dalla risoluzione e dalle condizioni atmosferiche.
+
+**Selettività.** Può distinguere più specie gassose quando le rispettive strutture spettrali sono sufficientemente riconoscibili.
+
+**Accuratezza.** Dipende da calibrazione spettrale, allineamento ottico, qualità del segnale, scelta del percorso e modello di inversione.
+
+**Tempo di risposta.** Può fornire misure ripetute o quasi continue, in funzione dello strumento.
+
+**Interferenze.** Aerosol, variazioni della luce, sovrapposizione spettrale e condizioni meteorologiche possono influenzare la misura.
+
+**Manutenzione.** Richiede controllo delle sorgenti e dei rivelatori, pulizia delle ottiche e verifiche di allineamento.
+
+**Applicazioni.** Monitoraggio open-path, misure atmosferiche e studi di inquinanti su aree estese.
+
+**Limiti e costi.** L'installazione ottica e l'elaborazione dei dati possono essere complesse. Il costo dipende dalla configurazione e dall'ambiente di misura.
+
+### **80.7 Spettroscopia UV-visibile**
+
+**Principio di misura.** La spettroscopia UV-visibile misura l'assorbimento della luce in una o più lunghezze d'onda. Per l'ozono gassoso viene spesso utilizzata la regione UV intorno a 254 nm.
+
+**Intervallo e sensibilità.** Dipendono dalla lunghezza del percorso ottico e dalla sensibilità del rivelatore.
+
+**Selettività.** Dipende dalla scelta delle lunghezze d'onda e dalla presenza di altri assorbitori.
+
+**Accuratezza.** Richiede una sorgente stabile, un percorso ottico noto, un sistema di riferimento e correzioni appropriate.
+
+**Tempo di risposta.** Può essere breve per misure di laboratorio o continuo per strumenti progettati a tale scopo.
+
+**Calibrazione e manutenzione.** Richiede verifiche della sorgente, del rivelatore, della linea di base e del sistema ottico.
+
+**Applicazioni.** Analisi di laboratorio, caratterizzazione di gas e misure di riferimento.
+
+**Limiti e costi.** La configurazione di laboratorio può non essere adatta a ogni ambiente operativo; per le misure ambientali sono preferibili strumenti progettati secondo procedure specifiche.
+
+### **80.8 Strumenti satellitari**
+
+**Principio di misura.** I satelliti non misurano normalmente l'ozono come farebbe un sensore a contatto. Rilevano radiazione solare riflessa, radiazione termica emessa o emissioni nella regione delle microonde e ricavano la quantità di ozono mediante algoritmi di inversione.
+
+**Intervallo e sensibilità.** Dipendono dalla sensibilità spettrale, dalla geometria di osservazione, dalla risoluzione e dalla copertura verticale dell'instrumento.
+
+**Selettività.** Deriva dalle caratteristiche spettrali e dall'algoritmo di retrieval, che deve distinguere l'ozono da aerosol, nubi e altre specie.
+
+**Accuratezza.** Dipende dalla calibrazione radiometrica, dalla modellizzazione atmosferica e dalla validazione con osservazioni indipendenti.
+
+**Tempo di risposta e copertura.** I satelliti possono fornire copertura regionale o globale, ma la frequenza di osservazione dipende dall'orbita e dalla geometria dello strumento.
+
+**Manutenzione.** Non è possibile intervenire direttamente sul sensore in orbita; la qualità viene controllata mediante calibrazione a bordo, monitoraggio delle prestazioni e validazione a terra.
+
+**Applicazioni.** Mappe globali dell'ozono, studio del buco dell'ozono, distribuzione verticale e analisi dei cambiamenti atmosferici.
+
+**Limiti e costi.** I dati richiedono elaborazione, conoscenza degli algoritmi e attenzione alla risoluzione spaziale e verticale. Un pixel satellitare non rappresenta una misura puntuale al livello del suolo.
+
+### **80.9 Campionamento passivo**
+
+**Principio di misura.** Un campionatore passivo utilizza la diffusione naturale del gas verso un mezzo assorbente o reagente. Non richiede necessariamente una pompa.
+
+Per l'ozono sono stati studiati dispositivi diffusivi con reagenti, ad esempio sistemi basati su nitrito, nei quali l'esposizione produce una variazione chimica successivamente determinata in laboratorio.
+
+**Intervallo e sensibilità.** Dipendono dal reagente, dalla durata di esposizione e dal metodo analitico finale.
+
+**Selettività.** Può essere influenzata da altri ossidanti e da particelle contenenti sostanze interferenti.
+
+**Accuratezza.** Dipende dalla velocità di diffusione, dalla temperatura, dall'umidità, dalla durata dell'esposizione e dal modello di calcolo.
+
+**Tempo di risposta.** Generalmente fornisce una media su un periodo di esposizione, non una misura istantanea. Alcuni metodi possono richiedere periodi di giorni o settimane.
+
+**Calibrazione e manutenzione.** Richiede preparazione controllata dei campionatori, bianchi, procedure di estrazione e analisi e, quando disponibile, confronto con analizzatori di riferimento.
+
+**Applicazioni.** Studi di esposizione media e campagne ambientali esplorative.
+
+**Limiti e costi.** È relativamente economico, ma non è adatto a identificare picchi di concentrazione o variazioni rapide. Per l'ozono, la reattività chimica e le interferenze rendono essenziale verificare l'idoneità del metodo per l'applicazione specifica.
+
+### **Confronto delle principali tecnologie**
+
+| Tecnologia            | Principio                                 | Applicazione tipica                    | Limite principale                       |
+| --------------------- | ----------------------------------------- | -------------------------------------- | --------------------------------------- |
+| Fotometria UV         | Assorbimento a circa 254 nm               | Monitoraggio ambientale di riferimento | Costo e necessità di calibrazione       |
+| Elettrochimica        | Reazione elettrodica                      | Rilevatori portatili e industriali     | Cross-sensibilità e deriva              |
+| Semiconduttori MOS    | Variazione della resistenza               | Sensori compatti e indoor              | Umidità, temperatura e selettività      |
+| Colorimetria          | Reazione con variazione di colore         | Acqua e test di campo                  | Interferenze chimiche                   |
+| Chemiluminescenza     | Emissione luminosa da reazione            | Analisi automatizzata                  | Gas reagenti e complessità              |
+| DOAS                  | Assorbimento spettrale su percorso ottico | Monitoraggio open-path                 | Dipendenza dalle condizioni ottiche     |
+| UV-visibile           | Assorbimento ottico                       | Laboratorio e analisi strumentale      | Interferenze spettrali e configurazione |
+| Satelliti             | Radiazione riflessa o emessa              | Monitoraggio globale                   | Retrieval e risoluzione                 |
+| Campionamento passivo | Diffusione verso reagente                 | Esposizione media                      | Non rileva bene i picchi                |
+
+I valori di sensibilità, intervallo di misura, LOD, accuratezza e tempo di risposta non devono essere assegnati genericamente a un'intera tecnologia: dipendono dal modello e dal protocollo. Per un confronto quantitativo occorre riportare le specifiche del dispositivo e, preferibilmente, i risultati di una valutazione indipendente.
+
+## **81. Come misurare l'ozono nell'acqua?**
+
+### **Che cosa si intende per ozono disciolto?**
+
+L'ozono disciolto è la quantità di O₃ presente nella fase liquida. Viene misurato per controllare l'efficienza dell'ozonizzazione e la concentrazione residua disponibile per la disinfezione o l'ossidazione.
+
+La concentrazione viene generalmente espressa in mg/L o µg/L.
+
+Il valore misurato dipende da:
+
+- concentrazione di ozono nel gas immesso;
+- efficienza del trasferimento gas-liquido;
+- temperatura;
+- pH;
+- pressione;
+- composizione dell'acqua;
+- domanda chimica di ozono;
+- tempo trascorso dalla dissoluzione.
+
+La concentrazione disciolta non coincide con la quantità totale di ozono generata dall'apparecchiatura: una parte può non trasferirsi all'acqua, mentre un'altra può reagire o decomporsi.
+
+### **Metodo colorimetrico all'indaco**
+
+Il metodo all'indaco è uno dei metodi di riferimento più conosciuti per determinare l'ozono residuo in acqua. È descritto, tra gli altri, dal metodo 4500-O₃ B degli *Standard Methods for the Examination of Water and Wastewater*.
+
+**Principio chimico.** In soluzione acida, l'ozono reagisce rapidamente con il reagente indaco e ne provoca la decolorazione. La riduzione dell'assorbanza è proporzionale alla quantità di ozono che ha reagito.
+
+La misura viene effettuata normalmente intorno a 600 nm.
+
+**Procedura generale:**
+
+1. Preparare il reagente indaco secondo il metodo validato.
+2. Preparare il bianco e il campione secondo il protocollo.
+3. Prelevare l'acqua evitando agitazione e perdita di ozono.
+4. Aggiungere il campione al reagente nel modo previsto dal metodo.
+5. Miscelare rapidamente e in modo riproducibile.
+6. Misurare l'assorbanza con uno spettrofotometro o fotometro.
+7. Calcolare la concentrazione mediante il fattore di calibrazione.
+8. Registrare il tempo di prelievo e quello di analisi.
+
+**Vantaggi.** È un metodo quantitativo, relativamente selettivo e utilizzabile in diverse matrici acquose.
+
+**Interferenze.** Cloro, bromo, acido ipobromoso, alcuni perossidi e specie del manganese possono influenzare il risultato. Il metodo prevede procedure specifiche per alcune interferenze, ma non tutte possono essere eliminate in ogni matrice.
+
+**Limiti.** La concentrazione può diminuire durante il prelievo e l'analisi. Per questo motivo il campione deve essere analizzato immediatamente o nel tempo massimo previsto dal metodo applicabile.
+
+### **Assorbimento UV dell'ozono disciolto**
+
+L'ozono assorbe anche radiazione UV quando è disciolto in acqua. La misura spettrofotometrica può essere utilizzata per determinare la concentrazione in condizioni controllate.
+
+**Principio.** Si misura l'assorbimento del campione a una lunghezza d'onda appropriata, confrontandolo con un riferimento.
+
+**Vantaggi:**
+
+- possibilità di misure rapide;
+- possibilità di integrazione in sistemi automatici;
+- assenza di reagenti colorimetrici durante la misura ottica.
+
+**Limiti:**
+
+- altre sostanze disciolte possono assorbire nella stessa regione spettrale;
+- torbidità e particelle possono alterare il segnale;
+- la matrice dell'acqua può richiedere correzioni;
+- la calibrazione deve essere specifica per lo strumento e la procedura.
+
+Il metodo UV non è automaticamente equivalente al metodo all'indaco: la selettività dipende dalla matrice e dalla configurazione analitica.
+
+### **Sensori elettrochimici per ozono disciolto**
+
+I sensori elettrochimici possono misurare l'ozono attraverso una reazione elettrodica, spesso utilizzando una membrana che separa il campione dalla cella di misura.
+
+La corrente generata viene correlata alla concentrazione di ozono.
+
+Sono utilizzati in alcune applicazioni di processo e possono essere integrati in sistemi online.
+
+Le prestazioni dipendono da:
+
+- portata e pressione;
+- temperatura;
+- pH;
+- composizione dell'acqua;
+- stato della membrana;
+- contaminazione dell'elettrodo;
+- calibrazione.
+
+La presenza di altri ossidanti può produrre interferenze. Occorre inoltre verificare che il sensore sia progettato per misurare ozono disciolto e non ozono gassoso.
+
+### **Monitoraggio online del residuo di ozono**
+
+Negli impianti industriali il residuo può essere monitorato in continuo mediante analizzatori automatici installati su una linea di campionamento o direttamente sul processo.
+
+Un sistema online può comprendere:
+
+- punto di prelievo;
+- circuito idraulico;
+- sensore o analizzatore;
+- controllo della portata;
+- compensazione della temperatura;
+- sistema di pulizia;
+- calibrazione e verifica;
+- trasmissione dei dati al sistema di controllo.
+
+Il monitoraggio online permette di seguire la variazione del residuo nel tempo e di individuare anomalie del processo.
+
+Tuttavia, il tempo di transito nel circuito e la reattività dell'ozono possono generare differenze tra il valore misurato e la concentrazione effettiva nel punto di trattamento. La posizione del sensore deve quindi essere scelta in relazione all'obiettivo del controllo.
+
+### **Campionamento e conservazione del campione**
+
+L'ozono disciolto può diminuire rapidamente a causa di decomposizione e reazioni con la matrice.
+
+Per ottenere una misura affidabile:
+
+- prelevare il campione evitando turbolenza e aerazione;
+- ridurre il tempo tra prelievo e analisi;
+- evitare contenitori e materiali che favoriscano la perdita;
+- non lasciare spazi gassosi inutili;
+- registrare temperatura e pH;
+- utilizzare il reagente e il protocollo corretti;
+- effettuare bianchi e controlli di qualità.
+
+Non è corretto raccogliere un campione, conservarlo a lungo e presumere che rappresenti ancora la concentrazione di ozono presente al momento del prelievo.
+
+### **Limiti di rilevabilità e accuratezza**
+
+Il limite di rilevabilità dipende dal metodo, dalla matrice, dallo strumento e dalle condizioni di analisi.
+
+Per il metodo all'indaco, il database NEMI riporta, per il metodo 4500-O₃ B, un livello di rilevazione indicativo di 2 µg/L e una precisione che può essere inferiore al 5% in assenza di interferenze e con una procedura appropriata. Il dato non deve essere interpretato come una garanzia universale: la prestazione reale dipende dal laboratorio e dalla versione del metodo utilizzata.
+
+Per ogni misura è opportuno documentare:
+
+- metodo e versione;
+- intervallo di calibrazione;
+- bianco;
+- recupero degli standard;
+- ripetibilità;
+- interferenze;
+- LOD e LOQ;
+- tempo di analisi dopo il prelievo.
+
+## **82. Come misurare l'ozono nell'aria?**
+
+### **Monitoraggio dell'ozono atmosferico**
+
+La misura dell'ozono nell'aria viene effettuata per valutare la qualità atmosferica, l'esposizione umana, la presenza di inquinamento fotochimico e l'andamento dell'ozono in differenti condizioni meteorologiche.
+
+Le misure possono essere effettuate con:
+
+- stazioni fisse;
+- analizzatori UV;
+- strumenti portatili;
+- sensori elettrochimici;
+- sistemi open-path;
+- campagne di misura temporanee.
+
+Per la valutazione ufficiale della qualità dell'aria si utilizzano metodi di riferimento o equivalenti riconosciuti dalle autorità competenti.
+
+### **Analizzatori UV a 254 nm**
+
+Gli analizzatori UV sono tra gli strumenti più utilizzati per misurare l'ozono nell'aria ambiente.
+
+Il principio consiste nel misurare l'assorbimento della radiazione UV da parte dell'ozono. In molti strumenti il ciclo alterna:
+
+1. misura del campione contenente ozono;
+2. misura dello stesso campione dopo rimozione selettiva dell'ozono;
+3. confronto dei segnali;
+4. calcolo della concentrazione.
+
+Il metodo è adatto a misure continue e viene utilizzato nelle reti di monitoraggio atmosferico.
+
+### **Sensori elettrochimici portatili**
+
+I sensori elettrochimici sono spesso utilizzati per controlli localizzati e applicazioni industriali.
+
+Sono compatti e possono essere integrati in dispositivi portatili, ma le letture devono essere interpretate considerando:
+
+- sensibilità ad altri gas ossidanti;
+- temperatura;
+- umidità relativa;
+- deriva;
+- durata della cella;
+- intervallo operativo;
+- calibrazione.
+
+Un valore indicato da un rilevatore portatile non deve essere considerato automaticamente equivalente a quello di una stazione di riferimento.
+
+### **Monitoraggio indoor**
+
+Per misurare l'ozono indoor occorre definire lo scopo dell'indagine.
+
+Un controllo può essere finalizzato a:
+
+- verificare la presenza di emissioni da dispositivi;
+- valutare la concentrazione media in una stanza;
+- individuare fughe;
+- misurare l'esposizione in prossimità di una sorgente;
+- verificare l'efficacia del contenimento.
+
+La posizione del sensore è determinante. Un dispositivo collocato vicino alla sorgente può misurare un valore molto diverso da quello presente nella zona di respirazione degli occupanti.
+
+Per una valutazione rappresentativa, la posizione e il periodo di misura devono essere definiti prima dell'indagine.
+
+### **Monitoraggio occupazionale**
+
+In ambito lavorativo, la misurazione dell'ozono serve a verificare l'esposizione degli operatori e il funzionamento dei sistemi di contenimento.
+
+Si possono utilizzare:
+
+- monitor fissi;
+- rilevatori portatili;
+- strumenti a lettura diretta;
+- campionamenti personali, quando esistono metodi validati adatti all'obiettivo.
+
+La strategia di misura deve distinguere tra:
+
+- concentrazione ambientale in un punto;
+- esposizione personale nella zona respiratoria;
+- picco di breve durata;
+- media ponderata nel tempo;
+- eventuale esposizione durante operazioni specifiche.
+
+Una misura fissa non rappresenta necessariamente l'esposizione personale di un lavoratore in movimento.
+
+### **Temperatura e umidità**
+
+Temperatura e umidità possono influenzare la stabilità dell'ozono, il comportamento dei sensori e le reazioni nelle linee di campionamento.
+
+I sensori elettrochimici e a semiconduttore possono essere particolarmente sensibili alle variazioni ambientali.
+
+Gli analizzatori UV di riferimento sono progettati per controllare o compensare le variabili pertinenti, ma la gestione di temperatura e pressione resta importante nella calibrazione e nella conversione delle unità.
+
+### **Cross-sensitivity e interferenze**
+
+La *cross-sensitivity* si verifica quando il sensore risponde anche a sostanze diverse dall'ozono.
+
+Le interferenze possono derivare da:
+
+- biossido di azoto;
+- cloro e altri gas ossidanti;
+- composti presenti in processi industriali;
+- umidità;
+- temperatura;
+- contaminazione delle superfici;
+- particolato e aerosol, a seconda della tecnologia.
+
+Non tutte le tecnologie hanno le stesse interferenze. Per esempio, un sensore elettrochimico può essere più vulnerabile alla risposta incrociata di un analizzatore UV di riferimento correttamente progettato.
+
+### **Calibrazione e verifica sul campo**
+
+Una misura affidabile richiede un programma di controllo che comprenda:
+
+1. verifica dello zero;
+2. verifica della risposta a concentrazioni note;
+3. controllo del flusso;
+4. confronto con uno strumento di riferimento;
+5. controllo delle perdite nel sistema;
+6. registrazione delle condizioni operative;
+7. documentazione degli interventi di manutenzione.
+
+Per gli analizzatori ambientali, la calibrazione può utilizzare standard di trasferimento collegati a fotometri UV di riferimento.
+
+Negli Stati Uniti, l'Appendix D della 40 CFR Part 50 descrive procedure di riferimento per la misura e la calibrazione dell'ozono atmosferico. È un esempio importante di protocollo normativo, ma i requisiti applicabili in Italia e nell'Unione europea devono essere verificati nelle norme e nelle procedure europee e nazionali pertinenti.
+
+### **Come interpretare le letture**
+
+Una lettura deve sempre essere accompagnata da informazioni sul contesto:
+
+- unità;
+- data e ora;
+- media temporale;
+- posizione;
+- temperatura e pressione, se rilevanti;
+- tipo di strumento;
+- stato di calibrazione;
+- qualità del dato;
+- eventuali correzioni.
+
+Un valore istantaneo non è direttamente confrontabile con una media oraria o con una media su otto ore. Anche quando l'unità è la stessa, il periodo di mediazione può cambiare completamente il significato del dato.
+
+Per valutare la qualità dell'aria, occorre confrontare il risultato con il valore normativo o sanitario che utilizza lo stesso periodo di mediazione e la stessa definizione statistica.
+
+## **83. Monitoraggio satellitare dell'ozono atmosferico**
+
+### **Perché misurare l'ozono dallo spazio?**
+
+I satelliti permettono di osservare la distribuzione dell'ozono su vaste aree geografiche, comprese regioni remote e zone oceaniche dove le stazioni a terra sono rare.
+
+Il monitoraggio satellitare è essenziale per:
+
+- seguire la quantità totale di ozono atmosferico;
+- osservare il buco dell'ozono;
+- studiare le variazioni stagionali;
+- analizzare la distribuzione verticale;
+- valutare il trasporto atmosferico;
+- verificare i cambiamenti su scala globale;
+- confrontare osservazioni con modelli chimico-climatici.
+
+A differenza degli strumenti a contatto, i satelliti misurano la radiazione proveniente dall'atmosfera e ricavano la quantità di ozono mediante algoritmi matematici.
+
+### **Ozono totale nella colonna atmosferica**
+
+Il prodotto satellitare più conosciuto è la **colonna totale di ozono**.
+
+Rappresenta la quantità integrata di ozono presente lungo una colonna verticale che si estende dalla superficie fino alla parte superiore dell'atmosfera.
+
+Il risultato viene normalmente espresso in Dobson Unit.
+
+La colonna totale non indica a quale altitudine si trova l'ozono. Due colonne con lo stesso valore in DU possono presentare profili verticali differenti.
+
+Per questo motivo, la misura della colonna totale deve essere distinta dalla misurazione del profilo verticale.
+
+### **Profili verticali dell'ozono**
+
+Alcuni satelliti possono stimare la distribuzione dell'ozono in funzione dell'altitudine o della pressione atmosferica.
+
+Questi prodotti consentono di distinguere, con risoluzione limitata e dipendente dallo strumento, il contributo di diversi strati atmosferici.
+
+I profili verticali sono importanti per:
+
+- studiare la distribuzione stratosferica;
+- analizzare l'ozono nella troposfera superiore;
+- comprendere il trasporto tra strati;
+- osservare variazioni associate alla chimica atmosferica;
+- valutare l'evoluzione dell'ozono nel tempo.
+
+La risoluzione verticale non è infinita: ogni profilo satellitare rappresenta una stima mediata su uno specifico intervallo di quota o pressione.
+
+### **Tecniche di telerilevamento UV e visibile**
+
+Molti strumenti satellitari misurano la radiazione solare retrodiffusa dall'atmosfera.
+
+L'ozono assorbe la radiazione in specifiche regioni dello spettro UV e visibile. Analizzando la differenza tra radiazione incidente e radiazione osservata, gli algoritmi possono ricavare la quantità di ozono.
+
+Gli strumenti possono osservare:
+
+- radiazione solare retrodiffusa;
+- spettri di assorbimento;
+- geometrie di osservazione differenti;
+- variazioni associate a nubi e aerosol.
+
+Un esempio importante è l'Ozone Monitoring Instrument (OMI) a bordo del satellite Aura della NASA. OMI osserva la radiazione retrodiffusa nella regione UV e visibile e fornisce mappe globali giornaliere della colonna totale di ozono.
+
+### **Strumenti a microonde**
+
+Alcuni strumenti satellitari utilizzano la radiazione a microonde emessa naturalmente dalle molecole atmosferiche.
+
+Un esempio è il Microwave Limb Sounder (MLS) della missione Aura.
+
+MLS osserva l'atmosfera lungo il bordo terrestre (*limb sounding*) e rileva emissioni a microonde associate alle molecole. Questa geometria permette di ottenere profili verticali di ozono e altre specie atmosferiche.
+
+Uno dei vantaggi della tecnica a microonde è la possibilità di effettuare osservazioni anche in condizioni di illuminazione solare assente, a differenza di molte tecniche basate sulla luce solare riflessa.
+
+Tuttavia, i prodotti MLS hanno una risoluzione spaziale e verticale specifica e non devono essere interpretati come misure puntuali al livello del suolo.
+
+### **Algoritmi di retrieval**
+
+Il *retrieval* è il procedimento matematico con cui i dati radiometrici vengono trasformati in stime della concentrazione o della quantità di ozono.
+
+Un algoritmo può utilizzare:
+
+- spettri osservati;
+- geometria di osservazione;
+- proprietà ottiche dell'atmosfera;
+- distribuzione delle nubi;
+- aerosol;
+- profili atmosferici iniziali;
+- modelli di trasferimento radiativo.
+
+I risultati dipendono dalle ipotesi e dai parametri utilizzati.
+
+È quindi importante distinguere tra:
+
+- dato radiometrico osservato;
+- prodotto satellitare elaborato;
+- stima della colonna totale;
+- profilo verticale ricostruito.
+
+Un prodotto satellitare non è una lettura diretta e priva di incertezza della concentrazione di ozono.
+
+### **Risoluzione spaziale e temporale**
+
+La risoluzione spaziale descrive l'area rappresentata da ciascuna osservazione o pixel.
+
+La risoluzione temporale descrive la frequenza con cui una regione viene osservata o il periodo a cui si riferisce il prodotto.
+
+Queste caratteristiche variano tra strumenti e prodotti.
+
+Ad esempio:
+
+- OMI fornisce copertura globale giornaliera della colonna totale;
+- MLS fornisce profili verticali lungo la traccia orbitale;
+- altri strumenti possono offrire risoluzioni spaziali più fini o prodotti specifici per la troposfera.
+
+Non è corretto attribuire un'unica risoluzione a tutti i satelliti che misurano l'ozono. È necessario citare il sensore, la versione del prodotto e il livello di elaborazione.
+
+### **Validazione con misure a terra**
+
+I dati satellitari vengono confrontati con osservazioni indipendenti per verificare accuratezza e coerenza.
+
+Le principali fonti di validazione comprendono:
+
+- spettrofotometri Dobson;
+- spettrofotometri Brewer;
+- ozonosonde;
+- lidar;
+- misure da altri satelliti;
+- reti di osservazione atmosferica.
+
+Il confronto permette di valutare scostamenti sistematici, dipendenza dalla latitudine, effetti stagionali e prestazioni in condizioni atmosferiche differenti.
+
+Le osservazioni a terra non sono però perfettamente equivalenti ai dati satellitari: possono avere una diversa risoluzione spaziale, temporale e verticale. Un confronto corretto deve tener conto della geometria e della rappresentatività dei campioni.
+
+### **Incertezza dei dati satellitari**
+
+Le principali fonti di incertezza comprendono:
+
+- calibrazione radiometrica;
+- nubi;
+- aerosol;
+- riflettività della superficie;
+- geometria solare;
+- geometria di osservazione;
+- ipotesi del modello;
+- risoluzione verticale;
+- qualità del segnale;
+- algoritmi di retrieval.
+
+Per interpretare una mappa è necessario consultare i metadati del prodotto e la documentazione sulla qualità.
+
+Un pixel senza dati validi non deve essere interpretato come una concentrazione pari a zero.
+
+### **Monitoraggio globale e serie storiche**
+
+Le serie satellitari consentono di studiare le variazioni dell'ozono su periodi lunghi e su scala globale.
+
+Sono utilizzate per analizzare:
+
+- evoluzione dello strato di ozono;
+- recupero successivo alle misure di controllo delle sostanze che riducono l'ozono;
+- variazioni stagionali;
+- eventi estremi;
+- trasporto atmosferico;
+- relazione tra ozono e clima.
+
+Per costruire una serie storica coerente occorre però considerare i cambiamenti tra strumenti, le differenze tra algoritmi e le procedure di intercalibrazione.
+
+Una variazione tra due prodotti satellitari non rappresenta necessariamente un cambiamento reale dell'atmosfera se i sistemi di osservazione non sono stati armonizzati.
+
+## **84. L'Unità Dobson (DU)**
+
+### **Definizione della Dobson Unit**
+
+La **Dobson Unit (DU)** è un'unità utilizzata per esprimere la quantità totale di ozono presente lungo una colonna atmosferica.
+
+Una DU corrisponde alla quantità di ozono che, se portata a temperatura e pressione standard, formerebbe uno strato di ozono puro spesso:
+
+\\[ 0{,}01\ \mathrm{mm} \\]
+
+Le condizioni di riferimento sono 0 °C e 1 atmosfera.
+
+In termini di numero di molecole:
+
+\\[ 1\ \mathrm{DU}\approx2{,}687\times10^{16} \ \mathrm{molecole/cm^2} \\]
+
+La DU è quindi un'unità di quantità integrata lungo una colonna, non una concentrazione locale.
+
+### **Origine storica**
+
+L'unità prende il nome da Gordon Miller Bourne Dobson, fisico e meteorologo britannico che sviluppò strumenti per misurare l'ozono atmosferico nella prima metà del XX secolo.
+
+Il suo spettrofotometro, noto come **Dobson spectrophotometer**, ha avuto un ruolo fondamentale nello sviluppo delle reti di osservazione dello strato di ozono.
+
+Le misure Dobson hanno permesso di costruire serie storiche di lungo periodo e di documentare le variazioni dell'ozono totale prima e dopo l'adozione delle misure internazionali di protezione dello strato di ozono.
+
+### **Che cosa misura una colonna totale di ozono?**
+
+La colonna totale rappresenta l'integrale della quantità di ozono presente lungo una colonna verticale sopra una determinata superficie.
+
+In forma concettuale:
+
+\\[ N\_{O_3}=\int\_{z_0}^{z\_{\mathrm{top}}} n\_{O_3}(z)\\,dz \\]
+
+dove:
+
+- \\(N\_{O_3}\\) è la quantità integrata di molecole per unità di superficie;
+- \\(n\_{O_3}(z)\\) è la densità numerica locale dell'ozono;
+- \\(z\\) è la quota;
+- \\(z_0\\) è la superficie terrestre;
+- \\(z\_{\mathrm{top}}\\) rappresenta il limite superiore della colonna considerata.
+
+Il risultato viene convertito in DU.
+
+La colonna totale comprende ozono troposferico e stratosferico. Non identifica direttamente la quota alla quale si trova la maggior parte delle molecole.
+
+### **Conversione da Dobson Unit a spessore fisico**
+
+Per convertire la quantità totale in uno spessore equivalente di ozono puro alle condizioni standard:
+
+\\[ d\_{\mathrm{mm}}=0{,}01\times DU \\]
+
+Esempi:
+
+| Colonna totale | Spessore equivalente a STP |
+| -------------- | -------------------------- |
+| 100 DU         | 1 mm                       |
+| 200 DU         | 2 mm                       |
+| 220 DU         | 2,2 mm                     |
+| 250 DU         | 2,5 mm                     |
+| 300 DU         | 3 mm                       |
+| 350 DU         | 3,5 mm                     |
+| 400 DU         | 4 mm                       |
+| 500 DU         | 5 mm                       |
+
+Questa conversione non descrive lo spessore fisico dello strato di ozono nella sua posizione atmosferica. Indica soltanto quanto sarebbe spesso lo strato se tutto l'ozono della colonna fosse raccolto e portato alle condizioni di riferimento.
+
+### **Valori tipici dell'ozono atmosferico**
+
+La quantità totale di ozono varia con latitudine, stagione, circolazione atmosferica e condizioni meteorologiche.
+
+Per la maggior parte delle regioni del pianeta, i valori della colonna totale si collocano spesso nell'intervallo di alcune centinaia di DU. Un valore di circa 300 DU è un riferimento didattico utile, non una costante universale.
+
+Le regioni tropicali presentano generalmente colonne totali inferiori rispetto a molte latitudini medie e alte, mentre la circolazione atmosferica e la stagione influenzano fortemente la distribuzione.
+
+Per interpretare un valore occorre quindi conoscere:
+
+- località;
+- data;
+- stagione;
+- condizioni atmosferiche;
+- metodo di misura;
+- eventuale media spaziale o temporale.
+
+### **La soglia convenzionale del buco dell'ozono**
+
+Il termine *buco dell'ozono* indica una forte riduzione stagionale della quantità totale di ozono stratosferico, particolarmente evidente sopra l'Antartide.
+
+Per descrivere l'estensione del fenomeno viene spesso utilizzata la soglia convenzionale di:
+
+\\[ 220\ \mathrm{DU} \\]
+
+Le aree in cui la colonna totale scende al di sotto di 220 DU vengono utilizzate per definire e monitorare l'area del buco dell'ozono.
+
+Questa soglia è un criterio operativo e storico per identificare la forte riduzione dell'ozono antartico. Non significa che al di sotto di 220 DU l'ozono sia assente, né che esista un'apertura fisica nell'atmosfera.
+
+### **Come si misura la colonna totale?**
+
+La colonna totale può essere determinata mediante strumenti a terra e strumenti satellitari.
+
+**Spettrofotometro Dobson.** Misura la radiazione solare UV a coppie di lunghezze d'onda, selezionate in modo da sfruttare il diverso assorbimento dell'ozono.
+
+**Spettrofotometro Brewer.** Utilizza misure spettrofotometriche UV automatiche per determinare la quantità totale di ozono e, in alcune configurazioni, altre grandezze atmosferiche.
+
+**Satelliti UV-visibili.** Analizzano la radiazione solare retrodiffusa dall'atmosfera e ricavano la colonna totale mediante algoritmi di retrieval.
+
+**Ozonosonde.** Misurano il profilo verticale dell'ozono durante l'ascesa di un pallone meteorologico. La colonna totale può essere stimata integrando il profilo e tenendo conto dell'ozono sopra la quota massima raggiunta dalla sonda.
+
+Le tecniche non sono identiche e presentano differenti risoluzioni, incertezze e requisiti operativi.
+
+### **Come interpretare correttamente un valore in DU**
+
+Un valore di 300 DU indica una quantità integrata di ozono lungo la colonna atmosferica, equivalente a 3 mm di ozono puro a temperatura e pressione standard.
+
+Non indica:
+
+- una concentrazione di 300 ppm;
+- una concentrazione locale al suolo;
+- uno spessore reale dello strato stratosferico;
+- una quantità presente esclusivamente nella stratosfera;
+- una misura diretta dell'ozono respirato da una persona.
+
+Questa distinzione è essenziale quando si confrontano misure atmosferiche, dati ambientali e concentrazioni di ozono in aria indoor o in acqua.
+
+### **Dobson Unit e altre unità della colonna**
+
+La quantità totale di ozono può essere espressa anche in altre unità equivalenti, tra cui:
+
+- milli-atmosphere centimetre (m-atm-cm);
+- micrometri di ozono a STP;
+- numero di molecole per metro quadrato;
+- numero di molecole per centimetro quadrato.
+
+Una Dobson Unit equivale a 1 milli-atmosphere centimetre e a 10 micrometri di ozono puro alle condizioni standard.
+
+La conversione tra queste unità deve mantenere esplicite le condizioni di riferimento.
+
+### **Perché la Dobson Unit è importante?**
+
+La DU permette di confrontare misure effettuate in luoghi e periodi differenti, monitorare la quantità totale di ozono e seguire l'evoluzione dello strato di ozono.
+
+È utilizzata nelle reti di osservazione a terra, nei prodotti satellitari e negli studi scientifici sul buco dell'ozono e sul recupero dello strato stratosferico.
+
+La sua interpretazione richiede sempre di distinguere la quantità integrata nella colonna dalla concentrazione locale e dal profilo verticale.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# PART XI — Ingegneria, apparecchiature e tecnologie dell'ozono
+
+## 85. Componenti di un generatore di ozono
+
+### Come è costruito un sistema di generazione dell'ozono?
+
+Un generatore di ozono industriale è una macchina che trasforma una parte dell'ossigeno presente nel gas di alimentazione in ozono mediante un processo energetico controllato. La tecnologia più diffusa nelle applicazioni industriali è la **scarica elettrica a barriera dielettrica** (*Dielectric Barrier Discharge*, DBD), spesso chiamata anche scarica a corona.
+
+Un impianto completo per il trattamento dell'acqua comprende normalmente quattro blocchi funzionali:
+
+1. sistema di preparazione e alimentazione del gas;
+2. generatore e alimentatore elettrico;
+3. sistema di trasferimento e contatto gas-liquido;
+4. sistema di trattamento del gas residuo (*off-gas*) e di sicurezza.
+
+A questi si aggiungono strumenti di misura, automazione, valvole, sistemi di raffreddamento e dispositivi di protezione. La configurazione cambia in funzione della portata, della concentrazione richiesta, del tipo di acqua e dell'obiettivo di trattamento.
+
+### Sistema di alimentazione del gas (*feed gas system*)
+
+Il gas di alimentazione fornisce l'ossigeno necessario alla formazione di O₃. Le due opzioni più comuni sono:
+
+- aria ambiente opportunamente filtrata e deumidificata;
+- ossigeno concentrato o ad alta purezza.
+
+La scelta dipende dalla capacità richiesta, dalla concentrazione di ozono desiderata, dai costi energetici e dalla disponibilità di ossigeno.
+
+L'aria contiene normalmente circa il 21% in volume di ossigeno, oltre ad azoto, argon, vapore acqueo e altri componenti. L'azoto presente nell'aria influenza la composizione del gas e può favorire la formazione di sottoprodotti indesiderati, tra cui ossidi di azoto, in determinate condizioni di scarica.
+
+L'uso di ossigeno concentrato permette generalmente di ottenere concentrazioni di ozono nel gas più elevate e riduce il volume di gas da gestire per una determinata produzione di ozono. Richiede però attrezzature compatibili con l'ossigeno, procedure specifiche per il rischio di incendio e componenti privi di contaminanti oleosi o grassi.
+
+### Filtri e trattamento dell'aria
+
+Quando il generatore utilizza aria ambiente, il gas deve essere condizionato prima di entrare nella camera di scarica.
+
+I componenti possono includere:
+
+- filtri per particelle;
+- filtri coalescenti per aerosol e contaminanti;
+- essiccatori ad adsorbimento;
+- sistemi di raffreddamento;
+- filtri finali, se richiesti dal costruttore.
+
+La rimozione dell'umidità è particolarmente importante. L'acqua nel gas può favorire reazioni indesiderate, ridurre l'affidabilità del generatore e contribuire alla formazione di composti corrosivi. La qualità richiesta dipende dalla tecnologia e dalle specifiche del fabbricante: non esiste un unico punto di rugiada valido per tutti i generatori.
+
+### Essiccatore d'aria
+
+L'essiccatore riduce il contenuto di vapore acqueo nel gas. Nei sistemi industriali si utilizzano frequentemente essiccatori ad adsorbimento con materiali igroscopici rigenerabili, come setacci molecolari o altri adsorbenti tecnici.
+
+Il parametro più utile per descrivere la secchezza del gas è il **punto di rugiada in pressione**, cioè la temperatura alla quale il vapore acqueo inizierebbe a condensare alla pressione considerata.
+
+Il punto di rugiada deve essere specificato insieme alla pressione di riferimento: un valore misurato in pressione non è direttamente intercambiabile con un valore riferito alla pressione atmosferica.
+
+Un essiccatore sottodimensionato, un adsorbente esausto o un guasto al sistema di rigenerazione possono far aumentare l'umidità del gas e compromettere il funzionamento del generatore.
+
+### Concentratore di ossigeno e alimentazione di ossigeno
+
+Nei sistemi alimentati a ossigeno si possono utilizzare:
+
+- concentratori basati su adsorbimento a pressione alternata (*Pressure Swing Adsorption*, PSA);
+- sistemi VSA (*Vacuum Swing Adsorption*);
+- ossigeno liquido stoccato in serbatoi criogenici;
+- bombole o pacchi bombole, in impianti di dimensioni contenute.
+
+I concentratori PSA separano prevalentemente l'azoto dall'aria attraverso materiali adsorbenti selettivi. La purezza e la portata dell'ossigeno prodotto dipendono dal progetto, dal ciclo operativo e dalle condizioni di alimentazione.
+
+L'ossigeno liquido può essere adatto a impianti di elevata capacità, ma richiede serbatoi e apparecchiature criogeniche, gestione della vaporizzazione e misure specifiche di sicurezza.
+
+La portata e la purezza del gas devono essere compatibili con il generatore. Una riduzione della portata o un calo della purezza possono modificare la produzione e la concentrazione di ozono.
+
+### Alimentatore ad alta tensione
+
+Il generatore DBD richiede un alimentatore elettrico ad alta tensione, progettato per produrre il campo elettrico necessario alla scarica.
+
+L'alimentatore controlla parametri quali:
+
+- tensione;
+- frequenza;
+- forma d'onda;
+- potenza elettrica;
+- ciclo di funzionamento.
+
+La relazione tra potenza elettrica e produzione di ozono dipende dalla geometria della cella, dalla composizione e dall'umidità del gas, dalla pressione, dalla temperatura e dalle condizioni di scarica.
+
+La potenza assorbita non può essere utilizzata da sola per stimare la produzione effettiva: quest'ultima deve essere misurata o verificata secondo le specifiche del costruttore.
+
+### Elettrodi e barriera dielettrica
+
+Nella configurazione DBD, due elettrodi sono separati da almeno una barriera isolante e da un piccolo spazio attraversato dal gas.
+
+La barriera dielettrica limita la corrente e contribuisce a distribuire la scarica in numerosi microcanali, evitando che si sviluppi un arco elettrico continuo. In questo modo il campo elettrico fornisce energia alle molecole di ossigeno senza trasformare l'intero sistema in una scarica ad arco.
+
+I materiali impiegati possono comprendere vetro tecnico, ceramiche e altri isolanti compatibili con le condizioni elettriche, termiche e chimiche della cella.
+
+La geometria degli elettrodi, lo spessore e le proprietà dielettriche della barriera influenzano la distribuzione del campo elettrico, l'efficienza energetica e la stabilità del generatore.
+
+### Camera di generazione dell'ozono
+
+La camera di generazione contiene la zona in cui il gas viene sottoposto alla scarica elettrica.
+
+Nel campo elettrico, una parte delle molecole di ossigeno si dissocia in atomi di ossigeno. Questi possono reagire con altre molecole di O₂ formando ozono:
+
+O₂ + energia → 2 O
+
+O + O₂ + M → O₃ + M
+
+In quest'ultima reazione, M rappresenta una terza molecola che assorbe l'energia in eccesso e stabilizza il prodotto.
+
+La produzione di ozono è accompagnata da processi di decomposizione e da reazioni secondarie. Perciò la concentrazione effettiva dipende dall'equilibrio tra formazione e distruzione dell'ozono nelle condizioni della camera.
+
+### Sistema di raffreddamento
+
+La generazione di ozono produce calore. Il raffreddamento può essere:
+
+- ad aria, naturale o forzata;
+- ad acqua;
+- mediante un circuito refrigerante.
+
+Il controllo termico è essenziale perché l'aumento della temperatura favorisce la decomposizione dell'ozono e può modificare le prestazioni del generatore.
+
+Il sistema di raffreddamento deve essere dimensionato secondo la potenza dissipata e i limiti termici indicati dal costruttore. Nei sistemi raffreddati ad acqua sono utili sensori di portata, temperatura e, dove previsto, pressione.
+
+Un guasto al raffreddamento può provocare un arresto automatico, un allarme o una riduzione della produzione, in funzione della logica di protezione.
+
+### Controllo della portata e della pressione
+
+Il sistema di trasporto del gas comprende tubazioni, valvole, regolatori, misuratori di portata e dispositivi di non ritorno.
+
+La portata del gas deve essere misurata in condizioni definite, indicando se il valore è riferito a condizioni normali, standard o operative. I metri cubi normali (Nm³) non devono essere confusi con i metri cubi effettivi alla temperatura e pressione di esercizio.
+
+La pressione di esercizio è altrettanto importante. I generatori possono essere progettati per funzionare in pressione positiva o negativa. La scelta incide sulla gestione delle perdite, sulle apparecchiature di trasporto e sulla sicurezza dell'installazione.
+
+### Analizzatore di ozono
+
+Gli analizzatori misurano la concentrazione di ozono nella fase gassosa o liquida.
+
+Per il gas, una tecnologia comune è la fotometria UV, che misura l'assorbimento della radiazione ultravioletta da parte dell'ozono. Per la fase liquida si possono utilizzare metodi colorimetrici, elettrochimici o altri strumenti convalidati per la matrice.
+
+Le misure devono essere interpretate tenendo conto di:
+
+- intervallo di misura;
+- limite di rilevabilità;
+- interferenze;
+- pressione e temperatura;
+- umidità del campione;
+- necessità di calibrazione;
+- posizione del punto di campionamento.
+
+Un analizzatore installato all'uscita del generatore misura una grandezza diversa da quella rilevata all'uscita del contattore o nell'acqua trattata.
+
+### Sistema di iniezione
+
+Il sistema di iniezione introduce il gas contenente ozono nel fluido da trattare. Può comprendere un iniettore Venturi, diffusori, miscelatori statici o colonne di contatto.
+
+La sua funzione non è soltanto immettere il gas, ma favorire il trasferimento dell'ozono nella fase liquida.
+
+La scelta dipende dalla portata, dalla pressione disponibile, dalla viscosità e composizione del fluido, dalla concentrazione richiesta e dalla capacità del sistema di gestire il gas non trasferito.
+
+### Distruttore dell'ozono residuo (*off-gas destructor*)
+
+Il gas che esce dal contattore può contenere ozono non trasferito o non consumato. Non deve essere rilasciato senza controllo.
+
+Il distruttore dell'off-gas riduce la concentrazione di ozono nel flusso gassoso prima dello scarico. Le tecnologie comprendono:
+
+- decomposizione termica;
+- decomposizione catalitica;
+- sistemi termocatalitici.
+
+Il dimensionamento deve considerare la portata massima del gas residuo, la concentrazione di ozono in ingresso, le condizioni di umidità e temperatura e le prestazioni richieste allo scarico.
+
+Il distruttore deve essere sottoposto a monitoraggio e manutenzione. Un catalizzatore contaminato o un elemento riscaldante guasto può ridurre la capacità di abbattimento.
+
+### Monitoraggio e sicurezza integrati
+
+Un sistema industriale ben progettato non si limita a controllare il generatore. Deve monitorare anche l'ambiente, il contattore, l'off-gas e i principali parametri di processo.
+
+Tra gli strumenti e dispositivi possibili:
+
+- sensori ambientali di ozono;
+- analizzatori di ozono nel gas;
+- analizzatori di ozono disciolto;
+- misuratori di portata;
+- sensori di pressione;
+- sensori di temperatura;
+- sensori di umidità o punto di rugiada;
+- allarmi;
+- ventilazione di emergenza;
+- valvole di isolamento;
+- arresto automatico;
+- interblocchi tra generatore, alimentazione del gas e sistema di raffreddamento.
+
+La progettazione deve prevedere una condizione sicura anche in caso di perdita di alimentazione, guasto del sensore, interruzione del raffreddamento o indisponibilità del distruttore.
+
+## 86. Tecnologie di iniezione dell'ozono
+
+### Trasferimento gas-liquido: il principio fondamentale
+
+Nelle applicazioni di trattamento dell'acqua, l'ozono viene spesso prodotto in fase gassosa e successivamente trasferito nel liquido.
+
+Il trasferimento dipende dalla differenza tra la concentrazione di equilibrio alla superficie di contatto e la concentrazione presente nel liquido. In forma semplificata, il flusso di trasferimento può essere descritto da:
+
+N = kLa (C* − C)
+
+dove:
+
+- N è la velocità volumetrica di trasferimento;
+- kLa è il coefficiente volumetrico di trasferimento di massa;
+- C* è la concentrazione di equilibrio del gas disciolto;
+- C è la concentrazione effettiva nel liquido.
+
+Il valore di kLa dipende da geometria, turbolenza, dimensione delle bolle, portata, proprietà del fluido e condizioni operative.
+
+La concentrazione di equilibrio C* dipende dalla pressione parziale dell'ozono nella fase gassosa, dalla temperatura e dalla solubilità del gas. Non è una costante universale per ogni impianto.
+
+### Iniettori Venturi
+
+Un iniettore Venturi utilizza una riduzione della sezione di passaggio per aumentare la velocità del liquido e abbassare localmente la pressione. La depressione può aspirare il gas contenente ozono e disperderlo nel flusso.
+
+**Vantaggi:**
+
+- assenza di parti mobili nel corpo dell'iniettore;
+- buona capacità di miscelazione;
+- possibilità di aspirare il gas senza un compressore dedicato;
+- integrazione relativamente compatta.
+
+**Limiti:**
+
+- richiede una differenza di pressione adeguata;
+- può introdurre perdite di carico;
+- la prestazione dipende dalla portata e dalle condizioni idrauliche;
+- può richiedere una pompa di ricircolo o un circuito di bypass;
+- il gas non trasferito deve essere separato e gestito.
+
+La capacità di aspirazione non equivale automaticamente a un'elevata efficienza di trasferimento. Quest'ultima deve essere verificata sul sistema completo.
+
+### Diffusori a bolle
+
+I diffusori distribuiscono il gas in una massa liquida attraverso elementi porosi o ugelli. Le bolle risalgono nel liquido, offrendo una superficie di contatto attraverso cui l'ozono può dissolversi.
+
+I diffusori a bolle fini sono utilizzati in molti contattori per il trattamento dell'acqua. La dimensione delle bolle influenza la superficie interfaciale disponibile: a parità di volume di gas, bolle più piccole offrono generalmente una superficie totale maggiore.
+
+Le prestazioni dipendono anche da:
+
+- profondità del liquido;
+- distribuzione dei diffusori;
+- portata di gas;
+- pressione idrostatica;
+- fouling e intasamento;
+- distribuzione dei tempi di permanenza.
+
+Le linee guida tecniche per alcuni contattori convenzionali riportano dimensioni di bolle nell'ordine di pochi millimetri, ma non si tratta di un valore universale applicabile a ogni diffusore o processo.
+
+### Miscelatori statici
+
+Un miscelatore statico contiene elementi fissi che dividono e ricombinano il flusso, aumentando la miscelazione tra gas e liquido.
+
+Può essere installato a valle di un punto di iniezione, ad esempio un Venturi, per migliorare la dispersione del gas.
+
+**Vantaggi:**
+
+- assenza di parti mobili;
+- ingombro relativamente contenuto;
+- buona miscelazione in linea;
+- possibilità di integrazione in tubazioni esistenti.
+
+**Limiti:**
+
+- perdita di carico;
+- sensibilità a depositi e incrostazioni;
+- prestazioni dipendenti dal regime di flusso;
+- necessità di un sistema a valle per assicurare il tempo di contatto richiesto.
+
+Un miscelatore statico favorisce la dispersione, ma non sostituisce necessariamente un contattore con volume e tempo di permanenza adeguati.
+
+### Colonne di contatto
+
+Le colonne di contatto sono recipienti verticali nei quali gas e liquido entrano in contatto. Possono essere progettate in configurazione controcorrente o cocorrente.
+
+Le colonne controcorrente favoriscono il contatto tra liquido discendente e gas ascendente, mantenendo un gradiente di concentrazione lungo il percorso.
+
+Le variabili di progetto comprendono:
+
+- altezza e diametro;
+- portata del liquido;
+- portata del gas;
+- distribuzione del gas;
+- pressione;
+- perdita di carico;
+- tempo di contatto;
+- separazione del gas residuo.
+
+Le colonne possono includere riempimenti o elementi interni per aumentare l'area di contatto, ma devono essere progettate considerando il rischio di fouling e le caratteristiche del fluido.
+
+### Colonne a bolle
+
+In una colonna a bolle, il gas viene introdotto nella parte inferiore e risale attraverso il liquido.
+
+Il trasferimento aumenta con la superficie di contatto e con la permanenza delle bolle nel liquido. Tuttavia, un aumento eccessivo della portata di gas può modificare il regime idrodinamico e ridurre l'efficienza complessiva.
+
+La presenza di solidi sospesi, sostanze tensioattive o precipitazioni può influenzare la distribuzione delle bolle e il comportamento del contattore.
+
+### Iniezione in pressione
+
+Alcuni sistemi introducono il gas in una linea o in un recipiente pressurizzato. L'aumento della pressione parziale dell'ozono può aumentare la concentrazione di equilibrio nel liquido, favorendo il trasferimento.
+
+La progettazione deve considerare la pressione di esercizio, le perdite di carico, la compatibilità dei materiali, le valvole di sicurezza e la gestione del gas che rimane non disciolto.
+
+L'aumento della pressione non garantisce, da solo, un maggiore trasferimento utile: la geometria, la miscelazione e il tempo di contatto restano determinanti.
+
+### Dimensione delle bolle e area interfaciale
+
+Per una data quantità di gas, una dispersione in bolle più piccole aumenta generalmente l'area totale disponibile per lo scambio di massa.
+
+La dimensione delle bolle è però influenzata da:
+
+- geometria e porosità del diffusore;
+- tensione superficiale;
+- viscosità;
+- pressione;
+- velocità del liquido;
+- coalescenza;
+- presenza di solidi e tensioattivi.
+
+Le bolle fini possono migliorare il trasferimento, ma possono anche comportare maggiore perdita di carico o maggiore sensibilità all'intasamento dei diffusori.
+
+### Efficienza di contatto ed efficienza di trasferimento
+
+L'efficienza di trasferimento descrive la frazione dell'ozono alimentato che passa dalla fase gassosa alla fase liquida.
+
+Una definizione operativa semplificata è:
+
+Efficienza di trasferimento (%) =
+
+[(massa di O₃ alimentata − massa di O₃ nell'off-gas) / massa di O₃ alimentata] × 100
+
+Il calcolo corretto richiede portate e concentrazioni coerenti, misurate nelle stesse condizioni di riferimento. Se la portata del gas in ingresso e quella dell'off-gas differiscono, non è corretto confrontare soltanto le concentrazioni.
+
+L'efficienza di contatto è un concetto più ampio: considera quanto efficacemente il sistema mette in contatto le fasi e permette alle reazioni desiderate di avvenire.
+
+### Gestione dell'off-gas
+
+Il gas non trasferito deve essere convogliato verso un separatore e un sistema di distruzione dell'ozono residuo.
+
+Il percorso dell'off-gas deve essere progettato per evitare:
+
+- accumulo di pressione;
+- perdite nell'ambiente;
+- trascinamento di liquido;
+- ingresso di umidità nel distruttore;
+- sovraccarico del catalizzatore;
+- scarico di ozono oltre i limiti applicabili.
+
+La gestione dell'off-gas è parte integrante del sistema di trasferimento, non un accessorio opzionale.
+
+## 87. Progettazione di un sistema a ozono
+
+### Definire prima l'obiettivo di processo
+
+Il dimensionamento di un impianto deve partire dalla funzione che l'ozono deve svolgere.
+
+Gli obiettivi possibili includono:
+
+- disinfezione microbiologica;
+- ossidazione di ferro e manganese;
+- controllo di colore, odori e sapori;
+- trasformazione di composti organici;
+- trattamento di acque industriali;
+- pre-ossidazione prima di altri trattamenti;
+- trattamento di aria o gas in applicazioni specifiche.
+
+Un sistema progettato per ossidare rapidamente un composto inorganico può essere inadeguato per una disinfezione che richiede un tempo di contatto più lungo. La configurazione del contattore deve rispecchiare la cinetica della reazione e l'obiettivo finale.
+
+### Caratterizzare la matrice da trattare
+
+Prima del dimensionamento occorre analizzare la matrice: acqua potabile, acqua di processo, refluo, aria o altro fluido.
+
+Per l'acqua, i parametri importanti possono includere:
+
+- portata minima, media e massima;
+- temperatura;
+- pH;
+- alcalinità;
+- torbidità;
+- solidi sospesi;
+- carbonio organico disciolto;
+- domanda immediata di ozono;
+- ferro e manganese;
+- bromuro;
+- ammonio e altri composti inorganici;
+- carico microbiologico;
+- variabilità stagionale e giornaliera.
+
+La composizione determina la quantità di ozono consumata dalle reazioni concorrenti e influenza la formazione di sottoprodotti.
+
+### Determinare la domanda di ozono
+
+La domanda di ozono è la quantità consumata dalla matrice durante un intervallo di tempo definito.
+
+Non coincide con la dose applicata. Una parte dell'ozono può essere consumata da sostanze che non rappresentano il bersaglio del trattamento; un'altra può rimanere disciolta o uscire nel gas residuo.
+
+La domanda deve essere determinata con prove di laboratorio e, quando necessario, con test pilota rappresentativi delle condizioni operative.
+
+### Calcolare la capacità richiesta
+
+La produzione richiesta dipende dalla portata del fluido e dalla dose applicata.
+
+Per una portata d'acqua espressa in m³/h e una dose applicata in mg/L:
+
+Produzione di ozono richiesta (g/h) = dose applicata (mg/L) × portata d'acqua (m³/h)
+
+Questa relazione dimensionale vale perché 1 mg/L equivale a 1 g/m³.
+
+La formula stima la massa di ozono applicata al fluido, non necessariamente quella che deve produrre il generatore. Se il trasferimento non è completo, la produzione del generatore deve essere maggiore.
+
+Per stimare la produzione del generatore:
+
+Produzione generatore = massa di ozono applicata / efficienza di trasferimento
+
+La relazione deve essere utilizzata con l'efficienza misurata nelle condizioni di progetto e con un margine tecnico motivato, non con un valore arbitrario.
+
+### Selezionare il gas di alimentazione
+
+La scelta tra aria secca e ossigeno dipende da:
+
+- capacità di produzione;
+- concentrazione di ozono richiesta;
+- disponibilità e costo del gas;
+- spazio disponibile;
+- consumo energetico;
+- gestione del gas residuo;
+- requisiti di sicurezza.
+
+L'ossigeno può consentire concentrazioni di ozono più elevate e portate di gas inferiori per una stessa produzione. L'aria può essere conveniente per impianti più piccoli, ma richiede un trattamento adeguato dell'umidità e delle impurità.
+
+### Scegliere il generatore
+
+Il generatore deve essere selezionato in base a:
+
+- produzione nominale di ozono, in g/h o kg/h;
+- concentrazione di ozono nel gas prodotto;
+- gas di alimentazione;
+- portata del gas;
+- pressione;
+- potenza elettrica;
+- sistema di raffreddamento;
+- rendimento energetico;
+- condizioni ambientali;
+- possibilità di regolazione della produzione;
+- requisiti di manutenzione.
+
+La produzione nominale dichiarata dal produttore deve essere verificata alle condizioni specificate. Non è corretto confrontare due generatori usando soltanto il valore in g/h se le condizioni di alimentazione e la concentrazione del gas sono differenti.
+
+### Scegliere il reattore e il contattore
+
+Il contattore deve consentire il trasferimento e il tempo di contatto necessari.
+
+Le configurazioni possibili comprendono:
+
+- vasche a diffusori;
+- colonne a bolle;
+- colonne riempite;
+- sistemi Venturi;
+- tubazioni con miscelatori statici;
+- reattori pressurizzati;
+- sistemi multistadio.
+
+La scelta dipende dalla cinetica della reazione, dalla portata, dalla pressione disponibile, dalla presenza di solidi e dalla necessità di controllare il gas residuo.
+
+Per la disinfezione, il contattore deve evitare cortocircuiti idraulici e distribuzioni dei tempi di permanenza troppo ampie. Per reazioni rapide, una miscelazione efficace può essere più importante di un lungo tempo di permanenza.
+
+### Dimensionare il tempo di contatto
+
+Una stima preliminare del tempo teorico di permanenza è:
+
+t = V / Q
+
+dove:
+
+- t è il tempo teorico;
+- V è il volume utile del contattore;
+- Q è la portata del liquido.
+
+Questa formula non descrive la distribuzione reale dei tempi di permanenza. Zone morte, miscelazione, cortocircuiti e geometria possono far sì che una parte dell'acqua attraversi il contattore più rapidamente del valore teorico.
+
+Per processi di disinfezione, la progettazione deve considerare la distribuzione dei tempi di contatto e le procedure di validazione previste dalla normativa applicabile.
+
+### Selezionare i materiali
+
+Le superfici esposte all'ozono devono essere compatibili con:
+
+- concentrazione del gas o del residuo disciolto;
+- temperatura;
+- pressione;
+- umidità;
+- durata dell'esposizione;
+- cicli di avvio e arresto;
+- presenza di altri agenti chimici.
+
+La compatibilità deve essere verificata per il materiale specifico, inclusi guarnizioni, membrane, tubi, raccordi e adesivi.
+
+### Progettare i controlli di processo
+
+Un sistema di controllo può includere:
+
+- regolazione della produzione del generatore;
+- controllo della portata del gas;
+- controllo della portata dell'acqua;
+- regolazione della pressione;
+- misura dell'ozono in ingresso;
+- misura dell'ozono residuo;
+- misura dell'off-gas;
+- controllo del raffreddamento;
+- allarmi ambientali;
+- arresto automatico.
+
+La regolazione può essere impostata in base alla portata, alla qualità dell'acqua, al residuo misurato o a una combinazione di questi parametri.
+
+Un controllo basato soltanto sulla portata non compensa necessariamente variazioni della domanda chimica. Un controllo basato soltanto sul residuo può invece essere lento o instabile se il sensore è mal posizionato o se la matrice cambia rapidamente.
+
+### Collaudo e prove pilota
+
+Prima dell'esercizio a piena scala sono spesso necessarie prove di laboratorio o pilota.
+
+Queste prove servono a determinare:
+
+- domanda di ozono;
+- dose applicata;
+- trasferimento;
+- residuo;
+- cinetica di reazione;
+- formazione di sottoprodotti;
+- stabilità del processo;
+- comportamento nelle condizioni di portata minima e massima.
+
+Il collaudo dovrebbe verificare anche gli interblocchi, gli allarmi, la ventilazione, il distruttore dell'off-gas e la risposta in caso di guasto.
+
+### Costi operativi
+
+I costi di un sistema a ozono comprendono:
+
+- energia elettrica del generatore;
+- energia per compressori e pompe;
+- produzione o acquisto di ossigeno;
+- essiccazione e filtrazione del gas;
+- raffreddamento;
+- manutenzione del generatore;
+- sostituzione di guarnizioni e componenti;
+- calibrazione degli analizzatori;
+- manutenzione del distruttore;
+- gestione e formazione degli operatori.
+
+Il costo per unità di ozono prodotto può essere espresso, ad esempio, in kWh/kg O₃. Deve essere confrontato solo a parità di concentrazione, purezza del gas, condizioni operative e confini del sistema.
+
+Un impianto efficiente dal punto di vista energetico non è necessariamente quello con il consumo elettrico minimo: deve raggiungere l'obiettivo di trattamento, garantire sicurezza e limitare sottoprodotti e perdite.
+
+## 88. Dosaggio dell'ozono e domanda di ozono
+
+### Le grandezze da non confondere
+
+Nel dimensionamento e nella gestione di un impianto occorre distinguere almeno sei quantità:
+
+1. ozono prodotto dal generatore;
+2. ozono applicato al fluido;
+3. ozono trasferito dalla fase gassosa alla fase liquida;
+4. ozono consumato dalle reazioni;
+5. ozono residuo nel liquido;
+6. ozono presente nel gas di scarico.
+
+Queste grandezze descrivono fasi diverse del processo e devono essere misurate o stimate separatamente.
+
+### Ozono prodotto
+
+La produzione è la massa di ozono generata nell'unità di tempo, normalmente espressa in g/h o kg/h.
+
+Se si conoscono concentrazione e portata del gas, la produzione massica può essere stimata come:
+
+Produzione O₃ = concentrazione massica nel gas × portata del gas
+
+Le unità devono essere coerenti. Ad esempio, una concentrazione in g/Nm³ moltiplicata per una portata in Nm³/h restituisce g/h.
+
+### Dose applicata
+
+La dose applicata è la massa di ozono introdotta nel flusso trattato divisa per il volume del fluido.
+
+Per l'acqua viene normalmente espressa in mg/L.
+
+Dose applicata (mg/L) = massa di O₃ alimentata (g/h) / portata d'acqua (m³/h)
+
+Il valore è valido quando la massa è effettivamente riferita al punto di applicazione e le unità sono coerenti.
+
+### Dose trasferita
+
+La dose trasferita è la quantità di ozono che passa dalla fase gassosa a quella liquida per unità di volume di acqua.
+
+In un sistema a regime, può essere stimata mediante il bilancio tra ozono alimentato e ozono presente nell'off-gas, purché si misurino correttamente portate e concentrazioni di entrambe le correnti.
+
+Una dose applicata di 2 mg/L con un'efficienza di trasferimento del 90%, ad esempio, corrisponde a una dose trasferita stimata di 1,8 mg/L. È un esempio matematico, non un valore raccomandato per un trattamento specifico.
+
+### Ozono consumato
+
+L'ozono consumato è la quantità che reagisce con le sostanze presenti nella matrice durante il processo.
+
+In una rappresentazione semplificata del bilancio nella fase liquida:
+
+Ozono consumato = ozono trasferito − ozono residuo in uscita
+
+Questa relazione deve essere interpretata considerando il volume di controllo, il regime stazionario, eventuali flussi laterali, il decadimento e le perdite. In un sistema reale può essere necessario includere ulteriori termini di bilancio.
+
+### Ozono residuo
+
+L'ozono residuo è la concentrazione ancora presente nel liquido dopo un determinato tempo di contatto.
+
+Può essere misurato in uno o più punti del contattore e all'uscita. Il residuo indica che una parte dell'ozono non è stata consumata entro il punto di misura, ma non dimostra da solo che l'obiettivo di trattamento sia stato raggiunto.
+
+Il significato del residuo dipende dall'applicazione: nella disinfezione può contribuire alla valutazione dell'esposizione del microrganismo; nell'ossidazione di un composto può indicare che la domanda immediata è stata soddisfatta, ma non garantisce la completa trasformazione del bersaglio.
+
+### Domanda di ozono
+
+La domanda di ozono è la quantità consumata dalla matrice in un intervallo di tempo specificato.
+
+Può derivare da reazioni con:
+
+- sostanza organica naturale;
+- composti organici riducenti;
+- ferro ferroso;
+- manganese;
+- solfuri;
+- nitriti;
+- bromuro e altri componenti;
+- sostanze presenti nei reflui industriali.
+
+La domanda dipende dalla composizione del fluido e dalla velocità delle reazioni. Una stessa acqua può presentare una domanda iniziale rapida e una domanda successiva più lenta.
+
+### Effetto della materia organica
+
+La materia organica naturale può consumare ozono e competere con i composti bersaglio. La reattività dipende dalla struttura chimica, dalla presenza di gruppi funzionali e dal peso molecolare delle sostanze.
+
+L'ozonazione può trasformare parte della materia organica in composti più biodegradabili, ma può anche generare prodotti di ossidazione che richiedono trattamenti successivi.
+
+Per questo motivo il processo può essere integrato con filtrazione biologica, carbone attivo o altre fasi di trattamento, in base alla qualità finale richiesta.
+
+### Effetto dei composti inorganici
+
+Ferro ferroso, manganese ridotto, nitrito e solfuro possono consumare ozono attraverso reazioni di ossidazione.
+
+La domanda generata da questi composti può essere significativa e deve essere considerata prima di attribuire l'intera dose al trattamento microbiologico o alla rimozione di composti organici.
+
+### Effetto del pH
+
+Il pH influenza sia la stabilità dell'ozono sia la chimica delle reazioni in acqua.
+
+A pH più elevato, la decomposizione dell'ozono può essere accelerata e possono aumentare le reazioni indirette associate alla formazione di radicali ossidanti. A pH più basso, l'ozono molecolare può risultare relativamente più stabile in determinate matrici.
+
+Non esiste una regola secondo cui un pH più alto o più basso sia sempre migliore: dipende dal contaminante, dall'obiettivo e dai sottoprodotti da controllare.
+
+### Effetto della temperatura
+
+L'aumento della temperatura tende a ridurre la solubilità dei gas in acqua e può accelerare la decomposizione dell'ozono.
+
+Di conseguenza, a parità di altre condizioni, una temperatura più elevata può ridurre la concentrazione di ozono disciolto raggiungibile e modificare il tempo durante il quale il residuo rimane disponibile.
+
+La temperatura deve essere registrata durante le prove di domanda e durante la gestione del processo.
+
+### Effetto del tempo di contatto
+
+Il tempo di contatto è il periodo durante il quale l'ozono disciolto può reagire con i componenti della matrice.
+
+Per una reazione rapida, una parte significativa del consumo può avvenire subito dopo il trasferimento. Per reazioni più lente, il risultato dipende dalla permanenza del fluido nel contattore e dalla disponibilità di ozono residuo.
+
+Il tempo teorico V/Q non è sempre uguale al tempo effettivo di contatto: per una valutazione accurata occorre considerare la distribuzione dei tempi di permanenza.
+
+### CT: concentrazione × tempo
+
+Il parametro CT è il prodotto della concentrazione di disinfettante per il tempo di contatto.
+
+In una forma semplificata:
+
+CT = C × t
+
+dove:
+
+- C è la concentrazione di ozono residuo, spesso in mg/L;
+- t è il tempo di contatto, spesso in minuti;
+- CT si esprime quindi in mg·min/L.
+
+Se la concentrazione varia nel tempo, una descrizione più corretta è:
+
+CT = ∫ C(t) dt
+
+Il CT è utile per descrivere l'esposizione del microrganismo al disinfettante, ma non è una costante universale. Dipende da organismo bersaglio, temperatura, pH, matrice, condizioni di miscelazione e metodo di calcolo del tempo di contatto.
+
+Per la conformità normativa devono essere utilizzati i criteri e i metodi di validazione previsti dall'autorità competente.
+
+### Risposta dose-effetto
+
+La relazione tra dose e risultato non è necessariamente lineare.
+
+Aumentare la dose può migliorare inizialmente l'ossidazione o la disinfezione, ma il beneficio marginale può diminuire quando il bersaglio è stato in gran parte rimosso o quando la domanda della matrice domina il consumo.
+
+Una dose eccessiva può aumentare i costi, il residuo, la formazione di sottoprodotti o la necessità di trattamenti successivi.
+
+Il dosaggio deve quindi essere ottimizzato sulla base dell'obiettivo misurabile, non massimizzato.
+
+## 89. Concentrazione dell'ozono e prestazioni del sistema
+
+### Concentrazione nella fase gassosa
+
+La concentrazione gassosa descrive la quantità di ozono presente nel gas prodotto dal generatore o nel gas residuo.
+
+Può essere espressa in:
+
+- percentuale in massa;
+- percentuale in volume;
+- g/Nm³;
+- ppmv;
+- mg/m³.
+
+Queste unità non sono intercambiabili senza specificare temperatura, pressione e condizioni di riferimento.
+
+Una concentrazione in ppmv rappresenta una frazione volumetrica, mentre g/Nm³ è una concentrazione massica riferita a condizioni definite.
+
+### Concentrazione di ozono disciolto
+
+La concentrazione disciolta indica la massa di ozono presente nel liquido per unità di volume, generalmente espressa in mg/L.
+
+È influenzata da:
+
+- concentrazione del gas;
+- pressione parziale dell'ozono;
+- temperatura;
+- composizione del liquido;
+- efficienza di trasferimento;
+- velocità delle reazioni;
+- tempo trascorso dal contatto.
+
+La concentrazione disciolta deve essere misurata con un metodo adatto alla matrice e al campo di misura. Il campionamento deve ridurre al minimo il tempo tra prelievo e analisi, perché l'ozono può decomporsi rapidamente.
+
+### Produzione di ozono
+
+La produzione è una portata massica, ad esempio 100 g/h. Non deve essere confusa con la concentrazione del gas.
+
+Due generatori possono produrre la stessa massa di ozono all'ora ma avere concentrazioni gassose differenti, perché utilizzano portate di gas differenti.
+
+Per confrontare generatori è necessario conoscere almeno produzione, concentrazione, gas di alimentazione, condizioni di riferimento e consumo energetico.
+
+### Efficienza di trasferimento
+
+L'efficienza di trasferimento è la percentuale dell'ozono alimentato che viene trasferita al liquido.
+
+Può essere calcolata con un bilancio di massa:
+
+η = [(ṁ alimentata − ṁ off-gas) / ṁ alimentata] × 100
+
+dove ṁ rappresenta la portata massica di ozono.
+
+Il calcolo richiede misure coerenti di portata e concentrazione. L'uso della sola concentrazione in ingresso e in uscita può produrre errori se le portate gassose sono diverse.
+
+### Efficienza di ossidazione
+
+L'efficienza di ossidazione descrive quanto efficacemente l'ozono viene utilizzato per trasformare il composto bersaglio.
+
+Non coincide con l'efficienza di trasferimento: una parte dell'ozono trasferito può reagire con sostanze diverse dal contaminante da rimuovere.
+
+Per valutarla occorre misurare il composto bersaglio prima e dopo il trattamento e, quando rilevante, i prodotti di trasformazione.
+
+### Prestazioni di disinfezione
+
+Le prestazioni di disinfezione si valutano mediante la riduzione del microrganismo bersaglio o mediante indicatori microbiologici appropriati.
+
+Una riduzione logaritmica può essere calcolata come:
+
+Riduzione log = log₁₀(N₀ / N)
+
+dove N₀ è la concentrazione iniziale e N quella residua dopo il trattamento.
+
+Una riduzione di 1 log corrisponde a una diminuzione del 90%; 2 log al 99%; 3 log al 99,9%.
+
+Questi valori descrivono la riduzione misurata, ma non indicano automaticamente che l'acqua sia conforme a uno standard di potabilità. La conformità dipende dall'organismo, dal metodo analitico, dal processo complessivo e dai requisiti normativi.
+
+### Decomposizione dell'ozono
+
+L'ozono si decompone in funzione di temperatura, pH, composizione chimica, presenza di superfici catalitiche e altri fattori.
+
+La decomposizione può ridurre il residuo disponibile per la disinfezione o l'ossidazione. Può inoltre generare specie reattive secondarie.
+
+La velocità di decomposizione non deve essere assunta costante in tutte le acque: deve essere caratterizzata sperimentalmente o mediante modelli convalidati.
+
+### Sottoprodotti e qualità dell'acqua
+
+L'ozonazione può trasformare sostanze presenti nell'acqua e produrre sottoprodotti.
+
+Un caso importante è il bromato, che può formarsi in acque contenenti bromuro. La formazione dipende da pH, dose, temperatura, alcalinità, concentrazione di bromuro e condizioni di processo.
+
+L'ozonazione della materia organica può anche generare composti più facilmente biodegradabili. In alcuni sistemi può essere necessario un trattamento biologicamente attivo successivo.
+
+La valutazione delle prestazioni deve quindi considerare non soltanto la rimozione del contaminante iniziale, ma anche la qualità complessiva dell'acqua trattata.
+
+### Ottimizzazione del processo
+
+L'ottimizzazione può includere:
+
+- regolazione della produzione in funzione della portata;
+- regolazione della dose in base alla domanda;
+- miglioramento della miscelazione;
+- riduzione delle perdite di carico;
+- ottimizzazione della profondità del contattore;
+- distribuzione dei punti di iniezione;
+- controllo della temperatura;
+- verifica dell'efficienza del distruttore;
+- monitoraggio dei sottoprodotti;
+- riduzione dei consumi elettrici.
+
+L'obiettivo è ottenere la qualità richiesta con il minimo consumo ragionevole, senza compromettere sicurezza, affidabilità e conformità.
+
+## 90. Manutenzione delle apparecchiature a ozono
+
+### Perché la manutenzione è essenziale?
+
+L'ozono è un ossidante forte e il sistema opera con componenti elettrici, gas tecnici, pressioni e superfici esposte a condizioni chimiche impegnative.
+
+La manutenzione preventiva riduce il rischio di:
+
+- calo della produzione;
+- instabilità della concentrazione;
+- perdite di gas;
+- guasti elettrici;
+- surriscaldamento;
+- contaminazione del gas;
+- errori di misura;
+- malfunzionamento del distruttore.
+
+Gli intervalli devono essere stabiliti in base al manuale del costruttore, alle ore di esercizio, alle condizioni ambientali e ai risultati delle ispezioni.
+
+### Manutenzione del generatore
+
+Le attività possono comprendere:
+
+- verifica dei parametri elettrici;
+- controllo della temperatura;
+- verifica della portata del gas;
+- controllo della pressione;
+- ispezione delle connessioni;
+- verifica delle prestazioni di produzione;
+- controllo delle condizioni di ventilazione e raffreddamento.
+
+Una diminuzione della produzione può derivare da un problema di alimentazione del gas, umidità eccessiva, raffreddamento insufficiente, deterioramento dei componenti o variazioni dell'alimentazione elettrica.
+
+### Ispezione degli elettrodi e della barriera dielettrica
+
+Gli elettrodi e la barriera dielettrica devono essere ispezionati secondo le procedure del costruttore.
+
+Possibili problemi includono:
+
+- depositi;
+- corrosione;
+- fessurazioni;
+- danni superficiali;
+- deterioramento degli isolanti;
+- scariche anomale.
+
+La presenza di danni alla barriera può alterare la distribuzione del campo elettrico e compromettere la sicurezza. Gli interventi devono essere eseguiti da personale qualificato, con isolamento e verifica dell'assenza di energia.
+
+### Manutenzione del raffreddamento
+
+Occorre controllare:
+
+- portata del fluido refrigerante;
+- temperatura in ingresso e uscita;
+- filtri e scambiatori;
+- pompe e ventilatori;
+- eventuali perdite;
+- allarmi di temperatura;
+- qualità del fluido refrigerante, se applicabile.
+
+La perdita di capacità di raffreddamento può causare surriscaldamento e riduzione della produzione.
+
+### Filtrazione ed essiccazione del gas
+
+Le attività comprendono:
+
+- sostituzione o rigenerazione degli adsorbenti;
+- controllo dei filtri;
+- verifica della caduta di pressione;
+- misurazione del punto di rugiada;
+- controllo di eventuali contaminazioni;
+- verifica della portata di alimentazione.
+
+Un aumento dell'umidità può essere un indicatore precoce di guasto dell'essiccatore o di un problema nella rigenerazione.
+
+### Controllo dell'alimentazione di ossigeno
+
+Nei sistemi alimentati a ossigeno occorre verificare:
+
+- purezza;
+- portata;
+- pressione;
+- stato del concentratore;
+- filtri;
+- condizioni del serbatoio o delle bombole;
+- dispositivi di regolazione;
+- compatibilità dei materiali con l'ossigeno.
+
+Le apparecchiature per ossigeno devono essere mantenute prive di oli e grassi secondo le procedure applicabili. L'ossigeno non è combustibile, ma favorisce fortemente la combustione.
+
+### Tubi, valvole e guarnizioni
+
+Tubazioni e raccordi devono essere ispezionati per individuare:
+
+- fessurazioni;
+- deformazioni;
+- fragilità;
+- scolorimento;
+- rigonfiamento;
+- perdite;
+- deterioramento delle guarnizioni.
+
+I componenti elastomerici possono invecchiare più rapidamente se la formulazione non è compatibile con la concentrazione, la temperatura e l'umidità di esercizio.
+
+La sostituzione deve utilizzare materiali qualificati per la specifica applicazione, non semplicemente un materiale descritto come resistente all'ozono in una tabella generica.
+
+### Calibrazione dei sensori
+
+Gli analizzatori e i sensori devono essere sottoposti a verifiche e calibrazioni secondo le istruzioni del produttore e il piano metrologico dell'impianto.
+
+La manutenzione deve comprendere:
+
+- verifica dello zero;
+- verifica del punto di misura;
+- controllo del flusso di campionamento;
+- pulizia delle celle, se prevista;
+- verifica delle interferenze;
+- confronto con un riferimento tracciabile;
+- registrazione degli interventi.
+
+Un sensore non calibrato può indicare una concentrazione apparentemente corretta mentre il processo opera fuori specifica.
+
+### Manutenzione del distruttore di ozono
+
+Il distruttore deve essere verificato in termini di:
+
+- portata massima;
+- temperatura di esercizio;
+- stato del catalizzatore;
+- condizioni degli elementi riscaldanti;
+- umidità e contaminanti nel gas;
+- concentrazione residua allo scarico;
+- integrità delle tubazioni;
+- funzionamento dell'aspirazione.
+
+La manutenzione del catalizzatore deve seguire le indicazioni del fabbricante. Non è corretto presumere che un distruttore mantenga la stessa efficienza per tutta la vita dell'impianto.
+
+### Manutenzione preventiva e vita utile
+
+La vita utile di un generatore non è un numero universale. Dipende da qualità del gas, cicli di funzionamento, condizioni elettriche, raffreddamento, manutenzione e ambiente.
+
+Un piano preventivo dovrebbe indicare:
+
+- componente;
+- attività;
+- frequenza;
+- responsabile;
+- criterio di accettazione;
+- ricambi;
+- registrazione;
+- procedura di sicurezza.
+
+La sostituzione dei componenti deve essere basata su condizioni misurate e raccomandazioni del produttore, non soltanto sull'età dell'impianto.
+
+## 91. Materiali compatibili con l'ozono
+
+### Perché la compatibilità dei materiali è complessa?
+
+L'ozono può reagire con metalli, elastomeri e polimeri, provocando ossidazione, fessurazione, perdita di elasticità, fragilità o degradazione superficiale.
+
+La compatibilità dipende da:
+
+- concentrazione dell'ozono;
+- fase gassosa o acquosa;
+- temperatura;
+- umidità;
+- pressione;
+- durata dell'esposizione;
+- sollecitazione meccanica;
+- composizione specifica del materiale;
+- presenza di additivi, cariche e plastificanti.
+
+Un materiale che resiste a basse concentrazioni di ozono disciolto può non essere adatto a un flusso di ozono gassoso concentrato e umido.
+
+### Acciaio inossidabile
+
+Gli acciai inossidabili 304L e 316L sono utilizzati in molte apparecchiature a ozono.
+
+Il 316L contiene molibdeno e presenta generalmente una maggiore resistenza alla corrosione in ambienti contenenti cloruri rispetto al 304L. Tuttavia, la compatibilità con l'ozono non elimina il rischio di corrosione dovuta a umidità, contaminanti, condensa o specie acide.
+
+La scelta deve considerare la qualità dell'acciaio, la finitura, le saldature, la presenza di acqua e i contaminanti del gas.
+
+### PTFE
+
+Il politetrafluoroetilene (PTFE) è generalmente considerato altamente resistente all'ozono e viene utilizzato in guarnizioni, tubazioni, rivestimenti e componenti di tenuta.
+
+La resistenza chimica non significa che il materiale sia adatto a qualsiasi pressione o temperatura: devono essere verificati creep, deformazione, permeabilità e requisiti meccanici.
+
+### PVDF
+
+Il fluoruro di polivinilidene (PVDF) è impiegato in tubazioni, valvole e componenti esposti all'ozono.
+
+È generalmente indicato per molte applicazioni con ozono, ma la compatibilità deve essere confermata per la specifica formulazione e per la temperatura e concentrazione previste.
+
+### Vetro e ceramica
+
+Vetro tecnico e ceramiche sono utilizzati in celle di generazione, componenti isolanti e parti di contatto.
+
+Sono materiali generalmente resistenti all'ossidazione da ozono, ma la loro fragilità meccanica e la sensibilità agli shock termici devono essere considerate.
+
+### Silicone
+
+Il silicone può mostrare una buona resistenza in alcune applicazioni con ozono, soprattutto in determinate condizioni di fase acquosa e concentrazione.
+
+Non tutte le formulazioni siliconiche sono equivalenti. Additivi, cariche, durezza, reticolazione e temperatura possono modificare il comportamento. Per questo motivo la compatibilità deve essere verificata sul prodotto specifico.
+
+### EPDM
+
+L'EPDM è un elastomero frequentemente utilizzato per guarnizioni e componenti a contatto con acqua ozonizzata.
+
+La resistenza dipende dalla formulazione e dall'esposizione. Una guarnizione EPDM adatta a un residuo di ozono disciolto può non essere idonea a concentrazioni elevate di ozono gassoso.
+
+È necessario verificare la compatibilità con il fornitore del componente.
+
+### Gomma naturale
+
+La gomma naturale è generalmente vulnerabile all'attacco dell'ozono, soprattutto quando è sottoposta a tensione. Possono comparire fessure superficiali e perdita di integrità.
+
+Non dovrebbe essere scelta per componenti critici esposti a ozono senza dati specifici di compatibilità.
+
+### PVC e PVC-U
+
+PVC e PVC-U sono utilizzati in alcune applicazioni con ozono disciolto o in specifiche configurazioni di impianto.
+
+La loro idoneità dipende dalla concentrazione, dalla temperatura, dalla pressione e dalla configurazione del sistema. Alcune linee guida tecniche limitano l'impiego del PVC-U per il gas a condizioni di pressione negativa, per ridurre le conseguenze di una perdita.
+
+Non è corretto dichiarare il PVC universalmente compatibile con l'ozono.
+
+### Polietilene
+
+Il polietilene (PE) è utilizzato in alcune applicazioni con ozono a concentrazioni contenute, ma il comportamento varia con densità, grado, additivi, temperatura e stress meccanico.
+
+La compatibilità deve essere documentata dal produttore per l'ambiente specifico.
+
+### Polipropilene
+
+Il polipropilene (PP) può essere adatto a determinate applicazioni acquose, ma la resistenza dipende dalla formulazione, dalla temperatura e dalla concentrazione di ozono.
+
+Non è prudente generalizzare la compatibilità dell'intera famiglia dei polipropileni.
+
+### Metalli e fenomeni di ossidazione
+
+L'ozono è un agente ossidante e può reagire con metalli o con contaminanti presenti sulle loro superfici.
+
+La corrosione dipende anche dall'umidità: il gas molto secco e un ambiente umido non sono equivalenti. La condensa può modificare radicalmente il comportamento di una superficie metallica.
+
+Le leghe, le saldature, le finiture e le condizioni di pulizia devono essere valutate nel loro insieme.
+
+### Degradazione e invecchiamento dei polimeri
+
+L'esposizione all'ozono può causare:
+
+- scissione delle catene polimeriche;
+- modificazione dei legami chimici;
+- perdita di elasticità;
+- fessurazione;
+- variazioni dimensionali;
+- indurimento o fragilità;
+- perdita di proprietà meccaniche.
+
+L'effetto può essere accelerato da temperatura, umidità, tensione meccanica e concentrazione.
+
+### Tabella orientativa di compatibilità
+
+| Materiale | Indicazione generale | Aspetti da verificare |
+|---|---|---|
+| Acciaio inox 316L | Ampiamente utilizzato | Umidità, cloruri, condensa, saldature |
+| Acciaio inox 304L | Utilizzato in molte applicazioni | Ambiente corrosivo e qualità della superficie |
+| PTFE | Generalmente alta resistenza | Pressione, temperatura, creep |
+| PVDF | Generalmente adatto a molte applicazioni | Formulazione e condizioni operative |
+| Vetro | Alta resistenza chimica | Fragilità e shock termico |
+| Ceramica | Alta resistenza chimica | Resistenza meccanica e tenute |
+| Silicone | Dipendente dalla formulazione | Gas o acqua, concentrazione e temperatura |
+| EPDM | Spesso usato in fase acquosa | Gas concentrato, temperatura e grado |
+| Gomma naturale | Generalmente poco adatta | Fessurazione e tensione meccanica |
+| PVC-U | Compatibilità condizionata | Pressione, temperatura e fase |
+| Polietilene | Dipendente dal grado | Additivi, concentrazione e temperatura |
+| Polipropilene | Dipendente dal grado | Temperatura, stress e formulazione |
+
+La tabella è orientativa, non una certificazione di compatibilità. Per componenti critici occorre ottenere dati specifici dal produttore e, quando necessario, effettuare prove di compatibilità nelle condizioni reali di esercizio.
+
+## 92. Sicurezza dei sistemi a ozono
+
+### Perché la sicurezza è parte integrante del progetto?
+
+L'ozono è un gas tossico per inalazione e un forte ossidante. Un impianto deve essere progettato per prevenire perdite, rilevare concentrazioni anomale, limitare l'esposizione degli operatori e impedire che il gas residuo venga rilasciato senza trattamento.
+
+La sicurezza deve essere considerata durante:
+
+- progettazione;
+- installazione;
+- collaudo;
+- esercizio;
+- manutenzione;
+- arresto;
+- gestione delle emergenze.
+
+Non è sufficiente installare un rilevatore ambientale: occorrono anche contenimento, ventilazione, distruzione dell'off-gas, interblocchi e procedure operative.
+
+### Rischio di perdita di ozono
+
+Le perdite possono verificarsi in:
+
+- raccordi;
+- guarnizioni;
+- valvole;
+- tubazioni;
+- generatori;
+- contattori;
+- campionatori;
+- linee di off-gas;
+- connessioni durante la manutenzione.
+
+Il progetto deve ridurre il numero di giunzioni, utilizzare materiali compatibili e rendere accessibili i punti di ispezione.
+
+La scelta tra pressione positiva e negativa deve essere valutata mediante analisi del rischio. Un sistema in depressione può ridurre la fuoriuscita di gas verso il locale in caso di perdita, ma non elimina la necessità di monitoraggio e ventilazione.
+
+### Esposizione professionale
+
+L'esposizione professionale può avvenire durante esercizio, campionamento, manutenzione o guasto.
+
+Negli Stati Uniti, il NIOSH indica un limite ceiling REL di 0,1 ppm (0,2 mg/m³), mentre OSHA riporta un PEL TWA di 0,1 ppm (0,2 mg/m³). NIOSH indica inoltre un valore IDLH di 5 ppm.
+
+Questi valori appartengono al quadro normativo statunitense e non devono essere presentati come limiti di legge italiani o europei. Per un impianto in Italia occorre verificare la normativa nazionale vigente, il documento di valutazione dei rischi, le indicazioni dell'autorità competente e gli eventuali valori limite applicabili.
+
+Il valore IDLH non è un livello operativo accettabile: indica una condizione immediatamente pericolosa per la vita o la salute secondo la definizione NIOSH.
+
+### Rilevatori ambientali
+
+I rilevatori ambientali di ozono misurano la concentrazione nell'aria del locale o di aree specifiche.
+
+La loro scelta deve considerare:
+
+- principio di misura;
+- intervallo;
+- limite di rilevabilità;
+- tempo di risposta;
+- selettività;
+- deriva;
+- condizioni ambientali;
+- necessità di calibrazione;
+- posizione di installazione.
+
+I sensori devono essere collocati sulla base dell'analisi del rischio, considerando possibili punti di perdita, flussi d'aria e zone occupate.
+
+Il colore o l'odore dell'ozono non sono strumenti di rilevazione affidabili.
+
+### Ventilazione
+
+Il locale del generatore deve disporre di ventilazione adeguata alle condizioni di esercizio e alle emergenze previste.
+
+Il progetto deve considerare:
+
+- ricambio d'aria;
+- estrazione localizzata;
+- posizione delle prese e degli scarichi;
+- eventuale ventilazione di emergenza;
+- compatibilità dei ventilatori;
+- scarico in una posizione sicura;
+- funzionamento in caso di allarme.
+
+La ventilazione non deve semplicemente diluire una perdita senza controllarla: il sistema deve essere coordinato con rilevamento, isolamento e distruzione del gas, quando prevista.
+
+### Arresto automatico e interblocchi
+
+Gli interblocchi impediscono il funzionamento del generatore quando le condizioni necessarie non sono soddisfatte.
+
+Gli ingressi di sicurezza possono includere:
+
+- assenza o insufficienza del gas di alimentazione;
+- portata di raffreddamento insufficiente;
+- temperatura eccessiva;
+- pressione fuori intervallo;
+- allarme di ozono ambientale;
+- indisponibilità del distruttore;
+- guasto del sistema di ventilazione;
+- apertura di un involucro protettivo;
+- anomalia elettrica.
+
+La logica deve portare l'impianto in uno stato sicuro e impedire il riavvio automatico quando è necessaria una verifica da parte dell'operatore.
+
+### Distruzione dell'off-gas
+
+Il gas residuo deve essere inviato a un distruttore dimensionato per la massima portata e concentrazione previste.
+
+Il sistema deve essere monitorato per verificare:
+
+- temperatura di esercizio, se richiesta;
+- portata;
+- pressione;
+- efficienza di abbattimento;
+- stato del catalizzatore;
+- concentrazione allo scarico, quando prevista.
+
+Le linee guida tecniche per gli impianti di trattamento dell'acqua raccomandano sistemi di distruzione dell'off-gas e aspirazione dedicata. La configurazione deve essere adeguata alle condizioni specifiche e ai requisiti locali.
+
+### Gestione della pressione
+
+Il progetto deve prevenire sovrapressioni, depressioni e ritorni di liquido o gas.
+
+Tra i componenti possibili figurano:
+
+- valvole di sicurezza;
+- regolatori;
+- valvole di non ritorno;
+- separatori;
+- dispositivi di scarico controllato;
+- sensori di pressione;
+- sistemi di isolamento.
+
+Le pressioni ammissibili devono essere definite per ciascun componente e per l'intero circuito.
+
+### Sicurezza elettrica
+
+I generatori DBD utilizzano alimentatori ad alta tensione. Il rischio elettrico deve essere gestito mediante:
+
+- involucri e barriere;
+- messa a terra;
+- protezioni elettriche;
+- interblocchi;
+- procedure di sezionamento;
+- blocco e segnalazione delle fonti di energia;
+- verifica dell'assenza di tensione prima degli interventi.
+
+La manutenzione interna del generatore non deve essere eseguita con apparecchiatura alimentata o senza le procedure previste dal costruttore.
+
+### Sicurezza durante la manutenzione
+
+Prima di intervenire su un impianto occorre seguire una procedura che consideri:
+
+1. arresto controllato;
+2. isolamento delle fonti di gas ed energia;
+3. depressurizzazione secondo la procedura prevista;
+4. spurgo o bonifica del circuito;
+5. verifica dell'assenza di ozono;
+6. verifica dell'assenza di energia elettrica;
+7. autorizzazione all'intervento;
+8. controllo dell'atmosfera prima dell'accesso, se necessario.
+
+L'odore non deve essere utilizzato per stabilire che un circuito sia privo di ozono.
+
+### Procedure di emergenza
+
+Le procedure devono essere definite prima dell'avviamento e rese disponibili agli operatori.
+
+In caso di allarme o sospetta perdita:
+
+- non avvicinarsi al punto di fuga senza essere autorizzati e protetti;
+- attivare la procedura di emergenza;
+- evacuare l'area interessata;
+- impedire l'accesso al personale non autorizzato;
+- attivare l'arresto e l'isolamento da una posizione sicura, se previsto;
+- informare il responsabile dell'impianto e i servizi di emergenza secondo il piano;
+- non rientrare finché l'atmosfera non è stata verificata da personale competente.
+
+I dispositivi di protezione respiratoria non devono essere improvvisati: la scelta dipende dalla concentrazione, dalla situazione e dalle procedure di emergenza. In atmosfere sconosciute o immediatamente pericolose non è appropriato affidarsi a normali maschere filtranti.
+
+### Normativa e conformità
+
+La progettazione e la gestione di un impianto a ozono possono coinvolgere più ambiti normativi:
+
+- sicurezza delle macchine;
+- sicurezza elettrica;
+- apparecchiature in pressione;
+- atmosfere potenzialmente esplosive, quando pertinenti;
+- sicurezza sul lavoro;
+- stoccaggio e impiego dell'ossigeno;
+- qualità dell'acqua;
+- emissioni e scarichi;
+- gestione dei prodotti chimici;
+- requisiti dei dispositivi di misura.
+
+In Italia la valutazione deve considerare, tra gli altri riferimenti applicabili, il D.Lgs. 81/2008 in materia di salute e sicurezza sul lavoro, oltre alle disposizioni europee e nazionali pertinenti alla tipologia di impianto. Non esiste una singola norma che sostituisca l'analisi di conformità dell'intero sistema.
+
+La conformità deve essere verificata per la destinazione d'uso concreta, la configurazione dell'impianto e il luogo di installazione.
+
+## Conclusione della Parte XI
+
+Un sistema a ozono deve essere progettato come un processo integrato, non come un semplice generatore collegato a una tubazione. La qualità del gas di alimentazione, la tecnologia di scarica, il raffreddamento, il trasferimento gas-liquido, il tempo di contatto, la domanda chimica, la misurazione e la gestione dell'off-gas determinano insieme le prestazioni.
+
+La corretta interpretazione delle grandezze è essenziale: **produzione, dose applicata, dose trasferita, ozono consumato e residuo sono quantità diverse**. Anche l'efficienza di trasferimento non equivale all'efficienza di ossidazione o alla disinfezione effettivamente ottenuta.
+
+Infine, materiali, manutenzione e sicurezza devono essere considerati fin dalla progettazione. L'ozono è un ossidante potente e il suo impiego richiede componenti compatibili, monitoraggio continuo o periodico secondo il rischio, protezioni automatiche e procedure operative documentate.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# PART XII — Ozono a confronto con altre sostanze e tecnologie
+
+## 93. Ozono vs. ossigeno
+
+Ozono (O₃) e ossigeno molecolare (O₂) sono due forme chimiche dello stesso elemento, ma presentano proprietà, reattività e funzioni biologiche molto diverse. Entrambi sono costituiti esclusivamente da atomi di ossigeno; tuttavia, la diversa struttura molecolare determina un comportamento chimico profondamente differente.
+
+### Struttura molecolare
+
+La differenza fondamentale riguarda il numero di atomi presenti in ciascuna molecola:
+
+- **Ossigeno molecolare (O₂):** contiene due atomi di ossigeno uniti da un legame covalente. La molecola ha una struttura lineare ed è una specie paramagnetica nello stato fondamentale.
+- **Ozono (O₃):** contiene tre atomi di ossigeno. La molecola ha una geometria angolare, con una struttura elettronica descritta mediante forme di risonanza.
+
+L'ozono non è semplicemente una molecola di ossigeno con un atomo aggiuntivo: la sua struttura elettronica gli conferisce proprietà ossidanti e una reattività differenti.
+
+### Proprietà chimiche
+
+L'ossigeno molecolare è relativamente stabile nelle condizioni ambientali. È un ossidante importante, ma molte reazioni con composti organici e inorganici sono cineticamente lente in assenza di catalizzatori, calore o altre condizioni favorevoli.
+
+L'ozono è invece un ossidante molto più reattivo in numerosi sistemi chimici. Può reagire direttamente con doppi legami carbonio-carbonio, composti aromatici, sostanze contenenti gruppi solforati e numerosi altri contaminanti.
+
+Questa reattività lo rende utile per processi di ossidazione e disinfezione, ma comporta anche una maggiore difficoltà di conservazione e un rischio di reazioni indesiderate.
+
+### Stabilità e decomposizione
+
+L'ossigeno molecolare è stabile nelle normali condizioni atmosferiche e può essere conservato e trasportato in bombole o serbatoi progettati per gas compressi o liquefatti.
+
+L'ozono è termodinamicamente instabile rispetto alla decomposizione in ossigeno:
+
+**2 O₃ → 3 O₂**
+
+La velocità di decomposizione dipende da temperatura, concentrazione, pressione, umidità, materiali a contatto e presenza di sostanze catalitiche. Per questa ragione, negli impianti di trattamento dell'acqua l'ozono viene normalmente prodotto sul posto, utilizzato rapidamente e monitorato.
+
+### Reattività e potere ossidante
+
+L'ossigeno molecolare partecipa a numerose reazioni di ossidazione, ma spesso richiede un'attivazione energetica o un catalizzatore. L'ozono può reagire direttamente con molte sostanze senza dover essere prima attivato nello stesso modo.
+
+In ambiente acquoso, il potenziale standard di riduzione della coppia O₃/O₂ è circa **+2,07 V in condizioni acide**, mentre quello della coppia O₂/H₂O è circa **+1,23 V in condizioni acide**. Questi valori sono riferiti a specifiche semireazioni e condizioni elettrochimiche: non costituiscono una graduatoria universale dell'efficacia pratica degli ossidanti.
+
+L'ozono può inoltre decomporsi generando specie reattive, tra cui radicali ossidrile (•OH), soprattutto in determinate condizioni di pH e in presenza di promotori o catalizzatori. La formazione di queste specie dipende dalla matrice e non avviene necessariamente con la stessa efficienza in ogni acqua.
+
+### Ruolo biologico
+
+L'ossigeno molecolare è essenziale per la respirazione aerobica umana. Nei mitocondri, l'O₂ funziona come accettore finale di elettroni nella catena respiratoria, permettendo la produzione efficiente di ATP.
+
+L'ozono non svolge una funzione fisiologica equivalente. Non è un nutriente, non è una forma di ossigeno da somministrare per migliorare la respirazione e non deve essere inalato intenzionalmente. È un forte ossidante che, a contatto con le superfici biologiche, può danneggiare le cellule e provocare infiammazione delle vie respiratorie.
+
+La presenza di tre atomi di ossigeno non significa che l'ozono fornisca più ossigeno utile ai tessuti rispetto all'O₂.
+
+### Funzione atmosferica
+
+Nell'atmosfera, O₂ e O₃ partecipano a un ciclo fotochimico strettamente collegato.
+
+Nella stratosfera, la radiazione ultravioletta può scindere l'ossigeno molecolare:
+
+**O₂ + hν → O + O**
+
+L'atomo di ossigeno così prodotto può reagire con un'altra molecola di O₂ e formare ozono:
+
+**O + O₂ + M → O₃ + M**
+
+M rappresenta una terza molecola che assorbe l'energia in eccesso della reazione.
+
+L'ozono stratosferico assorbe una parte importante della radiazione UV-B e quasi tutta la UV-C solare che raggiunge la regione atmosferica interessata. Questo processo protegge gli organismi viventi dall'esposizione a radiazioni ultraviolette dannose.
+
+L'ozono presente vicino alla superficie terrestre ha invece un ruolo diverso: è un inquinante atmosferico secondario che può danneggiare la salute umana, la vegetazione e i materiali.
+
+### Applicazioni industriali
+
+| Applicazione | Ossigeno (O₂) | Ozono (O₃) |
+|---|---|---|
+| Medicina | Ossigenoterapia e supporto respiratorio secondo indicazione clinica | Nessun ruolo equivalente; l'inalazione è pericolosa |
+| Industria chimica | Materia prima e reagente per ossidazioni | Ossidazioni selettive e processi di ozonolisi |
+| Trattamento dell'acqua | Aerazione e processi biologici | Ossidazione, disinfezione e controllo di odori |
+| Industria alimentare | Atmosfere controllate e confezionamento | Disinfezione e trattamento in processi autorizzati |
+| Metallurgia | Combustione e processi ossidativi | Applicazioni specialistiche |
+| Ambiente | Supporto a processi aerobici | Trattamento di contaminanti in sistemi controllati |
+
+### Tossicità e impatto ambientale
+
+L'ossigeno è indispensabile alla vita, ma anche concentrazioni e pressioni parziali elevate possono provocare effetti tossici in particolari condizioni, come l'iperossia. Inoltre, è un comburente e aumenta il rischio di incendio in presenza di materiali combustibili.
+
+L'ozono è tossico per inalazione a concentrazioni che possono essere raggiunte in ambienti contaminati o in caso di perdite da apparecchiature. Può provocare irritazione, infiammazione e riduzione della funzione polmonare.
+
+Dal punto di vista ambientale, l'ossigeno è un componente fondamentale dei cicli biogeochimici. L'ozono ha un effetto dipendente dalla quota: stratosferico, protegge dagli UV; troposferico, contribuisce all'inquinamento fotochimico e al riscaldamento climatico.
+
+**Conclusione:** O₂ e O₃ sono forme differenti dello stesso elemento. L'ossigeno molecolare sostiene la respirazione aerobica, mentre l'ozono è un ossidante reattivo utile in specifici processi industriali e ambientali, ma dannoso se inalato.
+
+## 94. Ozono vs. cloro
+
+Ozono e cloro sono entrambi utilizzati per la disinfezione dell'acqua, ma differiscono per meccanismo di reazione, persistenza, sottoprodotti, sicurezza e requisiti impiantistici.
+
+In questo confronto, con il termine **cloro** si intende principalmente il cloro libero in acqua, costituito dall'equilibrio tra acido ipocloroso (HOCl) e ione ipoclorito (OCl⁻), oppure i prodotti commerciali utilizzati per generarlo. Non si deve confondere il cloro libero in acqua con il gas cloro concentrato.
+
+### Struttura chimica e potenziale ossidante
+
+L'ozono ha formula O₃. Il cloro elementare è presente come molecola biatomica Cl₂, mentre il disinfettante attivo in acqua è rappresentato soprattutto da HOCl e OCl⁻.
+
+Il potenziale standard di riduzione della coppia O₃/O₂ è circa +2,07 V in condizioni acide. Per il cloro molecolare, la coppia Cl₂/Cl⁻ presenta un potenziale standard di circa +1,36 V. L'acido ipocloroso ha un potenziale di riduzione differente e dipendente dalla semireazione considerata.
+
+Questi valori indicano una tendenza termodinamica a ricevere elettroni, ma non permettono di concludere che l'ozono sia sempre un disinfettante più efficace. La velocità di reazione, il pH, la temperatura, il carico organico e il microrganismo bersaglio possono modificare profondamente le prestazioni.
+
+### Meccanismo di disinfezione
+
+L'ozono agisce attraverso reazioni ossidative dirette e, in determinate condizioni, attraverso specie radicaliche secondarie. Può danneggiare membrane, proteine, enzimi e altri componenti cellulari.
+
+Il cloro libero agisce soprattutto attraverso HOCl e OCl⁻. L'acido ipocloroso è generalmente più efficace dello ione ipoclorito nella disinfezione, perché è elettricamente neutro e può interagire più facilmente con le strutture cellulari microbiche.
+
+La proporzione tra HOCl e OCl⁻ dipende dal pH. A pH più basso prevale HOCl; aumentando il pH cresce la frazione OCl⁻. Di conseguenza, l'efficacia del cloro libero non è indipendente dal pH.
+
+### Efficacia contro i microrganismi
+
+Entrambi possono inattivare batteri e virus, ma le prestazioni dipendono dalla specie microbica e dalle condizioni del trattamento.
+
+L'ozono può essere particolarmente utile per l'inattivazione di protozoi resistenti al cloro, tra cui Cryptosporidium, se il processo è progettato e validato per raggiungere la dose e il tempo di contatto richiesti.
+
+Il cloro è efficace contro molti batteri e virus e presenta il vantaggio di poter mantenere un residuo disinfettante nella rete di distribuzione. Non è però altrettanto efficace contro tutti i protozoi: Cryptosporidium, in particolare, è molto resistente alla clorazione convenzionale.
+
+Non esiste un'unica graduatoria valida per tutti i patogeni. La progettazione deve utilizzare dati di inattivazione specifici, come i valori CT (concentrazione × tempo di contatto), a condizioni definite.
+
+### Cinetica di reazione e tempo di contatto
+
+L'ozono reagisce rapidamente con numerose sostanze organiche e inorganiche. Questa caratteristica può consentire tempi di contatto relativamente brevi per alcuni obiettivi, ma comporta anche un consumo rapido dell'ossidante da parte della materia organica naturale.
+
+Il cloro può richiedere tempi di contatto differenti in funzione del pH, della temperatura e del microrganismo. Il suo residuo può continuare ad agire dopo il trattamento iniziale.
+
+Per confrontare due processi non basta indicare la concentrazione iniziale. Occorre misurare la concentrazione residua nel tempo e verificare la dose effettivamente ricevuta dal microrganismo.
+
+### Residuo disinfettante
+
+Questa è una delle differenze operative più importanti.
+
+- **Ozono:** si decompone e non garantisce un residuo persistente nella rete di distribuzione.
+- **Cloro libero:** può mantenere un residuo misurabile che contribuisce a proteggere l'acqua durante lo stoccaggio e il trasporto nelle tubazioni.
+
+Per questo motivo molti impianti utilizzano l'ozono come disinfettante primario e il cloro o le clorammine per la disinfezione secondaria.
+
+L'ozono non è quindi un sostituto automatico del cloro in una rete idrica estesa.
+
+### Sottoprodotti della disinfezione
+
+Il cloro può reagire con la materia organica naturale e produrre sottoprodotti alogenati, tra cui:
+
+- trialometani (THM);
+- acidi aloacetici (HAA);
+- aloacetonitrili;
+- alochettoni;
+- altri composti organoalogenati.
+
+L'ozono non produce gli stessi sottoprodotti clorurati attraverso la reazione diretta con la materia organica, ma non è privo di sottoprodotti.
+
+In presenza di bromuro, può formarsi bromato (BrO₃⁻), un sottoprodotto di particolare interesse sanitario. L'ozonazione può inoltre trasformare la materia organica naturale in aldeidi, chetoacidi e acidi carbossilici, alcuni dei quali sono più biodegradabili.
+
+Se l'acqua ozonizzata viene successivamente clorata, possono formarsi sottoprodotti della clorazione a partire dai composti organici trasformati durante l'ozonazione.
+
+### Tossicità e sicurezza
+
+Il cloro gassoso è altamente tossico per inalazione e può provocare gravi lesioni respiratorie. Anche l'ipoclorito concentrato è corrosivo e può causare ustioni chimiche. La miscelazione impropria di prodotti contenenti cloro con acidi o ammoniaca può liberare gas pericolosi.
+
+L'ozono è un gas tossico e irritante per le vie respiratorie. Deve essere generato e utilizzato in sistemi chiusi, con monitoraggio delle perdite, distruzione dell'ozono residuo e ventilazione adeguata.
+
+Nessuno dei due disinfettanti è innocuo nella forma concentrata. La sicurezza dipende dalla progettazione, dal contenimento, dalla formazione degli operatori e dal monitoraggio.
+
+### Conservazione e trasporto
+
+Il cloro per il trattamento dell'acqua può essere fornito in diverse forme: gas compresso, ipoclorito di sodio in soluzione o ipoclorito di calcio solido. Ogni forma ha requisiti specifici di stoccaggio e sicurezza. Le soluzioni di ipoclorito possono degradarsi durante la conservazione, soprattutto in presenza di calore e luce.
+
+L'ozono, invece, viene normalmente prodotto sul posto mediante scarica elettrica o altre tecnologie di generazione. Non è generalmente trasportato come prodotto commerciale stabile per il trattamento ordinario dell'acqua.
+
+### Requisiti operativi e costi
+
+Un impianto a ozono richiede generatori, alimentazione elettrica, gas di alimentazione adeguatamente preparato, sistemi di contatto gas-liquido, monitoraggio e distruzione dell'ozono residuo. La produzione è energeticamente impegnativa e richiede personale specializzato.
+
+Un impianto di clorazione richiede sistemi di stoccaggio e dosaggio, pompe, misurazione del residuo e misure di sicurezza per i prodotti chimici. In molti casi è più semplice da installare e gestire, ma il costo dipende dalla forma del reagente, dalla scala, dalla logistica e dalle condizioni locali.
+
+Non esiste un costo universale per metro cubo valido per ogni impianto. Il confronto economico deve includere investimento iniziale, energia, reagenti, manutenzione, formazione, gestione dei sottoprodotti e disinfezione secondaria.
+
+### Applicazioni
+
+| Applicazione | Ozono | Cloro |
+|---|---|---|
+| Disinfezione primaria dell'acqua | Molto utilizzato in impianti progettati per ozonazione | Ampiamente utilizzato |
+| Residuo nella rete | Non persistente | Sì, se correttamente dosato |
+| Inattivazione di Cryptosporidium | Può essere efficace con dose e CT adeguati | Scarsa efficacia alle condizioni convenzionali |
+| Controllo di odori e sapori | Efficace per diversi composti | Possibile, ma con limiti e rischio di odori |
+| Ossidazione di ferro e manganese | Utilizzato | Utilizzato in alcuni processi |
+| Disinfezione secondaria | Non adatto a mantenere il residuo | Adatto |
+| Trattamento di acque reflue | Possibile trattamento terziario e di micropollutanti | Disinfezione in specifiche condizioni |
+
+**Conclusione:** l'ozono è un potente ossidante e disinfettante primario, ma non fornisce protezione residua. Il cloro è particolarmente utile per mantenere la disinfezione durante la distribuzione. In molti sistemi le due tecnologie sono complementari.
+
+## 95. Ozono vs. biossido di cloro
+
+Il biossido di cloro (ClO₂) è un disinfettante ossidante utilizzato nel trattamento dell'acqua potabile e in alcuni processi industriali. Non deve essere confuso con il cloro libero: il biossido di cloro è una specie chimica distinta, con un meccanismo di reazione e un profilo di sottoprodotti differenti.
+
+### Struttura chimica
+
+L'ozono è formato da tre atomi di ossigeno e ha formula O₃.
+
+Il biossido di cloro è formato da un atomo di cloro e due atomi di ossigeno, con formula ClO₂. È una molecola neutra, con struttura angolare e un elettrone spaiato; viene quindi descritto come radicale.
+
+La presenza del cloro nella molecola non significa che il biossido di cloro agisca come cloro libero o che generi necessariamente gli stessi sottoprodotti.
+
+### Potenziale ossidante
+
+Il potenziale di riduzione del biossido di cloro dipende dalla semireazione e dalle condizioni. Per la coppia ClO₂/ClO₂⁻ si riportano valori intorno a +0,95–1,0 V in condizioni standard acide specifiche, mentre per altre semireazioni e condizioni si possono ottenere valori differenti.
+
+Per l'ozono, la coppia O₃/O₂ presenta un potenziale standard di circa +2,07 V in ambiente acido.
+
+Non è corretto confrontare questi numeri senza indicare la semireazione. Il potenziale elettrochimico non descrive da solo la velocità di disinfezione, la selettività o la dose necessaria.
+
+### Meccanismo di reazione
+
+Il biossido di cloro agisce principalmente attraverso trasferimenti di elettroni e ossidazione di specifici gruppi chimici. Può reagire con residui amminoacidici, composti solforati e altre molecole organiche.
+
+A differenza del cloro libero, non reagisce significativamente con l'ammoniaca per formare clorammine nelle normali condizioni di trattamento. Questo può rappresentare un vantaggio in alcune acque contenenti ammoniaca.
+
+L'ozono può reagire direttamente con doppi legami e gruppi funzionali elettron-ricchi, oltre a partecipare a percorsi radicalici. La sua reattività è spesso più ampia e può essere meno selettiva.
+
+### Disinfezione e microrganismi
+
+Entrambi possono inattivare batteri e virus. Il biossido di cloro è utilizzato anche per il controllo di sapori, odori e alcuni contaminanti inorganici.
+
+Per alcuni protozoi, il biossido di cloro può essere efficace, ma i valori CT richiesti variano molto. In particolare, Cryptosporidium può richiedere condizioni di trattamento difficili da raggiungere in impianti convenzionali.
+
+L'ozono può offrire una maggiore rapidità di inattivazione per alcuni organismi e condizioni, ma la prestazione deve essere validata per il patogeno bersaglio.
+
+### Residuo disinfettante
+
+L'ozono non lascia un residuo persistente in grado di proteggere a lungo la rete di distribuzione.
+
+Il biossido di cloro può lasciare un residuo misurabile, ma questo diminuisce durante il trasporto e le reazioni con i componenti dell'acqua. Non è sempre una scelta ideale per la disinfezione secondaria, soprattutto quando la domanda di disinfettante è elevata o la rete è estesa.
+
+### Sottoprodotti
+
+L'ozono può produrre bromato in presenza di bromuro, oltre a composti organici ossidati come aldeidi e acidi carbossilici.
+
+Il biossido di cloro produce principalmente clorito (ClO₂⁻) e può generare anche clorato (ClO₃⁻). Questi sottoprodotti devono essere monitorati e controllati secondo i requisiti normativi applicabili.
+
+Il biossido di cloro tende a formare meno sottoprodotti organoalogenati tipici della clorazione con cloro libero, ma ciò non significa che sia privo di sottoprodotti o di rischi.
+
+### Sicurezza, stoccaggio e trasporto
+
+Il biossido di cloro è un gas reattivo e instabile che non può essere normalmente trasportato o conservato come gas concentrato. Per il trattamento dell'acqua viene generalmente generato sul posto, a partire da precursori come il clorito di sodio.
+
+Le soluzioni acquose possono essere gestite secondo specifiche condizioni tecniche, ma la concentrazione e lo stoccaggio richiedono controlli rigorosi.
+
+Anche l'ozono viene generato sul posto. Entrambi richiedono sistemi di contenimento, monitoraggio e procedure per la gestione delle perdite.
+
+Il biossido di cloro può provocare irritazione respiratoria e altri effetti tossici; l'ozono è un irritante polmonare e un potente ossidante. La gestione deve rispettare le norme di sicurezza chimica e i limiti di esposizione professionale.
+
+### Applicazioni industriali
+
+| Applicazione | Ozono | Biossido di cloro |
+|---|---|---|
+| Acqua potabile | Disinfezione primaria e ossidazione | Disinfezione e controllo di contaminanti |
+| Reti di distribuzione | Non mantiene residuo | Può mantenere un residuo limitato |
+| Controllo di sapori e odori | Ampiamente utilizzato | Utilizzato |
+| Controllo di ferro e manganese | Utilizzato | Utilizzato |
+| Industria della carta | Sbiancamento e ossidazione | Sbiancamento della pasta di cellulosa |
+| Industria alimentare | Disinfezione in processi controllati | Disinfezione in applicazioni autorizzate |
+| Acque reflue | Ossidazione e trattamento terziario | Disinfezione in specifici impianti |
+
+**Conclusione:** ozono e biossido di cloro sono disinfettanti distinti. L'ozono è spesso più rapido per determinati obiettivi ossidativi, ma non lascia residuo; il biossido di cloro può fornire un residuo temporaneo, ma richiede il controllo di clorito e clorato.
+
+## 96. Ozono vs. perossido di idrogeno
+
+Il perossido di idrogeno (H₂O₂), noto anche come acqua ossigenata, è un ossidante utilizzato in disinfezione, trattamento delle acque, industria alimentare e processi chimici. Come l'ozono, può generare specie reattive dell'ossigeno, ma presenta proprietà di stabilità e gestione differenti.
+
+### Proprietà chimiche e struttura
+
+L'ozono è un gas triatomico, mentre il perossido di idrogeno è una molecola composta da due atomi di idrogeno e due di ossigeno, con struttura non planare e legame perossidico O–O.
+
+L'ozono è instabile e tende a decomporsi in ossigeno. Il perossido di idrogeno è disponibile come soluzione acquosa a concentrazioni differenti e può essere conservato in contenitori compatibili, al riparo da contaminanti, calore e luce secondo le indicazioni del produttore.
+
+### Potere ossidante
+
+Il potenziale standard di riduzione della coppia H₂O₂/H₂O è circa +1,78 V in ambiente acido. Per la coppia O₃/O₂ il valore è circa +2,07 V in ambiente acido.
+
+Questi valori non sono direttamente equivalenti all'efficacia pratica. Il perossido di idrogeno può essere relativamente lento in assenza di attivazione, mentre l'ozono può reagire rapidamente con determinati gruppi funzionali.
+
+### Cinetica e selettività
+
+L'ozono può reagire rapidamente con composti organici insaturi, aromatici e altre sostanze. La sua reattività diretta può essere selettiva per alcuni gruppi chimici.
+
+Il perossido di idrogeno può reagire lentamente con numerosi contaminanti, ma la sua reattività aumenta in presenza di catalizzatori, ioni metallici, luce UV o altri attivatori.
+
+Questa caratteristica rende H₂O₂ particolarmente importante nei processi di ossidazione avanzata, dove viene combinato con altre tecnologie per produrre radicali molto reattivi.
+
+### Formazione di radicali ossidrile
+
+Il radicale ossidrile (•OH) è una specie altamente reattiva e poco selettiva. In acqua può reagire rapidamente con numerosi contaminanti organici.
+
+Il perossido di idrogeno può produrre radicali ossidrile attraverso la reazione di Fenton:
+
+**Fe²⁺ + H₂O₂ → Fe³⁺ + •OH + OH⁻**
+
+La reazione può essere favorita da condizioni controllate di pH e dalla presenza di ferro disponibile.
+
+Anche l'ozono può generare radicali ossidrile attraverso percorsi di decomposizione, soprattutto in condizioni alcaline o in combinazione con perossido di idrogeno.
+
+È importante distinguere l'ozono come ossidante molecolare dalla chimica radicalica che può derivare dalla sua decomposizione.
+
+### Disinfezione
+
+Entrambi possono inattivare microrganismi, ma la loro efficacia dipende dalla concentrazione, dal tempo di contatto, dalla temperatura, dal pH e dalla presenza di materia organica.
+
+L'ozono è spesso utilizzato per la disinfezione dell'acqua e per l'ossidazione di contaminanti. Il perossido di idrogeno è impiegato in processi di disinfezione, sterilizzazione e trattamento di superfici, con formulazioni e condizioni specifiche.
+
+Non è corretto assumere che una concentrazione di perossido di idrogeno sia equivalente a una concentrazione di ozono. La dose efficace deve essere determinata per ogni processo.
+
+### Trattamento dell'acqua
+
+L'ozono viene utilizzato per:
+
+- disinfezione primaria;
+- ossidazione di ferro e manganese;
+- controllo di odori e sapori;
+- trasformazione di composti organici;
+- pretrattamento prima della filtrazione biologica;
+- processi di ossidazione avanzata.
+
+Il perossido di idrogeno viene utilizzato per:
+
+- ossidazione di contaminanti specifici;
+- trattamento di acque industriali;
+- processi Fenton;
+- combinazioni UV/H₂O₂;
+- combinazioni O₃/H₂O₂.
+
+Il perossido da solo non garantisce sempre una disinfezione rapida dell'acqua potabile. La sua utilità dipende dall'obiettivo e dalla presenza di sistemi di attivazione.
+
+### Stabilità e conservazione
+
+L'ozono deve generalmente essere prodotto sul posto e utilizzato rapidamente. Il perossido di idrogeno può essere stoccato in soluzione, ma deve essere protetto da contaminazioni, calore e materiali incompatibili.
+
+Le soluzioni concentrate di H₂O₂ sono ossidanti pericolosi e possono causare gravi ustioni. La stabilità dipende dalla concentrazione, dal materiale del contenitore e dalle condizioni di conservazione.
+
+### Sicurezza e sottoprodotti
+
+L'ozono è pericoloso per inalazione e richiede contenimento del gas. Il perossido di idrogeno può provocare irritazione e ustioni cutanee e oculari; le soluzioni concentrate comportano rischi aggiuntivi.
+
+La decomposizione del perossido produce principalmente acqua e ossigeno, ma le reazioni con contaminanti possono generare prodotti intermedi e sottoprodotti che devono essere valutati.
+
+L'ozono può produrre bromato in acque contenenti bromuro e composti organici ossidati. La combinazione di ozono e perossido può modificare il profilo dei prodotti di trasformazione e richiede una valutazione specifica.
+
+**Conclusione:** l'ozono è un ossidante gassoso molto reattivo, mentre il perossido di idrogeno è un ossidante liquido più facilmente conservabile. In molti processi non sono concorrenti diretti: vengono combinati per generare specie reattive e migliorare il trattamento di contaminanti difficili.
+
+## 97. Ozono vs. disinfezione UV
+
+L'ozono e la radiazione ultravioletta sono due tecnologie utilizzate per la disinfezione dell'acqua, ma agiscono attraverso meccanismi completamente diversi.
+
+L'ozono è un trattamento chimico: reagisce con le strutture biologiche e con i contaminanti. La radiazione UV è un trattamento fisico: trasferisce energia ai microrganismi e provoca danni al loro materiale genetico.
+
+### Trattamento chimico vs. trattamento fisico
+
+L'ozono deve essere prodotto, trasferito nell'acqua e mantenuto a una concentrazione adeguata per il tempo di contatto richiesto.
+
+La disinfezione UV utilizza lampade o sorgenti UV che emettono radiazione a lunghezze d'onda germicide. Nei sistemi per acqua potabile viene comunemente utilizzata la regione UV-C, con particolare riferimento a lunghezze d'onda intorno a 254 nm per le lampade a bassa pressione.
+
+### Meccanismo di inattivazione microbica
+
+L'ozono ossida componenti della membrana, proteine, enzimi e altre strutture cellulari. Può danneggiare diversi tipi di microrganismi attraverso reazioni chimiche.
+
+La radiazione UV-C provoca modificazioni fotochimiche nel DNA e nell'RNA, interferendo con la replicazione e la capacità del microrganismo di riprodursi.
+
+La UV non deve necessariamente distruggere fisicamente il microrganismo: è sufficiente che il danno al materiale genetico impedisca la replicazione o l'infezione.
+
+### Efficacia contro i microrganismi
+
+Entrambe le tecnologie possono essere efficaci contro batteri, virus e protozoi, ma la sensibilità varia in funzione della specie.
+
+La UV è particolarmente utile per inattivare protozoi resistenti alla clorazione, come Cryptosporidium e Giardia, se viene applicata una dose validata.
+
+L'ozono può inattivare numerosi microrganismi e può anche ossidare contaminanti chimici. Tuttavia, la presenza di materia organica e altre sostanze che consumano ozono può ridurre la dose disponibile per la disinfezione.
+
+### Tempo di contatto e dose
+
+Per l'ozono, il trattamento viene valutato attraverso concentrazione residua e tempo di contatto, spesso descritti con il parametro CT.
+
+Per la UV, la dose è espressa in mJ/cm² e dipende dall'intensità della radiazione e dal tempo di esposizione. La dose effettiva deve essere validata rispetto a portata, geometria del reattore, trasmittanza UV e caratteristiche dei microrganismi bersaglio.
+
+Non è possibile confrontare direttamente un valore CT dell'ozono con una dose UV: sono grandezze fisiche differenti.
+
+### Dipendenza dalla qualità dell'acqua
+
+L'ozono viene consumato dalle sostanze presenti nell'acqua. Una domanda elevata di ozono può ridurre la quantità disponibile per la disinfezione.
+
+La UV dipende dalla trasparenza dell'acqua alla radiazione. Torbidità, colore, sostanze disciolte e particelle sospese possono schermare i microrganismi e ridurre la dose ricevuta.
+
+Per entrambe le tecnologie, un pretrattamento adeguato può migliorare le prestazioni.
+
+### Residuo disinfettante
+
+Né l'ozono né la UV garantiscono un residuo disinfettante persistente nella rete di distribuzione.
+
+Dopo il trattamento UV non rimane un agente chimico che continui a inattivare i microrganismi. Dopo l'ozonazione, l'ozono residuo si decompone rapidamente e non protegge stabilmente l'acqua distribuita.
+
+Per questo motivo, nei sistemi che richiedono protezione lungo la rete, la UV o l'ozono possono essere seguiti da clorazione o da un altro sistema di disinfezione secondaria.
+
+### Apparecchiature e manutenzione
+
+Un impianto UV richiede:
+
+- lampade o sorgenti UV;
+- reattore;
+- alimentatori;
+- sensori di intensità;
+- monitoraggio della portata;
+- controllo della trasmittanza UV;
+- pulizia delle guaine protettive;
+- sostituzione periodica delle lampade.
+
+Un impianto a ozono richiede:
+
+- generatore;
+- sistema di alimentazione con aria secca o ossigeno;
+- iniettore o sistema di trasferimento gas-liquido;
+- vasca o reattore di contatto;
+- misurazione dell'ozono;
+- distruttore dell'ozono residuo;
+- sistemi di sicurezza e rilevamento perdite.
+
+### Consumo energetico e costi
+
+La UV richiede energia elettrica per alimentare le lampade e i sistemi ausiliari. Il consumo dipende dalla potenza, dalla portata e dalla dose richiesta.
+
+L'ozono richiede energia per la produzione del gas, oltre a sistemi di trasferimento e trattamento dei residui. La complessità impiantistica e i costi di gestione possono essere superiori, soprattutto negli impianti di dimensioni medio-grandi.
+
+Non esiste una tecnologia sempre meno costosa: la valutazione deve considerare qualità dell'acqua, portata, obiettivo di trattamento, energia, manutenzione e necessità di disinfezione secondaria.
+
+### Limitazioni
+
+| Aspetto | Ozono | UV |
+|---|---|---|
+| Meccanismo | Ossidazione chimica | Danno fotochimico a DNA/RNA |
+| Ossidazione di contaminanti chimici | Sì | Limitata senza processi UV avanzati |
+| Inattivazione di microrganismi | Sì | Sì |
+| Residuo nella rete | No | No |
+| Dipendenza dalla torbidità | Indiretta, per domanda di ozono e trasferimento | Elevata se la trasmittanza UV è ridotta |
+| Sottoprodotti | Bromato e prodotti di ossidazione | Generalmente pochi alle dosi convenzionali, ma possibili trasformazioni fotochimiche |
+| Energia | Generazione e trasferimento dell'ozono | Alimentazione delle lampade |
+| Manutenzione | Generatore, contattore e distruttore | Lampade, guaine e sensori |
+| Ossidazione di ferro e manganese | Possibile | Non è la funzione tipica |
+
+**Conclusione:** l'ozono combina disinfezione e ossidazione chimica; la UV inattiva microrganismi senza aggiungere un ossidante all'acqua. Sono tecnologie complementari, soprattutto nei sistemi in cui è necessario controllare sia il rischio microbiologico sia i contaminanti chimici.
+
+## 98. Ozono vs. purificatori d'aria e filtrazione
+
+L'ozono viene talvolta promosso come tecnologia per purificare l'aria, ma la sua capacità ossidante non lo rende automaticamente un sistema sicuro o efficace per la qualità dell'aria indoor.
+
+La filtrazione HEPA, il carbone attivo, la ventilazione e alcune tecnologie UV svolgono funzioni differenti. Per valutare un purificatore è necessario distinguere tra particelle, gas, odori e contaminanti biologici.
+
+### Ossidazione con ozono
+
+L'ozono reagisce con alcuni composti presenti nell'aria, tra cui sostanze organiche volatili e molecole responsabili di odori.
+
+Tuttavia, le reazioni non portano necessariamente alla completa mineralizzazione dei contaminanti. Possono produrre composti secondari, tra cui aldeidi, chetoni e particelle organiche secondarie.
+
+L'ozono può inoltre reagire con terpeni presenti in profumi, deodoranti, detergenti e prodotti per la pulizia, generando sottoprodotti potenzialmente irritanti.
+
+Per questo motivo l'ozono non è una soluzione appropriata per purificare l'aria in ambienti occupati.
+
+### Filtrazione HEPA
+
+I filtri HEPA sono progettati per rimuovere particelle sospese nell'aria attraverso meccanismi di intercettazione, impatto inerziale e diffusione.
+
+Sono efficaci per ridurre:
+
+- polveri;
+- pollini;
+- spore di muffe;
+- particelle di fumo;
+- aerosol contenenti microrganismi;
+- particolato fine, se il sistema è correttamente dimensionato.
+
+Un filtro HEPA non rimuove in modo significativo i gas e molti composti organici volatili. Per questo può essere combinato con carbone attivo o altri materiali adsorbenti.
+
+La prestazione di un purificatore dipende anche dalla portata d'aria pulita (CADR), dalle dimensioni della stanza, dalla posizione del dispositivo e dal tempo di funzionamento.
+
+### Carbone attivo
+
+Il carbone attivo rimuove alcuni gas e composti organici attraverso adsorbimento sulla superficie porosa.
+
+Può contribuire alla riduzione di odori e di specifici composti organici volatili, ma la sua efficacia dipende dal tipo di contaminante, dalla quantità di materiale, dall'umidità, dal tempo di contatto e dal grado di saturazione.
+
+Non tutti i filtri al carbone attivo sono equivalenti. Uno strato sottile può avere capacità limitata e saturarsi rapidamente.
+
+### UV-C
+
+La radiazione UV-C può inattivare microrganismi che ricevono una dose sufficiente. Viene utilizzata in alcuni sistemi HVAC, dispositivi di disinfezione dell'aria e apparecchiature professionali.
+
+La UV-C non rimuove particelle o gas dall'aria. Per ottenere un'efficacia adeguata è necessario controllare lunghezza d'onda, intensità, tempo di esposizione e geometria del sistema.
+
+Alcuni dispositivi UV possono produrre ozono se utilizzano lampade con emissioni a lunghezze d'onda che favoriscono la formazione di O₃. I dispositivi destinati agli ambienti occupati devono essere progettati per evitare emissioni pericolose.
+
+### Ionizzazione ed elettrofiltrazione
+
+Gli ionizzatori caricano elettricamente le particelle, che possono depositarsi su superfici o essere raccolte da piastre. Gli elettrofiltri possono ridurre il particolato, ma non sono equivalenti ai filtri HEPA.
+
+Alcuni dispositivi a ionizzazione, plasma o scarica elettrica possono generare ozono come sottoprodotto. La quantità emessa dipende dal progetto e dalle condizioni operative.
+
+### Rimozione delle particelle e dei gas
+
+| Tecnologia | Particelle | Gas e VOC | Microrganismi | Possibili sottoprodotti |
+|---|---|---|---|---|
+| HEPA | Molto efficace | Limitata | Rimuove aerosol e particelle biologiche | Nessun sottoprodotto chimico previsto dal normale filtraggio |
+| Carbone attivo | Limitata | Può adsorbire molti gas e VOC | Non è un disinfettante universale | Saturazione e possibile rilascio se gestito male |
+| UV-C | Non rimuove particelle | Non rimuove direttamente i gas | Può inattivare microrganismi esposti | Dipende dalla sorgente e dalla chimica dell'aria |
+| Ionizzazione | Può favorire la deposizione o raccolta | Limitata | Prestazioni variabili | Possibile produzione di ozono e altri sottoprodotti |
+| Ozono | Non filtra particelle | Ossidazione di alcuni gas, ma non rimozione selettiva garantita | Può inattivare microrganismi a concentrazioni elevate | Aldeidi, particelle secondarie e altri prodotti di reazione |
+
+### Rischi per la salute e idoneità residenziale
+
+L'ozono è un irritante respiratorio. L'EPA statunitense sconsiglia l'uso di generatori di ozono in ambienti occupati e sottolinea che, alle concentrazioni compatibili con la tutela della salute, l'ozono non rimuove efficacemente virus, batteri, muffe e altri contaminanti biologici dall'aria indoor.
+
+Per la maggior parte delle abitazioni, le strategie più appropriate sono:
+
+1. eliminare o ridurre la sorgente di inquinamento;
+2. aumentare la ventilazione con aria esterna quando le condizioni esterne lo consentono;
+3. utilizzare un purificatore HEPA correttamente dimensionato per il particolato;
+4. aggiungere carbone attivo quando l'obiettivo è ridurre specifici gas o odori;
+5. mantenere e sostituire i filtri secondo le indicazioni del produttore;
+6. evitare dispositivi che generano intenzionalmente ozono negli ambienti occupati.
+
+**Conclusione:** per l'aria domestica, HEPA e carbone attivo rispondono a obiettivi più specifici e controllabili. L'ozono non è un sostituto sicuro della filtrazione e può peggiorare la qualità dell'aria attraverso l'esposizione diretta e la formazione di inquinanti secondari.
+
+## 99. Ozono vs. tecnologie di ossidazione avanzata
+
+Le tecnologie di ossidazione avanzata, note come AOP (*Advanced Oxidation Processes*), sono processi progettati per generare specie chimiche molto reattive, soprattutto radicali ossidrile (•OH), con l'obiettivo di trasformare contaminanti difficili da rimuovere con i trattamenti convenzionali.
+
+L'ozono può essere utilizzato da solo come ossidante oppure combinato con perossido di idrogeno, radiazione UV o catalizzatori. In questi casi il processo può diventare un sistema di ossidazione avanzata.
+
+### Che cosa sono le AOP?
+
+Le AOP sono tecnologie fisico-chimiche che sfruttano specie reattive a vita breve per ossidare contaminanti organici e, in alcuni casi, inattivare microrganismi.
+
+Il radicale ossidrile è particolarmente importante perché presenta un potenziale di ossidazione elevato, circa +2,8 V per la coppia •OH/H₂O in condizioni acide standard. È altamente reattivo e reagisce rapidamente con numerosi composti organici.
+
+La sua vita è molto breve: reagisce vicino al punto in cui viene generato. Per questo motivo, l'efficienza del processo dipende dalla produzione del radicale nel luogo e nel momento in cui è presente il contaminante bersaglio.
+
+### Ozonazione convenzionale
+
+L'ozonazione convenzionale utilizza O₃ disciolto nell'acqua per ossidare contaminanti e inattivare microrganismi.
+
+L'ozono può reagire direttamente con determinati gruppi funzionali, in particolare doppi legami e strutture aromatiche attivate. Può inoltre decomporsi e produrre radicali ossidrile.
+
+L'ozonazione è utile per:
+
+- disinfezione;
+- controllo di odori e sapori;
+- ossidazione di ferro e manganese;
+- trasformazione di composti organici;
+- trattamento di alcuni contaminanti emergenti;
+- pretrattamento prima di filtrazione biologica o adsorbimento.
+
+Non tutti i contaminanti vengono mineralizzati completamente. Spesso l'ozono trasforma molecole complesse in prodotti intermedi più piccoli e biodegradabili.
+
+### Ozono e perossido di idrogeno (O₃/H₂O₂)
+
+La combinazione ozono/perossido di idrogeno è nota come processo peroxone.
+
+L'aggiunta di H₂O₂ può favorire la decomposizione dell'ozono e la formazione di radicali ossidrile attraverso una rete di reazioni radicaliche.
+
+L'obiettivo è aumentare la quota di ossidazione radicalica rispetto alla sola reazione diretta dell'ozono.
+
+Il processo può essere utile per contaminanti che reagiscono lentamente con O₃ ma rapidamente con •OH. Tuttavia, il rapporto tra ozono e perossido deve essere ottimizzato: una quantità eccessiva di perossido può anche consumare radicali e ridurre l'efficienza complessiva.
+
+### UV e perossido di idrogeno (UV/H₂O₂)
+
+In questo processo, la radiazione UV viene assorbita dal perossido di idrogeno, che può subire fotolisi:
+
+**H₂O₂ + hν → 2 •OH**
+
+I radicali ossidrile prodotti reagiscono con i contaminanti presenti nell'acqua.
+
+La tecnologia viene utilizzata per il trattamento di contaminanti organici persistenti e sostanze che non vengono eliminate facilmente con la sola disinfezione.
+
+L'efficacia dipende da:
+
+- concentrazione di H₂O₂;
+- dose UV;
+- trasmittanza UV;
+- portata;
+- pH;
+- concentrazione del contaminante;
+- presenza di scavenger radicalici;
+- qualità complessiva dell'acqua.
+
+La materia organica naturale e gli ioni bicarbonato o carbonato possono consumare radicali e ridurre la quota disponibile per il contaminante bersaglio.
+
+### Processi Fenton e foto-Fenton
+
+Il processo Fenton utilizza ferro ferroso (Fe²⁺) e perossido di idrogeno per generare radicali ossidrile:
+
+**Fe²⁺ + H₂O₂ → Fe³⁺ + •OH + OH⁻**
+
+Nel processo foto-Fenton, la radiazione luminosa contribuisce a rigenerare Fe²⁺ da Fe³⁺ e può aumentare la produzione di specie reattive.
+
+Questi processi possono degradare contaminanti organici difficili, ma richiedono un controllo accurato di pH, dosaggio del ferro, dosaggio del perossido e gestione dei fanghi o dei residui contenenti ferro.
+
+Il processo Fenton classico funziona generalmente meglio in ambiente acido; questo può richiedere regolazione del pH prima e dopo il trattamento.
+
+### Fotocatalisi
+
+La fotocatalisi utilizza materiali semiconduttori, come il biossido di titanio (TiO₂), che assorbono luce con energia sufficiente a generare coppie elettrone-lacuna.
+
+Queste cariche possono partecipare a reazioni con acqua, ossigeno e altre specie, producendo radicali ossidrile e altre specie reattive.
+
+La fotocatalisi può essere applicata a superfici, aria e acqua, ma l'efficienza dipende dal catalizzatore, dalla lunghezza d'onda, dall'intensità luminosa, dalla superficie disponibile, dal trasferimento di massa e dalla ricombinazione delle cariche.
+
+La difficoltà di separare e recuperare il catalizzatore, la possibile disattivazione della superficie e la necessità di illuminazione adeguata sono alcuni dei limiti per l'applicazione su larga scala.
+
+### Confronto tra le tecnologie
+
+| Tecnologia | Principale meccanismo | Specie reattive | Vantaggio principale | Limite caratteristico |
+|---|---|---|---|---|
+| Ozonazione | Reazione diretta e decomposizione di O₃ | O₃, •OH in determinate condizioni | Disinfezione e ossidazione | Bromato, consumo di ozono e assenza di residuo |
+| O₃/H₂O₂ | Decomposizione accelerata dell'ozono | •OH e altre specie radicaliche | Maggiore ossidazione radicalica | Ottimizzazione del rapporto reagenti |
+| UV/H₂O₂ | Fotolisi del perossido | •OH | Degradazione di contaminanti organici | Dipendenza da trasmittanza UV e consumo radicalico |
+| Fenton | Reazione Fe²⁺/H₂O₂ | •OH | Ossidazione di contaminanti difficili | Controllo del pH e produzione di residui ferrici |
+| Foto-Fenton | Reazione Fenton assistita dalla luce | •OH e specie derivate dal ferro | Possibile aumento dell'efficienza | Necessità di luce e gestione del ferro |
+| Fotocatalisi | Attivazione di un semiconduttore | •OH, O₂•⁻ e altre specie | Possibile trattamento di contaminanti in diverse matrici | Recupero del catalizzatore e trasferimento di massa |
+
+### Efficienza di trattamento
+
+L'efficienza non deve essere misurata soltanto dalla diminuzione iniziale della concentrazione del contaminante. È necessario verificare:
+
+- rimozione del composto originario;
+- formazione di prodotti intermedi;
+- eventuale mineralizzazione;
+- tossicità residua;
+- biodegradabilità dei prodotti;
+- consumo di reagenti;
+- produzione di fanghi;
+- energia richiesta;
+- stabilità del processo;
+- costi complessivi.
+
+La scomparsa di una molecola dal campione non significa necessariamente che il contaminante sia stato trasformato in sostanze innocue.
+
+### Energia e costi operativi
+
+I fabbisogni energetici dipendono fortemente dalla qualità dell'acqua, dal contaminante, dalla concentrazione iniziale e dal livello di trattamento richiesto.
+
+L'ozonazione richiede energia per generare O₃ e trasferirlo nell'acqua. UV/H₂O₂ richiede energia per la radiazione e il dosaggio del reagente. Fenton richiede reagenti chimici e gestione dei residui. La fotocatalisi richiede una sorgente luminosa e un sistema che garantisca il contatto tra contaminante e catalizzatore.
+
+Non è scientificamente corretto affermare che una AOP sia sempre più efficiente o meno costosa di un'altra. La scelta deve essere effettuata attraverso prove di laboratorio, test pilota e valutazioni tecnico-economiche riferite all'acqua da trattare.
+
+### Sottoprodotti e impatto ambientale
+
+Le AOP possono trasformare contaminanti persistenti, ma possono anche produrre intermedi di reazione. Alcuni prodotti possono essere meno tossici del composto iniziale, altri possono mantenere o presentare una tossicità significativa.
+
+Nel caso dell'ozono, occorre valutare bromato e prodotti di ossidazione della materia organica. Nel caso dei processi UV/H₂O₂ e Fenton, occorre valutare la degradazione incompleta, i sottoprodotti organici e i residui dei reagenti.
+
+La verifica della tossicità residua è quindi una componente importante della validazione di un processo avanzato.
+
+### Applicazioni industriali
+
+Le AOP sono utilizzate o studiate per:
+
+- trattamento di acque reflue industriali;
+- rimozione di contaminanti farmaceutici;
+- trattamento di pesticidi e prodotti fitosanitari;
+- trasformazione di sostanze organiche persistenti;
+- trattamento di acque sotterranee contaminate;
+- trattamento di effluenti tessili e chimici;
+- pretrattamento per aumentare la biodegradabilità;
+- trattamento terziario di acque reflue.
+
+La scelta dipende dalla natura dei contaminanti e dall'obiettivo finale. Un processo efficace per un composto farmaceutico può non essere altrettanto efficace per un pesticida, un colorante o una miscela industriale complessa.
+
+**Conclusione:** l'ozono è sia un ossidante convenzionale sia un reagente di partenza per alcune tecnologie di ossidazione avanzata. Le combinazioni O₃/H₂O₂ e UV/H₂O₂, i processi Fenton e la fotocatalisi possono aumentare la produzione di specie radicaliche, ma richiedono ottimizzazione, controllo dei sottoprodotti e valutazione dei costi. Nessuna tecnologia è universalmente superiore: la scelta dipende dal contaminante, dalla matrice e dall'obiettivo di trattamento.
+
+## Sintesi generale: quale tecnologia scegliere?
+
+Il confronto tra ozono e le altre tecnologie mostra che la scelta deve essere basata sulla funzione richiesta, non su una graduatoria astratta della forza ossidante.
+
+| Obiettivo | Tecnologia spesso appropriata | Motivo principale |
+|---|---|---|
+| Mantenere un residuo disinfettante nell'acqua distribuita | Cloro o clorammine secondo il sistema | Residuo misurabile e persistente |
+| Disinfezione primaria e ossidazione dell'acqua | Ozono | Elevata reattività e capacità di ossidazione |
+| Controllo di specifici sottoprodotti organici della clorazione | Ozono o biossido di cloro, previa valutazione | Possibile riduzione di alcuni DBP, ma formazione di altri sottoprodotti |
+| Disinfezione senza aggiunta di un ossidante chimico | UV | Inattivazione fotochimica |
+| Rimozione di particelle dall'aria indoor | HEPA | Filtrazione fisica del particolato |
+| Rimozione di alcuni gas e VOC indoor | Carbone attivo | Adsorbimento |
+| Degradazione di contaminanti organici persistenti | AOP selezionata in base alla matrice | Produzione di specie altamente reattive |
+| Ossidazione di contaminanti con attivazione radicalica | O₃/H₂O₂ o UV/H₂O₂ | Formazione di radicali ossidrile |
+
+La regola generale è che **la tecnologia migliore è quella che raggiunge l'obiettivo richiesto con efficacia verificata, sottoprodotti controllati, rischio accettabile e costo sostenibile**. La potenza ossidante, da sola, non è un criterio sufficiente.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# PART XIII — Ozono e sostenibilità ambientale
+
+## 100. Impatto ambientale dell'ozono
+
+### 100.1 L'ozono nell'ambiente: una molecola, ruoli differenti
+
+L'ozono (O₃) è un gas naturalmente presente nell'atmosfera terrestre. Il suo impatto ambientale dipende soprattutto da dove si trova, dalla concentrazione, dalla durata dell'esposizione e dalle reazioni chimiche in cui è coinvolto.
+
+La distinzione fondamentale è tra:
+
+- **Ozono stratosferico:** si trova principalmente nella stratosfera, dove assorbe gran parte della radiazione ultravioletta UV-B e praticamente tutta la radiazione UV-C solare che raggiunge la regione. In questo modo contribuisce a proteggere gli organismi e gli ecosistemi dalla radiazione ultravioletta biologicamente dannosa.
+- **Ozono troposferico:** è presente nella parte più bassa dell'atmosfera, compresa l'aria respirata dagli organismi terrestri. Quando si trova vicino al suolo in concentrazioni elevate, è un inquinante secondario che può danneggiare salute umana, vegetazione e animali.
+- **Ozono utilizzato nei processi industriali:** viene prodotto intenzionalmente per sfruttarne il potere ossidante e disinfettante, ad esempio nel trattamento dell'acqua e delle acque reflue. Il suo impatto dipende dal processo produttivo, dal consumo energetico, dal controllo delle emissioni e dalla gestione dei sottoprodotti.
+
+L'ozono stratosferico e quello troposferico sono la stessa molecola, ma svolgono funzioni ambientali differenti. Non è quindi corretto affermare genericamente che l'ozono sia benefico o dannoso per l'ambiente senza specificare il compartimento atmosferico e il tipo di esposizione.
+
+### 100.2 Ozono stratosferico e protezione degli ecosistemi
+
+Circa il 90% dell'ozono atmosferico totale si trova nella stratosfera. La sua distribuzione forma lo strato di ozono, una regione che assorbe la maggior parte della radiazione UV-B e quasi tutta la radiazione UV-C solare.
+
+La radiazione UV-B, con lunghezze d'onda comprese approssimativamente tra 280 e 315 nm, può danneggiare DNA, proteine, membrane cellulari e apparati fotosintetici. L'intensità degli effetti dipende dalla dose ricevuta, dalla durata dell'esposizione, dalla specie biologica e dalle capacità di protezione e riparazione dell'organismo.
+
+La diminuzione dell'ozono stratosferico aumenta la quantità di UV-B che può raggiungere la superficie terrestre. Le conseguenze potenziali interessano:
+
+- crescita e sviluppo delle piante;
+- produttività del fitoplancton;
+- sviluppo embrionale e larvale di organismi acquatici;
+- sopravvivenza di alcuni microrganismi;
+- interazioni ecologiche e catene alimentari;
+- processi biologici e biogeochimici negli ecosistemi terrestri e marini.
+
+La protezione dello strato di ozono ha quindi un valore ecologico che va oltre la salute umana: contribuisce a mantenere condizioni di radiazione compatibili con il funzionamento degli ecosistemi.
+
+### 100.3 Ozono troposferico come inquinante ambientale
+
+L'ozono al suolo non viene normalmente emesso direttamente dalle principali fonti antropiche. Si forma nell'atmosfera attraverso reazioni fotochimiche che coinvolgono ossidi di azoto (NOₓ), composti organici volatili (COV), monossido di carbonio e luce solare.
+
+Le concentrazioni possono aumentare in presenza di:
+
+- emissioni del traffico stradale;
+- attività industriali e produzione energetica;
+- evaporazione di carburanti e solventi;
+- emissioni biogeniche di composti organici volatili;
+- condizioni meteorologiche favorevoli alla produzione fotochimica;
+- trasporto atmosferico di ozono e dei suoi precursori.
+
+L'ozono troposferico può essere presente anche in aree rurali, montane e naturali lontane dalle fonti di emissione, perché i precursori e l'ozono stesso possono essere trasportati dalle masse d'aria.
+
+Il suo impatto ecologico non è limitato alle aree urbane: può raggiungere foreste, coltivazioni, praterie e aree protette.
+
+### 100.4 Effetti sugli ecosistemi terrestri
+
+L'esposizione cronica o episodica all'ozono può modificare il funzionamento degli ecosistemi terrestri. Gli effetti più importanti derivano dall'ingresso dell'ozono nelle foglie attraverso gli stomi e dalle reazioni ossidative che avvengono nei tessuti vegetali.
+
+Le conseguenze possono includere:
+
+- riduzione della fotosintesi;
+- alterazione della crescita;
+- modificazioni della distribuzione della biomassa tra radici e parti aeree;
+- riduzione della produzione di semi e fiori;
+- cambiamenti nella qualità e quantità del foraggio;
+- variazioni della decomposizione della lettiera;
+- alterazione dei cicli del carbonio e dei nutrienti;
+- modificazioni delle interazioni tra piante, insetti, microrganismi e organismi erbivori.
+
+Gli effetti non sono necessariamente visibili. Una pianta può subire una riduzione della fotosintesi o della crescita senza mostrare sintomi fogliari evidenti.
+
+### 100.5 Danni alla vegetazione e perdita di produttività agricola
+
+L'ozono troposferico è un importante fattore di stress per le colture. Una volta entrato nelle foglie, può compromettere i processi fotosintetici e ridurre la quantità di carbonio disponibile per la crescita e la produzione agricola.
+
+Gli effetti dipendono dalla specie, dalla varietà, dallo stadio di sviluppo, dalla disponibilità idrica, dalla temperatura, dalla nutrizione e dalla quantità di ozono effettivamente assorbita.
+
+Una valutazione modellistica globale basata sui dati medi di esposizione del periodo 2010–2012 ha stimato perdite annuali di resa dovute all'ozono pari a:
+
+| Coltura | Perdita globale di resa stimata |
+|---|---:|
+| Soia | 12,4% |
+| Frumento | 7,1% |
+| Riso | 4,4% |
+| Mais | 6,1% |
+
+La perdita complessiva di produzione stimata nello studio era pari a circa 227 milioni di tonnellate all'anno.
+
+Questi valori sono stime modellistiche riferite a un periodo specifico, non misurazioni universali delle perdite attuali. Dipendono dalle concentrazioni simulate, dalle funzioni esposizione-risposta e dai modelli di assorbimento stomatico. Non devono essere interpretati come percentuali valide per ogni regione, varietà o stagione.
+
+La sensibilità relativa delle colture non è identica: la soia è generalmente molto sensibile, mentre il riso tende a presentare una sensibilità inferiore nelle comparazioni globali considerate. Anche all'interno della stessa specie possono esistere differenze genetiche importanti.
+
+### 100.6 Foreste e vegetazione naturale
+
+Le foreste possono essere esposte all'ozono per periodi prolungati, anche quando le concentrazioni non raggiungono picchi estremi. L'esposizione cumulativa può ridurre la crescita degli alberi e modificare la ripartizione delle risorse tra chioma e radici.
+
+Gli effetti potenziali comprendono:
+
+- riduzione dell'accrescimento del legno;
+- alterazione della fotosintesi;
+- invecchiamento anticipato delle foglie;
+- riduzione della biomassa radicale;
+- maggiore vulnerabilità ad altri stress;
+- cambiamenti nella competizione tra specie;
+- modificazioni della produzione di lettiera e della sostanza organica del suolo.
+
+L'ozono non agisce isolatamente. Siccità, temperature elevate, carenza di nutrienti, insetti fitofagi, patogeni e deposizione di azoto possono interagire con lo stress da ozono.
+
+Una pianta che presenta una ridotta crescita radicale, ad esempio, può diventare più vulnerabile alla siccità. Tuttavia, la risposta dipende dalla specie e dal contesto ecologico: non è corretto attribuire ogni declino forestale all'ozono senza valutare gli altri fattori.
+
+### 100.7 Interazioni con il suolo
+
+L'ozono troposferico può influenzare il suolo soprattutto indirettamente, attraverso le modificazioni fisiologiche della vegetazione.
+
+Se l'esposizione riduce la fotosintesi e la crescita radicale, può cambiare:
+
+- la quantità di carbonio trasferita al suolo attraverso radici e rizodeposizione;
+- la produzione e la composizione della lettiera;
+- la disponibilità di substrati organici per i microrganismi;
+- la decomposizione della materia organica;
+- il ciclo dell'azoto;
+- l'attività della comunità microbica del suolo.
+
+L'ozono può inoltre reagire direttamente con la materia organica e con componenti minerali nelle superfici del suolo, ma la sua persistenza nel suolo è limitata dalla forte reattività chimica.
+
+Gli effetti sul carbonio organico e sui processi biogeochimici dipendono dall'equilibrio tra riduzione della produzione vegetale, qualità della lettiera, decomposizione e attività microbica. Non è quindi possibile attribuire all'ozono una direzione universale dell'effetto sullo stoccaggio di carbonio nel suolo.
+
+### 100.8 Effetti sugli ecosistemi acquatici
+
+L'impatto dell'ozono sugli ecosistemi acquatici deve essere interpretato distinguendo due fenomeni.
+
+Il primo è l'effetto indiretto della riduzione dell'ozono stratosferico, che aumenta l'esposizione alla radiazione UV-B di organismi che vivono nelle acque superficiali.
+
+Il secondo riguarda l'ozono utilizzato direttamente nei processi di trattamento dell'acqua, quando il gas disciolto o i prodotti delle sue reazioni possono raggiungere l'ambiente acquatico.
+
+L'ozono atmosferico al suolo non deve essere confuso con l'ozono disciolto nell'acqua: si tratta di compartimenti ambientali e condizioni di esposizione differenti.
+
+L'ozono disciolto è un forte ossidante e può essere tossico per organismi acquatici se presente in concentrazioni sufficienti. In acqua marina, inoltre, può ossidare gli ioni bromuro formando specie ossidanti bromurate, tra cui acido ipobromoso e ione ipobromito. Queste specie possono persistere più a lungo dell'ozono stesso e contribuire alla tossicità residua.
+
+Per questo motivo, l'acqua trattata con ozono deve essere sottoposta a controlli adeguati prima dello scarico.
+
+### 100.9 Biodiversità e funzionamento degli ecosistemi
+
+L'ozono può influenzare la biodiversità sia direttamente sia indirettamente.
+
+Gli effetti diretti interessano soprattutto gli organismi esposti a concentrazioni dannose. Gli effetti indiretti possono derivare dalle modificazioni della vegetazione, della disponibilità di cibo, degli habitat e delle interazioni ecologiche.
+
+Esempi di possibili conseguenze sono:
+
+- cambiamenti nella competizione tra specie vegetali;
+- riduzione della produzione di semi;
+- modificazioni della qualità delle piante utilizzate dagli erbivori;
+- variazioni della disponibilità di nettare e polline;
+- alterazioni della decomposizione della lettiera;
+- modificazioni dei rapporti tra microrganismi e piante;
+- cambiamenti nella struttura e nella produttività degli habitat.
+
+Una specie vegetale sensibile all'ozono può perdere competitività rispetto a una specie più tollerante. Nel tempo, questo fenomeno può modificare la composizione di una comunità vegetale.
+
+La risposta della biodiversità non può però essere dedotta da un singolo parametro, come la concentrazione atmosferica di ozono. Occorre valutare l'esposizione biologicamente effettiva, la sensibilità delle specie e le interazioni con gli altri fattori ambientali.
+
+### 100.10 Ozono, chimica atmosferica e qualità dell'aria
+
+L'ozono è parte integrante della chimica ossidativa dell'atmosfera. Partecipa a reazioni con composti organici, ossidi di azoto e altri gas, influenzando la formazione e la rimozione di numerose sostanze.
+
+La sua presenza contribuisce alla capacità ossidante dell'atmosfera, insieme soprattutto al radicale ossidrile (OH) e ad altre specie reattive.
+
+La produzione fotochimica di ozono può essere collegata alla formazione di aerosol organici secondari attraverso l'ossidazione dei composti organici volatili. La chimica dell'ozono è quindi connessa non soltanto all'inquinamento gassoso, ma anche alla composizione del particolato atmosferico.
+
+Le reazioni dipendono da:
+
+- intensità della radiazione solare;
+- temperatura;
+- disponibilità di NOₓ;
+- concentrazione e natura dei COV;
+- umidità;
+- presenza di radicali;
+- trasporto e miscelazione atmosferica.
+
+La riduzione delle emissioni dei precursori è una delle strategie principali per limitare la formazione di ozono troposferico. L'efficacia delle misure dipende però dal regime chimico locale: in alcune aree la riduzione dei COV può avere un effetto importante, mentre in altre è essenziale ridurre gli NOₓ o intervenire su entrambi.
+
+### 100.11 Ozono e cambiamento climatico
+
+L'ozono è anche un gas serra. Assorbe radiazione infrarossa emessa dalla superficie terrestre e contribuisce al bilancio radiativo dell'atmosfera.
+
+Il suo effetto climatico dipende fortemente dalla distribuzione verticale e geografica:
+
+- l'ozono troposferico produce un effetto radiativo di riscaldamento;
+- l'ozono stratosferico assorbe radiazione ultravioletta e infrarossa e influenza la temperatura della stratosfera;
+- le variazioni dell'ozono stratosferico possono modificare la circolazione atmosferica e avere effetti climatici regionali;
+- le variazioni dell'ozono troposferico possono contribuire al riscaldamento e modificare la chimica atmosferica.
+
+L'IPCC classifica l'ozono tra i fattori climatici a vita relativamente breve (*short-lived climate forcers*). La sua permanenza atmosferica varia da poche ore a settimane nella troposfera, a seconda delle condizioni e della quota.
+
+L'IPCC AR6 ha valutato un effetto radiativo positivo dell'ozono troposferico prodotto dalle attività umane. Le stime dipendono dalla ricostruzione delle concentrazioni preindustriali e dalla distribuzione verticale dell'ozono.
+
+Il rapporto tra ozono e clima è bidirezionale. Il riscaldamento può modificare la chimica atmosferica, la circolazione, le emissioni naturali di precursori e la frequenza di condizioni meteorologiche favorevoli all'accumulo di ozono. In alcune aree inquinate, temperature più elevate possono favorire concentrazioni superficiali maggiori; in altre regioni, soprattutto remote, l'effetto può essere diverso.
+
+### 100.12 Sintesi dell'impatto ambientale
+
+L'impatto ambientale dell'ozono non può essere descritto con un giudizio unico.
+
+| Contesto | Ruolo dell'ozono | Principale conseguenza ambientale |
+|---|---|---|
+| Stratosfera | Assorbimento UV | Protezione degli ecosistemi dalla radiazione UV-B |
+| Troposfera | Inquinante secondario | Stress per vegetazione e organismi esposti |
+| Agricoltura | Ossidante fitotossico | Riduzione potenziale delle rese |
+| Foreste | Stress fisiologico | Alterazioni di crescita e funzionamento ecosistemico |
+| Suolo | Effetti diretti limitati e indiretti | Modificazioni dei flussi di carbonio e nutrienti |
+| Acque superficiali | Effetti indiretti via UV-B | Impatti su organismi fotosintetici e larve |
+| Acque trattate | Ossidante disciolto e precursore di sottoprodotti | Possibile tossicità residua |
+| Clima | Gas serra e agente radiativo | Contributo al riscaldamento e feedback atmosferici |
+
+La valutazione corretta deve quindi considerare la quota atmosferica, la concentrazione, la durata dell'esposizione, la sensibilità biologica e le condizioni chimiche e climatiche locali.
+
+## 101. Ozono e piante
+
+### 101.1 Come le piante sono esposte all'ozono
+
+Le piante terrestri sono esposte all'ozono troposferico attraverso l'aria che circonda foglie, aghi e altri organi vegetali.
+
+La quantità di ozono presente nell'atmosfera non coincide necessariamente con la quantità assorbita dalla pianta. L'assorbimento dipende dall'apertura degli stomi, dalle condizioni meteorologiche, dalla disponibilità d'acqua, dalla temperatura e dalle caratteristiche della specie.
+
+Gli stomi sono piccoli pori presenti soprattutto sulla superficie delle foglie. Regolano gli scambi gassosi necessari alla fotosintesi e alla traspirazione. Quando sono aperti, consentono anche l'ingresso dell'ozono.
+
+### 101.2 Assorbimento stomatico
+
+L'ozono entra prevalentemente nelle foglie attraverso gli stomi. Una volta raggiunto gli spazi intercellulari e la superficie umida delle cellule, reagisce con componenti del fluido apoplastico.
+
+La quantità assorbita dipende da:
+
+- concentrazione di ozono nell'aria;
+- velocità di trasporto verso la superficie fogliare;
+- apertura stomatica;
+- temperatura e umidità;
+- disponibilità idrica del suolo;
+- caratteristiche anatomiche e fisiologiche della pianta;
+- capacità di detossificazione e riparazione.
+
+Una pianta può essere esposta a una concentrazione atmosferica elevata ma assorbire meno ozono se gli stomi sono chiusi, ad esempio durante una forte siccità. Al contrario, condizioni favorevoli all'apertura stomatica possono aumentare l'assorbimento anche a concentrazioni atmosferiche non eccezionali.
+
+### 101.3 Concentrazione atmosferica e flusso stomatico
+
+Per valutare gli effetti dell'ozono sulla vegetazione si utilizzano due grandi categorie di indicatori.
+
+**Indicatori basati sulla concentrazione.** Descrivono la quantità di ozono presente nell'aria sopra la vegetazione. Un esempio è AOT40, che rappresenta l'accumulo delle concentrazioni orarie di ozono superiori a 40 ppb durante un periodo definito.
+
+**Indicatori basati sul flusso.** Stimano la quantità di ozono che attraversa gli stomi e raggiunge i tessuti vegetali. Gli indicatori di dose fitotossica, come POD (*Phytotoxic Ozone Dose*), considerano l'assorbimento stomatico e possono includere una soglia di flusso oltre la quale si presume che inizino effetti dannosi.
+
+Gli indicatori basati sul flusso sono biologicamente più vicini alla dose effettivamente ricevuta dalla pianta, perché considerano anche l'influenza delle condizioni ambientali e della fisiologia vegetale.
+
+AOT40 e POD non sono unità intercambiabili. Un valore di concentrazione atmosferica non deve essere presentato come equivalente a una dose assorbita.
+
+### 101.4 Stress ossidativo nelle cellule vegetali
+
+L'ozono è un forte ossidante. Quando entra nei tessuti fogliari, reagisce con molecole presenti nel fluido apoplastico, generando prodotti di ossidazione e specie reattive.
+
+Queste reazioni possono alterare:
+
+- membrane cellulari;
+- proteine;
+- lipidi;
+- sistemi antiossidanti;
+- segnali intracellulari;
+- attività di enzimi coinvolti nel metabolismo.
+
+Le piante possiedono sistemi di difesa, tra cui ascorbato, glutatione, enzimi antiossidanti e meccanismi di riparazione. La capacità di neutralizzare o limitare il danno varia tra specie, varietà, età della foglia e condizioni di crescita.
+
+Se la quantità di ozono assorbita supera la capacità di protezione e riparazione, lo stress ossidativo può diventare persistente e compromettere la fisiologia vegetale.
+
+### 101.5 Danni visibili alle foglie
+
+L'esposizione a ozono può causare sintomi visibili, ma la loro presenza e intensità variano notevolmente.
+
+Tra i sintomi possibili si trovano:
+
+- punteggiature clorotiche;
+- aree necrotiche;
+- bronzatura;
+- arrossamento o pigmentazione anomala;
+- senescenza anticipata;
+- riduzione della superficie fogliare funzionale.
+
+Alcuni sintomi possono apparire sulla superficie superiore della foglia, ma non esiste un aspetto visivo universale valido per tutte le specie.
+
+Inoltre, sintomi simili possono essere causati da siccità, carenze nutrizionali, patogeni, insetti, salinità o altri inquinanti. Una diagnosi basata soltanto sull'aspetto della foglia non è sufficiente per attribuire il danno all'ozono.
+
+### 101.6 Effetti sulla fotosintesi
+
+La fotosintesi consente alle piante di convertire energia luminosa, acqua e anidride carbonica in composti organici.
+
+L'ozono può ridurre la capacità fotosintetica attraverso diversi processi:
+
+- danno ossidativo ai componenti cellulari;
+- alterazione della funzione stomatica;
+- riduzione dell'efficienza biochimica della fotosintesi;
+- accelerazione della senescenza;
+- riduzione dell'area fogliare funzionale;
+- modificazione dell'allocazione del carbonio.
+
+L'effetto può essere misurato attraverso parametri come assimilazione netta di CO₂, conduttanza stomatica, fluorescenza della clorofilla e contenuto di pigmenti.
+
+Una riduzione della fotosintesi può limitare la produzione di carboidrati disponibili per la crescita, la formazione dei frutti, lo sviluppo delle radici e la produzione di semi.
+
+### 101.7 Ozono e clorofilla
+
+La clorofilla è il pigmento fondamentale per la cattura dell'energia luminosa durante la fotosintesi.
+
+L'esposizione a ozono può provocare una riduzione del contenuto di clorofilla, soprattutto quando è associata a stress ossidativo e senescenza anticipata.
+
+Tuttavia, il contenuto di clorofilla non è un indicatore esclusivo del danno da ozono. Può variare anche in risposta a età della foglia, luce, temperatura, disponibilità di azoto, siccità e altri stress.
+
+Per questo motivo, la valutazione del danno deve combinare pigmenti, scambi gassosi, sintomi fogliari e misure di crescita.
+
+### 101.8 Crescita e distribuzione della biomassa
+
+L'ozono può ridurre la crescita della pianta anche senza provocare una morte immediata o sintomi fogliari estesi.
+
+Una delle risposte osservate è la modificazione dell'allocazione del carbonio tra parti aeree e apparato radicale. La crescita delle radici può diminuire in misura significativa, riducendo la capacità della pianta di esplorare il suolo e assorbire acqua e nutrienti.
+
+Le conseguenze possono includere:
+
+- riduzione della biomassa totale;
+- minore sviluppo radicale;
+- variazione del rapporto tra radici e germogli;
+- riduzione della produzione di semi;
+- modificazioni della fioritura;
+- cambiamenti nella qualità del foraggio.
+
+Gli effetti dipendono dalla specie e dall'intensità dello stress. Alcune piante possono compensare parzialmente la perdita di funzionalità fogliare attraverso la produzione di nuove foglie o modificazioni dell'allocazione delle risorse.
+
+### 101.9 Ozono e resa agricola
+
+L'ozono troposferico può ridurre la resa agricola sia attraverso l'esposizione durante fasi sensibili dello sviluppo sia attraverso effetti cumulativi durante la stagione di crescita.
+
+Le colture più studiate includono:
+
+- soia;
+- frumento;
+- riso;
+- mais;
+- cotone;
+- patata;
+- pomodoro.
+
+Le differenze di sensibilità dipendono dalla fisiologia della specie, dalla durata del ciclo vegetativo, dall'apertura stomatica, dalle condizioni idriche e dalle caratteristiche genetiche della varietà.
+
+Una valutazione globale basata sul flusso stomatico per il periodo 2010–2012 ha stimato perdite medie di resa del 12,4% per la soia, del 7,1% per il frumento, del 4,4% per il riso e del 6,1% per il mais.
+
+Questi valori non sono previsioni per ogni raccolto. Le perdite effettive possono essere maggiori o minori in funzione delle condizioni locali e delle interazioni con altri fattori di stress.
+
+### 101.10 Effetti sulla produttività agricola e sulla sicurezza alimentare
+
+La riduzione della resa causata dall'ozono può influenzare la produttività agricola e la disponibilità di alimenti.
+
+Gli effetti economici e alimentari dipendono da:
+
+- quantità di produzione persa;
+- valore della coltura;
+- superficie esposta;
+- possibilità di sostituire la produzione;
+- condizioni di mercato;
+- vulnerabilità della regione;
+- interazione con siccità e temperature estreme.
+
+Le aree con elevate concentrazioni di ozono e grande produzione agricola possono subire conseguenze importanti anche quando la perdita percentuale è relativamente contenuta.
+
+La riduzione delle emissioni di NOₓ e COV, insieme alla selezione di varietà più tolleranti, può contribuire a limitare le perdite. La tolleranza varietale, tuttavia, non sostituisce la necessità di migliorare la qualità dell'aria.
+
+### 101.11 Ozono e foreste
+
+Gli alberi possono assorbire ozono attraverso gli stomi delle foglie o degli aghi. L'esposizione può influenzare la fotosintesi, la crescita annuale, l'accumulo di biomassa e la distribuzione del carbonio.
+
+La sensibilità varia tra specie decidue e sempreverdi e tra specie con differente regolazione stomatica.
+
+Gli effetti a lungo termine possono essere particolarmente importanti perché anche una riduzione moderata della crescita annuale, se persistente, può modificare l'accumulo di biomassa e il funzionamento dell'ecosistema forestale.
+
+L'ozono può inoltre interagire con siccità e temperatura. Una riduzione dell'apparato radicale può compromettere l'accesso all'acqua, mentre lo stress idrico può ridurre l'apertura stomatica e modificare l'assorbimento di ozono.
+
+### 101.12 Differenze di sensibilità tra specie
+
+Non tutte le piante reagiscono allo stesso modo all'ozono.
+
+La sensibilità dipende da:
+
+- apertura e regolazione degli stomi;
+- capacità antiossidante;
+- velocità di crescita;
+- struttura delle foglie;
+- durata della stagione vegetativa;
+- capacità di riparazione;
+- caratteristiche genetiche;
+- disponibilità idrica e nutrizionale.
+
+La soia, ad esempio, è risultata particolarmente sensibile nelle valutazioni globali delle principali colture. Il frumento può essere anch'esso vulnerabile, soprattutto in aree con esposizioni prolungate durante lo sviluppo della granella.
+
+Anche all'interno di una specie possono esistere varietà con sensibilità differenti. La selezione di genotipi più tolleranti è quindi una possibile strategia di adattamento, da integrare con la riduzione dell'inquinamento.
+
+### 101.13 Esposizione prolungata e danni cumulativi
+
+L'esposizione all'ozono può verificarsi attraverso episodi di breve durata o durante periodi prolungati.
+
+Un picco elevato può provocare danni acuti, mentre un'esposizione moderata ma ripetuta può produrre effetti cumulativi sulla fisiologia e sulla crescita.
+
+Per valutare il rischio non è sufficiente conoscere la concentrazione massima giornaliera. Occorre considerare:
+
+- concentrazione nel tempo;
+- durata della stagione di esposizione;
+- flusso stomatico;
+- fasi di sviluppo della pianta;
+- condizioni meteorologiche;
+- capacità di recupero tra gli episodi.
+
+La valutazione basata sul flusso stomatico è particolarmente utile perché collega l'esposizione atmosferica alla quantità di ozono effettivamente assorbita dai tessuti.
+
+### 101.14 Come monitorare gli effetti dell'ozono sulle piante
+
+Il monitoraggio può combinare misure atmosferiche, fisiologiche e agronomiche.
+
+| Indicatore | Che cosa misura | Utilità |
+|---|---|---|
+| Concentrazione di O₃ | Ozono nell'aria | Descrive l'esposizione atmosferica |
+| AOT40 | Accumulo sopra una soglia di concentrazione | Valutazione del rischio per la vegetazione |
+| POD | Dose assorbita attraverso gli stomi | Stima più diretta dell'esposizione biologica |
+| Conduttanza stomatica | Apertura funzionale degli stomi | Stima dei flussi gassosi |
+| Assimilazione di CO₂ | Attività fotosintetica | Valuta la funzionalità della foglia |
+| Fluorescenza della clorofilla | Efficienza dei processi fotochimici | Individua alterazioni dell'apparato fotosintetico |
+| Biomassa | Crescita della pianta | Valuta gli effetti cumulativi |
+| Resa agricola | Produzione finale | Misura l'impatto agronomico |
+
+L'integrazione di questi indicatori permette di distinguere l'esposizione, la risposta fisiologica e le conseguenze sulla produttività.
+
+## 102. Ozono e animali
+
+### 102.1 Modalità di esposizione degli animali
+
+Gli animali possono entrare in contatto con l'ozono attraverso vie differenti. La più importante per l'ozono troposferico atmosferico è l'inalazione.
+
+Le modalità di esposizione comprendono:
+
+- respirazione di aria contenente ozono;
+- permanenza in ambienti interni nei quali siano presenti generatori o altre fonti di emissione;
+- contatto con acqua contenente ozono disciolto o prodotti ossidanti residui;
+- esposizione indiretta attraverso modificazioni dell'habitat e delle risorse alimentari.
+
+L'esposizione effettiva dipende dalla concentrazione, dal tempo trascorso nell'ambiente, dalla ventilazione respiratoria e dalle caratteristiche fisiologiche della specie.
+
+### 102.2 Effetti respiratori nei mammiferi
+
+L'ozono è un irritante respiratorio e può provocare effetti anche negli animali.
+
+Quando viene inalato, reagisce con i componenti del fluido che riveste le vie respiratorie, generando prodotti ossidanti e segnali biologici che possono provocare infiammazione.
+
+Gli effetti possibili includono:
+
+- irritazione delle vie aeree;
+- infiammazione polmonare;
+- alterazioni della funzione respiratoria;
+- aumento della sensibilità ad altri irritanti;
+- stress ossidativo;
+- modificazioni delle risposte immunitarie locali.
+
+L'entità degli effetti varia tra specie e dipende da dose, durata e condizioni fisiologiche.
+
+### 102.3 Stress ossidativo e risposte biologiche
+
+L'ozono può alterare l'equilibrio tra produzione di specie ossidanti e capacità antiossidante degli organismi.
+
+Le reazioni possono interessare lipidi, proteine e membrane cellulari, mentre le risposte biologiche possono coinvolgere mediatori infiammatori e sistemi di difesa antiossidante.
+
+La presenza di marcatori di stress ossidativo non dimostra automaticamente una malattia clinica. È necessario collegare i cambiamenti biochimici a effetti funzionali e a una dose di esposizione definita.
+
+### 102.4 Animali domestici
+
+Gli animali domestici possono essere esposti all'ozono atmosferico, soprattutto durante periodi di inquinamento elevato o in ambienti in cui siano utilizzati dispositivi che generano ozono.
+
+Cani, gatti e altri mammiferi possono presentare irritazione delle vie respiratorie e risposte infiammatorie in seguito a esposizioni sufficienti.
+
+Non è corretto attribuire a tutte le specie domestiche la stessa sensibilità. Dimensioni corporee, ventilazione, attività, anatomia respiratoria e condizioni preesistenti influenzano la dose inalata e la risposta.
+
+Particolare attenzione è necessaria per animali con patologie respiratorie o cardiovascolari e per quelli che vivono in ambienti chiusi dove l'ozono può accumularsi.
+
+I generatori di ozono non devono essere utilizzati in ambienti occupati da animali, a meno che l'area non sia gestita secondo procedure professionali che impediscano l'esposizione.
+
+### 102.5 Fauna selvatica terrestre
+
+La fauna selvatica può essere esposta all'ozono nelle aree urbane, agricole, forestali e montane.
+
+Gli effetti diretti dipendono dalla respirazione e dalla sensibilità fisiologica. Gli effetti indiretti possono derivare dalle modificazioni della vegetazione e degli habitat.
+
+Ad esempio, una riduzione della qualità del foraggio o della produzione di semi può influenzare gli erbivori e gli animali granivori. Le modificazioni della struttura vegetale possono inoltre cambiare disponibilità di rifugi e risorse alimentari.
+
+Le conseguenze ecologiche possono quindi propagarsi lungo le reti trofiche, anche quando gli animali non sono direttamente esposti a concentrazioni elevate di ozono.
+
+### 102.6 Organismi acquatici
+
+Gli organismi acquatici possono essere esposti all'ozono disciolto quando questo viene utilizzato in sistemi di trattamento dell'acqua, impianti industriali, acquacoltura o trattamento delle acque di zavorra.
+
+L'ozono disciolto può danneggiare membrane e componenti cellulari attraverso reazioni ossidative. La tossicità dipende dalla concentrazione residua, dal tempo di esposizione, dalla temperatura, dalla salinità e dalla presenza di sostanze organiche.
+
+Le specie e gli stadi di sviluppo possono presentare sensibilità differenti. Larve e organismi planctonici possono essere particolarmente vulnerabili in alcune condizioni sperimentali.
+
+In acqua marina, i prodotti di ossidazione del bromuro possono contribuire alla tossicità anche dopo che l'ozono stesso si è decomposto.
+
+### 102.7 Differenze tra specie e relazione dose-risposta
+
+La relazione dose-risposta descrive come cambia l'effetto biologico al variare della concentrazione e della durata dell'esposizione.
+
+Per l'ozono, la risposta può dipendere da:
+
+- concentrazione;
+- durata;
+- frequenza degli episodi;
+- ventilazione;
+- metabolismo;
+- capacità antiossidante;
+- età e stadio di sviluppo;
+- caratteristiche anatomiche;
+- condizioni ambientali.
+
+Non esiste una soglia unica che possa essere applicata a tutte le specie animali e a tutti i compartimenti ambientali.
+
+I risultati ottenuti in un test di tossicità acquatica, ad esempio, non devono essere trasferiti direttamente ai mammiferi esposti per inalazione.
+
+### 102.8 Valutazione ecologica e limiti delle conoscenze
+
+Le prove sugli effetti dell'ozono negli animali sono meno omogenee rispetto a quelle disponibili per la salute umana e per la vegetazione.
+
+Per valutare il rischio ecologico sono necessari studi che distinguano:
+
+- effetti acuti e cronici;
+- esposizione atmosferica e acquatica;
+- specie e stadi di sviluppo;
+- concentrazione e dose effettiva;
+- effetti individuali e conseguenze sulla popolazione;
+- risposte fisiologiche e cambiamenti ecologici.
+
+L'assenza di dati specifici su una specie non equivale a dimostrazione di assenza di rischio. La valutazione deve tenere conto delle differenze biologiche e delle condizioni di esposizione reali.
+
+## 103. Ozono ed ecosistemi marini
+
+### 103.1 Lo strato di ozono protegge gli ecosistemi marini
+
+Lo strato di ozono stratosferico è importante per gli ecosistemi marini perché limita la quantità di radiazione UV-B che raggiunge la superficie terrestre e gli strati superficiali degli oceani.
+
+Quando la quantità di ozono nella colonna atmosferica diminuisce, una maggiore frazione di UV-B può raggiungere la superficie.
+
+L'effetto dipende anche da nuvolosità, aerosol, angolo solare, riflessione della superficie e trasparenza dell'acqua.
+
+### 103.2 Penetrazione della radiazione UV-B nell'acqua
+
+La radiazione UV-B può penetrare nella colonna d'acqua, ma la profondità raggiunta dipende dalle proprietà ottiche dell'acqua.
+
+Fattori importanti comprendono:
+
+- concentrazione di sostanza organica disciolta;
+- torbidità;
+- particelle sospese;
+- pigmenti e organismi presenti;
+- profondità;
+- caratteristiche della regione marina.
+
+Nelle acque limpide, una parte della radiazione UV può penetrare più in profondità rispetto alle acque costiere torbide o ricche di sostanza organica.
+
+La quantità di UV-B ricevuta dagli organismi marini non dipende quindi soltanto dall'ozono atmosferico, ma anche dalle caratteristiche dell'ambiente acquatico.
+
+### 103.3 Fitoplancton e produttività primaria
+
+Il fitoplancton è costituito da organismi microscopici fotosintetici che vivono soprattutto negli strati illuminati degli oceani.
+
+Questi organismi rappresentano la base di molte reti alimentari marine e contribuiscono in modo fondamentale alla produttività primaria oceanica.
+
+L'aumento dell'esposizione UV-B può influenzare:
+
+- fotosintesi;
+- crescita;
+- divisione cellulare;
+- motilità e orientamento;
+- riparazione del DNA;
+- sopravvivenza.
+
+La sensibilità varia tra specie e gruppi di fitoplancton. Alcuni organismi possiedono pigmenti protettivi e meccanismi di riparazione, mentre altri possono essere più vulnerabili.
+
+L'effetto sulla produttività primaria dipende dalla dose di radiazione, dalla profondità di distribuzione del fitoplancton, dalla disponibilità di nutrienti e dalle condizioni oceanografiche.
+
+### 103.4 Fitoplancton e reti alimentari marine
+
+Il fitoplancton costituisce una fonte primaria di energia per numerosi organismi marini.
+
+Una riduzione della produttività fitoplanctonica può influenzare lo zooplancton e, indirettamente, pesci, invertebrati e altri organismi che dipendono da queste risorse.
+
+Le possibili conseguenze comprendono:
+
+- modificazioni della disponibilità di cibo;
+- variazioni della crescita dello zooplancton;
+- cambiamenti nella sopravvivenza delle larve;
+- alterazioni dei rapporti tra predatori e prede;
+- modificazioni della produttività dell'ecosistema.
+
+Questi effetti non sono automatici né uniformi: le reti alimentari marine presentano capacità di compensazione e risposte differenti in funzione della regione e della composizione delle comunità.
+
+### 103.5 Organismi marini in fase larvale
+
+Le prime fasi di sviluppo sono spesso più sensibili agli stress ambientali rispetto agli adulti.
+
+L'aumento dell'esposizione UV-B può danneggiare uova, embrioni e larve di alcuni organismi marini, tra cui pesci, crostacei e altri invertebrati.
+
+Gli effetti possibili includono:
+
+- danni al DNA;
+- riduzione della sopravvivenza;
+- alterazioni dello sviluppo;
+- riduzione della capacità di alimentazione;
+- modificazioni della crescita;
+- riduzione del successo riproduttivo.
+
+La vulnerabilità dipende dalla specie, dalla profondità, dalla durata dell'esposizione e dalla disponibilità di meccanismi di riparazione.
+
+### 103.6 Produttività marina e ciclo del carbonio
+
+Il fitoplancton contribuisce al ciclo globale del carbonio attraverso la fotosintesi e il trasferimento di materia organica lungo la rete alimentare marina.
+
+Una variazione della produttività primaria può influenzare:
+
+- fissazione biologica del carbonio;
+- trasferimento di materia organica agli strati profondi;
+- respirazione e decomposizione;
+- struttura delle comunità planctoniche;
+- dinamiche del carbonio negli oceani.
+
+Non è corretto attribuire ogni variazione della produttività marina alla radiazione UV-B o all'ozono stratosferico. Temperatura, stratificazione, nutrienti, acidificazione, circolazione oceanica e disponibilità di luce sono fattori altrettanto importanti.
+
+### 103.7 Equilibrio degli ecosistemi marini
+
+L'impatto ecologico della riduzione dell'ozono stratosferico può propagarsi attraverso più livelli della rete alimentare.
+
+La combinazione di cambiamenti nella produttività del fitoplancton, nello sviluppo larvale e nella disponibilità di risorse può influenzare la struttura delle comunità marine.
+
+La risposta dipende dalla capacità degli organismi di evitare la radiazione, riparare i danni, modificare la distribuzione verticale e adattarsi alle condizioni locali.
+
+### 103.8 Ozono atmosferico e trattamenti delle acque marine
+
+È importante distinguere gli effetti della radiazione UV-B dovuti alla riduzione dell'ozono stratosferico dagli effetti dell'ozono utilizzato direttamente nei processi industriali.
+
+L'ozono viene studiato e utilizzato, tra le altre applicazioni, nel trattamento delle acque di zavorra delle navi, con l'obiettivo di ridurre il trasporto di organismi non indigeni.
+
+Tuttavia, l'ozonazione dell'acqua marina può generare specie ossidanti bromurate. Questi prodotti possono risultare tossici per organismi marini anche dopo la decomposizione dell'ozono.
+
+La gestione del trattamento deve quindi includere:
+
+- controllo della dose di ozono;
+- monitoraggio degli ossidanti residui;
+- valutazione dei sottoprodotti;
+- eventuale neutralizzazione;
+- verifica della tossicità dell'acqua prima dello scarico.
+
+L'impiego dell'ozono per prevenire la diffusione di specie invasive non deve produrre un nuovo rischio ecologico attraverso il rilascio di acqua contenente ossidanti residui.
+
+### 103.9 Sintesi: tre relazioni tra ozono e ambiente marino
+
+| Fenomeno | Meccanismo | Possibile effetto |
+|---|---|---|
+| Riduzione dell'ozono stratosferico | Aumento della radiazione UV-B | Stress per fitoplancton e organismi larvali |
+| Ozono troposferico | Inquinamento atmosferico e deposizione indiretta | Effetti su ecosistemi costieri e terrestri associati |
+| Ozonazione dell'acqua marina | Ossidazione diretta e formazione di specie bromurate | Tossicità per organismi acquatici se non controllata |
+
+La distinzione tra questi fenomeni è indispensabile per interpretare correttamente la letteratura scientifica sugli ecosistemi marini.
+
+## 104. Ozono e processi industriali sostenibili
+
+### 104.1 L'ozono come agente ossidante industriale
+
+L'ozono viene utilizzato in diversi processi industriali grazie al suo elevato potere ossidante.
+
+Le applicazioni comprendono:
+
+- disinfezione dell'acqua potabile;
+- trattamento delle acque reflue;
+- rimozione o trasformazione di contaminanti organici;
+- trattamento di acque industriali;
+- controllo di odori in specifici sistemi;
+- disinfezione di superfici e apparecchiature;
+- applicazioni nell'industria alimentare;
+- trattamento di alcune acque di processo.
+
+L'ozono reagisce con numerose sostanze organiche e inorganiche. In determinate condizioni può trasformare contaminanti difficili da rimuovere con trattamenti convenzionali.
+
+La sua efficacia dipende però dalla composizione della matrice, dal pH, dalla temperatura, dal tempo di contatto, dalla concentrazione e dalla domanda di ozono del sistema.
+
+### 104.2 Riduzione dell'uso di alcuni disinfettanti
+
+In alcune applicazioni, l'ozono può ridurre la necessità di utilizzare determinati disinfettanti chimici o di trasportare grandi quantità di prodotti ossidanti.
+
+Questo può comportare vantaggi logistici e operativi:
+
+- produzione in prossimità del punto di utilizzo;
+- minore necessità di stoccaggio di alcuni prodotti;
+- riduzione del trasporto di determinati reagenti;
+- possibilità di integrare l'ossidazione in sistemi automatizzati;
+- decomposizione dell'ozono residuo in ossigeno, quando le condizioni lo consentono.
+
+Tuttavia, la sostituzione di un disinfettante non garantisce automaticamente un minore impatto ambientale.
+
+Occorre confrontare l'intero processo, includendo produzione dell'ozono, energia elettrica, apparecchiature, manutenzione, sottoprodotti, trattamento dei residui e prestazioni effettive.
+
+### 104.3 Produzione in situ
+
+L'ozono è instabile e generalmente non viene trasportato e conservato come un normale reagente chimico.
+
+Negli impianti industriali viene spesso prodotto direttamente sul posto attraverso generatori che utilizzano ossigeno o aria adeguatamente preparata.
+
+La produzione in situ può ridurre la necessità di trasportare e immagazzinare grandi quantità di disinfettante, ma richiede:
+
+- alimentazione elettrica;
+- preparazione e trattamento del gas di alimentazione;
+- raffreddamento;
+- generatore;
+- sistemi di iniezione e miscelazione;
+- strumenti di monitoraggio;
+- sistemi di distruzione dell'ozono residuo;
+- manutenzione e controlli di sicurezza.
+
+Il consumo energetico può rappresentare una parte importante dell'impatto ambientale complessivo.
+
+### 104.4 Trattamento delle acque reflue
+
+L'ozonazione viene utilizzata come trattamento ossidativo in alcuni impianti di depurazione e riutilizzo delle acque.
+
+Può essere applicata per:
+
+- trasformare contaminanti organici;
+- ridurre alcune sostanze farmaceutiche e prodotti per la cura personale;
+- modificare la biodegradabilità di composti organici;
+- contribuire alla disinfezione;
+- integrare processi di trattamento avanzato.
+
+L'ozono può trasformare molecole complesse in prodotti più piccoli e più facilmente biodegradabili. Tuttavia, la trasformazione non coincide necessariamente con la mineralizzazione completa.
+
+La mineralizzazione è il processo mediante il quale i contaminanti organici vengono convertiti prevalentemente in prodotti inorganici semplici, come CO₂, acqua e ioni minerali.
+
+Un trattamento che riduce la concentrazione del contaminante iniziale può generare prodotti di trasformazione che devono essere valutati separatamente.
+
+### 104.5 Sottoprodotti dell'ozonazione
+
+L'ozonazione può produrre sottoprodotti di disinfezione e prodotti di trasformazione chimica.
+
+Tra quelli descritti nella letteratura figurano:
+
+- bromato;
+- aldeidi;
+- chetoni;
+- acidi carbossilici;
+- chetoacidi;
+- alcuni composti organici bromurati;
+- prodotti di trasformazione specifici dei contaminanti trattati.
+
+Il bromato è particolarmente importante quando l'acqua contiene bromuro. L'ozono può ossidare lo ione bromuro e favorire la formazione di bromato, la cui presenza è sottoposta a limiti e controlli nelle normative sull'acqua potabile.
+
+La formazione dei sottoprodotti dipende dalla composizione dell'acqua, dal pH, dalla dose, dal tempo di contatto e dalle condizioni operative.
+
+Per valutare correttamente un processo non basta misurare la scomparsa del contaminante iniziale. È necessario analizzare anche i prodotti di trasformazione e la tossicità residua.
+
+### 104.6 Consumo energetico
+
+La produzione di ozono richiede energia elettrica. Il consumo dipende dal tipo di generatore, dalla concentrazione richiesta, dalla portata, dalla purezza del gas di alimentazione e dall'efficienza complessiva dell'impianto.
+
+Un sistema industriale può richiedere energia per:
+
+- produzione o preparazione dell'ossigeno;
+- generazione dell'ozono;
+- raffreddamento;
+- compressione e trasferimento del gas;
+- miscelazione;
+- pompaggio;
+- trattamento dell'acqua;
+- distruzione dell'ozono residuo.
+
+L'impatto climatico dipende anche dal mix elettrico utilizzato. La stessa tecnologia può avere un'impronta di carbonio diversa se alimentata con elettricità da fonti fossili o rinnovabili.
+
+Per questo motivo non è corretto descrivere l'ozonazione come una tecnologia a basse emissioni senza disporre di dati specifici sul sistema.
+
+### 104.7 Efficienza nell'utilizzo delle risorse
+
+L'efficienza di un trattamento con ozono può essere valutata attraverso:
+
+- quantità di contaminante rimossa o trasformata;
+- energia consumata per metro cubo trattato;
+- massa di ozono effettivamente trasferita all'acqua;
+- quantità di ozono non utilizzato;
+- consumo di ossigeno o aria;
+- produzione di residui;
+- necessità di trattamenti successivi;
+- durata e manutenzione delle apparecchiature.
+
+Un indicatore utile è il consumo energetico specifico, espresso ad esempio in kWh per metro cubo di acqua trattata.
+
+Questo valore deve sempre essere accompagnato dalla definizione della prestazione raggiunta. Confrontare due impianti soltanto in base all'energia per metro cubo può essere fuorviante se trattano contaminanti diversi o raggiungono livelli di rimozione differenti.
+
+### 104.8 Confronto con processi alternativi
+
+L'ozono può essere confrontato con clorazione, raggi UV, carbone attivo, perossido di idrogeno, processi di ossidazione avanzata e trattamenti biologici.
+
+Ogni tecnologia presenta vantaggi e limiti.
+
+| Tecnologia | Possibili vantaggi | Limiti ambientali e operativi |
+|---|---|---|
+| Ozono | Forte potere ossidante, produzione in situ | Consumo elettrico e sottoprodotti |
+| Clorazione | Disinfezione efficace e residuo disinfettante | Possibile formazione di sottoprodotti clorurati |
+| UV | Disinfezione senza aggiunta di disinfettante chimico | Consumo elettrico e assenza di residuo disinfettante |
+| Carbone attivo | Adsorbimento di numerosi contaminanti | Esaurimento del materiale e rigenerazione o smaltimento |
+| Perossido di idrogeno | Utilizzabile in processi di ossidazione | Necessità di controllo della dose e possibile energia aggiuntiva |
+| Trattamento biologico | Potenziale efficienza energetica per molti contaminanti biodegradabili | Limitazioni per composti persistenti o difficili da biodegradare |
+
+Il confronto deve essere effettuato sulla stessa funzione e sullo stesso livello di prestazione. Non esiste una tecnologia universalmente migliore per tutti i contaminanti e tutte le acque.
+
+### 104.9 Valutazione del ciclo di vita
+
+La valutazione del ciclo di vita (LCA, *Life Cycle Assessment*) permette di confrontare gli impatti ambientali di una tecnologia considerando l'intero sistema, non soltanto la fase operativa.
+
+Per un impianto di ozonazione occorre includere:
+
+1. produzione e trasporto dei materiali;
+2. costruzione dell'impianto;
+3. produzione e preparazione del gas di alimentazione;
+4. consumo di elettricità;
+5. generazione dell'ozono;
+6. pompaggio e trattamento dell'acqua;
+7. manutenzione e sostituzione dei componenti;
+8. trattamento dei sottoprodotti;
+9. gestione dei residui;
+10. dismissione e recupero dei materiali.
+
+Un'analisi LCA pubblicata nel 2025 su un impianto a scala reale per la rimozione di micropollutanti dalle acque reflue ha individuato nella generazione dell'ozono il principale contributore agli impatti ambientali e ai costi operativi, seguita dalla costruzione dell'impianto.
+
+L'analisi ha inoltre indicato che l'utilizzo di energia rinnovabile e il riutilizzo dei materiali possono ridurre alcuni impatti. I risultati sono specifici per l'impianto studiato e non possono essere trasferiti automaticamente a tutti i processi di ozonazione.
+
+### 104.10 Impronta di carbonio
+
+L'impronta di carbonio di un processo di ozonazione dipende soprattutto dall'energia utilizzata, dalla sua origine e dall'efficienza del sistema.
+
+Per calcolarla occorre considerare almeno:
+
+- consumo elettrico del generatore;
+- consumo energetico del sistema di preparazione dell'ossigeno;
+- raffreddamento e pompaggio;
+- emissioni incorporate nelle apparecchiature;
+- manutenzione e sostituzione dei componenti;
+- gestione dei residui;
+- eventuali trattamenti complementari.
+
+L'indicatore dovrebbe essere espresso in kg CO₂ equivalente per unità funzionale, ad esempio per metro cubo di acqua trattata a una specifica qualità finale.
+
+Non è corretto affermare che la produzione in situ sia automaticamente a basse emissioni. Il risultato dipende dal mix energetico, dall'efficienza e dal servizio effettivamente fornito.
+
+### 104.11 Possibili vantaggi ambientali
+
+Quando progettata e gestita correttamente, l'ozonazione può offrire alcuni vantaggi:
+
+- riduzione dell'utilizzo di determinati reagenti;
+- minore necessità di trasporto di alcuni disinfettanti;
+- possibilità di trattare contaminanti difficili da rimuovere;
+- integrazione con processi biologici o fisico-chimici;
+- decomposizione dell'ozono residuo in ossigeno;
+- produzione locale del reagente;
+- riduzione di specifiche forme di inquinamento microbiologico.
+
+Questi vantaggi devono essere dimostrati nel contesto applicativo e confrontati con le alternative disponibili.
+
+### 104.12 Limiti e compromessi ambientali
+
+I principali compromessi da considerare sono:
+
+**Consumo energetico.** La produzione di ozono richiede elettricità e può generare emissioni indirette di gas serra.
+
+**Sottoprodotti.** L'ossidazione può generare composti che richiedono analisi e trattamenti aggiuntivi.
+
+**Tossicità residua.** L'ozono non reagito e alcuni prodotti di ossidazione possono essere dannosi per gli organismi acquatici.
+
+**Efficienza di trasferimento.** Una parte dell'ozono prodotto può non essere trasferita al mezzo da trattare e deve essere gestita.
+
+**Manutenzione e materiali.** Generatori, compressori, sistemi di raffreddamento e componenti resistenti all'ossidazione hanno un impatto lungo il ciclo di vita.
+
+**Trattamenti successivi.** La trasformazione dei contaminanti può rendere necessari carbone attivo, filtrazione biologica o altri trattamenti.
+
+La valutazione ambientale deve quindi considerare il sistema completo e non il solo fatto che l'ozono si decomponga in ossigeno.
+
+### 104.13 Come progettare un processo di ozonazione più sostenibile
+
+Un impianto può migliorare le proprie prestazioni ambientali attraverso:
+
+- scelta di generatori ad alta efficienza;
+- ottimizzazione della dose in base alla qualità dell'acqua;
+- miglioramento del trasferimento di massa;
+- riduzione delle perdite di ozono;
+- recupero o utilizzo efficiente dell'ossigeno quando tecnicamente possibile;
+- impiego di elettricità a basse emissioni;
+- monitoraggio dei sottoprodotti;
+- ottimizzazione del trattamento biologico a valle;
+- manutenzione preventiva;
+- recupero e riciclo dei materiali;
+- valutazione LCA durante la progettazione.
+
+La dose non deve essere aumentata automaticamente per ottenere una maggiore ossidazione: un sovradosaggio può aumentare consumi, costi e formazione di sottoprodotti senza produrre un beneficio proporzionato.
+
+### 104.14 Quando l'ozono è una scelta sostenibile?
+
+L'ozono può essere una soluzione ambientale appropriata quando:
+
+- risolve un problema che i trattamenti alternativi affrontano con minore efficacia;
+- raggiunge la prestazione richiesta con un consumo energetico competitivo;
+- i sottoprodotti sono identificati e controllati;
+- le emissioni di ozono sono contenute;
+- il rischio ecotossicologico dello scarico è adeguatamente gestito;
+- l'impianto è progettato per ridurre perdite e sprechi;
+- la valutazione del ciclo di vita mostra un vantaggio rispetto alle alternative.
+
+Non è invece corretto definirlo intrinsecamente ecologico, naturale o a impatto zero.
+
+### 104.15 Conclusione: ozono e sostenibilità ambientale
+
+L'ozono può essere contemporaneamente una molecola essenziale per la protezione della vita, un inquinante dannoso e uno strumento tecnologico utile in specifici processi industriali.
+
+Nella stratosfera protegge gli ecosistemi dalla radiazione UV-B. Nella troposfera, se presente in concentrazioni elevate, può danneggiare vegetazione, colture, foreste e organismi esposti. Negli ecosistemi marini, la riduzione dell'ozono stratosferico può aumentare l'esposizione UV-B, mentre l'ozono utilizzato direttamente per trattare l'acqua può generare residui tossici se non gestito correttamente.
+
+In ambito industriale, l'ozonazione può ridurre l'impiego di alcuni prodotti chimici e migliorare il trattamento di determinati contaminanti. Tuttavia, il consumo elettrico, la produzione di sottoprodotti e la gestione degli scarichi possono modificare significativamente il bilancio ambientale.
+
+**La sostenibilità dell'ozono non è una proprietà intrinseca della molecola: è il risultato della progettazione, dell'efficienza, della fonte energetica, della gestione dei residui e del confronto con le tecnologie alternative.**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# PART XIV — Normative, standard e governance scientifica dell'ozono
+
+## 105. Normative internazionali sull'ozono
+
+### Perché esistono accordi internazionali sull'ozono?
+
+La regolamentazione internazionale dell'ozono nasce soprattutto dalla necessità di proteggere lo strato di ozono stratosferico, che assorbe gran parte delle radiazioni ultraviolette biologicamente dannose provenienti dal Sole.
+
+Le attività industriali e commerciali hanno storicamente immesso nell'atmosfera sostanze capaci di liberare cloro e bromo nella stratosfera. Questi elementi partecipano a cicli catalitici che distruggono le molecole di ozono, riducendo la capacità dello strato di ozono di assorbire le radiazioni UV.
+
+La risposta internazionale si basa principalmente su tre strumenti:
+
+- Convenzione di Vienna per la protezione dello strato di ozono;
+- Protocollo di Montreal sulle sostanze che riducono lo strato di ozono;
+- Emendamento di Kigali, che introduce la riduzione progressiva degli idrofluorocarburi (HFC).
+
+Questi accordi non disciplinano direttamente ogni aspetto dell'inquinamento da ozono al livello del suolo. Il controllo delle concentrazioni di ozono troposferico rientra infatti soprattutto nelle normative sulla qualità dell'aria.
+
+### 105.1 Convenzione di Vienna per la protezione dello strato di ozono
+
+La **Convenzione di Vienna per la protezione dello strato di ozono** è stata adottata il 22 marzo 1985 ed è entrata in vigore il 22 settembre 1988.
+
+Rappresenta il quadro internazionale di cooperazione che ha preceduto il Protocollo di Montreal.
+
+La Convenzione stabilisce principi di collaborazione tra gli Stati per:
+
+- monitorare e studiare lo strato di ozono;
+- comprendere le sostanze e le attività che possono modificarne la composizione;
+- sviluppare programmi di ricerca scientifica;
+- scambiare informazioni scientifiche, tecniche e giuridiche;
+- cooperare nella definizione di misure di protezione;
+- promuovere accordi e protocolli successivi.
+
+La Convenzione non contiene, nella sua formulazione originaria, il sistema dettagliato di eliminazione delle sostanze chimiche che caratterizza il Protocollo di Montreal.
+
+La sua importanza è soprattutto istituzionale e scientifica: ha creato una struttura internazionale attraverso la quale la ricerca sull'ozono atmosferico poteva tradursi in cooperazione normativa.
+
+### 105.2 Protocollo di Montreal
+
+Il **Protocollo di Montreal sulle sostanze che riducono lo strato di ozono** è stato adottato il 16 settembre 1987 ed è entrato in vigore il 1° gennaio 1989.
+
+È il principale accordo internazionale per il controllo delle sostanze ozono-lesive.
+
+Il suo obiettivo è ridurre progressivamente ed eliminare la produzione e il consumo delle sostanze che contribuiscono alla distruzione dell'ozono stratosferico, secondo calendari differenziati per gruppi di sostanze e categorie di Paesi.
+
+Il Protocollo è stato successivamente modificato e aggiornato attraverso emendamenti e aggiustamenti, per ampliare l'elenco delle sostanze controllate e rendere più rigorosi i calendari di eliminazione.
+
+La sua attuazione è sostenuta da:
+
+- obblighi di controllo della produzione e del consumo;
+- calendari di eliminazione progressiva;
+- sistemi di autorizzazione e controllo degli scambi commerciali;
+- comunicazione periodica dei dati nazionali;
+- meccanismi di valutazione della conformità;
+- cooperazione tecnica e finanziaria.
+
+Il Protocollo è amministrato attraverso le riunioni delle Parti e il Segretariato per l'ozono del Programma delle Nazioni Unite per l'ambiente (UNEP).
+
+### 105.3 Sostanze che riducono lo strato di ozono (ODS)
+
+Le sostanze che riducono lo strato di ozono sono generalmente indicate con l'acronimo **ODS**, dall'inglese *ozone-depleting substances*.
+
+Sono sostanze che, dopo essere state emesse, possono raggiungere la stratosfera e liberare composti contenenti cloro o bromo attraverso processi di fotolisi.
+
+Le principali categorie sottoposte ai controlli del Protocollo comprendono:
+
+| Categoria | Esempi | Impieghi storici o principali |
+|---|---|---|
+| Clorofluorocarburi (CFC) | CFC-11, CFC-12 | Refrigerazione, condizionamento, aerosol, schiume |
+| Halon | Halon 1211, Halon 1301 | Sistemi antincendio |
+| Tetracloruro di carbonio | CCl₄ | Solvente e materia prima industriale |
+| Metilcloroformio | 1,1,1-tricloroetano | Solvente industriale |
+| Idroclorofluorocarburi (HCFC) | HCFC-22 | Refrigerazione, condizionamento, schiume |
+| Bromuro di metile | CH₃Br | Fumigazione e usi agricoli |
+| Idrobromofluorocarburi (HBFC) | Composti bromurati specifici | Usi industriali specializzati |
+| Bromoclorometano | CH₂BrCl | Usi industriali specifici |
+
+Le sostanze non hanno tutte lo stesso potenziale di riduzione dell'ozono. Per confrontarne l'impatto viene utilizzato l'**ODP (Ozone Depletion Potential)**, un indice relativo che confronta il potenziale di distruzione dell'ozono di una sostanza con quello di un riferimento, normalmente il CFC-11.
+
+Un ODP pari a 1 indica un potenziale equivalente a quello del CFC-11 secondo la convenzione di riferimento.
+
+È importante distinguere l'ODP dal GWP (*Global Warming Potential*): il primo descrive il potenziale di riduzione dello strato di ozono, il secondo il contributo al riscaldamento globale.
+
+### 105.4 Controllo della produzione e del consumo
+
+Il Protocollo di Montreal controlla sia la produzione sia il consumo delle sostanze regolamentate.
+
+La produzione controllata è determinata secondo le definizioni e le regole del Protocollo, tenendo conto delle quantità prodotte e di alcune esclusioni ammesse, come quelle relative alla distruzione mediante tecnologie approvate o agli impieghi come materia prima (*feedstock*), secondo le condizioni applicabili.
+
+Il consumo regolamentato non coincide semplicemente con la quantità di sostanza utilizzata dai consumatori finali.
+
+La formula generale è:
+
+**Consumo calcolato = produzione + importazioni − esportazioni**
+
+Il calcolo normativo applica inoltre le regole specifiche previste dal Protocollo, comprese le esclusioni e le correzioni ammesse per determinate categorie di utilizzo.
+
+Produzione e consumo sono controllati attraverso limiti quantitativi e calendari di riduzione. Il controllo del commercio internazionale impedisce inoltre che le restrizioni vengano aggirate trasferendo la produzione o gli scambi verso Paesi non conformi.
+
+### 105.5 Calendari di eliminazione delle ODS
+
+Il Protocollo di Montreal non ha stabilito un'unica data di eliminazione per tutte le sostanze.
+
+I calendari variano in funzione:
+
+- della categoria chimica;
+- del potenziale di riduzione dell'ozono;
+- della disponibilità di alternative;
+- della categoria di appartenenza del Paese;
+- delle eventuali esenzioni autorizzate.
+
+I Paesi industrializzati e quelli in via di sviluppo hanno avuto calendari differenti, per consentire una transizione tecnologica ed economica più equa.
+
+Tra le principali tappe storiche figurano:
+
+| Gruppo di sostanze | Paesi non soggetti all'Articolo 5 | Paesi soggetti all'Articolo 5 |
+|---|---|---|
+| CFC principali | Eliminazione generale della produzione e del consumo entro il 1996, salvo esenzioni | Eliminazione generale entro il 2010, salvo esenzioni |
+| Halon | Eliminazione generale entro il 1994, salvo usi autorizzati | Eliminazione generale entro il 2010, salvo usi autorizzati |
+| Bromuro di metile | Eliminazione generale entro il 2005, salvo esenzioni | Eliminazione generale entro il 2015, salvo esenzioni |
+| HCFC | Eliminazione programmata entro il 2030, con eventuali usi residui ammessi | Eliminazione progressiva generalmente entro il 2040, con tappe intermedie e possibili usi residui |
+
+Queste date descrivono le tappe generali dei calendari internazionali, non una cancellazione automatica di qualsiasi uso in ogni circostanza. Il Protocollo contempla esenzioni specifiche, usi essenziali e critici autorizzati, impieghi come materia prima e altre disposizioni particolari.
+
+Per la pubblicazione dei calendari dettagliati è opportuno utilizzare gli allegati aggiornati del Protocollo e le decisioni delle riunioni delle Parti, anziché ricavare tutte le scadenze da una tabella sintetica.
+
+### 105.6 Emendamento di Kigali e idrofluorocarburi
+
+L'**Emendamento di Kigali** è stato adottato il 15 ottobre 2016 ed è entrato in vigore il 1° gennaio 2019.
+
+Ha introdotto il controllo progressivo degli idrofluorocarburi (HFC).
+
+Gli HFC sono stati utilizzati in numerose applicazioni come sostituti dei CFC e degli HCFC. A differenza di questi ultimi, gli HFC non contengono cloro o bromo e non sono considerati sostanze che riducono direttamente lo strato di ozono.
+
+Tuttavia, molti HFC sono potenti gas serra. Il loro controllo è quindi importante per la politica climatica internazionale.
+
+Una distinzione fondamentale:
+
+- il Protocollo di Montreal elimina progressivamente le sostanze che riducono lo strato di ozono;
+- l'Emendamento di Kigali riduce progressivamente gli HFC in ragione del loro impatto climatico;
+- la riduzione degli HFC non è tecnicamente la stessa cosa dell'eliminazione delle ODS.
+
+Il Kigali Amendment prevede calendari differenti per i Paesi sviluppati e per i gruppi di Paesi in via di sviluppo.
+
+Per i Paesi non soggetti all'Articolo 5, il calendario generale di riduzione del consumo di HFC prevede:
+
+| Periodo | Percentuale massima rispetto al livello di riferimento |
+|---|---:|
+| 2019–2023 | 90% |
+| 2024–2028 | 60% |
+| 2029–2033 | 30% |
+| 2034–2035 | 20% |
+| Dal 2036 | 15% |
+
+Per i Paesi in via di sviluppo appartenenti al Gruppo 1 dell'Articolo 5, il calendario prevede:
+
+| Periodo | Percentuale massima rispetto al livello di riferimento |
+|---|---:|
+| 2024–2028 | 100% |
+| 2029–2034 | 90% |
+| 2035–2039 | 70% |
+| 2040–2044 | 50% |
+| Dal 2045 | 20% |
+
+Per il Gruppo 2 dell'Articolo 5, le tappe sono posticipate:
+
+| Periodo | Percentuale massima rispetto al livello di riferimento |
+|---|---:|
+| 2028–2031 | 100% |
+| 2032–2036 | 90% |
+| 2037–2041 | 80% |
+| 2042–2046 | 70% |
+| Dal 2047 | 15% |
+
+Le percentuali indicano la quota massima del livello di riferimento consentita dal calendario, non la percentuale di riduzione. Ad esempio, il 15% del livello di riferimento equivale a una riduzione dell'85%.
+
+I livelli di riferimento e i gruppi di Paesi sono definiti dall'Emendamento e dalle relative disposizioni: non sono semplicemente calcolati sulla base delle emissioni dell'anno precedente.
+
+### 105.7 Reporting e comunicazione dei dati
+
+Il Protocollo prevede obblighi di comunicazione periodica dei dati da parte delle Parti.
+
+L'Articolo 7 disciplina la trasmissione di informazioni relative alle sostanze controllate, tra cui:
+
+- produzione;
+- importazioni;
+- esportazioni;
+- distruzione;
+- quantità utilizzate come materia prima;
+- alcune categorie di impiego esentato;
+- scambi commerciali con Paesi non appartenenti al Protocollo;
+- informazioni aggiuntive richieste dalle decisioni delle Parti.
+
+Questi dati permettono al Segretariato di calcolare i livelli nazionali di produzione e consumo e di verificare il rispetto dei calendari.
+
+La comunicazione deve utilizzare le categorie e le unità previste dal sistema internazionale. Non è corretto confrontare direttamente quantità espresse in tonnellate fisiche con quantità espresse in tonnellate di potenziale di riduzione dell'ozono o in CO₂ equivalente senza chiarire la metrica utilizzata.
+
+### 105.8 Conformità e meccanismi di controllo
+
+La conformità al Protocollo viene valutata attraverso i dati trasmessi, le disposizioni normative nazionali e le decisioni adottate dalle Parti.
+
+Il sistema comprende un Comitato di attuazione (*Implementation Committee*), che opera secondo la procedura di non conformità del Protocollo.
+
+In presenza di possibili difficoltà o violazioni, il sistema può prevedere:
+
+- richiesta di informazioni;
+- esame dei dati comunicati;
+- dialogo con il Paese interessato;
+- raccomandazioni;
+- piani d'azione correttivi;
+- assistenza tecnica;
+- misure concordate dalle Parti.
+
+L'obiettivo principale è favorire il ripristino della conformità attraverso cooperazione e supporto, non soltanto applicare sanzioni punitive.
+
+### 105.9 Cooperazione internazionale e Fondo multilaterale
+
+L'eliminazione delle ODS richiede investimenti, trasferimento tecnologico, formazione e disponibilità di alternative industriali.
+
+Il **Fondo multilaterale per l'attuazione del Protocollo di Montreal** è stato istituito nel 1991 per assistere i Paesi in via di sviluppo nell'adempimento degli obblighi previsti dal Protocollo.
+
+Il Fondo sostiene, tra le altre attività:
+
+- conversione degli impianti industriali;
+- sostituzione delle tecnologie basate su ODS;
+- formazione dei tecnici;
+- assistenza istituzionale;
+- sviluppo delle capacità nazionali;
+- programmi di gestione dei refrigeranti;
+- adozione di alternative a minore impatto ambientale.
+
+La cooperazione internazionale è una delle ragioni principali per cui il Protocollo è considerato un modello di governance ambientale multilaterale.
+
+## 106. Normative sulla qualità dell'aria e sull'ozono troposferico
+
+### Perché l'ozono nell'aria ambiente è regolamentato?
+
+L'ozono troposferico è un inquinante atmosferico secondario che si forma attraverso reazioni fotochimiche tra ossidi di azoto (NOₓ), composti organici volatili (VOC) e luce solare.
+
+A differenza dell'ozono stratosferico, che protegge la vita dalle radiazioni ultraviolette, l'ozono vicino alla superficie terrestre può danneggiare l'apparato respiratorio, la vegetazione e gli ecosistemi.
+
+Le normative sulla qualità dell'aria stabiliscono livelli di riferimento, valori obiettivo, limiti, soglie di informazione e soglie di allarme.
+
+Queste categorie non sono equivalenti:
+
+- **Linea guida sanitaria:** raccomandazione basata sulle conoscenze scientifiche.
+- **Valore limite:** livello giuridicamente vincolante secondo le condizioni e i tempi previsti dalla normativa.
+- **Valore obiettivo:** livello da raggiungere, ove possibile, entro una determinata scadenza.
+- **Obiettivo a lungo termine:** livello verso cui orientare progressivamente la politica di qualità dell'aria.
+- **Soglia di informazione:** livello oltre il quale l'esposizione comporta un rischio per gruppi particolarmente sensibili e deve essere comunicata al pubblico.
+- **Soglia di allarme:** livello oltre il quale l'esposizione comporta un rischio per la popolazione e richiede misure urgenti secondo le condizioni normative.
+
+### 106.1 Linee guida dell'Organizzazione Mondiale della Sanità
+
+Le **WHO Global Air Quality Guidelines del 2021** forniscono raccomandazioni sanitarie per ridurre gli effetti dell'inquinamento atmosferico.
+
+Per l'ozono, l'OMS raccomanda due valori principali:
+
+| Parametro OMS | Valore | Periodo di mediazione |
+|---|---:|---|
+| Ozono | 100 µg/m³ | Massima media giornaliera su 8 ore |
+| Ozono | 60 µg/m³ | Stagione di picco |
+
+Il valore di 100 µg/m³ si riferisce al 99° percentile delle massime medie giornaliere su 8 ore, corrispondente indicativamente a 3–4 giorni di superamento all'anno.
+
+Il valore stagionale di 60 µg/m³ si riferisce alla media delle massime medie giornaliere su 8 ore nei sei mesi consecutivi con la più alta media mobile semestrale dell'ozono.
+
+Queste raccomandazioni sono basate sulla valutazione degli effetti sanitari dell'esposizione all'ozono.
+
+**Le linee guida OMS non sono direttamente leggi nazionali.** Gli Stati possono utilizzarle come riferimento per definire o aggiornare la propria normativa, ma i valori giuridicamente vincolanti dipendono dalla legislazione di ciascuna giurisdizione.
+
+Un superamento di una linea guida non equivale automaticamente a una violazione di legge; allo stesso modo, il rispetto di un limite normativo più permissivo non dimostra che non esista alcun rischio sanitario.
+
+### 106.2 Standard statunitensi EPA
+
+Negli Stati Uniti, l'Environmental Protection Agency (EPA) stabilisce i National Ambient Air Quality Standards (NAAQS) per l'ozono.
+
+Il valore primario tutela la salute pubblica, comprese le persone più sensibili; quello secondario protegge il benessere pubblico e gli ecosistemi.
+
+Al 27 novembre 2026, lo standard federale primario e secondario vigente per l'ozono è:
+
+| Parametro | Valore |
+|---|---:|
+| Standard primario | 0,070 ppm |
+| Standard secondario | 0,070 ppm |
+| Periodo di mediazione | Massima media giornaliera su 8 ore |
+| Forma statistica | Quarto valore giornaliero più alto di ogni anno, mediato su 3 anni |
+
+Il valore di 0,070 ppm equivale a 70 ppb.
+
+La conformità non viene determinata verificando un singolo valore orario. Si utilizza la forma statistica definita dalla normativa: la media su tre anni del quarto valore più alto delle massime medie giornaliere su 8 ore rilevate ogni anno in ciascuna stazione.
+
+Questa distinzione è essenziale per interpretare correttamente i dati EPA e confrontarli con gli standard europei.
+
+### 106.3 Normativa dell'Unione europea
+
+La disciplina europea sulla qualità dell'aria ambiente è stata aggiornata con la **Direttiva (UE) 2024/2881**, che rifonde e sostituisce il precedente quadro costituito principalmente dalla Direttiva 2008/50/CE e dalla Direttiva 2004/107/CE.
+
+La nuova direttiva rafforza progressivamente gli obiettivi di qualità dell'aria, avvicinando i valori europei alle raccomandazioni OMS.
+
+Per l'ozono, il valore obiettivo per la protezione della salute umana è:
+
+| Parametro | Valore |
+|---|---:|
+| Massima media giornaliera su 8 ore | 120 µg/m³ |
+| Superamenti consentiti | Non più di 18 giorni per anno civile |
+| Periodo di riferimento | Media su 3 anni |
+
+La direttiva stabilisce inoltre un obiettivo a lungo termine da raggiungere entro il 1° gennaio 2050:
+
+- massima media giornaliera su 8 ore pari a 100 µg/m³;
+- non più di 3 giorni di superamento per anno civile, secondo il criterio del 99° percentile.
+
+Per la protezione della vegetazione, la direttiva utilizza l'indice AOT40 (*Accumulated Ozone exposure over a Threshold of 40 ppb*).
+
+Il valore obiettivo per la vegetazione è pari a 18.000 µg/m³ × h, calcolato come media su cinque anni nel periodo maggio-luglio. L'obiettivo a lungo termine è pari a 6.000 µg/m³ × h.
+
+L'AOT40 misura l'esposizione cumulativa della vegetazione alle concentrazioni orarie superiori a 80 µg/m³, considerando le ore diurne definite dalla normativa.
+
+### 106.4 Soglie europee di informazione e allarme
+
+La normativa europea definisce anche soglie per la comunicazione del rischio durante gli episodi di elevata concentrazione di ozono.
+
+| Tipo di soglia | Concentrazione | Media temporale |
+|---|---:|---|
+| Soglia di informazione | 180 µg/m³ | 1 ora |
+| Soglia di allarme | 240 µg/m³ | 1 ora |
+
+La soglia di informazione richiede la diffusione di informazioni alla popolazione, in particolare ai gruppi sensibili.
+
+Per la soglia di allarme, la direttiva prevede che il superamento sia misurato o previsto per tre ore consecutive ai fini dell'attivazione delle misure di allarme.
+
+Le autorità competenti devono comunicare le informazioni pertinenti, che possono includere concentrazione, durata dell'episodio, localizzazione, gruppi vulnerabili e raccomandazioni di protezione.
+
+### 106.5 Normativa italiana sulla qualità dell'aria
+
+In Italia, il principale riferimento nazionale per la qualità dell'aria ambiente è stato il **D.Lgs. 13 agosto 2010, n. 155**, che ha recepito la precedente disciplina europea.
+
+Alla data di riferimento di questa guida, 27 novembre 2026, il recepimento italiano della Direttiva (UE) 2024/2881 deve essere considerato separatamente dal testo europeo già adottato: la direttiva stabilisce il termine di recepimento all'11 dicembre 2026.
+
+Nel quadro nazionale del D.Lgs. 155/2010, le soglie per l'ozono sono:
+
+| Parametro italiano | Valore | Periodo |
+|---|---:|---|
+| Soglia di informazione | 180 µg/m³ | Media oraria |
+| Soglia di allarme | 240 µg/m³ | Media oraria, per 3 ore consecutive secondo le condizioni normative |
+
+Il monitoraggio è svolto attraverso le reti regionali di qualità dell'aria, coordinate dalle agenzie ambientali competenti e integrate nei sistemi nazionali ed europei di valutazione.
+
+Le Regioni e le Province autonome svolgono un ruolo importante nella gestione dei dati, nella diffusione delle informazioni e nell'adozione delle misure previste dai rispettivi piani di qualità dell'aria.
+
+### 106.6 Standard nazionali e differenze tra Paesi
+
+I valori normativi dell'ozono non sono identici in tutto il mondo.
+
+Le differenze possono riguardare:
+
+- concentrazione di riferimento;
+- durata del periodo di mediazione;
+- numero di superamenti consentiti;
+- forma statistica utilizzata;
+- modalità di monitoraggio;
+- gruppi di popolazione considerati;
+- procedure di informazione e allarme;
+- misure correttive in caso di superamento.
+
+Per confrontare correttamente due standard occorre verificare che si riferiscano allo stesso periodo temporale e alla stessa forma statistica.
+
+Ad esempio, il valore EPA di 0,070 ppm non è direttamente confrontabile con il valore obiettivo UE di 120 µg/m³ senza convertire le unità e considerare le rispettive regole di valutazione.
+
+### 106.7 Misurazione e requisiti di monitoraggio
+
+La normativa sulla qualità dell'aria non stabilisce soltanto le concentrazioni da rispettare: definisce anche come misurare l'ozono.
+
+Il metodo di riferimento europeo per la misurazione dell'ozono nell'aria ambiente è basato sulla fotometria UV, secondo la norma EN 14625.
+
+Il principio consiste nel misurare l'assorbimento della radiazione ultravioletta da parte dell'ozono a una lunghezza d'onda specifica.
+
+Le reti di monitoraggio devono assicurare:
+
+- strumenti adeguati e verificati;
+- calibrazione e tracciabilità metrologica;
+- controllo di qualità dei dati;
+- disponibilità temporale sufficiente;
+- localizzazione appropriata delle stazioni;
+- procedure di validazione;
+- comunicazione dei dati secondo formati standardizzati.
+
+La Direttiva (UE) 2024/2881 definisce obiettivi di qualità dei dati, requisiti di incertezza, metodi di riferimento e criteri di rappresentatività delle misurazioni.
+
+Le misurazioni devono inoltre considerare la natura fotochimica dell'ozono: meteorologia, radiazione solare, precursori e trasporto atmosferico influenzano le concentrazioni osservate.
+
+### 106.8 Avvisi sanitari e comunicazione al pubblico
+
+Quando si verificano concentrazioni elevate, le autorità ambientali e sanitarie possono diffondere avvisi per proteggere la popolazione.
+
+Le raccomandazioni possono includere:
+
+- ridurre l'attività fisica intensa all'aperto durante le ore di concentrazione elevata;
+- prestare particolare attenzione a bambini, anziani e persone con asma o altre patologie respiratorie;
+- seguire gli aggiornamenti delle agenzie ambientali;
+- evitare attività sportive prolungate nelle ore più critiche;
+- rispettare le indicazioni delle autorità locali.
+
+Gli avvisi devono indicare la concentrazione, il periodo di mediazione, l'area interessata e la durata prevista dell'episodio, quando disponibili.
+
+Non bisogna confondere un avviso sanitario con una dichiarazione di non conformità normativa: il primo comunica un rischio, mentre la seconda dipende dalla forma di valutazione stabilita dalla legge.
+
+### 106.9 Controlli e applicazione della normativa
+
+La conformità agli standard di qualità dell'aria è verificata attraverso le reti di monitoraggio e le procedure previste dalla normativa.
+
+Quando i valori vengono superati, le autorità possono essere tenute a predisporre o aggiornare piani e programmi per ridurre l'inquinamento e l'esposizione.
+
+Per l'ozono, la gestione è complessa perché si tratta di un inquinante secondario: non sempre è sufficiente intervenire sulle emissioni locali, poiché la formazione e il trasporto dell'ozono dipendono da processi fotochimici regionali.
+
+Le strategie possono comprendere riduzioni delle emissioni di NOₓ e VOC, misure sui trasporti, controlli industriali e cooperazione tra territori.
+
+## 107. Normative sull'ozono nell'acqua potabile
+
+### Ozono come disinfettante dell'acqua
+
+L'ozono viene utilizzato in alcuni impianti di trattamento delle acque per la sua capacità di ossidare e inattivare microrganismi.
+
+Può contribuire alla disinfezione e all'ossidazione di alcune sostanze presenti nell'acqua grezza.
+
+Tuttavia, il trattamento con ozono può generare sottoprodotti indesiderati. Il più importante dal punto di vista normativo è il **bromato (BrO₃⁻)**, che può formarsi quando l'ozono reagisce con il bromuro naturalmente presente nell'acqua.
+
+La regolamentazione dell'acqua potabile deve quindi considerare sia l'efficacia del trattamento sia il controllo dei sottoprodotti.
+
+### 107.1 Normative europee sull'acqua potabile
+
+Nell'Unione europea, la qualità dell'acqua destinata al consumo umano è disciplinata dalla **Direttiva (UE) 2020/2184**.
+
+La direttiva definisce requisiti microbiologici, chimici e di qualità dell'acqua distribuita ai consumatori.
+
+Per il bromato stabilisce il seguente valore parametrico:
+
+| Parametro | Valore UE | Unità |
+|---|---:|---|
+| Bromato | 10 | µg/L |
+
+Il valore si applica all'acqua destinata al consumo umano secondo il campo di applicazione e le condizioni previste dalla direttiva.
+
+Il bromato non è ozono residuo: è un sottoprodotto chimico che può formarsi durante alcuni processi di trattamento, in particolare quando si utilizza ozono in presenza di bromuro.
+
+La direttiva non stabilisce un valore parametrico generale per l'ozono residuo nell'acqua potabile equivalente al limite del bromato.
+
+### 107.2 Normativa italiana sull'acqua potabile
+
+In Italia, la Direttiva (UE) 2020/2184 è stata recepita attraverso il **D.Lgs. 23 febbraio 2023, n. 18**, successivamente aggiornato.
+
+Il valore parametrico per il bromato nell'acqua destinata al consumo umano è pari a:
+
+**10 µg/L.**
+
+La normativa italiana adotta un approccio basato sulla valutazione e gestione del rischio lungo la filiera idropotabile, dalla captazione alla distribuzione.
+
+I gestori devono assicurare il controllo della qualità dell'acqua e rispettare i parametri previsti, attraverso programmi di monitoraggio e procedure di gestione del rischio.
+
+La conformità deve essere verificata nei punti di controllo previsti dalla normativa, tenendo conto delle responsabilità dei gestori e delle autorità sanitarie.
+
+### 107.3 Normativa statunitense EPA
+
+Negli Stati Uniti, l'EPA disciplina i sottoprodotti della disinfezione attraverso le National Primary Drinking Water Regulations.
+
+Il bromato è regolamentato con un Maximum Contaminant Level (MCL) pari a:
+
+**0,010 mg/L, equivalenti a 10 µg/L.**
+
+Il limite si applica ai sistemi idrici soggetti alla normativa federale.
+
+Il valore è numericamente uguale a quello previsto dalla direttiva europea, ma le definizioni giuridiche, le procedure di campionamento e i sistemi di conformità possono differire.
+
+Non è corretto presumere che due limiti numericamente uguali comportino automaticamente procedure normative identiche.
+
+### 107.4 Formazione del bromato
+
+Il bromato può formarsi quando l'ozono reagisce con gli ioni bromuro presenti nell'acqua.
+
+La quantità prodotta dipende da vari fattori:
+
+- concentrazione iniziale di bromuro;
+- dose di ozono;
+- pH;
+- temperatura;
+- tempo di contatto;
+- presenza di carbonio organico disciolto;
+- condizioni chimiche dell'acqua;
+- configurazione del trattamento.
+
+La formazione di bromato deve essere controllata durante la progettazione e l'esercizio dell'impianto.
+
+Le strategie di riduzione possono comprendere l'ottimizzazione della dose di ozono, la regolazione del pH, la gestione del tempo di contatto e l'utilizzo di trattamenti preliminari o combinati.
+
+L'obiettivo è ottenere una disinfezione efficace limitando la produzione di sottoprodotti indesiderati.
+
+### 107.5 Ozono residuo e disinfezione
+
+L'ozono è un disinfettante che tende a decomporsi e reagire durante il trattamento.
+
+Per questo motivo, la presenza di ozono all'uscita di un reattore non implica necessariamente che sia presente un residuo stabile nell'intera rete di distribuzione.
+
+La gestione del processo deve distinguere:
+
+- dose di ozono applicata;
+- concentrazione di ozono nel reattore;
+- tempo di contatto;
+- concentrazione residua al termine del trattamento;
+- domanda ossidante dell'acqua;
+- eventuale necessità di un disinfettante secondario.
+
+In molti sistemi l'ozono viene utilizzato come trattamento primario, mentre la protezione della rete distributiva può richiedere un'altra strategia di disinfezione, in funzione delle caratteristiche dell'impianto e delle norme locali.
+
+Non bisogna confondere il residuo di ozono con il valore parametrico del bromato: sono grandezze differenti e hanno significati regolatori differenti.
+
+### 107.6 Altri sottoprodotti e controllo chimico
+
+Oltre al bromato, i processi di ozonizzazione possono modificare la composizione chimica dell'acqua e generare prodotti di trasformazione.
+
+Tra gli aspetti da valutare rientrano:
+
+- aldeidi;
+- chetoni;
+- acidi organici;
+- prodotti di ossidazione della materia organica;
+- bromato e altri composti bromurati, a seconda della composizione dell'acqua.
+
+La rilevanza normativa di ciascun sottoprodotto dipende dalla sostanza, dalla concentrazione, dalla giurisdizione e dal quadro regolatorio applicabile.
+
+Non esiste un unico limite universale per tutti i prodotti di ossidazione che possono formarsi durante l'ozonizzazione.
+
+### 107.7 Monitoraggio e validazione del trattamento
+
+Un impianto di trattamento con ozono deve essere progettato e gestito sulla base di dati verificabili.
+
+La validazione deve considerare:
+
+1. qualità dell'acqua in ingresso;
+2. presenza di bromuro e altri precursori;
+3. dose e concentrazione di ozono;
+4. tempo effettivo di contatto;
+5. efficienza di trasferimento del gas;
+6. condizioni idrauliche;
+7. efficacia microbiologica;
+8. formazione di sottoprodotti;
+9. qualità dell'acqua trattata;
+10. stabilità delle prestazioni nel tempo.
+
+Il monitoraggio può comprendere misure continue di parametri operativi e analisi periodiche di laboratorio.
+
+La frequenza dei controlli deve essere stabilita in funzione della normativa applicabile, delle caratteristiche dell'impianto e della valutazione del rischio.
+
+### 107.8 Certificazione dei sistemi di trattamento
+
+La certificazione di un impianto non deve essere confusa con la conformità dell'acqua distribuita.
+
+È possibile distinguere:
+
+- certificazione dei materiali a contatto con l'acqua;
+- conformità dei componenti elettrici e di sicurezza;
+- verifica delle prestazioni dichiarate dal produttore;
+- validazione del processo di disinfezione;
+- conformità dell'acqua ai parametri di legge.
+
+Negli Stati Uniti, ad esempio, standard di certificazione come NSF/ANSI 61 riguardano gli effetti sulla salute dei componenti a contatto con l'acqua potabile. Non dimostrano, da soli, che un sistema completo di ozonizzazione produca acqua conforme in ogni condizione di esercizio.
+
+Nell'Unione europea, i requisiti per i materiali e i prodotti a contatto con l'acqua devono essere valutati secondo le disposizioni europee e nazionali applicabili.
+
+La certificazione deve essere riferita alla destinazione d'uso e al prodotto specifico.
+
+### 107.9 Differenze tra giurisdizioni
+
+I principali riferimenti normativi sono:
+
+| Giurisdizione | Norma o autorità | Requisito relativo all'ozonizzazione |
+|---|---|---|
+| Unione europea | Direttiva (UE) 2020/2184 | Bromato: 10 µg/L |
+| Italia | D.Lgs. 18/2023 e successive modifiche | Bromato: 10 µg/L |
+| Stati Uniti | EPA, National Primary Drinking Water Regulations | Bromato: 0,010 mg/L |
+| Altre giurisdizioni | Normative nazionali | Limiti e procedure variabili |
+
+I valori devono essere sempre verificati rispetto alla versione vigente della normativa nazionale e agli eventuali aggiornamenti.
+
+## 108. Standard di esposizione professionale all'ozono
+
+### Perché l'ozono è regolamentato nei luoghi di lavoro?
+
+L'ozono è un gas fortemente ossidante che può irritare occhi, mucose e apparato respiratorio.
+
+I lavoratori possono essere esposti durante:
+
+- produzione e utilizzo di ozono;
+- trattamento delle acque;
+- disinfezione industriale;
+- processi di sterilizzazione;
+- produzione chimica;
+- manutenzione di generatori;
+- applicazioni odontoiatriche;
+- trattamento di piscine;
+- lavorazioni in cui l'ozono viene prodotto intenzionalmente o come sottoprodotto.
+
+L'esposizione professionale deve essere valutata in funzione della concentrazione, della durata, della frequenza, dell'attività fisica e della ventilazione polmonare.
+
+### 108.1 Tipi di limiti professionali
+
+I limiti di esposizione professionale possono essere definiti in modi differenti.
+
+**TWA — Time-Weighted Average**
+
+È la concentrazione media ponderata nel tempo durante un periodo di riferimento, spesso otto ore.
+
+**STEL — Short-Term Exposure Limit**
+
+È un limite per esposizioni di breve durata, spesso riferito a 15 minuti, secondo la definizione dell'autorità che lo stabilisce.
+
+**Ceiling limit**
+
+È una concentrazione che non deve essere superata in nessun momento o durante il periodo di misurazione definito dalla norma.
+
+**IDLH — Immediately Dangerous to Life or Health**
+
+È un valore utilizzato negli Stati Uniti da NIOSH per identificare condizioni di esposizione immediatamente pericolose per la vita o la salute, anche in relazione alla possibilità di fuga o di ingresso in un ambiente pericoloso.
+
+IDLH non è un limite ordinario di esposizione e non deve essere interpretato come una concentrazione tollerabile per attività lavorative.
+
+### 108.2 Limiti OSHA negli Stati Uniti
+
+Negli Stati Uniti, l'Occupational Safety and Health Administration (OSHA) stabilisce per l'ozono un Permissible Exposure Limit (PEL) pari a:
+
+| Parametro | Valore OSHA | Periodo |
+|---|---:|---|
+| PEL-TWA | 0,1 ppm | Media ponderata su 8 ore |
+
+Il valore corrisponde a circa 0,2 mg/m³ secondo la conversione riportata dalle autorità statunitensi.
+
+OSHA non indica nella propria scheda di riferimento un PEL-STEL federale specifico per l'ozono.
+
+Il limite è un requisito professionale statunitense e non deve essere utilizzato come soglia generale di sicurezza per la popolazione.
+
+### 108.3 Limiti NIOSH negli Stati Uniti
+
+Il National Institute for Occupational Safety and Health (NIOSH) raccomanda un REL (*Recommended Exposure Limit*) per l'ozono pari a:
+
+| Parametro | Valore NIOSH |
+|---|---:|
+| Ceiling | 0,1 ppm |
+| Equivalente indicativo | 0,2 mg/m³ |
+| IDLH | 5 ppm |
+
+Il limite ceiling di 0,1 ppm non è equivalente a un TWA di otto ore: il primo è un limite da non superare, mentre il secondo è una media ponderata nel tempo.
+
+L'IDLH di 5 ppm è un riferimento per situazioni di emergenza e non una soglia di lavoro accettabile.
+
+### 108.4 Valori ACGIH e differenze rispetto ai limiti legali
+
+L'American Conference of Governmental Industrial Hygienists (ACGIH) pubblica valori TLV (*Threshold Limit Values*) per l'esposizione professionale.
+
+Per l'ozono, la tabella OSHA riporta valori ACGIH differenziati in funzione del carico di lavoro:
+
+| Carico di lavoro | TLV-TWA riportato da OSHA |
+|---|---:|
+| Lavoro pesante | 0,05 ppm |
+| Lavoro moderato | 0,08 ppm |
+| Lavoro leggero | 0,10 ppm |
+
+Questi valori sono riportati nella scheda OSHA con riferimento all'edizione ACGIH del 1995.
+
+Non devono essere presentati come valori ACGIH necessariamente aggiornati al 2026: per utilizzare il TLV vigente occorre verificare l'edizione annuale ufficiale dell'ACGIH.
+
+Inoltre, i TLV ACGIH sono raccomandazioni tecniche e non automaticamente limiti giuridicamente vincolanti.
+
+### 108.5 Situazione normativa nell'Unione europea e in Italia
+
+L'Unione europea non ha stabilito un valore limite indicativo di esposizione professionale (IOELV) armonizzato specifico per l'ozono.
+
+In Italia, l'Allegato XXXVIII del D.Lgs. 81/2008, relativo ai valori limite di esposizione professionale agli agenti chimici, non riporta un valore limite specifico per O₃.
+
+Questo non significa che l'esposizione sia libera o priva di obblighi di prevenzione.
+
+Il datore di lavoro deve comunque effettuare la valutazione del rischio chimico secondo il Titolo IX, Capo I, del D.Lgs. 81/2008, adottando le misure necessarie per eliminare o ridurre il rischio.
+
+Tra gli obblighi rientrano:
+
+- valutazione delle condizioni di esposizione;
+- identificazione delle sorgenti;
+- misurazione quando necessaria;
+- adozione di misure tecniche;
+- ventilazione adeguata;
+- procedure di sicurezza;
+- formazione dei lavoratori;
+- dispositivi di protezione quando necessari;
+- gestione delle emergenze.
+
+I valori ACGIH possono essere utilizzati come riferimenti tecnici nell'ambito della valutazione del rischio, ma non devono essere descritti come limiti di legge italiani.
+
+### 108.6 Misurazione dell'esposizione professionale
+
+La misurazione dell'ozono nei luoghi di lavoro può essere effettuata attraverso strumenti specifici, selezionati in funzione delle concentrazioni attese, della durata del monitoraggio e delle condizioni ambientali.
+
+Le tecniche possono comprendere:
+
+- fotometria UV;
+- sensori elettrochimici;
+- strumenti portatili a lettura diretta;
+- sistemi di monitoraggio continuo;
+- campionamenti secondo metodi validati.
+
+La misurazione deve essere rappresentativa dell'esposizione del lavoratore.
+
+Occorre distinguere:
+
+**Monitoraggio ambientale:** misura la concentrazione in una determinata area o postazione.
+
+**Monitoraggio personale:** misura l'esposizione nella zona respiratoria del lavoratore attraverso strumenti indossabili o sistemi di campionamento appropriati.
+
+Le misurazioni devono considerare:
+
+- calibrazione;
+- accuratezza;
+- interferenze;
+- tempo di risposta;
+- limiti di rilevabilità;
+- durata del campionamento;
+- rappresentatività della mansione;
+- condizioni operative.
+
+Un singolo valore istantaneo non è sufficiente per verificare la conformità a un limite TWA.
+
+### 108.7 Ventilazione e controlli tecnici
+
+La prevenzione dell'esposizione deve privilegiare i controlli tecnici rispetto alla sola protezione individuale.
+
+Le misure possono comprendere:
+
+1. generatori progettati per limitare le perdite;
+2. sistemi chiusi di produzione e distribuzione;
+3. aspirazione localizzata;
+4. ventilazione generale adeguata;
+5. rilevatori di ozono;
+6. allarmi automatici;
+7. interblocchi di sicurezza;
+8. arresto automatico in caso di guasto;
+9. procedure per manutenzione e pulizia;
+10. verifica periodica della tenuta dei sistemi.
+
+Gli ambienti in cui viene prodotto o utilizzato ozono devono essere progettati per impedire che il gas raggiunga concentrazioni pericolose nelle aree occupate.
+
+La ventilazione deve essere dimensionata in base alla quantità di ozono potenzialmente rilasciata, al volume dell'ambiente e alla configurazione del processo.
+
+### 108.8 Dispositivi di protezione individuale
+
+I dispositivi di protezione individuale devono essere selezionati in base alla valutazione del rischio e alle condizioni operative.
+
+Non è corretto presumere che una normale maschera antipolvere protegga dall'ozono: l'ozono è un gas e richiede sistemi di protezione respiratoria specificamente idonei.
+
+In situazioni di emergenza o concentrazioni sconosciute, l'ingresso in un ambiente contaminato richiede procedure specialistiche e protezione respiratoria adeguata, generalmente basata su autorespiratori a pressione positiva per le operazioni di soccorso.
+
+I dispositivi di protezione individuale non sostituiscono il contenimento, l'aspirazione e la ventilazione.
+
+### 108.9 Settori industriali e requisiti specifici
+
+Il rischio professionale può variare sensibilmente tra i settori.
+
+| Settore | Possibile sorgente di ozono | Misura di prevenzione |
+|---|---|---|
+| Trattamento delle acque | Generatori e reattori | Sistemi chiusi, rilevazione e aspirazione |
+| Industria chimica | Reazioni e processi ossidativi | Controllo di processo e monitoraggio |
+| Disinfezione ambientale | GeneratorI di ozono | Locali non occupati, interblocchi e ventilazione |
+| Odontoiatria | Dispositivi odontoiatrici a ozono | Contenimento e aspirazione localizzata |
+| Piscine | Trattamento dell'acqua | Controllo delle perdite e dei locali tecnici |
+| Manutenzione | Apertura o riparazione dei generatori | Isolamento, procedure e verifica dell'assenza di gas |
+
+Questa tabella descrive sorgenti potenziali e misure generali. Le procedure effettive devono essere definite in base alla normativa nazionale e alla valutazione specifica del luogo di lavoro.
+
+### 108.10 Conformità e gestione delle emergenze
+
+La conformità agli standard professionali richiede un sistema continuativo di prevenzione, misurazione e verifica.
+
+In caso di perdita o rilascio accidentale di ozono, le procedure devono prevedere:
+
+- allontanamento delle persone dall'area interessata;
+- isolamento della sorgente quando possibile senza esporsi;
+- attivazione degli allarmi;
+- ventilazione secondo il piano di emergenza;
+- divieto di rientro fino alla verifica strumentale delle condizioni di sicurezza;
+- intervento di personale addestrato;
+- valutazione medica in caso di esposizione.
+
+L'odore non deve essere utilizzato come strumento di misurazione o di autorizzazione al rientro.
+
+Un lavoratore che sviluppa tosse, dolore toracico, difficoltà respiratoria o irritazione significativa dopo un'esposizione deve essere valutato tempestivamente.
+
+## Riepilogo della Parte XIV
+
+Le normative sull'ozono sono articolate perché la stessa molecola è coinvolta in problemi ambientali e sanitari molto differenti.
+
+Il Protocollo di Montreal e la Convenzione di Vienna proteggono lo strato di ozono stratosferico attraverso la cooperazione internazionale e il controllo delle sostanze che lo riducono. L'Emendamento di Kigali estende il sistema al controllo progressivo degli HFC, principalmente per ragioni climatiche.
+
+Le normative sulla qualità dell'aria disciplinano invece l'ozono troposferico, stabilendo valori di riferimento, obiettivi, soglie di informazione e allarme. I valori OMS sono raccomandazioni sanitarie, mentre quelli EPA, europei e nazionali hanno specifici effetti giuridici.
+
+Nell'acqua potabile, il principale parametro legato alla disinfezione con ozono è il bromato, con un valore di 10 µg/L nell'Unione europea e in Italia e un MCL di 0,010 mg/L negli Stati Uniti.
+
+Nei luoghi di lavoro, i limiti professionali dipendono dalla giurisdizione. I valori OSHA e NIOSH statunitensi non devono essere trasferiti automaticamente alla normativa italiana, che richiede comunque una valutazione del rischio chimico anche in assenza di un VLEP specifico per l'ozono.
+
+La corretta interpretazione di qualsiasi valore normativo richiede sempre cinque informazioni: **giurisdizione, fonte, data, unità di misura e periodo di mediazione**.
